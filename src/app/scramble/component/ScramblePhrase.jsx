@@ -17,6 +17,7 @@ export const ScramblePhrase = () => {
 
   const {
     currentPhraseIndex,
+    setCurrentPhraseIndex,
     playPause,
     skip,
     phrases,
@@ -59,19 +60,27 @@ export const ScramblePhrase = () => {
   }
 
   useEffect(() => {
+    if (numberOfWordClicked === 0) return;
     if (numberOfWordClicked == scrambledWords.length) {
       // Check if user buffer matches the original sentence (excluding punctuation)
       if (getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()) {
-        // console.log("Correct! Move to next sentence.");
-        // document.querySelector("#scrambled-result").classList.remove("hidden"); // Toggle hidden class
+        setShowSuccessNotice(true);
+        setCurrentPhraseIndex(currentPhraseIndex + 1);
+
         // moveToNextSentence();
-      } else {
-        setUserBuffer(""); // Reset user buffer for next sentence
-        setNumberOfWordClicked(0);
-        // setTimeout(playScrambledSentence, 1000);
       }
+      setUserBuffer(""); // Reset user buffer for next sentence
+      setNumberOfWordClicked(0);
     }
   }, [numberOfWordClicked]);
+
+  function moveToNextSentence() {
+    setShowSuccessNotice(false);
+    // Toggle hidden class
+
+    // Play audio or move to next sentence logic here
+    // setTimeout(playScrambledSentence, 1000);
+  }
 
   const handleWordClick = async (word) => {
     setNumberOfWordClicked(numberOfWordClicked + 1);
@@ -107,7 +116,11 @@ export const ScramblePhrase = () => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-wrap  space-x-2">
-        {showSuccessNotice && <div className=""></div>}
+        {showSuccessNotice && (
+          <div className="text-3xl text-[#2d0397] font-bold border-2 border-[#2d0397] p-2 rounded-lg">
+            Correct! Move to next sentence...
+          </div>
+        )}
         {scrambledWords.map((word, index) => (
           <WordButton key={index} onClick={() => handleWordClick(word)}>
             {word}

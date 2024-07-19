@@ -1,4 +1,9 @@
 const phrases = [
+  { target: "Qual nome 1?", src: "What is your name?" },
+  { target: "Qual nome 2?", src: "What is your name?" },
+];
+
+const phrases1 = [
   { target: "Qual é o seu nome?", src: "What is your name?" },
   { target: "Qual é a sua idade?", src: "How old are you?" },
   { target: "Qual é a sua profissão?", src: "What is your profession?" },

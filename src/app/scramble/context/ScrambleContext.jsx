@@ -115,6 +115,7 @@ export const ScrambleProvider = ({ children }) => {
         isPlaying,
         userBuffer,
         setUserBuffer,
+        setCurrentPhraseIndex,
       }}
     >
       {children}
