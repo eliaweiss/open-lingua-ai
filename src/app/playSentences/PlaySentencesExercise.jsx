@@ -36,11 +36,11 @@ export const PlaySentencesExercise = () => {
       </div>
 
       {/* Statistic Row */}
-      <div className="mt-4 flex flex-col items-center">
+      <div className="relative mt-4 flex flex-col items-center">
         <div className="text-sm">
           {playedSentences}/{totalSentences}
         </div>
-        <div className="text-xs text-gray-500 mt-1 hover:text-gray-700">
+        <div className="absolute inset-0 text-xs text-gray-500 mt-1 hover:text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity">
           Hover to explain statistics
         </div>
       </div>
