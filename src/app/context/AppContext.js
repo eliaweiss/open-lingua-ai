@@ -1,7 +1,7 @@
 import { createContext, useState, useContext, useEffect } from "react";
 
 // Utility functions for local storage operations
-const storage = {
+const myLocalStorage = {
   get: (key, defaultValue = []) => {
     const storedValue = localStorage.getItem(key);
     if (!storedValue) {
@@ -16,13 +16,25 @@ const storage = {
     localStorage.removeItem(key);
   },
 };
+// Utility functions for local storage operations
+const storage = {
+  get: async (key, defaultValue = []) => {
+    return await myLocalStorage.get(key, defaultValue);
+  },
+  set: async (key, value) => {
+    myLocalStorage.set(key, value);
+  },
+  remove: async (key) => {
+    myLocalStorage.remove(key);
+  },
+};
 
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   const [exercises, setExercises] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(storage.get("theme", "dark"));
+  const [theme, setTheme] = useState(myLocalStorage.get("theme", "dark"));
 
   const saveExercise = (exercise) => {
     setExercises((prevExercises) => {
@@ -33,8 +45,9 @@ export const AppProvider = ({ children }) => {
   };
 
   const loadExercises = () => {
-    const storedExercises = storage.get("exercises", []);
-    setExercises(storedExercises);
+    const storedExercises = storage.get("exercises", []).then((exercises) => {
+      setExercises(storedExercises);
+    });
   };
 
   const saveTheme = (theme) => {
@@ -42,8 +55,9 @@ export const AppProvider = ({ children }) => {
   };
 
   const loadTheme = () => {
-    const storedTheme = storage.get("theme", "dark");
-    setTheme(storedTheme);
+    storage.get("theme", "dark").then((storedTheme) => {
+      setTheme(storedTheme);
+    });
   };
 
   useEffect(() => {
