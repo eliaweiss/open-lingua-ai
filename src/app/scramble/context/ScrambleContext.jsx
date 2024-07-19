@@ -27,17 +27,14 @@ export const ScrambleProvider = ({ children }) => {
     isPlayingRef.current = isPlaying;
   }, [isPlaying]);
 
-  const playPause = () => {
-    setIsPlaying((prev) => !prev);
+  const playSentence = () => {
+    readAloud_target(currentPhrase.target);
   };
 
   useEffect(() => {
-    if (isPlaying) {
-      readAloud_target(currentPhrase.target);
-    } else {
-      cancel();
-    }
-  }, [isPlaying, currentPhraseIndex]);
+    if (!currentPhrase) return;
+    playSentence();
+  }, [currentPhraseIndex]);
 
   function increasePhraseIndex() {
     let nextIndex = currentPhraseIndex + 1;
@@ -71,7 +68,7 @@ export const ScrambleProvider = ({ children }) => {
     <ScrambleContext.Provider
       value={{
         phrases,
-        playPause,
+        playPause: playSentence,
         skip,
         currentPhrase,
         currentPhraseIndex,
