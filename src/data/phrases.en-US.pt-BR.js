@@ -1,6 +1,6 @@
 const phrases = [
-  { target: "Qual nome 1?", src: "What is your name?" },
-  { target: "Qual nome 2?", src: "What is your name?" },
+  { target: "Qual, nome 1?", src: "What is your name?" },
+  { target: "Qual, nome 2?", src: "What is your name?" },
 ];
 
 const phrases1 = [

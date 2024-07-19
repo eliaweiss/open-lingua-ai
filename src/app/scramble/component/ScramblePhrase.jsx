@@ -84,7 +84,8 @@ export const ScramblePhrase = () => {
   };
 
   const playPartOfSentence = async () => {
-    const subSentenceList = splitIntoSubSentences(currentSentence);
+    const text = currentPhrase.target.toLocaleLowerCase();
+    const subSentenceList = splitIntoSubSentences(text);
     for (let subSentence of subSentenceList) {
       await readAloud_target(subSentence);
       if (!getCurrentUserBuffer().includes(subSentence)) {
