@@ -22,7 +22,6 @@ export function NavMenu({}) {
         <ul className="p-4 mt-10">
           <MenuItem href="/playSentences">Play Sentence Exercise</MenuItem>
           <MenuItem href="/scramble">Scramble Exercise</MenuItem>
-          <MenuItem href="/exercise2">Exercise 2</MenuItem>
           <MenuItem href="/settings">Settings</MenuItem>
           <MenuItem>
             <ThemeToggle className="" />

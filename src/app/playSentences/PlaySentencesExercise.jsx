@@ -1,3 +1,4 @@
+import ControlButton from "../components/ControlButton";
 import HorizontalRule from "../components/HorizontalRule";
 import TooltipWrapper from "../components/TooltipWrapper";
 import { useAppContext } from "../context/AppContext";
@@ -5,7 +6,7 @@ import { usePlaySentenceContext } from "./context/PlaySentenceContext";
 import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; // or '@heroicons/react/24/outline'
 
 export const PlaySentencesExercise = () => {
-  const { isSrcRtl, isTargetRtl } = useAppContext();
+  const { isSrcRtl, isTargetRtl, theme } = useAppContext();
   const {
     currentPhraseIndex,
     playPause,
@@ -43,26 +44,16 @@ export const PlaySentencesExercise = () => {
       {/* Button Panel */}
       <div className="flex flex-col space-y-4 mt-4 ">
         <div className="flex space-x-4 mt-4 border border-[#020689] rounded-lg p-4">
-          <button
+          <ControlButton
+            toolTip="Play/Pause"
             onClick={playPause}
-            className="relative p-2 hover:bg-gray-200 rounded-full group"
+            className={`w-6 h-6 `}
           >
-            <TooltipWrapper text="Play/Pause">
-              {isPlaying ? (
-                <PauseIcon className="w-6 h-6 text-gray-600 " />
-              ) : (
-                <PlayIcon className="w-6 h-6 text-gray-600 " />
-              )}
-            </TooltipWrapper>
-          </button>
-          <button
-            onClick={skip}
-            className="relative p-2 hover:bg-gray-200 rounded-full group"
-          >
-            <TooltipWrapper text="Skip">
-              <ForwardIcon className="w-6 h-6 text-gray-600" />
-            </TooltipWrapper>
-          </button>
+            {isPlaying ? <PauseIcon /> : <PlayIcon className={`w-6 h-6 `} />}
+          </ControlButton>
+          <ControlButton toolTip="Skip" onClick={skip}>
+            <ForwardIcon className={`w-6 h-6 `} />
+          </ControlButton>
         </div>
         {isPlaying && <div>Playing ...</div>}
       </div>
