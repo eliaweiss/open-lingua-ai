@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
 }
 const AppWrapper = ({ children }) => {
   const { theme, isMenuOpen, setIsMenuOpen } = useAppContext();
+
   return (
     <div
       className={`flex min-h-screen ${

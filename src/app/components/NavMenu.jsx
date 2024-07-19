@@ -5,6 +5,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline"; // Correct import syntax for v2
 import { useAppContext } from "../context/AppContext";
+import MenuItem from "./MenuItem";
 
 export function NavMenu({}) {
   const { isMenuOpen, setIsMenuOpen } = useAppContext();
@@ -19,12 +20,12 @@ export function NavMenu({}) {
           <XMarkIcon className="h-6 w-6" /> {/* Close icon */}
         </button>
         <ul className="p-4 mt-10">
-          <li>Exercise 1</li>
-          <li>Exercise 2</li>
-          <li>Settings</li>
-          <li>
+          <MenuItem href="/exercise1">Exercise 1</MenuItem>
+          <MenuItem href="/exercise2">Exercise 2</MenuItem>
+          <MenuItem href="/settings">Settings</MenuItem>
+          <MenuItem>
             <ThemeToggle />
-          </li>
+          </MenuItem>
         </ul>
       </nav>
     </>
