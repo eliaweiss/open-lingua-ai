@@ -7,15 +7,13 @@ import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; //
 export const PlaySentencesExercise = () => {
   const { isSrcRtl, isTargetRtl } = useAppContext();
   const {
-    state,
+    currentPhraseIndex,
     playPause,
     skip,
     phrases,
     currentPhrase,
     isPlaying,
-    setIsPlaying,
   } = usePlaySentenceContext();
-  const { totalSentences, playedSentences } = state;
 
   return (
     <div className="flex flex-col justify-center items-center text-center w-full">
@@ -73,7 +71,7 @@ export const PlaySentencesExercise = () => {
       <div className="mt-4 flex flex-col items-center text-xl">
         <TooltipWrapper text="played-sentences/total-sentences">
           <div className="text-sm">
-            {playedSentences}/{phrases.length}
+            {currentPhraseIndex}/{phrases.length}
           </div>
         </TooltipWrapper>
       </div>

@@ -20,9 +20,6 @@ export const PlaySentenceProvider = ({ children }) => {
   const [currentPhrase, setCurrentPhrase] = useState(currentPhraseIndex);
   const [isPlaying, setIsPlaying] = useState(false);
   const isPlayingRef = useRef(isPlaying);
-  const [state, setState] = useState({
-    playedSentences: 0,
-  });
 
   useEffect(() => {
     isPlayingRef.current = isPlaying;
@@ -110,14 +107,11 @@ export const PlaySentenceProvider = ({ children }) => {
     <PlaySentenceContext.Provider
       value={{
         phrases,
-        state,
         playPause,
         skip,
         currentPhrase,
-        setCurrentPhrase,
-        setPhrases,
+        currentPhraseIndex,
         isPlaying,
-        setIsPlaying,
       }}
     >
       {children}
