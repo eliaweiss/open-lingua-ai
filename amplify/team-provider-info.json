@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-openlinguaai-dev-f4a4f-authRole",
+      "UnauthRoleArn": "arn:aws:iam::533267257504:role/amplify-openlinguaai-dev-f4a4f-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::533267257504:role/amplify-openlinguaai-dev-f4a4f-authRole",
+      "Region": "eu-west-3",
+      "DeploymentBucketName": "amplify-openlinguaai-dev-f4a4f-deployment",
+      "UnauthRoleName": "amplify-openlinguaai-dev-f4a4f-unauthRole",
+      "StackName": "amplify-openlinguaai-dev-f4a4f",
+      "StackId": "arn:aws:cloudformation:eu-west-3:533267257504:stack/amplify-openlinguaai-dev-f4a4f/04b61d20-45d1-11ef-aba6-06a1c298bb01",
+      "AmplifyAppId": "d24g51bof2sea2"
+    }
+  }
+}
