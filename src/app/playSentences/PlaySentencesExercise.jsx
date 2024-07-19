@@ -42,7 +42,6 @@ export const PlaySentencesExercise = () => {
 
       {/* Button Panel */}
       <div className="flex flex-col space-y-4 mt-4 ">
-        {isPlaying && <div>Playing ...</div>}
         <div className="flex space-x-4 mt-4 border border-[#020689] rounded-lg p-4">
           <button
             onClick={playPause}
@@ -65,6 +64,7 @@ export const PlaySentencesExercise = () => {
             </TooltipWrapper>
           </button>
         </div>
+        {isPlaying && <div>Playing ...</div>}
       </div>
 
       {/* Statistic Panel */}
