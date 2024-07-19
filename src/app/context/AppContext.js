@@ -2,7 +2,7 @@ import { createContext, useState, useContext, useEffect } from "react";
 
 const AppContext = createContext();
 
-export const AppProvider = ({ children }) => {
+export const AppProvider = ({ isMenuOpen, setIsMenuOpen, children }) => {
   const [exercises, setExercises] = useState([]);
 
   const saveExercise = (exercise) => {
