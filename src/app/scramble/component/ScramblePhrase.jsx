@@ -138,7 +138,7 @@ export const ScramblePhrase = () => {
         <ControlButton
           toolTip="Play Part of sentence"
           onClick={playPartOfSentence}
-          className="p-4 rounded-lg border  hover:bg-[#bbbbbb4f] border-pBorder"
+          className="p-4 rounded-lg border border-pBorder"
         >
           <ChevronDoubleRightIcon className="w-6 h-6 " />
         </ControlButton>
@@ -146,7 +146,7 @@ export const ScramblePhrase = () => {
         <ControlButton
           toolTip="Backspace"
           onClick={deleteWord}
-          className="p-4 rounded-lg border  hover:bg-[#bbbbbb4f] border-pBorder"
+          className="p-4 rounded-lg border border-pBorder"
         >
           <BackspaceIcon className="w-6 h-6 " />
         </ControlButton>

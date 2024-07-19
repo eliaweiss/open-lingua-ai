@@ -17,6 +17,7 @@ module.exports = {
         menuBg: "var(--menuBg-color)",
         globalBg: "var(--globalBg-color)",
         pBorder: "var(--border-color)",
+        pHov: "var(--hov-color)",
         // Add other colors using CSS variables
       },
     },

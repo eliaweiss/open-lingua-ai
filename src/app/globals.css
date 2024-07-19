@@ -11,6 +11,7 @@
     --menuBg-color: #e2e2e2;
     --globalBg-color: #f8f6f6;
     --border-color: #222020;
+    --hov-color: #8e8fb247;
     /* Add other CSS variables as needed */
 }
 
@@ -22,6 +23,8 @@
     --menuBg-color: #343232;
     --globalBg-color: #1f1f1f;
     --border-color: #f8f6f6;
+    --hov-color: #8e8fb247;
+
 
     /* Add other CSS variables as needed */
 }
