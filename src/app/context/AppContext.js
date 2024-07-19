@@ -10,7 +10,11 @@ const LANGUAGE = {
 export const AppProvider = ({ children }) => {
   const [exercises, setExercises] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(localStorage.getItem("theme", "light"));
+  const [theme, setTheme] = useState(
+    typeof window === "undefined"
+      ? "light"
+      : localStorage.getItem("theme", "light")
+  );
   const [phrases, setPhrases] = useState([]);
   const [sourceLanguage, setSourceLanguage] = useState(
     myLocalStorage.get("sourceLanguage", LANGUAGE.EN_US)
@@ -56,6 +60,7 @@ export const AppProvider = ({ children }) => {
   }, []);
 
   const toggleTheme = () => {
+    if (typeof window === "undefined") return;
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     document.documentElement.classList.remove(theme);
@@ -64,6 +69,7 @@ export const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme) {
       setTheme(storedTheme);
