@@ -10,8 +10,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "var(--primary-color)",
-        secondary: "var(--secondary-color)",
+        pBg: "var(--bg-color)",
+        pText: "var(--text-color)",
+        sBg: "var(--secondaryBg-color)",
+        sText: "var(--secondaryText-color)",
+        menuBg: "var(--menuBg-color)",
+        globalBg: "var(--globalBg-color)",
+        pBorder: "var(--border-color)",
         // Add other colors using CSS variables
       },
     },

@@ -4,13 +4,24 @@
 
 
 :root {
-    --primary-color: #000000;
-    --secondary-color: #ffffff;
+    --text-color: #000000;
+    --bg-color: #ffffff;
+    --secondaryText-color: #545252;
+    --secondaryBg-color: #a8a2a2;
+    --menuBg-color: #e2e2e2;
+    --globalBg-color: #f8f6f6;
+    --border-color: #222020;
     /* Add other CSS variables as needed */
 }
 
 .dark {
-    --primary-color: #ffffff;
-    --secondary-color: #000000;
+    --text-color: #ffffff;
+    --bg-color: #000000;
+    --secondaryText-color: #d1cdcd;
+    --secondaryBg-color: #494747;
+    --menuBg-color: #343232;
+    --globalBg-color: #1f1f1f;
+    --border-color: #f8f6f6;
+
     /* Add other CSS variables as needed */
 }

@@ -19,8 +19,8 @@ export const PlaySentencesExercise = () => {
   return (
     <div className="flex flex-col justify-center items-center text-center w-full">
       <div className="text-left">
-        <div className=" text-[#222223] text-sm">Exercise:</div>
-        <div className="font-bold text-xl text-[#808080]">
+        <div className=" text-sText text-sm">Exercise:</div>
+        <div className="font-bold text-xl text-sText">
           Play Sentences in a loop
         </div>
       </div>
@@ -32,9 +32,7 @@ export const PlaySentencesExercise = () => {
           {currentPhrase?.target}
         </div>
         <div
-          className={`text-[#808080] ${
-            isTargetRtl ? "text-right" : "text-left"
-          }`}
+          className={`text-sText ${isTargetRtl ? "text-right" : "text-left"}`}
         >
           {currentPhrase?.src}
         </div>
@@ -43,7 +41,7 @@ export const PlaySentencesExercise = () => {
 
       {/* Button Panel */}
       <div className="flex flex-col space-y-4 mt-4 ">
-        <div className="flex space-x-4 mt-4 border border-[#020689] rounded-lg p-4">
+        <div className="flex space-x-4 mt-4 border border-pBorder rounded-lg p-4">
           <ControlButton toolTip="Play/Pause" onClick={playPause}>
             {isPlaying ? (
               <PauseIcon className={`w-6 h-6 `} />

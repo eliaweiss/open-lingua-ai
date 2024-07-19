@@ -28,24 +28,15 @@ const AppWrapper = ({ children }) => {
   const { theme, isMenuOpen, setIsMenuOpen } = useAppContext();
 
   return (
-    <div
-      className={`flex min-h-screen ${
-        theme === "dark" ? "text-white" : "text-black"
-      } `}
-    >
+    <div className={`bg-globalBg flex min-h-screen text-pText`}>
       <aside
-        className={`z-50 md:w-64 fixed top-0 left-0 h-full transition-all duration-300 ${
+        className={`bg-menuBg z-50 md:w-64 fixed top-0 left-0 h-full transition-all duration-300 ${
           isMenuOpen ? "w-64" : "w-0"
-        }  ${theme === "dark" ? "bg-black" : "bg-[#d7dfed]"}`}
+        } `}
       >
         <NavMenu isMenuOpen={isMenuOpen} />
       </aside>
-      <main
-        className={`flex-1 ml-0 md:ml-64 ${
-          theme === "dark" ? "bg-[#1a1a1e]" : ""
-        }
-            `}
-      >
+      <main className={`flex-1 ml-0 md:ml-64`}>
         <header className="p-4 bg-[#8196db44]">
           {!isMenuOpen && (
             <button onClick={() => setIsMenuOpen(true)} className="md:hidden">
