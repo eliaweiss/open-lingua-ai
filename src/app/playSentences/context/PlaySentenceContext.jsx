@@ -51,7 +51,7 @@ export const PlaySentenceProvider = ({ children }) => {
       if (!isPlayingRef.current) return;
 
       if (nowPlayingPhrase.src) {
-        await readAloud_src(nowPlayingPhrase.src);
+        await readAloud_src(nowPlayingPhrase.src, 1.25);
         await waitForSeconds(1);
       }
       if (!isPlayingRef.current) return;

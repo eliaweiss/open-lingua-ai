@@ -22,7 +22,6 @@ const SpeechSynthesisContext = createContext();
 
 export const SpeechSynthesisProvider = ({ children }) => {
   const [isReading, setIsReading] = useState(false);
-  const isReadingRef = useRef(isReading);
 
   const {
     sourceLanguage,
@@ -37,15 +36,16 @@ export const SpeechSynthesisProvider = ({ children }) => {
     return text.split(/[,.?] /);
   }
 
+  ////////////////////////////////////////////////////////////////
+
   async function readAloud_slow(text, lang) {
     const groups = splitIntoSubSentences(text);
     for (const sentence of groups) {
       await readAloud_helper(addCommas(sentence), lang);
     }
   }
-  useEffect(() => {
-    isReadingRef.current = isReading;
-  }, [isReading]);
+
+  ////////////////////////////////////////////////////////////////
 
   async function readAloud(text, lang, rate) {
     setIsReading(true);
@@ -56,6 +56,8 @@ export const SpeechSynthesisProvider = ({ children }) => {
     }
     setIsReading(false);
   }
+
+  ////////////////////////////////////////////////////////////////
 
   async function readAloud_helper(text, lang, rate) {
     if (!rate) rate = 1;
@@ -92,14 +94,18 @@ export const SpeechSynthesisProvider = ({ children }) => {
     });
   }
 
+  ////////////////////////////////////////////////////////////////
+
   function addCommas(text) {
     const words = text.split(/\s+/);
     return words.join(", ");
   }
+  ////////////////////////////////////////////////////////////////
 
   async function waitForSeconds(ss) {
     await new Promise((resolve) => setTimeout(resolve, ss * 1000));
   }
+  ////////////////////////////////////////////////////////////////
 
   function randomPermutation(data) {
     const perm = data.slice();
@@ -109,6 +115,7 @@ export const SpeechSynthesisProvider = ({ children }) => {
     }
     return perm;
   }
+  ////////////////////////////////////////////////////////////////
 
   function cancel() {
     if (typeof window !== "undefined") {
@@ -116,15 +123,24 @@ export const SpeechSynthesisProvider = ({ children }) => {
     }
   }
   ////////////////////////////////////////////////////////////////
-  const readAloud_src = async (text) => {
-    await readAloud(text, sourceLanguage, sourceLanguageRate);
+  const readAloud_src = async (text, rate) => {
+    if (!rate) {
+      rate = sourceLanguageRate;
+    }
+    await readAloud(text, sourceLanguage, rate);
   };
+
+  ////////////////////////////////////////////////////////////////
+
   const readAloud_target = async (text, rate) => {
     if (!rate) {
       rate = targetLanguageRate;
     }
     await readAloud(text, targetLanguage, rate);
   };
+
+  ////////////////////////////////////////////////////////////////
+
   const readAloud_slow_target = async (text) => {
     await readAloud_slow(text, targetLanguage, targetLanguageRate);
   };
