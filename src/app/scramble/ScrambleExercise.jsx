@@ -1,5 +1,6 @@
 import HorizontalRule from "../components/HorizontalRule";
 import TooltipWrapper from "../components/TooltipWrapper";
+import ControlButton from "../components/ControlButton";
 import { useAppContext } from "../context/AppContext";
 import { useScrambleContext } from "./context/ScrambleContext";
 import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; // or '@heroicons/react/24/outline'
@@ -57,14 +58,13 @@ export const ScrambleExercise = () => {
               )}
             </TooltipWrapper>
           </button>
-          <button
+          <ControlButton
+            toolTip="Skip"
             onClick={skip}
             className="relative p-2 hover:bg-gray-200 rounded-full group"
           >
-            <TooltipWrapper text="Skip">
-              <ForwardIcon className="w-6 h-6 text-gray-600" />
-            </TooltipWrapper>
-          </button>
+            <ForwardIcon className="w-6 h-6 text-gray-600" />
+          </ControlButton>
         </div>
         {isPlaying && <div>Playing ...</div>}
       </div>

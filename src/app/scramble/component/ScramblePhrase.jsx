@@ -81,6 +81,9 @@ export const ScramblePhrase = () => {
         ))}
       </div>
       <div className="">{userBuffer}</div>
+      <div className="">
+        
+      </div>
     </div>
   );
 };
