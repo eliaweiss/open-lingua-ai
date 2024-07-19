@@ -1,34 +1,5 @@
 import { createContext, useState, useContext, useEffect } from "react";
 
-// Utility functions for local storage operations
-const myLocalStorage = {
-  get: (key, defaultValue = []) => {
-    const storedValue = localStorage.getItem(key);
-    if (!storedValue) {
-      return defaultValue;
-    }
-    return storedValue ? JSON.parse(storedValue) : defaultValue;
-  },
-  set: (key, value) => {
-    localStorage.setItem(key, JSON.stringify(value));
-  },
-  remove: (key) => {
-    localStorage.removeItem(key);
-  },
-};
-// Utility functions for local storage operations
-const storage = {
-  get: async (key, defaultValue = []) => {
-    return await myLocalStorage.get(key, defaultValue);
-  },
-  set: async (key, value) => {
-    myLocalStorage.set(key, value);
-  },
-  remove: async (key) => {
-    myLocalStorage.remove(key);
-  },
-};
-
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
@@ -79,8 +50,8 @@ export const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         exercises,
-        saveExercise,
-        loadExercises,
+        // saveExercise,
+        // loadExercises,
         isMenuOpen,
         setIsMenuOpen,
         theme,
@@ -93,3 +64,32 @@ export const AppProvider = ({ children }) => {
 };
 
 export const useAppContext = () => useContext(AppContext);
+
+// Utility functions for local storage operations
+const myLocalStorage = {
+  get: (key, defaultValue = []) => {
+    const storedValue = localStorage.getItem(key);
+    if (!storedValue) {
+      return defaultValue;
+    }
+    return storedValue ? JSON.parse(storedValue) : defaultValue;
+  },
+  set: (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value));
+  },
+  remove: (key) => {
+    localStorage.removeItem(key);
+  },
+};
+// Utility functions for local storage operations
+const storage = {
+  get: async (key, defaultValue = []) => {
+    return await myLocalStorage.get(key, defaultValue);
+  },
+  set: async (key, value) => {
+    myLocalStorage.set(key, value);
+  },
+  remove: async (key) => {
+    myLocalStorage.remove(key);
+  },
+};

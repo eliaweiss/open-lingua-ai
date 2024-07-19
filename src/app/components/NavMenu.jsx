@@ -20,7 +20,7 @@ export function NavMenu({}) {
           <XMarkIcon className="h-6 w-6" /> {/* Close icon */}
         </button>
         <ul className="p-4 mt-10">
-          <MenuItem href="/exercise1">Exercise 1</MenuItem>
+          <MenuItem href="/playSentences">Play Sentence Exercise</MenuItem>
           <MenuItem href="/exercise2">Exercise 2</MenuItem>
           <MenuItem href="/settings">Settings</MenuItem>
           <MenuItem>
