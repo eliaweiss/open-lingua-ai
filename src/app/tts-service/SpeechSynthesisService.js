@@ -21,7 +21,8 @@ async function readAloud_slow(text, lang) {
   }
 }
 
-async function readAloud(text, lang, rate = 1) {
+async function readAloud(text, lang, rate) {
+  if (!rate) rate = 1
   const groups = splitIntoSubSentences(text);
   for (const sentence of groups) {
     await readAloud_helper(sentence, lang, rate);

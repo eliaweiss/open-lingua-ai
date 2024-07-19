@@ -1,8 +1,17 @@
+import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 import { useScrambleContext } from "../context/ScrambleContext";
-import { randomPermutation } from "../../tts-service/SpeechSynthesisService";
 import { useEffect, useState } from "react";
 
 export const ScramblePhrase = () => {
+  const {
+    readAloud_slow_target,
+    readAloud_target,
+    readAloud_src,
+    waitForSeconds,
+    randomPermutation,
+    cancel,
+  } = useSpeechSynthesis();
+
   const [scrambledWords, setScrambledWords] = useState([]);
   const {
     currentPhraseIndex,
@@ -33,8 +42,9 @@ export const ScramblePhrase = () => {
     scrambleSentence();
   }, [currentPhrase]);
 
-  const addWordToBuffer = (word) => {
+  const handleWordClick = async (word) => {
     setUserBuffer(userBuffer + " " + word);
+    await readAloud_target(word, 1.25);
   };
   console.log("userBuffer", userBuffer);
 
@@ -42,7 +52,7 @@ export const ScramblePhrase = () => {
     <div className="flex flex-col">
       <div className="flex flex-wrap  space-x-2">
         {scrambledWords.map((word, index) => (
-          <WordButton key={index} onClick={() => addWordToBuffer(word)}>
+          <WordButton key={index} onClick={() => handleWordClick(word)}>
             {word}
           </WordButton>
         ))}

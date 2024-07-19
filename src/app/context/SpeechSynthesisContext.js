@@ -22,8 +22,11 @@ export const SpeechSynthesisProvider = ({ children }) => {
   const readAloud_src = async (text) => {
     await readAloud(text, sourceLanguage, sourceLanguageRate);
   };
-  const readAloud_target = async (text) => {
-    await readAloud(text, targetLanguage, targetLanguageRate);
+  const readAloud_target = async (text, rate) => {
+    if (!rate) {
+      rate = targetLanguageRate;
+    }
+    await readAloud(text, targetLanguage, rate);
   };
   const readAloud_slow_target = async (text) => {
     await readAloud_slow(text, targetLanguage, targetLanguageRate);
