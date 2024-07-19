@@ -2,7 +2,7 @@ import { createContext, useState, useContext, useEffect } from "react";
 
 const AppContext = createContext();
 
-export const AppProvider = ({ isMenuOpen, setIsMenuOpen, children }) => {
+export const AppProvider = ({ isMenuOpen, setIsMenuOpen,theme, setTheme, children }) => {
   const [exercises, setExercises] = useState([]);
 
   const saveExercise = (exercise) => {
@@ -22,6 +22,14 @@ export const AppProvider = ({ isMenuOpen, setIsMenuOpen, children }) => {
     loadExercises();
   }, []);
 
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
   return (
     <AppContext.Provider
       value={{
@@ -30,11 +38,15 @@ export const AppProvider = ({ isMenuOpen, setIsMenuOpen, children }) => {
         loadExercises,
         isMenuOpen,
         setIsMenuOpen,
+        theme,
+        setTheme,
       }}
     >
       {children}
     </AppContext.Provider>
   );
 };
+
+
 
 export const useAppContext = () => useContext(AppContext);
