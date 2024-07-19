@@ -12,9 +12,11 @@ export const PlaySentencesExercise = () => {
 
   return (
     <div className="flex flex-col justify-center items-center text-center w-full">
-      <div className=" text-[#050407]">Exercise:</div>
-      <div className="font-bold text-xl text-[#808080]">
-        Play Sentences in a loop
+      <div className="text-left">
+        <div className=" text-[#222223] text-sm">Exercise:</div>
+        <div className="font-bold text-xl text-[#808080]">
+          Play Sentences in a loop
+        </div>
       </div>
       <HorizontalRule />
 
