@@ -23,7 +23,15 @@ export const AppProvider = ({ isMenuOpen, setIsMenuOpen, children }) => {
   }, []);
 
   return (
-    <AppContext.Provider value={{ exercises, saveExercise, loadExercises }}>
+    <AppContext.Provider
+      value={{
+        exercises,
+        saveExercise,
+        loadExercises,
+        isMenuOpen,
+        setIsMenuOpen,
+      }}
+    >
       {children}
     </AppContext.Provider>
   );

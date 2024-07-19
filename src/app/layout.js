@@ -1,7 +1,7 @@
 "use client";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { AppProvider } from "./context/AppContext";
+import { AppProvider, useAppContext } from "./context/AppContext";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"; // Correct import syntax for v2
 import { useState } from "react";
 
@@ -16,21 +16,11 @@ export default function RootLayout({ children }) {
         <AppProvider {...{ isMenuOpen, setIsMenuOpen }}>
           <div className="flex min-h-screen">
             <aside
-              className={`fixed top-0 left-0 h-full bg-gray-800 text-white ${
+              className={`fixed top-0 left-0 h-full bg-gray-800 text-white transition-all duration-300 ${
                 isMenuOpen ? "w-64" : "w-0"
-              } md:w-64 transition-all duration-300`}
+              } md:w-64`}
             >
-              {isMenuOpen && (
-                <>
-                  <button
-                    onClick={() => setIsMenuOpen(false)}
-                    className="md:hidden p-4"
-                  >
-                    <XMarkIcon className="h-6 w-6" /> {/* Close icon */}
-                  </button>
-                  <NavMenu />
-                </>
-              )}
+              <NavMenu isMenuOpen={isMenuOpen} />
             </aside>
             <main className="flex-1 ml-0 md:ml-64">
               <header className="p-4 bg-gray-200">
@@ -52,14 +42,25 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-function NavMenu() {
+
+function NavMenu({}) {
+  const { isMenuOpen, setIsMenuOpen } = useAppContext();
   return (
-    <nav>
-      <ul>
-        <li>Exercise 1</li>
-        <li>Exercise 2</li>
-        <li>Settings</li>
-      </ul>
-    </nav>
+    <>
+      <nav
+        className={`transition-all duration-300 ${
+          isMenuOpen || "md:block hidden"
+        }`}
+      >
+        <button onClick={() => setIsMenuOpen(false)} className="md:hidden p-4">
+          <XMarkIcon className="h-6 w-6" /> {/* Close icon */}
+        </button>
+        <ul>
+          <li>Exercise 1</li>
+          <li>Exercise 2</li>
+          <li>Settings</li>
+        </ul>
+      </nav>
+    </>
   );
 }
