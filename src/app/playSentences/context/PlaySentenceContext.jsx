@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext, useEffect, useRef } from "react";
 import { useAppContext } from "../../context/AppContext";
 import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 
@@ -19,12 +19,18 @@ export const PlaySentenceProvider = ({ children }) => {
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [currentPhrase, setCurrentPhrase] = useState(currentPhraseIndex);
   const [isPlaying, setIsPlaying] = useState(false);
+  const isPlayingRef = useRef(isPlaying);
   const [state, setState] = useState({
     playedSentences: 0,
   });
 
+  useEffect(() => {
+    isPlayingRef.current = isPlaying;
+  }, [isPlaying]);
+
   const doExerciseLoop = async () => {
-    if (!isPlaying) return;
+    if (!isPlayingRef.current) return;
+
     try {
       console.log(
         "index: " +
@@ -36,32 +42,37 @@ export const PlaySentenceProvider = ({ children }) => {
       );
 
       await readAloud_target(phrases[currentPhraseIndex].target);
-      if (!isPlaying) return;
+      if (!isPlayingRef.current) return;
       await waitForSeconds(2);
-      if (!isPlaying) return;
+      if (!isPlayingRef.current) return;
 
       await readAloud_slow_target(phrases[currentPhraseIndex].target);
-      if (!isPlaying) return;
-
-      // await waitForSeconds(2);
-      // if (!isPlaying) return;
-      // await readAloud_target(phrases[index].target);
-      if (!isPlaying) return;
+      if (!isPlayingRef.current) return;
 
       await waitForSeconds(1);
-      if (!isPlaying) return;
+      if (!isPlayingRef.current) return;
 
       if (phrases[currentPhraseIndex].src) {
         await readAloud_src(phrases[currentPhraseIndex].src);
         await waitForSeconds(1);
       }
-      if (!isPlaying) return;
+      if (!isPlayingRef.current) return;
 
       increasePhraseIndex(currentPhraseIndex);
     } catch (e) {
       console.log(e);
     }
   };
+
+  const playPause = () => {
+    setIsPlaying((prev) => !prev);
+  };
+
+  useEffect(() => {
+    if (isPlaying) {
+      doExerciseLoop();
+    }
+  }, [isPlaying, currentPhraseIndex]);
 
   function increasePhraseIndex(currentPhraseIndex) {
     let nextIndex = currentPhraseIndex + 1;
@@ -73,17 +84,6 @@ export const PlaySentenceProvider = ({ children }) => {
 
     return nextIndex;
   }
-
-  const playPause = () => {
-    const newIsPlaying = !isPlaying;
-    setIsPlaying(newIsPlaying);
-  };
-
-  useEffect(() => {
-    if (isPlaying) {
-      doExerciseLoop();
-    }
-  }, [isPlaying, currentPhraseIndex]);
 
   const skip = () => {
     setState((prevState) => ({
