@@ -48,7 +48,7 @@ export const ScramblePhrase = () => {
 
 const WordButton = ({ children }) => {
   return (
-    <div className="px-4 py-2 my-2 rounded-lg bg-[#6a97d3] flex items-center text-white">
+    <div className="px-4 py-2 my-2 rounded-lg bg-[#6a97d3] flex items-center text-white hover:bg-[#4976b1] ">
       <button className="">{children}</button>
     </div>
   );
