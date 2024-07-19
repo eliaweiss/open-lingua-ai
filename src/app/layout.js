@@ -55,7 +55,7 @@ function NavMenu({}) {
         <button onClick={() => setIsMenuOpen(false)} className="md:hidden p-4">
           <XMarkIcon className="h-6 w-6" /> {/* Close icon */}
         </button>
-        <ul className="p-4 ">
+        <ul className="p-4 mt-10">
           <li>Exercise 1</li>
           <li>Exercise 2</li>
           <li>Settings</li>
