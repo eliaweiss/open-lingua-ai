@@ -6,7 +6,15 @@ const PlaySentenceContext = createContext();
 
 export const PlaySentenceProvider = ({ children }) => {
   const { phrases: appPhrase } = useAppContext();
-  const { randomPermutation } = useSpeechSynthesis();
+  const {
+    readAloud_slow_target,
+    readAloud_target,
+    readAloud_src,
+    waitForSeconds,
+    randomPermutation,
+    cancel,
+    skipLoop,
+  } = useSpeechSynthesis();
   const [phrases, setPhrases] = useState(randomPermutation(appPhrase));
   const [currentPhrase, setCurrentPhrase] = useState(phrases[0]);
   const [state, setState] = useState({
@@ -14,11 +22,16 @@ export const PlaySentenceProvider = ({ children }) => {
     isPlaying: false,
   });
 
+  const doExerciseLoop = () => {
+    readAloud_target(currentPhrase.target);
+  };
+
   const playPause = () => {
     setState((prevState) => ({
       ...prevState,
       isPlaying: !prevState.isPlaying,
     }));
+    doExerciseLoop();
   };
 
   const skip = () => {
