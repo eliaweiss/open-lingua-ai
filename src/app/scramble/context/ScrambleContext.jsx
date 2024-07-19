@@ -33,7 +33,7 @@ export const ScrambleProvider = ({ children }) => {
 
   useEffect(() => {
     if (isPlaying) {
-      doExerciseLoop();
+      readAloud_target(currentPhrase.target);
     } else {
       cancel();
     }
