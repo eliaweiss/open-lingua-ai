@@ -1,24 +1,111 @@
 // SpeechSynthesisContext.js
 
-import React, { createContext, useContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { useAppContext } from "./AppContext";
-import {
-  readAloud_slow,
-  readAloud,
-  waitForSeconds,
-  randomPermutation,
-  cancel,
-} from "../tts-service/SpeechSynthesisService";
+
+let voices = [];
+
+function loadVoices() {
+  voices = window.speechSynthesis.getVoices();
+}
+if (typeof window !== "undefined") {
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+}
 
 const SpeechSynthesisContext = createContext();
 
 export const SpeechSynthesisProvider = ({ children }) => {
+  const [isReading, setIsReading] = useState(false);
+
   const {
     sourceLanguage,
     targetLanguage,
     sourceLanguageRate,
     targetLanguageRate,
   } = useAppContext();
+
+  ////////////////////////////////////////////////////////////////
+
+  function splitIntoSubSentences(text) {
+    return text.split(/[,.?] /);
+  }
+
+  async function readAloud_slow(text, lang) {
+    const groups = splitIntoSubSentences(text);
+    for (const sentence of groups) {
+      await readAloud_helper(addCommas(sentence), lang);
+    }
+  }
+
+  async function readAloud(text, lang, rate) {
+    setIsReading(true);
+    if (!rate) rate = 1;
+    const groups = splitIntoSubSentences(text);
+    for (const sentence of groups) {
+      await readAloud_helper(sentence, lang, rate);
+    }
+    setIsReading(false);
+  }
+
+  async function readAloud_helper(text, lang, rate) {
+    if (!rate) rate = 1;
+
+    return new Promise((resolve, reject) => {
+      try {
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = rate;
+        utterance.lang = lang;
+
+        const selectedVoice = voices.find(
+          (voice) => voice.lang === lang && voice.name.includes("Google")
+        );
+        if (selectedVoice) {
+          utterance.voice = selectedVoice;
+        }
+
+        // myTimeout = setTimeout(myTimer, sleepTime);
+        utterance.onend = function () {
+          resolve();
+        };
+
+        utterance.onerror = function (event) {
+          console.log("Speech error: " + event.error);
+          reject(event.error);
+        };
+
+        if (typeof window !== "undefined") {
+          window.speechSynthesis.speak(utterance);
+        }
+      } catch {
+        reject();
+      }
+    });
+  }
+
+  function addCommas(text) {
+    const words = text.split(/\s+/);
+    return words.join(", ");
+  }
+
+  async function waitForSeconds(ss) {
+    await new Promise((resolve) => setTimeout(resolve, ss * 1000));
+  }
+
+  function randomPermutation(data) {
+    const perm = data.slice();
+    for (let i = perm.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [perm[i], perm[j]] = [perm[j], perm[i]];
+    }
+    return perm;
+  }
+
+  function cancel() {
+    if (typeof window !== "undefined") {
+      window.speechSynthesis.cancel();
+    }
+  }
+  ////////////////////////////////////////////////////////////////
   const readAloud_src = async (text) => {
     await readAloud(text, sourceLanguage, sourceLanguageRate);
   };
@@ -39,6 +126,7 @@ export const SpeechSynthesisProvider = ({ children }) => {
     waitForSeconds,
     randomPermutation,
     cancel,
+    splitIntoSubSentences,
   };
 
   return (

@@ -3,17 +3,14 @@ import ControlButton from "../../components/ControlButton";
 import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 import { useScrambleContext } from "../context/ScrambleContext";
 import { useEffect, useState } from "react";
-import {
-  readAloud_helper,
-  splitIntoSubSentences,
-} from "../../tts-service/SpeechSynthesisService";
 import { useAppContext } from "../../context/AppContext";
 import { BackspaceIcon } from "@heroicons/react/24/outline";
 
 export const ScramblePhrase = () => {
   const { isSrcRtl, isTargetRtl } = useAppContext();
 
-  const { readAloud_target, randomPermutation } = useSpeechSynthesis();
+  const { readAloud_target, randomPermutation, splitIntoSubSentences } =
+    useSpeechSynthesis();
 
   const {
     currentPhraseIndex,

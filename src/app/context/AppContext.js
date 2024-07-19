@@ -10,7 +10,7 @@ const LANGUAGE = {
 export const AppProvider = ({ children }) => {
   const [exercises, setExercises] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(myLocalStorage.get("theme", "dark"));
+  const [theme, setTheme] = useState(myLocalStorage.get("theme", "light"));
   const [phrases, setPhrases] = useState([]);
   const [sourceLanguage, setSourceLanguage] = useState(
     myLocalStorage.get("sourceLanguage", LANGUAGE.EN_US)
