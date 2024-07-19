@@ -72,11 +72,11 @@ export const AppProvider = ({ children }) => {
     if (typeof window === "undefined") return;
     const storedTheme = localStorage.getItem("theme");
     if (storedTheme) {
-      setTheme(storedTheme);
       document.documentElement.classList.add(storedTheme);
     } else {
       document.documentElement.classList.add("light");
     }
+    setTheme(storedTheme);
   }, []);
 
   return (

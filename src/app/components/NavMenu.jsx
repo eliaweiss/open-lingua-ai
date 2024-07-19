@@ -1,10 +1,8 @@
-import {
-  Bars3Icon,
-  MoonIcon,
-  SunIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline"; // Correct import syntax for v2
+"use client";
+import { XMarkIcon } from "@heroicons/react/24/outline"; // Correct import syntax for v2
 import { useAppContext } from "../context/AppContext";
+
+import ThemeToggle from "./ThemeToggle";
 import MenuItem from "./MenuItem";
 
 export function NavMenu({}) {
@@ -29,19 +27,5 @@ export function NavMenu({}) {
         </ul>
       </nav>
     </>
-  );
-}
-
-function ThemeToggle() {
-  const { theme, toggleTheme } = useAppContext();
-
-  return (
-    <button onClick={toggleTheme} className="p-2 w-full">
-      {theme === "dark" ? (
-        <SunIcon className="h-6 w-6 text-yellow-500" />
-      ) : (
-        <MoonIcon className="h-6 w-6 text-gray-800" />
-      )}
-    </button>
   );
 }
