@@ -6,14 +6,7 @@ const ScrambleContext = createContext();
 
 export const ScrambleProvider = ({ children }) => {
   const { phrases: appPhrase } = useAppContext();
-  const {
-    readAloud_slow_target,
-    readAloud_target,
-    readAloud_src,
-    waitForSeconds,
-    randomPermutation,
-    cancel,
-  } = useSpeechSynthesis();
+  const { readAloud_target, randomPermutation, cancel } = useSpeechSynthesis();
   const [phrases, setPhrases] = useState(randomPermutation(appPhrase));
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [currentPhrase, setCurrentPhrase] = useState(
@@ -23,15 +16,12 @@ export const ScrambleProvider = ({ children }) => {
   const [isReading, setIsReading] = useState(false);
 
   const [userBuffer, setUserBuffer] = useState("");
-  const isPlayingRef = useRef(isPlaying);
 
-  useEffect(() => {
-    isPlayingRef.current = isPlaying;
-  }, [isPlaying]);
 
   const playPause = () => {
     setIsPlaying(true);
   };
+  
   const playSentence = async () => {
     setIsReading(true);
     await readAloud_target(currentPhrase.target);
@@ -57,7 +47,6 @@ export const ScrambleProvider = ({ children }) => {
 
   const skip = () => {
     cancel();
-    // Assuming `index` and `skipFlag` are part of your state
     increasePhraseIndex();
   };
 
