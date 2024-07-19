@@ -17,7 +17,7 @@ export const ScramblePhrase = () => {
 
   const {
     currentPhraseIndex,
-    setCurrentPhraseIndex,
+    increasePhraseIndex,
     playPause,
     skip,
     phrases,
@@ -65,7 +65,7 @@ export const ScramblePhrase = () => {
       // Check if user buffer matches the original sentence (excluding punctuation)
       if (getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()) {
         setShowSuccessNotice(true);
-        setCurrentPhraseIndex(currentPhraseIndex + 1);
+        increasePhraseIndex();
 
         // moveToNextSentence();
       }

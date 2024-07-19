@@ -27,44 +27,6 @@ export const ScrambleProvider = ({ children }) => {
     isPlayingRef.current = isPlaying;
   }, [isPlaying]);
 
-  const doExerciseLoop = async () => {
-    if (!isPlayingRef.current) return;
-    const nowPlayingPhrase = phrases[currentPhraseIndex];
-    setCurrentPhrase(nowPlayingPhrase);
-
-    try {
-      console.log(
-        "index: " +
-          currentPhraseIndex +
-          "/" +
-          phrases.length +
-          " - " +
-          nowPlayingPhrase.src
-      );
-
-      await readAloud_target(nowPlayingPhrase.target);
-      if (!isPlayingRef.current) return;
-      await waitForSeconds(2);
-      if (!isPlayingRef.current) return;
-
-      await readAloud_slow_target(nowPlayingPhrase.target);
-      if (!isPlayingRef.current) return;
-
-      await waitForSeconds(1);
-      if (!isPlayingRef.current) return;
-
-      if (nowPlayingPhrase.src) {
-        await readAloud_src(nowPlayingPhrase.src);
-        await waitForSeconds(1);
-      }
-      if (!isPlayingRef.current) return;
-
-      increasePhraseIndex();
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   const playPause = () => {
     setIsPlaying((prev) => !prev);
   };
@@ -84,6 +46,7 @@ export const ScrambleProvider = ({ children }) => {
       setPhrases(randomPermutation(phrases));
     }
     setCurrentPhraseIndex(nextIndex);
+    setCurrentPhrase(phrases[nextIndex]);
 
     return nextIndex;
   }
@@ -115,7 +78,8 @@ export const ScrambleProvider = ({ children }) => {
         isPlaying,
         userBuffer,
         setUserBuffer,
-        setCurrentPhraseIndex,
+
+        increasePhraseIndex,
       }}
     >
       {children}
