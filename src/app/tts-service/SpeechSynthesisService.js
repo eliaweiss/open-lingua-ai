@@ -90,18 +90,4 @@ function cancel() {
   window.speechSynthesis.cancel();
 }
 
-function skipLoop() {
-  window.speechSynthesis.cancel();
-  // Assuming `index` and `skipFlag` are part of your state
-  index++;
-  skipFlag = true;
-}
-
-export {
-  readAloud_slow,
-  readAloud,
-  waitForSeconds,
-  randomPermutation,
-  cancel,
-  skipLoop,
-};
+export { readAloud_slow, readAloud, waitForSeconds, randomPermutation, cancel };

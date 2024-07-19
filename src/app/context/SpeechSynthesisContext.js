@@ -8,7 +8,6 @@ import {
   waitForSeconds,
   randomPermutation,
   cancel,
-  skipLoop,
 } from "../tts-service/SpeechSynthesisService";
 
 const SpeechSynthesisContext = createContext();
@@ -37,7 +36,6 @@ export const SpeechSynthesisProvider = ({ children }) => {
     waitForSeconds,
     randomPermutation,
     cancel,
-    skipLoop,
   };
 
   return (

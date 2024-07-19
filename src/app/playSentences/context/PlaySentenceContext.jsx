@@ -13,7 +13,6 @@ export const PlaySentenceProvider = ({ children }) => {
     waitForSeconds,
     randomPermutation,
     cancel,
-    skipLoop,
   } = useSpeechSynthesis();
   const [phrases, setPhrases] = useState(randomPermutation(appPhrase));
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -57,7 +56,7 @@ export const PlaySentenceProvider = ({ children }) => {
       }
       if (!isPlayingRef.current) return;
 
-      increasePhraseIndex(currentPhraseIndex);
+      increasePhraseIndex();
     } catch (e) {
       console.log(e);
     }
@@ -75,7 +74,7 @@ export const PlaySentenceProvider = ({ children }) => {
     }
   }, [isPlaying, currentPhraseIndex]);
 
-  function increasePhraseIndex(currentPhraseIndex) {
+  function increasePhraseIndex() {
     let nextIndex = currentPhraseIndex + 1;
     if (nextIndex >= phrases.length) {
       nextIndex = 0;
@@ -87,10 +86,9 @@ export const PlaySentenceProvider = ({ children }) => {
   }
 
   const skip = () => {
-    setState((prevState) => ({
-      ...prevState,
-      playedSentences: prevState.playedSentences + 1,
-    }));
+    cancel();
+    // Assuming `index` and `skipFlag` are part of your state
+    increasePhraseIndex();
   };
 
   useEffect(() => {
