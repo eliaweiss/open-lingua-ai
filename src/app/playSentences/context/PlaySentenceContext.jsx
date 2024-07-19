@@ -1,10 +1,13 @@
 import { createContext, useState, useContext } from "react";
 import { useAppContext } from "../../context/AppContext";
+import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 
 const PlaySentenceContext = createContext();
 
 export const PlaySentenceProvider = ({ children }) => {
-  const { phrases } = useAppContext();
+  const { phrases: appPhrase } = useAppContext();
+  const { randomPermutation } = useSpeechSynthesis();
+  const [phrases, setPhrases] = useState(randomPermutation(appPhrase));
   const [state, setState] = useState({
     playedSentences: 0,
     isPlaying: false,

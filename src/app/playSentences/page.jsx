@@ -2,13 +2,16 @@
 
 import { PlaySentenceProvider } from "./context/PlaySentenceContext";
 import { PlaySentencesExercise } from "./PlaySentencesExercise";
+import { SpeechSynthesisProvider } from "../context/SpeechSynthesisContext";
 
 const Page = () => {
   return (
     <div>
-      <PlaySentenceProvider>
-        <PlaySentencesExercise />
-      </PlaySentenceProvider>
+      <SpeechSynthesisProvider>
+        <PlaySentenceProvider>
+          <PlaySentencesExercise />
+        </PlaySentenceProvider>
+      </SpeechSynthesisProvider>
     </div>
   );
 };
