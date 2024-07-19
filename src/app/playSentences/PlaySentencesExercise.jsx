@@ -3,7 +3,7 @@ import { usePlaySentenceContext } from "./context/PlaySentenceContext";
 import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; // or '@heroicons/react/24/outline'
 
 export const PlaySentencesExercise = () => {
-  const { state, playPause, skip } = usePlaySentenceContext();
+  const { state, playPause, skip, phrases } = usePlaySentenceContext();
   const { totalSentences, playedSentences, isPlaying } = state;
 
   return (
@@ -38,7 +38,7 @@ export const PlaySentencesExercise = () => {
       <div className="mt-4 flex flex-col items-center">
         <TooltipWrapper text="played-sentences/total-sentences">
           <div className="text-sm">
-            {playedSentences}/{totalSentences}
+            {playedSentences}/{phrases.length}
           </div>
         </TooltipWrapper>
       </div>

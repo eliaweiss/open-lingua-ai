@@ -6,6 +6,7 @@ export const AppProvider = ({ children }) => {
   const [exercises, setExercises] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState(myLocalStorage.get("theme", "dark"));
+  const [phrases, setPhrases] = useState([]);
 
   const saveExercise = (exercise) => {
     setExercises((prevExercises) => {
@@ -30,10 +31,16 @@ export const AppProvider = ({ children }) => {
       setTheme(storedTheme);
     });
   };
+  const loadPhrase = async () => {
+    const phrases = (await import("../../data/phrases.js")).default;
+    console.log("loadPhrase", phrases.length);
+    setPhrases(phrases);
+  };
 
   useEffect(() => {
     loadExercises();
     loadTheme();
+    loadPhrase();
   }, []);
 
   useEffect(() => {
@@ -50,8 +57,8 @@ export const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         exercises,
-        // saveExercise,
-        // loadExercises,
+        phrases,
+        setPhrases,
         isMenuOpen,
         setIsMenuOpen,
         theme,
