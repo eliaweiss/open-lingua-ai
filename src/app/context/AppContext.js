@@ -102,6 +102,7 @@ export const useAppContext = () => useContext(AppContext);
 // Utility functions for local storage operations
 const myLocalStorage = {
   get: (key, defaultValue = []) => {
+    if (typeof window === "undefined") return defaultValue;
     const storedValue = localStorage.getItem(key);
     if (!storedValue) {
       return defaultValue;
@@ -109,10 +110,14 @@ const myLocalStorage = {
     return storedValue ? JSON.parse(storedValue) : defaultValue;
   },
   set: (key, value) => {
-    localStorage.setItem(key, JSON.stringify(value));
+    if (typeof window !== "undefined") {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
   },
   remove: (key) => {
-    localStorage.removeItem(key);
+    if (typeof window !== "undefined") {
+      localStorage.removeItem(key);
+    }
   },
 };
 // Utility functions for local storage operations
