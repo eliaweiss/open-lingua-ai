@@ -22,7 +22,7 @@ const AppContext = createContext();
 export const AppProvider = ({ children }) => {
   const [exercises, setExercises] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState();
+  const [theme, setTheme] = useState(storage.get("theme", "dark"));
 
   const saveExercise = (exercise) => {
     setExercises((prevExercises) => {
