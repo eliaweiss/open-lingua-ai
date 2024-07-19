@@ -8,7 +8,9 @@ const sleepTime = 2000;
 function loadVoices() {
   voices = window.speechSynthesis.getVoices();
 }
-window.speechSynthesis.onvoiceschanged = loadVoices;
+if (typeof window !== "undefined") {
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+}
 
 function splitIntoSubSentences(text) {
   return text.split(/[,.?] /);
@@ -29,16 +31,9 @@ async function readAloud(text, lang, rate) {
   }
 }
 
-function myTimer() {
-  window.speechSynthesis.pause();
-  window.speechSynthesis.resume();
-  clearTimeout(myTimeout);
-  myTimeout = setTimeout(myTimer, sleepTime);
-}
-
 async function readAloud_helper(text, lang, rate) {
   if (!rate) rate = 1;
-  
+
   return new Promise((resolve, reject) => {
     try {
       const utterance = new SpeechSynthesisUtterance(text);
@@ -52,7 +47,7 @@ async function readAloud_helper(text, lang, rate) {
         utterance.voice = selectedVoice;
       }
 
-      myTimeout = setTimeout(myTimer, sleepTime);
+      // myTimeout = setTimeout(myTimer, sleepTime);
       utterance.onend = function () {
         clearTimeout(myTimeout);
         resolve();
@@ -64,7 +59,9 @@ async function readAloud_helper(text, lang, rate) {
         reject(event.error);
       };
 
-      window.speechSynthesis.speak(utterance);
+      if (typeof window !== "undefined") {
+        window.speechSynthesis.speak(utterance);
+      }
     } catch {
       reject();
     }
@@ -90,7 +87,9 @@ function randomPermutation(data) {
 }
 
 function cancel() {
-  window.speechSynthesis.cancel();
+  if (typeof window !== "undefined") {
+    window.speechSynthesis.cancel();
+  }
 }
 
 export {
