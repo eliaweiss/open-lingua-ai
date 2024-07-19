@@ -16,13 +16,14 @@ export const ScramblePhrase = () => {
   } = useScrambleContext();
 
   const scrambleSentence = () => {
-    if (!currentPhrase) return
+    if (!currentPhrase) return;
     // Get the current Portuguese sentence
     const { words, currentSentence } = splitToWords(currentPhrase.target); // Split into words
 
     // Randomly scramble the words
-    const scrambledWords = removeDuplicates(randomPermutation(words));
-    setScrambledWords(scrambledWords);
+    const scrambledWordsTmp = removeDuplicates(randomPermutation(words));
+    console.log("scrambledWords", scrambledWordsTmp);
+    setScrambledWords(scrambledWordsTmp);
 
     // Clear user buffer and display area
     setUserBuffer("");
@@ -31,13 +32,14 @@ export const ScramblePhrase = () => {
   useEffect(() => {
     scrambleSentence();
   }, [currentPhrase]);
+  console.log("scrambledWords2", scrambledWords.length);
 
   return (
     <div className="flex flex-col">
-      <div className="flex">
-        {scrambledWords.map((word, index) => {
-          <WordButton key={index}>word</WordButton>;
-        })}
+      <div className="flex flex-wrap  space-x-2">
+        {scrambledWords.map((word, index) => (
+          <WordButton key={index}>{word}</WordButton>
+        ))}
       </div>
       <div className="">{userBuffer}</div>
     </div>
@@ -46,7 +48,7 @@ export const ScramblePhrase = () => {
 
 const WordButton = ({ children }) => {
   return (
-    <div className="">
+    <div className="px-4 py-2 my-2 rounded-lg bg-[#6a97d3] flex items-center text-white">
       <button className="">{children}</button>
     </div>
   );
