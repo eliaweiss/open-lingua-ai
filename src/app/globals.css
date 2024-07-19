@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+    --primary-color: #000000;
+    --secondary-color: #ffffff;
+    /* Add other CSS variables as needed */
+}
+
+.dark {
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    /* Add other CSS variables as needed */
+}

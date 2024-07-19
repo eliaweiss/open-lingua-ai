@@ -10,7 +10,7 @@ const LANGUAGE = {
 export const AppProvider = ({ children }) => {
   const [exercises, setExercises] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(myLocalStorage.get("theme", "light"));
+  const [theme, setTheme] = useState(localStorage.getItem("theme", "light"));
   const [phrases, setPhrases] = useState([]);
   const [sourceLanguage, setSourceLanguage] = useState(
     myLocalStorage.get("sourceLanguage", LANGUAGE.EN_US)
@@ -42,15 +42,6 @@ export const AppProvider = ({ children }) => {
     });
   };
 
-  const saveTheme = (theme) => {
-    storage.set("theme", theme);
-  };
-
-  const loadTheme = () => {
-    storage.get("theme", "dark").then((storedTheme) => {
-      setTheme(storedTheme);
-    });
-  };
   const loadPhrase = async () => {
     const src_target = `${sourceLanguage}.${targetLanguage}`;
     const phrases = (await import(`../../data/phrases.${src_target}.js`))
@@ -61,19 +52,26 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     loadExercises();
-    loadTheme();
     loadPhrase();
   }, []);
 
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    document.documentElement.classList.remove(theme);
+    document.documentElement.classList.add(newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+
   useEffect(() => {
-    if (!theme) return;
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(storedTheme);
+      document.documentElement.classList.add(storedTheme);
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
     }
-    saveTheme(theme); // Save theme to local storage whenever it changes
-  }, [theme]);
+  }, []);
 
   return (
     <AppContext.Provider
@@ -89,7 +87,7 @@ export const AppProvider = ({ children }) => {
         isMenuOpen,
         setIsMenuOpen,
         theme,
-        setTheme,
+        toggleTheme,
       }}
     >
       {children}

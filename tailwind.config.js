@@ -5,13 +5,22 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  // Enable dark mode support
+  darkMode: "class", // Enable class-based dark mode
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        primary: "var(--primary-color)",
+        secondary: "var(--secondary-color)",
+        // Add other colors using CSS variables
       },
+    },
+  },
+  variants: {
+    extend: {
+      backgroundColor: ["dark"],
+      textColor: ["dark"],
+      borderColor: ["dark"],
     },
   },
   plugins: [],

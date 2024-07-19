@@ -33,13 +33,10 @@ export function NavMenu({}) {
 }
 
 function ThemeToggle() {
-  const { theme, setTheme } = useAppContext();
+  const { theme, toggleTheme } = useAppContext();
 
   return (
-    <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 w-full"
-    >
+    <button onClick={toggleTheme} className="p-2 w-full">
       {theme === "dark" ? (
         <SunIcon className="h-6 w-6 text-yellow-500" />
       ) : (
