@@ -9,8 +9,8 @@ const ControlButton = ({ className, toolTip, onClick, children }) => {
     <button
       onClick={onClick}
       className={classNames(
-        `relative p-2 hover:bg-gray-200 rounded-full group ${
-          theme !== "dark" ? "text-gray-600" : "text-white"
+        `relative p-2 hover:bg-gray-200 rounded-lg group hover:bg-[#bbbbbb4f] ${
+          theme !== "dark" ? "text-gray-600 " : "text-white"
         }`,
         className
       )}

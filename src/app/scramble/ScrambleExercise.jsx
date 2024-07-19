@@ -7,7 +7,7 @@ import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; //
 import { ScramblePhrase } from "./component/ScramblePhrase";
 
 export const ScrambleExercise = () => {
-  const { isSrcRtl, isTargetRtl } = useAppContext();
+  const { isTargetRtl, theme } = useAppContext();
   const {
     currentPhraseIndex,
     playPause,
@@ -29,9 +29,6 @@ export const ScrambleExercise = () => {
 
       {/* Exercise Panel */}
       <div className="flex flex-col space-y-4 mt-4 text-3xl">
-        {/* <div className={`${isSrcRtl ? "text-right" : "text-left"}`}>
-          {currentPhrase?.target}
-        </div> */}
         <div
           className={`text-[#808080] ${
             isTargetRtl ? "text-right" : "text-left"
@@ -45,7 +42,11 @@ export const ScrambleExercise = () => {
 
       {/* Button Panel */}
       <div className="flex flex-col space-y-4 mt-4 ">
-        <div className="flex space-x-4 mt-4 border border-[#020689] rounded-lg p-4">
+        <div
+          className={`flex space-x-4 mt-4 border  rounded-lg p-4 ${
+            theme == "dark" ? "border-[#9e9eb1]" : "border-[#020689]"
+          }`}
+        >
           <ControlButton toolTip="Play/Pause" onClick={playPause}>
             {isPlaying ? (
               <PauseIcon className="w-6 h-6  " />
