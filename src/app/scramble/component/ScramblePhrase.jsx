@@ -22,6 +22,7 @@ export const ScramblePhrase = () => {
     isPlaying,
     userBuffer,
     setUserBuffer,
+    isReading,
   } = useScrambleContext();
 
   const [scrambledWords, setScrambledWords] = useState([]);
@@ -117,6 +118,7 @@ export const ScramblePhrase = () => {
           </div>
         )}
         {isPlaying &&
+          !isReading &&
           scrambledWords.map((word, index) => (
             <WordButton key={index} onClick={() => handleWordClick(word)}>
               {word}

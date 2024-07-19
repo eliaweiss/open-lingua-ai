@@ -1,6 +1,12 @@
 // SpeechSynthesisContext.js
 
-import React, { createContext, useContext, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useAppContext } from "./AppContext";
 
 let voices = [];
@@ -16,6 +22,7 @@ const SpeechSynthesisContext = createContext();
 
 export const SpeechSynthesisProvider = ({ children }) => {
   const [isReading, setIsReading] = useState(false);
+  const isReadingRef = useRef(isReading);
 
   const {
     sourceLanguage,
@@ -36,6 +43,9 @@ export const SpeechSynthesisProvider = ({ children }) => {
       await readAloud_helper(addCommas(sentence), lang);
     }
   }
+  useEffect(() => {
+    isReadingRef.current = isReading;
+  }, [isReading]);
 
   async function readAloud(text, lang, rate) {
     setIsReading(true);
@@ -127,6 +137,7 @@ export const SpeechSynthesisProvider = ({ children }) => {
     randomPermutation,
     cancel,
     splitIntoSubSentences,
+    isReading,
   };
 
   return (
