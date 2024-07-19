@@ -12,8 +12,18 @@ export const AppProvider = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState(myLocalStorage.get("theme", "dark"));
   const [phrases, setPhrases] = useState([]);
-  const [sourceLanguage, setSourceLanguage] = useState(LANGUAGE.EN_US);
-  const [targetLanguage, setTargetLanguage] = useState(LANGUAGE.PT_BR);
+  const [sourceLanguage, setSourceLanguage] = useState(
+    myLocalStorage.get("sourceLanguage", LANGUAGE.EN_US)
+  );
+  const [targetLanguage, setTargetLanguage] = useState(
+    myLocalStorage.get("targetLanguage", LANGUAGE.PT_BR)
+  );
+  const [sourceLanguageRate, setSourceLanguageRate] = useState(
+    myLocalStorage.get("sourceLanguageRate", 1)
+  );
+  const [targetLanguageRate, setTargetLanguageRate] = useState(
+    myLocalStorage.get("targetLanguageRate", 1)
+  );
 
   const saveExercise = (exercise) => {
     setExercises((prevExercises) => {
@@ -65,7 +75,10 @@ export const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
-        exercises,
+        sourceLanguage,
+        targetLanguage,
+        sourceLanguageRate,
+        targetLanguageRate,
         phrases,
         setPhrases,
         isMenuOpen,
