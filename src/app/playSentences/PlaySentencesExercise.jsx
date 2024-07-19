@@ -1,3 +1,4 @@
+import HorizontalRule from "../components/HorizontalRule";
 import TooltipWrapper from "../components/TooltipWrapper";
 import { useAppContext } from "../context/AppContext";
 import { usePlaySentenceContext } from "./context/PlaySentenceContext";
@@ -11,22 +12,29 @@ export const PlaySentencesExercise = () => {
 
   return (
     <div className="flex flex-col justify-center items-center text-center w-full">
+      <div className=" text-[#050407]">Exercise:</div>
       <div className="font-bold text-xl text-[#808080]">
         Play Sentences in a loop
       </div>
+      <HorizontalRule />
 
       {/* Exercise Panel */}
-      <div className="flex flex-col space-y-4 mt-4">
-        <div className={`text-2xl ${isSrcRtl ? "text-right" : "text-left"}`}>
+      <div className="flex flex-col space-y-4 mt-4 text-3xl">
+        <div className={`${isSrcRtl ? "text-right" : "text-left"}`}>
           {currentPhrase?.target}
         </div>
-        <div className={`text-2xl ${isTargetRtl ? "text-right" : "text-left"}`}>
+        <div
+          className={`text-[#808080] ${
+            isTargetRtl ? "text-right" : "text-left"
+          }`}
+        >
           {currentPhrase?.src}
         </div>
       </div>
+      <HorizontalRule />
 
       {/* Button Panel */}
-      <div className="flex space-x-4 mt-4">
+      <div className="flex space-x-4 mt-4 border border-[#020689] rounded-lg p-4">
         <button
           onClick={playPause}
           className="relative p-2 hover:bg-gray-200 rounded-full group"
@@ -50,7 +58,7 @@ export const PlaySentencesExercise = () => {
       </div>
 
       {/* Statistic Panel */}
-      <div className="mt-4 flex flex-col items-center">
+      <div className="mt-4 flex flex-col items-center text-xl">
         <TooltipWrapper text="played-sentences/total-sentences">
           <div className="text-sm">
             {playedSentences}/{phrases.length}
