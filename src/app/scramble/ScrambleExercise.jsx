@@ -46,23 +46,14 @@ export const ScrambleExercise = () => {
       {/* Button Panel */}
       <div className="flex flex-col space-y-4 mt-4 ">
         <div className="flex space-x-4 mt-4 border border-[#020689] rounded-lg p-4">
-          <button
-            onClick={playPause}
-            className="relative p-2 hover:bg-gray-200 rounded-full group"
-          >
-            <TooltipWrapper text="Play/Pause">
-              {isPlaying ? (
-                <PauseIcon className="w-6 h-6 text-gray-600 " />
-              ) : (
-                <PlayIcon className="w-6 h-6 text-gray-600 " />
-              )}
-            </TooltipWrapper>
-          </button>
-          <ControlButton
-            toolTip="Skip"
-            onClick={skip}
-            className="relative p-2 hover:bg-gray-200 rounded-full group"
-          >
+          <ControlButton toolTip="Play/Pause" onClick={playPause}>
+            {isPlaying ? (
+              <PauseIcon className="w-6 h-6 text-gray-600 " />
+            ) : (
+              <PlayIcon className="w-6 h-6 text-gray-600 " />
+            )}
+          </ControlButton>
+          <ControlButton toolTip="Skip" onClick={skip}>
             <ForwardIcon className="w-6 h-6 text-gray-600" />
           </ControlButton>
         </div>
