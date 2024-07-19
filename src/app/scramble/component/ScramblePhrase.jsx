@@ -7,17 +7,13 @@ import { useAppContext } from "../../context/AppContext";
 import { BackspaceIcon } from "@heroicons/react/24/outline";
 
 export const ScramblePhrase = () => {
-  const { isSrcRtl, isTargetRtl } = useAppContext();
+  const { isTargetRtl } = useAppContext();
 
   const { readAloud_target, randomPermutation, splitIntoSubSentences } =
     useSpeechSynthesis();
 
   const {
-    currentPhraseIndex,
     increasePhraseIndex,
-    playPause,
-    skip,
-    phrases,
     currentPhrase,
     isPlaying,
     userBuffer,
@@ -30,6 +26,8 @@ export const ScramblePhrase = () => {
   const [numberOfWordClicked, setNumberOfWordClicked] = useState(0);
   const [currentSentence, setCurrentSentence] = useState("");
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
+
+  ////////////////////////////////////////////////////////////////
 
   const scrambleSentence = () => {
     if (!currentPhrase) return;
@@ -46,10 +44,13 @@ export const ScramblePhrase = () => {
     // Clear user buffer and display area
     setUserBuffer("");
   };
+  ////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     scrambleSentence();
   }, [currentPhrase]);
+
+  ////////////////////////////////////////////////////////////////
 
   function getCurrentUserBuffer() {
     return userBuffer
@@ -57,6 +58,7 @@ export const ScramblePhrase = () => {
       .replace(/punctuation/g, "")
       .toLocaleLowerCase();
   }
+  ////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     if (numberOfWordClicked === 0) return;
@@ -77,12 +79,14 @@ export const ScramblePhrase = () => {
     }
   }, [numberOfWordClicked]);
 
+  ////////////////////////////////////////////////////////////////
   const handleWordClick = async (word) => {
     setNumberOfWordClicked(numberOfWordClicked + 1);
     setUserBuffer(userBuffer + " " + word);
     await readAloud_target(word, 1.25);
   };
 
+  ////////////////////////////////////////////////////////////////
   const playPartOfSentence = async () => {
     const text = currentPhrase.target.toLocaleLowerCase();
     const subSentenceList = splitIntoSubSentences(text);
@@ -94,6 +98,7 @@ export const ScramblePhrase = () => {
     }
   };
 
+  ////////////////////////////////////////////////////////////////
   function deleteLastWord_helper(str) {
     const lastSpaceIndex = str.lastIndexOf(" ");
     if (lastSpaceIndex !== -1) {
@@ -103,6 +108,7 @@ export const ScramblePhrase = () => {
       return "";
     }
   }
+  ////////////////////////////////////////////////////////////////
   function deleteWord() {
     if (numberOfWordClicked <= 0) return;
     setNumberOfWordClicked(numberOfWordClicked - 1);
