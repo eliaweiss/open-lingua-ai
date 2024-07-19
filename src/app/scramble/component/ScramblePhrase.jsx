@@ -3,16 +3,8 @@ import { useScrambleContext } from "../context/ScrambleContext";
 import { useEffect, useState } from "react";
 
 export const ScramblePhrase = () => {
-  const {
-    readAloud_slow_target,
-    readAloud_target,
-    readAloud_src,
-    waitForSeconds,
-    randomPermutation,
-    cancel,
-  } = useSpeechSynthesis();
+  const { readAloud_target, randomPermutation } = useSpeechSynthesis();
 
-  const [scrambledWords, setScrambledWords] = useState([]);
   const {
     currentPhraseIndex,
     playPause,
@@ -24,10 +16,17 @@ export const ScramblePhrase = () => {
     setUserBuffer,
   } = useScrambleContext();
 
+  const [scrambledWords, setScrambledWords] = useState([]);
+  const [numberOfWordClicked, setNumberOfWordClicked] = useState(0);
+  const [currentSentence, setCurrentSentence] = useState("");
+  const [showSuccessNotice, setShowSuccessNotice] = useState(false);
+
   const scrambleSentence = () => {
     if (!currentPhrase) return;
     // Get the current Portuguese sentence
     const { words, currentSentence } = splitToWords(currentPhrase.target); // Split into words
+
+    setCurrentSentence(currentSentence);
 
     // Randomly scramble the words
     const scrambledWordsTmp = removeDuplicates(randomPermutation(words));
@@ -42,7 +41,30 @@ export const ScramblePhrase = () => {
     scrambleSentence();
   }, [currentPhrase]);
 
+  function getCurrentUserBuffer() {
+    return userBuffer
+      .trim()
+      .replace(/punctuation/g, "")
+      .toLocaleLowerCase();
+  }
+
+  useEffect(() => {
+    if (numberOfWordClicked == scrambledWords.length) {
+      // Check if user buffer matches the original sentence (excluding punctuation)
+      if (getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()) {
+        // console.log("Correct! Move to next sentence.");
+        // document.querySelector("#scrambled-result").classList.remove("hidden"); // Toggle hidden class
+        // moveToNextSentence();
+      } else {
+        setUserBuffer(""); // Reset user buffer for next sentence
+        setNumberOfWordClicked(0);
+        // setTimeout(playScrambledSentence, 1000);
+      }
+    }
+  }, [numberOfWordClicked]);
+
   const handleWordClick = async (word) => {
+    setNumberOfWordClicked(numberOfWordClicked + 1);
     setUserBuffer(userBuffer + " " + word);
     await readAloud_target(word, 1.25);
   };
@@ -51,6 +73,7 @@ export const ScramblePhrase = () => {
   return (
     <div className="flex flex-col">
       <div className="flex flex-wrap  space-x-2">
+        {showSuccessNotice && <div className=""></div>}
         {scrambledWords.map((word, index) => (
           <WordButton key={index} onClick={() => handleWordClick(word)}>
             {word}
