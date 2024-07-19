@@ -30,6 +30,8 @@ export const PlaySentenceProvider = ({ children }) => {
 
   const doExerciseLoop = async () => {
     if (!isPlayingRef.current) return;
+    const nowPlayingPhrase = phrases[currentPhraseIndex];
+    setCurrentPhrase(nowPlayingPhrase);
 
     try {
       console.log(
@@ -38,22 +40,22 @@ export const PlaySentenceProvider = ({ children }) => {
           "/" +
           phrases.length +
           " - " +
-          phrases[currentPhraseIndex].src
+          nowPlayingPhrase.src
       );
 
-      await readAloud_target(phrases[currentPhraseIndex].target);
+      await readAloud_target(nowPlayingPhrase.target);
       if (!isPlayingRef.current) return;
       await waitForSeconds(2);
       if (!isPlayingRef.current) return;
 
-      await readAloud_slow_target(phrases[currentPhraseIndex].target);
+      await readAloud_slow_target(nowPlayingPhrase.target);
       if (!isPlayingRef.current) return;
 
       await waitForSeconds(1);
       if (!isPlayingRef.current) return;
 
-      if (phrases[currentPhraseIndex].src) {
-        await readAloud_src(phrases[currentPhraseIndex].src);
+      if (nowPlayingPhrase.src) {
+        await readAloud_src(nowPlayingPhrase.src);
         await waitForSeconds(1);
       }
       if (!isPlayingRef.current) return;
