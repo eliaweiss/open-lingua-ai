@@ -2,8 +2,10 @@ import { createContext, useState, useContext, useEffect } from "react";
 
 const AppContext = createContext();
 
-export const AppProvider = ({ isMenuOpen, setIsMenuOpen,theme, setTheme, children }) => {
+export const AppProvider = ({ children }) => {
   const [exercises, setExercises] = useState([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("dark");
 
   const saveExercise = (exercise) => {
     setExercises((prevExercises) => {
@@ -46,7 +48,5 @@ export const AppProvider = ({ isMenuOpen, setIsMenuOpen,theme, setTheme, childre
     </AppContext.Provider>
   );
 };
-
-
 
 export const useAppContext = () => useContext(AppContext);
