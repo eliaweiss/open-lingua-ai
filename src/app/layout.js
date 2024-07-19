@@ -53,7 +53,9 @@ const AppWrapper = ({ children }) => {
             </button>
           )}
         </header>
-        <div className="p-4">{children}</div>
+        <div className="p-4 h-screen" onClick={() => setIsMenuOpen(false)}>
+          {children}
+        </div>
       </main>
     </div>
   );
