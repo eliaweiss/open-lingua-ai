@@ -1,6 +1,12 @@
+import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
+import ControlButton from "../../components/ControlButton";
 import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 import { useScrambleContext } from "../context/ScrambleContext";
 import { useEffect, useState } from "react";
+import {
+  readAloud_helper,
+  splitIntoSubSentences,
+} from "../../tts-service/SpeechSynthesisService";
 
 export const ScramblePhrase = () => {
   const { readAloud_target, randomPermutation } = useSpeechSynthesis();
@@ -68,7 +74,16 @@ export const ScramblePhrase = () => {
     setUserBuffer(userBuffer + " " + word);
     await readAloud_target(word, 1.25);
   };
-  console.log("userBuffer", userBuffer);
+
+  const playPartOfSentence = async () => {
+    const subSentenceList = splitIntoSubSentences(currentSentence);
+    for (let subSentence of subSentenceList) {
+      await readAloud_target(subSentence);
+      if (!getCurrentUserBuffer().includes(subSentence)) {
+        break;
+      }
+    }
+  };
 
   return (
     <div className="flex flex-col">
@@ -82,7 +97,12 @@ export const ScramblePhrase = () => {
       </div>
       <div className="">{userBuffer}</div>
       <div className="">
-        
+        <ControlButton
+          toolTip="Play Part of sentence"
+          onClick={playPartOfSentence}
+        >
+          <ChevronDoubleRightIcon className="w-6 h-6 text-gray-600 " />
+        </ControlButton>
       </div>
     </div>
   );

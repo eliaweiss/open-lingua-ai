@@ -22,7 +22,7 @@ async function readAloud_slow(text, lang) {
 }
 
 async function readAloud(text, lang, rate) {
-  if (!rate) rate = 1
+  if (!rate) rate = 1;
   const groups = splitIntoSubSentences(text);
   for (const sentence of groups) {
     await readAloud_helper(sentence, lang, rate);
@@ -36,7 +36,9 @@ function myTimer() {
   myTimeout = setTimeout(myTimer, sleepTime);
 }
 
-async function readAloud_helper(text, lang, rate = 1) {
+async function readAloud_helper(text, lang, rate) {
+  if (!rate) rate = 1;
+  
   return new Promise((resolve, reject) => {
     try {
       const utterance = new SpeechSynthesisUtterance(text);
@@ -91,4 +93,12 @@ function cancel() {
   window.speechSynthesis.cancel();
 }
 
-export { readAloud_slow, readAloud, waitForSeconds, randomPermutation, cancel };
+export {
+  readAloud_slow,
+  readAloud,
+  waitForSeconds,
+  randomPermutation,
+  cancel,
+  splitIntoSubSentences,
+  readAloud_helper,
+};
