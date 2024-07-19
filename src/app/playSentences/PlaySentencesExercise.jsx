@@ -1,16 +1,31 @@
 import TooltipWrapper from "../components/TooltipWrapper";
+import { useAppContext } from "../context/AppContext";
 import { usePlaySentenceContext } from "./context/PlaySentenceContext";
 import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; // or '@heroicons/react/24/outline'
 
 export const PlaySentencesExercise = () => {
-  const { state, playPause, skip, phrases } = usePlaySentenceContext();
+  const { isSrcRtl, isTargetRtl } = useAppContext();
+  const { state, playPause, skip, phrases, currentPhrase } =
+    usePlaySentenceContext();
   const { totalSentences, playedSentences, isPlaying } = state;
 
   return (
     <div className="flex flex-col justify-center items-center text-center w-full">
-      <div className="font-bold text-xl">Play Sentences in a loop</div>
+      <div className="font-bold text-xl text-[#808080]">
+        Play Sentences in a loop
+      </div>
 
-      {/* Button Row */}
+      {/* Exercise Panel */}
+      <div className="flex flex-col space-y-4 mt-4">
+        <div className={`text-2xl ${isSrcRtl ? "text-right" : "text-left"}`}>
+          {currentPhrase?.target}
+        </div>
+        <div className={`text-2xl ${isTargetRtl ? "text-right" : "text-left"}`}>
+          {currentPhrase?.src}
+        </div>
+      </div>
+
+      {/* Button Panel */}
       <div className="flex space-x-4 mt-4">
         <button
           onClick={playPause}
@@ -34,7 +49,7 @@ export const PlaySentencesExercise = () => {
         </button>
       </div>
 
-      {/* Statistic Row */}
+      {/* Statistic Panel */}
       <div className="mt-4 flex flex-col items-center">
         <TooltipWrapper text="played-sentences/total-sentences">
           <div className="text-sm">

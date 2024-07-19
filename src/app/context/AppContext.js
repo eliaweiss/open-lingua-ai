@@ -25,6 +25,9 @@ export const AppProvider = ({ children }) => {
     myLocalStorage.get("targetLanguageRate", 1)
   );
 
+  const [isSrcRtl, setIsSrcRtl] = useState(false);
+  const [isTargetRtl, setIsTargetRtl] = useState(false);
+
   const saveExercise = (exercise) => {
     setExercises((prevExercises) => {
       const updatedExercises = [...prevExercises, exercise];
@@ -79,6 +82,8 @@ export const AppProvider = ({ children }) => {
         targetLanguage,
         sourceLanguageRate,
         targetLanguageRate,
+        isSrcRtl,
+        isTargetRtl,
         phrases,
         setPhrases,
         isMenuOpen,
