@@ -3,8 +3,9 @@ import TooltipWrapper from "../components/TooltipWrapper";
 import { useAppContext } from "../context/AppContext";
 import { useScrambleContext } from "./context/ScrambleContext";
 import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; // or '@heroicons/react/24/outline'
+import { ScramblePhrase } from "./component/ScramblePhrase";
 
-export const ScramblesExercise = () => {
+export const ScrambleExercise = () => {
   const { isSrcRtl, isTargetRtl } = useAppContext();
   const {
     currentPhraseIndex,
@@ -20,16 +21,16 @@ export const ScramblesExercise = () => {
       <div className="text-left">
         <div className=" text-[#222223] text-sm">Exercise:</div>
         <div className="font-bold text-xl text-[#808080]">
-          Play Sentences in a loop
+          Rebuild a scrambled phrase
         </div>
       </div>
       <HorizontalRule />
 
       {/* Exercise Panel */}
       <div className="flex flex-col space-y-4 mt-4 text-3xl">
-        <div className={`${isSrcRtl ? "text-right" : "text-left"}`}>
+        {/* <div className={`${isSrcRtl ? "text-right" : "text-left"}`}>
           {currentPhrase?.target}
-        </div>
+        </div> */}
         <div
           className={`text-[#808080] ${
             isTargetRtl ? "text-right" : "text-left"
@@ -37,6 +38,7 @@ export const ScramblesExercise = () => {
         >
           {currentPhrase?.src}
         </div>
+        <ScramblePhrase />
       </div>
       <HorizontalRule />
 

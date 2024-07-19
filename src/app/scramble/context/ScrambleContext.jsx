@@ -16,8 +16,11 @@ export const ScrambleProvider = ({ children }) => {
   } = useSpeechSynthesis();
   const [phrases, setPhrases] = useState(randomPermutation(appPhrase));
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [currentPhrase, setCurrentPhrase] = useState(currentPhraseIndex);
+  const [currentPhrase, setCurrentPhrase] = useState(
+    phrases[currentPhraseIndex]
+  );
   const [isPlaying, setIsPlaying] = useState(false);
+  const [userBuffer, setUserBuffer] = useState("");
   const isPlayingRef = useRef(isPlaying);
 
   useEffect(() => {
@@ -110,6 +113,8 @@ export const ScrambleProvider = ({ children }) => {
         currentPhrase,
         currentPhraseIndex,
         isPlaying,
+        userBuffer,
+        setUserBuffer,
       }}
     >
       {children}
