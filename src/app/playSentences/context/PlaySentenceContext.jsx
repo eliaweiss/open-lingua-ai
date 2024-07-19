@@ -71,6 +71,8 @@ export const PlaySentenceProvider = ({ children }) => {
   useEffect(() => {
     if (isPlaying) {
       doExerciseLoop();
+    } else {
+      cancel();
     }
   }, [isPlaying, currentPhraseIndex]);
 
