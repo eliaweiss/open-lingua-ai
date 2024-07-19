@@ -64,6 +64,7 @@ export const ScramblePhrase = () => {
     if (numberOfWordClicked == scrambledWords.length) {
       // Check if user buffer matches the original sentence (excluding punctuation)
       if (getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()) {
+        setScrambledWords([]);
         setShowSuccessNotice(true);
         setTimeout(() => {
           increasePhraseIndex();
@@ -71,7 +72,6 @@ export const ScramblePhrase = () => {
         }, 1000);
       }
 
-      setScrambledWords([]);
       setUserBuffer(""); // Reset user buffer for next sentence
       setNumberOfWordClicked(0);
     }
