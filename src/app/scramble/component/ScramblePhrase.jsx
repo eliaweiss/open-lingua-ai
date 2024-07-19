@@ -135,15 +135,20 @@ export const ScramblePhrase = () => {
         {userBuffer}
       </div>
       <div className="flex space-x-2 my-5 justify-center">
-        <ControlButton toolTip="Backspace" onClick={deleteWord}>
-          <BackspaceIcon className="w-6 h-6 text-gray-600 " />
-        </ControlButton>
-
         <ControlButton
           toolTip="Play Part of sentence"
           onClick={playPartOfSentence}
+          className="p-4 rounded-lg border  hover:bg-[#bbbbbb4f] border-white"
         >
-          <ChevronDoubleRightIcon className="w-6 h-6 text-gray-600 " />
+          <ChevronDoubleRightIcon className="w-6 h-6 " />
+        </ControlButton>
+
+        <ControlButton
+          toolTip="Backspace"
+          onClick={deleteWord}
+          className="p-4 rounded-lg border  hover:bg-[#bbbbbb4f] border-white"
+        >
+          <BackspaceIcon className="w-6 h-6 " />
         </ControlButton>
       </div>
     </div>

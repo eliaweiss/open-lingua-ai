@@ -48,13 +48,13 @@ export const ScrambleExercise = () => {
         <div className="flex space-x-4 mt-4 border border-[#020689] rounded-lg p-4">
           <ControlButton toolTip="Play/Pause" onClick={playPause}>
             {isPlaying ? (
-              <PauseIcon className="w-6 h-6 text-gray-600 " />
+              <PauseIcon className="w-6 h-6  " />
             ) : (
-              <PlayIcon className="w-6 h-6 text-gray-600 " />
+              <PlayIcon className="w-6 h-6  " />
             )}
           </ControlButton>
           <ControlButton toolTip="Skip" onClick={skip}>
-            <ForwardIcon className="w-6 h-6 text-gray-600" />
+            <ForwardIcon className="w-6 h-6 " />
           </ControlButton>
         </div>
         {isPlaying && <div>Playing ...</div>}
