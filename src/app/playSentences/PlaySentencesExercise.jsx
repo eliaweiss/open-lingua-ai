@@ -1,3 +1,4 @@
+import TooltipWrapper from "../components/TooltipWrapper";
 import { usePlaySentenceContext } from "./context/PlaySentenceContext";
 import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; // or '@heroicons/react/24/outline'
 
@@ -15,34 +16,31 @@ export const PlaySentencesExercise = () => {
           onClick={playPause}
           className="relative p-2 hover:bg-gray-200 rounded-full group"
         >
-          {isPlaying ? (
-            <PauseIcon className="w-6 h-6 text-gray-600  opacity-100 group-hover:opacity-0 transition-opacity" />
-          ) : (
-            <PlayIcon className="w-6 h-6 text-gray-600  opacity-100 group-hover:opacity-0 transition-opacity" />
-          )}
-          <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
-            {isPlaying ? "Pause" : "Play"}
-          </span>
+          <TooltipWrapper text="Play/Pause">
+            {isPlaying ? (
+              <PauseIcon className="w-6 h-6 text-gray-600 " />
+            ) : (
+              <PlayIcon className="w-6 h-6 text-gray-600 " />
+            )}
+          </TooltipWrapper>
         </button>
         <button
           onClick={skip}
           className="relative p-2 hover:bg-gray-200 rounded-full group"
         >
-          <ForwardIcon className="w-6 h-6 text-gray-600 opacity-100 group-hover:opacity-0 transition-opacity" />
-          <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
-            Skip
-          </span>
+          <TooltipWrapper text="Skip">
+            <ForwardIcon className="w-6 h-6 text-gray-600" />
+          </TooltipWrapper>
         </button>
       </div>
 
       {/* Statistic Row */}
-      <div className="relative mt-4 flex flex-col items-center">
-        <div className="text-sm">
-          {playedSentences}/{totalSentences}
-        </div>
-        <div className="absolute inset-0 text-xs text-gray-500 mt-1 hover:text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity">
-          Hover to explain statistics
-        </div>
+      <div className="mt-4 flex flex-col items-center">
+        <TooltipWrapper text="played-sentences/total-sentences">
+          <div className="text-sm">
+            {playedSentences}/{totalSentences}
+          </div>
+        </TooltipWrapper>
       </div>
     </div>
   );
