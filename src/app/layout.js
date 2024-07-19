@@ -34,7 +34,7 @@ const AppWrapper = ({ children }) => {
       } `}
     >
       <aside
-        className={`md:w-64 fixed top-0 left-0 h-full transition-all duration-300 ${
+        className={`z-50 md:w-64 fixed top-0 left-0 h-full transition-all duration-300 ${
           isMenuOpen ? "w-64" : "w-0"
         }  ${theme === "dark" ? "bg-black" : "bg-[#d7dfed]"}`}
       >

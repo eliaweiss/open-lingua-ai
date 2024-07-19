@@ -28,13 +28,13 @@ export const ScrambleProvider = ({ children }) => {
   }, [isPlaying]);
 
   const playSentence = () => {
-    readAloud_target(currentPhrase.target);
+    setIsPlaying(true);
   };
 
   useEffect(() => {
     if (!currentPhrase) return;
-    playSentence();
-  }, [currentPhraseIndex]);
+    readAloud_target(currentPhrase.target);
+  }, [isPlaying, currentPhraseIndex]);
 
   function increasePhraseIndex() {
     let nextIndex = currentPhraseIndex + 1;
