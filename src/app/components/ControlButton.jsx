@@ -1,6 +1,6 @@
 import TooltipWrapper from "./TooltipWrapper";
 
-export const ControlButton = ({ toolTip, onClick, children }) => {
+const ControlButton = ({ toolTip, onClick, children }) => {
   return (
     <button
       onClick={onClick}
@@ -10,3 +10,5 @@ export const ControlButton = ({ toolTip, onClick, children }) => {
     </button>
   );
 };
+
+export default ControlButton;
