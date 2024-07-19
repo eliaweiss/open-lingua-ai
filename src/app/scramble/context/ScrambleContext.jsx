@@ -32,7 +32,7 @@ export const ScrambleProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (!currentPhrase) return;
+    if (!currentPhrase || !isPlaying) return;
     readAloud_target(currentPhrase.target);
   }, [isPlaying, currentPhraseIndex]);
 

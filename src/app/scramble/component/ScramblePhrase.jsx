@@ -28,6 +28,7 @@ export const ScramblePhrase = () => {
   } = useScrambleContext();
 
   const [scrambledWords, setScrambledWords] = useState([]);
+  const [words, setWords] = useState([]);
   const [numberOfWordClicked, setNumberOfWordClicked] = useState(0);
   const [currentSentence, setCurrentSentence] = useState("");
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
@@ -36,7 +37,7 @@ export const ScramblePhrase = () => {
     if (!currentPhrase) return;
     // Get the current Portuguese sentence
     const { words, currentSentence } = splitToWords(currentPhrase.target); // Split into words
-
+    setWords(words);
     setCurrentSentence(currentSentence);
 
     // Randomly scramble the words
@@ -61,7 +62,8 @@ export const ScramblePhrase = () => {
 
   useEffect(() => {
     if (numberOfWordClicked === 0) return;
-    if (numberOfWordClicked == scrambledWords.length) {
+    // console.log("numberOfWordClicked", numberOfWordClicked);
+    if (numberOfWordClicked == words.length) {
       // Check if user buffer matches the original sentence (excluding punctuation)
       if (getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()) {
         setScrambledWords([]);
@@ -117,11 +119,12 @@ export const ScramblePhrase = () => {
             Correct! Move to next sentence...
           </div>
         )}
-        {scrambledWords.map((word, index) => (
-          <WordButton key={index} onClick={() => handleWordClick(word)}>
-            {word}
-          </WordButton>
-        ))}
+        {isPlaying &&
+          scrambledWords.map((word, index) => (
+            <WordButton key={index} onClick={() => handleWordClick(word)}>
+              {word}
+            </WordButton>
+          ))}
       </div>
       <div className={`${isTargetRtl ? "text-right" : "text-left"}`}>
         {userBuffer}
