@@ -24,7 +24,7 @@ export function NavMenu({}) {
           <MenuItem href="/exercise2">Exercise 2</MenuItem>
           <MenuItem href="/settings">Settings</MenuItem>
           <MenuItem>
-            <ThemeToggle />
+            <ThemeToggle className="" />
           </MenuItem>
         </ul>
       </nav>
@@ -38,7 +38,7 @@ function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2"
+      className="p-2 w-full"
     >
       {theme === "dark" ? (
         <SunIcon className="h-6 w-6 text-yellow-500" />
