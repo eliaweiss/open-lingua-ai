@@ -7,8 +7,12 @@ import {
   readAloud_helper,
   splitIntoSubSentences,
 } from "../../tts-service/SpeechSynthesisService";
+import { useAppContext } from "../../context/AppContext";
+import { BackspaceIcon } from "@heroicons/react/24/outline";
 
 export const ScramblePhrase = () => {
+  const { isSrcRtl, isTargetRtl } = useAppContext();
+
   const { readAloud_target, randomPermutation } = useSpeechSynthesis();
 
   const {
@@ -85,6 +89,21 @@ export const ScramblePhrase = () => {
     }
   };
 
+  function deleteLastWord_helper(str) {
+    const lastSpaceIndex = str.lastIndexOf(" ");
+    if (lastSpaceIndex !== -1) {
+      return str.slice(0, lastSpaceIndex);
+    } else {
+      // Handle case where there's no space (single word sentence)
+      return "";
+    }
+  }
+  function deleteWord() {
+    if (numberOfWordClicked <= 0) return;
+    setNumberOfWordClicked(numberOfWordClicked - 1);
+    setUserBuffer(deleteLastWord_helper(userBuffer.trim()));
+  }
+
   return (
     <div className="flex flex-col">
       <div className="flex flex-wrap  space-x-2">
@@ -95,8 +114,14 @@ export const ScramblePhrase = () => {
           </WordButton>
         ))}
       </div>
-      <div className="">{userBuffer}</div>
-      <div className="">
+      <div className={`${isTargetRtl ? "text-right" : "text-left"}`}>
+        {userBuffer}
+      </div>
+      <div className="flex space-x-2 my-5 justify-center">
+        <ControlButton toolTip="Backspace" onClick={deleteWord}>
+          <BackspaceIcon className="w-6 h-6 text-gray-600 " />
+        </ControlButton>
+
         <ControlButton
           toolTip="Play Part of sentence"
           onClick={playPartOfSentence}
