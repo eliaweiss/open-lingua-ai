@@ -10,31 +10,19 @@ const LANGUAGE = {
 export const AppProvider = ({ children }) => {
   const [exercises, setExercises] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState(
-    typeof window !== "undefined"
-      ? myLocalStorage.get("theme", "dark")
-      : "light"
-  );
+  const [theme, setTheme] = useState(myLocalStorage.get("theme", "dark"));
   const [phrases, setPhrases] = useState([]);
   const [sourceLanguage, setSourceLanguage] = useState(
-    typeof window !== "undefined"
-      ? myLocalStorage.get("sourceLanguage", LANGUAGE.EN_US)
-      : LANGUAGE.EN_US
+    myLocalStorage.get("sourceLanguage", LANGUAGE.EN_US)
   );
   const [targetLanguage, setTargetLanguage] = useState(
-    typeof window !== "undefined"
-      ? myLocalStorage.get("targetLanguage", LANGUAGE.PT_BR)
-      : LANGUAGE.PT_BR
+    myLocalStorage.get("targetLanguage", LANGUAGE.PT_BR)
   );
   const [sourceLanguageRate, setSourceLanguageRate] = useState(
-    typeof window !== "undefined"
-      ? myLocalStorage.get("sourceLanguageRate", 1)
-      : 1
+    myLocalStorage.get("sourceLanguageRate", 1)
   );
   const [targetLanguageRate, setTargetLanguageRate] = useState(
-    typeof window !== "undefined"
-      ? myLocalStorage.get("targetLanguageRate", 1)
-      : 1
+    myLocalStorage.get("targetLanguageRate", 1)
   );
 
   const [isSrcRtl, setIsSrcRtl] = useState(false);
@@ -43,35 +31,26 @@ export const AppProvider = ({ children }) => {
   const saveExercise = (exercise) => {
     setExercises((prevExercises) => {
       const updatedExercises = [...prevExercises, exercise];
-      if (typeof window !== "undefined") {
-        storage.set("exercises", updatedExercises);
-      }
+      storage.set("exercises", updatedExercises);
       return updatedExercises;
     });
   };
 
   const loadExercises = () => {
-    if (typeof window !== "undefined") {
-      storage.get("exercises", []).then((exercises) => {
-        setExercises(exercises);
-      });
-    }
+    const storedExercises = storage.get("exercises", []).then((exercises) => {
+      setExercises(storedExercises);
+    });
   };
 
   const saveTheme = (theme) => {
-    if (typeof window !== "undefined") {
-      storage.set("theme", theme);
-    }
+    storage.set("theme", theme);
   };
 
   const loadTheme = () => {
-    if (typeof window !== "undefined") {
-      storage.get("theme", "dark").then((storedTheme) => {
-        setTheme(storedTheme);
-      });
-    }
+    storage.get("theme", "dark").then((storedTheme) => {
+      setTheme(storedTheme);
+    });
   };
-
   const loadPhrase = async () => {
     const src_target = `${sourceLanguage}.${targetLanguage}`;
     const phrases = (await import(`../../data/phrases.${src_target}.js`))
@@ -123,7 +102,6 @@ export const useAppContext = () => useContext(AppContext);
 // Utility functions for local storage operations
 const myLocalStorage = {
   get: (key, defaultValue = []) => {
-    if (typeof window === "undefined") return defaultValue;
     const storedValue = localStorage.getItem(key);
     if (!storedValue) {
       return defaultValue;
@@ -131,14 +109,10 @@ const myLocalStorage = {
     return storedValue ? JSON.parse(storedValue) : defaultValue;
   },
   set: (key, value) => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem(key, JSON.stringify(value));
-    }
+    localStorage.setItem(key, JSON.stringify(value));
   },
   remove: (key) => {
-    if (typeof window !== "undefined") {
-      localStorage.removeItem(key);
-    }
+    localStorage.removeItem(key);
   },
 };
 // Utility functions for local storage operations
