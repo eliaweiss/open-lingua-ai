@@ -16,9 +16,9 @@ export const PlaySentencesExercise = () => {
           className="relative p-2 hover:bg-gray-200 rounded-full group"
         >
           {isPlaying ? (
-            <PauseIcon className="w-6 h-6 text-gray-600" />
+            <PauseIcon className="w-6 h-6 text-gray-600  opacity-100 group-hover:opacity-0 transition-opacity" />
           ) : (
-            <PlayIcon className="w-6 h-6 text-gray-600" />
+            <PlayIcon className="w-6 h-6 text-gray-600  opacity-100 group-hover:opacity-0 transition-opacity" />
           )}
           <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
             {isPlaying ? "Pause" : "Play"}
@@ -28,7 +28,7 @@ export const PlaySentencesExercise = () => {
           onClick={skip}
           className="relative p-2 hover:bg-gray-200 rounded-full group"
         >
-          <ForwardIcon className="w-6 h-6 text-gray-600" />
+          <ForwardIcon className="w-6 h-6 text-gray-600 opacity-100 group-hover:opacity-0 transition-opacity" />
           <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
             Skip
           </span>
