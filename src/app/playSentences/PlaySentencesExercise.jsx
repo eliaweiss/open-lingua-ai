@@ -6,9 +6,16 @@ import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; //
 
 export const PlaySentencesExercise = () => {
   const { isSrcRtl, isTargetRtl } = useAppContext();
-  const { state, playPause, skip, phrases, currentPhrase } =
-    usePlaySentenceContext();
-  const { totalSentences, playedSentences, isPlaying } = state;
+  const {
+    state,
+    playPause,
+    skip,
+    phrases,
+    currentPhrase,
+    isPlaying,
+    setIsPlaying,
+  } = usePlaySentenceContext();
+  const { totalSentences, playedSentences } = state;
 
   return (
     <div className="flex flex-col justify-center items-center text-center w-full">

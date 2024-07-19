@@ -17,21 +17,22 @@ export const PlaySentenceProvider = ({ children }) => {
   } = useSpeechSynthesis();
   const [phrases, setPhrases] = useState(randomPermutation(appPhrase));
   const [currentPhrase, setCurrentPhrase] = useState(phrases[0]);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [state, setState] = useState({
     playedSentences: 0,
-    isPlaying: false,
   });
 
-  const doExerciseLoop = () => {
-    readAloud_target(currentPhrase.target);
+  const doExerciseLoop = async () => {
+    await readAloud_target(currentPhrase.target);
+    setIsPlaying(false);
   };
 
   const playPause = () => {
-    setState((prevState) => ({
-      ...prevState,
-      isPlaying: !prevState.isPlaying,
-    }));
-    doExerciseLoop();
+    const newIsPlaying = !state.isPlaying;
+    setIsPlaying(newIsPlaying);
+    if (newIsPlaying) {
+      doExerciseLoop();
+    }
   };
 
   const skip = () => {
@@ -61,6 +62,8 @@ export const PlaySentenceProvider = ({ children }) => {
         currentPhrase,
         setCurrentPhrase,
         setPhrases,
+        isPlaying,
+        setIsPlaying,
       }}
     >
       {children}
