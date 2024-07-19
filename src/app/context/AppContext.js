@@ -2,11 +2,18 @@ import { createContext, useState, useContext, useEffect } from "react";
 
 const AppContext = createContext();
 
+const LANGUAGE = {
+  EN_US: "en-US",
+  PT_BR: "pt-BR",
+};
+
 export const AppProvider = ({ children }) => {
   const [exercises, setExercises] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState(myLocalStorage.get("theme", "dark"));
   const [phrases, setPhrases] = useState([]);
+  const [sourceLanguage, setSourceLanguage] = useState(LANGUAGE.EN_US);
+  const [targetLanguage, setTargetLanguage] = useState(LANGUAGE.PT_BR);
 
   const saveExercise = (exercise) => {
     setExercises((prevExercises) => {
@@ -32,7 +39,9 @@ export const AppProvider = ({ children }) => {
     });
   };
   const loadPhrase = async () => {
-    const phrases = (await import("../../data/phrases.js")).default;
+    const src_target = `${sourceLanguage}.${targetLanguage}`;
+    const phrases = (await import(`../../data/phrases.${src_target}.js`))
+      .default;
     console.log("loadPhrase", phrases.length);
     setPhrases(phrases);
   };
