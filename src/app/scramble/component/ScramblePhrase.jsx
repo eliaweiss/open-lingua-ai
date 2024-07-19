@@ -112,7 +112,7 @@ export const ScramblePhrase = () => {
     <div className="flex flex-col">
       <div className="flex flex-wrap  space-x-2">
         {showSuccessNotice && (
-          <div className="fixed top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white text-3xl text-[#2d0397] font-bold border-2 border-[#2d0397] p-2 rounded-lg">
+          <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white text-3xl text-[#2d0397] font-bold border-2 border-[#2d0397] p-2 rounded-lg">
             Correct! Move to next sentence...
           </div>
         )}
