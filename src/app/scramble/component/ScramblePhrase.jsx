@@ -21,8 +21,6 @@ export const ScramblePhrase = () => {
     increasePhraseIndex,
     currentPhrase,
     isPlaying,
-    userBuffer,
-    addToUserBuffer,
     resetUserBuffer,
     isReading,
     playSentence,
@@ -31,6 +29,7 @@ export const ScramblePhrase = () => {
     deleteWord,
     getCurrentUserBuffer,
     getCurrentUserBufferArray,
+    handleWordClick,
   } = useScrambleContext();
 
   const [scrambledWords, setScrambledWords] = useState([]);
@@ -92,13 +91,7 @@ export const ScramblePhrase = () => {
     }
   }, [numberOfWordClicked]);
 
-  ////////////////////////////////////////////////////////////////
-  const handleWordClick = async ({ word, newUserBuffer }) => {
-    if (!newUserBuffer) newUserBuffer = userBuffer;
-    setNumberOfWordClicked(numberOfWordClicked + 1);
-    addToUserBuffer({ word, newUserBuffer });
-    await readAloud_target(word, 1.25);
-  };
+
 
   ////////////////////////////////////////////////////////////////
   const playPartOfSentence = async () => {

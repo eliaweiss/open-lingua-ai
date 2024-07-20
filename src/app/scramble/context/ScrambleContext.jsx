@@ -74,6 +74,14 @@ export const ScrambleProvider = ({ children }) => {
       .replace(/punctuation/g, "")
       .toLocaleLowerCase();
   }
+
+  ////////////////////////////////////////////////////////////////
+  const handleWordClick = async ({ word, newUserBuffer }) => {
+    if (!newUserBuffer) newUserBuffer = userBuffer;
+    setNumberOfWordClicked(numberOfWordClicked + 1);
+    addToUserBuffer({ word, newUserBuffer });
+    await readAloud_target(word, 1.25);
+  };
   return (
     <ScrambleContext.Provider
       value={{
@@ -94,6 +102,7 @@ export const ScrambleProvider = ({ children }) => {
         deleteWord,
         getCurrentUserBuffer,
         getCurrentUserBufferArray,
+        handleWordClick,
       }}
     >
       {children}
