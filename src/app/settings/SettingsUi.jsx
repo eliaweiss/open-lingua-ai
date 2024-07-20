@@ -5,7 +5,8 @@ import ThemeToggle from "../components/ThemeToggle";
 import { useAppContext } from "../context/AppContext";
 
 export function SettingsUi() {
-  const { theme, toggleTheme, phraseRange, setPhraseRange } = useAppContext();
+  const { theme, toggleTheme, phraseRange, setPhraseRange, phrases } =
+    useAppContext();
 
   const handleRangeChange = (event) => {
     const { name, value } = event.target;
@@ -14,7 +15,8 @@ export function SettingsUi() {
       if (name === "start") {
         newRange[0] = Number(value);
       } else {
-        newRange[1] = Number(value);
+        const val = Math.min(phrases.length, value);
+        newRange[1] = Number(val);
       }
       return newRange;
     });
