@@ -7,6 +7,8 @@ const LANGUAGE = {
   PT_BR: "pt-BR",
 };
 
+const todayStartTime = () => new Date().setHours(0, 0, 0, 0); // Midnight of the current day
+
 export const AppProvider = ({ children }) => {
   const [exercises, setExercises] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,17 +30,45 @@ export const AppProvider = ({ children }) => {
   const [targetLanguageRate, setTargetLanguageRate] = useState(
     myLocalStorage.get("targetLanguageRate", 1)
   );
-
   const [isSrcRtl, setIsSrcRtl] = useState(false);
   const [isTargetRtl, setIsTargetRtl] = useState(false);
 
-  const saveExercise = (exercise) => {
-    setExercises((prevExercises) => {
-      const updatedExercises = [...prevExercises, exercise];
-      storage.set("exercises", updatedExercises);
-      return updatedExercises;
-    });
+  ////////////////////////////////////////////////////////////////
+  // daily count
+  const [dailyCount, setDailyCount] = useState(
+    myLocalStorage.get("dailyCount", 0)
+  );
+
+  const [currentDaytimeStamp, setCurrentDaytimeStamp] = useState(
+    myLocalStorage.get("currentDaytimeStamp", todayStartTime())
+  );
+
+  // Function to check if the stored timestamp is for today
+  const isSameDay = (timestamp1, timestamp2) => {
+    const date1 = new Date(timestamp1);
+    const date2 = new Date(timestamp2);
+    return date1.toDateString() === date2.toDateString();
   };
+
+  useEffect(() => {
+    const todayTimestamp = todayStartTime();
+
+    if (!isSameDay(todayTimestamp, currentDaytimeStamp)) {
+      // Reset the count if the current timestamp is not the same day as stored timestamp
+      setDailyCount(0);
+      setCurrentDaytimeStamp(todayTimestamp);
+      myLocalStorage.set("dailyCount", 0);
+      myLocalStorage.set("currentDaytimeStamp", todayTimestamp);
+    }
+  }, [currentDaytimeStamp]);
+
+  const incrDailyCount = () => {
+    const newCount = dailyCount + 1;
+    setDailyCount(newCount);
+    myLocalStorage.set("dailyCount", newCount);
+  };
+
+  ////////////////////////////////////////////////////////////////
 
   const loadExercises = () => {
     const storedExercises = storage.get("exercises", []).then((exercises) => {
@@ -94,6 +124,8 @@ export const AppProvider = ({ children }) => {
         setIsMenuOpen,
         theme,
         toggleTheme,
+        dailyCount,
+        incrDailyCount,
       }}
     >
       {children}
