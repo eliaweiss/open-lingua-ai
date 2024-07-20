@@ -7,18 +7,18 @@
 // ];
 
 const phrases = [
-  { pt: "Olá, como você está?", en: "Hi, how are you?" },
+  { target: "Olá, como você está?", src: "Hi, how are you?" },
   {
-    pt: "Bom dia, prazer em conhecê-lo.",
-    en: "Good morning, nice to meet you.",
+    target: "Bom dia, prazer em conhecê-lo.",
+    src: "Good morning, nice to meet you.",
   },
-  { pt: "Obrigado por sua ajuda.", en: "Thank you for your help." },
-  { pt: "Até logo!", en: "See you later!" },
-  { pt: "Eu gostaria de um café.", en: "I would like a coffee." },
-  { pt: "Eu moro no Brasil.", en: "I live in Brazil." },
-  { pt: "Gosto de estudar línguas.", en: "I like to study languages." },
-  { pt: "Eu estou com fome.", en: "I am hungry." },
-  { pt: "Hoje é um dia bonito.", en: "Today is a beautiful day." },
+  { target: "Obrigado por sua ajuda.", src: "Thank you for your help." },
+  { target: "Até logo!", src: "See you later!" },
+  { target: "Eu gostaria de um café.", src: "I would like a coffee." },
+  { target: "Eu moro no Brasil.", src: "I live in Brazil." },
+  { target: "Gosto de estudar línguas.", src: "I like to study languages." },
+  { target: "Eu estou com fome.", src: "I am hungry." },
+  { target: "Hoje é um dia bonito.", src: "Today is a beautiful day." },
   { target: "Qual é o seu nome?", src: "What is your name?" },
   { target: "Qual é a sua idade?", src: "How old are you?" },
   { target: "Qual é a sua profissão?", src: "What is your profession?" },
@@ -2871,6 +2871,36 @@ const phrases = [
     target: "Se nós tivermos tempo, faremos um piquenique.",
     src: "If we have time, we'll have a picnic.",
   },
+  { target: "Eu vou ao mercado.", src: "I go to the market." },
+  { target: "Tu comes uma maçã.", src: "You eat an apple." },
+  { target: "Ele está feliz.", src: "He is happy." },
+  { target: "Nós estamos cansados.", src: "We are tired." },
+  { target: "Vós sois bem-vindos.", src: "You are welcome." },
+  { target: "Eles vão à escola.", src: "They go to school." },
+
+  { target: "Eu me vejo no espelho.", src: "I see myself in the mirror." },
+  { target: "Tu te lavas.", src: "You wash yourself." },
+  { target: "Ele se veste.", src: "He dresses himself." },
+  { target: "Nós nos divertimos.", src: "We enjoy ourselves." },
+  { target: "Vós vos lembrastes.", src: "You remembered yourselves." },
+  { target: "Eles se ajudam.", src: "They help themselves." },
+
+  { target: "Ele me viu.", src: "He saw me." },
+  { target: "Eu te amo.", src: "I love you." },
+  { target: "Ela o encontrou.", src: "She found him." },
+  { target: "Eles nos chamaram.", src: "They called us." },
+  { target: "Nós vos ouvimos.", src: "We hear you all." },
+  { target: "Eu os conheço.", src: "I know them." },
+
+  { target: "Ele me deu um presente.", src: "He gave me a gift." },
+  { target: "Eu te escrevi uma carta.", src: "I wrote you a letter." },
+  {
+    target: "Ela lhe entregou o pacote.",
+    src: "She delivered the package to him/her.",
+  },
+  { target: "Eles nos enviaram uma mensagem.", src: "They sent us a message." },
+  { target: "Eu vos disse a verdade.", src: "I told you all the truth." },
+  { target: "Ele lhes ofereceu ajuda.", src: "He offered help to them." },
 ];
 
 export default phrases;
