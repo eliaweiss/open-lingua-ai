@@ -40,6 +40,9 @@ export default function Home() {
           Therefore, the explanation provided is brief. However, I plan to
           elaborate on the text and the exercises in the future.
         </div>
+        <div className="mt-2 ">
+          {`Note: The app does not store any information remotely. All data is stored locally, and there is no backup available.`}
+        </div>
       </div>
     </div>
   );
