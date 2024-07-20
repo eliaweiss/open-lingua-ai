@@ -28,6 +28,7 @@ export const ScramblePhrase = () => {
     numberOfWordClicked,
     setNumberOfWordClicked,
     deleteWord,
+    getCurrentUserBuffer,
   } = useScrambleContext();
 
   const [scrambledWords, setScrambledWords] = useState([]);
@@ -61,14 +62,6 @@ export const ScramblePhrase = () => {
     setNumberOfWordClicked(0);
   }, [currentPhrase]);
 
-  ////////////////////////////////////////////////////////////////
-
-  function getCurrentUserBuffer() {
-    return userBuffer
-      .trim()
-      .replace(/punctuation/g, "")
-      .toLocaleLowerCase();
-  }
   ////////////////////////////////////////////////////////////////
 
   useEffect(() => {

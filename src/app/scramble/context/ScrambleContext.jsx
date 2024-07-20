@@ -62,6 +62,15 @@ export const ScrambleProvider = ({ children }) => {
     setNumberOfWordClicked(numberOfWordClicked - 1);
     setUserBuffer(deleteLastWord_helper(userBuffer.trim()));
   }
+
+  ////////////////////////////////////////////////////////////////
+
+  function getCurrentUserBuffer() {
+    return userBuffer
+      .trim()
+      .replace(/punctuation/g, "")
+      .toLocaleLowerCase();
+  }
   return (
     <ScrambleContext.Provider
       value={{
@@ -80,6 +89,7 @@ export const ScrambleProvider = ({ children }) => {
         numberOfWordClicked,
         setNumberOfWordClicked,
         deleteWord,
+        getCurrentUserBuffer,
       }}
     >
       {children}
