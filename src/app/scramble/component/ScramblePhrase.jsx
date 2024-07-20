@@ -137,9 +137,12 @@ export const ScramblePhrase = () => {
         if (wordInBuffer[i].word != words[i]) {
           break;
         }
-        newUserBufferArray.push({ word: wordInBuffer[i] });
+        newUserBufferArray.push(wordInBuffer[i]);
       }
-      handleWordClick({ word: { word: words[i] }, newUserBufferArray });
+      handleWordClick({
+        word: { word: words[i], isHint: true },
+        newUserBufferArray,
+      });
     }
   }
 
@@ -158,7 +161,7 @@ export const ScramblePhrase = () => {
               scrambledWords.map((word, index) => (
                 <WordButton
                   key={index}
-                  onClick={() => handleWordClick({ word:{word} })}
+                  onClick={() => handleWordClick({ word: { word } })}
                 >
                   {word}
                 </WordButton>

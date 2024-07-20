@@ -4,8 +4,13 @@ export function UserBufferDisplay() {
   const { getCurrentUserBufferArray } = useScrambleContext();
   return (
     <div className="flex space-x-2">
-      {getCurrentUserBufferArray().map(({ word }, key) => (
-        <div key={key}>{word}</div>
+      {getCurrentUserBufferArray().map((word, key) => (
+        <div
+          key={key}
+          className={`rounded-lg ${word.isHint && "bg-[#89090945]"}`}
+        >
+          {word.word}
+        </div>
       ))}
     </div>
   );
