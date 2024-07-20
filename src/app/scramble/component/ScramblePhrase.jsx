@@ -24,7 +24,6 @@ export const ScramblePhrase = () => {
     resetUserBuffer,
     isReading,
     playSentence,
-    setNumberOfWordClicked,
     deleteWord,
     getCurrentUserBuffer,
     getCurrentUserBufferArray,
@@ -60,7 +59,6 @@ export const ScramblePhrase = () => {
 
   useEffect(() => {
     scrambleSentence();
-    setNumberOfWordClicked(0);
   }, [currentPhrase]);
 
   ////////////////////////////////////////////////////////////////
@@ -102,7 +100,6 @@ export const ScramblePhrase = () => {
       }
 
       resetUserBuffer(); // Reset user buffer for next sentence
-      setNumberOfWordClicked(0);
     }
   }, [userBufferArray]);
 
@@ -137,7 +134,6 @@ export const ScramblePhrase = () => {
         newUserBufferArray.push({ word: words[i] });
       }
       handleWordClick({ word: words[i], newUserBuffer, newUserBufferArray });
-      setNumberOfWordClicked(i + 1);
     }
   }
 

@@ -13,7 +13,6 @@ export const ScrambleProvider = ({ children }) => {
   const [isReading, setIsReading] = useState(false);
 
   const [userBufferArray, setUserBufferArray] = useState([]);
-  const [numberOfWordClicked, setNumberOfWordClicked] = useState(0);
 
   const playPause = () => {
     setIsPlaying(!isPlaying);
@@ -47,7 +46,6 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
   const handleWordClick = async ({ word, newUserBufferArray }) => {
     if (!newUserBufferArray) newUserBufferArray = userBufferArray;
-    setNumberOfWordClicked(numberOfWordClicked + 1);
     addToUserBuffer({ word, newUserBufferArray });
     await readAloud_target(word, 1.25);
   };
@@ -59,7 +57,6 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
   function deleteWord() {
     if (userBufferArray.length <= 0) return;
-    setNumberOfWordClicked(numberOfWordClicked - 1);
     setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 1));
   }
 
@@ -90,8 +87,6 @@ export const ScrambleProvider = ({ children }) => {
         isReading,
         increasePhraseIndex,
         playSentence,
-        numberOfWordClicked,
-        setNumberOfWordClicked,
         deleteWord,
         getCurrentUserBuffer,
         getCurrentUserBufferArray,
