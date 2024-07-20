@@ -55,6 +55,7 @@ export const ScramblePhrase = () => {
 
   useEffect(() => {
     scrambleSentence();
+    setNumberOfWordClicked(0);
   }, [currentPhrase]);
 
   ////////////////////////////////////////////////////////////////
@@ -94,9 +95,10 @@ export const ScramblePhrase = () => {
   }, [numberOfWordClicked]);
 
   ////////////////////////////////////////////////////////////////
-  const handleWordClick = async (word) => {
+  const handleWordClick = async ({ word, newUserBuffer }) => {
+    if (!newUserBuffer) newUserBuffer = userBuffer;
     setNumberOfWordClicked(numberOfWordClicked + 1);
-    setUserBuffer(userBuffer + " " + word);
+    setUserBuffer(newUserBuffer + " " + word);
     await readAloud_target(word, 1.25);
   };
 
@@ -138,15 +140,16 @@ export const ScramblePhrase = () => {
     } else {
       // getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()
       const wordInBuffer = getCurrentUserBuffer().split(" ");
-      let tmpUserBuffer = "";
+      let newUserBuffer = "";
       let i = 0;
       for (; i < wordInBuffer.length; i++) {
         if (wordInBuffer[i] != words[i]) {
           break;
         }
-        tmpUserBuffer += " " + words[i];
+        newUserBuffer += " " + words[i];
       }
-      setUserBuffer(tmpUserBuffer + " " +words[i]);
+      handleWordClick({ word: words[i], newUserBuffer });
+      setNumberOfWordClicked(i + 1);
     }
   }
 
@@ -163,7 +166,10 @@ export const ScramblePhrase = () => {
           <div className="flex flex-wrap  space-x-2">
             {!isReading &&
               scrambledWords.map((word, index) => (
-                <WordButton key={index} onClick={() => handleWordClick(word)}>
+                <WordButton
+                  key={index}
+                  onClick={() => handleWordClick({ word })}
+                >
                   {word}
                 </WordButton>
               ))}
