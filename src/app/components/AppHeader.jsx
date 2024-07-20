@@ -2,7 +2,7 @@ import { Bars3Icon } from "@heroicons/react/24/outline"; // Correct import synta
 import { useAppContext } from "../context/AppContext";
 
 export function AppHeader({}) {
-  const { theme, isMenuOpen, setIsMenuOpen } = useAppContext();
+  const { theme, isMenuOpen, setIsMenuOpen, dailyCount } = useAppContext();
 
   return (
     <div className="flex space-x-5">
@@ -11,7 +11,7 @@ export function AppHeader({}) {
           <Bars3Icon className="h-6 w-6" /> {/* Hamburger menu icon */}
         </button>
       )}
-      <div>tst</div>
+      <div>Daily # {dailyCount}</div>
     </div>
   );
 }

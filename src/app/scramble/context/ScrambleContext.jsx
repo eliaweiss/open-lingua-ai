@@ -5,7 +5,7 @@ import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 const ScrambleContext = createContext();
 
 export const ScrambleProvider = ({ children }) => {
-  const { phrases: appPhrase } = useAppContext();
+  const { phrases: appPhrase, incrDailyCount } = useAppContext();
   const { readAloud_target, randomPermutation, cancel } = useSpeechSynthesis();
   const [phrases, setPhrases] = useState(randomPermutation(appPhrase));
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
@@ -43,7 +43,7 @@ export const ScrambleProvider = ({ children }) => {
     }
     setCurrentPhraseIndex(nextIndex);
     setCurrentPhrase(phrases[nextIndex]);
-
+    incrDailyCount();
     return nextIndex;
   }
 

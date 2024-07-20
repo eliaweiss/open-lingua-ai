@@ -5,7 +5,7 @@ import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 const PlaySentenceContext = createContext();
 
 export const PlaySentenceProvider = ({ children }) => {
-  const { phrases: appPhrase } = useAppContext();
+  const { phrases: appPhrase, incrDailyCount } = useAppContext();
   const {
     readAloud_slow_target,
     readAloud_target,
@@ -31,6 +31,7 @@ export const PlaySentenceProvider = ({ children }) => {
 
   const doExerciseLoop = async () => {
     if (!isPlayingRef.current) return;
+    incrDailyCount();
     const nowPlayingPhrase = phrases[currentPhraseIndex];
     setCurrentPhrase(nowPlayingPhrase);
 
