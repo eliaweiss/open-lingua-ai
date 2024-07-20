@@ -37,6 +37,12 @@ export const ScrambleProvider = ({ children }) => {
     increasePhraseIndex();
   };
 
+  const resetUserBuffer = () => {
+    setUserBuffer("");
+  };
+  const addToUserBuffer = ({ word, newUserBuffer }) => {
+    setUserBuffer(newUserBuffer + " " + word);
+  };
   return (
     <ScrambleContext.Provider
       value={{
@@ -46,7 +52,8 @@ export const ScrambleProvider = ({ children }) => {
         currentPhraseIndex,
         isPlaying,
         userBuffer,
-        setUserBuffer,
+        addToUserBuffer,
+        resetUserBuffer,
         isReading,
         increasePhraseIndex,
         playSentence,

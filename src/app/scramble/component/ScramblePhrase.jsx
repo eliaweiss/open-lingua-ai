@@ -21,7 +21,8 @@ export const ScramblePhrase = () => {
     currentPhrase,
     isPlaying,
     userBuffer,
-    setUserBuffer,
+    addToUserBuffer,
+    resetUserBuffer,
     isReading,
     playSentence,
   } = useScrambleContext();
@@ -49,7 +50,7 @@ export const ScramblePhrase = () => {
     setScrambledWords(scrambledWordsTmp);
 
     // Clear user buffer and display area
-    setUserBuffer("");
+    resetUserBuffer();
   };
   ////////////////////////////////////////////////////////////////
 
@@ -89,7 +90,7 @@ export const ScramblePhrase = () => {
         });
       }
 
-      setUserBuffer(""); // Reset user buffer for next sentence
+      resetUserBuffer(); // Reset user buffer for next sentence
       setNumberOfWordClicked(0);
     }
   }, [numberOfWordClicked]);
@@ -98,7 +99,7 @@ export const ScramblePhrase = () => {
   const handleWordClick = async ({ word, newUserBuffer }) => {
     if (!newUserBuffer) newUserBuffer = userBuffer;
     setNumberOfWordClicked(numberOfWordClicked + 1);
-    setUserBuffer(newUserBuffer + " " + word);
+    addToUserBuffer({ word, newUserBuffer });
     await readAloud_target(word, 1.25);
   };
 
