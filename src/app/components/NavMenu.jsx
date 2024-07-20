@@ -17,14 +17,17 @@ export function NavMenu({}) {
         <button onClick={() => setIsMenuOpen(false)} className="md:hidden p-4">
           <XMarkIcon className="h-6 w-6" /> {/* Close icon */}
         </button>
-        <ul className="p-4 mt-10">
+        <div className="p-4 mt-10">
+          <div>Exercise:</div>
           <MenuItem href="/playSentences">Play Sentence Exercise</MenuItem>
           <MenuItem href="/scramble">Scramble Exercise</MenuItem>
           {/* <MenuItem href="/settings">Settings</MenuItem> */}
+          <div>Settings:</div>
+
           <MenuItem>
             <ThemeToggle className="" />
           </MenuItem>
-        </ul>
+        </div>
       </nav>
     </>
   );
