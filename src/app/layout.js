@@ -2,14 +2,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AppProvider, useAppContext } from "./context/AppContext";
-import {
-  Bars3Icon,
-  MoonIcon,
-  SunIcon,
-  XMarkIcon,
-} from "@heroicons/react/24/outline"; // Correct import syntax for v2
+
 import { useState } from "react";
 import { NavMenu } from "./components/NavMenu";
+import { AppHeader } from "./components/AppHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -38,11 +34,7 @@ const AppWrapper = ({ children }) => {
       </aside>
       <main className={`flex-1 ml-0 md:ml-64 h-full `}>
         <header className="p-4 bg-[#8196db44]">
-          {!isMenuOpen && (
-            <button onClick={() => setIsMenuOpen(true)} className="md:hidden">
-              <Bars3Icon className="h-6 w-6" /> {/* Hamburger menu icon */}
-            </button>
-          )}
+          <AppHeader />
         </header>
         <div className="p-4  relative" onClick={() => setIsMenuOpen(false)}>
           {children}

@@ -5,7 +5,13 @@ import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 const PlaySentenceContext = createContext();
 
 export const PlaySentenceProvider = ({ children }) => {
-  const { phrases: appPhrase } = useAppContext();
+  const {
+    phrases: appPhrase,
+    getPhrasesInRange,
+    incrDailyCount,
+    phraseRange,
+  } = useAppContext();
+
   const {
     readAloud_slow_target,
     readAloud_target,
@@ -14,8 +20,12 @@ export const PlaySentenceProvider = ({ children }) => {
     randomPermutation,
     cancel,
   } = useSpeechSynthesis();
-  const [phrases, setPhrases] = useState(randomPermutation(appPhrase));
+  const [phrases, setPhrases] = useState(
+    randomPermutation(getPhrasesInRange())
+  );
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const currentPhraseIndexRef = useRef(currentPhraseIndex);
+
   const [currentPhrase, setCurrentPhrase] = useState(currentPhraseIndex);
   const [isPlaying, setIsPlaying] = useState(false);
   const isPlayingRef = useRef(isPlaying);
@@ -23,9 +33,13 @@ export const PlaySentenceProvider = ({ children }) => {
   useEffect(() => {
     isPlayingRef.current = isPlaying;
   }, [isPlaying]);
+  useEffect(() => {
+    currentPhraseIndexRef.current = currentPhraseIndex;
+  }, [currentPhraseIndex]);
 
   const doExerciseLoop = async () => {
     if (!isPlayingRef.current) return;
+    incrDailyCount();
     const nowPlayingPhrase = phrases[currentPhraseIndex];
     setCurrentPhrase(nowPlayingPhrase);
 
@@ -38,23 +52,25 @@ export const PlaySentenceProvider = ({ children }) => {
           " - " +
           nowPlayingPhrase.src
       );
-
+      const shouldContinue = () =>
+        !isPlayingRef.current ||
+        currentPhraseIndexRef.current != currentPhraseIndex;
       await readAloud_target(nowPlayingPhrase.target);
-      if (!isPlayingRef.current) return;
+      if (shouldContinue()) return;
       await waitForSeconds(2);
-      if (!isPlayingRef.current) return;
+      if (shouldContinue()) return;
 
       await readAloud_slow_target(nowPlayingPhrase.target);
-      if (!isPlayingRef.current) return;
+      if (shouldContinue()) return;
 
       await waitForSeconds(1);
-      if (!isPlayingRef.current) return;
+      if (shouldContinue()) return;
 
       if (nowPlayingPhrase.src) {
         await readAloud_src(nowPlayingPhrase.src, 1.25);
         await waitForSeconds(1);
       }
-      if (!isPlayingRef.current) return;
+      if (shouldContinue()) return;
 
       increasePhraseIndex();
     } catch (e) {
@@ -98,8 +114,8 @@ export const PlaySentenceProvider = ({ children }) => {
 
   useEffect(() => {
     if (!appPhrase || !appPhrase.length) return;
-    setPhrases(randomPermutation(appPhrase));
-  }, [appPhrase]);
+    setPhrases(randomPermutation(getPhrasesInRange()));
+  }, [phraseRange, appPhrase]);
 
   return (
     <PlaySentenceContext.Provider

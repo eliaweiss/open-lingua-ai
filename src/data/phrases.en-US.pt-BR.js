@@ -7,6 +7,18 @@
 // ];
 
 const phrases = [
+  { pt: "Olá, como você está?", en: "Hi, how are you?" },
+  {
+    pt: "Bom dia, prazer em conhecê-lo.",
+    en: "Good morning, nice to meet you.",
+  },
+  { pt: "Obrigado por sua ajuda.", en: "Thank you for your help." },
+  { pt: "Até logo!", en: "See you later!" },
+  { pt: "Eu gostaria de um café.", en: "I would like a coffee." },
+  { pt: "Eu moro no Brasil.", en: "I live in Brazil." },
+  { pt: "Gosto de estudar línguas.", en: "I like to study languages." },
+  { pt: "Eu estou com fome.", en: "I am hungry." },
+  { pt: "Hoje é um dia bonito.", en: "Today is a beautiful day." },
   { target: "Qual é o seu nome?", src: "What is your name?" },
   { target: "Qual é a sua idade?", src: "How old are you?" },
   { target: "Qual é a sua profissão?", src: "What is your profession?" },

@@ -5,9 +5,16 @@ import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 const ScrambleContext = createContext();
 
 export const ScrambleProvider = ({ children }) => {
-  const { phrases: appPhrase } = useAppContext();
+  const {
+    phrases: appPhrase,
+    getPhrasesInRange,
+    incrDailyCount,
+    phraseRange,
+  } = useAppContext();
   const { readAloud_target, randomPermutation, cancel } = useSpeechSynthesis();
-  const [phrases, setPhrases] = useState(randomPermutation(appPhrase));
+  const [phrases, setPhrases] = useState(
+    randomPermutation(getPhrasesInRange())
+  );
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const [currentPhrase, setCurrentPhrase] = useState(
     phrases[currentPhraseIndex]
@@ -17,11 +24,10 @@ export const ScrambleProvider = ({ children }) => {
 
   const [userBuffer, setUserBuffer] = useState("");
 
-
   const playPause = () => {
-    setIsPlaying(true);
+    setIsPlaying(!isPlaying);
   };
-  
+
   const playSentence = async () => {
     setIsReading(true);
     await readAloud_target(currentPhrase.target);
@@ -29,7 +35,10 @@ export const ScrambleProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (!currentPhrase || !isPlaying) return;
+    if (!currentPhrase || !isPlaying) {
+      cancel();
+      return;
+    }
     playSentence();
   }, [isPlaying, currentPhraseIndex]);
 
@@ -41,7 +50,7 @@ export const ScrambleProvider = ({ children }) => {
     }
     setCurrentPhraseIndex(nextIndex);
     setCurrentPhrase(phrases[nextIndex]);
-
+    incrDailyCount();
     return nextIndex;
   }
 
@@ -57,8 +66,8 @@ export const ScrambleProvider = ({ children }) => {
 
   useEffect(() => {
     if (!appPhrase || !appPhrase.length) return;
-    setPhrases(randomPermutation(appPhrase));
-  }, [appPhrase]);
+    setPhrases(randomPermutation(getPhrasesInRange()));
+  }, [appPhrase, phraseRange]);
 
   return (
     <ScrambleContext.Provider
@@ -73,6 +82,7 @@ export const ScrambleProvider = ({ children }) => {
         setUserBuffer,
         isReading,
         increasePhraseIndex,
+        playSentence,
       }}
     >
       {children}

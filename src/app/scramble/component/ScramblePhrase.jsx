@@ -19,6 +19,7 @@ export const ScramblePhrase = () => {
     userBuffer,
     setUserBuffer,
     isReading,
+    playSentence,
   } = useScrambleContext();
 
   const [scrambledWords, setScrambledWords] = useState([]);
@@ -26,6 +27,7 @@ export const ScramblePhrase = () => {
   const [numberOfWordClicked, setNumberOfWordClicked] = useState(0);
   const [currentSentence, setCurrentSentence] = useState("");
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
+  const [showFailNotice, setShowFailNotice] = useState(false);
 
   ////////////////////////////////////////////////////////////////
 
@@ -66,12 +68,19 @@ export const ScramblePhrase = () => {
     if (numberOfWordClicked == words.length) {
       // Check if user buffer matches the original sentence (excluding punctuation)
       if (getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()) {
+        setShowFailNotice(false);
+
         setScrambledWords([]);
         setShowSuccessNotice(true);
         setTimeout(() => {
           increasePhraseIndex();
           setShowSuccessNotice(false);
         }, 1000);
+      } else {
+        setShowFailNotice(true);
+        playSentence().then(() => {
+          setShowFailNotice(false);
+        });
       }
 
       setUserBuffer(""); // Reset user buffer for next sentence
@@ -116,41 +125,55 @@ export const ScramblePhrase = () => {
   }
 
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-wrap  space-x-2">
-        {showSuccessNotice && (
-          <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white text-3xl text-[#2d0397] font-bold border-2 border-[#2d0397] p-2 rounded-lg">
-            Correct! Move to next sentence...
-          </div>
-        )}
-        {isPlaying &&
-          !isReading &&
-          scrambledWords.map((word, index) => (
-            <WordButton key={index} onClick={() => handleWordClick(word)}>
-              {word}
-            </WordButton>
-          ))}
-      </div>
-      <div className={`${isTargetRtl ? "text-right" : "text-left"}`}>
-        {userBuffer}
-      </div>
-      <div className="flex space-x-2 my-5 justify-center">
-        <ControlButton
-          toolTip="Play Part of sentence"
-          onClick={playPartOfSentence}
-          className="p-4 rounded-lg border border-pBorder"
-        >
-          <ChevronDoubleRightIcon className="w-6 h-6 " />
-        </ControlButton>
+    <div>
+      {isPlaying && (
+        <div className="flex flex-col">
+          {showSuccessNotice && (
+            <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white text-3xl text-[#1994ff] font-bold border-2 border-[#035797] px-2 py-5 rounded-lg">
+              Correct! <br /> Move to next sentence
+            </div>
+          )}
 
-        <ControlButton
-          toolTip="Backspace"
-          onClick={deleteWord}
-          className="p-4 rounded-lg border border-pBorder"
-        >
-          <BackspaceIcon className="w-6 h-6 " />
-        </ControlButton>
-      </div>
+          <div className="flex flex-wrap  space-x-2">
+            {!isReading &&
+              scrambledWords.map((word, index) => (
+                <WordButton key={index} onClick={() => handleWordClick(word)}>
+                  {word}
+                </WordButton>
+              ))}
+          </div>
+          {showFailNotice && (
+            <div className=" text-[#ff5a19]  rounded-lg">
+              {`Almost, Let's try again...`}
+            </div>
+          )}
+          <div className={`${isTargetRtl ? "text-right" : "text-left"}`}>
+            {userBuffer}
+          </div>
+          <div className="flex space-x-10 my-5 justify-center items-center">
+            {numberOfWordClicked > 0 && (
+              <div className="">
+                {numberOfWordClicked}/{words.length}
+              </div>
+            )}
+            <ControlButton
+              toolTip="Play Part of sentence"
+              onClick={playPartOfSentence}
+              className="p-4 rounded-lg border border-pBorder"
+            >
+              <ChevronDoubleRightIcon className="w-6 h-6 " />
+            </ControlButton>
+
+            <ControlButton
+              toolTip="Backspace"
+              onClick={deleteWord}
+              className="p-4 rounded-lg border border-pBorder"
+            >
+              <BackspaceIcon className="w-6 h-6 " />
+            </ControlButton>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
