@@ -31,7 +31,6 @@ export const PlaySentenceProvider = ({ children }) => {
 
   const doExerciseLoop = async () => {
     if (!isPlayingRef.current) return;
-    incrDailyCount();
     try {
       console.log(
         "index: " +

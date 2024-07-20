@@ -173,6 +173,7 @@ export const AppProvider = ({ children }) => {
     }
     setCurrentPhraseIndex(nextIndex);
     setCurrentPhrase(phrases[nextIndex]);
+    incrDailyCount();
     return nextIndex;
   }
   return (
@@ -190,7 +191,6 @@ export const AppProvider = ({ children }) => {
         theme,
         toggleTheme,
         dailyCount,
-        incrDailyCount,
         phraseRange,
         setPhraseRange,
         getPhrasesInRange,
