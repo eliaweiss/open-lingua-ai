@@ -93,10 +93,15 @@ export const ScrambleProvider = ({ children }) => {
     return userBufferArray;
   }
   function getCurrentUserBuffer() {
-    return userBuffer
-      .trim()
-      .replace(/punctuation/g, "")
-      .toLocaleLowerCase();
+    let buffer = "";
+    for (const { word } of userBufferArray) {
+      buffer += " " + word;
+    }
+    return buffer;
+    // return userBuffer
+    //   .trim()
+    //   .replace(/punctuation/g, "")
+    //   .toLocaleLowerCase();
   }
 
   return (
