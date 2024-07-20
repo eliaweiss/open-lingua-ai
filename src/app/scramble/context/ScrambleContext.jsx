@@ -17,11 +17,10 @@ export const ScrambleProvider = ({ children }) => {
 
   const [userBuffer, setUserBuffer] = useState("");
 
-
   const playPause = () => {
-    setIsPlaying(true);
+    setIsPlaying(!isPlaying);
   };
-  
+
   const playSentence = async () => {
     setIsReading(true);
     await readAloud_target(currentPhrase.target);
@@ -29,7 +28,10 @@ export const ScrambleProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    if (!currentPhrase || !isPlaying) return;
+    if (!currentPhrase || !isPlaying) {
+      cancel();
+      return;
+    }
     playSentence();
   }, [isPlaying, currentPhraseIndex]);
 

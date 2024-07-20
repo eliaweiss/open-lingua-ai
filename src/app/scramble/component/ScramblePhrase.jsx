@@ -116,41 +116,44 @@ export const ScramblePhrase = () => {
   }
 
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-wrap  space-x-2">
-        {showSuccessNotice && (
-          <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white text-3xl text-[#2d0397] font-bold border-2 border-[#2d0397] p-2 rounded-lg">
-            Correct! Move to next sentence...
+    <div>
+      {isPlaying && (
+        <div className="flex flex-col">
+          {showSuccessNotice && (
+            <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white text-3xl text-[#2d0397] font-bold border-2 border-[#2d0397] p-2 rounded-lg">
+              Correct! Move to next sentence...
+            </div>
+          )}
+          <div className="flex flex-wrap  space-x-2">
+            {!isReading &&
+              scrambledWords.map((word, index) => (
+                <WordButton key={index} onClick={() => handleWordClick(word)}>
+                  {word}
+                </WordButton>
+              ))}
           </div>
-        )}
-        {isPlaying &&
-          !isReading &&
-          scrambledWords.map((word, index) => (
-            <WordButton key={index} onClick={() => handleWordClick(word)}>
-              {word}
-            </WordButton>
-          ))}
-      </div>
-      <div className={`${isTargetRtl ? "text-right" : "text-left"}`}>
-        {userBuffer}
-      </div>
-      <div className="flex space-x-2 my-5 justify-center">
-        <ControlButton
-          toolTip="Play Part of sentence"
-          onClick={playPartOfSentence}
-          className="p-4 rounded-lg border border-pBorder"
-        >
-          <ChevronDoubleRightIcon className="w-6 h-6 " />
-        </ControlButton>
+          <div className={`${isTargetRtl ? "text-right" : "text-left"}`}>
+            {userBuffer}
+          </div>
+          <div className="flex space-x-2 my-5 justify-center">
+            <ControlButton
+              toolTip="Play Part of sentence"
+              onClick={playPartOfSentence}
+              className="p-4 rounded-lg border border-pBorder"
+            >
+              <ChevronDoubleRightIcon className="w-6 h-6 " />
+            </ControlButton>
 
-        <ControlButton
-          toolTip="Backspace"
-          onClick={deleteWord}
-          className="p-4 rounded-lg border border-pBorder"
-        >
-          <BackspaceIcon className="w-6 h-6 " />
-        </ControlButton>
-      </div>
+            <ControlButton
+              toolTip="Backspace"
+              onClick={deleteWord}
+              className="p-4 rounded-lg border border-pBorder"
+            >
+              <BackspaceIcon className="w-6 h-6 " />
+            </ControlButton>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
