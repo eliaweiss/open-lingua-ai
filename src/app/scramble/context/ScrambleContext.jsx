@@ -5,20 +5,10 @@ import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 const ScrambleContext = createContext();
 
 export const ScrambleProvider = ({ children }) => {
-  const {
-    phrases: appPhrase,
-    getPhrasesInRange,
-    incrDailyCount,
-    phraseRange,
-  } = useAppContext();
-  const { readAloud_target, randomPermutation, cancel } = useSpeechSynthesis();
-  const [phrases, setPhrases] = useState(
-    randomPermutation(getPhrasesInRange())
-  );
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  const [currentPhrase, setCurrentPhrase] = useState(
-    phrases[currentPhraseIndex]
-  );
+  const { increasePhraseIndex, currentPhraseIndex, currentPhrase } =
+    useAppContext();
+  const { readAloud_target, cancel } = useSpeechSynthesis();
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReading, setIsReading] = useState(false);
 
@@ -42,37 +32,14 @@ export const ScrambleProvider = ({ children }) => {
     playSentence();
   }, [isPlaying, currentPhraseIndex]);
 
-  function increasePhraseIndex() {
-    let nextIndex = currentPhraseIndex + 1;
-    if (nextIndex >= phrases.length) {
-      nextIndex = 0;
-      setPhrases(randomPermutation(phrases));
-    }
-    setCurrentPhraseIndex(nextIndex);
-    setCurrentPhrase(phrases[nextIndex]);
-    incrDailyCount();
-    return nextIndex;
-  }
-
   const skip = () => {
     cancel();
     increasePhraseIndex();
   };
 
-  useEffect(() => {
-    if (!phrases || !phrases.length) return;
-    setCurrentPhrase(phrases[0]);
-  }, [phrases]);
-
-  useEffect(() => {
-    if (!appPhrase || !appPhrase.length) return;
-    setPhrases(randomPermutation(getPhrasesInRange()));
-  }, [appPhrase, phraseRange]);
-
   return (
     <ScrambleContext.Provider
       value={{
-        phrases,
         playPause,
         skip,
         currentPhrase,

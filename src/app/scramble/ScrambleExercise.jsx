@@ -7,15 +7,9 @@ import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; //
 import { ScramblePhrase } from "./component/ScramblePhrase";
 
 export const ScrambleExercise = () => {
-  const { isTargetRtl, theme } = useAppContext();
-  const {
-    currentPhraseIndex,
-    playPause,
-    skip,
-    phrases,
-    currentPhrase,
-    isPlaying,
-  } = useScrambleContext();
+  const { isTargetRtl, phrases } = useAppContext();
+  const { currentPhraseIndex, playPause, skip, currentPhrase, isPlaying } =
+    useScrambleContext();
 
   return (
     <div className="flex flex-col justify-center items-center text-center w-full">
