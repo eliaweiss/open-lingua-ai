@@ -47,11 +47,11 @@ export const ScrambleProvider = ({ children }) => {
   const handleWordClick = async ({ word, newUserBufferArray }) => {
     if (!newUserBufferArray) newUserBufferArray = userBufferArray;
     addToUserBuffer({ word, newUserBufferArray });
-    await readAloud_target(word, 1.25);
+    await readAloud_target(word.word, 1.25);
   };
 
   const addToUserBuffer = ({ word, newUserBufferArray = [] }) => {
-    setUserBufferArray([...newUserBufferArray, { word }]);
+    setUserBufferArray([...newUserBufferArray, word ]);
   };
 
   ////////////////////////////////////////////////////////////////
