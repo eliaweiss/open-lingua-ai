@@ -16,6 +16,8 @@ export const PlaySentenceProvider = ({ children }) => {
   } = useSpeechSynthesis();
   const [phrases, setPhrases] = useState(randomPermutation(appPhrase));
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const currentPhraseIndexRef = useRef(currentPhraseIndex);
+
   const [currentPhrase, setCurrentPhrase] = useState(currentPhraseIndex);
   const [isPlaying, setIsPlaying] = useState(false);
   const isPlayingRef = useRef(isPlaying);
@@ -23,6 +25,9 @@ export const PlaySentenceProvider = ({ children }) => {
   useEffect(() => {
     isPlayingRef.current = isPlaying;
   }, [isPlaying]);
+  useEffect(() => {
+    currentPhraseIndexRef.current = currentPhraseIndex;
+  }, [currentPhraseIndex]);
 
   const doExerciseLoop = async () => {
     if (!isPlayingRef.current) return;
@@ -38,23 +43,25 @@ export const PlaySentenceProvider = ({ children }) => {
           " - " +
           nowPlayingPhrase.src
       );
-
+      const shouldContinue = () =>
+        !isPlayingRef.current ||
+        currentPhraseIndexRef.current != currentPhraseIndex;
       await readAloud_target(nowPlayingPhrase.target);
-      if (!isPlayingRef.current) return;
+      if (shouldContinue()) return;
       await waitForSeconds(2);
-      if (!isPlayingRef.current) return;
+      if (shouldContinue()) return;
 
       await readAloud_slow_target(nowPlayingPhrase.target);
-      if (!isPlayingRef.current) return;
+      if (shouldContinue()) return;
 
       await waitForSeconds(1);
-      if (!isPlayingRef.current) return;
+      if (shouldContinue()) return;
 
       if (nowPlayingPhrase.src) {
         await readAloud_src(nowPlayingPhrase.src, 1.25);
         await waitForSeconds(1);
       }
-      if (!isPlayingRef.current) return;
+      if (shouldContinue()) return;
 
       increasePhraseIndex();
     } catch (e) {
