@@ -34,6 +34,7 @@ export const AppProvider = ({ children }) => {
 
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const currentPhraseIndexRef = useRef(currentPhraseIndex);
+  const [currentPhrase, setCurrentPhrase] = useState(null);
 
   ////////////////////////////////////////////////////////////////
   // init app
@@ -155,6 +156,15 @@ export const AppProvider = ({ children }) => {
     return allPhrases.slice(phraseRange[0], phraseRange[1] + 1);
   };
 
+  useEffect(() => {
+    currentPhraseIndexRef.current = currentPhraseIndex;
+  }, [currentPhraseIndex]);
+
+  useEffect(() => {
+    if (!phrases || !phrases.length) return;
+    setCurrentPhrase(phrases[currentPhraseIndex]);
+  }, [phrases]);
+
   function increasePhraseIndex() {
     let nextIndex = currentPhraseIndex + 1;
     if (nextIndex >= phrases.length) {
@@ -162,7 +172,7 @@ export const AppProvider = ({ children }) => {
       setPhrases(randomPermutation(phrases));
     }
     setCurrentPhraseIndex(nextIndex);
-
+    setCurrentPhrase(phrases[nextIndex]);
     return nextIndex;
   }
   return (
@@ -187,6 +197,7 @@ export const AppProvider = ({ children }) => {
         increasePhraseIndex,
         currentPhraseIndexRef,
         currentPhraseIndex,
+        currentPhrase,
       }}
     >
       {children}

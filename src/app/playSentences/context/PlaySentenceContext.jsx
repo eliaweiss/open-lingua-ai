@@ -11,6 +11,7 @@ export const PlaySentenceProvider = ({ children }) => {
     increasePhraseIndex,
     currentPhraseIndexRef,
     currentPhraseIndex,
+    currentPhrase,
   } = useAppContext();
 
   const {
@@ -21,23 +22,16 @@ export const PlaySentenceProvider = ({ children }) => {
     cancel,
   } = useSpeechSynthesis();
 
-  const [currentPhrase, setCurrentPhrase] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const isPlayingRef = useRef(isPlaying);
 
   useEffect(() => {
     isPlayingRef.current = isPlaying;
   }, [isPlaying]);
-  useEffect(() => {
-    currentPhraseIndexRef.current = currentPhraseIndex;
-  }, [currentPhraseIndex]);
 
   const doExerciseLoop = async () => {
     if (!isPlayingRef.current) return;
     incrDailyCount();
-    const nowPlayingPhrase = phrases[currentPhraseIndex];
-    setCurrentPhrase(nowPlayingPhrase);
-
     try {
       console.log(
         "index: " +
@@ -45,24 +39,24 @@ export const PlaySentenceProvider = ({ children }) => {
           "/" +
           phrases.length +
           " - " +
-          nowPlayingPhrase.src
+          currentPhrase.src
       );
       const shouldContinue = () =>
         !isPlayingRef.current ||
         currentPhraseIndexRef.current != currentPhraseIndex;
-      await readAloud_target(nowPlayingPhrase.target);
+      await readAloud_target(currentPhrase.target);
       if (shouldContinue()) return;
       await waitForSeconds(2);
       if (shouldContinue()) return;
 
-      await readAloud_slow_target(nowPlayingPhrase.target);
+      await readAloud_slow_target(currentPhrase.target);
       if (shouldContinue()) return;
 
       await waitForSeconds(1);
       if (shouldContinue()) return;
 
-      if (nowPlayingPhrase.src) {
-        await readAloud_src(nowPlayingPhrase.src, 1.25);
+      if (currentPhrase.src) {
+        await readAloud_src(currentPhrase.src, 1.25);
         await waitForSeconds(1);
       }
       if (shouldContinue()) return;
@@ -90,11 +84,6 @@ export const PlaySentenceProvider = ({ children }) => {
     // Assuming `index` and `skipFlag` are part of your state
     increasePhraseIndex();
   };
-
-  useEffect(() => {
-    if (!phrases || !phrases.length) return;
-    setCurrentPhrase(phrases[increasePhraseIndex]);
-  }, [phrases]);
 
   return (
     <PlaySentenceContext.Provider
