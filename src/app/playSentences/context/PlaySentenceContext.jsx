@@ -7,7 +7,7 @@ const PlaySentenceContext = createContext();
 export const PlaySentenceProvider = ({ children }) => {
   const {
     phrases,
-    incrDailyCount,
+    readSettingsArray,
     increasePhraseIndex,
     currentPhraseIndexRef,
     currentPhraseIndex,
@@ -44,13 +44,7 @@ export const PlaySentenceProvider = ({ children }) => {
         !isPlayingRef.current ||
         currentPhraseIndexRef.current != currentPhraseIndex;
 
-      const playArray = [
-        { lang: "src", waitAfter: 1, rate: 1.1, isAccented: false },
-        { lang: "target", waitAfter: 1, rate: 1, isAccented: false },
-        { lang: "target", waitAfter: 2, rate: 1, isAccented: true },
-      ];
-
-      for (const readObj of playArray) {
+      for (const readObj of readSettingsArray.list) {
         if (readObj.lang == "target") {
           if (readObj.isAccented) {
             await readAloud_slow_target(currentPhrase.target, readObj.rate);

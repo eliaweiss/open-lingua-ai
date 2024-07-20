@@ -2,11 +2,23 @@
 
 import MenuItem from "../components/MenuItem";
 import ThemeToggle from "../components/ThemeToggle";
-import { useAppContext } from "../context/AppContext";
+import {
+  ADVANCE_READ_SETTINGS,
+  BEGINNER,
+  BEGINNER_READ_SETTINGS,
+  useAppContext,
+} from "../context/AppContext";
 
 export function SettingsUi() {
-  const { theme, toggleTheme, phraseRange, setPhraseRange, allPhrases } =
-    useAppContext();
+  const {
+    theme,
+    toggleTheme,
+    phraseRange,
+    setPhraseRange,
+    allPhrases,
+    readSettingsArray,
+    setReadSettingsArray,
+  } = useAppContext();
 
   const handleRangeChange = (event) => {
     const { name, value } = event.target;
@@ -30,6 +42,27 @@ export function SettingsUi() {
     <div className="p-4">
       <h1 className="text-2xl mb-4">Settings</h1>
 
+      <div className="mb-6">
+        <h2 className="text-xl mb-2">Play sentences level</h2>
+        <div className="flex space-x-2">
+          <button
+            className={`rounded-lg text-pText  px-4 py-2 border border-bg-pBg ${
+              readSettingsArray.level == "BEGINNER" ? "bg-sBg" : "bg-pBg"
+            }`}
+            onClick={() => setReadSettingsArray(BEGINNER_READ_SETTINGS)}
+          >
+            Beginner
+          </button>
+          <button
+            className={`rounded-lg text-pText  px-4 py-2 border border-bg-pBg ${
+              readSettingsArray.level == "ADVANCE" ? "bg-sBg" : "bg-pBg"
+            }`}
+            onClick={() => setReadSettingsArray(ADVANCE_READ_SETTINGS)}
+          >
+            Advance
+          </button>
+        </div>
+      </div>
       <div className="mb-6">
         <h2 className="text-xl mb-2">Toggle Theme</h2>
         <MenuItem>

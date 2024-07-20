@@ -11,6 +11,23 @@ const LANGUAGE = {
   PT_BR: "pt-BR",
 };
 
+export const BEGINNER_READ_SETTINGS = {
+  level: "BEGINNER",
+  list: [
+    { lang: "src", waitAfter: 1, rate: 1.1, isAccented: false },
+    { lang: "target", waitAfter: 1, rate: 1, isAccented: false },
+    { lang: "target", waitAfter: 2, rate: 1, isAccented: true },
+  ],
+};
+export const ADVANCE_READ_SETTINGS = {
+  level: "ADVANCE",
+  list: [
+    { lang: "target", waitAfter: 1, rate: 1, isAccented: false },
+    { lang: "target", waitAfter: 2, rate: 1, isAccented: true },
+    { lang: "src", waitAfter: 1, rate: 1.15, isAccented: false },
+  ],
+};
+
 const todayStartTime = () => new Date().setHours(0, 0, 0, 0); // Midnight of the current day
 
 export const AppProvider = ({ children }) => {
@@ -20,6 +37,9 @@ export const AppProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
   const [allPhrases, setAllPhrases] = useState([]);
   const [phrases, setPhrases] = useState([]);
+  const [readSettingsArray, setReadSettingsArray] = useState(
+    BEGINNER_READ_SETTINGS
+  );
 
   const [sourceLanguage, setSourceLanguage] = useState(LANGUAGE.EN_US);
   const [targetLanguage, setTargetLanguage] = useState(LANGUAGE.PT_BR);
@@ -46,6 +66,10 @@ export const AppProvider = ({ children }) => {
         phrases.length,
       ]);
       setPhraseRange(storedPhraseRange);
+
+      setReadSettingsArray(
+        await storage.get("readSettingsArray", BEGINNER_READ_SETTINGS)
+      );
 
       const storedTheme = localStorage.getItem("theme", "light");
       setTheme(storedTheme);
@@ -142,6 +166,13 @@ export const AppProvider = ({ children }) => {
     setTheme(storedTheme);
   }, []);
 
+  ////////////////////////////////////////////////////////////////////////
+  // save to storage
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("readSettingsArray", readSettingsArray);
+  }, [readSettingsArray]);
+
   useEffect(() => {
     if (!appInitFlag) return;
     storage.set("phraseRange", phraseRange);
@@ -199,6 +230,8 @@ export const AppProvider = ({ children }) => {
         currentPhraseIndex,
         currentPhrase,
         allPhrases,
+        readSettingsArray,
+        setReadSettingsArray,
       }}
     >
       {children}
