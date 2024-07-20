@@ -10,7 +10,8 @@ const LANGUAGE = {
 const todayStartTime = () => new Date().setHours(0, 0, 0, 0); // Midnight of the current day
 
 export const AppProvider = ({ children }) => {
-  const [exercises, setExercises] = useState([]);
+  const [phraseRange, setPhraseRange] = useState([1, 1000]); // Example range for phrases
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState(
     typeof window === "undefined"
@@ -68,14 +69,6 @@ export const AppProvider = ({ children }) => {
     myLocalStorage.set("dailyCount", newCount);
   };
 
-  ////////////////////////////////////////////////////////////////
-
-  const loadExercises = () => {
-    const storedExercises = storage.get("exercises", []).then((exercises) => {
-      setExercises(storedExercises);
-    });
-  };
-
   const loadPhrase = async () => {
     const src_target = `${sourceLanguage}.${targetLanguage}`;
     const phrases = (await import(`../../data/phrases.${src_target}.js`))
@@ -85,7 +78,6 @@ export const AppProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    loadExercises();
     loadPhrase();
   }, []);
 
@@ -126,6 +118,8 @@ export const AppProvider = ({ children }) => {
         toggleTheme,
         dailyCount,
         incrDailyCount,
+        phraseRange,
+        setPhraseRange,
       }}
     >
       {children}

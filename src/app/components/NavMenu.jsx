@@ -21,12 +21,9 @@ export function NavMenu({}) {
           <div>Exercise:</div>
           <MenuItem href="/playSentences">Play Sentence Exercise</MenuItem>
           <MenuItem href="/scramble">Scramble Exercise</MenuItem>
-          {/* <MenuItem href="/settings">Settings</MenuItem> */}
-          <div>Settings:</div>
+          <div>General:</div>
 
-          <MenuItem>
-            <ThemeToggle className="" />
-          </MenuItem>
+          <MenuItem href="/settings">Settings</MenuItem>
         </div>
       </nav>
     </>
