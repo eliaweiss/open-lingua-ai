@@ -55,7 +55,7 @@ export const ScrambleProvider = ({ children }) => {
     if (!newUserBuffer) newUserBuffer = userBuffer;
     if (!newUserBufferArray) newUserBufferArray = userBufferArray;
     setNumberOfWordClicked(numberOfWordClicked + 1);
-    addToUserBuffer({ word, newUserBuffer , newUserBufferArray});
+    addToUserBuffer({ word, newUserBuffer, newUserBufferArray });
     await readAloud_target(word, 1.25);
   };
 
@@ -84,7 +84,7 @@ export const ScrambleProvider = ({ children }) => {
     if (numberOfWordClicked <= 0) return;
     setNumberOfWordClicked(numberOfWordClicked - 1);
     setUserBuffer(deleteLastWord_helper(userBuffer.trim()));
-    setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 2));
+    setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 1));
   }
 
   ////////////////////////////////////////////////////////////////

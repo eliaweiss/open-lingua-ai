@@ -64,13 +64,29 @@ export const ScramblePhrase = () => {
   }, [currentPhrase]);
 
   ////////////////////////////////////////////////////////////////
+  function isBufferComplete() {
+    // return getCurrentUserBuffer() === currentSentence.toLocaleLowerCase();
+    const wordsInBuffer = getCurrentUserBufferArray();
+    if (wordsInBuffer.length !== words.length) {
+      return false;
+    }
+
+    for (let i = 0; i < wordsInBuffer.length; i++) {
+      if (wordsInBuffer[i] !== words[i]) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+  ////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     if (numberOfWordClicked === 0) return;
     // console.log("numberOfWordClicked", numberOfWordClicked);
     if (numberOfWordClicked == words.length) {
       // Check if user buffer matches the original sentence (excluding punctuation)
-      if (getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()) {
+      if (isBufferComplete()) {
         setShowFailNotice(false);
 
         setScrambledWords([]);
