@@ -41,25 +41,29 @@ export const PlaySentenceProvider = ({ children }) => {
           " - " +
           currentPhrase.src
       );
-      const shouldContinue = () =>
+      const shouldReturn = () =>
         !isPlayingRef.current ||
         currentPhraseIndexRef.current != currentPhraseIndex;
-      await readAloud_target(currentPhrase.target);
-      if (shouldContinue()) return;
-      await waitForSeconds(2);
-      if (shouldContinue()) return;
 
-      await readAloud_slow_target(currentPhrase.target);
-      if (shouldContinue()) return;
+      const playArray = [
+        { lang: "target", waitAfter: 1, rate: 1, isAccented: false },
+        { lang: "target", waitAfter: 2, rate: 1, isAccented: true },
+        { lang: "src", waitAfter: 1, rate: 1.25, isAccented: false },
+      ];
 
-      await waitForSeconds(1);
-      if (shouldContinue()) return;
-
-      if (currentPhrase.src) {
-        await readAloud_src(currentPhrase.src, 1.25);
-        await waitForSeconds(1);
+      for (const readObj of playArray) {
+        if ((readObj.lang = "target")) {
+          if (readObj.isAccented) {
+            await readAloud_slow_target(currentPhrase.target, readObj.rate);
+          } else {
+            await readAloud_target(currentPhrase.target, readObj.rate);
+          }
+        } else {
+          await readAloud_src(currentPhrase.src, readObj.rate);
+        }
+        await waitForSeconds(readObj.waitAfter);
+        if (shouldReturn()) return;
       }
-      if (shouldContinue()) return;
 
       increasePhraseIndex();
     } catch (e) {
