@@ -19,13 +19,15 @@ export const ScramblePhrase = () => {
     userBuffer,
     setUserBuffer,
     isReading,
+    playSentence,
   } = useScrambleContext();
 
   const [scrambledWords, setScrambledWords] = useState([]);
   const [words, setWords] = useState([]);
   const [numberOfWordClicked, setNumberOfWordClicked] = useState(0);
   const [currentSentence, setCurrentSentence] = useState("");
-  const [showSuccessNotice, setShowSuccessNotice] = useState(1);
+  const [showSuccessNotice, setShowSuccessNotice] = useState(false);
+  const [showFailNotice, setShowFailNotice] = useState(false);
 
   ////////////////////////////////////////////////////////////////
 
@@ -66,12 +68,19 @@ export const ScramblePhrase = () => {
     if (numberOfWordClicked == words.length) {
       // Check if user buffer matches the original sentence (excluding punctuation)
       if (getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()) {
+        setShowFailNotice(false);
+
         setScrambledWords([]);
         setShowSuccessNotice(true);
         setTimeout(() => {
           increasePhraseIndex();
           setShowSuccessNotice(false);
         }, 1000);
+      } else {
+        setShowFailNotice(true);
+        playSentence().then(() => {
+          setShowFailNotice(false);
+        });
       }
 
       setUserBuffer(""); // Reset user buffer for next sentence
@@ -124,6 +133,7 @@ export const ScramblePhrase = () => {
               Correct! <br /> Move to next sentence
             </div>
           )}
+
           <div className="flex flex-wrap  space-x-2">
             {!isReading &&
               scrambledWords.map((word, index) => (
@@ -132,6 +142,11 @@ export const ScramblePhrase = () => {
                 </WordButton>
               ))}
           </div>
+          {showFailNotice && (
+            <div className=" text-[#ff5a19]  rounded-lg">
+              {`Almost, Let's try again...`}
+            </div>
+          )}
           <div className={`${isTargetRtl ? "text-right" : "text-left"}`}>
             {userBuffer}
           </div>

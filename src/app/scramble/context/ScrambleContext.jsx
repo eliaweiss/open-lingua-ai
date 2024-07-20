@@ -75,6 +75,7 @@ export const ScrambleProvider = ({ children }) => {
         setUserBuffer,
         isReading,
         increasePhraseIndex,
+        playSentence,
       }}
     >
       {children}
