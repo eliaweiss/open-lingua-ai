@@ -25,7 +25,7 @@ export const ScramblePhrase = () => {
   const [words, setWords] = useState([]);
   const [numberOfWordClicked, setNumberOfWordClicked] = useState(0);
   const [currentSentence, setCurrentSentence] = useState("");
-  const [showSuccessNotice, setShowSuccessNotice] = useState(false);
+  const [showSuccessNotice, setShowSuccessNotice] = useState(1);
 
   ////////////////////////////////////////////////////////////////
 
@@ -120,8 +120,8 @@ export const ScramblePhrase = () => {
       {isPlaying && (
         <div className="flex flex-col">
           {showSuccessNotice && (
-            <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white text-3xl text-[#2d0397] font-bold border-2 border-[#2d0397] p-2 rounded-lg">
-              Correct! Move to next sentence...
+            <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white text-3xl text-[#1994ff] font-bold border-2 border-[#035797] px-2 py-5 rounded-lg">
+              Correct! <br /> Move to next sentence
             </div>
           )}
           <div className="flex flex-wrap  space-x-2">
