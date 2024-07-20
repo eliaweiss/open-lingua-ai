@@ -105,16 +105,7 @@ export const SpeechSynthesisProvider = ({ children }) => {
   async function waitForSeconds(ss) {
     await new Promise((resolve) => setTimeout(resolve, ss * 1000));
   }
-  ////////////////////////////////////////////////////////////////
 
-  function randomPermutation(data) {
-    const perm = data.slice();
-    for (let i = perm.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [perm[i], perm[j]] = [perm[j], perm[i]];
-    }
-    return perm;
-  }
   ////////////////////////////////////////////////////////////////
 
   function cancel() {
@@ -164,3 +155,14 @@ export const SpeechSynthesisProvider = ({ children }) => {
 };
 
 export const useSpeechSynthesis = () => useContext(SpeechSynthesisContext);
+
+////////////////////////////////////////////////////////////////
+
+export function randomPermutation(data) {
+  const perm = data.slice();
+  for (let i = perm.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [perm[i], perm[j]] = [perm[j], perm[i]];
+  }
+  return perm;
+}

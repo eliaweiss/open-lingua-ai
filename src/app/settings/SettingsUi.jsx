@@ -18,6 +18,9 @@ export function SettingsUi() {
         const val = Math.min(phrases.length, value);
         newRange[1] = Number(val);
       }
+      if (newRange[0] >= newRange[1]) {
+        throw new Error("Invalid phrase range");
+      }
       return newRange;
     });
   };

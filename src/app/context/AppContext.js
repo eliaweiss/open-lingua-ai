@@ -1,4 +1,8 @@
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext, useEffect, useRef } from "react";
+import {
+  randomPermutation,
+  useSpeechSynthesis,
+} from "./SpeechSynthesisContext";
 
 const AppContext = createContext();
 
@@ -14,7 +18,9 @@ export const AppProvider = ({ children }) => {
   const [phraseRange, setPhraseRange] = useState([0, 0]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState("light");
+  const [allPhrases, setAllPhrases] = useState([]);
   const [phrases, setPhrases] = useState([]);
+
   const [sourceLanguage, setSourceLanguage] = useState(LANGUAGE.EN_US);
   const [targetLanguage, setTargetLanguage] = useState(LANGUAGE.PT_BR);
   const [sourceLanguageRate, setSourceLanguageRate] = useState(1);
@@ -25,6 +31,9 @@ export const AppProvider = ({ children }) => {
   const [currentDaytimeStamp, setCurrentDaytimeStamp] = useState(
     todayStartTime()
   );
+
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const currentPhraseIndexRef = useRef(currentPhraseIndex);
 
   ////////////////////////////////////////////////////////////////
   // init app
@@ -108,7 +117,7 @@ export const AppProvider = ({ children }) => {
     const phrases = (await import(`../../data/phrases.${src_target}.js`))
       .default;
     console.log("loadPhrase", phrases.length);
-    setPhrases(phrases);
+    setAllPhrases(phrases);
     return phrases;
   };
 
@@ -137,9 +146,25 @@ export const AppProvider = ({ children }) => {
     storage.set("phraseRange", phraseRange);
   }, [phraseRange]);
 
+  useEffect(() => {
+    if (!appInitFlag) return;
+    setPhrases(randomPermutation(getPhrasesInRange()));
+  }, [allPhrases, phraseRange]);
+
   const getPhrasesInRange = () => {
-    return phrases.slice(phraseRange[0], phraseRange[1] + 1);
+    return allPhrases.slice(phraseRange[0], phraseRange[1] + 1);
   };
+
+  function increasePhraseIndex() {
+    let nextIndex = currentPhraseIndex + 1;
+    if (nextIndex >= phrases.length) {
+      nextIndex = 0;
+      setPhrases(randomPermutation(phrases));
+    }
+    setCurrentPhraseIndex(nextIndex);
+
+    return nextIndex;
+  }
   return (
     <AppContext.Provider
       value={{
@@ -150,7 +175,6 @@ export const AppProvider = ({ children }) => {
         isSrcRtl,
         isTargetRtl,
         phrases,
-        setPhrases,
         isMenuOpen,
         setIsMenuOpen,
         theme,
@@ -160,6 +184,9 @@ export const AppProvider = ({ children }) => {
         phraseRange,
         setPhraseRange,
         getPhrasesInRange,
+        increasePhraseIndex,
+        currentPhraseIndexRef,
+        currentPhraseIndex,
       }}
     >
       {children}
