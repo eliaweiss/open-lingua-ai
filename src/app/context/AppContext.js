@@ -10,6 +10,7 @@ const LANGUAGE = {
 const todayStartTime = () => new Date().setHours(0, 0, 0, 0); // Midnight of the current day
 
 export const AppProvider = ({ children }) => {
+  const [appInitFlag, setAppInitFlag] = useState(false);
   const [phraseRange, setPhraseRange] = useState([1, 1000]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState("light");
@@ -65,6 +66,7 @@ export const AppProvider = ({ children }) => {
         todayStartTime()
       );
       setCurrentDaytimeStamp(storedCurrentDaytimeStamp);
+      setAppInitFlag(true);
     };
 
     initializeState();
@@ -128,6 +130,7 @@ export const AppProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    if (!appInitFlag) return;
     storage.set("phraseRange", phraseRange);
   }, [phraseRange]);
   return (
