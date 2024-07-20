@@ -48,7 +48,6 @@ export const ScrambleExercise = () => {
             <ForwardIcon className="w-6 h-6 " />
           </ControlButton>
         </div>
-        {isPlaying && <div>Playing ...</div>}
       </div>
 
       {/* Statistic Panel */}
