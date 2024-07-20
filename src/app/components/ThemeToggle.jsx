@@ -15,7 +15,7 @@ const ThemeToggle = () => {
   if (!mounted) return null; // Avoid rendering mismatched content
 
   return (
-    <button onClick={toggleTheme} className="p-2 w-full">
+    <button onClick={toggleTheme} className="w-full">
       <div className="flex space-x-2">
         <div>Change Theme</div>
         <div>
