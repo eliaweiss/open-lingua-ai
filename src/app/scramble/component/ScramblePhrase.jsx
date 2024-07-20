@@ -135,7 +135,12 @@ export const ScramblePhrase = () => {
           <div className={`${isTargetRtl ? "text-right" : "text-left"}`}>
             {userBuffer}
           </div>
-          <div className="flex space-x-2 my-5 justify-center">
+          <div className="flex space-x-10 my-5 justify-center items-center">
+            {numberOfWordClicked > 0 && (
+              <div className="">
+                {numberOfWordClicked}/{words.length}
+              </div>
+            )}
             <ControlButton
               toolTip="Play Part of sentence"
               onClick={playPartOfSentence}
