@@ -176,11 +176,6 @@ export const ScramblePhrase = () => {
             <UserBufferDisplay />
           </div>
           <div className="flex space-x-10 my-5 justify-center items-center">
-            {userBufferArray.length > 0 && (
-              <div className="">
-                {userBufferArray.length}/{words.length}
-              </div>
-            )}
             <ControlButton
               toolTip="Play Part of sentence"
               onClick={playPartOfSentence}
@@ -209,6 +204,11 @@ export const ScramblePhrase = () => {
               )}
             </ControlButton>
           </div>
+          {userBufferArray.length > 0 && (
+            <div className="">
+              {userBufferArray.length}/{words.length}
+            </div>
+          )}
         </div>
       )}
     </div>
