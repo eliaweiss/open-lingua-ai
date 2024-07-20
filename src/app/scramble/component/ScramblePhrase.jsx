@@ -4,6 +4,7 @@ import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 import { useScrambleContext } from "../context/ScrambleContext";
 import { useEffect, useState } from "react";
 import { useAppContext } from "../../context/AppContext";
+import { UserBufferDisplay } from "./UserBufferDisplay";
 import {
   BackspaceIcon,
   QuestionMarkCircleIcon,
@@ -159,7 +160,7 @@ export const ScramblePhrase = () => {
             </div>
           )}
           <div className={`${isTargetRtl ? "text-right" : "text-left"}`}>
-            {userBuffer}
+            <UserBufferDisplay />
           </div>
           <div className="flex space-x-10 my-5 justify-center items-center">
             {numberOfWordClicked > 0 && (
