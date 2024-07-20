@@ -24,11 +24,11 @@ export const ScramblePhrase = () => {
     resetUserBuffer,
     isReading,
     playSentence,
-    numberOfWordClicked,
     setNumberOfWordClicked,
     deleteWord,
     getCurrentUserBuffer,
     getCurrentUserBufferArray,
+    userBufferArray,
     handleWordClick,
   } = useScrambleContext();
 
@@ -82,9 +82,8 @@ export const ScramblePhrase = () => {
   ////////////////////////////////////////////////////////////////
 
   useEffect(() => {
-    if (numberOfWordClicked === 0) return;
-    // console.log("numberOfWordClicked", numberOfWordClicked);
-    if (numberOfWordClicked == words.length) {
+    if (getCurrentUserBufferArray().length === 0) return;
+    if (getCurrentUserBufferArray().length == words.length) {
       // Check if user buffer matches the original sentence (excluding punctuation)
       if (isBufferComplete()) {
         setShowFailNotice(false);
@@ -105,7 +104,7 @@ export const ScramblePhrase = () => {
       resetUserBuffer(); // Reset user buffer for next sentence
       setNumberOfWordClicked(0);
     }
-  }, [numberOfWordClicked]);
+  }, [userBufferArray]);
 
   ////////////////////////////////////////////////////////////////
   const playPartOfSentence = async () => {
@@ -172,9 +171,9 @@ export const ScramblePhrase = () => {
             <UserBufferDisplay />
           </div>
           <div className="flex space-x-10 my-5 justify-center items-center">
-            {numberOfWordClicked > 0 && (
+            {userBufferArray.length > 0 && (
               <div className="">
-                {numberOfWordClicked}/{words.length}
+                {userBufferArray.length}/{words.length}
               </div>
             )}
             <ControlButton

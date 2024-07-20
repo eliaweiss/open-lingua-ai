@@ -58,7 +58,7 @@ export const ScrambleProvider = ({ children }) => {
 
   ////////////////////////////////////////////////////////////////
   function deleteWord() {
-    if (numberOfWordClicked <= 0) return;
+    if (userBufferArray.length <= 0) return;
     setNumberOfWordClicked(numberOfWordClicked - 1);
     setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 1));
   }
@@ -95,6 +95,7 @@ export const ScrambleProvider = ({ children }) => {
         deleteWord,
         getCurrentUserBuffer,
         getCurrentUserBufferArray,
+        userBufferArray,
         handleWordClick,
       }}
     >
