@@ -198,6 +198,7 @@ export const AppProvider = ({ children }) => {
         currentPhraseIndexRef,
         currentPhraseIndex,
         currentPhrase,
+        allPhrases,
       }}
     >
       {children}

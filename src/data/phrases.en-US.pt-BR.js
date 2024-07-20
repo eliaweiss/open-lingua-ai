@@ -2387,7 +2387,7 @@ const phrases = [
   },
   {
     target:
-      "Durante o século XVII, a descoberta de ouro em Minas Gerais atraiu muitos colonos e levou ao desenvolvimento econômico significativo da região.",
+      "Durante o século XVII, a descoberta de ouro em Minas Gerais atraiu, muitos colonos e levou ao desenvolvimento econômico significativo da região.",
     src: "During the 17th century, the discovery of gold in Minas Gerais attracted many settlers and led to significant economic development in the region.",
   },
   {

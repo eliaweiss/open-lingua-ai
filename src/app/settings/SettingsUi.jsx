@@ -5,7 +5,7 @@ import ThemeToggle from "../components/ThemeToggle";
 import { useAppContext } from "../context/AppContext";
 
 export function SettingsUi() {
-  const { theme, toggleTheme, phraseRange, setPhraseRange, phrases } =
+  const { theme, toggleTheme, phraseRange, setPhraseRange, allPhrases } =
     useAppContext();
 
   const handleRangeChange = (event) => {
@@ -15,12 +15,13 @@ export function SettingsUi() {
       if (name === "start") {
         newRange[0] = Number(value);
       } else {
-        const val = Math.min(phrases.length, value);
+        const val = Math.min(allPhrases.length, value);
         newRange[1] = Number(val);
       }
-      if (newRange[0] >= newRange[1]) {
-        throw new Error("Invalid phrase range");
-      }
+      // if (newRange[0] >= newRange[1]) {
+      //   newRange[1] = allPhrases.length;
+      //   // throw new Error("Invalid phrase range");
+      // }
       return newRange;
     });
   };
@@ -38,6 +39,7 @@ export function SettingsUi() {
 
       <div className="mb-6">
         <h2 className="text-xl mb-2">Phrase Range</h2>
+        {allPhrases && <div>{allPhrases.length}</div>}
         <div className="flex space-x-2">
           <label>
             Start:

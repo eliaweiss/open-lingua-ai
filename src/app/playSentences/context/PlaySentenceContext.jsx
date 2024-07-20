@@ -45,13 +45,13 @@ export const PlaySentenceProvider = ({ children }) => {
         currentPhraseIndexRef.current != currentPhraseIndex;
 
       const playArray = [
+        { lang: "src", waitAfter: 1, rate: 1.1, isAccented: false },
         { lang: "target", waitAfter: 1, rate: 1, isAccented: false },
         { lang: "target", waitAfter: 2, rate: 1, isAccented: true },
-        { lang: "src", waitAfter: 1, rate: 1.25, isAccented: false },
       ];
 
       for (const readObj of playArray) {
-        if ((readObj.lang = "target")) {
+        if (readObj.lang == "target") {
           if (readObj.isAccented) {
             await readAloud_slow_target(currentPhrase.target, readObj.rate);
           } else {
