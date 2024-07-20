@@ -11,7 +11,7 @@ const todayStartTime = () => new Date().setHours(0, 0, 0, 0); // Midnight of the
 
 export const AppProvider = ({ children }) => {
   const [appInitFlag, setAppInitFlag] = useState(false);
-  const [phraseRange, setPhraseRange] = useState([1, 1000]);
+  const [phraseRange, setPhraseRange] = useState([0, 0]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState("light");
   const [phrases, setPhrases] = useState([]);
@@ -26,9 +26,15 @@ export const AppProvider = ({ children }) => {
     todayStartTime()
   );
 
+  ////////////////////////////////////////////////////////////////
+  // init app
   useEffect(() => {
     const initializeState = async () => {
-      const storedPhraseRange = await storage.get("phraseRange", [1, 1000]);
+      const phrases = await loadPhrase();
+      const storedPhraseRange = await storage.get("phraseRange", [
+        1,
+        phrases.length,
+      ]);
       setPhraseRange(storedPhraseRange);
 
       const storedTheme = localStorage.getItem("theme", "light");
@@ -103,11 +109,8 @@ export const AppProvider = ({ children }) => {
       .default;
     console.log("loadPhrase", phrases.length);
     setPhrases(phrases);
+    return phrases;
   };
-
-  useEffect(() => {
-    loadPhrase();
-  }, []);
 
   const toggleTheme = () => {
     if (typeof window === "undefined") return;
