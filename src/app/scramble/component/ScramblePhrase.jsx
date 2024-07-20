@@ -136,7 +136,7 @@ export const ScramblePhrase = () => {
       setHintClickCounter(1);
       setTimeout(() => {
         setHintClickCounter(0);
-      }, 500);
+      }, 1000);
     } else {
       // getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()
       const wordInBuffer = getCurrentUserBuffer().split(" ");
@@ -205,11 +205,15 @@ export const ScramblePhrase = () => {
             </ControlButton>
 
             <ControlButton
-              toolTip="Give hint (click twice)"
+              toolTip="Give hint (double click)"
               onClick={giveHint}
               className="p-4 rounded-lg border border-pBorder"
             >
-              <QuestionMarkCircleIcon className="w-6 h-6 " />
+              {hintClickCounter == 0 ? (
+                <QuestionMarkCircleIcon className="w-6 h-6 " />
+              ) : (
+                <div className="text-base h-6">click again</div>
+              )}
             </ControlButton>
           </div>
         </div>
