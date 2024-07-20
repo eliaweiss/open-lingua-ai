@@ -4,7 +4,11 @@ import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 import { useScrambleContext } from "../context/ScrambleContext";
 import { useEffect, useState } from "react";
 import { useAppContext } from "../../context/AppContext";
-import { BackspaceIcon } from "@heroicons/react/24/outline";
+import {
+  BackspaceIcon,
+  QuestionMarkCircleIcon,
+  QueueListIcon,
+} from "@heroicons/react/24/outline";
 
 export const ScramblePhrase = () => {
   const { isTargetRtl } = useAppContext();
@@ -28,6 +32,7 @@ export const ScramblePhrase = () => {
   const [currentSentence, setCurrentSentence] = useState("");
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
   const [showFailNotice, setShowFailNotice] = useState(false);
+  const [hintClickCounter, setHintClickCounter] = useState(0);
 
   ////////////////////////////////////////////////////////////////
 
@@ -124,6 +129,27 @@ export const ScramblePhrase = () => {
     setUserBuffer(deleteLastWord_helper(userBuffer.trim()));
   }
 
+  function giveHint() {
+    if (hintClickCounter == 0) {
+      setHintClickCounter(1);
+      setTimeout(() => {
+        setHintClickCounter(0);
+      }, 500);
+    } else {
+      // getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()
+      const wordInBuffer = getCurrentUserBuffer().split(" ");
+      let tmpUserBuffer = "";
+      let i = 0;
+      for (; i < wordInBuffer.length; i++) {
+        if (wordInBuffer[i] != words[i]) {
+          break;
+        }
+        tmpUserBuffer += " " + words[i];
+      }
+      setUserBuffer(tmpUserBuffer + " " +words[i]);
+    }
+  }
+
   return (
     <div>
       {isPlaying && (
@@ -170,6 +196,14 @@ export const ScramblePhrase = () => {
               className="p-4 rounded-lg border border-pBorder"
             >
               <BackspaceIcon className="w-6 h-6 " />
+            </ControlButton>
+
+            <ControlButton
+              toolTip="Give hint (click twice)"
+              onClick={giveHint}
+              className="p-4 rounded-lg border border-pBorder"
+            >
+              <QuestionMarkCircleIcon className="w-6 h-6 " />
             </ControlButton>
           </div>
         </div>
