@@ -12,6 +12,7 @@ export const ScrambleProvider = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReading, setIsReading] = useState(false);
 
+  const [userBufferArray, setUserBufferArray] = useState([]);
   const [userBuffer, setUserBuffer] = useState("");
   const [numberOfWordClicked, setNumberOfWordClicked] = useState(0);
 
@@ -38,10 +39,32 @@ export const ScrambleProvider = ({ children }) => {
     increasePhraseIndex();
   };
 
+  ////////////////////////////////////////////////////////////////
+
   const resetUserBuffer = () => {
+    setUserBufferArray([]);
     setUserBuffer("");
   };
-  const addToUserBuffer = ({ word, newUserBuffer }) => {
+
+  ////////////////////////////////////////////////////////////////
+  const handleWordClick = async ({
+    word,
+    newUserBuffer,
+    newUserBufferArray,
+  }) => {
+    if (!newUserBuffer) newUserBuffer = userBuffer;
+    if (!newUserBufferArray) newUserBufferArray = userBufferArray;
+    setNumberOfWordClicked(numberOfWordClicked + 1);
+    addToUserBuffer({ word, newUserBuffer });
+    await readAloud_target(word, 1.25);
+  };
+
+  const addToUserBuffer = ({
+    word,
+    newUserBuffer,
+    newUserBufferArray = [],
+  }) => {
+    setUserBufferArray([...newUserBufferArray, word]);
     setUserBuffer(newUserBuffer + " " + word);
   };
 
@@ -61,6 +84,7 @@ export const ScrambleProvider = ({ children }) => {
     if (numberOfWordClicked <= 0) return;
     setNumberOfWordClicked(numberOfWordClicked - 1);
     setUserBuffer(deleteLastWord_helper(userBuffer.trim()));
+    setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 2));
   }
 
   ////////////////////////////////////////////////////////////////
@@ -75,13 +99,6 @@ export const ScrambleProvider = ({ children }) => {
       .toLocaleLowerCase();
   }
 
-  ////////////////////////////////////////////////////////////////
-  const handleWordClick = async ({ word, newUserBuffer }) => {
-    if (!newUserBuffer) newUserBuffer = userBuffer;
-    setNumberOfWordClicked(numberOfWordClicked + 1);
-    addToUserBuffer({ word, newUserBuffer });
-    await readAloud_target(word, 1.25);
-  };
   return (
     <ScrambleContext.Provider
       value={{
@@ -90,7 +107,6 @@ export const ScrambleProvider = ({ children }) => {
         currentPhrase,
         currentPhraseIndex,
         isPlaying,
-        userBuffer,
         addToUserBuffer,
         resetUserBuffer,
         deleteWord,

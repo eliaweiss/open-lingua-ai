@@ -91,8 +91,6 @@ export const ScramblePhrase = () => {
     }
   }, [numberOfWordClicked]);
 
-
-
   ////////////////////////////////////////////////////////////////
   const playPartOfSentence = async () => {
     const text = currentPhrase.target.toLocaleLowerCase();
@@ -114,14 +112,16 @@ export const ScramblePhrase = () => {
     } else {
       const wordInBuffer = getCurrentUserBufferArray();
       let newUserBuffer = "";
+      let newUserBufferArray = [];
       let i = 0;
       for (; i < wordInBuffer.length; i++) {
         if (wordInBuffer[i] != words[i]) {
           break;
         }
         newUserBuffer += " " + words[i];
+        newUserBufferArray.push(words[i]);
       }
-      handleWordClick({ word: words[i], newUserBuffer });
+      handleWordClick({ word: words[i], newUserBuffer, newUserBufferArray });
       setNumberOfWordClicked(i + 1);
     }
   }
