@@ -33,19 +33,28 @@ export const ScramblePhrase = () => {
 
   const [scrambledWords, setScrambledWords] = useState([]);
   const [words, setWords] = useState([]);
-  const [currentSentence, setCurrentSentence] = useState("");
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
   const [showFailNotice, setShowFailNotice] = useState(false);
   const [hintClickCounter, setHintClickCounter] = useState(0);
 
   ////////////////////////////////////////////////////////////////
+  function splitToWords(currentSentence) {
+    currentSentence = removeDotAtEnd(currentSentence)
+      .replace(", ", " ")
+      .replace(". ", " ")
+      .replace("?", "")
+      .replace(/punctuation/g, "");
+    let words = currentSentence.toLocaleLowerCase().split(" "); // Split into words
+    setWords(words);
+    return words;
+  }
+
+  ////////////////////////////////////////////////////////////////  
 
   const scrambleSentence = () => {
     if (!currentPhrase) return;
     // Get the current Portuguese sentence
-    const { words, currentSentence } = splitToWords(currentPhrase.target); // Split into words
-    setWords(words);
-    setCurrentSentence(currentSentence);
+    const words = splitToWords(currentPhrase.target); // Split into words
 
     // Randomly scramble the words
     const scrambledWordsTmp = removeDuplicates(randomPermutation(words));
@@ -63,7 +72,6 @@ export const ScramblePhrase = () => {
 
   ////////////////////////////////////////////////////////////////
   function isBufferComplete() {
-    // return getCurrentUserBuffer() === currentSentence.toLocaleLowerCase();
     const wordsInBuffer = getCurrentUserBufferArray();
     if (wordsInBuffer.length !== words.length) {
       return false;
@@ -222,16 +230,6 @@ function removeDuplicates(words) {
 
   // Convert the Set back to an array
   return Array.from(uniqueWords);
-}
-
-function splitToWords(currentSentence) {
-  currentSentence = removeDotAtEnd(currentSentence)
-    .replace(", ", " ")
-    .replace(". ", " ")
-    .replace("?", "")
-    .replace(/punctuation/g, "");
-  let words = currentSentence.toLocaleLowerCase().split(" "); // Split into words
-  return { words, currentSentence };
 }
 
 function removeDotAtEnd(sentence) {
