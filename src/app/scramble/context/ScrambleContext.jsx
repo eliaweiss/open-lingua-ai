@@ -13,7 +13,6 @@ export const ScrambleProvider = ({ children }) => {
   const [isReading, setIsReading] = useState(false);
 
   const [userBufferArray, setUserBufferArray] = useState([]);
-  const [userBuffer, setUserBuffer] = useState("");
   const [numberOfWordClicked, setNumberOfWordClicked] = useState(0);
 
   const playPause = () => {
@@ -43,47 +42,24 @@ export const ScrambleProvider = ({ children }) => {
 
   const resetUserBuffer = () => {
     setUserBufferArray([]);
-    setUserBuffer("");
   };
 
   ////////////////////////////////////////////////////////////////
-  const handleWordClick = async ({
-    word,
-    newUserBuffer,
-    newUserBufferArray,
-  }) => {
-    if (!newUserBuffer) newUserBuffer = userBuffer;
+  const handleWordClick = async ({ word, newUserBufferArray }) => {
     if (!newUserBufferArray) newUserBufferArray = userBufferArray;
     setNumberOfWordClicked(numberOfWordClicked + 1);
-    addToUserBuffer({ word, newUserBuffer, newUserBufferArray });
+    addToUserBuffer({ word, newUserBufferArray });
     await readAloud_target(word, 1.25);
   };
 
-  const addToUserBuffer = ({
-    word,
-    newUserBuffer,
-    newUserBufferArray = [],
-  }) => {
+  const addToUserBuffer = ({ word, newUserBufferArray = [] }) => {
     setUserBufferArray([...newUserBufferArray, { word }]);
-    setUserBuffer(newUserBuffer + " " + word);
   };
-
-  ////////////////////////////////////////////////////////////////
-  function deleteLastWord_helper(str) {
-    const lastSpaceIndex = str.lastIndexOf(" ");
-    if (lastSpaceIndex !== -1) {
-      return str.slice(0, lastSpaceIndex);
-    } else {
-      // Handle case where there's no space (single word sentence)
-      return "";
-    }
-  }
 
   ////////////////////////////////////////////////////////////////
   function deleteWord() {
     if (numberOfWordClicked <= 0) return;
     setNumberOfWordClicked(numberOfWordClicked - 1);
-    setUserBuffer(deleteLastWord_helper(userBuffer.trim()));
     setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 1));
   }
 
@@ -98,10 +74,6 @@ export const ScrambleProvider = ({ children }) => {
       buffer += " " + word;
     }
     return buffer;
-    // return userBuffer
-    //   .trim()
-    //   .replace(/punctuation/g, "")
-    //   .toLocaleLowerCase();
   }
 
   return (
