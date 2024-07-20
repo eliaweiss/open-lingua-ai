@@ -49,7 +49,7 @@ export const ScramblePhrase = () => {
     return words;
   }
 
-  ////////////////////////////////////////////////////////////////  
+  ////////////////////////////////////////////////////////////////
 
   const scrambleSentence = () => {
     if (!currentPhrase) return;
@@ -131,17 +131,15 @@ export const ScramblePhrase = () => {
       }, 1000);
     } else {
       const wordInBuffer = getCurrentUserBufferArray();
-      let newUserBuffer = "";
       let newUserBufferArray = [];
       let i = 0;
       for (; i < wordInBuffer.length; i++) {
         if (wordInBuffer[i].word != words[i]) {
           break;
         }
-        newUserBuffer += " " + words[i];
         newUserBufferArray.push({ word: words[i] });
       }
-      handleWordClick({ word: words[i], newUserBuffer, newUserBufferArray });
+      handleWordClick({ word: words[i], newUserBufferArray });
     }
   }
 
