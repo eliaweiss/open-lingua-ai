@@ -64,7 +64,7 @@ export const ScrambleProvider = ({ children }) => {
     newUserBuffer,
     newUserBufferArray = [],
   }) => {
-    setUserBufferArray([...newUserBufferArray, word]);
+    setUserBufferArray([...newUserBufferArray, { word }]);
     setUserBuffer(newUserBuffer + " " + word);
   };
 

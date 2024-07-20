@@ -72,7 +72,7 @@ export const ScramblePhrase = () => {
     }
 
     for (let i = 0; i < wordsInBuffer.length; i++) {
-      if (wordsInBuffer[i] !== words[i]) {
+      if (wordsInBuffer[i].word !== words[i]) {
         return false;
       }
     }
@@ -131,11 +131,11 @@ export const ScramblePhrase = () => {
       let newUserBufferArray = [];
       let i = 0;
       for (; i < wordInBuffer.length; i++) {
-        if (wordInBuffer[i] != words[i]) {
+        if (wordInBuffer[i].word != words[i]) {
           break;
         }
         newUserBuffer += " " + words[i];
-        newUserBufferArray.push(words[i]);
+        newUserBufferArray.push({ word: words[i] });
       }
       handleWordClick({ word: words[i], newUserBuffer, newUserBufferArray });
       setNumberOfWordClicked(i + 1);
