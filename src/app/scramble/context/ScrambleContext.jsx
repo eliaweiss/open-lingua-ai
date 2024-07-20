@@ -13,6 +13,7 @@ export const ScrambleProvider = ({ children }) => {
   const [isReading, setIsReading] = useState(false);
 
   const [userBuffer, setUserBuffer] = useState("");
+  const [numberOfWordClicked, setNumberOfWordClicked] = useState(0);
 
   const playPause = () => {
     setIsPlaying(!isPlaying);
@@ -43,6 +44,24 @@ export const ScrambleProvider = ({ children }) => {
   const addToUserBuffer = ({ word, newUserBuffer }) => {
     setUserBuffer(newUserBuffer + " " + word);
   };
+
+  ////////////////////////////////////////////////////////////////
+  function deleteLastWord_helper(str) {
+    const lastSpaceIndex = str.lastIndexOf(" ");
+    if (lastSpaceIndex !== -1) {
+      return str.slice(0, lastSpaceIndex);
+    } else {
+      // Handle case where there's no space (single word sentence)
+      return "";
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  function deleteWord() {
+    if (numberOfWordClicked <= 0) return;
+    setNumberOfWordClicked(numberOfWordClicked - 1);
+    setUserBuffer(deleteLastWord_helper(userBuffer.trim()));
+  }
   return (
     <ScrambleContext.Provider
       value={{
@@ -54,9 +73,13 @@ export const ScrambleProvider = ({ children }) => {
         userBuffer,
         addToUserBuffer,
         resetUserBuffer,
+        deleteWord,
         isReading,
         increasePhraseIndex,
         playSentence,
+        numberOfWordClicked,
+        setNumberOfWordClicked,
+        deleteWord,
       }}
     >
       {children}

@@ -25,11 +25,13 @@ export const ScramblePhrase = () => {
     resetUserBuffer,
     isReading,
     playSentence,
+    numberOfWordClicked,
+    setNumberOfWordClicked,
+    deleteWord,
   } = useScrambleContext();
 
   const [scrambledWords, setScrambledWords] = useState([]);
   const [words, setWords] = useState([]);
-  const [numberOfWordClicked, setNumberOfWordClicked] = useState(0);
   const [currentSentence, setCurrentSentence] = useState("");
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
   const [showFailNotice, setShowFailNotice] = useState(false);
@@ -114,23 +116,6 @@ export const ScramblePhrase = () => {
       }
     }
   };
-
-  ////////////////////////////////////////////////////////////////
-  function deleteLastWord_helper(str) {
-    const lastSpaceIndex = str.lastIndexOf(" ");
-    if (lastSpaceIndex !== -1) {
-      return str.slice(0, lastSpaceIndex);
-    } else {
-      // Handle case where there's no space (single word sentence)
-      return "";
-    }
-  }
-  ////////////////////////////////////////////////////////////////
-  function deleteWord() {
-    if (numberOfWordClicked <= 0) return;
-    setNumberOfWordClicked(numberOfWordClicked - 1);
-    setUserBuffer(deleteLastWord_helper(userBuffer.trim()));
-  }
 
   function giveHint() {
     if (hintClickCounter == 0) {
