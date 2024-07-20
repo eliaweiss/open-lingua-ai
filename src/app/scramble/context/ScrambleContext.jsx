@@ -65,6 +65,9 @@ export const ScrambleProvider = ({ children }) => {
 
   ////////////////////////////////////////////////////////////////
 
+  function getCurrentUserBufferArray() {
+    return getCurrentUserBuffer().split(" ");
+  }
   function getCurrentUserBuffer() {
     return userBuffer
       .trim()
@@ -90,6 +93,7 @@ export const ScrambleProvider = ({ children }) => {
         setNumberOfWordClicked,
         deleteWord,
         getCurrentUserBuffer,
+        getCurrentUserBufferArray,
       }}
     >
       {children}

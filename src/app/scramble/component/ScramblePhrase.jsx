@@ -29,6 +29,7 @@ export const ScramblePhrase = () => {
     setNumberOfWordClicked,
     deleteWord,
     getCurrentUserBuffer,
+    getCurrentUserBufferArray,
   } = useScrambleContext();
 
   const [scrambledWords, setScrambledWords] = useState([]);
@@ -117,8 +118,7 @@ export const ScramblePhrase = () => {
         setHintClickCounter(0);
       }, 1000);
     } else {
-      // getCurrentUserBuffer() === currentSentence.toLocaleLowerCase()
-      const wordInBuffer = getCurrentUserBuffer().split(" ");
+      const wordInBuffer = getCurrentUserBufferArray();
       let newUserBuffer = "";
       let i = 0;
       for (; i < wordInBuffer.length; i++) {
