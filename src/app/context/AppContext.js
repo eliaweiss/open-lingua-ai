@@ -136,6 +136,10 @@ export const AppProvider = ({ children }) => {
     if (!appInitFlag) return;
     storage.set("phraseRange", phraseRange);
   }, [phraseRange]);
+
+  const getPhrasesInRange = () => {
+    return phrases.slice(phraseRange[0], phraseRange[1] + 1);
+  };
   return (
     <AppContext.Provider
       value={{
@@ -155,6 +159,7 @@ export const AppProvider = ({ children }) => {
         incrDailyCount,
         phraseRange,
         setPhraseRange,
+        getPhrasesInRange,
       }}
     >
       {children}
