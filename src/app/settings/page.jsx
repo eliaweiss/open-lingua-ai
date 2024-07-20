@@ -55,9 +55,17 @@ export default function Settings() {
             />
           </label>
         </div>
-        <p>
+        {/* <p>
           Current range: {phraseRange[0]} - {phraseRange[1]}
-        </p>
+        </p> */}
+        <div className="text-sm">
+          You can choose the range of phrases you want to practice. <br />
+          The initial phrases are easier, while the later ones are more
+          challenging.
+          <br />
+          Adjusting the range allows you to set the difficulty level according
+          to your preference.
+        </div>
       </div>
     </div>
   );
