@@ -5,6 +5,28 @@ import { useAppContext } from "../../context/AppContext";
 
 const ItemType = "ITEM";
 
+const DraggableItemContent = ({ rSetting }) => {
+  const { getLanguageName } = useAppContext();
+  return (
+    <div className="">
+      <div className="flex space-x-2  ">
+        <div className="flex-1 ">
+          <div className="text-xs">Lang</div>
+          <div className="font-bold">{getLanguageName(rSetting.lang)}</div>
+        </div>
+        <div className="flex-1">
+          <div className="text-xs">Speed</div>
+          <div className="font-bold">{rSetting.rate}</div>
+        </div>
+        <div className="flex-1">
+          <div className="text-xs">Wait After</div>
+
+          <div className="font-bold">{rSetting.waitAfter}</div>
+        </div>
+      </div>
+    </div>
+  );
+};
 const DraggableItem = ({ id, content, index, moveItem }) => {
   const [, ref] = useDrag({
     type: ItemType,
@@ -32,8 +54,7 @@ const DraggableItem = ({ id, content, index, moveItem }) => {
 };
 
 const DndComponent = () => {
-  const { readSettingsArray, setReadSettingsArray, getLanguageName } =
-    useAppContext();
+  const { readSettingsArray, setReadSettingsArray } = useAppContext();
 
   const [items, setItems] = React.useState([]);
 
@@ -42,28 +63,8 @@ const DndComponent = () => {
     setItems(
       readSettingsArray.list.map((rSetting, index) => ({
         id: "index",
-        content: (
-          <div className="">
-            <div className="flex space-x-2  ">
-              <div className="flex-1 ">
-                <div className="text-xs">Lang</div>
-                <div className="font-bold">
-                  {getLanguageName(rSetting.lang)}
-                </div>
-              </div>
-              <div className="flex-1">
-                <div className="text-xs">Speed</div>
-                <div className="font-bold">{rSetting.rate}</div>
-              </div>
-              <div className="flex-1">
-                <div className="text-xs">Wait After</div>
-
-                <div className="font-bold">{rSetting.waitAfter}</div>
-              </div>
-            </div>
-          </div>
-        ),
-        rSetting,
+        content: <DraggableItemContent rSetting={rSetting} />,
+        item: rSetting,
       }))
     );
   }, [readSettingsArray]);
@@ -73,6 +74,11 @@ const DndComponent = () => {
     const [movedItem] = updatedItems.splice(fromIndex, 1);
     updatedItems.splice(toIndex, 0, movedItem);
     setItems(updatedItems);
+
+    readSettingsArray.list = updatedItems.map(
+      (rSetting, index) => rSetting.item
+    );
+    setReadSettingsArray(readSettingsArray);
   };
 
   return (
