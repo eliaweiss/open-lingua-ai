@@ -11,7 +11,8 @@ import { PlusCircleIcon, TrashIcon } from "@heroicons/react/24/solid";
 const ItemType = "ITEM";
 
 const DraggableItemContent = ({ rSetting, index }) => {
-  const { getLanguageName, readSettingsArray, setReadSettingsArray } = useAppContext();
+  const { getLanguageName, readSettingsArray, setReadSettingsArray } =
+    useAppContext();
 
   function trash(index) {
     if (readSettingsArray.list.length < 2) return;
@@ -33,7 +34,11 @@ const DraggableItemContent = ({ rSetting, index }) => {
 
   return (
     <div className="">
-      <div className={`flex space-x-2 px-2 mb-2 ${rSetting.lang === "src" ? "bg-[#08679a2a]" : ""}`}>
+      <div
+        className={`flex space-x-2 px-2 mb-2 ${
+          rSetting.lang === "src" ? "bg-[#08679a2a]" : ""
+        }`}
+      >
         <div className="flex-1">
           <div className="text-xs">Lang</div>
           <div className="font-bold">
@@ -74,14 +79,24 @@ const DraggableItemContent = ({ rSetting, index }) => {
           </div>
         </div>
         <div>
-          <TrashIcon className="w-5 pt-3 cursor-pointer" onClick={() => trash(index)} />
+          <TrashIcon
+            className="w-5 pt-3 cursor-pointer"
+            onClick={() => trash(index)}
+          />
         </div>
       </div>
     </div>
   );
 };
 
-const DraggableItem = ({ id, content, index, moveItem }) => {
+const DraggableItem = ({
+  id,
+  content,
+  index,
+  moveItem,
+  hoverItem,
+  hoverItemIndex,
+}) => {
   const [, ref] = useDrag({
     type: ItemType,
     item: { id, index },
@@ -89,10 +104,20 @@ const DraggableItem = ({ id, content, index, moveItem }) => {
 
   const [, drop] = useDrop({
     accept: ItemType,
-    hover: (draggedItem) => {
+    drop: (draggedItem) => {
       if (draggedItem.index !== index) {
         moveItem(draggedItem.index, index);
         draggedItem.index = index;
+        setTimeout(() => {
+          hoverItem(null);
+        }, 300);
+      }
+    },
+    hover: (draggedItem) => {
+      if (draggedItem.index === index) {
+        hoverItem(null);
+      } else {
+        hoverItem(index);
       }
     },
   });
@@ -102,7 +127,9 @@ const DraggableItem = ({ id, content, index, moveItem }) => {
       ref={(node) => ref(drop(node))}
       className="user-select-none bg-primary-foreground shadow cursor-pointer rounded transform transition-transform duration-300 hover:scale-105"
     >
-      {content}
+      <div className={`${hoverItemIndex == index && "opacity-10"}`}>
+        {content}
+      </div>
     </div>
   );
 };
@@ -110,6 +137,7 @@ const DraggableItem = ({ id, content, index, moveItem }) => {
 const ReadSettingDnd = () => {
   const { readSettingsArray, setReadSettingsArray } = useAppContext();
   const [items, setItems] = React.useState([]);
+  const [hoverItemIndex, setHoverItemIndex] = React.useState(null);
 
   useEffect(() => {
     if (!readSettingsArray) return;
@@ -132,6 +160,10 @@ const ReadSettingDnd = () => {
     setReadSettingsArray({ ...readSettingsArray });
   };
 
+  const hoverItem = (index) => {
+    setHoverItemIndex(index);
+  };
+
   function addReadSettings() {
     readSettingsArray.list.push({
       lang: "target",
@@ -143,7 +175,7 @@ const ReadSettingDnd = () => {
   }
 
   const isTouchDevice = () => {
-    return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
+    return "ontouchstart" in window || navigator.maxTouchPoints > 0;
   };
 
   return (
@@ -156,11 +188,16 @@ const ReadSettingDnd = () => {
               id={item.id}
               content={item.content}
               index={index}
+              hoverItemIndex={hoverItemIndex}
               moveItem={moveItem}
+              hoverItem={hoverItem}
             />
           ))}
           <div className="flex justify-end w-full">
-            <div className="flex space-x-2 cursor-pointer" onClick={addReadSettings}>
+            <div
+              className="flex space-x-2 cursor-pointer"
+              onClick={addReadSettings}
+            >
               <div>Add</div>
               <PlusCircleIcon className="w-6" />
             </div>
