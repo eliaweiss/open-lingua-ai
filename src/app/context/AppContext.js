@@ -90,8 +90,7 @@ export const AppProvider = ({ children }) => {
 
       const todayTimestamp = todayStartTime();
       const storedCurrentDaytimeStamp = await storage.get(
-        "currentDaytimeStamp",
-        null
+        "currentDaytimeStamp"
       );
       if (!isSameDay(todayTimestamp, storedCurrentDaytimeStamp)) {
         // Reset the count if the current timestamp is not the same day as stored timestamp
