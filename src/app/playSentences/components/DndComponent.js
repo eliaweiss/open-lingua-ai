@@ -30,10 +30,13 @@ const DraggableItemContent = ({ rSetting, index }) => {
   ];
   return (
     <div className="">
-      <div className="flex space-x-2 ">
+      <div
+        className={`flex space-x-2 p-2 mb-2 ${
+          rSetting.lang == "src" ? "bg-[#08679a2a]" : ""
+        }`}
+      >
         <div className="flex-1 ">
           <div className="text-xs">Lang</div>
-          {/* <div className="font-bold">{getLanguageName(rSetting.lang)}</div> */}
           <div className="font-bold">
             <SelectComponent
               options={options}
@@ -98,7 +101,7 @@ const DraggableItem = ({ id, content, index, moveItem }) => {
   return (
     <div
       ref={(node) => ref(drop(node))}
-      className="user-select-none p-4 mb-2 bg-primary-foreground shadow cursor-pointer rounded mt-2 px-2 transform transition-transform duration-300 hover:scale-105"
+      className="user-select-none  bg-primary-foreground shadow cursor-pointer rounded mt-2 transform transition-transform duration-300 hover:scale-105"
     >
       {content}
     </div>
