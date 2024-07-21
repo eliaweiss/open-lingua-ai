@@ -2,11 +2,17 @@ import React, { useEffect } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { useAppContext } from "../../context/AppContext";
+import { Input } from "../../components/Input";
 
 const ItemType = "ITEM";
 
-const DraggableItemContent = ({ rSetting }) => {
-  const { getLanguageName } = useAppContext();
+const DraggableItemContent = ({ rSetting, index }) => {
+  const { getLanguageName, readSettingsArray, setReadSettingsArray } =
+    useAppContext();
+  function changeRate(value) {
+    readSettingsArray.list[index].rate = value;
+    setReadSettingsArray({ ...readSettingsArray });
+  }
   return (
     <div className="">
       <div className="flex space-x-2  ">
@@ -16,7 +22,12 @@ const DraggableItemContent = ({ rSetting }) => {
         </div>
         <div className="flex-1">
           <div className="text-xs">Speed</div>
-          <div className="font-bold">{rSetting.rate}</div>
+          <div className="font-bold">
+            <Input
+              value={rSetting.rate}
+              onChange={(e) => changeRate(e.target.value)}
+            />
+          </div>
         </div>
         <div className="flex-1">
           <div className="text-xs">Wait After</div>
@@ -63,7 +74,7 @@ const DndComponent = () => {
     setItems(
       readSettingsArray.list.map((rSetting, index) => ({
         id: "index",
-        content: <DraggableItemContent rSetting={rSetting} />,
+        content: <DraggableItemContent rSetting={rSetting} index={index} />,
         item: rSetting,
       }))
     );
