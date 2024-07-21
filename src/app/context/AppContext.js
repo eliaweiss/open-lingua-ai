@@ -120,10 +120,21 @@ export const AppProvider = ({ children }) => {
   };
 
   const loadPhrase = async () => {
-    const src_target = `${sourceLanguage}.${targetLanguage}`;
-    const phrases = (await import(`../../data/phrases.${src_target}.js`))
+    // const src_target = `${sourceLanguage}.${targetLanguage}`;
+    // const phrases = (await import(`../../data/phrases.${src_target}.js`))
+    //   .default;
+    const translation = (await import(`../../data/translation.en-US.pt-BR.js`))
       .default;
-    console.log("loadPhrase", phrases.length);
+    console.log("loadPhrase", translation.phrases.length);
+    const langKeys = Object.keys(translation.langs);
+    setSourceLanguage(translation.langs.lang1.tag);
+    setTargetLanguage(translation.langs.lang2.tag);
+    const phrases = translation.phrases.map((phrase) => {
+      return {
+        target: phrase[langKeys[0]],
+        src: phrase[langKeys[1]],
+      };
+    });
     setAllPhrases(phrases);
     return phrases;
   };
