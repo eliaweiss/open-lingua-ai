@@ -96,15 +96,15 @@ const DraggableItem = ({
   id,
   content,
   index,
-  moveItem,
-  hoverItem,
-  hoverItemIndex,
+  moveItemCallback,
+  hoverItemCallback,
+  currentHoverItemIndex,
 }) => {
   const [, ref] = useDrag({
     type: ItemType,
     item: { id, index },
     end: () => {
-      hoverItem(null);
+      hoverItemCallback(null);
     },
   });
 
@@ -112,15 +112,15 @@ const DraggableItem = ({
     accept: ItemType,
     drop: (draggedItem) => {
       if (draggedItem.index !== index) {
-        moveItem(draggedItem.index, index);
+        moveItemCallback(draggedItem.index, index);
         draggedItem.index = index;
       }
     },
     hover: (draggedItem) => {
       if (draggedItem.index === index) {
-        hoverItem(null);
+        hoverItemCallback(null);
       } else {
-        hoverItem(index);
+        hoverItemCallback(index);
       }
     },
   });
@@ -130,7 +130,7 @@ const DraggableItem = ({
       ref={(node) => ref(drop(node))}
       className="user-select-none bg-primary-foreground shadow cursor-pointer rounded transform transition-transform duration-300 hover:scale-105"
     >
-      <div className={`${hoverItemIndex == index && "opacity-10"}`}>
+      <div className={`${currentHoverItemIndex == index && "opacity-10"}`}>
         {content}
       </div>
     </div>
@@ -140,7 +140,7 @@ const DraggableItem = ({
 const ReadSettingDnd = () => {
   const { readSettingsArray, setReadSettingsArray } = useAppContext();
   const [items, setItems] = React.useState([]);
-  const [hoverItemIndex, setHoverItemIndex] = React.useState(null);
+  const [currentHoverItemIndex, setHoverItemIndex] = React.useState(null);
 
   useEffect(() => {
     if (!readSettingsArray) return;
@@ -153,7 +153,7 @@ const ReadSettingDnd = () => {
     );
   }, [readSettingsArray]);
 
-  const moveItem = (fromIndex, toIndex) => {
+  const moveItemCallback = (fromIndex, toIndex) => {
     const updatedItems = [...items];
     const [movedItem] = updatedItems.splice(fromIndex, 1);
     updatedItems.splice(toIndex, 0, movedItem);
@@ -163,7 +163,7 @@ const ReadSettingDnd = () => {
     setReadSettingsArray({ ...readSettingsArray });
   };
 
-  const hoverItem = (index) => {
+  const hoverItemCallback = (index) => {
     setHoverItemIndex(index);
   };
 
@@ -191,9 +191,9 @@ const ReadSettingDnd = () => {
               id={item.id}
               content={item.content}
               index={index}
-              hoverItemIndex={hoverItemIndex}
-              moveItem={moveItem}
-              hoverItem={hoverItem}
+              currentHoverItemIndex={currentHoverItemIndex}
+              moveItemCallback={moveItemCallback}
+              hoverItemCallback={hoverItemCallback}
             />
           ))}
           <div className="flex justify-end w-full">
