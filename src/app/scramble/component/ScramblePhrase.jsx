@@ -53,6 +53,8 @@ export const ScramblePhrase = () => {
 
   const scrambleSentence = () => {
     if (!currentPhrase) return;
+    setShowFailNotice(false);
+
     // Get the current Portuguese sentence
     const words = splitToWords(currentPhrase.target); // Split into words
 
