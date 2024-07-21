@@ -42,6 +42,16 @@ const DraggableItemContent = ({ rSetting, index }) => {
           </div>
         </div>
         <div className="flex-1">
+          <div className="text-xs">Accented</div>
+          <div className="font-bold">
+            <Input
+              size="3"
+              value={rSetting.isAccented}
+              onChange={(e) => changeValue("isAccented", e.target.value)}
+            />
+          </div>
+        </div>
+        <div className="flex-1">
           <div className="text-xs">Speed</div>
           <div className="font-bold">
             <Input
