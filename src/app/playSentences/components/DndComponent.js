@@ -9,8 +9,8 @@ const ItemType = "ITEM";
 const DraggableItemContent = ({ rSetting, index }) => {
   const { getLanguageName, readSettingsArray, setReadSettingsArray } =
     useAppContext();
-  function changeRate(value) {
-    readSettingsArray.list[index].rate = value;
+  function changeValue(name, value) {
+    readSettingsArray.list[index][name] = value;
     setReadSettingsArray({ ...readSettingsArray });
   }
   return (
@@ -24,15 +24,22 @@ const DraggableItemContent = ({ rSetting, index }) => {
           <div className="text-xs">Speed</div>
           <div className="font-bold">
             <Input
+              size="3"
               value={rSetting.rate}
-              onChange={(e) => changeRate(e.target.value)}
+              onChange={(e) => changeValue("rate", e.target.value)}
             />
           </div>
         </div>
         <div className="flex-1">
           <div className="text-xs">Wait After</div>
 
-          <div className="font-bold">{rSetting.waitAfter}</div>
+          <div className="font-bold">
+            <Input
+              size="1"
+              value={rSetting.waitAfter}
+              onChange={(e) => changeValue("waitAfter", e.target.value)}
+            />
+          </div>
         </div>
       </div>
     </div>
