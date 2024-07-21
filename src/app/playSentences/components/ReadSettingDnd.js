@@ -53,6 +53,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
           <div className="text-xs">Accented</div>
           <div className="font-bold">
             <CheckboxComponent
+              disabled={rSetting.lang === "src"}
               checked={rSetting.isAccented}
               onChange={() => changeValue("isAccented", !rSetting.isAccented)}
             />
@@ -65,7 +66,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
               value={rSetting.rate}
               onChange={(e) => changeValue("rate", e.target.value)}
               type="number"
-              class="w-[2.5em]"
+              class="w-[3em]"
             />
           </div>
         </div>
@@ -76,7 +77,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
               value={rSetting.waitAfter}
               onChange={(e) => changeValue("waitAfter", e.target.value)}
               type="number"
-              class="w-[1.5em]"
+              class="w-[2em]"
             />
           </div>
         </div>
