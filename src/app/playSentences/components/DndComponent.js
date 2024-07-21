@@ -4,27 +4,34 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { useAppContext } from "../../context/AppContext";
 import { Input } from "../../components/Input";
 import SelectComponent from "./SelectComponent";
+import { TrashIcon } from "@heroicons/react/24/outline";
 const ItemType = "ITEM";
 
 const DraggableItemContent = ({ rSetting, index }) => {
   const { getLanguageName, readSettingsArray, setReadSettingsArray } =
     useAppContext();
+
+  function trash(index) {
+    // delete readSettingsArray.list[index];
+    // setReadSettingsArray({ ...readSettingsArray });
+  }
   function changeValue(name, value) {
     readSettingsArray.list[index][name] = value;
     setReadSettingsArray({ ...readSettingsArray });
   }
+
   const options = [
-    { value: "target", label: getLanguageName("target") }, 
-    { value: "source", label: getLanguageName("src") },
+    { value: "target", label: getLanguageName("target") },
+    { value: "src", label: getLanguageName("src") },
   ];
   return (
     <div className="">
-      <div className="flex space-x-2  ">
+      <div className="flex space-x-2 ">
         <div className="flex-1 ">
           <div className="text-xs">Lang</div>
           {/* <div className="font-bold">{getLanguageName(rSetting.lang)}</div> */}
           <div className="font-bold">
-            {" "}
+            {rSetting.lang}
             <SelectComponent
               options={options}
               value={rSetting.lang}
@@ -52,6 +59,9 @@ const DraggableItemContent = ({ rSetting, index }) => {
               onChange={(e) => changeValue("waitAfter", e.target.value)}
             />
           </div>
+        </div>
+        <div className="">
+          <TrashIcon className="w-5 pt-3" onClick={trash(index)} />
         </div>
       </div>
     </div>
