@@ -4,7 +4,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { useAppContext } from "../../context/AppContext";
 import { Input } from "../../components/Input";
 import SelectComponent from "./SelectComponent";
-import { TrashIcon } from "@heroicons/react/24/outline";
+import { PlusCircleIcon, TrashIcon } from "@heroicons/react/24/solid";
 const ItemType = "ITEM";
 
 const DraggableItemContent = ({ rSetting, index }) => {
@@ -123,6 +123,16 @@ const DndComponent = () => {
     setReadSettingsArray({ ...readSettingsArray });
   };
 
+  function addReadSettings() {
+    readSettingsArray.list.push({
+      lang: "target",
+      waitAfter: 1,
+      rate: 1,
+      isAccented: false,
+    });
+    setReadSettingsArray({ ...readSettingsArray });
+  }
+
   return (
     <>
       <DndProvider backend={HTML5Backend}>
@@ -136,6 +146,15 @@ const DndComponent = () => {
               moveItem={moveItem}
             />
           ))}
+          <div className="flex justify-end w-full">
+            <div
+              className=" flex space-x-2 cursor-pointer"
+              onClick={addReadSettings}
+            >
+              <div className="">Add</div>
+              <PlusCircleIcon className="w-6 " />
+            </div>
+          </div>
         </div>
       </DndProvider>
     </>
