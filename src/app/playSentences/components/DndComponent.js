@@ -12,8 +12,11 @@ const DraggableItemContent = ({ rSetting, index }) => {
     useAppContext();
 
   function trash(index) {
-    // delete readSettingsArray.list[index];
-    // setReadSettingsArray({ ...readSettingsArray });
+    if (readSettingsArray.list.length < 2) return;
+    if (index > -1) {
+      readSettingsArray.list.splice(index, 1);
+    }
+    setReadSettingsArray({ ...readSettingsArray });
   }
   function changeValue(name, value) {
     readSettingsArray.list[index][name] = value;
@@ -31,7 +34,6 @@ const DraggableItemContent = ({ rSetting, index }) => {
           <div className="text-xs">Lang</div>
           {/* <div className="font-bold">{getLanguageName(rSetting.lang)}</div> */}
           <div className="font-bold">
-            {rSetting.lang}
             <SelectComponent
               options={options}
               value={rSetting.lang}
@@ -61,7 +63,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
           </div>
         </div>
         <div className="">
-          <TrashIcon className="w-5 pt-3" onClick={trash(index)} />
+          <TrashIcon className="w-5 pt-3" onClick={() => trash(index)} />
         </div>
       </div>
     </div>

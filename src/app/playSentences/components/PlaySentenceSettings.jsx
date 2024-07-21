@@ -1,4 +1,4 @@
-import { useAppContext } from "../../context/AppContext";
+import { deepCopy, useAppContext } from "../../context/AppContext";
 import DndComponent from "./DndComponent";
 export const BEGINNER_READ_SETTINGS = {
   level: "BEGINNER",
@@ -29,7 +29,9 @@ export function PlaySentenceSettings() {
             className={`rounded-lg text-pText  px-4 py-2 border border-bg-pBg ${
               readSettingsArray.level == "BEGINNER" ? "bg-sBg" : "bg-pBg"
             }`}
-            onClick={() => setReadSettingsArray(BEGINNER_READ_SETTINGS)}
+            onClick={() =>
+              setReadSettingsArray(deepCopy(BEGINNER_READ_SETTINGS))
+            }
           >
             Beginner
           </button>
@@ -37,7 +39,9 @@ export function PlaySentenceSettings() {
             className={`rounded-lg text-pText  px-4 py-2 border border-bg-pBg ${
               readSettingsArray.level == "ADVANCE" ? "bg-sBg" : "bg-pBg"
             }`}
-            onClick={() => setReadSettingsArray(ADVANCE_READ_SETTINGS)}
+            onClick={() =>
+              setReadSettingsArray(deepCopy(ADVANCE_READ_SETTINGS))
+            }
           >
             Advance
           </button>

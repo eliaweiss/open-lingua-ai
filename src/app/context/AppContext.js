@@ -12,6 +12,10 @@ const LANGUAGE = {
   PT_BR: "pt-BR",
 };
 
+export function deepCopy(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
 const todayStartTime = () => new Date().setHours(0, 0, 0, 0); // Midnight of the current day
 
 export const AppProvider = ({ children }) => {
@@ -22,7 +26,7 @@ export const AppProvider = ({ children }) => {
   const [allPhrases, setAllPhrases] = useState([]);
   const [phrases, setPhrases] = useState([]);
   const [readSettingsArray, setReadSettingsArray] = useState(
-    BEGINNER_READ_SETTINGS
+    deepCopy(BEGINNER_READ_SETTINGS)
   );
 
   const [sourceLanguage, setSourceLanguage] = useState(LANGUAGE.EN_US);
@@ -52,7 +56,7 @@ export const AppProvider = ({ children }) => {
       setPhraseRange(storedPhraseRange);
 
       setReadSettingsArray(
-        await storage.get("readSettingsArray", BEGINNER_READ_SETTINGS)
+        await storage.get("readSettingsArray", deepCopy(BEGINNER_READ_SETTINGS))
       );
 
       const storedTheme = localStorage.getItem("theme", "light");
