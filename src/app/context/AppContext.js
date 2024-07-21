@@ -29,6 +29,12 @@ export const AppProvider = ({ children }) => {
     deepCopy(BEGINNER_READ_SETTINGS)
   );
 
+  const [defaultSourceLanguage, setDefaultSourceLanguage] = useState(
+    LANGUAGE.EN_US
+  );
+  const [defaultTargetLanguage, setDefaultTargetLanguage] = useState(
+    LANGUAGE.PT_BR
+  );
   const [sourceLanguage, setSourceLanguage] = useState(LANGUAGE.EN_US);
   const [targetLanguage, setTargetLanguage] = useState(LANGUAGE.PT_BR);
   const [sourceLanguageRate, setSourceLanguageRate] = useState(1);
@@ -45,7 +51,25 @@ export const AppProvider = ({ children }) => {
   // init app
   useEffect(() => {
     const initializeState = async () => {
-      const phrases = await loadPhrase();
+      const storedTheme = myLocalStorage.get("theme", "light");
+      setTheme(storedTheme);
+
+      const storedDefaultSourceLanguage = myLocalStorage.get(
+        "DefaultSourceLanguage",
+        LANGUAGE.EN_US
+      );
+      setDefaultSourceLanguage(storedDefaultSourceLanguage);
+
+      const storedDefaultTargetLanguage = myLocalStorage.get(
+        "DefaultTargetLanguage",
+        LANGUAGE.PT_BR
+      );
+      setDefaultTargetLanguage(storedDefaultTargetLanguage);
+
+      const phrases = await loadPhrase({
+        storedDefaultSourceLanguage,
+        storedDefaultTargetLanguage,
+      });
       const storedPhraseRange = await storage.get("phraseRange", [
         1,
         phrases.length,
@@ -55,21 +79,6 @@ export const AppProvider = ({ children }) => {
       setReadSettingsArray(
         await storage.get("readSettingsArray", deepCopy(BEGINNER_READ_SETTINGS))
       );
-
-      const storedTheme = localStorage.getItem("theme", "light");
-      setTheme(storedTheme);
-
-      const storedSourceLanguage = await storage.get(
-        "sourceLanguage",
-        LANGUAGE.EN_US
-      );
-      setSourceLanguage(storedSourceLanguage);
-
-      const storedTargetLanguage = await storage.get(
-        "targetLanguage",
-        LANGUAGE.PT_BR
-      );
-      setTargetLanguage(storedTargetLanguage);
 
       const storedSourceLanguageRate = await storage.get(
         "sourceLanguageRate",
@@ -119,14 +128,23 @@ export const AppProvider = ({ children }) => {
     storage.set("dailyCount", newCount);
   };
 
-  const loadPhrase = async () => {
+  const loadPhrase = async ({
+    storedDefaultSourceLanguage,
+    storedDefaultTargetLanguage,
+  }) => {
     // const src_target = `${sourceLanguage}.${targetLanguage}`;
     // const phrases = (await import(`../../data/phrases.${src_target}.js`))
     //   .default;
     const translation = (await import(`../../data/translation.en-US.pt-BR.js`))
       .default;
     console.log("loadPhrase", translation.phrases.length);
-    const [targetLang, sourceLang] = Object.keys(translation.langs).reverse();
+    let [targetLang, sourceLang] = Object.keys(translation.langs).reverse();
+    if (
+      translation.langs[targetLang].tag === storedDefaultSourceLanguage &&
+      translation.langs[sourceLang].tag === storedDefaultTargetLanguage
+    ) {
+      [targetLang, sourceLang] = [sourceLang, targetLang];
+    }
     setTargetLanguage(translation.langs[targetLang].tag);
     setSourceLanguage(translation.langs[sourceLang].tag);
     const phrases = translation.phrases.map((phrase) => {
