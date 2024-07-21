@@ -43,25 +43,6 @@ export function PlaySentenceSettings() {
           </button>
         </div>
         <div className="">
-          <div className="flex space-x-2 max-w-[500px] border-b-2 border-pText">
-            <div className="flex-1">Lang</div>
-            <div className="flex-1">Speed</div>
-            <div className="flex-1">Wait After</div>
-          </div>
-          {readSettingsArray.list.map((rSetting, key) => (
-            <div
-              key={key}
-              className="cursor-pointer bg-card rounded mt-2 px-2 transform transition-transform duration-300 hover:scale-105"
-            >
-              <div className="flex space-x-2 max-w-[500px] ">
-                <div className="flex-1 ">{getLanguageName(rSetting.lang)}</div>
-                <div className="flex-1">{rSetting.rate}</div>
-                <div className="flex-1">{rSetting.waitAfter}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="flex justify-center p-12">
           <DndComponent />
         </div>
       </div>

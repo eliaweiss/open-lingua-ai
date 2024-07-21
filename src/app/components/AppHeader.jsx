@@ -1,9 +1,11 @@
 import { Bars3Icon } from "@heroicons/react/24/outline"; // Correct import syntax for v2
 import { useAppContext } from "../context/AppContext";
 import { useEffect, useState } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 export function AppHeader({}) {
-  const { theme, isMenuOpen, setIsMenuOpen, dailyCount } = useAppContext();
+  const { theme, isMenuOpen, setIsMenuOpen, dailyCount, toggleTheme } =
+    useAppContext();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -14,6 +16,8 @@ export function AppHeader({}) {
 
   return (
     <div className="flex space-x-5">
+      <ThemeToggle className="" onClick={toggleTheme} />
+
       {!isMenuOpen && (
         <button onClick={() => setIsMenuOpen(true)} className="md:hidden">
           <Bars3Icon className="h-6 w-6" /> {/* Hamburger menu icon */}

@@ -15,9 +15,9 @@ const ThemeToggle = () => {
   if (!mounted) return null; // Avoid rendering mismatched content
 
   return (
-    <button onClick={toggleTheme} className="w-full">
+    <button onClick={toggleTheme} className="">
       <div className="flex space-x-2">
-        <div>Change Theme</div>
+        {/* <div>Change Theme</div> */}
         <div>
           {theme === "dark" ? (
             <SunIcon className="h-6 w-6 text-sText" />

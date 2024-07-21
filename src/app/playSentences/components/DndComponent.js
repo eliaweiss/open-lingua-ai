@@ -24,7 +24,7 @@ const DraggableItem = ({ id, content, index, moveItem }) => {
   return (
     <div
       ref={(node) => ref(drop(node))}
-      className="user-select-none p-4 mb-2 bg-white rounded shadow"
+      className="user-select-none p-4 mb-2 bg-primary-foreground shadow cursor-pointer rounded mt-2 px-2 transform transition-transform duration-300 hover:scale-105"
     >
       {content}
     </div>
@@ -40,10 +40,30 @@ const DndComponent = () => {
   useEffect(() => {
     if (!readSettingsArray) return;
     setItems(
-      readSettingsArray.list.map((item, index) => ({
+      readSettingsArray.list.map((rSetting, index) => ({
         id: "index",
-        content: `Item ${index}`,
-        item,
+        content: (
+          <div className="">
+            <div className="flex space-x-2  ">
+              <div className="flex-1 ">
+                <div className="text-xs">Lang</div>
+                <div className="font-bold">
+                  {getLanguageName(rSetting.lang)}
+                </div>
+              </div>
+              <div className="flex-1">
+                <div className="text-xs">Speed</div>
+                <div className="font-bold">{rSetting.rate}</div>
+              </div>
+              <div className="flex-1">
+                <div className="text-xs">Wait After</div>
+
+                <div className="font-bold">{rSetting.waitAfter}</div>
+              </div>
+            </div>
+          </div>
+        ),
+        rSetting,
       }))
     );
   }, [readSettingsArray]);
@@ -56,19 +76,21 @@ const DndComponent = () => {
   };
 
   return (
-    <DndProvider backend={HTML5Backend}>
-      <div className="p-4 w-64 bg-gray-100 rounded">
-        {items.map((item, index) => (
-          <DraggableItem
-            key={item.id}
-            id={item.id}
-            content={item.content}
-            index={index}
-            moveItem={moveItem}
-          />
-        ))}
-      </div>
-    </DndProvider>
+    <>
+      <DndProvider backend={HTML5Backend}>
+        <div className="p-4 max-w-[500px] bg-card rounded">
+          {items.map((item, index) => (
+            <DraggableItem
+              key={item.id}
+              id={item.id}
+              content={item.content}
+              index={index}
+              moveItem={moveItem}
+            />
+          ))}
+        </div>
+      </DndProvider>
+    </>
   );
 };
 
