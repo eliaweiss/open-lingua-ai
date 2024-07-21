@@ -78,7 +78,7 @@ const DndComponent = () => {
     readSettingsArray.list = updatedItems.map(
       (rSetting, index) => rSetting.item
     );
-    setReadSettingsArray(readSettingsArray);
+    setReadSettingsArray({ ...readSettingsArray });
   };
 
   return (
