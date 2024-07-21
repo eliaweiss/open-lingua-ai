@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 const SelectComponent = ({ className, options, value, onChange, label }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-1">
       {label && (
         <label className="block mb-2 text-sm font-bold text-pText">
           {label}

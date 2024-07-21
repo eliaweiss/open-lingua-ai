@@ -31,7 +31,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
   return (
     <div className="">
       <div
-        className={`flex space-x-2 p-2 mb-2 ${
+        className={`flex space-x-2 px-2 mb-2 ${
           rSetting.lang == "src" ? "bg-[#08679a2a]" : ""
         }`}
       >
@@ -101,7 +101,7 @@ const DraggableItem = ({ id, content, index, moveItem }) => {
   return (
     <div
       ref={(node) => ref(drop(node))}
-      className="user-select-none  bg-primary-foreground shadow cursor-pointer rounded mt-2 transform transition-transform duration-300 hover:scale-105"
+      className="user-select-none  bg-primary-foreground shadow cursor-pointer rounded  transform transition-transform duration-300 hover:scale-105"
     >
       {content}
     </div>
@@ -149,7 +149,7 @@ const ReadSettingDnd = () => {
   return (
     <>
       <DndProvider backend={HTML5Backend}>
-        <div className="p-4 max-w-[500px] bg-card rounded">
+        <div className="p-1 max-w-[500px] bg-card rounded">
           {items.map((item, index) => (
             <DraggableItem
               key={item.id}
