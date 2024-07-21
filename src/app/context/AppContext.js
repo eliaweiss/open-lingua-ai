@@ -207,6 +207,11 @@ export const AppProvider = ({ children }) => {
     incrDailyCount();
     return nextIndex;
   }
+
+  const getLanguageName = (type) => {
+    if (type === "target") return targetLanguage;
+    if (type === "src") return sourceLanguage;
+  };
   return (
     <AppContext.Provider
       value={{
@@ -232,6 +237,7 @@ export const AppProvider = ({ children }) => {
         allPhrases,
         readSettingsArray,
         setReadSettingsArray,
+        getLanguageName,
       }}
     >
       {children}

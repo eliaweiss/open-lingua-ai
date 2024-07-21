@@ -6,7 +6,8 @@ import {
 } from "../../context/AppContext";
 
 export function PlaySentenceSettings() {
-  const { readSettingsArray, setReadSettingsArray } = useAppContext();
+  const { readSettingsArray, setReadSettingsArray, getLanguageName } =
+    useAppContext();
   return (
     <div className="px-2 py-6 bg-menuBg rounded-lg">
       <div className="mb-6">
@@ -28,6 +29,20 @@ export function PlaySentenceSettings() {
           >
             Advance
           </button>
+        </div>
+        <div className="">
+          <div className="flex space-x-2 max-w-[500px]">
+            <div className="flex-1">Lang</div>
+            <div className="flex-1">Speed</div>
+            <div className="flex-1">Wait After</div>
+          </div>
+          {readSettingsArray.list.map((rSetting, key) => (
+            <div key={key} className="flex space-x-2 max-w-[500px]">
+              <div className="flex-1">{getLanguageName(rSetting.lang)}</div>
+              <div className="flex-1">{rSetting.rate}</div>
+              <div className="flex-1">{rSetting.waitAfter}</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
