@@ -142,13 +142,13 @@ const ReadSettingDnd = () => {
     setReadSettingsArray({ ...readSettingsArray });
   }
 
+  const isTouchDevice = () => {
+    return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
+  };
+
   return (
     <>
-      <DndProvider
-        backend={HTML5Backend}
-        options={{ enableMouseEvents: true }}
-        context={window}
-      >
+      <DndProvider backend={isTouchDevice() ? TouchBackend : HTML5Backend}>
         <div className="p-1 max-w-[500px] bg-card rounded">
           {items.map((item, index) => (
             <DraggableItem
