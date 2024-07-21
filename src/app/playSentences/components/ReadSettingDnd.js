@@ -108,7 +108,7 @@ const DraggableItem = ({ id, content, index, moveItem }) => {
   );
 };
 
-const DndComponent = () => {
+const ReadSettingDnd = () => {
   const { readSettingsArray, setReadSettingsArray } = useAppContext();
 
   const [items, setItems] = React.useState([]);
@@ -174,4 +174,4 @@ const DndComponent = () => {
   );
 };
 
-export default DndComponent;
+export default ReadSettingDnd;
