@@ -1,6 +1,7 @@
 import React from "react";
+import classNames from "classnames";
 
-const SelectComponent = ({ options, value, onChange, label }) => {
+const SelectComponent = ({ className, options, value, onChange, label }) => {
   return (
     <div className="mb-4">
       {label && (
@@ -11,7 +12,10 @@ const SelectComponent = ({ options, value, onChange, label }) => {
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="block text-black w-full p-2 border border-primary rounded focus:outline-none "
+        className={classNames(
+          `border rounded-sm px-1 m-1 text-black`,
+          className
+        )}
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>
