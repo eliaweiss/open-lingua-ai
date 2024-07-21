@@ -36,9 +36,6 @@ export const AppProvider = ({ children }) => {
   const [isSrcRtl, setIsSrcRtl] = useState(false);
   const [isTargetRtl, setIsTargetRtl] = useState(false);
   const [dailyCount, setDailyCount] = useState(0);
-  const [currentDaytimeStamp, setCurrentDaytimeStamp] = useState(
-    todayStartTime()
-  );
 
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const currentPhraseIndexRef = useRef(currentPhraseIndex);
@@ -89,11 +86,21 @@ export const AppProvider = ({ children }) => {
       const storedDailyCount = await storage.get("dailyCount", 0);
       setDailyCount(storedDailyCount);
 
+      ////////////////////////////////
+
+      const todayTimestamp = todayStartTime();
       const storedCurrentDaytimeStamp = await storage.get(
         "currentDaytimeStamp",
-        todayStartTime()
+        null
       );
-      setCurrentDaytimeStamp(storedCurrentDaytimeStamp);
+      if (!isSameDay(todayTimestamp, storedCurrentDaytimeStamp)) {
+        // Reset the count if the current timestamp is not the same day as stored timestamp
+        setDailyCount(0);
+        storage.set("dailyCount", 0);
+        storage.set("currentDaytimeStamp", todayTimestamp);
+      }
+
+      ////////////////////////////////
       setAppInitFlag(true);
     };
 
@@ -106,18 +113,6 @@ export const AppProvider = ({ children }) => {
     const date2 = new Date(timestamp2);
     return date1.toDateString() === date2.toDateString();
   };
-
-  useEffect(() => {
-    const todayTimestamp = todayStartTime();
-
-    if (!isSameDay(todayTimestamp, currentDaytimeStamp)) {
-      // Reset the count if the current timestamp is not the same day as stored timestamp
-      setDailyCount(0);
-      setCurrentDaytimeStamp(todayTimestamp);
-      storage.set("dailyCount", 0);
-      storage.set("currentDaytimeStamp", todayTimestamp);
-    }
-  }, [currentDaytimeStamp]);
 
   const incrDailyCount = () => {
     const newCount = dailyCount + 1;
