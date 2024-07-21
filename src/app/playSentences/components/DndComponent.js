@@ -3,7 +3,7 @@ import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { useAppContext } from "../../context/AppContext";
 import { Input } from "../../components/Input";
-
+import SelectComponent from "./SelectComponent";
 const ItemType = "ITEM";
 
 const DraggableItemContent = ({ rSetting, index }) => {
@@ -13,12 +13,24 @@ const DraggableItemContent = ({ rSetting, index }) => {
     readSettingsArray.list[index][name] = value;
     setReadSettingsArray({ ...readSettingsArray });
   }
+  const options = [
+    { value: "target", label: getLanguageName("target") }, 
+    { value: "source", label: getLanguageName("src") },
+  ];
   return (
     <div className="">
       <div className="flex space-x-2  ">
         <div className="flex-1 ">
           <div className="text-xs">Lang</div>
-          <div className="font-bold">{getLanguageName(rSetting.lang)}</div>
+          {/* <div className="font-bold">{getLanguageName(rSetting.lang)}</div> */}
+          <div className="font-bold">
+            {" "}
+            <SelectComponent
+              options={options}
+              value={rSetting.lang}
+              onChange={(value) => changeValue("lang", value)}
+            />
+          </div>
         </div>
         <div className="flex-1">
           <div className="text-xs">Speed</div>
