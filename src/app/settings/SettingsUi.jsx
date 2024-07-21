@@ -1,5 +1,6 @@
 "use client";
 
+import { Input } from "../components/Input";
 import MenuItem from "../components/MenuItem";
 import ThemeToggle from "../components/ThemeToggle";
 import {
@@ -72,26 +73,24 @@ export function SettingsUi() {
 
       <div className="mb-6">
         <h2 className="text-xl mb-2">Phrase Range</h2>
-        {allPhrases && <div>{allPhrases.length}</div>}
         <div className="flex space-x-2">
           <label>
             Start:
-            <input
-              type="number"
+            <Input
+              maxlength="4"
+              size="4"
               name="start"
               value={phraseRange[0]}
               onChange={handleRangeChange}
-              className="border p-1"
             />
           </label>
           <label>
             End:
-            <input
-              type="number"
+            <Input
+              size="4"
               name="end"
               value={phraseRange[1]}
               onChange={handleRangeChange}
-              className="border p-1"
             />
           </label>
         </div>
