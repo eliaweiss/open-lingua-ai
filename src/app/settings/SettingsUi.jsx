@@ -3,12 +3,7 @@
 import { Input } from "../components/Input";
 import MenuItem from "../components/MenuItem";
 import ThemeToggle from "../components/ThemeToggle";
-import {
-  ADVANCE_READ_SETTINGS,
-  BEGINNER,
-  BEGINNER_READ_SETTINGS,
-  useAppContext,
-} from "../context/AppContext";
+import { useAppContext } from "../context/AppContext";
 
 export function SettingsUi() {
   const { toggleTheme, phraseRange, setPhraseRange, allPhrases } =
