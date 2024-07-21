@@ -18,7 +18,7 @@ export const PlaySentencesExercise = () => {
     currentPhrase,
     isPlaying,
   } = usePlaySentenceContext();
-  const [showSettings, setShowSettings] = useState(false);
+  const [showSettings, setShowSettings] = useState(true);
 
   return (
     <div className="">

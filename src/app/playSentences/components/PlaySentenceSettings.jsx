@@ -1,9 +1,20 @@
-import {
-  ADVANCE_READ_SETTINGS,
-  BEGINNER,
-  BEGINNER_READ_SETTINGS,
-  useAppContext,
-} from "../../context/AppContext";
+import { useAppContext } from "../../context/AppContext";
+export const BEGINNER_READ_SETTINGS = {
+  level: "BEGINNER",
+  list: [
+    { lang: "src", waitAfter: 1, rate: 1.1, isAccented: false },
+    { lang: "target", waitAfter: 1, rate: 1, isAccented: false },
+    { lang: "target", waitAfter: 2, rate: 1, isAccented: true },
+  ],
+};
+export const ADVANCE_READ_SETTINGS = {
+  level: "ADVANCE",
+  list: [
+    { lang: "target", waitAfter: 1, rate: 1, isAccented: false },
+    { lang: "target", waitAfter: 2, rate: 1, isAccented: true },
+    { lang: "src", waitAfter: 1, rate: 1.15, isAccented: false },
+  ],
+};
 
 export function PlaySentenceSettings() {
   const { readSettingsArray, setReadSettingsArray, getLanguageName } =
@@ -31,14 +42,14 @@ export function PlaySentenceSettings() {
           </button>
         </div>
         <div className="">
-          <div className="flex space-x-2 max-w-[500px]">
+          <div className="flex space-x-2 max-w-[500px] border-b-2 border-pText">
             <div className="flex-1">Lang</div>
             <div className="flex-1">Speed</div>
             <div className="flex-1">Wait After</div>
           </div>
           {readSettingsArray.list.map((rSetting, key) => (
-            <div key={key} className="flex space-x-2 max-w-[500px]">
-              <div className="flex-1">{getLanguageName(rSetting.lang)}</div>
+            <div key={key} className="flex space-x-2 max-w-[500px] bg-card text-card-forground rounded mt-2 px-2">
+              <div className="flex-1 ">{getLanguageName(rSetting.lang)}</div>
               <div className="flex-1">{rSetting.rate}</div>
               <div className="flex-1">{rSetting.waitAfter}</div>
             </div>

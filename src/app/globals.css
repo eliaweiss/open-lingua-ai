@@ -13,6 +13,56 @@
     --border-color: #222020;
     --hov-color: #8e8fb247;
     /* Add other CSS variables as needed */
+
+    --background: 210 20% 98%;
+    /* Light background */
+    --foreground: 220.9 39.3% 11%;
+    /* Dark text */
+
+    --card: 220 50% 80%;
+    /* White card background */
+    --card-foreground: 220.9 39.3% 11%;
+    /* Dark text */
+
+    --popover: 0 0% 100%;
+    /* White popover background */
+    --popover-foreground: 220.9 39.3% 11%;
+    /* Dark text */
+
+    --primary: 224 71.4% 4.1%;
+    /* Dark primary */
+    --primary-foreground: 210 20% 98%;
+    /* Light text */
+
+    --secondary: 215 27.9% 16.9%;
+    /* Dark secondary */
+    --secondary-foreground: 210 20% 98%;
+    /* Light text */
+
+    --muted: 210 16.9% 96.1%;
+    /* Light muted */
+    --muted-foreground: 220.9 39.3% 11%;
+    /* Dark text */
+
+    --accent: 205 82% 36%;
+    /* Bright accent */
+    --accent-foreground: 210 20% 98%;
+    /* Light text */
+
+    --destructive: 0 100% 72.5%;
+    /* Bright red destructive */
+    --destructive-foreground: 0 0% 100%;
+    /* White text */
+
+    --border: 210 16.9% 90%;
+    /* Light border */
+    --input: 210 16.9% 90%;
+    /* Light input */
+    --ring: 210 15% 75%;
+    /* Light ring */
+    --radius: 8px;
+    /* Border radius */
+
 }
 
 .dark {
@@ -25,6 +75,34 @@
     --border-color: #f8f6f6;
     --hov-color: #8e8fb247;
 
+    --background: 224 71.4% 4.1%;
+    --foreground: 210 20% 98%;
+
+    --card: 220 50% 20%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71.4% 4.1%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 210 20% 98%;
+    --primary-foreground: 220.9 39.3% 11%;
+
+    --secondary: 215 27.9% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 215 27.9% 16.9%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27.9% 16.9%;
+    --input: 215 27.9% 16.9%;
+    --ring: 216 12.2% 83.9%;
+    --radius: 8px;
 
     /* Add other CSS variables as needed */
 }

@@ -3,29 +3,13 @@ import {
   randomPermutation,
   useSpeechSynthesis,
 } from "./SpeechSynthesisContext";
+import { BEGINNER_READ_SETTINGS } from "../playSentences/components/PlaySentenceSettings";
 
 const AppContext = createContext();
 
 const LANGUAGE = {
   EN_US: "en-US",
   PT_BR: "pt-BR",
-};
-
-export const BEGINNER_READ_SETTINGS = {
-  level: "BEGINNER",
-  list: [
-    { lang: "src", waitAfter: 1, rate: 1.1, isAccented: false },
-    { lang: "target", waitAfter: 1, rate: 1, isAccented: false },
-    { lang: "target", waitAfter: 2, rate: 1, isAccented: true },
-  ],
-};
-export const ADVANCE_READ_SETTINGS = {
-  level: "ADVANCE",
-  list: [
-    { lang: "target", waitAfter: 1, rate: 1, isAccented: false },
-    { lang: "target", waitAfter: 2, rate: 1, isAccented: true },
-    { lang: "src", waitAfter: 1, rate: 1.15, isAccented: false },
-  ],
 };
 
 const todayStartTime = () => new Date().setHours(0, 0, 0, 0); // Midnight of the current day
