@@ -18,7 +18,7 @@ export const PlaySentencesExercise = () => {
     currentPhrase,
     isPlaying,
   } = usePlaySentenceContext();
-  const [showSettings, setShowSettings] = useState(true);
+  const [showSettings, setShowSettings] = useState(false);
 
   return (
     <div className="">
@@ -31,7 +31,14 @@ export const PlaySentencesExercise = () => {
           <div>Settings</div>
         </div>
       </div>
-      {showSettings && <PlaySentenceSettings />}
+
+      <div
+        className={`transition-opacity duration-1000 ${
+          showSettings ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {showSettings && <PlaySentenceSettings />}
+      </div>
       <div className="flex flex-col justify-center items-center text-center w-full">
         <div className="text-left">
           <div className=" text-sText text-sm">Exercise:</div>
