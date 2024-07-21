@@ -1,4 +1,5 @@
 import { useAppContext } from "../../context/AppContext";
+import DndComponent from "../../components/DndComponent";
 export const BEGINNER_READ_SETTINGS = {
   level: "BEGINNER",
   list: [
@@ -59,6 +60,9 @@ export function PlaySentenceSettings() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex justify-center p-12">
+          <DndComponent />
         </div>
       </div>
     </div>
