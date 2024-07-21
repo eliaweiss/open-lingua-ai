@@ -50,7 +50,7 @@ export function PlaySentenceSettings() {
           {readSettingsArray.list.map((rSetting, key) => (
             <div
               key={key}
-              className="bg-card rounded mt-2 px-2 transform transition-transform duration-300 hover:scale-105"
+              className="cursor-pointer bg-card rounded mt-2 px-2 transform transition-transform duration-300 hover:scale-105"
             >
               <div className="flex space-x-2 max-w-[500px] ">
                 <div className="flex-1 ">{getLanguageName(rSetting.lang)}</div>
