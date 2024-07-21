@@ -1,5 +1,5 @@
 import { useAppContext } from "../../context/AppContext";
-import DndComponent from "../../components/DndComponent";
+import DndComponent from "./DndComponent";
 export const BEGINNER_READ_SETTINGS = {
   level: "BEGINNER",
   list: [
