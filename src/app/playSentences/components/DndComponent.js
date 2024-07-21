@@ -4,6 +4,7 @@ import { HTML5Backend } from "react-dnd-html5-backend";
 import { useAppContext } from "../../context/AppContext";
 import { Input } from "../../components/Input";
 import SelectComponent from "../../components/SelectComponent";
+import CheckboxComponent from "../../components/CheckboxComponent";
 import { PlusCircleIcon, TrashIcon } from "@heroicons/react/24/solid";
 const ItemType = "ITEM";
 
@@ -44,10 +45,9 @@ const DraggableItemContent = ({ rSetting, index }) => {
         <div className="flex-1">
           <div className="text-xs">Accented</div>
           <div className="font-bold">
-            <Input
-              size="3"
-              value={rSetting.isAccented}
-              onChange={(e) => changeValue("isAccented", e.target.value)}
+            <CheckboxComponent
+              checked={rSetting.isAccented}
+              onChange={() => changeValue("isAccented", !rSetting.isAccented)}
             />
           </div>
         </div>
