@@ -10,6 +10,7 @@ import {
   QuestionMarkCircleIcon,
   QueueListIcon,
 } from "@heroicons/react/24/outline";
+import classNames from "classnames";
 
 export const ScramblePhrase = () => {
   const { isTargetRtl } = useAppContext();
@@ -158,10 +159,11 @@ export const ScramblePhrase = () => {
             </div>
           )}
 
-          <div className="flex flex-wrap  space-x-2">
+          <div className="flex flex-wrap ">
             {!isReading &&
               scrambledWords.map((word, index) => (
                 <WordButton
+                  className="mr-2"
                   key={index}
                   onClick={() => handleWordClick({ word: { word } })}
                 >
@@ -217,10 +219,13 @@ export const ScramblePhrase = () => {
   );
 };
 
-const WordButton = ({ children, ...prop }) => {
+const WordButton = ({ className, children, ...prop }) => {
   return (
     <div
-      className="px-4 py-2 my-2 rounded-lg bg-[#6a97d3] flex items-center text-white hover:bg-[#4976b1] "
+      className={classNames(
+        `px-4 py-2 my-2 rounded-lg bg-[#6a97d3] flex items-center text-white hover:bg-[#4976b1]`,
+        className
+      )}
       {...prop}
     >
       {children}

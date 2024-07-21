@@ -3,14 +3,14 @@ import { useScrambleContext } from "../context/ScrambleContext";
 export function UserBufferDisplay() {
   const { getCurrentUserBufferArray } = useScrambleContext();
   return (
-    <div className="flex space-x-2 flex-wrap">
+    <div className="flex flex-wrap">
       {getCurrentUserBufferArray().map((word, key) => (
-        <div
+        <span
           key={key}
-          className={`rounded-lg ${word.isHint && "bg-[#89090945]"}`}
+          className={`mr-2 rounded-lg ${word.isHint && "bg-[#89090945]"}`}
         >
           {word.word}
-        </div>
+        </span>
       ))}
     </div>
   );
