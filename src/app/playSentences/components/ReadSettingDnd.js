@@ -1,16 +1,17 @@
 import React, { useEffect } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
+import { TouchBackend } from "react-dnd-touch-backend";
 import { useAppContext } from "../../context/AppContext";
 import { Input } from "../../components/Input";
 import SelectComponent from "../../components/SelectComponent";
 import CheckboxComponent from "../../components/CheckboxComponent";
 import { PlusCircleIcon, TrashIcon } from "@heroicons/react/24/solid";
+
 const ItemType = "ITEM";
 
 const DraggableItemContent = ({ rSetting, index }) => {
-  const { getLanguageName, readSettingsArray, setReadSettingsArray } =
-    useAppContext();
+  const { getLanguageName, readSettingsArray, setReadSettingsArray } = useAppContext();
 
   function trash(index) {
     if (readSettingsArray.list.length < 2) return;
@@ -19,6 +20,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
     }
     setReadSettingsArray({ ...readSettingsArray });
   }
+
   function changeValue(name, value) {
     readSettingsArray.list[index][name] = value;
     setReadSettingsArray({ ...readSettingsArray });
@@ -28,14 +30,11 @@ const DraggableItemContent = ({ rSetting, index }) => {
     { value: "target", label: getLanguageName("target") },
     { value: "src", label: getLanguageName("src") },
   ];
+
   return (
     <div className="">
-      <div
-        className={`flex space-x-2 px-2 mb-2 ${
-          rSetting.lang == "src" ? "bg-[#08679a2a]" : ""
-        }`}
-      >
-        <div className="flex-1 ">
+      <div className={`flex space-x-2 px-2 mb-2 ${rSetting.lang === "src" ? "bg-[#08679a2a]" : ""}`}>
+        <div className="flex-1">
           <div className="text-xs">Lang</div>
           <div className="font-bold">
             <SelectComponent
@@ -66,7 +65,6 @@ const DraggableItemContent = ({ rSetting, index }) => {
         </div>
         <div className="flex-1">
           <div className="text-xs">Wait After</div>
-
           <div className="font-bold">
             <Input
               size="1"
@@ -75,13 +73,14 @@ const DraggableItemContent = ({ rSetting, index }) => {
             />
           </div>
         </div>
-        <div className="">
-          <TrashIcon className="w-5 pt-3" onClick={() => trash(index)} />
+        <div>
+          <TrashIcon className="w-5 pt-3 cursor-pointer" onClick={() => trash(index)} />
         </div>
       </div>
     </div>
   );
 };
+
 const DraggableItem = ({ id, content, index, moveItem }) => {
   const [, ref] = useDrag({
     type: ItemType,
@@ -101,7 +100,7 @@ const DraggableItem = ({ id, content, index, moveItem }) => {
   return (
     <div
       ref={(node) => ref(drop(node))}
-      className="user-select-none  bg-primary-foreground shadow cursor-pointer rounded  transform transition-transform duration-300 hover:scale-105"
+      className="user-select-none bg-primary-foreground shadow cursor-pointer rounded transform transition-transform duration-300 hover:scale-105"
     >
       {content}
     </div>
@@ -110,14 +109,13 @@ const DraggableItem = ({ id, content, index, moveItem }) => {
 
 const ReadSettingDnd = () => {
   const { readSettingsArray, setReadSettingsArray } = useAppContext();
-
   const [items, setItems] = React.useState([]);
 
   useEffect(() => {
     if (!readSettingsArray) return;
     setItems(
       readSettingsArray.list.map((rSetting, index) => ({
-        id: "index",
+        id: index.toString(), // Ensure unique ids
         content: <DraggableItemContent rSetting={rSetting} index={index} />,
         item: rSetting,
       }))
@@ -130,9 +128,7 @@ const ReadSettingDnd = () => {
     updatedItems.splice(toIndex, 0, movedItem);
     setItems(updatedItems);
 
-    readSettingsArray.list = updatedItems.map(
-      (rSetting, index) => rSetting.item
-    );
+    readSettingsArray.list = updatedItems.map((rSetting) => rSetting.item);
     setReadSettingsArray({ ...readSettingsArray });
   };
 
@@ -148,7 +144,11 @@ const ReadSettingDnd = () => {
 
   return (
     <>
-      <DndProvider backend={HTML5Backend}>
+      <DndProvider
+        backend={HTML5Backend}
+        options={{ enableMouseEvents: true }}
+        context={window}
+      >
         <div className="p-1 max-w-[500px] bg-card rounded">
           {items.map((item, index) => (
             <DraggableItem
@@ -160,12 +160,9 @@ const ReadSettingDnd = () => {
             />
           ))}
           <div className="flex justify-end w-full">
-            <div
-              className=" flex space-x-2 cursor-pointer"
-              onClick={addReadSettings}
-            >
-              <div className="">Add</div>
-              <PlusCircleIcon className="w-6 " />
+            <div className="flex space-x-2 cursor-pointer" onClick={addReadSettings}>
+              <div>Add</div>
+              <PlusCircleIcon className="w-6" />
             </div>
           </div>
         </div>
