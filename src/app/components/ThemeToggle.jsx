@@ -4,7 +4,7 @@ import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 import { useAppContext } from "../context/AppContext";
 import { useEffect, useState } from "react";
 
-const ThemeToggle = () => {
+const ThemeToggle = ({ children }) => {
   const { theme, toggleTheme } = useAppContext();
   const [mounted, setMounted] = useState(false);
 
@@ -15,18 +15,21 @@ const ThemeToggle = () => {
   if (!mounted) return null; // Avoid rendering mismatched content
 
   return (
-    <button onClick={toggleTheme} className="">
-      <div className="flex space-x-2">
-        {/* <div>Change Theme</div> */}
-        <div>
-          {theme === "dark" ? (
-            <SunIcon className="h-6 w-6 text-sText" />
-          ) : (
-            <MoonIcon className="h-6 w-6 text-sText" />
-          )}
+    <div className="flex space-x-2 items-center" onClick={toggleTheme}>
+      <button className="">
+        <div className="flex space-x-2">
+          {/* <div>Change Theme</div> */}
+          <div>
+            {theme === "dark" ? (
+              <SunIcon className="h-6 w-6 text-sText" />
+            ) : (
+              <MoonIcon className="h-6 w-6 text-sText" />
+            )}
+          </div>
         </div>
-      </div>
-    </button>
+      </button>
+      <div className="h-6 ">{children}</div>
+    </div>
   );
 };
 
