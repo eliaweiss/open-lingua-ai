@@ -62,9 +62,10 @@ const DraggableItemContent = ({ rSetting, index }) => {
           <div className="text-xs">Speed</div>
           <div className="font-bold">
             <Input
-              size="3"
               value={rSetting.rate}
               onChange={(e) => changeValue("rate", e.target.value)}
+              type="number"
+              class="w-[2.5em]"
             />
           </div>
         </div>
@@ -72,9 +73,10 @@ const DraggableItemContent = ({ rSetting, index }) => {
           <div className="text-xs">Wait After</div>
           <div className="font-bold">
             <Input
-              size="1"
               value={rSetting.waitAfter}
               onChange={(e) => changeValue("waitAfter", e.target.value)}
+              type="number"
+              class="w-[1.5em]"
             />
           </div>
         </div>
@@ -100,6 +102,9 @@ const DraggableItem = ({
   const [, ref] = useDrag({
     type: ItemType,
     item: { id, index },
+    end: () => {
+      hoverItem(null);
+    },
   });
 
   const [, drop] = useDrop({
@@ -108,9 +113,6 @@ const DraggableItem = ({
       if (draggedItem.index !== index) {
         moveItem(draggedItem.index, index);
         draggedItem.index = index;
-        setTimeout(() => {
-          hoverItem(null);
-        }, 300);
       }
     },
     hover: (draggedItem) => {

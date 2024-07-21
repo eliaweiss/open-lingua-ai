@@ -22,7 +22,7 @@ export const PlaySentencesExercise = () => {
 
   return (
     <div className="">
-      <div className="">
+      <div className="mb-2">
         <div
           className="flex space-x-2 cursor-pointer"
           onClick={() => setShowSettings(!showSettings)}
