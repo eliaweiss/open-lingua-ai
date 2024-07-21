@@ -126,13 +126,13 @@ export const AppProvider = ({ children }) => {
     const translation = (await import(`../../data/translation.en-US.pt-BR.js`))
       .default;
     console.log("loadPhrase", translation.phrases.length);
-    const langKeys = Object.keys(translation.langs);
-    setSourceLanguage(translation.langs.lang1.tag);
-    setTargetLanguage(translation.langs.lang2.tag);
+    const [targetLang, sourceLang] = Object.keys(translation.langs).reverse();
+    setTargetLanguage(translation.langs[targetLang].tag);
+    setSourceLanguage(translation.langs[sourceLang].tag);
     const phrases = translation.phrases.map((phrase) => {
       return {
-        target: phrase[langKeys[0]],
-        src: phrase[langKeys[1]],
+        target: phrase[targetLang],
+        src: phrase[sourceLang],
       };
     });
     setAllPhrases(phrases);
