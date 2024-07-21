@@ -22,23 +22,6 @@ export const PlaySentencesExercise = () => {
 
   return (
     <div className="">
-      <div className="mb-2">
-        <div
-          className="flex space-x-2 cursor-pointer"
-          onClick={() => setShowSettings(!showSettings)}
-        >
-          <Cog6ToothIcon className="w-5" />
-          <div>Settings</div>
-        </div>
-      </div>
-
-      <div
-        className={`transition-opacity duration-1000 ${
-          showSettings ? "opacity-100" : "opacity-0"
-        }`}
-      >
-        {showSettings && <PlaySentenceSettings />}
-      </div>
       <div className="flex flex-col justify-center items-center text-center w-full">
         <div className="text-left">
           <div className=" text-sText text-sm">Exercise:</div>
@@ -87,6 +70,23 @@ export const PlaySentencesExercise = () => {
             </div>
           </TooltipWrapper>
         </div>
+      </div>
+      <div className="mb-2">
+        <div
+          className="flex space-x-2 cursor-pointer"
+          onClick={() => setShowSettings(!showSettings)}
+        >
+          <Cog6ToothIcon className="w-5" />
+          <div>Settings</div>
+        </div>
+      </div>
+
+      <div
+        className={`transition-opacity duration-1000 ${
+          showSettings ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {showSettings && <PlaySentenceSettings />}
       </div>
     </div>
   );

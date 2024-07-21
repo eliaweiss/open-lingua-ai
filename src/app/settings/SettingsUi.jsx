@@ -34,9 +34,7 @@ export function SettingsUi() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl mb-4 bg-card text-card-forground p-2 rounded">
-        Settings
-      </h1>
+      <h1 className="text-2xl mb-4 bg-muted  p-2 rounded">Settings</h1>
 
       <div className="mb-6">
         <MenuItem>
