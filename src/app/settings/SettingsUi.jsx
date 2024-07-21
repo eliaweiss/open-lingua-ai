@@ -6,7 +6,7 @@ import ThemeToggle from "../components/ThemeToggle";
 import { useAppContext } from "../context/AppContext";
 
 export function SettingsUi() {
-  const { toggleTheme, phraseRange, setPhraseRange, allPhrases } =
+  const { phraseRange, setPhraseRange, allPhrases } =
     useAppContext();
 
   const handleRangeChange = (event) => {
