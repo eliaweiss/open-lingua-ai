@@ -32,7 +32,6 @@ export function PlaySentenceSettings() {
   return (
     <div className="px-2 py-6 bg-menuBg rounded-lg">
       <div className="mb-6">
-        <h2 className="text-xl mb-2">Play sentences level</h2>
         <div className="flex space-x-2 mb-1 items-center">
           <button
             className={`rounded-lg text-pText text-sm  px-1 py-1 border border-bg-pBg ${
