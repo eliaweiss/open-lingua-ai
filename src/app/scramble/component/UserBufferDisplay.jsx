@@ -7,7 +7,9 @@ export function UserBufferDisplay() {
       {getCurrentUserBufferArray().map((word, key) => (
         <span
           key={key}
-          className={`mr-2 rounded-lg ${word.isHint && "bg-[#89090945]"}`}
+          className={`inline mr-2 rounded-lg ${
+            word.isHint ? "bg-[#89090945]" : ""
+          }`}
         >
           {word.word}
         </span>
