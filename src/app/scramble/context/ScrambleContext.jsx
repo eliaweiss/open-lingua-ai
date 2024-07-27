@@ -4,10 +4,30 @@ import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 
 const ScrambleContext = createContext();
 
+function removeDuplicates(words) {
+  // Use a Set to automatically handle duplicates
+  let uniqueWords = new Set(words);
+
+  // Convert the Set back to an array
+  return Array.from(uniqueWords);
+}
+
+function removeDotAtEnd(sentence) {
+  if (sentence.endsWith(".")) {
+    return sentence.slice(0, -1); // Remove the last character
+  }
+  return sentence;
+}
+
 export const ScrambleProvider = ({ children }) => {
   const { increasePhraseIndex, currentPhraseIndex, currentPhrase } =
     useAppContext();
-  const { readAloud_target, cancel, isReading } = useSpeechSynthesis();
+  const { readAloud_target, cancel, isReading, randomPermutation } =
+    useSpeechSynthesis();
+  const [scrambledWords, setScrambledWords] = useState([]);
+  const [words, setWords] = useState([]);
+  const [showSuccessNotice, setShowSuccessNotice] = useState(false);
+  const [showFailNotice, setShowFailNotice] = useState(false);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReading_playSentence, setIsReading_playSentence] = useState(false);
@@ -16,16 +36,11 @@ export const ScrambleProvider = ({ children }) => {
   const [wordClickBuffer, setWordClickBuffer] = useState([]);
   const wordClickBufferRef = useRef(wordClickBuffer);
 
-  useEffect(() => {
-    wordClickBufferRef.current = wordClickBuffer;
-  }, [wordClickBuffer]);
-
   const addToWordClickBuffer = (word) => {
     const newBuff = [...wordClickBuffer, word];
     setWordClickBuffer(newBuff);
     console.log("getWordClickBuffer", getWordClickBuffer(newBuff));
   };
-
 
   const playPause = () => {
     setIsPlaying(!isPlaying);
@@ -72,6 +87,7 @@ export const ScrambleProvider = ({ children }) => {
   }
 
   useEffect(() => {
+    wordClickBufferRef.current = wordClickBuffer;
     if (isReading) return;
     const readClickBuffer = async () => {
       while (wordClickBufferRef.current.length > 0) {
@@ -80,9 +96,61 @@ export const ScrambleProvider = ({ children }) => {
         setWordClickBuffer([]);
         await readAloud_target(buffer, 1.25);
       }
+      checkIfBufferIsComplete();
     };
     readClickBuffer();
   }, [wordClickBuffer]);
+
+  ////////////////////////////////////////////////////////////////
+  function isBufferComplete() {
+    const wordsInBuffer = getCurrentUserBufferArray();
+    if (wordsInBuffer.length !== words.length) {
+      return false;
+    }
+
+    for (let i = 0; i < wordsInBuffer.length; i++) {
+      if (wordsInBuffer[i].word !== words[i]) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  ////////////////////////////////////////////////////////////////
+
+  function checkIfBufferIsComplete() {
+    const currentUserBuff = getCurrentUserBufferArray();
+    if (currentUserBuff.length === 0) return;
+    if (currentUserBuff.length == words.length) {
+      // Check if user buffer matches the original sentence (excluding punctuation)
+      if (isBufferComplete()) {
+        setShowFailNotice(false);
+
+        setScrambledWords([]);
+        setShowSuccessNotice(true);
+        setTimeout(() => {
+          increasePhraseIndex();
+          setShowSuccessNotice(false);
+        }, 1000);
+      } else {
+        setShowFailNotice(true);
+        playSentence().then(() => {
+          setShowFailNotice(false);
+        });
+      }
+
+      resetUserBuffer();
+    }
+  }
+  ////////////////////////////////////////////////////////////////
+
+  // useEffect(() => {
+  //   if (getCurrentUserBufferArray().length === 0) return;
+  //   checkIfBufferIsComplete();
+
+  // }, [userBufferArray]);
+
   ////////////////////////////////////////////////////////////////
 
   const addToUserBuffer = ({ word, newUserBufferArray = [] }) => {
@@ -108,6 +176,42 @@ export const ScrambleProvider = ({ children }) => {
     return buffer;
   }
 
+  ////////////////////////////////////////////////////////////////
+
+  const scrambleSentence = () => {
+    if (!currentPhrase) return;
+    setShowFailNotice(false);
+
+    // Get the current Portuguese sentence
+    const words = splitToWords(currentPhrase.target); // Split into words
+
+    // Randomly scramble the words
+    const scrambledWordsTmp = removeDuplicates(randomPermutation(words));
+    console.log("scrambledWords", scrambledWordsTmp);
+    setScrambledWords(scrambledWordsTmp);
+
+    // Clear user buffer and display area
+    resetUserBuffer();
+  };
+
+  ////////////////////////////////////////////////////////////////
+  function splitToWords(currentSentence) {
+    currentSentence = removeDotAtEnd(currentSentence)
+      .replace(", ", " ")
+      .replace(". ", " ")
+      .replace("?", "")
+      .replace(/punctuation/g, "");
+    let words = currentSentence.toLocaleLowerCase().split(" "); // Split into words
+    setWords(words);
+    return words;
+  }
+
+  ////////////////////////////////////////////////////////////////
+
+  useEffect(() => {
+    scrambleSentence();
+  }, [currentPhrase]);
+
   return (
     <ScrambleContext.Provider
       value={{
@@ -127,6 +231,11 @@ export const ScrambleProvider = ({ children }) => {
         getCurrentUserBufferArray,
         userBufferArray,
         handleWordClick,
+        showFailNotice,
+        showSuccessNotice,
+        scrambledWords,
+        words,
+        scrambleSentence,
       }}
     >
       {children}

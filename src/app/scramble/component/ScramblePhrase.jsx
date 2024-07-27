@@ -15,106 +15,30 @@ import classNames from "classnames";
 export const ScramblePhrase = () => {
   const { isTargetRtl } = useAppContext();
 
-  const { readAloud_target, randomPermutation, splitIntoSubSentences, cancel } =
+  const { readAloud_target,  splitIntoSubSentences, cancel } =
     useSpeechSynthesis();
 
   const {
-    increasePhraseIndex,
     currentPhrase,
     isPlaying,
     resetUserBuffer,
     isReading_playSentence,
-    playSentence,
     deleteWord,
     getCurrentUserBuffer,
     getCurrentUserBufferArray,
     userBufferArray,
     handleWordClick,
+    scrambleSentence,
+    showFailNotice,
+    showSuccessNotice,
+    scrambledWords,
+    words,
   } = useScrambleContext();
 
-  const [scrambledWords, setScrambledWords] = useState([]);
-  const [words, setWords] = useState([]);
-  const [showSuccessNotice, setShowSuccessNotice] = useState(false);
-  const [showFailNotice, setShowFailNotice] = useState(false);
   const [isPlaying_partOfSentence, setIsPlaying_partOfSentence] =
     useState(false);
   const [hintClickCounter, setHintClickCounter] = useState(0);
 
-  ////////////////////////////////////////////////////////////////
-  function splitToWords(currentSentence) {
-    currentSentence = removeDotAtEnd(currentSentence)
-      .replace(", ", " ")
-      .replace(". ", " ")
-      .replace("?", "")
-      .replace(/punctuation/g, "");
-    let words = currentSentence.toLocaleLowerCase().split(" "); // Split into words
-    setWords(words);
-    return words;
-  }
-
-  ////////////////////////////////////////////////////////////////
-
-  const scrambleSentence = () => {
-    if (!currentPhrase) return;
-    setShowFailNotice(false);
-
-    // Get the current Portuguese sentence
-    const words = splitToWords(currentPhrase.target); // Split into words
-
-    // Randomly scramble the words
-    const scrambledWordsTmp = removeDuplicates(randomPermutation(words));
-    console.log("scrambledWords", scrambledWordsTmp);
-    setScrambledWords(scrambledWordsTmp);
-
-    // Clear user buffer and display area
-    resetUserBuffer();
-  };
-  ////////////////////////////////////////////////////////////////
-
-  useEffect(() => {
-    scrambleSentence();
-  }, [currentPhrase]);
-
-  ////////////////////////////////////////////////////////////////
-  function isBufferComplete() {
-    const wordsInBuffer = getCurrentUserBufferArray();
-    if (wordsInBuffer.length !== words.length) {
-      return false;
-    }
-
-    for (let i = 0; i < wordsInBuffer.length; i++) {
-      if (wordsInBuffer[i].word !== words[i]) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-  ////////////////////////////////////////////////////////////////
-
-  useEffect(() => {
-    if (getCurrentUserBufferArray().length === 0) return;
-    if (getCurrentUserBufferArray().length == words.length) {
-      // Check if user buffer matches the original sentence (excluding punctuation)
-      if (isBufferComplete()) {
-        setShowFailNotice(false);
-
-        setScrambledWords([]);
-        setShowSuccessNotice(true);
-        setTimeout(() => {
-          increasePhraseIndex();
-          setShowSuccessNotice(false);
-        }, 1000);
-      } else {
-        setShowFailNotice(true);
-        playSentence().then(() => {
-          setShowFailNotice(false);
-        });
-      }
-
-      resetUserBuffer(); // Reset user buffer for next sentence
-    }
-  }, [userBufferArray]);
 
   ////////////////////////////////////////////////////////////////
   const playPartOfSentence = async () => {
@@ -248,17 +172,3 @@ const WordButton = ({ className, children, ...prop }) => {
     </div>
   );
 };
-function removeDuplicates(words) {
-  // Use a Set to automatically handle duplicates
-  let uniqueWords = new Set(words);
-
-  // Convert the Set back to an array
-  return Array.from(uniqueWords);
-}
-
-function removeDotAtEnd(sentence) {
-  if (sentence.endsWith(".")) {
-    return sentence.slice(0, -1); // Remove the last character
-  }
-  return sentence;
-}
