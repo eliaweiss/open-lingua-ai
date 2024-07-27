@@ -49,12 +49,15 @@ export const SpeechSynthesisProvider = ({ children }) => {
 
   async function readAloud(text, lang, rate) {
     setIsReading(true);
-    if (!rate) rate = 1;
-    const groups = splitIntoSubSentences(text);
-    for (const sentence of groups) {
-      await readAloud_helper(sentence, lang, rate);
+    try {
+      if (!rate) rate = 1;
+      const groups = splitIntoSubSentences(text);
+      for (const sentence of groups) {
+        await readAloud_helper(sentence, lang, rate);
+      }
+    } finally {
+      setIsReading(false);
     }
-    setIsReading(false);
   }
 
   ////////////////////////////////////////////////////////////////
