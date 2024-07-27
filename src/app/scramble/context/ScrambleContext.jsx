@@ -101,7 +101,6 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
 
   const readClickBuffer = async () => {
-    wordClickBufferRef.current = wordClickBuffer;
     if (isReading_wordClick) return;
     setIsReading_wordClick(true);
     try {
@@ -118,6 +117,8 @@ export const ScrambleProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    wordClickBufferRef.current = wordClickBuffer;
+
     readClickBuffer();
   }, [wordClickBuffer]);
 
