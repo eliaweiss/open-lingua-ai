@@ -33,6 +33,7 @@ export const ScrambleProvider = ({ children }) => {
   const [isReading_playSentence, setIsReading_playSentence] = useState(false);
 
   const [userBufferArray, setUserBufferArray] = useState([]);
+  const userBufferArrayRef = useRef(userBufferArray);
   const [wordClickBuffer, setWordClickBuffer] = useState([]);
   const wordClickBufferRef = useRef(wordClickBuffer);
 
@@ -85,6 +86,10 @@ export const ScrambleProvider = ({ children }) => {
     }
     return buffer;
   }
+
+  useEffect(() => {
+    userBufferArrayRef.current = userBufferArray;
+  }, [userBufferArray]);
 
   useEffect(() => {
     wordClickBufferRef.current = wordClickBuffer;
@@ -166,7 +171,7 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
 
   function getCurrentUserBufferArray() {
-    return userBufferArray;
+    return userBufferArrayRef.current;
   }
   function getCurrentUserBuffer() {
     let buffer = "";
