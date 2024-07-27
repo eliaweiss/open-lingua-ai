@@ -83,6 +83,7 @@ export const ScrambleProvider = ({ children }) => {
     };
     readClickBuffer();
   }, [wordClickBuffer]);
+  ////////////////////////////////////////////////////////////////
 
   const addToUserBuffer = ({ word, newUserBufferArray = [] }) => {
     setUserBufferArray([...newUserBufferArray, word]);
