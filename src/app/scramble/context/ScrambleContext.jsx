@@ -40,7 +40,7 @@ export const ScrambleProvider = ({ children }) => {
   const addToWordClickBuffer = (word) => {
     const newBuff = [...wordClickBuffer, word];
     setWordClickBuffer(newBuff);
-    console.log("getWordClickBuffer", getWordClickBuffer(newBuff));
+    // console.log("getWordClickBuffer", getWordClickBuffer(newBuff));
   };
 
   const playPause = () => {
@@ -97,7 +97,7 @@ export const ScrambleProvider = ({ children }) => {
     const readClickBuffer = async () => {
       while (wordClickBufferRef.current.length > 0) {
         let buffer = getWordClickBuffer(wordClickBufferRef.current);
-        console.log("buffer", buffer);
+        // console.log("buffer", buffer);
         setWordClickBuffer([]);
         await readAloud_target(buffer, 1.25);
       }
