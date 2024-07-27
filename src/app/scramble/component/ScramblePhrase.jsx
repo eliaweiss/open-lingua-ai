@@ -15,15 +15,12 @@ import classNames from "classnames";
 export const ScramblePhrase = () => {
   const { isTargetRtl } = useAppContext();
 
-  const { readAloud_target,  splitIntoSubSentences, cancel } =
-    useSpeechSynthesis();
+
 
   const {
-    currentPhrase,
     isPlaying,
     isReading_playSentence,
     deleteWord,
-    getCurrentUserBuffer,
     getCurrentUserBufferArray,
     userBufferArray,
     handleWordClick,
@@ -31,35 +28,13 @@ export const ScramblePhrase = () => {
     showSuccessNotice,
     scrambledWords,
     words,
+    playPartOfSentence,
+    isPlaying_partOfSentence
   } = useScrambleContext();
 
-  const [isPlaying_partOfSentence, setIsPlaying_partOfSentence] =
-    useState(false);
   const [hintClickCounter, setHintClickCounter] = useState(0);
 
 
-  ////////////////////////////////////////////////////////////////
-  const playPartOfSentence = async () => {
-    if (isPlaying_partOfSentence) {
-      cancel();
-      return;
-    }
-    setIsPlaying_partOfSentence(true);
-    const doPlay = async () => {
-      const text = currentPhrase.target.toLocaleLowerCase();
-      const subSentenceList = splitIntoSubSentences(text);
-      for (let subSentence of subSentenceList) {
-        await readAloud_target(subSentence);
-        if (!getCurrentUserBuffer().includes(subSentence)) {
-          break;
-        }
-      }
-    };
-
-    doPlay().finally(() => {
-      setIsPlaying_partOfSentence(false);
-    });
-  };
 
   function giveHint() {
     if (hintClickCounter == 0) {

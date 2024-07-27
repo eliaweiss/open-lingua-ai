@@ -22,8 +22,9 @@ function removeDotAtEnd(sentence) {
 export const ScrambleProvider = ({ children }) => {
   const { increasePhraseIndex, currentPhraseIndex, currentPhrase } =
     useAppContext();
-  const { readAloud_target, cancel, isReading, randomPermutation } =
+  const { readAloud_target, cancel, randomPermutation, splitIntoSubSentences } =
     useSpeechSynthesis();
+
   const [scrambledWords, setScrambledWords] = useState([]);
   const [words, setWords] = useState([]);
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
@@ -31,11 +32,15 @@ export const ScrambleProvider = ({ children }) => {
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReading_playSentence, setIsReading_playSentence] = useState(false);
+  const [isReading_wordClick, setIsReading_wordClick] = useState(false);
 
   const [userBufferArray, setUserBufferArray] = useState([]);
   const userBufferArrayRef = useRef(userBufferArray);
   const [wordClickBuffer, setWordClickBuffer] = useState([]);
   const wordClickBufferRef = useRef(wordClickBuffer);
+
+  const [isPlaying_partOfSentence, setIsPlaying_partOfSentence] =
+    useState(false);
 
   const addToWordClickBuffer = (word) => {
     const newBuff = [...wordClickBuffer, word];
@@ -93,19 +98,26 @@ export const ScrambleProvider = ({ children }) => {
   useEffect(() => {
     userBufferArrayRef.current = userBufferArray;
   }, [userBufferArray]);
+  ////////////////////////////////////////////////////////////////
 
-  useEffect(() => {
+  const readClickBuffer = async () => {
     wordClickBufferRef.current = wordClickBuffer;
-    if (isReading) return;
-    const readClickBuffer = async () => {
+    if (isReading_wordClick) return;
+    setIsReading_wordClick(true);
+    try {
       while (wordClickBufferRef.current.length > 0) {
         let buffer = getWordClickBuffer(wordClickBufferRef.current);
         // console.log("buffer", buffer);
         setWordClickBuffer([]);
         await readAloud_target(buffer, 1.25);
       }
-      checkIfBufferIsComplete();
-    };
+    } finally {
+      setIsReading_wordClick(false);
+    }
+    checkIfBufferIsComplete();
+  };
+
+  useEffect(() => {
     readClickBuffer();
   }, [wordClickBuffer]);
 
@@ -135,7 +147,7 @@ export const ScrambleProvider = ({ children }) => {
       // Check if user buffer matches the original sentence (excluding punctuation)
       if (isBufferComplete()) {
         setShowFailNotice(false);
-
+        setWordClickBuffer([]);
         setScrambledWords([]);
         setShowSuccessNotice(true);
         setTimeout(() => {
@@ -214,6 +226,32 @@ export const ScrambleProvider = ({ children }) => {
     scrambleSentence();
   }, [currentPhrase]);
 
+  ////////////////////////////////////////////////////////////////
+  const playPartOfSentence = async () => {
+    if (isPlaying_partOfSentence) {
+      cancel();
+      return;
+    }
+    setIsPlaying_partOfSentence(true);
+    const doPlay = async () => {
+      try {
+        const text = currentPhrase.target.toLocaleLowerCase();
+        const subSentenceList = splitIntoSubSentences(text);
+        for (let subSentence of subSentenceList) {
+          await readAloud_target(subSentence);
+          if (!getCurrentUserBuffer().includes(subSentence)) {
+            break;
+          }
+        }
+      } finally {
+        setIsPlaying_partOfSentence(false);
+        setIsReading_wordClick(false);
+        readClickBuffer();
+      }
+    };
+
+    doPlay();
+  };
   return (
     <ScrambleContext.Provider
       value={{
@@ -238,6 +276,8 @@ export const ScrambleProvider = ({ children }) => {
         scrambledWords,
         words,
         scrambleSentence,
+        playPartOfSentence,
+        isPlaying_partOfSentence,
       }}
     >
       {children}
