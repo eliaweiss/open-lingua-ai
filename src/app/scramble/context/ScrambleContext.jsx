@@ -49,8 +49,11 @@ export const ScrambleProvider = ({ children }) => {
 
   const playSentence = async () => {
     setIsReading_playSentence(true);
-    await readAloud_target(currentPhrase.target);
-    setIsReading_playSentence(false);
+    try {
+      await readAloud_target(currentPhrase.target);
+    } finally {
+      setIsReading_playSentence(false);
+    }
   };
 
   useEffect(() => {
@@ -108,7 +111,8 @@ export const ScrambleProvider = ({ children }) => {
 
   ////////////////////////////////////////////////////////////////
   function isBufferComplete() {
-    const wordsInBuffer = getCurrentUserBufferArray();
+    const wordsInBuffer = userBufferArrayRef.current;
+    // console.log(wordsInBuffer.length, words.length);
     if (wordsInBuffer.length !== words.length) {
       return false;
     }
@@ -125,9 +129,9 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
 
   function checkIfBufferIsComplete() {
-    const currentUserBuff = getCurrentUserBufferArray();
+    const currentUserBuff = userBufferArrayRef.current;
     if (currentUserBuff.length === 0) return;
-    if (currentUserBuff.length == words.length) {
+    if (currentUserBuff.length >= words.length) {
       // Check if user buffer matches the original sentence (excluding punctuation)
       if (isBufferComplete()) {
         setShowFailNotice(false);
@@ -148,13 +152,6 @@ export const ScrambleProvider = ({ children }) => {
       resetUserBuffer();
     }
   }
-  ////////////////////////////////////////////////////////////////
-
-  // useEffect(() => {
-  //   if (getCurrentUserBufferArray().length === 0) return;
-  //   checkIfBufferIsComplete();
-
-  // }, [userBufferArray]);
 
   ////////////////////////////////////////////////////////////////
 
@@ -171,7 +168,7 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
 
   function getCurrentUserBufferArray() {
-    return userBufferArrayRef.current;
+    return userBufferArray;
   }
   function getCurrentUserBuffer() {
     let buffer = "";
