@@ -1,4 +1,4 @@
-import { ChevronDoubleRightIcon } from "@heroicons/react/24/solid";
+import { ChevronDoubleRightIcon, PauseIcon } from "@heroicons/react/24/solid";
 import ControlButton from "../../components/ControlButton";
 import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 import { useScrambleContext } from "../context/ScrambleContext";
@@ -15,7 +15,7 @@ import classNames from "classnames";
 export const ScramblePhrase = () => {
   const { isTargetRtl } = useAppContext();
 
-  const { readAloud_target, randomPermutation, splitIntoSubSentences } =
+  const { readAloud_target, randomPermutation, splitIntoSubSentences, cancel } =
     useSpeechSynthesis();
 
   const {
@@ -36,6 +36,8 @@ export const ScramblePhrase = () => {
   const [words, setWords] = useState([]);
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
   const [showFailNotice, setShowFailNotice] = useState(false);
+  const [isPlaying_partOfSentence, setIsPlaying_partOfSentence] =
+    useState(false);
   const [hintClickCounter, setHintClickCounter] = useState(0);
 
   ////////////////////////////////////////////////////////////////
@@ -116,14 +118,25 @@ export const ScramblePhrase = () => {
 
   ////////////////////////////////////////////////////////////////
   const playPartOfSentence = async () => {
-    const text = currentPhrase.target.toLocaleLowerCase();
-    const subSentenceList = splitIntoSubSentences(text);
-    for (let subSentence of subSentenceList) {
-      await readAloud_target(subSentence);
-      if (!getCurrentUserBuffer().includes(subSentence)) {
-        break;
-      }
+    if (isPlaying_partOfSentence) {
+      cancel();
+      return;
     }
+    setIsPlaying_partOfSentence(true);
+    const doPlay = async () => {
+      const text = currentPhrase.target.toLocaleLowerCase();
+      const subSentenceList = splitIntoSubSentences(text);
+      for (let subSentence of subSentenceList) {
+        await readAloud_target(subSentence);
+        if (!getCurrentUserBuffer().includes(subSentence)) {
+          break;
+        }
+      }
+    };
+
+    doPlay().finally(() => {
+      setIsPlaying_partOfSentence(false);
+    });
   };
 
   function giveHint() {
@@ -185,7 +198,10 @@ export const ScramblePhrase = () => {
               onClick={playPartOfSentence}
               className="p-4 rounded-lg border border-pBorder"
             >
-              <ChevronDoubleRightIcon className="w-6 h-6 " />
+              {!isPlaying_partOfSentence && (
+                <ChevronDoubleRightIcon className="w-6 h-6 " />
+              )}
+              {isPlaying_partOfSentence && <PauseIcon className="w-6 h-6 " />}
             </ControlButton>
 
             <ControlButton
