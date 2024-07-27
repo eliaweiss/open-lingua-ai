@@ -231,6 +231,7 @@ export const ScrambleProvider = ({ children }) => {
   const playPartOfSentence = async () => {
     if (isPlaying_partOfSentence) {
       cancel();
+      setIsPlaying_partOfSentence(false);
       return;
     }
     setIsPlaying_partOfSentence(true);
