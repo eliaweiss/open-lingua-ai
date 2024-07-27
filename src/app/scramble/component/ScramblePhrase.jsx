@@ -23,7 +23,7 @@ export const ScramblePhrase = () => {
     currentPhrase,
     isPlaying,
     resetUserBuffer,
-    isReading,
+    isReading_playSentence,
     playSentence,
     deleteWord,
     getCurrentUserBuffer,
@@ -160,7 +160,7 @@ export const ScramblePhrase = () => {
           )}
 
           <div className="flex flex-wrap ">
-            {!isReading &&
+            {!isReading_playSentence &&
               scrambledWords.map((word, index) => (
                 <WordButton
                   className="mr-2"

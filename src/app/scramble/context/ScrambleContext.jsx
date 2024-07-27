@@ -7,21 +7,34 @@ const ScrambleContext = createContext();
 export const ScrambleProvider = ({ children }) => {
   const { increasePhraseIndex, currentPhraseIndex, currentPhrase } =
     useAppContext();
-  const { readAloud_target, cancel } = useSpeechSynthesis();
+  const { readAloud_target, cancel, isReading } = useSpeechSynthesis();
 
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isReading, setIsReading] = useState(false);
+  const [isReading_playSentence, setIsReading_playSentence] = useState(false);
 
   const [userBufferArray, setUserBufferArray] = useState([]);
+  const [wordClickBuffer, setWordClickBuffer] = useState([]);
+  const wordClickBufferRef = useRef(wordClickBuffer);
+
+  useEffect(() => {
+    wordClickBufferRef.current = wordClickBuffer;
+  }, [wordClickBuffer]);
+
+  const addToWordClickBuffer = (word) => {
+    const newBuff = [...wordClickBuffer, word];
+    setWordClickBuffer(newBuff);
+    console.log("getWordClickBuffer", getWordClickBuffer(newBuff));
+  };
+
 
   const playPause = () => {
     setIsPlaying(!isPlaying);
   };
 
   const playSentence = async () => {
-    setIsReading(true);
+    setIsReading_playSentence(true);
     await readAloud_target(currentPhrase.target);
-    setIsReading(false);
+    setIsReading_playSentence(false);
   };
 
   useEffect(() => {
@@ -47,11 +60,32 @@ export const ScrambleProvider = ({ children }) => {
   const handleWordClick = async ({ word, newUserBufferArray }) => {
     if (!newUserBufferArray) newUserBufferArray = userBufferArray;
     addToUserBuffer({ word, newUserBufferArray });
-    await readAloud_target(word.word, 1.25);
+    addToWordClickBuffer(word.word);
   };
 
+  function getWordClickBuffer(wordClickBuffer) {
+    let buffer = "";
+    for (const word of wordClickBuffer) {
+      buffer += " " + word;
+    }
+    return buffer;
+  }
+
+  useEffect(() => {
+    if (isReading) return;
+    const readClickBuffer = async () => {
+      while (wordClickBufferRef.current.length > 0) {
+        let buffer = getWordClickBuffer(wordClickBufferRef.current);
+        console.log("buffer", buffer);
+        setWordClickBuffer([]);
+        await readAloud_target(buffer, 1.25);
+      }
+    };
+    readClickBuffer();
+  }, [wordClickBuffer]);
+
   const addToUserBuffer = ({ word, newUserBufferArray = [] }) => {
-    setUserBufferArray([...newUserBufferArray, word ]);
+    setUserBufferArray([...newUserBufferArray, word]);
   };
 
   ////////////////////////////////////////////////////////////////
@@ -84,7 +118,7 @@ export const ScrambleProvider = ({ children }) => {
         addToUserBuffer,
         resetUserBuffer,
         deleteWord,
-        isReading,
+        isReading_playSentence,
         increasePhraseIndex,
         playSentence,
         deleteWord,
