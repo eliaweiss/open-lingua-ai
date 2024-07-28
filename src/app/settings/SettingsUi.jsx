@@ -2,12 +2,16 @@
 
 import { Input } from "../components/Input";
 import MenuItem from "../components/MenuItem";
+import SelectComponent from "../components/SelectComponent";
 import ThemeToggle from "../components/ThemeToggle";
 import { useAppContext } from "../context/AppContext";
+import { availableLocales } from "../i18n";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 export function SettingsUi() {
-  const { phraseRange, setPhraseRange, allPhrases } =
+  const { phraseRange, setPhraseRange, allPhrases, locale, setLocale } =
     useAppContext();
+  const t = useTranslation();
 
   const handleRangeChange = (event) => {
     const { name, value } = event.target;
@@ -19,33 +23,42 @@ export function SettingsUi() {
         const val = Math.min(allPhrases.length, value);
         newRange[1] = Number(val);
       }
-      // if (newRange[0] >= newRange[1]) {
-      //   newRange[1] = allPhrases.length;
-      //   // throw new Error("Invalid phrase range");
-      // }
       return newRange;
     });
   };
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl mb-4 bg-muted  p-2 rounded">Settings</h1>
+      <h1 className="text-2xl mb-4 bg-muted p-2 rounded">
+        {t("settings_title")}
+      </h1>
+
+      <div className="mb-6">
+        <h2 className="text-xl mb-2">{t("locale_change_title")}</h2>
+        <SelectComponent
+          options={availableLocales.map((locale) => ({
+            value: locale,
+            label: locale,
+          }))}
+          value={locale}
+          onChange={(value) => setLocale(value)}
+        />
+      </div>
 
       <div className="mb-6">
         <MenuItem>
           <ThemeToggle className="">
-            <div className="text-xl mb-2">Toggle Theme</div>
+            <div className="text-xl mb-2">{t("toggle_theme")}</div>
           </ThemeToggle>
         </MenuItem>
       </div>
 
       <div className="mb-6">
-        <h2 className="text-xl mb-2">Phrase Range</h2>
+        <h2 className="text-xl mb-2">{t("phrase_range_title")}</h2>
         <div className="flex space-x-2">
           <label>
-            Start:
+            {t("start")}:
             <Input
-              maxlength="4"
               size="4"
               name="start"
               value={phraseRange[0]}
@@ -53,7 +66,7 @@ export function SettingsUi() {
             />
           </label>
           <label>
-            End:
+            {t("end")}:
             <Input
               size="4"
               name="end"
@@ -62,17 +75,12 @@ export function SettingsUi() {
             />
           </label>
         </div>
-        {/* <p>
-          Current range: {phraseRange[0]} - {phraseRange[1]}
-        </p> */}
-        <div className="text-sm">
-          You can choose the range of phrases you want to practice. <br />
-          The initial phrases are easier, while the later ones are more
-          challenging.
-          <br />
-          Adjusting the range allows you to set the difficulty level according
-          to your preference.
-        </div>
+        {phraseRange[0] >= phraseRange[1] && (
+          <div className="text-red-500">
+            {t("start_is_must_be_less_than_end")}
+          </div>
+        )}
+        <div className="text-sm">{t("phrase_range_description")}</div>
       </div>
     </div>
   );

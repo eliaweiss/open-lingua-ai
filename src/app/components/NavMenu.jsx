@@ -2,7 +2,6 @@
 import { Cog6ToothIcon, XMarkIcon } from "@heroicons/react/24/outline"; // Correct import syntax for v2
 import { useAppContext } from "../context/AppContext";
 
-import ThemeToggle from "./ThemeToggle";
 import MenuItem from "./MenuItem";
 
 export function NavMenu({}) {
