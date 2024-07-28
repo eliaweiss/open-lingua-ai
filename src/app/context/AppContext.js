@@ -63,6 +63,7 @@ export const AppProvider = ({ children }) => {
       const storageVersion = myLocalStorage.get("STORAGE_VERSION");
       if (storageVersion !== STORAGE_VERSION) {
         localStorage.clear();
+        myLocalStorage.set("STORAGE_VERSION", STORAGE_VERSION);
       }
       const storedTheme = myLocalStorage.get("theme", "light");
       setTheme(storedTheme);
