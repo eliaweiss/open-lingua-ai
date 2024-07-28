@@ -4,5 +4,6 @@
   "phrase_range_title": "Phrase Range",
   "start": "Start",
   "end": "End",
-  "phrase_range_description": "You can choose the range of phrases you want to practice. The initial phrases are easier, while the later ones are more challenging. Adjusting the range allows you to set the difficulty level according to your preference."
+  "phrase_range_description": "You can choose the range of phrases you want to practice. The initial phrases are easier, while the later ones are more challenging. Adjusting the range allows you to set the difficulty level according to your preference.",
+  "start_is_must_be_less_than_end": "Start is must be less than end"
 }
