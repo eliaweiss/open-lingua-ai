@@ -29,7 +29,7 @@ export const ScramblePhrase = () => {
     isReading_playSentence,
     //
     scrambledWords,
-    words,
+    wordsTxt,
     hintClickCounter,
   } = useScrambleContext();
 
@@ -98,7 +98,7 @@ export const ScramblePhrase = () => {
           </div>
           {userBufferArray.length > 0 && (
             <div className="">
-              {userBufferArray.length}/{words.length}
+              {userBufferArray.length}/{wordsTxt.length}
             </div>
           )}
         </div>

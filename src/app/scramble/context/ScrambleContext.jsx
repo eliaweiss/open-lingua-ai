@@ -26,7 +26,7 @@ export const ScrambleProvider = ({ children }) => {
     useSpeechSynthesis();
 
   const [scrambledWords, setScrambledWords] = useState([]);
-  const [words, setWords] = useState([]);
+  const [wordsTxt, setWordsTxt] = useState([]);
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
   const [showFailNotice, setShowFailNotice] = useState(false);
   const [hintClickCounter, setHintClickCounter] = useState(0);
@@ -140,12 +140,12 @@ export const ScrambleProvider = ({ children }) => {
     function checkIfBufferIsComplete_helper() {
       const wordsInBuffer = userBufferArrayRef.current;
       // console.log(wordsInBuffer.length, words.length);
-      if (wordsInBuffer.length !== words.length) {
+      if (wordsInBuffer.length !== wordsTxt.length) {
         return false;
       }
 
       for (let i = 0; i < wordsInBuffer.length; i++) {
-        if (wordsInBuffer[i].txt !== words[i]) {
+        if (wordsInBuffer[i].txt !== wordsTxt[i]) {
           return false;
         }
       }
@@ -155,7 +155,7 @@ export const ScrambleProvider = ({ children }) => {
 
     const currentUserBuff = userBufferArrayRef.current;
     if (currentUserBuff.length === 0) return;
-    if (currentUserBuff.length >= words.length) {
+    if (currentUserBuff.length >= wordsTxt.length) {
       // Check if user buffer matches the original sentence (excluding punctuation)
       if (checkIfBufferIsComplete_helper()) {
         setShowFailNotice(false);
@@ -232,7 +232,7 @@ export const ScrambleProvider = ({ children }) => {
       .replace("?", "")
       .replace(/punctuation/g, "");
     let words = currentSentence.toLocaleLowerCase().split(" "); // Split into words
-    setWords(words);
+    setWordsTxt(words);
     return words;
   }
 
@@ -283,13 +283,13 @@ export const ScrambleProvider = ({ children }) => {
       let newUserBufferArray = [];
       let i = 0;
       for (; i < wordInBuffer.length; i++) {
-        if (wordInBuffer[i].txt != words[i]) {
+        if (wordInBuffer[i].txt != wordsTxt[i]) {
           break;
         }
         newUserBufferArray.push(wordInBuffer[i]);
       }
       handleWordClickBtn({
-        word: { txt: words[i], isHint: true },
+        word: { txt: wordsTxt[i], isHint: true },
         newUserBufferArray,
       });
     }
@@ -317,7 +317,7 @@ export const ScrambleProvider = ({ children }) => {
         showFailNotice,
         showSuccessNotice,
         scrambledWords,
-        words,
+        wordsTxt,
         scrambleSentence,
         handlePartOfSentenceBtn,
         isReading_partOfSentence,
