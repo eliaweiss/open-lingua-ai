@@ -16,44 +16,24 @@ export const ScramblePhrase = () => {
   const { isTargetRtl } = useAppContext();
 
   const {
-    isPlaying,
-    isReading_playSentence,
-    deleteWord,
-    getCurrentUserBufferArray,
+    // handle btns
+    handleDeleteWordBtn,
+    handleWordClickBtn,
+    handleGiveHintBtn,
+    handlePartOfSentenceBtn,
+    //
     userBufferArray,
-    handleWordClick,
+    // flags
     showFailNotice,
     showSuccessNotice,
+    isReading_partOfSentence,
+    isPlaying,
+    isReading_playSentence,    
+    //
     scrambledWords,
     words,
-    handlePartOfSentenceBtn,
-    isReading_partOfSentence,
+    hintClickCounter,
   } = useScrambleContext();
-
-  const [hintClickCounter, setHintClickCounter] = useState(0);
-
-  function giveHint() {
-    if (hintClickCounter == 0) {
-      setHintClickCounter(1);
-      setTimeout(() => {
-        setHintClickCounter(0);
-      }, 1000);
-    } else {
-      const wordInBuffer = getCurrentUserBufferArray();
-      let newUserBufferArray = [];
-      let i = 0;
-      for (; i < wordInBuffer.length; i++) {
-        if (wordInBuffer[i].word != words[i]) {
-          break;
-        }
-        newUserBufferArray.push(wordInBuffer[i]);
-      }
-      handleWordClick({
-        word: { word: words[i], isHint: true },
-        newUserBufferArray,
-      });
-    }
-  }
 
   return (
     <div>
@@ -71,7 +51,7 @@ export const ScramblePhrase = () => {
                 <WordButton
                   className="mr-2"
                   key={index}
-                  onClick={() => handleWordClick({ word: { word } })}
+                  onClick={() => handleWordClickBtn({ word: { word } })}
                 >
                   {word}
                 </WordButton>
@@ -100,7 +80,7 @@ export const ScramblePhrase = () => {
 
             <ControlButton
               toolTip="Backspace"
-              onClick={deleteWord}
+              onClick={handleDeleteWordBtn}
               className="p-4 rounded-lg border border-pBorder"
             >
               <BackspaceIcon className="w-6 h-6 " />
@@ -108,7 +88,7 @@ export const ScramblePhrase = () => {
 
             <ControlButton
               toolTip="Give hint (double click)"
-              onClick={giveHint}
+              onClick={handleGiveHintBtn}
               className="p-4 rounded-lg border border-pBorder"
             >
               {hintClickCounter == 0 ? (

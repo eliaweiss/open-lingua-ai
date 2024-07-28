@@ -29,6 +29,7 @@ export const ScrambleProvider = ({ children }) => {
   const [words, setWords] = useState([]);
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
   const [showFailNotice, setShowFailNotice] = useState(false);
+  const [hintClickCounter, setHintClickCounter] = useState(0);
 
   // exercise play/pause
   const [isPlaying, setIsPlaying] = useState(false);
@@ -85,7 +86,7 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////
   // word click related functions
-  const handleWordClick = async ({ word, newUserBufferArray }) => {
+  const handleWordClickBtn = async ({ word, newUserBufferArray }) => {
     if (!newUserBufferArray) newUserBufferArray = userBufferArray;
     addToUserBuffer({ word, newUserBufferArray });
     addToWordClickBuffer(word.word);
@@ -186,7 +187,7 @@ export const ScrambleProvider = ({ children }) => {
   };
 
   ////////////////////////////////////////////////////////////////
-  function deleteWord() {
+  function handleDeleteWordBtn() {
     if (userBufferArray.length <= 0) return;
     setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 1));
   }
@@ -246,12 +247,15 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
   // handle play/pause of part-of-sentence-btn
   const handlePartOfSentenceBtn = async () => {
+    ///////
     // pause
     if (isReading_partOfSentence) {
       cancel();
       setIsReading_partOfSentence(false);
       return;
     }
+
+    ///////
     // play
     setIsReading_partOfSentence(true);
     try {
@@ -268,6 +272,29 @@ export const ScrambleProvider = ({ children }) => {
     }
   };
 
+  function handleGiveHintBtn() {
+    if (hintClickCounter == 0) {
+      setHintClickCounter(1);
+      setTimeout(() => {
+        setHintClickCounter(0);
+      }, 1000);
+    } else {
+      const wordInBuffer = getCurrentUserBufferArray();
+      let newUserBufferArray = [];
+      let i = 0;
+      for (; i < wordInBuffer.length; i++) {
+        if (wordInBuffer[i].word != words[i]) {
+          break;
+        }
+        newUserBufferArray.push(wordInBuffer[i]);
+      }
+      handleWordClickBtn({
+        word: { word: words[i], isHint: true },
+        newUserBufferArray,
+      });
+    }
+  }
+
   return (
     <ScrambleContext.Provider
       value={{
@@ -278,15 +305,15 @@ export const ScrambleProvider = ({ children }) => {
         isPlaying,
         addToUserBuffer,
         resetUserBuffer,
-        deleteWord,
+        handleDeleteWordBtn,
         isReading_playSentence,
         increasePhraseIndex,
         playSentence,
-        deleteWord,
+        handleDeleteWordBtn,
         getCurrentUserBuffer,
         getCurrentUserBufferArray,
         userBufferArray,
-        handleWordClick,
+        handleWordClickBtn,
         showFailNotice,
         showSuccessNotice,
         scrambledWords,
@@ -294,6 +321,8 @@ export const ScrambleProvider = ({ children }) => {
         scrambleSentence,
         handlePartOfSentenceBtn,
         isReading_partOfSentence,
+        handleGiveHintBtn,
+        hintClickCounter,
       }}
     >
       {children}
