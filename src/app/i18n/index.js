@@ -16,11 +16,10 @@ const loadLocale = async (locale) => {
 
 function I18nProvider({ children }) {
   const { locale } = useAppContext();
-  const [messages, setMessages] = useState(enTranslations); // Default to
+  const [messages, setMessages] = useState(enTranslations); 
 
   useEffect(() => {
     const newLocale = locale ?? navigator.language.substring(0, 2);
-    // console.log("newLocale: ", newLocale);
     loadLocale(newLocale).then((newMessages) => {
       setMessages(newMessages);
     });
