@@ -28,7 +28,7 @@ export const ScramblePhrase = () => {
     isPlaying,
     isReading_playSentence,
     //
-    scrambledWords,
+    scrambledWordsTxt,
     wordsTxt,
     hintClickCounter,
   } = useScrambleContext();
@@ -45,7 +45,7 @@ export const ScramblePhrase = () => {
 
           <div className="flex flex-wrap ">
             {!isReading_playSentence &&
-              scrambledWords.map((txt, index) => (
+              scrambledWordsTxt.map((txt, index) => (
                 <WordButton
                   className="mr-2"
                   key={index}

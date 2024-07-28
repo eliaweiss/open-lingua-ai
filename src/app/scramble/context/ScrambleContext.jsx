@@ -25,7 +25,7 @@ export const ScrambleProvider = ({ children }) => {
   const { readAloud_target, cancel, randomPermutation, splitIntoSubSentences } =
     useSpeechSynthesis();
 
-  const [scrambledWords, setScrambledWords] = useState([]);
+  const [scrambledWordsTxt, setScrambledWordsTxt] = useState([]);
   const [wordsTxt, setWordsTxt] = useState([]);
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
   const [showFailNotice, setShowFailNotice] = useState(false);
@@ -160,7 +160,7 @@ export const ScrambleProvider = ({ children }) => {
       if (checkIfBufferIsComplete_helper()) {
         setShowFailNotice(false);
         setWordClickBuffer([]);
-        setScrambledWords([]);
+        setScrambledWordsTxt([]);
         setShowSuccessNotice(true);
         setTimeout(() => {
           increasePhraseIndex();
@@ -218,7 +218,7 @@ export const ScrambleProvider = ({ children }) => {
     // Randomly scramble the words
     const scrambledWordsTmp = removeDuplicates(randomPermutation(words));
     console.log("scrambledWords", scrambledWordsTmp);
-    setScrambledWords(scrambledWordsTmp);
+    setScrambledWordsTxt(scrambledWordsTmp);
 
     // Clear user buffer and display area
     resetUserBuffer();
@@ -316,7 +316,7 @@ export const ScrambleProvider = ({ children }) => {
         handleWordClickBtn,
         showFailNotice,
         showSuccessNotice,
-        scrambledWords,
+        scrambledWordsTxt,
         wordsTxt,
         scrambleSentence,
         handlePartOfSentenceBtn,
