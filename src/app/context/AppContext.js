@@ -59,6 +59,16 @@ export const AppProvider = ({ children }) => {
       const storedTheme = myLocalStorage.get("theme", "light");
       setTheme(storedTheme);
 
+      ///
+      setAvailablePhraseTranslation(
+        await storage.get(
+          "availablePhraseTranslation",
+          (
+            await import("@/data/availablePhraseTranslation.json")
+          ).default
+        )
+      );
+
       const storedDefaultSourceLanguage = myLocalStorage.get(
         "DefaultSourceLanguage",
         LANGUAGE.EN_US
@@ -78,22 +88,12 @@ export const AppProvider = ({ children }) => {
       setPhraseRange(storedPhraseRange);
 
       ////////////////////////////////////////////////////////////////
-      let allPhrases = myLocalStorage.get("allPhrases", null);
-      if (!allPhrases) {
-        allPhrases = await loadPhrase();
-        setPhraseRange([0, allPhrases.length]);
+      let storedAllPhrases = myLocalStorage.get("allPhrases", null);
+      if (!storedAllPhrases) {
+        storedAllPhrases = await loadPhrase();
+        setPhraseRange([0, storedAllPhrases.length]);
       }
-      setAllPhrases(allPhrases);
-
-      ///
-      setAvailablePhraseTranslation(
-        await storage.get(
-          "availablePhraseTranslation",
-          (
-            await import("@/data/availablePhraseTranslation.json")
-          ).default
-        )
-      );
+      setAllPhrases(storedAllPhrases);
 
       ///
       setReadSettingsArray(
