@@ -18,5 +18,10 @@
   "played_sentences_tooltip": "played-sentences/total-sentences",
   "beginner": "Beginner",
   "medium": "Medium",
-  "advance": "Advance"
+  "advance": "Advance",
+  "add": "Add",
+  "lang": "Lang",
+  "accented": "Accented",
+  "speed": "Speed",
+  "wait_after": "Wait After"
 }

@@ -18,5 +18,10 @@
     "played_sentences_tooltip": "frases-reproduzidas/total-de-frases",
     "beginner": "Iniciante",
     "medium": "Médio",
-    "advance": "Avançado"
+    "advance": "Avançado",
+    "add": "Adicionar",
+    "lang": "Idioma",
+    "accented": "Acentuado",
+    "speed": "Velocidade",
+    "wait_after": "Esperar Depois"
 }

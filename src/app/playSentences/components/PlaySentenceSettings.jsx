@@ -30,8 +30,7 @@ export const ADVANCE_READ_SETTINGS = {
 export function PlaySentenceSettings() {
   const t = useTranslation(); // Use the translation hook
 
-  const { readSettingsArray, setReadSettingsArray, getLanguageName } =
-    useAppContext();
+  const { readSettingsArray, setReadSettingsArray } = useAppContext();
   return (
     <div className="px-2 py-2 bg-menuBg rounded-lg">
       <div className="mb-6">

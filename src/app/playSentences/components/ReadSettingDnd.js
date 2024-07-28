@@ -7,10 +7,13 @@ import { Input } from "../../components/Input";
 import SelectComponent from "../../components/SelectComponent";
 import CheckboxComponent from "../../components/CheckboxComponent";
 import { PlusCircleIcon, TrashIcon } from "@heroicons/react/24/solid";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 const ItemType = "ITEM";
 
 const DraggableItemContent = ({ rSetting, index }) => {
+  const t = useTranslation(); // Use the translation hook
+
   const { getLanguageName, readSettingsArray, setReadSettingsArray } =
     useAppContext();
 
@@ -40,7 +43,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
         }`}
       >
         <div className="flex-1">
-          <div className="text-xs">Lang</div>
+          <div className="text-xs">{t("lang")}</div>
           <div className="font-bold">
             <SelectComponent
               options={options}
@@ -50,7 +53,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
           </div>
         </div>
         <div className="flex-1">
-          <div className="text-xs">Accented</div>
+          <div className="text-xs">{t("accented")}</div>
           <div className="font-bold">
             <CheckboxComponent
               disabled={rSetting.lang === "src"}
@@ -60,7 +63,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
           </div>
         </div>
         <div className="flex-1">
-          <div className="text-xs">Speed</div>
+          <div className="text-xs">{t("speed")}</div>
           <div className="font-bold">
             <Input
               value={rSetting.rate}
@@ -71,7 +74,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
           </div>
         </div>
         <div className="flex-1">
-          <div className="text-xs">Wait After</div>
+          <div className="text-xs">{t("wait_after")}</div>
           <div className="font-bold">
             <Input
               value={rSetting.waitAfter}
@@ -138,6 +141,8 @@ const DraggableItem = ({
 };
 
 const ReadSettingDnd = () => {
+  const t = useTranslation(); // Use the translation hook
+
   const { readSettingsArray, setReadSettingsArray } = useAppContext();
   const [items, setItems] = React.useState([]);
   const [currentHoverItemIndex, setHoverItemIndex] = React.useState(null);
@@ -201,7 +206,7 @@ const ReadSettingDnd = () => {
               className="flex space-x-2 cursor-pointer"
               onClick={addReadSettings}
             >
-              <div>Add</div>
+              <div>{t("advance")}</div>
               <PlusCircleIcon className="w-6" />
             </div>
           </div>
