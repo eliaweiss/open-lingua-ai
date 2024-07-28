@@ -9,8 +9,16 @@ import { availableLocales } from "../i18n";
 import { useTranslation } from "@/app/i18n/useTranslation";
 
 export function SettingsUi() {
-  const { phraseRange, setPhraseRange, allPhrases, locale, setLocale } =
-    useAppContext();
+  const {
+    phraseRange,
+    setPhraseRange,
+    allPhrases,
+    locale,
+    setLocale,
+    availablePhraseTranslation,
+    phraseTranslation,
+    setPhraseTranslation,
+  } = useAppContext();
   const t = useTranslation();
 
   const handleRangeChange = (event) => {
@@ -81,6 +89,18 @@ export function SettingsUi() {
           </div>
         )}
         <div className="text-sm">{t("phrase_range_description")}</div>
+      </div>
+
+      <div className="mb-6">
+        <h2 className="text-xl mb-2">{t("available_phrase_translation")}</h2>
+        <SelectComponent
+          options={availablePhraseTranslation.map((phraseTranslation) => ({
+            value: phraseTranslation,
+            label: phraseTranslation,
+          }))}
+          value={phraseTranslation}
+          onChange={(value) => setPhraseTranslation(value)}
+        />
       </div>
     </div>
   );

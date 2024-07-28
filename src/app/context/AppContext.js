@@ -47,6 +47,7 @@ export const AppProvider = ({ children }) => {
   const currentPhraseIndexRef = useRef(currentPhraseIndex);
   const [currentPhrase, setCurrentPhrase] = useState(null);
 
+  const [phraseTranslation, setPhraseTranslation] = useState();
   const [availablePhraseTranslation, setAvailablePhraseTranslation] = useState(
     []
   );
@@ -83,6 +84,7 @@ export const AppProvider = ({ children }) => {
         setPhraseRange([0, allPhrases.length]);
       }
       setAllPhrases(allPhrases);
+
       ///
       setAvailablePhraseTranslation(
         await storage.get(
@@ -273,6 +275,9 @@ export const AppProvider = ({ children }) => {
         getLanguageName,
         locale,
         setLocale,
+        availablePhraseTranslation,
+        phraseTranslation,
+        setPhraseTranslation,
       }}
     >
       {children}
