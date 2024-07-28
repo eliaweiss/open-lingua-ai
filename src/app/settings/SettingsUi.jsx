@@ -4,10 +4,12 @@ import { Input } from "../components/Input";
 import MenuItem from "../components/MenuItem";
 import ThemeToggle from "../components/ThemeToggle";
 import { useAppContext } from "../context/AppContext";
+import { availableLocales } from "../i18n";
 import { useTranslation } from "../i18n/useTranslation";
 
 export function SettingsUi() {
-  const { phraseRange, setPhraseRange, allPhrases } = useAppContext();
+  const { phraseRange, setPhraseRange, allPhrases, locale, setLocale } =
+    useAppContext();
   const t = useTranslation();
 
   const handleRangeChange = (event) => {
@@ -20,12 +22,12 @@ export function SettingsUi() {
         const val = Math.min(allPhrases.length, value);
         newRange[1] = Number(val);
       }
-      // if (newRange[0] >= newRange[1]) {
-      //   newRange[1] = allPhrases.length;
-      //   // throw new Error("Invalid phrase range");
-      // }
       return newRange;
     });
+  };
+
+  const handleLocaleChange = (event) => {
+    setLocale(event.target.value);
   };
 
   return (
@@ -33,6 +35,22 @@ export function SettingsUi() {
       <h1 className="text-2xl mb-4 bg-muted p-2 rounded">
         {t("settings_title")}
       </h1>
+
+      <div className="mb-6">
+        <h2 className="text-xl mb-2">{t("locale_change_title")}</h2>
+        <select
+          value={locale}
+          onChange={handleLocaleChange}
+          className="p-2 border rounded"
+        >
+          {availableLocales.map((locale) => (
+            <option key={locale} value={locale}>
+              {locale}
+              {/* {t(`locale_${locale}`)} */}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <div className="mb-6">
         <MenuItem>

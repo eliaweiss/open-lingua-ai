@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 // import * as messages from "./locales"; // Assuming locale files are in the 'locales' folder
 
-const availableLocales = ["en", "es"]; // Add more locales as needed
+export const availableLocales = ["en", "pt"]; // Add more locales as needed
 
 const I18nContext = React.createContext();
 
@@ -17,19 +17,14 @@ function I18nProvider({ children }) {
   const { locale } = useAppContext();
   const [messages, setMessages] = useState([]); // Default to
 
-  const handleLocaleChange = (newLocale) => {
-    if (availableLocales.includes(newLocale)) {
-      setLocale(newLocale);
-    }
-  };
   useEffect(() => {
     loadLocale(locale).then((newMessages) => {
       setMessages(newMessages);
     });
-  }, []);
+  }, [locale]);
 
   return (
-    <I18nContext.Provider value={{ locale, handleLocaleChange }}>
+    <I18nContext.Provider value={{ locale }}>
       <IntlProvider locale={locale} messages={messages}>
         {children}
       </IntlProvider>
