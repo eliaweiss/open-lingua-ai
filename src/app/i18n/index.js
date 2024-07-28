@@ -3,6 +3,7 @@ import { IntlProvider } from "react-intl";
 import React, { useEffect, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 // import * as messages from "./locales"; // Assuming locale files are in the 'locales' folder
+import enTranslations from "./locales/en.json";
 
 export const availableLocales = ["en", "pt"]; // Add more locales as needed
 
@@ -15,8 +16,8 @@ const loadLocale = async (locale) => {
 
 function I18nProvider({ children }) {
   const { locale } = useAppContext();
-  const [messages, setMessages] = useState([]); // Default to
-
+  const [messages, setMessages] = useState(enTranslations); // Default to
+  console.log("messages", messages);
   useEffect(() => {
     loadLocale(locale).then((newMessages) => {
       setMessages(newMessages);
