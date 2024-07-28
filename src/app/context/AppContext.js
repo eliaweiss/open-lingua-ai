@@ -16,6 +16,7 @@ export function deepCopy(obj) {
 
 const todayStartTime = () => new Date().setHours(0, 0, 0, 0); // Midnight of the current day
 
+const STORAGE_VERSION = "0.1";
 export const AppProvider = ({ children }) => {
   const [locale, setLocale] = useState("en"); // Default to browser locale
 
@@ -59,6 +60,10 @@ export const AppProvider = ({ children }) => {
   // init app
   useEffect(() => {
     const initializeState = async () => {
+      const storageVersion = myLocalStorage.get("STORAGE_VERSION");
+      if (storageVersion !== STORAGE_VERSION) {
+        localStorage.clear();
+      }
       const storedTheme = myLocalStorage.get("theme", "light");
       setTheme(storedTheme);
 
