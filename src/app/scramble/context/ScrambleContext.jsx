@@ -88,7 +88,7 @@ export const ScrambleProvider = ({ children }) => {
   // word click related functions
   async function handleWordClickBtn({ word, newUserBufferArray }) {
     addToUserBuffer({ word, newUserBufferArray });
-    addToWordClickBuffer(word.word);
+    addToWordClickBuffer(word.txt);
   }
 
   function getWordClickBuffer(wordClickBuffer) {
@@ -145,7 +145,7 @@ export const ScrambleProvider = ({ children }) => {
       }
 
       for (let i = 0; i < wordsInBuffer.length; i++) {
-        if (wordsInBuffer[i].word !== words[i]) {
+        if (wordsInBuffer[i].txt !== words[i]) {
           return false;
         }
       }
@@ -283,13 +283,13 @@ export const ScrambleProvider = ({ children }) => {
       let newUserBufferArray = [];
       let i = 0;
       for (; i < wordInBuffer.length; i++) {
-        if (wordInBuffer[i].word != words[i]) {
+        if (wordInBuffer[i].txt != words[i]) {
           break;
         }
         newUserBufferArray.push(wordInBuffer[i]);
       }
       handleWordClickBtn({
-        word: { word: words[i], isHint: true },
+        word: { txt: words[i], isHint: true },
         newUserBufferArray,
       });
     }

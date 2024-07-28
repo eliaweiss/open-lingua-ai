@@ -11,7 +11,7 @@ export function UserBufferDisplay() {
             word.isHint ? "bg-[#89090945]" : ""
           }`}
         >
-          {word.word}
+          {word.txt}
         </span>
       ))}
     </div>
