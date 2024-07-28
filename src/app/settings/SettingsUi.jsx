@@ -2,6 +2,7 @@
 
 import { Input } from "../components/Input";
 import MenuItem from "../components/MenuItem";
+import SelectComponent from "../components/SelectComponent";
 import ThemeToggle from "../components/ThemeToggle";
 import { useAppContext } from "../context/AppContext";
 import { availableLocales } from "../i18n";
@@ -38,18 +39,14 @@ export function SettingsUi() {
 
       <div className="mb-6">
         <h2 className="text-xl mb-2">{t("locale_change_title")}</h2>
-        <select
+        <SelectComponent
+          options={availableLocales.map((locale) => ({
+            value: locale,
+            label: locale,
+          }))}
           value={locale}
-          onChange={handleLocaleChange}
-          className="p-2 border rounded"
-        >
-          {availableLocales.map((locale) => (
-            <option key={locale} value={locale}>
-              {locale}
-              {/* {t(`locale_${locale}`)} */}
-            </option>
-          ))}
-        </select>
+          onChange={(value) => setLocale(value)}
+        />
       </div>
 
       <div className="mb-6">

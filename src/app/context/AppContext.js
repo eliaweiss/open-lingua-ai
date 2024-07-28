@@ -268,7 +268,11 @@ const myLocalStorage = {
     if (!storedValue) {
       return defaultValue;
     }
-    return storedValue ? JSON.parse(storedValue) : defaultValue;
+    try {
+      return storedValue ? JSON.parse(storedValue) : defaultValue;
+    } catch {
+      return storedValue;
+    }
   },
   set: (key, value) => {
     if (typeof window !== "undefined") {
