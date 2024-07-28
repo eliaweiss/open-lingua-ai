@@ -6,5 +6,9 @@
     "end": "Fim",
     "phrase_range_description": "Você pode escolher o intervalo de frases que deseja praticar. As frases iniciais são mais fáceis, enquanto as posteriores são mais desafiadoras. Ajustar o intervalo permite definir o nível de dificuldade de acordo com sua preferência.",
     "start_must_be_less_than_end": "O início deve ser menor que o fim",
-    "locale_change_title": "Troca de Idioma"
+    "locale_change_title": "Troca de Idioma",
+    "exercise_title": "Exercício",
+    "play_sentence_exercise": "Exercício de Frases",
+    "scramble_exercise": "Exercício de Embaralhamento",
+    "general_title": "Geral"
 }

@@ -1,11 +1,13 @@
 "use client";
 import { Cog6ToothIcon, XMarkIcon } from "@heroicons/react/24/outline"; // Correct import syntax for v2
 import { useAppContext } from "../context/AppContext";
-
 import MenuItem from "./MenuItem";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 export function NavMenu({}) {
   const { isMenuOpen, setIsMenuOpen } = useAppContext();
+  const t = useTranslation();
+
   return (
     <>
       <nav
@@ -17,15 +19,16 @@ export function NavMenu({}) {
           <XMarkIcon className="h-6 w-6" /> {/* Close icon */}
         </button>
         <div className="p-4 mt-10">
-          <div>Exercise:</div>
-          <MenuItem href="/playSentences">Play Sentence Exercise</MenuItem>
-          <MenuItem href="/scramble">Scramble Exercise</MenuItem>
-          <div>General:</div>
-
+          <div>{t("exercise_title")}:</div>
+          <MenuItem href="/playSentences">
+            {t("play_sentence_exercise")}
+          </MenuItem>
+          <MenuItem href="/scramble">{t("scramble_exercise")}</MenuItem>
+          <div>{t("general_title")}:</div>
           <MenuItem href="/settings">
             <div className="flex space-x-2">
               <Cog6ToothIcon className="w-5" />
-              <div>Settings</div>
+              <div>{t("settings_title")}</div>
             </div>
           </MenuItem>
         </div>
