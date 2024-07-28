@@ -29,12 +29,11 @@ export const AppProvider = ({ children }) => {
     deepCopy(BEGINNER_READ_SETTINGS)
   );
 
-  const [defaultSourceLanguage, setDefaultSourceLanguage] = useState(
-    LANGUAGE.EN_US
+  const [phraseTranslation, setPhraseTranslation] = useState();
+  const [availablePhraseTranslation, setAvailablePhraseTranslation] = useState(
+    []
   );
-  const [defaultTargetLanguage, setDefaultTargetLanguage] = useState(
-    LANGUAGE.PT_BR
-  );
+
   const [sourceLanguage, setSourceLanguage] = useState(LANGUAGE.EN_US);
   const [targetLanguage, setTargetLanguage] = useState(LANGUAGE.PT_BR);
   const [sourceLanguageRate, setSourceLanguageRate] = useState(1);
@@ -47,10 +46,14 @@ export const AppProvider = ({ children }) => {
   const currentPhraseIndexRef = useRef(currentPhraseIndex);
   const [currentPhrase, setCurrentPhrase] = useState(null);
 
-  const [phraseTranslation, setPhraseTranslation] = useState();
-  const [availablePhraseTranslation, setAvailablePhraseTranslation] = useState(
-    []
-  );
+  ////////////////////////////////////////////////////////////////
+  const loadPhrasesTranslationFromStorage = async (phraseTranslation) => {
+    const phraseFromStorage = await storage.get(phraseTranslation);
+    const storedAllPhrases = setPhrasesTargetSrc(phraseFromStorage);
+    setPhraseRange([0, storedAllPhrases.length]);
+    setAllPhrases(storedAllPhrases);
+    setPhraseTranslation(phraseTranslation);
+  };
 
   ////////////////////////////////////////////////////////////////
   // init app
@@ -59,47 +62,7 @@ export const AppProvider = ({ children }) => {
       const storedTheme = myLocalStorage.get("theme", "light");
       setTheme(storedTheme);
 
-      ///
-      setAvailablePhraseTranslation(
-        await storage.get(
-          "availablePhraseTranslation",
-          (
-            await import("@/data/availablePhraseTranslation.json")
-          ).default
-        )
-      );
-
-      const storedDefaultSourceLanguage = myLocalStorage.get(
-        "DefaultSourceLanguage",
-        LANGUAGE.EN_US
-      );
-      setDefaultSourceLanguage(storedDefaultSourceLanguage);
-
-      const storedDefaultTargetLanguage = myLocalStorage.get(
-        "DefaultTargetLanguage",
-        LANGUAGE.PT_BR
-      );
-      setDefaultTargetLanguage(storedDefaultTargetLanguage);
-
-      const storedPhraseRange = await storage.get("phraseRange", [
-        1,
-        phrases.length,
-      ]);
-      setPhraseRange(storedPhraseRange);
-
-      ////////////////////////////////////////////////////////////////
-      let storedAllPhrases = myLocalStorage.get("allPhrases", null);
-      if (!storedAllPhrases) {
-        storedAllPhrases = await loadPhrase();
-        setPhraseRange([0, storedAllPhrases.length]);
-      }
-      setAllPhrases(storedAllPhrases);
-
-      ///
-      setReadSettingsArray(
-        await storage.get("readSettingsArray", deepCopy(BEGINNER_READ_SETTINGS))
-      );
-
+      /// init language src/target
       const storedSourceLanguageRate = await storage.get(
         "sourceLanguageRate",
         1
@@ -111,6 +74,47 @@ export const AppProvider = ({ children }) => {
         1
       );
       setTargetLanguageRate(storedTargetLanguageRate);
+
+      /// init Available Phrase Translation
+      const storedAvailablePhraseTranslation = await storage.get(
+        "availablePhraseTranslation",
+        (
+          await import("@/data/availablePhraseTranslation.json")
+        ).default
+      );
+      setAvailablePhraseTranslation(storedAvailablePhraseTranslation);
+      for (const avt of storedAvailablePhraseTranslation) {
+        const phrasesFromData = await loadPhraseFromDataFolder(avt);
+        storage.set(avt, phrasesFromData);
+      }
+
+      /// init phrase range
+      const storedPhraseRange = await storage.get("phraseRange", [
+        1,
+        phrases.length,
+      ]);
+      setPhraseRange(storedPhraseRange);
+
+      /// init all phrase
+      let storedAllPhrases = myLocalStorage.get("allPhrases", null);
+      if (!storedAllPhrases) {
+        await loadPhrasesTranslationFromStorage(
+          storedAvailablePhraseTranslation[0]
+        );
+        // const phraseFromStorage = await storage.get(
+        //   storedAvailablePhraseTranslation[0]
+        // );
+        // storedAllPhrases = setPhrasesTargetSrc(phraseFromStorage);
+        // setPhraseRange([0, storedAllPhrases.length]);
+        // setAllPhrases(storedAllPhrases);
+      } else {
+        setAllPhrases(storedAllPhrases);
+      }
+
+      ///
+      setReadSettingsArray(
+        await storage.get("readSettingsArray", deepCopy(BEGINNER_READ_SETTINGS))
+      );
 
       const storedDailyCount = await storage.get("dailyCount", 0);
       setDailyCount(storedDailyCount);
@@ -152,9 +156,23 @@ export const AppProvider = ({ children }) => {
     storage.set("dailyCount", newCount);
   };
 
-  const loadPhrase = async () => {
-    const phrasesTmp = (await import(`../../data/phrases.en-US.pt-BR.js`))
-      .phrases;
+  const loadPhraseFromDataFolder = async (avt) => {
+    const phrases = (await import(`../../data/${avt}.js`)).phrases;
+    return phrases;
+  };
+
+  const setPhrasesTargetSrc = (newPhrases) => {
+    const phrases = newPhrases.map((phrase) => {
+      return {
+        target: phrase[targetLanguage],
+        src: phrase[sourceLanguage],
+      };
+    });
+    return phrases;
+  };
+
+  const loadPhrase = async (avt) => {
+    const phrasesTmp = (await import(`../../data/${avt}.js`)).phrases;
 
     const phrases = phrasesTmp.map((phrase) => {
       return {
@@ -212,6 +230,11 @@ export const AppProvider = ({ children }) => {
     storage.set("phraseRange", phraseRange);
   }, [phraseRange]);
   ////////////////////////////////////////////////////////////////////////
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    loadPhrasesTranslationFromStorage(phraseTranslation);
+  }, [targetLanguage, sourceLanguage, phraseTranslation]);
 
   useEffect(() => {
     if (!appInitFlag) return;
