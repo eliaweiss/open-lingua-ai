@@ -29,12 +29,11 @@ export const AppProvider = ({ children }) => {
     deepCopy(BEGINNER_READ_SETTINGS)
   );
 
-  const [defaultSourceLanguage, setDefaultSourceLanguage] = useState(
-    LANGUAGE.EN_US
+  const [phraseTranslation, setPhraseTranslation] = useState();
+  const [availablePhraseTranslation, setAvailablePhraseTranslation] = useState(
+    []
   );
-  const [defaultTargetLanguage, setDefaultTargetLanguage] = useState(
-    LANGUAGE.PT_BR
-  );
+
   const [sourceLanguage, setSourceLanguage] = useState(LANGUAGE.EN_US);
   const [targetLanguage, setTargetLanguage] = useState(LANGUAGE.PT_BR);
   const [sourceLanguageRate, setSourceLanguageRate] = useState(1);
@@ -48,38 +47,22 @@ export const AppProvider = ({ children }) => {
   const [currentPhrase, setCurrentPhrase] = useState(null);
 
   ////////////////////////////////////////////////////////////////
+  const loadPhrasesTranslationFromStorage = async (phraseTranslation) => {
+    const phraseFromStorage = await storage.get(phraseTranslation);
+    const storedAllPhrases = setPhrasesTargetSrc(phraseFromStorage);
+    setPhraseRange([0, storedAllPhrases.length]);
+    setAllPhrases(storedAllPhrases);
+    setPhraseTranslation(phraseTranslation);
+  };
+
+  ////////////////////////////////////////////////////////////////
   // init app
   useEffect(() => {
     const initializeState = async () => {
       const storedTheme = myLocalStorage.get("theme", "light");
       setTheme(storedTheme);
 
-      const storedDefaultSourceLanguage = myLocalStorage.get(
-        "DefaultSourceLanguage",
-        LANGUAGE.EN_US
-      );
-      setDefaultSourceLanguage(storedDefaultSourceLanguage);
-
-      const storedDefaultTargetLanguage = myLocalStorage.get(
-        "DefaultTargetLanguage",
-        LANGUAGE.PT_BR
-      );
-      setDefaultTargetLanguage(storedDefaultTargetLanguage);
-
-      const phrases = await loadPhrase({
-        storedDefaultSourceLanguage,
-        storedDefaultTargetLanguage,
-      });
-      const storedPhraseRange = await storage.get("phraseRange", [
-        1,
-        phrases.length,
-      ]);
-      setPhraseRange(storedPhraseRange);
-
-      setReadSettingsArray(
-        await storage.get("readSettingsArray", deepCopy(BEGINNER_READ_SETTINGS))
-      );
-
+      /// init language src/target
       const storedSourceLanguageRate = await storage.get(
         "sourceLanguageRate",
         1
@@ -91,6 +74,47 @@ export const AppProvider = ({ children }) => {
         1
       );
       setTargetLanguageRate(storedTargetLanguageRate);
+
+      /// init Available Phrase Translation
+      const storedAvailablePhraseTranslation = await storage.get(
+        "availablePhraseTranslation",
+        (
+          await import("@/data/availablePhraseTranslation.json")
+        ).default
+      );
+      setAvailablePhraseTranslation(storedAvailablePhraseTranslation);
+      for (const avt of storedAvailablePhraseTranslation) {
+        const phrasesFromData = await loadPhraseFromDataFolder(avt);
+        storage.set(avt, phrasesFromData);
+      }
+
+      /// init phrase range
+      const storedPhraseRange = await storage.get("phraseRange", [
+        1,
+        phrases.length,
+      ]);
+      setPhraseRange(storedPhraseRange);
+
+      /// init all phrase
+      let storedAllPhrases = myLocalStorage.get("allPhrases", null);
+      if (!storedAllPhrases) {
+        await loadPhrasesTranslationFromStorage(
+          storedAvailablePhraseTranslation[0]
+        );
+        // const phraseFromStorage = await storage.get(
+        //   storedAvailablePhraseTranslation[0]
+        // );
+        // storedAllPhrases = setPhrasesTargetSrc(phraseFromStorage);
+        // setPhraseRange([0, storedAllPhrases.length]);
+        // setAllPhrases(storedAllPhrases);
+      } else {
+        setAllPhrases(storedAllPhrases);
+      }
+
+      ///
+      setReadSettingsArray(
+        await storage.get("readSettingsArray", deepCopy(BEGINNER_READ_SETTINGS))
+      );
 
       const storedDailyCount = await storage.get("dailyCount", 0);
       setDailyCount(storedDailyCount);
@@ -132,32 +156,30 @@ export const AppProvider = ({ children }) => {
     storage.set("dailyCount", newCount);
   };
 
-  const loadPhrase = async ({
-    storedDefaultSourceLanguage,
-    storedDefaultTargetLanguage,
-  }) => {
-    // const src_target = `${sourceLanguage}.${targetLanguage}`;
-    // const phrases = (await import(`../../data/phrases.${src_target}.js`))
-    //   .default;
-    const translation = (await import(`../../data/translation.en-US.pt-BR.js`))
-      .default;
-    console.log("loadPhrase", translation.phrases.length);
-    let [targetLang, sourceLang] = Object.keys(translation.langs).reverse();
-    if (
-      translation.langs[targetLang].tag === storedDefaultSourceLanguage &&
-      translation.langs[sourceLang].tag === storedDefaultTargetLanguage
-    ) {
-      [targetLang, sourceLang] = [sourceLang, targetLang];
-    }
-    setTargetLanguage(translation.langs[targetLang].tag);
-    setSourceLanguage(translation.langs[sourceLang].tag);
-    const phrases = translation.phrases.map((phrase) => {
+  const loadPhraseFromDataFolder = async (avt) => {
+    const phrases = (await import(`../../data/${avt}.js`)).phrases;
+    return phrases;
+  };
+
+  const setPhrasesTargetSrc = (newPhrases) => {
+    const phrases = newPhrases.map((phrase) => {
       return {
-        target: phrase[targetLang],
-        src: phrase[sourceLang],
+        target: phrase[targetLanguage],
+        src: phrase[sourceLanguage],
       };
     });
-    setAllPhrases(phrases);
+    return phrases;
+  };
+
+  const loadPhrase = async (avt) => {
+    const phrasesTmp = (await import(`../../data/${avt}.js`)).phrases;
+
+    const phrases = phrasesTmp.map((phrase) => {
+      return {
+        target: phrase[targetLanguage],
+        src: phrase[sourceLanguage],
+      };
+    });
     return phrases;
   };
 
@@ -185,6 +207,16 @@ export const AppProvider = ({ children }) => {
   // save to storage
   useEffect(() => {
     if (!appInitFlag) return;
+    storage.set("availablePhraseTranslation", availablePhraseTranslation);
+  }, [availablePhraseTranslation]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("allPhrases", allPhrases);
+  }, [allPhrases]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
     storage.set("locale", locale);
   }, [locale]);
 
@@ -197,6 +229,12 @@ export const AppProvider = ({ children }) => {
     if (!appInitFlag) return;
     storage.set("phraseRange", phraseRange);
   }, [phraseRange]);
+  ////////////////////////////////////////////////////////////////////////
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    loadPhrasesTranslationFromStorage(phraseTranslation);
+  }, [targetLanguage, sourceLanguage, phraseTranslation]);
 
   useEffect(() => {
     if (!appInitFlag) return;
@@ -260,6 +298,13 @@ export const AppProvider = ({ children }) => {
         getLanguageName,
         locale,
         setLocale,
+        availablePhraseTranslation,
+        phraseTranslation,
+        setPhraseTranslation,
+        targetLanguage,
+        setTargetLanguage,
+        sourceLanguage,
+        setSourceLanguage,
       }}
     >
       {children}

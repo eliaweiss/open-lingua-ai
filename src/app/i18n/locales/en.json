@@ -25,5 +25,6 @@
   "speed": "Speed",
   "wait_after": "Wait After",
   "daily": "Daily",
-  "rebuild_a_scrambled_phrase": "Rebuild a scrambled phrase"
+  "rebuild_a_scrambled_phrase": "Rebuild a scrambled phrase",
+  "available_phrase_translation": "Available phrase translation"
 }

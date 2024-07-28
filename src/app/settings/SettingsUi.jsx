@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import { Input } from "../components/Input";
 import MenuItem from "../components/MenuItem";
 import SelectComponent from "../components/SelectComponent";
@@ -9,8 +10,20 @@ import { availableLocales } from "../i18n";
 import { useTranslation } from "@/app/i18n/useTranslation";
 
 export function SettingsUi() {
-  const { phraseRange, setPhraseRange, allPhrases, locale, setLocale } =
-    useAppContext();
+  const {
+    phraseRange,
+    setPhraseRange,
+    allPhrases,
+    locale,
+    setLocale,
+    availablePhraseTranslation,
+    phraseTranslation,
+    setPhraseTranslation,
+    targetLanguage,
+    setTargetLanguage,
+    sourceLanguage,
+    setSourceLanguage,
+  } = useAppContext();
   const t = useTranslation();
 
   const handleRangeChange = (event) => {
@@ -27,6 +40,10 @@ export function SettingsUi() {
     });
   };
 
+  function handleReverseLang() {
+    setTargetLanguage(sourceLanguage);
+    setSourceLanguage(targetLanguage);
+  }
   return (
     <div className="p-4">
       <h1 className="text-2xl mb-4 bg-muted p-2 rounded">
@@ -81,6 +98,34 @@ export function SettingsUi() {
           </div>
         )}
         <div className="text-sm">{t("phrase_range_description")}</div>
+      </div>
+
+      <div className="mb-6">
+        <h2 className="text-xl mb-2">{t("available_phrase_translation")}</h2>
+        <SelectComponent
+          options={availablePhraseTranslation.map((phraseTranslation) => ({
+            value: phraseTranslation,
+            label: phraseTranslation,
+          }))}
+          value={phraseTranslation}
+          onChange={(value) => setPhraseTranslation(value)}
+        />
+        <div className="">
+          <div className="flex space-x-2 w-[50%] text-sm">
+            <div className="flex-1">Source: </div>
+            <div className="flex-1"> </div>
+            <div className="flex-1">Target: </div>
+          </div>
+          <div className="flex space-x-2 w-[50%] font-bold">
+            <div className="flex-1">{sourceLanguage}</div>
+            <div className="flex-1">{"->"}</div>
+            <div className="flex-1">{targetLanguage}</div>
+          </div>
+          <div className="p-2 flex space-x-2" onClick={handleReverseLang}>
+            <ArrowPathIcon className="w-6" />{" "}
+            <div className="">Reverse languages</div>
+          </div>
+        </div>
       </div>
     </div>
   );
