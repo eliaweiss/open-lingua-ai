@@ -1,6 +1,7 @@
 // src/i18n/index.js
 import { IntlProvider } from "react-intl";
 import React, { useEffect, useState } from "react";
+import { useAppContext } from "../context/AppContext";
 // import * as messages from "./locales"; // Assuming locale files are in the 'locales' folder
 
 const availableLocales = ["en", "es"]; // Add more locales as needed
@@ -13,9 +14,9 @@ const loadLocale = async (locale) => {
 };
 
 function I18nProvider({ children }) {
-  const [locale, setLocale] = useState(navigator.language.substring(0, 2)); // Default to browser locale
+  const { locale } = useAppContext();
   const [messages, setMessages] = useState([]); // Default to
-  
+
   const handleLocaleChange = (newLocale) => {
     if (availableLocales.includes(newLocale)) {
       setLocale(newLocale);

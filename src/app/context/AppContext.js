@@ -17,6 +17,8 @@ export function deepCopy(obj) {
 const todayStartTime = () => new Date().setHours(0, 0, 0, 0); // Midnight of the current day
 
 export const AppProvider = ({ children }) => {
+  const [locale, setLocale] = useState(navigator.language.substring(0, 2)); // Default to browser locale
+
   const [appInitFlag, setAppInitFlag] = useState(false);
   const [phraseRange, setPhraseRange] = useState([0, 0]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -247,6 +249,8 @@ export const AppProvider = ({ children }) => {
         readSettingsArray,
         setReadSettingsArray,
         getLanguageName,
+        locale,
+        setLocale,
       }}
     >
       {children}
