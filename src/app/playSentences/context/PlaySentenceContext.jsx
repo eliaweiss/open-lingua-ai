@@ -77,7 +77,7 @@ export const PlaySentenceProvider = ({ children }) => {
   }, [isPlaying, currentPhraseIndex]);
 
   const skip = () => {
-    cancel();
+    cancelSpeech();
     // Assuming `index` and `skipFlag` are part of your state
     increasePhraseIndex();
   };
