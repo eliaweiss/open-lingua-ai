@@ -19,7 +19,7 @@ export const PlaySentenceProvider = ({ children }) => {
     readAloud_target,
     readAloud_src,
     waitForSeconds,
-    cancel,
+    cancelSpeech,
   } = useSpeechSynthesis();
 
   const [isPlaying, setIsPlaying] = useState(false);
@@ -72,7 +72,7 @@ export const PlaySentenceProvider = ({ children }) => {
     if (isPlaying) {
       doExerciseLoop();
     } else {
-      cancel();
+      cancelSpeech();
     }
   }, [isPlaying, currentPhraseIndex]);
 

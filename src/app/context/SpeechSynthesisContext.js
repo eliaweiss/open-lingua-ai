@@ -111,7 +111,7 @@ export const SpeechSynthesisProvider = ({ children }) => {
 
   ////////////////////////////////////////////////////////////////
 
-  function cancel() {
+  function cancelSpeech() {
     if (typeof window !== "undefined") {
       window.speechSynthesis.cancel();
     }
@@ -144,7 +144,7 @@ export const SpeechSynthesisProvider = ({ children }) => {
     readAloud_target,
     readAloud_src,
     waitForSeconds,
-    cancel,
+    cancelSpeech,
     splitIntoSubSentences,
     isReading,
   };

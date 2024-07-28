@@ -1,7 +1,11 @@
 import { createContext, useState, useContext, useEffect, useRef } from "react";
 import { useAppContext } from "../../context/AppContext";
 import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
-import { randomPermutation } from "../../helpers";
+import {
+  randomPermutation,
+  removeDuplicates,
+  splitToWords,
+} from "../../helpers";
 
 const ScrambleContext = createContext();
 
@@ -10,7 +14,7 @@ const ScrambleContext = createContext();
 export const ScrambleProvider = ({ children }) => {
   const { increasePhraseIndex, currentPhraseIndex, currentPhrase } =
     useAppContext();
-  const { readAloud_target, cancel, splitIntoSubSentences } =
+  const { readAloud_target, cancelSpeech, splitIntoSubSentences } =
     useSpeechSynthesis();
 
   // words txt buffers original and scramble
@@ -60,14 +64,14 @@ export const ScrambleProvider = ({ children }) => {
 
   useEffect(() => {
     if (!currentPhrase || !isPlaying) {
-      cancel();
+      cancelSpeech();
       return;
     }
     playSentence();
   }, [isPlaying, currentPhraseIndex]);
 
   const skip = () => {
-    cancel();
+    cancelSpeech();
     increasePhraseIndex();
   };
 
@@ -228,7 +232,7 @@ export const ScrambleProvider = ({ children }) => {
     ///////
     // pause
     if (isReading_partOfSentence) {
-      cancel();
+      cancelSpeech();
       setIsReading_partOfSentence(false);
       return;
     }
