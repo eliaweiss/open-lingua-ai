@@ -26,5 +26,15 @@
   "wait_after": "Wait After",
   "daily": "Daily",
   "rebuild_a_scrambled_phrase": "Rebuild a scrambled phrase",
-  "available_phrase_translation": "Available phrase translation"
+  "available_phrase_translation": "Available phrase translation",
+  "welcome_to": "Welcome to",
+  "open_source_project_description": "This is an open source project that allows you to practice a new language for free.",
+  "project_stage_description": "The project is in the early development stage and only supports ",
+  "english_to_portuguese": "English",
+  "portuguese_to_english": "Portuguese",
+  "support_any_language_pair": "but it is meant to support any language pair using Language-Model (LLM).",
+  "please_give_it_a_try": "Please give it a try and",
+  "send_me_feedback": "send me feedback",
+  "current_support_exercises": "We currently support only two exercises that are easy to understand. Therefore, the explanation provided is brief. However, I plan to elaborate on the text and the exercises in the future.",
+  "note_app_data_storage": "Note: The app does not store any information remotely. All data is stored locally, and there is no backup available."
 }

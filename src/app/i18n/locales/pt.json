@@ -25,5 +25,15 @@
     "speed": "Velocidade",
     "wait_after": "Esperar Depois",
     "daily": "Diária",
-    "rebuild_a_scrambled_phrase": "Reconstruir uma frase embaralhada"
+    "rebuild_a_scrambled_phrase": "Reconstruir uma frase embaralhada",
+    "welcome_to": "Bem-vindo ao",
+    "open_source_project_description": "Este é um projeto de código aberto que permite praticar um novo idioma gratuitamente.",
+    "project_stage_description": "O projeto está em estágio inicial de desenvolvimento e só suporta ",
+    "english_to_portuguese": "Inglês",
+    "portuguese_to_english": "Português",
+    "support_any_language_pair": "mas pretende suportar qualquer par de idiomas usando o Modelo de Linguagem (LLM).",
+    "please_give_it_a_try": "Por favor, experimente e",
+    "send_me_feedback": "envie-me feedback",
+    "current_support_exercises": "Atualmente, suportamos apenas dois exercícios que são fáceis de entender. Portanto, a explicação fornecida é breve. No entanto, pretendo elaborar mais sobre o texto e os exercícios no futuro.",
+    "note_app_data_storage": "Nota: O aplicativo não armazena nenhuma informação remotamente. Todos os dados são armazenados localmente e não há backup disponível."
 }
