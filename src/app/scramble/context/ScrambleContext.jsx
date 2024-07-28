@@ -105,23 +105,23 @@ export const ScrambleProvider = ({ children }) => {
     wordClickBufferRef.current = wordClickBuffer;
   }, [wordClickBuffer]);
 
-  useEffect(() => {
-    const readClickBuffer = async () => {
-      if (isReading_wordClick) return;
-      setIsReading_wordClick(true);
-      try {
-        while (wordClickBufferRef.current.length > 0) {
-          let buffer = getWordClickBuffer(wordClickBufferRef.current); // NOTE: useRef is essential here
-          // console.log("buffer", buffer);
-          setWordClickBuffer([]);
-          await readAloud_target(buffer, 1.25);
-        }
-      } finally {
-        setIsReading_wordClick(false);
+  const readClickBuffer = async () => {
+    if (isReading_wordClick) return;
+    setIsReading_wordClick(true);
+    try {
+      while (wordClickBufferRef.current.length > 0) {
+        let buffer = getWordClickBuffer(wordClickBufferRef.current); // NOTE: useRef is essential here
+        // console.log("buffer", buffer);
+        setWordClickBuffer([]);
+        await readAloud_target(buffer, 1.25);
       }
-      checkIfBufferIsComplete();
-    };
+    } finally {
+      setIsReading_wordClick(false);
+    }
+    checkIfBufferIsComplete();
+  };
 
+  useEffect(() => {
     readClickBuffer();
   }, [wordClickBuffer]);
 
@@ -251,6 +251,8 @@ export const ScrambleProvider = ({ children }) => {
       }
     } finally {
       setIsReading_partOfSentence(false);
+      setIsReading_wordClick(false);
+      readClickBuffer();
     }
   }
 
