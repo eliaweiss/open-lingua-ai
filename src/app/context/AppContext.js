@@ -95,6 +95,10 @@ export const AppProvider = ({ children }) => {
       const storedDailyCount = await storage.get("dailyCount", 0);
       setDailyCount(storedDailyCount);
 
+      setLocale(
+        await storage.get("locale", navigator.language.substring(0, 2))
+      );
+
       ////////////////////////////////
 
       const todayTimestamp = todayStartTime();
@@ -179,6 +183,11 @@ export const AppProvider = ({ children }) => {
 
   ////////////////////////////////////////////////////////////////////////
   // save to storage
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("locale", locale);
+  }, [locale]);
+
   useEffect(() => {
     if (!appInitFlag) return;
     storage.set("readSettingsArray", readSettingsArray);
