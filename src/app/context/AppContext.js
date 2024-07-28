@@ -47,6 +47,10 @@ export const AppProvider = ({ children }) => {
   const currentPhraseIndexRef = useRef(currentPhraseIndex);
   const [currentPhrase, setCurrentPhrase] = useState(null);
 
+  const [availablePhraseTranslation, setAvailablePhraseTranslation] = useState(
+    []
+  );
+
   ////////////////////////////////////////////////////////////////
   // init app
   useEffect(() => {
@@ -79,7 +83,17 @@ export const AppProvider = ({ children }) => {
         setPhraseRange([0, allPhrases.length]);
       }
       setAllPhrases(allPhrases);
+      ///
+      setAvailablePhraseTranslation(
+        await storage.get(
+          "availablePhraseTranslation",
+          (
+            await import("@/data/availablePhraseTranslation.json")
+          ).default
+        )
+      );
 
+      ///
       setReadSettingsArray(
         await storage.get("readSettingsArray", deepCopy(BEGINNER_READ_SETTINGS))
       );
@@ -171,6 +185,11 @@ export const AppProvider = ({ children }) => {
 
   ////////////////////////////////////////////////////////////////////////
   // save to storage
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("availablePhraseTranslation", availablePhraseTranslation);
+  }, [availablePhraseTranslation]);
+
   useEffect(() => {
     if (!appInitFlag) return;
     storage.set("allPhrases", allPhrases);
