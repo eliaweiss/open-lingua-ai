@@ -5,7 +5,7 @@
   "start": "Start",
   "end": "End",
   "phrase_range_description": "You can choose the range of phrases you want to practice. The initial phrases are easier, while the later ones are more challenging. Adjusting the range allows you to set the difficulty level according to your preference.",
-  "start_is_must_be_less_than_end": "Start is must be less than end",
+  "start_must_be_less_than_end": "Start must be less than End",
   "locale_change_title": "Locale Change",
   "exercise_title": "Exercise",
   "play_sentence_exercise": "Play Sentence Exercise",

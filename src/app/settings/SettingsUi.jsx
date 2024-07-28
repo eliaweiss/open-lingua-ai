@@ -88,9 +88,7 @@ export function SettingsUi() {
           </label>
         </div>
         {phraseRange[0] >= phraseRange[1] && (
-          <div className="text-red-500">
-            {t("start_is_must_be_less_than_end")}
-          </div>
+          <div className="text-red-500">{t("start_must_be_less_than_end")}</div>
         )}
         <div className="text-sm">{t("phrase_range_description")}</div>
       </div>
