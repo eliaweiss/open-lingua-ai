@@ -30,23 +30,25 @@ export const ScrambleProvider = ({ children }) => {
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
   const [showFailNotice, setShowFailNotice] = useState(false);
 
+  // exercise play/pause
   const [isPlaying, setIsPlaying] = useState(false);
+  // true if the current phrase is playing - use to show/hide words btns
   const [isReading_playSentence, setIsReading_playSentence] = useState(false);
-  const [isReading_wordClick, setIsReading_wordClick] = useState(false);
 
-  const [userBufferArray, setUserBufferArray] = useState([]);
-  const userBufferArrayRef = useRef(userBufferArray);
+  // isReading_wordClick and isReading_partOfSentence is used to synchronize reading words clicks
+  // if we are reading a word or part of a sentence, then we buffer the word clicks
+  const [isReading_wordClick, setIsReading_wordClick] = useState(false);
+  const [isReading_partOfSentence, setIsReading_partOfSentence] =
+    useState(false);
+  // buffer the words, useRef is needed in case a word was clicked while we were reading
+  // in such case we continue reading until the word buffer is empty (see readClickBuffer)
   const [wordClickBuffer, setWordClickBuffer] = useState([]);
   const wordClickBufferRef = useRef(wordClickBuffer);
 
-  const [isPlaying_partOfSentence, setIsPlaying_partOfSentence] =
-    useState(false);
-
-  const addToWordClickBuffer = (word) => {
-    const newBuff = [...wordClickBuffer, word];
-    setWordClickBuffer(newBuff);
-    // console.log("getWordClickBuffer", getWordClickBuffer(newBuff));
-  };
+  const [userBufferArray, setUserBufferArray] = useState([]);
+  // after wordClickBuffer we check if the user buffer is complete,
+  // useRef is used to track changes to the user buffer while we are reading (see readClickBuffer)
+  const userBufferArrayRef = useRef(userBufferArray);
 
   const playPause = () => {
     setIsPlaying(!isPlaying);
@@ -81,6 +83,8 @@ export const ScrambleProvider = ({ children }) => {
   };
 
   ////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////
+  // word click related functions
   const handleWordClick = async ({ word, newUserBufferArray }) => {
     if (!newUserBufferArray) newUserBufferArray = userBufferArray;
     addToUserBuffer({ word, newUserBufferArray });
@@ -95,58 +99,65 @@ export const ScrambleProvider = ({ children }) => {
     return buffer;
   }
 
-  useEffect(() => {
-    userBufferArrayRef.current = userBufferArray;
-  }, [userBufferArray]);
-  ////////////////////////////////////////////////////////////////
-
-  const readClickBuffer = async () => {
-    if (isReading_wordClick) return;
-    setIsReading_wordClick(true);
-    try {
-      while (wordClickBufferRef.current.length > 0) {
-        let buffer = getWordClickBuffer(wordClickBufferRef.current);
-        // console.log("buffer", buffer);
-        setWordClickBuffer([]);
-        await readAloud_target(buffer, 1.25);
-      }
-    } finally {
-      setIsReading_wordClick(false);
-    }
-    checkIfBufferIsComplete();
+  const addToWordClickBuffer = (word) => {
+    const newBuff = [...wordClickBuffer, word];
+    setWordClickBuffer(newBuff);
   };
 
   useEffect(() => {
+    userBufferArrayRef.current = userBufferArray;
+  }, [userBufferArray]);
+
+  // NOTE: I deliberately separated the 2 useEffect to emphasize that they are not dependent
+  useEffect(() => {
     wordClickBufferRef.current = wordClickBuffer;
+  }, [wordClickBuffer]);
+
+  useEffect(() => {
+    const readClickBuffer = async () => {
+      if (isReading_wordClick) return;
+      setIsReading_wordClick(true);
+      try {
+        while (wordClickBufferRef.current.length > 0) {
+          let buffer = getWordClickBuffer(wordClickBufferRef.current); // NOTE: useRef is essential here
+          // console.log("buffer", buffer);
+          setWordClickBuffer([]);
+          await readAloud_target(buffer, 1.25);
+        }
+      } finally {
+        setIsReading_wordClick(false);
+      }
+      checkIfBufferIsComplete();
+    };
 
     readClickBuffer();
   }, [wordClickBuffer]);
 
   ////////////////////////////////////////////////////////////////
-  function isBufferComplete() {
-    const wordsInBuffer = userBufferArrayRef.current;
-    // console.log(wordsInBuffer.length, words.length);
-    if (wordsInBuffer.length !== words.length) {
-      return false;
-    }
-
-    for (let i = 0; i < wordsInBuffer.length; i++) {
-      if (wordsInBuffer[i].word !== words[i]) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-
   ////////////////////////////////////////////////////////////////
 
   function checkIfBufferIsComplete() {
+    function checkIfBufferIsComplete_helper() {
+      const wordsInBuffer = userBufferArrayRef.current;
+      // console.log(wordsInBuffer.length, words.length);
+      if (wordsInBuffer.length !== words.length) {
+        return false;
+      }
+
+      for (let i = 0; i < wordsInBuffer.length; i++) {
+        if (wordsInBuffer[i].word !== words[i]) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
     const currentUserBuff = userBufferArrayRef.current;
     if (currentUserBuff.length === 0) return;
     if (currentUserBuff.length >= words.length) {
       // Check if user buffer matches the original sentence (excluding punctuation)
-      if (isBufferComplete()) {
+      if (checkIfBufferIsComplete_helper()) {
         setShowFailNotice(false);
         setWordClickBuffer([]);
         setScrambledWords([]);
@@ -167,6 +178,8 @@ export const ScrambleProvider = ({ children }) => {
   }
 
   ////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////
+  // manage user buffer
 
   const addToUserBuffer = ({ word, newUserBufferArray = [] }) => {
     setUserBufferArray([...newUserBufferArray, word]);
@@ -192,6 +205,8 @@ export const ScrambleProvider = ({ children }) => {
   }
 
   ////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////
+  // scramble sentence
 
   const scrambleSentence = () => {
     if (!currentPhrase) return;
@@ -228,32 +243,31 @@ export const ScrambleProvider = ({ children }) => {
   }, [currentPhrase]);
 
   ////////////////////////////////////////////////////////////////
-  const playPartOfSentence = async () => {
-    if (isPlaying_partOfSentence) {
+  ////////////////////////////////////////////////////////////////
+  // handle play/pause of part-of-sentence-btn
+  const handlePartOfSentenceBtn = async () => {
+    // pause
+    if (isReading_partOfSentence) {
       cancel();
-      setIsPlaying_partOfSentence(false);
+      setIsReading_partOfSentence(false);
       return;
     }
-    setIsPlaying_partOfSentence(true);
-    const doPlay = async () => {
-      try {
-        const text = currentPhrase.target.toLocaleLowerCase();
-        const subSentenceList = splitIntoSubSentences(text);
-        for (let subSentence of subSentenceList) {
-          await readAloud_target(subSentence);
-          if (!getCurrentUserBuffer().includes(subSentence)) {
-            break;
-          }
+    // play
+    setIsReading_partOfSentence(true);
+    try {
+      const text = currentPhrase.target.toLocaleLowerCase();
+      const subSentenceList = splitIntoSubSentences(text);
+      for (let subSentence of subSentenceList) {
+        await readAloud_target(subSentence);
+        if (!getCurrentUserBuffer().includes(subSentence)) {
+          break;
         }
-      } finally {
-        setIsPlaying_partOfSentence(false);
-        setIsReading_wordClick(false);
-        readClickBuffer();
       }
-    };
-
-    doPlay();
+    } finally {
+      setIsReading_partOfSentence(false);
+    }
   };
+
   return (
     <ScrambleContext.Provider
       value={{
@@ -278,8 +292,8 @@ export const ScrambleProvider = ({ children }) => {
         scrambledWords,
         words,
         scrambleSentence,
-        playPartOfSentence,
-        isPlaying_partOfSentence,
+        handlePartOfSentenceBtn,
+        isReading_partOfSentence,
       }}
     >
       {children}

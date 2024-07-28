@@ -15,8 +15,6 @@ import classNames from "classnames";
 export const ScramblePhrase = () => {
   const { isTargetRtl } = useAppContext();
 
-
-
   const {
     isPlaying,
     isReading_playSentence,
@@ -28,13 +26,11 @@ export const ScramblePhrase = () => {
     showSuccessNotice,
     scrambledWords,
     words,
-    playPartOfSentence,
-    isPlaying_partOfSentence
+    handlePartOfSentenceBtn,
+    isReading_partOfSentence,
   } = useScrambleContext();
 
   const [hintClickCounter, setHintClickCounter] = useState(0);
-
-
 
   function giveHint() {
     if (hintClickCounter == 0) {
@@ -91,14 +87,15 @@ export const ScramblePhrase = () => {
           </div>
           <div className="flex space-x-10 my-5 justify-center items-center">
             <ControlButton
+              id="part-of-sentence-btn"
               toolTip="Play Part of sentence"
-              onClick={playPartOfSentence}
+              onClick={handlePartOfSentenceBtn}
               className="p-4 rounded-lg border border-pBorder"
             >
-              {!isPlaying_partOfSentence && (
+              {!isReading_partOfSentence && (
                 <ChevronDoubleRightIcon className="w-6 h-6 " />
               )}
-              {isPlaying_partOfSentence && <PauseIcon className="w-6 h-6 " />}
+              {isReading_partOfSentence && <PauseIcon className="w-6 h-6 " />}
             </ControlButton>
 
             <ControlButton
