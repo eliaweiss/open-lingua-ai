@@ -170,7 +170,7 @@ export const ScrambleProvider = ({ children }) => {
         setTimeout(() => {
           increasePhraseIndex();
           setShowSuccessNotice(false);
-        }, 1000);
+        }, 1000); // show success notice for 1 second
       } else {
         setShowFailNotice(true);
         await playSentence();
