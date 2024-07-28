@@ -194,8 +194,8 @@ export const ScrambleProvider = ({ children }) => {
   }
   function getCurrentUserBuffer() {
     let buffer = "";
-    for (const { word } of userBufferArray) {
-      buffer += " " + word;
+    for (const { txt } of userBufferArray) {
+      buffer += " " + txt;
     }
     return buffer;
   }
