@@ -203,6 +203,11 @@ export const AppProvider = ({ children }) => {
     setTheme(storedTheme);
   }, []);
 
+  function handleReverseLang() {
+    setTargetLanguage(sourceLanguage);
+    setSourceLanguage(targetLanguage);
+  }
+
   ////////////////////////////////////////////////////////////////////////
   // save to storage
   useEffect(() => {
@@ -218,6 +223,9 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     if (!appInitFlag) return;
     storage.set("locale", locale);
+    if (locale === targetLanguage.substring(0, 2)) {
+      handleReverseLang();
+    }
   }, [locale]);
 
   useEffect(() => {
@@ -305,6 +313,7 @@ export const AppProvider = ({ children }) => {
         setTargetLanguage,
         sourceLanguage,
         setSourceLanguage,
+        handleReverseLang,
       }}
     >
       {children}

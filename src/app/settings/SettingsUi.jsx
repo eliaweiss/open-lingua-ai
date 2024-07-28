@@ -20,9 +20,8 @@ export function SettingsUi() {
     phraseTranslation,
     setPhraseTranslation,
     targetLanguage,
-    setTargetLanguage,
     sourceLanguage,
-    setSourceLanguage,
+    handleReverseLang,
   } = useAppContext();
   const t = useTranslation();
 
@@ -40,10 +39,6 @@ export function SettingsUi() {
     });
   };
 
-  function handleReverseLang() {
-    setTargetLanguage(sourceLanguage);
-    setSourceLanguage(targetLanguage);
-  }
   return (
     <div className="p-4">
       <h1 className="text-2xl mb-4 bg-muted p-2 rounded">
