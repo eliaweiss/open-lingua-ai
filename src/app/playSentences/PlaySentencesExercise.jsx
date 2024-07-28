@@ -7,6 +7,7 @@ import { useAppContext } from "../context/AppContext";
 import { usePlaySentenceContext } from "./context/PlaySentenceContext";
 import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; // or '@heroicons/react/24/outline'
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 export const PlaySentencesExercise = () => {
   const { isSrcRtl, isTargetRtl, theme } = useAppContext();
@@ -19,14 +20,15 @@ export const PlaySentencesExercise = () => {
     isPlaying,
   } = usePlaySentenceContext();
   const [showSettings, setShowSettings] = useState(false);
+  const t = useTranslation(); // Use the translation hook
 
   return (
     <div className="">
       <div className="flex flex-col justify-center items-center text-center w-full">
         <div className="text-left">
-          <div className=" text-sText text-sm">Exercise:</div>
+          <div className="text-sText text-sm">{t("exercise_title")}:</div>
           <div className="font-bold text-xl text-sText">
-            Play Sentences in a loop
+            {t("play_sentences_in_loop")}
           </div>
         </div>
         <HorizontalRule />
@@ -47,7 +49,10 @@ export const PlaySentencesExercise = () => {
         {/* Button Panel */}
         <div className="flex flex-col space-y-4 mt-4 ">
           <div className="flex space-x-4 mt-4 border border-pBorder rounded-lg p-4">
-            <ControlButton toolTip="Play/Pause" onClick={playPause}>
+            <ControlButton
+              toolTip={t("play_pause_tooltip")}
+              onClick={playPause}
+            >
               {isPlaying ? (
                 <PauseIcon className={`w-6 h-6 `} />
               ) : (
@@ -55,16 +60,16 @@ export const PlaySentencesExercise = () => {
               )}
             </ControlButton>
 
-            <ControlButton toolTip="Skip" onClick={skip}>
+            <ControlButton toolTip={t("skip_tooltip")} onClick={skip}>
               <ForwardIcon className={`w-6 h-6 `} />
             </ControlButton>
           </div>
-          {isPlaying && <div>Playing ...</div>}
+          {isPlaying && <div>{t("playing_text")}</div>}
         </div>
 
         {/* Statistic Panel */}
         <div className="mt-4 flex flex-col items-center text-xl">
-          <TooltipWrapper text="played-sentences/total-sentences">
+          <TooltipWrapper text={t("played_sentences_tooltip")}>
             <div className="text-sm">
               {currentPhraseIndex}/{phrases.length}
             </div>
@@ -77,7 +82,7 @@ export const PlaySentencesExercise = () => {
           onClick={() => setShowSettings(!showSettings)}
         >
           <Cog6ToothIcon className="w-5" />
-          <div>Settings</div>
+          <div>{t("settings_title")}</div>
         </div>
       </div>
 

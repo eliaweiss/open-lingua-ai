@@ -10,5 +10,10 @@
     "exercise_title": "Exercício",
     "play_sentence_exercise": "Exercício de Frases",
     "scramble_exercise": "Exercício de Embaralhamento",
-    "general_title": "Geral"
+    "general_title": "Geral",
+    "play_sentences_in_loop": "Reproduzir frases em loop",
+    "play_pause_tooltip": "Reproduzir/Pausar",
+    "skip_tooltip": "Pular",
+    "playing_text": "Reproduzindo ...",
+    "played_sentences_tooltip": "frases-reproduzidas/total-de-frases"
 }

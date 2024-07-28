@@ -10,5 +10,10 @@
   "exercise_title": "Exercise",
   "play_sentence_exercise": "Play Sentence Exercise",
   "scramble_exercise": "Scramble Exercise",
-  "general_title": "General"
+  "general_title": "General",
+  "play_sentences_in_loop": "Play Sentences in a loop",
+  "play_pause_tooltip": "Play/Pause",
+  "skip_tooltip": "Skip",
+  "playing_text": "Playing ...",
+  "played_sentences_tooltip": "played-sentences/total-sentences"
 }
