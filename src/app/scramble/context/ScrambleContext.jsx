@@ -4,21 +4,8 @@ import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 
 const ScrambleContext = createContext();
 
-function removeDuplicates(words) {
-  // Use a Set to automatically handle duplicates
-  let uniqueWords = new Set(words);
-
-  // Convert the Set back to an array
-  return Array.from(uniqueWords);
-}
-
-function removeDotAtEnd(sentence) {
-  if (sentence.endsWith(".")) {
-    return sentence.slice(0, -1); // Remove the last character
-  }
-  return sentence;
-}
-
+////////////////////////////////////////////////////////////////
+// provider
 export const ScrambleProvider = ({ children }) => {
   const { increasePhraseIndex, currentPhraseIndex, currentPhrase } =
     useAppContext();
@@ -81,13 +68,6 @@ export const ScrambleProvider = ({ children }) => {
   const skip = () => {
     cancel();
     increasePhraseIndex();
-  };
-
-  ////////////////////////////////////////////////////////////////
-
-  const resetUserBuffer = () => {
-    setUserBufferArray([]);
-    setWordClickBuffer([]);
   };
 
   ////////////////////////////////////////////////////////////////
@@ -190,6 +170,13 @@ export const ScrambleProvider = ({ children }) => {
   };
 
   ////////////////////////////////////////////////////////////////
+
+  const resetUserBuffer = () => {
+    setUserBufferArray([]);
+    setWordClickBuffer([]);
+  };
+
+  ////////////////////////////////////////////////////////////////
   function handleDeleteWordBtn() {
     if (userBufferArray.length <= 0) return;
     setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 1));
@@ -216,32 +203,19 @@ export const ScrambleProvider = ({ children }) => {
     if (!currentPhrase) return;
     setShowFailNotice(false);
 
-    // Get the current Portuguese sentence
-    const words = splitToWords(currentPhrase.target); // Split into words
+    // Get the current target sentence
+    const newWordsTxt = splitToWords(currentPhrase.target); // Split into words
+    setWordsTxt(newWordsTxt);
 
     // Randomly scramble the words
-    const scrambledWordsTmp = removeDuplicates(randomPermutation(words));
-    console.log("scrambledWords", scrambledWordsTmp);
-    setScrambledWordsTxt(scrambledWordsTmp);
+    setScrambledWordsTxt(removeDuplicates(randomPermutation(newWordsTxt)));
 
     // Clear user buffer and display area
     resetUserBuffer();
   };
 
   ////////////////////////////////////////////////////////////////
-  function splitToWords(currentSentence) {
-    currentSentence = removeDotAtEnd(currentSentence)
-      .replace(", ", " ")
-      .replace(". ", " ")
-      .replace("?", "")
-      .replace(/punctuation/g, "");
-    let words = currentSentence.toLocaleLowerCase().split(" "); // Split into words
-    setWordsTxt(words);
-    return words;
-  }
-
-  ////////////////////////////////////////////////////////////////
-
+  // handle new phrase trigger
   useEffect(() => {
     scrambleSentence();
   }, [currentPhrase]);
@@ -335,3 +309,30 @@ export const ScrambleProvider = ({ children }) => {
 };
 
 export const useScrambleContext = () => useContext(ScrambleContext);
+
+// helper functions
+function removeDuplicates(wordsTxt) {
+  // Use a Set to automatically handle duplicates
+  let uniqueWords = new Set(wordsTxt);
+
+  // Convert the Set back to an array
+  return Array.from(uniqueWords);
+}
+
+function removeDotAtEnd(sentence) {
+  if (sentence.endsWith(".")) {
+    return sentence.slice(0, -1); // Remove the last character
+  }
+  return sentence;
+}
+
+////////////////////////////////////////////////////////////////
+function splitToWords(currentSentence) {
+  currentSentence = removeDotAtEnd(currentSentence)
+    .replace(", ", " ")
+    .replace(". ", " ")
+    .replace("?", "")
+    .replace(/punctuation/g, "");
+  let words = currentSentence.toLocaleLowerCase().split(" "); // Split into words
+  return words;
+}
