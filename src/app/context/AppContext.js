@@ -133,28 +133,14 @@ export const AppProvider = ({ children }) => {
   };
 
   const loadPhrase = async ({
-    storedDefaultSourceLanguage,
-    storedDefaultTargetLanguage,
   }) => {
-    // const src_target = `${sourceLanguage}.${targetLanguage}`;
-    // const phrases = (await import(`../../data/phrases.${src_target}.js`))
-    //   .default;
-    const translation = (await import(`../../data/translation.en-US.pt-BR.js`))
-      .default;
-    console.log("loadPhrase", translation.phrases.length);
-    let [targetLang, sourceLang] = Object.keys(translation.langs).reverse();
-    if (
-      translation.langs[targetLang].tag === storedDefaultSourceLanguage &&
-      translation.langs[sourceLang].tag === storedDefaultTargetLanguage
-    ) {
-      [targetLang, sourceLang] = [sourceLang, targetLang];
-    }
-    setTargetLanguage(translation.langs[targetLang].tag);
-    setSourceLanguage(translation.langs[sourceLang].tag);
-    const phrases = translation.phrases.map((phrase) => {
+    const phrasesTmp = (await import(`../../data/phrases.en-US.pt-BR.js`))
+      .phrases;
+
+    const phrases = phrasesTmp.map((phrase) => {
       return {
-        target: phrase[targetLang],
-        src: phrase[sourceLang],
+        target: phrase[targetLanguage],
+        src: phrase[sourceLanguage],
       };
     });
     setAllPhrases(phrases);
