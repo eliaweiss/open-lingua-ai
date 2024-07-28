@@ -15,5 +15,8 @@
   "play_pause_tooltip": "Play/Pause",
   "skip_tooltip": "Skip",
   "playing_text": "Playing ...",
-  "played_sentences_tooltip": "played-sentences/total-sentences"
+  "played_sentences_tooltip": "played-sentences/total-sentences",
+  "beginner": "Beginner",
+  "medium": "Medium",
+  "advance": "Advance"
 }

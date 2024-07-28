@@ -15,5 +15,8 @@
     "play_pause_tooltip": "Reproduzir/Pausar",
     "skip_tooltip": "Pular",
     "playing_text": "Reproduzindo ...",
-    "played_sentences_tooltip": "frases-reproduzidas/total-de-frases"
+    "played_sentences_tooltip": "frases-reproduzidas/total-de-frases",
+    "beginner": "Iniciante",
+    "medium": "Médio",
+    "advance": "Avançado"
 }

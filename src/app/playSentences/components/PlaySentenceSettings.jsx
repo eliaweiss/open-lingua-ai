@@ -1,3 +1,4 @@
+import { useTranslation } from "@/app/i18n/useTranslation";
 import { deepCopy, useAppContext } from "../../context/AppContext";
 import ReadSettingDnd from "./ReadSettingDnd";
 export const BEGINNER_READ_SETTINGS = {
@@ -27,6 +28,8 @@ export const ADVANCE_READ_SETTINGS = {
 };
 
 export function PlaySentenceSettings() {
+  const t = useTranslation(); // Use the translation hook
+
   const { readSettingsArray, setReadSettingsArray, getLanguageName } =
     useAppContext();
   return (
@@ -34,32 +37,32 @@ export function PlaySentenceSettings() {
       <div className="mb-6">
         <div className="flex space-x-2 mb-1 items-center">
           <button
-            className={`rounded-lg text-pText text-sm  px-1 py-1 border border-bg-pBg ${
+            className={`rounded-lg text-pText text-sm px-1 py-1 border border-bg-pBg ${
               readSettingsArray.level == "BEGINNER" ? "bg-sBg" : "bg-pBg"
             }`}
             onClick={() =>
               setReadSettingsArray(deepCopy(BEGINNER_READ_SETTINGS))
             }
           >
-            Beginner
+            {t("beginner")}
           </button>
           <button
-            className={`rounded-lg text-pText text-sm  px-1 py-1 border border-bg-pBg ${
+            className={`rounded-lg text-pText text-sm px-1 py-1 border border-bg-pBg ${
               readSettingsArray.level == "MEDIUM" ? "bg-sBg" : "bg-pBg"
             }`}
             onClick={() => setReadSettingsArray(deepCopy(MEDIUM_READ_SETTINGS))}
           >
-            Medium
+            {t("medium")}
           </button>
           <button
-            className={`rounded-lg text-pText text-sm  px-1 py-1 border border-bg-pBg ${
+            className={`rounded-lg text-pText text-sm px-1 py-1 border border-bg-pBg ${
               readSettingsArray.level == "ADVANCE" ? "bg-sBg" : "bg-pBg"
             }`}
             onClick={() =>
               setReadSettingsArray(deepCopy(ADVANCE_READ_SETTINGS))
             }
           >
-            Advance
+            {t("advance")}
           </button>
         </div>
         <div className="">
