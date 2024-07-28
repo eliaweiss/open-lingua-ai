@@ -2563,7 +2563,7 @@ export const phrases = [
     "pt-BR":
       "A abolição da escravatura no Brasil foi oficialmente decretada pela Lei Áurea em 1888, assinada pela Princesa Isabel, encerrando séculos de exploração escravista.",
     "en-US":
-      "The abolition of slavery in Brazil was officially decreed by the Lei Áurea in 1888, signed by Princess Isabel, ending centuries of enslavement.",
+      "The abolition of slavery in Brazil was officially decreed by the Golden Law in 1888, signed by Princess Isabel, ending centuries of enslavement.",
   },
   {
     "pt-BR":
