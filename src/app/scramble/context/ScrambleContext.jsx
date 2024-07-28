@@ -86,11 +86,10 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////
   // word click related functions
-  const handleWordClickBtn = async ({ word, newUserBufferArray }) => {
-    if (!newUserBufferArray) newUserBufferArray = userBufferArray;
+  async function handleWordClickBtn({ word, newUserBufferArray }) {
     addToUserBuffer({ word, newUserBufferArray });
     addToWordClickBuffer(word.word);
-  };
+  }
 
   function getWordClickBuffer(wordClickBuffer) {
     let buffer = "";
@@ -181,8 +180,8 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////
   // manage user buffer
-
-  const addToUserBuffer = ({ word, newUserBufferArray = [] }) => {
+  const addToUserBuffer = ({ word, newUserBufferArray }) => {
+    if (!newUserBufferArray) newUserBufferArray = userBufferArray;
     setUserBufferArray([...newUserBufferArray, word]);
   };
 
@@ -246,7 +245,7 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////
   // handle play/pause of part-of-sentence-btn
-  const handlePartOfSentenceBtn = async () => {
+  async function handlePartOfSentenceBtn() {
     ///////
     // pause
     if (isReading_partOfSentence) {
@@ -270,8 +269,9 @@ export const ScrambleProvider = ({ children }) => {
     } finally {
       setIsReading_partOfSentence(false);
     }
-  };
+  }
 
+  ////////////////////////////////////////////////////////////////
   function handleGiveHintBtn() {
     if (hintClickCounter == 0) {
       setHintClickCounter(1);

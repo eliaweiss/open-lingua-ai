@@ -1,6 +1,5 @@
 import { ChevronDoubleRightIcon, PauseIcon } from "@heroicons/react/24/solid";
 import ControlButton from "../../components/ControlButton";
-import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
 import { useScrambleContext } from "../context/ScrambleContext";
 import { useEffect, useState } from "react";
 import { useAppContext } from "../../context/AppContext";
@@ -8,7 +7,6 @@ import { UserBufferDisplay } from "./UserBufferDisplay";
 import {
   BackspaceIcon,
   QuestionMarkCircleIcon,
-  QueueListIcon,
 } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 
@@ -28,7 +26,7 @@ export const ScramblePhrase = () => {
     showSuccessNotice,
     isReading_partOfSentence,
     isPlaying,
-    isReading_playSentence,    
+    isReading_playSentence,
     //
     scrambledWords,
     words,
@@ -109,6 +107,7 @@ export const ScramblePhrase = () => {
   );
 };
 
+////////////////////////////////////////////////////////////////
 const WordButton = ({ className, children, ...prop }) => {
   return (
     <div
