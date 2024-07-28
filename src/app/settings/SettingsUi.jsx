@@ -59,7 +59,6 @@ export function SettingsUi() {
           <label>
             {t("start")}:
             <Input
-              maxlength="4"
               size="4"
               name="start"
               value={phraseRange[0]}
