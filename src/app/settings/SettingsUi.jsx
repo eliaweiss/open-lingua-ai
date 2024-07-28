@@ -6,7 +6,7 @@ import SelectComponent from "../components/SelectComponent";
 import ThemeToggle from "../components/ThemeToggle";
 import { useAppContext } from "../context/AppContext";
 import { availableLocales } from "../i18n";
-import { useTranslation } from "../i18n/useTranslation";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 export function SettingsUi() {
   const { phraseRange, setPhraseRange, allPhrases, locale, setLocale } =
@@ -25,10 +25,6 @@ export function SettingsUi() {
       }
       return newRange;
     });
-  };
-
-  const handleLocaleChange = (event) => {
-    setLocale(event.target.value);
   };
 
   return (
