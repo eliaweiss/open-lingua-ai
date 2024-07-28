@@ -278,6 +278,10 @@ export const AppProvider = ({ children }) => {
         availablePhraseTranslation,
         phraseTranslation,
         setPhraseTranslation,
+        targetLanguage,
+        setTargetLanguage,
+        sourceLanguage,
+        setSourceLanguage,
       }}
     >
       {children}
