@@ -66,15 +66,19 @@ export const AppProvider = ({ children }) => {
       );
       setDefaultTargetLanguage(storedDefaultTargetLanguage);
 
-      const phrases = await loadPhrase({
-        storedDefaultSourceLanguage,
-        storedDefaultTargetLanguage,
-      });
       const storedPhraseRange = await storage.get("phraseRange", [
         1,
         phrases.length,
       ]);
       setPhraseRange(storedPhraseRange);
+
+      ////////////////////////////////////////////////////////////////
+      let allPhrases = myLocalStorage.get("allPhrases", null);
+      if (!allPhrases) {
+        allPhrases = await loadPhrase();
+        setPhraseRange([0, allPhrases.length]);
+      }
+      setAllPhrases(allPhrases);
 
       setReadSettingsArray(
         await storage.get("readSettingsArray", deepCopy(BEGINNER_READ_SETTINGS))
@@ -132,8 +136,7 @@ export const AppProvider = ({ children }) => {
     storage.set("dailyCount", newCount);
   };
 
-  const loadPhrase = async ({
-  }) => {
+  const loadPhrase = async () => {
     const phrasesTmp = (await import(`../../data/phrases.en-US.pt-BR.js`))
       .phrases;
 
@@ -143,7 +146,6 @@ export const AppProvider = ({ children }) => {
         src: phrase[sourceLanguage],
       };
     });
-    setAllPhrases(phrases);
     return phrases;
   };
 
@@ -171,6 +173,11 @@ export const AppProvider = ({ children }) => {
   // save to storage
   useEffect(() => {
     if (!appInitFlag) return;
+    storage.set("allPhrases", allPhrases);
+  }, [allPhrases]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
     storage.set("locale", locale);
   }, [locale]);
 
@@ -183,6 +190,7 @@ export const AppProvider = ({ children }) => {
     if (!appInitFlag) return;
     storage.set("phraseRange", phraseRange);
   }, [phraseRange]);
+  ////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     if (!appInitFlag) return;
