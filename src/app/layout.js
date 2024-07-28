@@ -6,6 +6,8 @@ import { AppProvider, useAppContext } from "./context/AppContext";
 import { useState } from "react";
 import { NavMenu } from "./components/NavMenu";
 import { AppHeader } from "./components/AppHeader";
+// src/app.js
+import { I18nProvider } from "./i18n";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,9 +15,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AppProvider>
-          <AppWrapper>{children}</AppWrapper>
-        </AppProvider>
+        <I18nProvider>
+          <AppProvider>
+            <AppWrapper>{children}</AppWrapper>
+          </AppProvider>
+        </I18nProvider>
       </body>
     </html>
   );

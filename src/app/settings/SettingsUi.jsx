@@ -1,13 +1,15 @@
 "use client";
 
+import { useIntl } from "react-intl";
 import { Input } from "../components/Input";
 import MenuItem from "../components/MenuItem";
 import ThemeToggle from "../components/ThemeToggle";
 import { useAppContext } from "../context/AppContext";
 
 export function SettingsUi() {
-  const { phraseRange, setPhraseRange, allPhrases } =
-    useAppContext();
+  const { phraseRange, setPhraseRange, allPhrases } = useAppContext();
+  const intl = useIntl();
+  const greeting = intl.formatMessage({ id: "hello" });
 
   const handleRangeChange = (event) => {
     const { name, value } = event.target;
@@ -29,7 +31,9 @@ export function SettingsUi() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl mb-4 bg-muted  p-2 rounded">Settings</h1>
+      <h1 className="text-2xl mb-4 bg-muted  p-2 rounded">
+        Settings {greeting}
+      </h1>
 
       <div className="mb-6">
         <MenuItem>
