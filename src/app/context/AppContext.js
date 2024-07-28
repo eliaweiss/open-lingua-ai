@@ -62,18 +62,9 @@ export const AppProvider = ({ children }) => {
       const storedTheme = myLocalStorage.get("theme", "light");
       setTheme(storedTheme);
 
-      /// init language src/target
-      const storedSourceLanguageRate = await storage.get(
-        "sourceLanguageRate",
-        1
-      );
-      setSourceLanguageRate(storedSourceLanguageRate);
-
-      const storedTargetLanguageRate = await storage.get(
-        "targetLanguageRate",
-        1
-      );
-      setTargetLanguageRate(storedTargetLanguageRate);
+      /// init language rate src/target
+      setSourceLanguageRate(await storage.get("sourceLanguageRate", 1));
+      setTargetLanguageRate(await storage.get("targetLanguageRate", 1));
 
       /// init Available Phrase Translation
       const storedAvailablePhraseTranslation = await storage.get(
@@ -101,13 +92,14 @@ export const AppProvider = ({ children }) => {
         await loadPhrasesTranslationFromStorage(
           storedAvailablePhraseTranslation[0]
         );
-        // const phraseFromStorage = await storage.get(
-        //   storedAvailablePhraseTranslation[0]
-        // );
-        // storedAllPhrases = setPhrasesTargetSrc(phraseFromStorage);
-        // setPhraseRange([0, storedAllPhrases.length]);
-        // setAllPhrases(storedAllPhrases);
       } else {
+        setPhraseTranslation(
+          await storage.get(
+            "phraseTranslation",
+            storedAvailablePhraseTranslation[0]
+          )
+        );
+
         setAllPhrases(storedAllPhrases);
       }
 
@@ -210,6 +202,11 @@ export const AppProvider = ({ children }) => {
 
   ////////////////////////////////////////////////////////////////////////
   // save to storage
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("phraseTranslation", phraseTranslation);
+  }, [phraseTranslation]);
+
   useEffect(() => {
     if (!appInitFlag) return;
     storage.set("availablePhraseTranslation", availablePhraseTranslation);
