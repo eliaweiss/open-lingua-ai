@@ -1,8 +1,6 @@
 import { createContext, useState, useContext, useEffect, useRef } from "react";
-import {
-  randomPermutation,
-  useSpeechSynthesis,
-} from "./SpeechSynthesisContext";
+import { randomPermutation } from "../helpers";
+
 import { BEGINNER_READ_SETTINGS } from "../playSentences/components/PlaySentenceSettings";
 
 const AppContext = createContext();

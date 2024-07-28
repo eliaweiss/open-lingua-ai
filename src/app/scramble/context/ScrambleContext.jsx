@@ -1,6 +1,7 @@
 import { createContext, useState, useContext, useEffect, useRef } from "react";
 import { useAppContext } from "../../context/AppContext";
 import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
+import { randomPermutation } from "../../helpers";
 
 const ScrambleContext = createContext();
 
@@ -9,7 +10,7 @@ const ScrambleContext = createContext();
 export const ScrambleProvider = ({ children }) => {
   const { increasePhraseIndex, currentPhraseIndex, currentPhrase } =
     useAppContext();
-  const { readAloud_target, cancel, randomPermutation, splitIntoSubSentences } =
+  const { readAloud_target, cancel, splitIntoSubSentences } =
     useSpeechSynthesis();
 
   // words txt buffers original and scramble
@@ -309,30 +310,3 @@ export const ScrambleProvider = ({ children }) => {
 };
 
 export const useScrambleContext = () => useContext(ScrambleContext);
-
-// helper functions
-function removeDuplicates(wordsTxt) {
-  // Use a Set to automatically handle duplicates
-  let uniqueWords = new Set(wordsTxt);
-
-  // Convert the Set back to an array
-  return Array.from(uniqueWords);
-}
-
-function removeDotAtEnd(sentence) {
-  if (sentence.endsWith(".")) {
-    return sentence.slice(0, -1); // Remove the last character
-  }
-  return sentence;
-}
-
-////////////////////////////////////////////////////////////////
-function splitToWords(currentSentence) {
-  currentSentence = removeDotAtEnd(currentSentence)
-    .replace(", ", " ")
-    .replace(". ", " ")
-    .replace("?", "")
-    .replace(/punctuation/g, "");
-  let words = currentSentence.toLocaleLowerCase().split(" "); // Split into words
-  return words;
-}

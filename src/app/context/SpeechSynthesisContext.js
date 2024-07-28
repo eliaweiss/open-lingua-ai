@@ -144,7 +144,6 @@ export const SpeechSynthesisProvider = ({ children }) => {
     readAloud_target,
     readAloud_src,
     waitForSeconds,
-    randomPermutation,
     cancel,
     splitIntoSubSentences,
     isReading,
@@ -158,14 +157,3 @@ export const SpeechSynthesisProvider = ({ children }) => {
 };
 
 export const useSpeechSynthesis = () => useContext(SpeechSynthesisContext);
-
-////////////////////////////////////////////////////////////////
-
-export function randomPermutation(data) {
-  const perm = data.slice();
-  for (let i = perm.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [perm[i], perm[j]] = [perm[j], perm[i]];
-  }
-  return perm;
-}
