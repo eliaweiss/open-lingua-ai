@@ -23,5 +23,7 @@
   "lang": "Lang",
   "accented": "Accented",
   "speed": "Speed",
-  "wait_after": "Wait After"
+  "wait_after": "Wait After",
+  "daily": "Daily",
+  "rebuild_a_scrambled_phrase": "Rebuild a scrambled phrase"
 }

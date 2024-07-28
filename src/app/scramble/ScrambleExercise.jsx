@@ -5,8 +5,11 @@ import { useAppContext } from "../context/AppContext";
 import { useScrambleContext } from "./context/ScrambleContext";
 import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; // or '@heroicons/react/24/outline'
 import { ScramblePhrase } from "./component/ScramblePhrase";
+import { useTranslation } from "../i18n/useTranslation";
 
 export const ScrambleExercise = () => {
+  const t = useTranslation(); // Use the translation hook
+
   const { isTargetRtl, phrases } = useAppContext();
   const { currentPhraseIndex, playPause, skip, currentPhrase, isPlaying } =
     useScrambleContext();
@@ -14,9 +17,9 @@ export const ScrambleExercise = () => {
   return (
     <div className="flex flex-col justify-center items-center text-center w-full">
       <div className="text-left">
-        <div className=" text-pText text-sm">Exercise:</div>
+        <div className="text-sText text-sm">{t("exercise_title")}:</div>
         <div className="font-bold text-xl text-sText">
-          Rebuild a scrambled phrase
+          {t("rebuild_a_scrambled_phrase")}
         </div>
       </div>
       <HorizontalRule />

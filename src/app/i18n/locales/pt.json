@@ -23,5 +23,7 @@
     "lang": "Idioma",
     "accented": "Acentuado",
     "speed": "Velocidade",
-    "wait_after": "Esperar Depois"
+    "wait_after": "Esperar Depois",
+    "daily": "Diária",
+    "rebuild_a_scrambled_phrase": "Reconstruir uma frase embaralhada"
 }
