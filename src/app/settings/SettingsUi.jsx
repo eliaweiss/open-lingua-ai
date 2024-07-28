@@ -1,15 +1,14 @@
 "use client";
 
-import { useIntl } from "react-intl";
 import { Input } from "../components/Input";
 import MenuItem from "../components/MenuItem";
 import ThemeToggle from "../components/ThemeToggle";
 import { useAppContext } from "../context/AppContext";
+import { useTranslation } from "../i18n/useTranslation";
 
 export function SettingsUi() {
   const { phraseRange, setPhraseRange, allPhrases } = useAppContext();
-  const intl = useIntl();
-  const greeting = intl.formatMessage({ id: "hello" });
+  const t = useTranslation();
 
   const handleRangeChange = (event) => {
     const { name, value } = event.target;
@@ -31,23 +30,23 @@ export function SettingsUi() {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl mb-4 bg-muted  p-2 rounded">
-        Settings {greeting}
+      <h1 className="text-2xl mb-4 bg-muted p-2 rounded">
+        {t("settings_title")}
       </h1>
 
       <div className="mb-6">
         <MenuItem>
           <ThemeToggle className="">
-            <div className="text-xl mb-2">Toggle Theme</div>
+            <div className="text-xl mb-2">{t("toggle_theme")}</div>
           </ThemeToggle>
         </MenuItem>
       </div>
 
       <div className="mb-6">
-        <h2 className="text-xl mb-2">Phrase Range</h2>
+        <h2 className="text-xl mb-2">{t("phrase_range_title")}</h2>
         <div className="flex space-x-2">
           <label>
-            Start:
+            {t("start")}:
             <Input
               maxlength="4"
               size="4"
@@ -57,7 +56,7 @@ export function SettingsUi() {
             />
           </label>
           <label>
-            End:
+            {t("end")}:
             <Input
               size="4"
               name="end"
@@ -66,17 +65,7 @@ export function SettingsUi() {
             />
           </label>
         </div>
-        {/* <p>
-          Current range: {phraseRange[0]} - {phraseRange[1]}
-        </p> */}
-        <div className="text-sm">
-          You can choose the range of phrases you want to practice. <br />
-          The initial phrases are easier, while the later ones are more
-          challenging.
-          <br />
-          Adjusting the range allows you to set the difficulty level according
-          to your preference.
-        </div>
+        <div className="text-sm">{t("phrase_range_description")}</div>
       </div>
     </div>
   );
