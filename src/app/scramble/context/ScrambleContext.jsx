@@ -25,12 +25,13 @@ export const ScrambleProvider = ({ children }) => {
   const { readAloud_target, cancel, randomPermutation, splitIntoSubSentences } =
     useSpeechSynthesis();
 
-  const [scrambledWordsTxt, setScrambledWordsTxt] = useState([]);
+  // words txt buffers original and scramble
   const [wordsTxt, setWordsTxt] = useState([]);
+  const [scrambledWordsTxt, setScrambledWordsTxt] = useState([]);
+
+  // flags
   const [showSuccessNotice, setShowSuccessNotice] = useState(false);
   const [showFailNotice, setShowFailNotice] = useState(false);
-  const [hintClickCounter, setHintClickCounter] = useState(0);
-
   // exercise play/pause
   const [isPlaying, setIsPlaying] = useState(false);
   // true if the current phrase is playing - use to show/hide words btns
@@ -51,6 +52,11 @@ export const ScrambleProvider = ({ children }) => {
   // useRef is used to track changes to the user buffer while we are reading (see readClickBuffer)
   const userBufferArrayRef = useRef(userBufferArray);
 
+  // handle double click
+  const [hintClickCounter, setHintClickCounter] = useState(0);
+
+  ////////////////////////////////////////////////////////////////
+  // manage the exercise play/pause/skip functionality
   const playPause = () => {
     setIsPlaying(!isPlaying);
   };
@@ -81,6 +87,7 @@ export const ScrambleProvider = ({ children }) => {
 
   const resetUserBuffer = () => {
     setUserBufferArray([]);
+    setWordClickBuffer([]);
   };
 
   ////////////////////////////////////////////////////////////////
@@ -136,7 +143,7 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////
 
-  function checkIfBufferIsComplete() {
+  async function checkIfBufferIsComplete() {
     function checkIfBufferIsComplete_helper() {
       const wordsInBuffer = userBufferArrayRef.current;
       // console.log(wordsInBuffer.length, words.length);
@@ -159,8 +166,6 @@ export const ScrambleProvider = ({ children }) => {
       // Check if user buffer matches the original sentence (excluding punctuation)
       if (checkIfBufferIsComplete_helper()) {
         setShowFailNotice(false);
-        setWordClickBuffer([]);
-        setScrambledWordsTxt([]);
         setShowSuccessNotice(true);
         setTimeout(() => {
           increasePhraseIndex();
@@ -168,9 +173,8 @@ export const ScrambleProvider = ({ children }) => {
         }, 1000);
       } else {
         setShowFailNotice(true);
-        playSentence().then(() => {
-          setShowFailNotice(false);
-        });
+        await playSentence();
+        setShowFailNotice(false);
       }
 
       resetUserBuffer();
