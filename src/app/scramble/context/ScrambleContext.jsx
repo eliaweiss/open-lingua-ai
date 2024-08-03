@@ -252,7 +252,9 @@ export const ScrambleProvider = ({ children }) => {
     } finally {
       setIsReading_partOfSentence(false);
       setIsReading_wordClick(false);
-      readClickBuffer();
+      setTimeout(() => {
+        readClickBuffer();
+      }, 100);
     }
   }
 

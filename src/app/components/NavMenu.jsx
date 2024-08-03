@@ -18,7 +18,7 @@ export function NavMenu({}) {
         <button onClick={() => setIsMenuOpen(false)} className="md:hidden p-4">
           <XMarkIcon className="h-6 w-6" /> {/* Close icon */}
         </button>
-        <div className="p-4 mt-10">
+        <div className="p-4 mt-10" onClick={() => setIsMenuOpen(false)}>
           <div>{t("exercise_title")}:</div>
           <MenuItem href="/playSentences">
             {t("play_sentence_exercise")}
