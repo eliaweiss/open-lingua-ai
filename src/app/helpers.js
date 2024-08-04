@@ -27,11 +27,11 @@ export function removeDotAtEnd(sentence) {
 
 ////////////////////////////////////////////////////////////////
 export function splitToWords(currentSentence) {
-  currentSentence = removeDotAtEnd(currentSentence)
-    .replace(", ", " ")
-    .replace(". ", " ")
-    .replace("?", "")
-    .replace(/punctuation/g, "");
-  let words = currentSentence.toLocaleLowerCase().split(" "); // Split into words
+  const currentSentenceTmp = removeDotAtEnd(currentSentence)
+    .replaceAll(", ", " ")
+    .replaceAll(". ", " ")
+    .replaceAll("?", "")
+    .replaceAll(/punctuation/g, "");
+  let words = currentSentenceTmp.toLocaleLowerCase().split(" "); // Split into words
   return words;
 }
