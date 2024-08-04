@@ -275,6 +275,9 @@ export const ScrambleProvider = ({ children }) => {
         }
         newUserBufferArray.push(wordInBuffer[i]);
       }
+      if (i >= wordsTxt.length) {
+        return;
+      }
       handleWordClickBtn({
         word: { txt: wordsTxt[i], isHint: true },
         newUserBufferArray,
