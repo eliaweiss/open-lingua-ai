@@ -106,7 +106,12 @@ export const ScrambleProvider = ({ children }) => {
   }, [wordClickBuffer]);
 
   const readClickBuffer = async () => {
-    if (isReading_wordClick || isReading_partOfSentence) return;
+    if (
+      isReading_wordClick ||
+      isReading_partOfSentence ||
+      wordClickBufferRef.current.length == 0
+    )
+      return;
     setIsReading_wordClick(true);
     try {
       while (wordClickBufferRef.current.length > 0) {
