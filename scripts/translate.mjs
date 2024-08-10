@@ -1,3 +1,4 @@
+// npm run translate -- -srcLang=en -targetLang=es -phraseFile=phrases.txt
 import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
@@ -10,15 +11,44 @@ const anthropic = new Anthropic({
   apiKey: process.env["ANTHROPIC_API_KEY"],
 });
 
-const srcLang = "en-US";
-const targetLang = "il-HE";
+// npm run generatePhrase -- -srcLang=en -targetLang=es -phraseFile=phrases.txt
+// Access command-line arguments
+
+// Function to parse the arguments
+function parseArgs(args) {
+  const parsedArgs = {};
+
+  args.forEach((arg) => {
+    // Split each argument into key and value based on the '=' separator
+    const [key, value] = arg.split("=");
+
+    // Remove the leading '-' from the key
+    const normalizedKey = key.replace(/^-+/, "");
+
+    // Assign the value to the corresponding key in the parsedArgs object
+    parsedArgs[normalizedKey] = value;
+  });
+
+  return parsedArgs;
+}
+
+const args = process.argv.slice(2);
+const options = parseArgs(args);
+// Log the arguments to the console
+console.log("Arguments:", options);
+
+const srcLang = options.srcLang || "en-US";
+const targetLang = options.targetLang || "il-HE";
+const inputFile = options.inputFile || "inputPhrases/en.json";
+const outputFile =
+  options.outputFile || `outputPhrases/phrases.${srcLang}.${targetLang}.json`;
 
 // Function to translate sentences
 async function translateSentence(sentence) {
   const promptStr = `translate the following sentence into ${targetLang}:\n${sentence}\n\nand return the result in json list format:\n{${targetLang}: "${sentence}", ${srcLang}: "...TranslatedSentence..."}\n\ndon't return any text other than the json result`;
-  console.log("+++++++");
-  console.log("promptStr", promptStr);
-  console.log("-------");
+  // console.log("+++++++");
+  // console.log("promptStr", promptStr);
+  // console.log("-------");
 
   const msg = await anthropic.messages.create({
     model: "claude-3-haiku-20240307",
@@ -37,7 +67,7 @@ async function translateSentence(sentence) {
     ],
   });
   const resText = msg.content[0].text;
-  console.log("msg", resText);
+  // console.log("msg", resText);
   // Parse the JSON result from the response
   const response = JSON.parse(resText);
   return response;
@@ -68,9 +98,7 @@ async function processTranslations(inputFilePath, outputFilePath) {
 }
 
 // Run the script with input and output file paths
-const inputFilePath = path.resolve("inputPhrases/en.json"); // Path to the input JSON file
-const outputFilePath = path.resolve(
-  `outputPhrases/phrases.${srcLang}.${targetLang}.json`
-); // Path to save the output JSON file
+const inputFilePath = path.resolve(inputFile); // Path to the input JSON file
+const outputFilePath = path.resolve(outputFile); // Path to save the output JSON file
 
 processTranslations(inputFilePath, outputFilePath);

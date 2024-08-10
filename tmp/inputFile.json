@@ -1,0 +1,14 @@
+[
+    {
+        "en-US": "Hello",
+        "es-ES": "Hola"
+    },
+    {
+        "en-US": "Goodbye",
+        "es-ES": "Adiós"
+    },
+    {
+        "en-US": "Thank you",
+        "fr-FR": "Merci"
+    }
+]
