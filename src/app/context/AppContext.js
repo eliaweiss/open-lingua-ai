@@ -2,6 +2,7 @@ import { createContext, useState, useContext, useEffect, useRef } from "react";
 import { randomPermutation } from "../helpers";
 
 import { BEGINNER_READ_SETTINGS } from "../playSentences/components/PlaySentenceSettings";
+import loadPhraseFromDataFolder from "./loadPhraseFromDataFolder";
 
 const AppContext = createContext();
 
@@ -175,11 +176,6 @@ export const AppProvider = ({ children }) => {
     const newCount = dailyCount + 1;
     setDailyCount(newCount);
     storage.set("dailyCount", newCount);
-  };
-
-  const loadPhraseFromDataFolder = async (avt) => {
-    const phrases = (await import(`../../data/${avt}.js`)).phrases;
-    return phrases;
   };
 
   const setPhrasesTargetSrc = (newPhrases, languages) => {
