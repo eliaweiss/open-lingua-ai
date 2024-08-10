@@ -10,7 +10,7 @@ import { useTranslation } from "../i18n/useTranslation";
 export const ScrambleExercise = () => {
   const t = useTranslation(); // Use the translation hook
 
-  const { isTargetRtl, phrases } = useAppContext();
+  const { isSrcRtl, phrases } = useAppContext();
   const { currentPhraseIndex, playPause, skip, currentPhrase, isPlaying } =
     useScrambleContext();
 
@@ -27,7 +27,9 @@ export const ScrambleExercise = () => {
       {/* Exercise Panel */}
       <div className="flex flex-col space-y-4 mt-4 text-3xl">
         <div
-          className={`text-sText ${isTargetRtl ? "text-right" : "text-left"}`}
+          className={`text-sText ${
+            isSrcRtl ? "text-right text-rtl" : "text-left"
+          }`}
         >
           {currentPhrase?.src}
         </div>
