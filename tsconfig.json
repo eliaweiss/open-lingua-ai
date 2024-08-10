@@ -34,7 +34,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "scripts/translate.mjs"  ],
   "exclude": [
     "node_modules"
   ]
