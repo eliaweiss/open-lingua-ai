@@ -72,15 +72,23 @@ export const AppProvider = ({ children }) => {
       setSourceLanguageRate(await storage.get("sourceLanguageRate", 1));
       setTargetLanguageRate(await storage.get("targetLanguageRate", 1));
 
+      const translationFromFiles = (
+        await import("@/data/availablePhraseTranslation.json")
+      ).default;
       /// init Available Phrase Translation
       const storedAvailablePhraseTranslation = await storage.get(
         "availablePhraseTranslation",
-        (
-          await import("@/data/availablePhraseTranslation.json")
-        ).default
+        translationFromFiles
       );
-      setAvailablePhraseTranslation(storedAvailablePhraseTranslation);
-      for (const avt of storedAvailablePhraseTranslation) {
+      const allTranslations = [
+        ...new Set([
+          ...storedAvailablePhraseTranslation,
+          ...translationFromFiles,
+        ]),
+      ];
+      setAvailablePhraseTranslation(allTranslations);
+
+      for (const avt of allTranslations) {
         const phrasesFromData = await loadPhraseFromDataFolder(avt);
         storage.set(avt, phrasesFromData);
       }
