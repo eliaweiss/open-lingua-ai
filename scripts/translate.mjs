@@ -54,8 +54,8 @@ and return the result json list format:
 
 don't return any text other than the json result  
   `;
-  console.log("+++++++");
-  console.log("promptStr", promptStr);
+  // console.log("+++++++");
+  // console.log("promptStr", promptStr);
   console.log("-------");
 
   const msg = await anthropic.messages.create({
@@ -75,7 +75,6 @@ don't return any text other than the json result
     ],
   });
   const resText = msg.content[0].text;
-  console.log("msg", resText);
   // Parse the JSON result from the response
   const response = JSON.parse(resText);
   return response;
@@ -100,6 +99,9 @@ async function processTranslations(
         continue;
       }
       const translation = await translateSentence(sentence);
+      console.log(i);
+      console.log("translation", translation);
+
       translations.push(translation);
       fs.writeFileSync(outputFilePath, JSON.stringify(translations, null, 2));
       // if (i > 20) break;
