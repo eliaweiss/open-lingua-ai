@@ -1,4 +1,4 @@
-// npm run translate -- -srcLang=en-US -targetLang=il-HE -inputFile=tmp/outFile.json -outputFile=tmp/outFile.il.json
+// npm run translate -- -srcLang=en-US -targetLang=he-IL -inputFile=tmp/outFile.json -outputFile=tmp/outFile.il.json
 
 import fs from "fs";
 import path from "path";
@@ -38,7 +38,7 @@ const options = parseArgs(args);
 console.log("Arguments:", options);
 
 const srcLang = options.srcLang || "en-US";
-const targetLang = options.targetLang || "il-HE";
+const targetLang = options.targetLang || "he-IL";
 const inputFile = options.inputFile || "inputPhrases/en.json";
 const outputFile =
   options.outputFile || `outputPhrases/phrases.${srcLang}.${targetLang}.json`;
