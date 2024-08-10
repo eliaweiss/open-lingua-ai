@@ -101,11 +101,12 @@ async function processTranslations(
       }
       const translation = await translateSentence(sentence);
       translations.push(translation);
+      fs.writeFileSync(outputFilePath, JSON.stringify(translations, null, 2));
       // if (i > 20) break;
     }
 
     // Save the translations to the output JSON file
-    fs.writeFileSync(outputFilePath, JSON.stringify(translations, null, 2));
+    // fs.writeFileSync(outputFilePath, JSON.stringify(translations, null, 2));
     console.log(`Translations saved to ${outputFilePath}`);
   } catch (error) {
     console.error("Error processing translations:", error);
