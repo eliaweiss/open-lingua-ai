@@ -86,5 +86,385 @@
   {
     "he-IL": "מה שם מקום העבודה שלך?",
     "pt-BR": "Qual é o nome do seu local de trabalho?"
+  },
+  {
+    "he-IL": "מה שם מקום העבודה שלך?",
+    "pt-BR": "Qual é o nome do seu local de trabalho?"
+  },
+  {
+    "he-IL": "איפה השירותים?",
+    "pt-BR": "Onde fica o banheiro?"
+  },
+  {
+    "he-IL": "איפה אני יכול למצוא את תחנת הרכבת?",
+    "pt-BR": "Onde posso encontrar a estação de trem?"
+  },
+  {
+    "he-IL": "איפה נולדת וגדלת?",
+    "pt-BR": "Onde você nasceu e foi criado?"
+  },
+  {
+    "he-IL": "היכן נמצא המסעדה שאתה ממליץ עליה?",
+    "pt-BR": "Onde fica o restaurante que você recomenda?"
+  },
+  {
+    "he-IL": "מה הסופרמרקט הקרוב ביותר מכאן?",
+    "pt-BR": "Qual é o supermercado mais próximo daqui?"
+  },
+  {
+    "he-IL": "איפה למדת במכללה?",
+    "pt-BR": "Onde você frequentou a faculdade?"
+  },
+  {
+    "he-IL": "מהו התחנה הנגישה ביותר?",
+    "pt-BR": "Qual é o ponto de ônibus mais acessível?"
+  },
+  {
+    "he-IL": "איפה היית אתמול אחר הצהריים?",
+    "pt-BR": "Onde você estava ontem à tarde?"
+  },
+  {
+    "he-IL": "שמי הוא אנה.",
+    "pt-BR": "Meu nome é Ana."
+  },
+  {
+    "he-IL": "אני בן 28 שנים.",
+    "pt-BR": "Eu tenho 28 anos."
+  },
+  {
+    "he-IL": "המקצוע שלי הוא מעצב גרפי.",
+    "pt-BR": "Minha profissão é designer gráfico."
+  },
+  {
+    "he-IL": "הכתובת שלי היא רחוב עצי לימון 789.",
+    "pt-BR": "Meu endereço é Rua Árvores de Limão 789."
+  },
+  {
+    "he-IL": "מספר הטלפון שלי הוא (31) 98765-4321.",
+    "pt-BR": "Meu número de telefone é (31) 98765-4321."
+  },
+  {
+    "he-IL": "הקבוצה האהובה עלי היא קורינתיאנס.",
+    "pt-BR": "Meu time favorito é o Corinthians."
+  },
+  {
+    "he-IL": "היום הוא 15 באוגוסט, 2024.",
+    "pt-BR": "Hoje é 15 de agosto de 2024."
+  },
+  {
+    "he-IL": "הסרט האהוב עלי הוא \"פולפ פיקשן\".",
+    "pt-BR": "Meu filme favorito é \"Pulp Fiction\"."
+  },
+  {
+    "he-IL": "האוכל האהוב עלי הוא לזניה.",
+    "pt-BR": "Meu prato favorito é lasanha."
+  },
+  {
+    "he-IL": "אני גר בקוריטיבה.",
+    "pt-BR": "Eu moro em Curitiba."
+  },
+  {
+    "he-IL": "אני עובד/ת בחברת סטארט-אפ.",
+    "pt-BR": "Eu trabalho em uma startup."
+  },
+  {
+    "he-IL": "השירותים נמצאים שם ממש.",
+    "pt-BR": "O banheiro fica ali mesmo."
+  },
+  {
+    "he-IL": "התחנה נמצאת רחוב אחד מכאן.",
+    "pt-BR": "A estação de trem fica a uma rua daqui."
+  },
+  {
+    "he-IL": "נולדתי ברסיפה",
+    "pt-BR": "Eu nasci em Recife"
+  },
+  {
+    "he-IL": "המסעדה נמצאת בקצה הרחוב.",
+    "pt-BR": "O restaurante fica no final da rua."
+  },
+  {
+    "he-IL": "החנות הקרובה ביותר היא הליכה של חמש דקות מכאן.",
+    "pt-BR": "O supermercado mais próximo fica a cinco minutos de caminhada daqui."
+  },
+  {
+    "he-IL": "למדתי באוניברסיטה הפדרלית של מינאס ג'ראיס.",
+    "pt-BR": "Eu estudei na Universidade Federal de Minas Gerais."
+  },
+  {
+    "he-IL": "התחנה נמצאת ליד הקפה.",
+    "pt-BR": "O ponto de ônibus fica ao lado do café."
+  },
+  {
+    "he-IL": "הייתי בעבודה אתמול.",
+    "pt-BR": "Eu estava no trabalho ontem."
+  },
+  {
+    "he-IL": "מה הערך של זה?",
+    "pt-BR": "Qual é o valor disso?"
+  },
+  {
+    "he-IL": "אני לא מבין.",
+    "pt-BR": "Eu não consigo entender."
+  },
+  {
+    "he-IL": "האם אתה יודע לדבר אנגלית?",
+    "pt-BR": "Você sabe falar inglês?"
+  },
+  {
+    "he-IL": "אני זקוק לטיפול רפואי.",
+    "pt-BR": "Eu preciso de atenção médica."
+  },
+  {
+    "he-IL": "היכן ממוקם המלון?",
+    "pt-BR": "Onde fica o hotel?"
+  },
+  {
+    "he-IL": "אתה יכול לחזור על זה שוב?",
+    "pt-BR": "Você pode repetir isso de novo?"
+  },
+  {
+    "he-IL": "בית הספר נמצא במרחק קצר מכאן",
+    "pt-BR": "A escola fica a uma curta distância daqui"
+  },
+  {
+    "he-IL": "הוא יישאר בבית כל היום",
+    "pt-BR": "Ele ficará em casa o dia todo"
+  },
+  {
+    "he-IL": "תישאר כאן בזמן שאני הולך לסופרמרקט",
+    "pt-BR": "Fique aqui enquanto eu vou ao supermercado"
+  },
+  {
+    "he-IL": "הוא הרגיש מדוכא בנוגע לחדשות",
+    "pt-BR": "Ele se sentiu desanimado com as notícias"
+  },
+  {
+    "he-IL": "מזג האוויר הפך לחם מאוד",
+    "pt-BR": "O clima ficou muito quente"
+  },
+  {
+    "he-IL": "הייתי רוצה להזמין שולחן עבור שישה אנשים.",
+    "pt-BR": "Eu gostaria de reservar uma mesa para seis pessoas."
+  },
+  {
+    "he-IL": "מהן שעות הפתיחה והסגירה?",
+    "pt-BR": "Quais são os horários de abertura e fechamento?"
+  },
+  {
+    "he-IL": "האם אני יכול להשתמש בכרטיס שלי לתשלום?",
+    "pt-BR": "Posso usar meu cartão para pagar?"
+  },
+  {
+    "he-IL": "כן, אני זמין לעזור.",
+    "pt-BR": "Claro, estou disponível para ajudar."
+  },
+  {
+    "he-IL": "העלות היא 15 דולר.",
+    "pt-BR": "O custo é de $15."
+  },
+  {
+    "he-IL": "האם אתה יכול להסביר בדרך ברורה יותר?",
+    "pt-BR": "Você pode explicar de uma maneira mais clara?"
+  },
+  {
+    "he-IL": "כן, אני מדבר אנגלית בשטף.",
+    "pt-BR": "Sim, eu falo inglês com fluência."
+  },
+  {
+    "he-IL": "אני אחפש רופא מיד.",
+    "pt-BR": "Eu vou procurar um médico imediatamente."
+  },
+  {
+    "he-IL": "המלון ממוקם ברחוב הראשי.",
+    "pt-BR": "O hotel está localizado na rua principal."
+  },
+  {
+    "he-IL": "בהחלט, אני יכול לחזור על זה בשבילך.",
+    "pt-BR": "Certamente, posso repetir isso para você."
+  },
+  {
+    "he-IL": "בהחלט, אני אסדר שולחן לשישה אנשים.",
+    "pt-BR": "Certamente, eu vou providenciar uma mesa para seis pessoas."
+  },
+  {
+    "he-IL": "אנחנו פתוחים מ-10:00 עד 17:00, מוצ'י עד שבת.",
+    "pt-BR": "Estamos abertos das 10h às 17h, de segunda a sábado."
+  },
+  {
+    "he-IL": "כן, אנו מקבלים כרטיסי אשראי וחיוב.",
+    "pt-BR": "Sim, aceitamos cartões de crédito e débito."
+  },
+  {
+    "he-IL": "ספור מ-1 עד 10",
+    "pt-BR": "conte de 1 a 10"
+  },
+  {
+    "he-IL": "ספור מ-11 עד 20",
+    "pt-BR": "conte de 11 a 20"
+  },
+  {
+    "he-IL": "ימי השבוע",
+    "pt-BR": "dias da semana"
+  },
+  {
+    "he-IL": "שמות החודשים",
+    "pt-BR": "Nomes dos meses"
+  },
+  {
+    "he-IL": "מה שמך?",
+    "pt-BR": "Qual é o seu nome?"
+  },
+  {
+    "he-IL": "נעים להכיר אותך.",
+    "pt-BR": "Prazer em conhecê-lo."
+  },
+  {
+    "he-IL": "האם אוכל לשאול אותך שאלה?",
+    "pt-BR": "Posso te fazer uma pergunta?"
+  },
+  {
+    "he-IL": "סליחה, איך אני מגיע לפארק?",
+    "pt-BR": "Com licença, como eu chego ao parque?"
+  },
+  {
+    "he-IL": "כמה עולה טלפון סלולרי?",
+    "pt-BR": "Quanto custa um celular?"
+  },
+  {
+    "he-IL": "איפה אני יכול למצוא שוקולד?",
+    "pt-BR": "Onde posso encontrar chocolate?"
+  },
+  {
+    "he-IL": "האם אתה יודע מה השעה?",
+    "pt-BR": "Você sabe que horas são?"
+  },
+  {
+    "he-IL": "איזה יום היום?",
+    "pt-BR": "Que dia é hoje?"
+  },
+  {
+    "he-IL": "איפה השירותים?",
+    "pt-BR": "Onde fica o banheiro?"
+  },
+  {
+    "he-IL": "האם אני יכול להשתמש בווי-פיי שלך?",
+    "pt-BR": "Posso usar o seu Wi-Fi?"
+  },
+  {
+    "he-IL": "איפה אני יכול לאכול משהו?",
+    "pt-BR": "Onde posso comer algo?"
+  },
+  {
+    "he-IL": "בבקשה",
+    "pt-BR": "De nada"
+  },
+  {
+    "he-IL": "אני לא יודע.",
+    "pt-BR": "Eu não sei."
+  },
+  {
+    "he-IL": "האם אוכל לעזור לך?",
+    "pt-BR": "Posso ajudá-lo?"
+  },
+  {
+    "he-IL": "דבר יותר לאט",
+    "pt-BR": "Fale mais devagar"
+  },
+  {
+    "he-IL": "לא הבנתי",
+    "pt-BR": "Eu não entendi"
+  },
+  {
+    "he-IL": "האם תוכל להמליץ לי על ספר?",
+    "pt-BR": "Você pode me recomendar um livro?"
+  },
+  {
+    "he-IL": "האם יש לך כוס תה?",
+    "pt-BR": "Você tem uma xícara de chá?"
+  },
+  {
+    "he-IL": "אני רוצה פרוסת עוגה.",
+    "pt-BR": "Eu quero uma fatia de bolo."
+  },
+  {
+    "he-IL": "אני צריך הסעה לשדה התעופה.",
+    "pt-BR": "Eu preciso de uma carona para o aeroporto."
+  },
+  {
+    "he-IL": "האם אוכל להיכנס?",
+    "pt-BR": "Posso entrar?"
+  },
+  {
+    "he-IL": "האם אוכל לשבת כאן?",
+    "pt-BR": "Posso me sentar aqui?"
+  },
+  {
+    "he-IL": "האם אתה עסוק?",
+    "pt-BR": "Você está ocupado?"
+  },
+  {
+    "he-IL": "האם אוכל להצטרף אליך?",
+    "pt-BR": "Posso me juntar a você?"
+  },
+  {
+    "he-IL": "האם אוכל להשאיל את המכונית שלך?",
+    "pt-BR": "Posso pegar emprestado o seu carro?"
+  },
+  {
+    "he-IL": "האם אני יכול להשתמש בטלפון שלך?",
+    "pt-BR": "Posso usar seu telefone?"
+  },
+  {
+    "he-IL": "האם אני יכול לפתוח את החלון?",
+    "pt-BR": "Posso abrir a janela?"
+  },
+  {
+    "he-IL": "האם אני יכול לדבר עם המנהל?",
+    "pt-BR": "Posso falar com o gerente?"
+  },
+  {
+    "he-IL": "האם אני יכול לצלם תמונה?",
+    "pt-BR": "Posso tirar uma foto?"
+  },
+  {
+    "he-IL": "האם אני יכול לקחת את זה?",
+    "pt-BR": "Posso levar isso?"
+  },
+  {
+    "he-IL": "תוהה אם אוכל לעזור לך?",
+    "pt-BR": "Eu me pergunto se posso te ajudar?"
+  },
+  {
+    "he-IL": "האם אתה מרשה לי להשאיל את המכונית שלך?",
+    "pt-BR": "Você me permite pegar emprestado o seu carro?"
+  },
+  {
+    "he-IL": "ספור מ-10 עד 100",
+    "pt-BR": "conte de 10 a 100"
+  },
+  {
+    "he-IL": "האם זה אפשרי בשבילי להיכנס?",
+    "pt-BR": "É possível para mim entrar?"
+  },
+  {
+    "he-IL": "האם יש דרך בשבילי לשבת כאן?",
+    "pt-BR": "Há uma maneira para eu me sentar aqui?"
+  },
+  {
+    "he-IL": "תוהה אם אני יכול להשתמש בטלפון שלך?",
+    "pt-BR": "Eu me pergunto se posso usar seu telefone?"
+  },
+  {
+    "he-IL": "האם אתה מרשה לי לפתוח את החלון?",
+    "pt-BR": "Você me permite abrir a janela?"
+  },
+  {
+    "he-IL": "האם אפשר לי לדבר עם המנהל?",
+    "pt-BR": "É possível eu falar com o gerente?"
+  },
+  {
+    "he-IL": "האם יש דרך בשבילי לשלם בכרטיס?",
+    "pt-BR": "Há uma maneira de eu pagar com cartão?"
   }
 ]
