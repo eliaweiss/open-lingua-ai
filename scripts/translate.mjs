@@ -1,4 +1,5 @@
-// npm run translate -- -srcLang=en -targetLang=es -phraseFile=phrases.txt
+// npm run translate -- -srcLang=en-US -targetLang=il-HE -inputFile=tmp/outFile.json -outputFile=tmp/outFile.il.json
+
 import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
@@ -11,7 +12,6 @@ const anthropic = new Anthropic({
   apiKey: process.env["ANTHROPIC_API_KEY"],
 });
 
-// npm run generatePhrase -- -srcLang=en -targetLang=es -phraseFile=phrases.txt
 // Access command-line arguments
 
 // Function to parse the arguments
@@ -45,10 +45,10 @@ const outputFile =
 
 // Function to translate sentences
 async function translateSentence(sentence) {
-  const promptStr = `translate the following sentence into ${targetLang}:\n${sentence}\n\nand return the result in json list format:\n{${targetLang}: "${sentence}", ${srcLang}: "...TranslatedSentence..."}\n\ndon't return any text other than the json result`;
-  // console.log("+++++++");
-  // console.log("promptStr", promptStr);
-  // console.log("-------");
+  const promptStr = `translate the following sentence into ${targetLang}:\n${sentence}\n\nand return the result in json list format:\n{${targetLang}: "...TranslatedSentence..."}\n\ndon't return any text other than the json result`;
+  console.log("+++++++");
+  console.log("promptStr", promptStr);
+  console.log("-------");
 
   const msg = await anthropic.messages.create({
     model: "claude-3-haiku-20240307",
@@ -67,9 +67,10 @@ async function translateSentence(sentence) {
     ],
   });
   const resText = msg.content[0].text;
-  // console.log("msg", resText);
+  console.log("msg", resText);
   // Parse the JSON result from the response
   const response = JSON.parse(resText);
+  response[srcLang] = sentence;
   return response;
 }
 

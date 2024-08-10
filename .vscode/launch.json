@@ -2,6 +2,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "node",
+            "request": "launch",
+            "name": "Run translate.js",
+            "program": "${workspaceFolder}/scripts/translate.mjs",
+            "args": [
+                "-srcLang=en-US",
+                "-targetLang=il-HE",
+                "-inputFile=tmp/outFile.json",
+                "-outputFile=tmp/outFile.il.json"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
             "name": "server-side",
             "type": "node-terminal",
             "request": "launch",
