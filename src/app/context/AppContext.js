@@ -74,7 +74,10 @@ export const AppProvider = ({ children }) => {
 
   ////////////////////////////////////////////////////////////////
   // init app
+  const initFlagRef = useRef(false);
   useEffect(() => {
+    if (initFlagRef.current) return;
+    initFlagRef.current = true;
     const initializeState = async () => {
       const storageVersion = myLocalStorage.get("STORAGE_VERSION");
       if (storageVersion !== STORAGE_VERSION) {
