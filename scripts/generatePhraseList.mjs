@@ -1,4 +1,4 @@
-// npm run generatePhrase -- -lang=en-US -inputFile=tmp/inputFile.json -outputFile=tmp/outputFile.json
+// npm run generatePhrase -- -lang=en-US -inputFile=tmp/phrases1.en-US.pt-BR.json -outputFile=tmp/phrasesFile.json
 
 import fs from "fs";
 
@@ -16,10 +16,11 @@ function parseArgs(args) {
 }
 
 // Function to extract phrases for a specific language
-function extractPhrases(lang, inputFile, outputFile) {
+async function extractPhrases(lang, inputFile, outputFile) {
   // Read the input file
   const data = fs.readFileSync(inputFile, "utf8");
   const phrases = JSON.parse(data);
+  //   const phrases = (await import("./phrases1.en-US.pt-BR.js")).default;
 
   // Filter the phrases that contain the specified language key
   const extractedPhrases = phrases

@@ -4,11 +4,22 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Run generatePhraseList.js",
+            "program": "${workspaceFolder}/scripts/generatePhraseList.mjs",
+            "args": [
+                "-lang=en-US",
+                "-outputFile=tmp/phrase.json"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Run translate.js",
             "program": "${workspaceFolder}/scripts/translate.mjs",
             "args": [
                 "-srcLang=en-US",
-                "-targetLang=il-HE",
+                "-targetLang=he-IL",
                 "-inputFile=tmp/outFile.json",
                 "-outputFile=tmp/outFile.il.json"
             ],
