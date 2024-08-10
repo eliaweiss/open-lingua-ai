@@ -18,10 +18,11 @@
             "name": "Run translate.js",
             "program": "${workspaceFolder}/scripts/translate.mjs",
             "args": [
-                "-srcLang=en-US",
-                "-targetLang=he-IL",
-                "-inputFile=tmp/outFile.json",
-                "-outputFile=tmp/outFile.il.json"
+                "-startAt=21",
+                "-srcLang=he-IL",
+                "-targetLang=pt-BR",
+                "-inputFile=inputPhrases/en.json",
+                "-outputFile=public/data/phrases.he-IL.pt-BR.json"
             ],
             "console": "integratedTerminal"
         },

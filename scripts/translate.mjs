@@ -45,7 +45,15 @@ const outputFile =
 
 // Function to translate sentences
 async function translateSentence(sentence) {
-  const promptStr = `translate the following sentence into ${targetLang}:\n${sentence}\n\nand return the result in json list format:\n{${targetLang}: "...TranslatedSentence..."}\n\ndon't return any text other than the json result`;
+  const promptStr = `
+translate the following sentence in to ${srcLang} and ${targetLang}:
+${sentence}
+
+and return the result json list format:
+{${srcLang}: ...TranslatedSentence..., ${targetLang}: ...TranslatedSentence...}
+
+don't return any text other than the json result  
+  `;
   console.log("+++++++");
   console.log("promptStr", promptStr);
   console.log("-------");
@@ -70,24 +78,30 @@ async function translateSentence(sentence) {
   console.log("msg", resText);
   // Parse the JSON result from the response
   const response = JSON.parse(resText);
-  response[srcLang] = sentence;
   return response;
 }
 
 // Main function to process the JSON file
-async function processTranslations(inputFilePath, outputFilePath) {
+async function processTranslations(
+  inputFilePath,
+  outputFilePath,
+  translations = []
+) {
   try {
     // Read the input JSON file
     const data = fs.readFileSync(inputFilePath, "utf8");
     const sentences = JSON.parse(data);
 
-    // Initialize an array to hold the translations
-    const translations = [];
-
     // Loop through each sentence and translate it
+    var i = 0;
     for (const sentence of sentences) {
+      i++;
+      if (options.startAt && Number(options.startAt) > i) {
+        continue;
+      }
       const translation = await translateSentence(sentence);
       translations.push(translation);
+      // if (i > 20) break;
     }
 
     // Save the translations to the output JSON file
@@ -101,5 +115,13 @@ async function processTranslations(inputFilePath, outputFilePath) {
 // Run the script with input and output file paths
 const inputFilePath = path.resolve(inputFile); // Path to the input JSON file
 const outputFilePath = path.resolve(outputFile); // Path to save the output JSON file
+let translations = [];
 
-processTranslations(inputFilePath, outputFilePath);
+try {
+  const fileContent = fs.readFileSync(outputFilePath, "utf8"); // Read the file content as a string
+  translations = JSON.parse(fileContent); // Parse the string into a JavaScript object
+} catch (error) {
+  console.error("Error reading or parsing the file:", error);
+}
+
+processTranslations(inputFilePath, outputFilePath, translations);
