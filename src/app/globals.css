@@ -106,3 +106,9 @@
 
     /* Add other CSS variables as needed */
 }
+
+/* Custom RTL class */
+.text-rtl {
+    direction: rtl;
+    text-align: right;
+}

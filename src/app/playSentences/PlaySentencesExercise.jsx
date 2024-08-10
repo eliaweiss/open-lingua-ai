@@ -35,11 +35,11 @@ export const PlaySentencesExercise = () => {
 
         {/* Exercise Panel */}
         <div className="flex flex-col space-y-4 mt-4 text-3xl">
-          <div className={`${isSrcRtl ? "text-right" : "text-left"}`}>
+          <div className={`${isTargetRtl ? "text-right text-rtl" : "text-left"} ttt`}>
             {currentPhrase?.target}
           </div>
           <div
-            className={`text-sText ${isTargetRtl ? "text-right" : "text-left"}`}
+            className={`text-sText ${isSrcRtl ? "text-right text-rtl" : "text-left"}`}
           >
             {currentPhrase?.src}
           </div>

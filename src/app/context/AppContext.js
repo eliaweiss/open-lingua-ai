@@ -6,9 +6,12 @@ import { BEGINNER_READ_SETTINGS } from "../playSentences/components/PlaySentence
 const AppContext = createContext();
 
 const LANGUAGE = {
+  IL_HE: "he-IL",
   EN_US: "en-US",
   PT_BR: "pt-BR",
 };
+
+const RTL_LANG = [LANGUAGE.IL_HE];
 
 export function deepCopy(obj) {
   return JSON.parse(JSON.stringify(obj));
@@ -251,6 +254,24 @@ export const AppProvider = ({ children }) => {
     storage.set("phraseRange", phraseRange);
   }, [phraseRange]);
   ////////////////////////////////////////////////////////////////////////
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    if (RTL_LANG.includes(sourceLanguage)) {
+      setIsSrcRtl(true);
+    } else {
+      setIsSrcRtl(false);
+    }
+  }, [sourceLanguage]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    if (RTL_LANG.includes(targetLanguage)) {
+      setIsTargetRtl(true);
+    } else {
+      setIsTargetRtl(false);
+    }
+  }, [targetLanguage]);
 
   useEffect(() => {
     if (!appInitFlag) return;
