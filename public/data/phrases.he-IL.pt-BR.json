@@ -466,5 +466,593 @@
   {
     "he-IL": "האם יש דרך בשבילי לשלם בכרטיס?",
     "pt-BR": "Há uma maneira de eu pagar com cartão?"
+  },
+  {
+    "he-IL": "תוהה אם אני יכול לצלם תמונה?",
+    "pt-BR": "Eu me pergunto se posso tirar uma foto?"
+  },
+  {
+    "he-IL": "האם אתה מרשה לי לקחת את זה?",
+    "pt-BR": "Você me permite levar isso?"
+  },
+  {
+    "he-IL": "האם תוכל לעזור לי?",
+    "pt-BR": "Você pode me ajudar?"
+  },
+  {
+    "he-IL": "האם אתה יכול לדבר יותר לאט?",
+    "pt-BR": "Você pode falar mais devagar?"
+  },
+  {
+    "he-IL": "האם אתה יכול לתת לי הסעה?",
+    "pt-BR": "Você pode me dar uma carona?"
+  },
+  {
+    "he-IL": "האם תוכל להשאיל לי ספר?",
+    "pt-BR": "Você pode me emprestar um livro?"
+  },
+  {
+    "he-IL": "האם אתה יכול לפתוח את הדלת?",
+    "pt-BR": "Você pode abrir a porta?"
+  },
+  {
+    "he-IL": "האם אתה יכול לסגור את החלון?",
+    "pt-BR": "Você pode fechar a janela?"
+  },
+  {
+    "he-IL": "האם אתה יכול להגיד לי את השעה?",
+    "pt-BR": "Você pode me dizer as horas?"
+  },
+  {
+    "he-IL": "האם אתה יכול להראות לי את הדרך?",
+    "pt-BR": "Você pode me mostrar o caminho?"
+  },
+  {
+    "he-IL": "האם תוכל לשלוח לי את המסמך?",
+    "pt-BR": "Você pode me enviar o documento?"
+  },
+  {
+    "he-IL": "האם אתה יכול לחזור על השאלה?",
+    "pt-BR": "Você pode repetir a pergunta?"
+  },
+  {
+    "he-IL": "איך אני מגיע למרכז העיר?",
+    "pt-BR": "Como eu chego ao centro da cidade?"
+  },
+  {
+    "he-IL": "היכן תחנת הרכבת התחתית הקרובה ביותר?",
+    "pt-BR": "Onde fica a estação de metrô mais próxima?"
+  },
+  {
+    "he-IL": "לך ישר והפוך שמאלה.",
+    "pt-BR": "Siga em frente e vire à esquerda."
+  },
+  {
+    "he-IL": "בית המרקחת נמצא ליד הסופרמרקט.",
+    "pt-BR": "A farmácia fica ao lado do supermercado."
+  },
+  {
+    "he-IL": "האם אתה יכול להראות לי על המפה?",
+    "pt-BR": "Você pode me mostrar no mapa?"
+  },
+  {
+    "he-IL": "המלון נמצא שני בלוקים מכאן.",
+    "pt-BR": "O hotel fica a duas quadras daqui."
+  },
+  {
+    "he-IL": "חצה את הרחוב והמשך ישר",
+    "pt-BR": "Atravesse a rua e continue seguindo em frente"
+  },
+  {
+    "he-IL": "תחנת הרכבת נמצאת מימין לאחר הפארק.",
+    "pt-BR": "A estação de trem fica à direita depois do parque."
+  },
+  {
+    "he-IL": "איפה אני יכול להשיג מונית?",
+    "pt-BR": "Onde posso pegar um táxi?"
+  },
+  {
+    "he-IL": "הבנק נמצא מול הכיכר.",
+    "pt-BR": "O banco está na frente da praça."
+  },
+  {
+    "he-IL": "מה המנה של היום?",
+    "pt-BR": "Qual é o prato do dia?"
+  },
+  {
+    "he-IL": "אני הייתי רוצה סלט, בבקשה.",
+    "pt-BR": "Eu gostaria de uma salada, por favor."
+  },
+  {
+    "he-IL": "האם יש לכם אפשרויות צמחוניות?",
+    "pt-BR": "Você tem opções vegetarianas?"
+  },
+  {
+    "he-IL": "המרק הזה טעים מאוד!",
+    "pt-BR": "Esta sopa é deliciosa!"
+  },
+  {
+    "he-IL": "האם אוכל לראות את התפריט, בבקשה?",
+    "pt-BR": "Posso ver o cardápio, por favor?"
+  },
+  {
+    "he-IL": "אני רוצה קפה ללא סוכר",
+    "pt-BR": "Eu quero um café sem açúcar"
+  },
+  {
+    "he-IL": "מה אתה ממליץ לקינוח?",
+    "pt-BR": "O que você recomenda para sobremesa?"
+  },
+  {
+    "he-IL": "אילו צדדים מגיעים עם העוף המרוגל?",
+    "pt-BR": "Quais acompanhamentos vêm com o frango grelhado?"
+  },
+  {
+    "he-IL": "אני אלרגי לבוטנים",
+    "pt-BR": "Eu sou alérgico a amendoins"
+  },
+  {
+    "he-IL": "החשבון, בבקשה.",
+    "pt-BR": "A conta, por favor."
+  },
+  {
+    "he-IL": "סליחה, איפה השירותים?",
+    "pt-BR": "Com licença, onde fica o banheiro?"
+  },
+  {
+    "he-IL": "סליחה, האם אתה יכול לחזור על זה, בבקשה?",
+    "pt-BR": "Com licença, você pode repetir isso, por favor?"
+  },
+  {
+    "he-IL": "סליחה, אפשר לעבור?",
+    "pt-BR": "Com licença, posso passar?"
+  },
+  {
+    "he-IL": "סליחה, האם יש כאן אינטרנט אלחוטי זמין?",
+    "pt-BR": "Com licença, há Wi-Fi disponível aqui?"
+  },
+  {
+    "he-IL": "סליחה, האם המקום הזה תפוס?",
+    "pt-BR": "Com licença, este lugar está ocupado?"
+  },
+  {
+    "he-IL": "סליחה, האם תוכל לספר לי איך להגיע לתחנת הרכבת?",
+    "pt-BR": "Com licença, você pode me dizer como chegar à estação de trem?"
+  },
+  {
+    "he-IL": "סליחה, איפה אני יכול למצוא כספומט?",
+    "pt-BR": "Com licença, onde posso encontrar um caixa eletrônico?"
+  },
+  {
+    "he-IL": "סליחה, האם אתה יכול להשאיל לי עיפרון?",
+    "pt-BR": "Com licença, você pode me emprestar um lápis?"
+  },
+  {
+    "he-IL": "שלום, מה שלומך?",
+    "pt-BR": "Olá, como você está?"
+  },
+  {
+    "he-IL": "בוקר טוב! אני מקווה שיהיה לך יום נהדר.",
+    "pt-BR": "Bom dia! Espero que você tenha um ótimo dia."
+  },
+  {
+    "he-IL": "צהריים טובים, האם נשתה קפה?",
+    "pt-BR": "Boa tarde, vamos tomar um café?"
+  },
+  {
+    "he-IL": "לילה טוב, שתישן היטב וחלום עם המלאכים.",
+    "pt-BR": "Boa noite, durma bem e sonhe com os anjos."
+  },
+  {
+    "he-IL": "מה שלומך? זמן רב לא ראינו!",
+    "pt-BR": "Como você está? Há muito tempo que não nos vemos!"
+  },
+  {
+    "he-IL": "הכל בסדר, ואיתך?",
+    "pt-BR": "Tudo bem, e com você?"
+  },
+  {
+    "he-IL": "תודה לך על העזרה שלך עם ההעברה.",
+    "pt-BR": "Obrigado por me ajudar com a mudança."
+  },
+  {
+    "he-IL": "תודה על נדיבותך.",
+    "pt-BR": "Obrigado pela sua generosidade."
+  },
+  {
+    "he-IL": "בבקשה, תעביר לי את המלח.",
+    "pt-BR": "Por favor, me passe o sal."
+  },
+  {
+    "he-IL": "מצטער על האיחור, התנועה הייתה נוראית.",
+    "pt-BR": "Desculpe o atraso, o trânsito estava terrível."
+  },
+  {
+    "he-IL": "אני רק צריך דקה אחת.",
+    "pt-BR": "Eu só preciso de um minuto."
+  },
+  {
+    "he-IL": "יש לי שני כלבים וחתול אחד.",
+    "pt-BR": "Eu tenho dois cachorros e um gato."
+  },
+  {
+    "he-IL": "שלושה חברים באו לבקר אותי אתמול.",
+    "pt-BR": "Três amigos vieram me visitar ontem."
+  },
+  {
+    "he-IL": "ארבע עונות מהווים שנה.",
+    "pt-BR": "Quatro estações fazem um ano."
+  },
+  {
+    "he-IL": "חמש כוכבים זוהרים בשמיים.",
+    "pt-BR": "Cinco estrelas brilham no céu."
+  },
+  {
+    "he-IL": "הוא קנה שישה ספרים חדשים.",
+    "pt-BR": "Ele comprou seis livros novos."
+  },
+  {
+    "he-IL": "שבעה ימים עברו מאז שראינו זה את זה לאחרונה.",
+    "pt-BR": "Sete dias se passaram desde que nos vimos pela última vez."
+  },
+  {
+    "he-IL": "השעה שמונה היא זמן ההתחלה של השיעור.",
+    "pt-BR": "Oito horas é o horário de início da aula."
+  },
+  {
+    "he-IL": "לחתול יש תשע חיים, אומרים.",
+    "pt-BR": "Um gato tem nove vidas, dizem."
+  },
+  {
+    "he-IL": "יש לי עשר אצבעות על ידי.",
+    "pt-BR": "Eu tenho dez dedos nas minhas mãos."
+  },
+  {
+    "he-IL": "ביום שני אני מתחיל את התזונה החדשה שלי.",
+    "pt-BR": "Na segunda-feira, eu começo minha nova dieta."
+  },
+  {
+    "he-IL": "יום שלישי הוא יום סרטים עם חברים.",
+    "pt-BR": "Terça-feira é dia de cinema com os amigos."
+  },
+  {
+    "he-IL": "ביום רביעי יש לנו פגישה חשובה.",
+    "pt-BR": "Na quarta-feira temos uma reunião importante."
+  },
+  {
+    "he-IL": "יום חמישי הוא היום האהוב עלי ביותר בשבוע.",
+    "pt-BR": "Quinta-feira é o meu dia favorito da semana."
+  },
+  {
+    "he-IL": "בליל שישי אני יוצא לארוחת ערב.",
+    "pt-BR": "Na sexta-feira à noite, vou sair para jantar."
+  },
+  {
+    "he-IL": "שבת היא יום לנוח ולהירגע.",
+    "pt-BR": "Sábado é um dia para descansar e relaxar."
+  },
+  {
+    "he-IL": "ביום ראשון אנחנו הולכים לערוך פיקניק בפארק.",
+    "pt-BR": "No domingo, vamos ter um piquenique no parque."
+  },
+  {
+    "he-IL": "אני שמח כשאני בחוף",
+    "pt-BR": "Eu fico feliz quando estou na praia."
+  },
+  {
+    "he-IL": "אני עייף אחרי יום ארוך בעבודה.",
+    "pt-BR": "Estou cansado depois de um longo dia de trabalho."
+  },
+  {
+    "he-IL": "יש לי מכונית אדומה שאני אוהב לנהוג בה.",
+    "pt-BR": "Eu tenho um carro vermelho que eu amo dirigir."
+  },
+  {
+    "he-IL": "אני אופה עוגות טעימות למסיבות.",
+    "pt-BR": "Eu faço bolos deliciosos para festas."
+  },
+  {
+    "he-IL": "אני הולך לבית הספר כל יום באופניים.",
+    "pt-BR": "Eu vou para a escola todos os dias de bicicleta."
+  },
+  {
+    "he-IL": "אני יכול לשיר בפורטוגזית ובאנגלית.",
+    "pt-BR": "Eu posso cantar em português e inglês."
+  },
+  {
+    "he-IL": "אני רואה את השקיעה מהמרפסת שלי.",
+    "pt-BR": "Eu vejo o pôr do sol da minha varanda."
+  },
+  {
+    "he-IL": "אני מאזין למוזיקה קלאסית בזמן שאני לומד.",
+    "pt-BR": "Eu ouço música clássica enquanto estudo."
+  },
+  {
+    "he-IL": "אני מדבר פורטוגזית שוטף ולומד צרפתית.",
+    "pt-BR": "Eu falo português fluentemente e estou aprendendo francês."
+  },
+  {
+    "he-IL": "הבית שלי קטן אבל מאוד נעים.",
+    "pt-BR": "Minha casa é pequena, mas muito aconchegante."
+  },
+  {
+    "he-IL": "המכונית הכחולה שלי היא המהירה ביותר ברחוב.",
+    "pt-BR": "Meu carro azul é o mais rápido da rua."
+  },
+  {
+    "he-IL": "בית הספר מלא בתלמידים נרגשים.",
+    "pt-BR": "A escola está cheia de alunos animados."
+  },
+  {
+    "he-IL": "אני אוהב את העבודה שלי כי היא מאתגרת ומספקת.",
+    "pt-BR": "Eu amo meu trabalho porque ele é desafiador e gratificante."
+  },
+  {
+    "he-IL": "המשפחה שלי קרובה מאוד וחיבה.",
+    "pt-BR": "Minha família é muito unida e amorosa."
+  },
+  {
+    "he-IL": "החבר שלי ואני אוהבים לשחק כדורגל בסופי שבוע.",
+    "pt-BR": "Meu amigo e eu gostamos de jogar futebol nos fins de semana."
+  },
+  {
+    "he-IL": "אוכל ביתי הוא תמיד הטוב ביותר.",
+    "pt-BR": "Comida caseira é sempre a melhor."
+  },
+  {
+    "he-IL": "אני שותה מים טריים מן המעיין",
+    "pt-BR": "Eu bebo água mineral fresca."
+  },
+  {
+    "he-IL": "הוא הרוויח הרבה כסף עם העסק החדש שלו.",
+    "pt-BR": "Ele fez muito dinheiro com seu novo negócio."
+  },
+  {
+    "he-IL": "הרכב הספורטיבי האדום מרשים.",
+    "pt-BR": "O carro esportivo vermelho é impressionante."
+  },
+  {
+    "he-IL": "השמיים הכחולים הבהירים היו ללא עננים.",
+    "pt-BR": "O céu azul claro estava sem nuvens."
+  },
+  {
+    "he-IL": "היער הירוק והעשיר הוא מקלט שקט.",
+    "pt-BR": "A exuberante floresta verde é um retiro tranquilo."
+  },
+  {
+    "he-IL": "הפרחים הצהובים מאירים את הגן.",
+    "pt-BR": "As flores amarelas iluminam o jardim."
+  },
+  {
+    "he-IL": "הלילה היה כה חשוך כמו שחור.",
+    "pt-BR": "A noite estava tão escura quanto o preto."
+  },
+  {
+    "he-IL": "השלג הלבן כיסה את כל העיר.",
+    "pt-BR": "A neve branca cobriu toda a cidade."
+  },
+  {
+    "he-IL": "אני אוהב לאכול לחם טרי בבוקר.",
+    "pt-BR": "Eu amo comer pão fresco pela manhã."
+  },
+  {
+    "he-IL": "יש לי כוס חלב כל לילה.",
+    "pt-BR": "Eu tenho um copo de leite todas as noites."
+  },
+  {
+    "he-IL": "אני לא יכול להתחיל את היום בלי כוס של קפה.",
+    "pt-BR": "Eu não consigo começar o dia sem uma xícara de café."
+  },
+  {
+    "he-IL": "גבינה צרפתית היא האהובה עלי ביותר.",
+    "pt-BR": "O queijo francês é o meu favorito."
+  },
+  {
+    "he-IL": "עוף צלוי הוא מושלם לארוחת ערב.",
+    "pt-BR": "Frango assado é perfeito para o jantar."
+  },
+  {
+    "he-IL": "אני מעדיף דגים צלויים על פני מטוגנים",
+    "pt-BR": "Eu prefiro peixe grelhado ao invés de frito"
+  },
+  {
+    "he-IL": "תפוח ביום שומר על הרופא הרחק",
+    "pt-BR": "Uma maçã por dia afasta o médico."
+  },
+  {
+    "he-IL": "בננות הן מצוינות לחטיפה מהירה.",
+    "pt-BR": "Bananas são ótimas para um lanche rápido."
+  },
+  {
+    "he-IL": "אבי לימד אותי כיצד לרכוב על אופניים.",
+    "pt-BR": "Meu pai me ensinou a andar de bicicleta."
+  },
+  {
+    "he-IL": "אמא שלי אופה את העוגת שוקולד הטובה ביותר.",
+    "pt-BR": "Minha mãe faz o melhor bolo de chocolate."
+  },
+  {
+    "he-IL": "האח הצעיר שלי אוהב משחקי וידאו.",
+    "pt-BR": "Meu irmão mais novo adora jogos de vídeo."
+  },
+  {
+    "he-IL": "אחותי הגדולה היא פסנתרנית מצוינת.",
+    "pt-BR": "Minha irmã mais velha é uma excelente pianista."
+  },
+  {
+    "he-IL": "סבי תמיד מספר סיפורים מרתקים.",
+    "pt-BR": "Meu avô sempre conta histórias fascinantes."
+  },
+  {
+    "he-IL": "סבתא שלי מבשלת מנות טעימות.",
+    "pt-BR": "Minha avó cozinha pratos deliciosos."
+  },
+  {
+    "he-IL": "הדוד שלי הוא אמן מוכשר.",
+    "pt-BR": "Meu tio é um artista talentoso."
+  },
+  {
+    "he-IL": "הדודה שלי בעלת חנות ביגוד אלגנטית.",
+    "pt-BR": "Minha tia possui uma loja de roupas elegante."
+  },
+  {
+    "he-IL": "בואו נפגש מחר כדי לדון בפרויקט.",
+    "pt-BR": "Vamos nos encontrar amanhã para discutir o projeto."
+  },
+  {
+    "he-IL": "מחר יהיה יום חדש, מלא באפשרויות.",
+    "pt-BR": "Amanhã será um novo dia, cheio de possibilidades."
+  },
+  {
+    "he-IL": "אתחיל את התוכנית החדשה שלי למחר.",
+    "pt-BR": "Eu vou começar minha nova rotina de exercícios amanhã."
+  },
+  {
+    "he-IL": "מחר, התחזית מזג האוויר אומרת שיירד גשם.",
+    "pt-BR": "Amanhã, a previsão do tempo diz que vai chover."
+  },
+  {
+    "he-IL": "אל תדאג, נסדר את זה מחר.",
+    "pt-BR": "Não se preocupe, nós resolveremos isso amanhã."
+  },
+  {
+    "he-IL": "המסיבת יום ההולדת היא מחר בלילה.",
+    "pt-BR": "A festa de aniversário é amanhã à noite."
+  },
+  {
+    "he-IL": "אני אסיים לקרוא את הספר הזה מחר.",
+    "pt-BR": "Eu vou terminar de ler este livro amanhã."
+  },
+  {
+    "he-IL": "מחר הוא היום האחרון להירשם לקורס.",
+    "pt-BR": "Amanhã é o último dia para se inscrever no curso."
+  },
+  {
+    "he-IL": "מחר אני אבקר את הסבים שלי בכפר.",
+    "pt-BR": "Amanhã eu vou visitar meus avós no interior."
+  },
+  {
+    "he-IL": "אנחנו נתחיל את הפרויקט מחר בבוקר.",
+    "pt-BR": "Começaremos o projeto amanhã de manhã."
+  },
+  {
+    "he-IL": "רוב הגלים נוצרים בכוח הרוח.",
+    "pt-BR": "A maioria das ondas é formada pela força do vento."
+  },
+  {
+    "he-IL": "שולח תמונות וצלילים דרך האוויר.",
+    "pt-BR": "envia imagens e sons através do ar."
+  },
+  {
+    "he-IL": "אם יש לך שאלות נוספות או אם אתה רוצה לדעת עוד על משהו, פשוט שאל!",
+    "pt-BR": "Se você tiver mais alguma dúvida ou quiser saber mais sobre qualquer coisa, basta perguntar!"
+  },
+  {
+    "he-IL": "התמונות שאתה רואה והקולות שאתה שומע",
+    "pt-BR": "as imagens que você vê e os sons que você ouve"
+  },
+  {
+    "he-IL": "כרטיס, בבקשה",
+    "pt-BR": "Bilhete, por favor"
+  },
+  {
+    "he-IL": "אתה יכול לקנות כרטיס בתחנת האוטובוס, חפש את השלט שאומר כרטיס או דלפק",
+    "pt-BR": "Você pode comprar um bilhete na estação de ônibus, procure o sinal que diz Bilhete ou Balcão"
+  },
+  {
+    "he-IL": "איך אני יכול להגיע לשדה התעופה?",
+    "pt-BR": "Como posso chegar ao aeroporto?"
+  },
+  {
+    "he-IL": "האם יש לך ספרי מדע בדיוני?",
+    "pt-BR": "Você tem algum livro de ficção científica?"
+  },
+  {
+    "he-IL": "מה אתה חושב על המצב הזה?",
+    "pt-BR": "O que você acha dessa situação?"
+  },
+  {
+    "he-IL": "האם נוכל להיפגש בכיכר?",
+    "pt-BR": "Podemos nos encontrar na praça?"
+  },
+  {
+    "he-IL": "מתי ההצגה מתחילה?",
+    "pt-BR": "Quando a apresentação começa?"
+  },
+  {
+    "he-IL": "אבדתי את הארנק שלי, האם תוכל לעזור לי?",
+    "pt-BR": "Perdi minha carteira, você pode me ajudar?"
+  },
+  {
+    "he-IL": "כמה זמן לוקח להכין את המנה הזאת?",
+    "pt-BR": "Quanto tempo leva para fazer este prato?"
+  },
+  {
+    "he-IL": "איפה אני יכול לקנות בולים?",
+    "pt-BR": "Onde posso comprar selos?"
+  },
+  {
+    "he-IL": "האם אתה יודע היכן החנות לספרים נמצאת?",
+    "pt-BR": "Você sabe onde fica a livraria?"
+  },
+  {
+    "he-IL": "מתי הבנק פותח?",
+    "pt-BR": "Que horas o banco abre?"
+  },
+  {
+    "he-IL": "הייתי רוצה לבטל את ההזמנה שלי.",
+    "pt-BR": "Eu gostaria de cancelar minha reserva."
+  },
+  {
+    "he-IL": "האם אתה יכול להראות לי את הדרך למוזיאון?",
+    "pt-BR": "Você pode me mostrar o caminho para o museu?"
+  },
+  {
+    "he-IL": "מה הדרך הטובה ביותר ללמוד פורטוגזית?",
+    "pt-BR": "Qual é a melhor maneira de aprender português?"
+  },
+  {
+    "he-IL": "האם נוכל לתזמן מחדש את הפגישה שלנו ליום רביעי?",
+    "pt-BR": "Podemos remarcar nossa reunião para quarta-feira?"
+  },
+  {
+    "he-IL": "מה קוד האזור עבור עיר זו?",
+    "pt-BR": "Qual é o código de área desta cidade?"
+  },
+  {
+    "he-IL": "האם אתה יכול לתת לי הנחה?",
+    "pt-BR": "Você pode me dar um desconto?"
+  },
+  {
+    "he-IL": "מהן העיקריות האטרקציות התיירותיות כאן?",
+    "pt-BR": "Quais são as principais atrações turísticas aqui?"
+  },
+  {
+    "he-IL": "מה התחזית מזג האוויר למחר?",
+    "pt-BR": "Qual é a previsão do tempo para amanhã?"
+  },
+  {
+    "he-IL": "האם תוכל לעזור לי לתרגם את המסמך הזה?",
+    "pt-BR": "Você pode me ajudar a traduzir este documento?"
+  },
+  {
+    "he-IL": "מה שער החליפין היום?",
+    "pt-BR": "Qual é a taxa de câmbio hoje?"
+  },
+  {
+    "he-IL": "אני צריך ללכת לקונסוליה, האם אתה יודע איפה זה?",
+    "pt-BR": "Eu preciso ir ao consulado, você sabe onde fica?"
+  },
+  {
+    "he-IL": "האם תוכל להמליץ על מסעדה טיפוסית באזור?",
+    "pt-BR": "Você pode recomendar um restaurante típico da região?"
+  },
+  {
+    "he-IL": "מה מספר החירום?",
+    "pt-BR": "Qual é o número de emergência?"
+  },
+  {
+    "he-IL": "האם אתה יודע איפה אני יכול להשכיר רכב?",
+    "pt-BR": "Você sabe onde posso alugar um carro?"
   }
 ]
