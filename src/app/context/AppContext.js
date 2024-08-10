@@ -50,7 +50,8 @@ export const AppProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
   const loadPhrasesTranslationFromStorage = async (phraseTranslation) => {
     const phraseFromStorage = await storage.get(phraseTranslation);
-    const storedAllPhrases = setPhrasesTargetSrc(phraseFromStorage);
+    const languages = Object.keys(phraseFromStorage[0]);
+    const storedAllPhrases = setPhrasesTargetSrc(phraseFromStorage, languages);
     setPhraseRange([0, storedAllPhrases.length]);
     setAllPhrases(storedAllPhrases);
     setPhraseTranslation(phraseTranslation);
@@ -167,27 +168,23 @@ export const AppProvider = ({ children }) => {
     return phrases;
   };
 
-  const setPhrasesTargetSrc = (newPhrases) => {
+  const setPhrasesTargetSrc = (newPhrases, languages) => {
+    const [newTargetLanguage, newSourceLanguage] = languages ?? [
+      targetLanguage,
+      sourceLanguage,
+    ];
+    setTargetLanguage(newTargetLanguage);
+    setSourceLanguage(newSourceLanguage);
     const phrases = newPhrases.map((phrase) => {
       return {
-        target: phrase[targetLanguage],
-        src: phrase[sourceLanguage],
+        target: phrase[newTargetLanguage],
+        src: phrase[newSourceLanguage],
       };
     });
     return phrases;
   };
 
-  const loadPhrase = async (avt) => {
-    const phrasesTmp = (await import(`../../data/${avt}.js`)).phrases;
 
-    const phrases = phrasesTmp.map((phrase) => {
-      return {
-        target: phrase[targetLanguage],
-        src: phrase[sourceLanguage],
-      };
-    });
-    return phrases;
-  };
 
   const toggleTheme = () => {
     if (typeof window === "undefined") return;
