@@ -48,9 +48,16 @@ export const AppProvider = ({ children }) => {
   const [currentPhrase, setCurrentPhrase] = useState(null);
 
   ////////////////////////////////////////////////////////////////
+  function getLanguagesFromFileName(filename) {
+    // Regular expression to match language codes in the format "xx-XX"
+    const regex = /\b[a-z]{2}-[A-Z]{2}\b/g;
+    const languages = filename.match(regex);
+    return languages;
+  }
+  ////////////////////////////////////////////////////////////////
   const loadPhrasesTranslationFromStorage = async (phraseTranslation) => {
     const phraseFromStorage = await storage.get(phraseTranslation);
-    const languages = Object.keys(phraseFromStorage[0]);
+    const languages = getLanguagesFromFileName(phraseTranslation); //Object.keys(phraseFromStorage[0]);
     const storedAllPhrases = setPhrasesTargetSrc(phraseFromStorage, languages);
     setPhraseRange([0, storedAllPhrases.length]);
     setAllPhrases(storedAllPhrases);
@@ -169,7 +176,7 @@ export const AppProvider = ({ children }) => {
   };
 
   const setPhrasesTargetSrc = (newPhrases, languages) => {
-    const [newTargetLanguage, newSourceLanguage] = languages ?? [
+    const [newSourceLanguage, newTargetLanguage] = languages ?? [
       targetLanguage,
       sourceLanguage,
     ];
@@ -183,8 +190,6 @@ export const AppProvider = ({ children }) => {
     });
     return phrases;
   };
-
-
 
   const toggleTheme = () => {
     if (typeof window === "undefined") return;
