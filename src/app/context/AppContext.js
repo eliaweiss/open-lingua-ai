@@ -58,9 +58,13 @@ export const AppProvider = ({ children }) => {
     return languages;
   }
   ////////////////////////////////////////////////////////////////
-  const loadPhrasesTranslationFromStorage = async (phraseTranslation) => {
+  const loadPhrasesTranslationFromStorage = async (
+    phraseTranslation,
+    inputLangList
+  ) => {
+    const languages =
+      inputLangList ?? getLanguagesFromFileName(phraseTranslation); //Object.keys(phraseFromStorage[0]);
     const phraseFromStorage = await storage.get(phraseTranslation);
-    const languages = getLanguagesFromFileName(phraseTranslation); //Object.keys(phraseFromStorage[0]);
     const storedAllPhrases = setPhrasesTargetSrc(phraseFromStorage, languages);
     setPhraseRange([0, storedAllPhrases.length]);
     setAllPhrases(storedAllPhrases);
@@ -273,28 +277,50 @@ export const AppProvider = ({ children }) => {
     }
   }, [targetLanguage]);
 
+  ////////////////////////////////////////////////////////////////////////
+
   useEffect(() => {
     if (!appInitFlag) return;
-    loadPhrasesTranslationFromStorage(phraseTranslation);
-  }, [targetLanguage, sourceLanguage, phraseTranslation]);
+    loadPhrasesTranslationFromStorage(phraseTranslation, [
+      sourceLanguage,
+      targetLanguage,
+    ]);
+  }, [targetLanguage, sourceLanguage]);
+
+  ////////////////////////////////////////////////////////////////////////
+  useEffect(() => {
+    if (!appInitFlag) return;
+    const [sourceLanguage, targetLanguage] =
+      getLanguagesFromFileName(phraseTranslation);
+    setSourceLanguage(sourceLanguage);
+    setTargetLanguage(targetLanguage);
+  }, [phraseTranslation]);
+
+  ////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     if (!appInitFlag) return;
     setPhrases(randomPermutation(getPhrasesInRange()));
   }, [allPhrases, phraseRange]);
 
+  ////////////////////////////////////////////////////////////////////////
+
   const getPhrasesInRange = () => {
     return allPhrases.slice(phraseRange[0], phraseRange[1] + 1);
   };
+  ////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     currentPhraseIndexRef.current = currentPhraseIndex;
   }, [currentPhraseIndex]);
+  ////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     if (!phrases || !phrases.length) return;
     setCurrentPhrase(phrases[currentPhraseIndex]);
   }, [phrases]);
+
+  ////////////////////////////////////////////////////////////////////////
 
   function increasePhraseIndex() {
     let nextIndex = currentPhraseIndex + 1;

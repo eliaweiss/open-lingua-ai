@@ -114,7 +114,10 @@ export function SettingsUi() {
             <div className="flex-1">{"->"}</div>
             <div className="flex-1">{targetLanguage}</div>
           </div>
-          <div className="p-2 flex space-x-2" onClick={handleReverseLang}>
+          <div
+            className="p-2 flex space-x-2 cursor-pointer"
+            onClick={handleReverseLang}
+          >
             <ArrowPathIcon className="w-6" />{" "}
             <div className="">Reverse languages</div>
           </div>
