@@ -1,171 +1,206 @@
 [
-    {
-      "en-US": "He didn't see me.",
-      "pt-BR": "Ele não me olhou."
-    },
-    {
-      "en-US": "Can you help me?",
-      "pt-BR": "Você pode me ajudar?"
-    },
-    {
-      "en-US": "She helped herself.",
-      "pt-BR": "Ela se ajudou."
-    },
-    {
-      "en-US": "Tell me the truth.",
-      "pt-BR": "Fale-me a verdade."
-    },
-    {
-      "en-US": "He gave me a book.",
-      "pt-BR": "Ele me deu um livro."
-    },
-    {
-      "en-US": "You always help yourself.",
-      "pt-BR": "Você sempre se ajuda."
-    },
-    {
-      "en-US": "Don't forget to call me.",
-      "pt-BR": "Não se esqueça de me ligar."
-    },
-    {
-      "en-US": "They saw themselves in the mirror.",
-      "pt-BR": "Eles se olharam no espelho."
-    },
-    {
-      "en-US": "She forgot to tell me.",
-      "pt-BR": "Ela se esqueceu de me dizer."
-    },
-    {
-      "en-US": "I can see myself in the picture.",
-      "pt-BR": "Eu posso me ver na imagem."
-    },
-    {
-      "en-US": "They asked me to help.",
-      "pt-BR": "Eles me pediram para ajudar."
-    },
-    {
-      "en-US": "You will hurt yourself if you're not careful.",
-      "pt-BR": "Você vai se machucar se não tomar cuidado."
-    },
-    {
-      "en-US": "They always blame themselves.",
-      "pt-BR": "Eles sempre se culpam."
-    },
-    {
-      "en-US": "She didn't tell me the truth.",
-      "pt-BR": "Ela não me disse a verdade."
-    },
-    {
-      "en-US": "He found himself lost in the city.",
-      "pt-BR": "Ele se encontrou perdido na cidade."
-    },
-    {
-      "en-US": "I told you not to worry.",
-      "pt-BR": "Eu te disse para não te preocupar."
-    },
-    {
-      "en-US": "They promised me they would come.",
-      "pt-BR": "Eles me prometeram que viriam."
-    },
-    {
-      "en-US": "He can't see himself in the mirror.",
-      "pt-BR": "Ele não consegue se ver no espelho."
-    },
-    {
-      "en-US": "We helped each other.",
-      "pt-BR": "Nós nos ajudamos."
-    },
-    {
-      "en-US": "She reminded herself to buy milk.",
-      "pt-BR": "Ela se lembrou de comprar leite."
-    },
-    {
-      "en-US": "They asked themselves if it was the right decision.",
-      "pt-BR": "Eles se perguntaram se era a decisão certa."
-    },
-    {
-      "en-US": "I asked you to meet me at the park.",
-      "pt-BR": "Eu te pedi para me encontrar no parque."
-    },
-    {
-      "en-US": "She prepared herself for the interview.",
-      "pt-BR": "Ela se preparou para a entrevista."
-    },
-    {
-      "en-US": "We found ourselves lost in the city.",
-      "pt-BR": "Nós nos encontramos perdidos na cidade."
-    },
-    {
-      "en-US": "You can see yourself in the reflection.",
-      "pt-BR": "Você pode se ver no reflexo."
-    },
-    {
-      "en-US": "We need to take care of ourselves.",
-      "pt-BR": "Nós precisamos nos cuidar."
-    },
-    {
-      "en-US": "They congratulated themselves for the achievement.",
-      "pt-BR": "Eles se parabenizaram pela conquista."
-    },
-    {
-      "en-US": "I reminded myself to buy groceries.",
-      "pt-BR": "Eu me lembrei de comprar mantimentos."
-    },
-    {
-      "en-US": "You should introduce yourself to the new neighbors.",
-      "pt-BR": "Você deveria se apresentar aos novos vizinhos."
-    },
-    {
-      "en-US": "We promised ourselves a vacation after the project.",
-      "pt-BR": "Nós nos prometemos umas férias depois do projeto."
-    },
-    {
-      "en-US": "They asked me if I could help.",
-      "pt-BR": "Eles me perguntaram se eu podia ajudar."
-    },
-    {
-      "en-US": "She cut herself while cooking.",
-      "pt-BR": "Ela se cortou enquanto cozinhava."
-    },
-    {
-      "en-US": "We need to remind ourselves of the deadline.",
-      "pt-BR": "Nós precisamos nos lembrar do prazo final."
-    },
-    {
-      "en-US": "You should take care of yourself.",
-      "pt-BR": "Você deve se cuidar."
-    },
-    {
-      "en-US": "They taught themselves how to cook.",
-      "pt-BR": "Eles se ensinaram a cozinhar."
-    },
-    {
-      "en-US": "I asked myself if I was ready.",
-      "pt-BR": "Eu me perguntei se estava pronto."
-    },
-    {
-      "en-US": "She promised herself she would work harder.",
-      "pt-BR": "Ela se prometeu que iria trabalhar mais duro."
-    },
-    {
-      "en-US": "We should remind ourselves of our goals.",
-      "pt-BR": "Nós devemos nos lembrar dos nossos objetivos."
-    },
-    {
-      "en-US": "They apologized to each other after the argument.",
-      "pt-BR": "Eles se desculparam depois do argumento."
-    },
-    {
-      "en-US": "I reminded myself to send the email.",
-      "pt-BR": "Eu me lembrei de enviar o e-mail."
-    },
-    {
-      "en-US": "She taught herself how to play the piano.",
-      "pt-BR": "Ela se ensinou a tocar piano."
-    },
-    {
-      "en-US": "We encouraged each other during the race.",
-      "pt-BR": "Nós nos encorajamos durante a corrida."
-    }
-  ]
-  
+  {
+    "en-US": "He didn't see me.",
+    "pt-BR": "Ele não me olhou."
+  },
+  {
+    "en-US": "She helped herself.",
+    "pt-BR": "Ela se ajudou."
+  },
+  {
+    "en-US": "Tell me the truth.",
+    "pt-BR": "Fale-me a verdade."
+  },
+  {
+    "en-US": "He gave me a book.",
+    "pt-BR": "Ele me deu um livro."
+  },
+  {
+    "en-US": "You always help yourself.",
+    "pt-BR": "Você sempre se ajuda."
+  },
+  {
+    "en-US": "Don't forget to call me.",
+    "pt-BR": "Não se esqueça de me ligar."
+  },
+  {
+    "en-US": "They saw themselves in the mirror.",
+    "pt-BR": "Eles se olharam no espelho."
+  },
+  {
+    "en-US": "She forgot to tell me.",
+    "pt-BR": "Ela se esqueceu de me dizer."
+  },
+  {
+    "en-US": "I can see myself in the picture.",
+    "pt-BR": "Eu posso me ver na imagem."
+  },
+  {
+    "en-US": "They asked me to help.",
+    "pt-BR": "Eles me pediram para ajudar."
+  },
+  {
+    "en-US": "You will hurt yourself if you're not careful.",
+    "pt-BR": "Você vai se machucar se não tomar cuidado."
+  },
+  {
+    "en-US": "They always blame themselves.",
+    "pt-BR": "Eles sempre se culpam."
+  },
+  {
+    "en-US": "She didn't tell me the truth.",
+    "pt-BR": "Ela não me disse a verdade."
+  },
+  {
+    "en-US": "He found himself lost in the city.",
+    "pt-BR": "Ele se encontrou perdido na cidade."
+  },
+  {
+    "en-US": "I told you not to worry.",
+    "pt-BR": "Eu te disse para não te preocupar."
+  },
+  {
+    "en-US": "They promised me they would come.",
+    "pt-BR": "Eles me prometeram que viriam."
+  },
+  {
+    "en-US": "He can't see himself in the mirror.",
+    "pt-BR": "Ele não consegue se ver no espelho."
+  },
+  {
+    "en-US": "We helped each other.",
+    "pt-BR": "Nós nos ajudamos."
+  },
+  {
+    "en-US": "She reminded herself to buy milk.",
+    "pt-BR": "Ela se lembrou de comprar leite."
+  },
+  {
+    "en-US": "They asked themselves if it was the right decision.",
+    "pt-BR": "Eles se perguntaram se era a decisão certa."
+  },
+  {
+    "en-US": "I asked you to meet me at the park.",
+    "pt-BR": "Eu te pedi para me encontrar no parque."
+  },
+  {
+    "en-US": "She prepared herself for the interview.",
+    "pt-BR": "Ela se preparou para a entrevista."
+  },
+  {
+    "en-US": "We found ourselves lost in the city.",
+    "pt-BR": "Nós nos encontramos perdidos na cidade."
+  },
+  {
+    "en-US": "You can see yourself in the reflection.",
+    "pt-BR": "Você pode se ver no reflexo."
+  },
+  {
+    "en-US": "We need to take care of ourselves.",
+    "pt-BR": "Nós precisamos nos cuidar."
+  },
+  {
+    "en-US": "They congratulated themselves for the achievement.",
+    "pt-BR": "Eles se parabenizaram pela conquista."
+  },
+  {
+    "en-US": "I reminded myself to buy groceries.",
+    "pt-BR": "Eu me lembrei de comprar mantimentos."
+  },
+  {
+    "en-US": "You should introduce yourself to the new neighbors.",
+    "pt-BR": "Você deveria se apresentar aos novos vizinhos."
+  },
+  {
+    "en-US": "We promised ourselves a vacation after the project.",
+    "pt-BR": "Nós nos prometemos umas férias depois do projeto."
+  },
+  {
+    "en-US": "They asked me if I could help.",
+    "pt-BR": "Eles me perguntaram se eu podia ajudar."
+  },
+  {
+    "en-US": "She cut herself while cooking.",
+    "pt-BR": "Ela se cortou enquanto cozinhava."
+  },
+  {
+    "en-US": "We need to remind ourselves of the deadline.",
+    "pt-BR": "Nós precisamos nos lembrar do prazo final."
+  },
+  {
+    "en-US": "You should take care of yourself.",
+    "pt-BR": "Você deve se cuidar."
+  },
+  {
+    "en-US": "They taught themselves how to cook.",
+    "pt-BR": "Eles se ensinaram a cozinhar."
+  },
+  {
+    "en-US": "I asked myself if I was ready.",
+    "pt-BR": "Eu me perguntei se estava pronto."
+  },
+  {
+    "en-US": "She promised herself she would work harder.",
+    "pt-BR": "Ela se prometeu que iria trabalhar mais duro."
+  },
+  {
+    "en-US": "We should remind ourselves of our goals.",
+    "pt-BR": "Nós devemos nos lembrar dos nossos objetivos."
+  },
+  {
+    "en-US": "They apologized to each other after the argument.",
+    "pt-BR": "Eles se desculparam depois do argumento."
+  },
+  {
+    "en-US": "I reminded myself to send the email.",
+    "pt-BR": "Eu me lembrei de enviar o e-mail."
+  },
+  {
+    "en-US": "She taught herself how to play the piano.",
+    "pt-BR": "Ela se ensinou a tocar piano."
+  },
+  {
+    "en-US": "We encouraged each other during the race.",
+    "pt-BR": "Nós nos encorajamos durante a corrida."
+  },
+  {
+    "en-US": "I see myself in the mirror.",
+    "pt-BR": "Eu me vejo no espelho."
+  },
+  {
+    "en-US": "He told you the truth.",
+    "pt-BR": "Ele te falou a verdade."
+  },
+  {
+    "en-US": "She will call you tomorrow.",
+    "pt-BR": "Ela vai te chamar amanhã."
+  },
+  {
+    "en-US": "Don’t sit down!",
+    "pt-BR": "Não se sente!"
+  },
+  {
+    "en-US": "I remember you.",
+    "pt-BR": "Eu me lembro de você."
+  },
+  {
+    "en-US": "They will help me tomorrow.",
+    "pt-BR": "Eles vão me ajudar amanhã."
+  },
+  {
+    "en-US": "Can you see yourself in the reflection?",
+    "pt-BR": "Você consegue se ver no reflexo?"
+  },
+  {
+    "en-US": "I didn't call you because I was busy.",
+    "pt-BR": "Eu não te liguei porque estava ocupado."
+  },
+  {
+    "en-US": "She doesn’t remember him.",
+    "pt-BR": "Ela não se lembra dele."
+  },
+  {
+    "en-US": "We will sit down after the meeting.",
+    "pt-BR": "Nós vamos nos sentar depois da reunião."
+  }
+]
