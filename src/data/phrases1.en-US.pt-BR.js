@@ -4225,4 +4225,88 @@ export const phrases = [
     "en-US": "You must arrive on time.",
     "pt-BR": "Você deve chegar na hora.",
   },
+  {
+    "en-US": "Don't sit here",
+    "pt-BR": "Não se sentem aqui",
+  },
+  {
+    "en-US": "I study every day.",
+    "pt-BR": "Eu estudo todos os dias.",
+  },
+  {
+    "en-US": "We sleep early.",
+    "pt-BR": "Nós dormimos cedo.",
+  },
+  {
+    "en-US": "They drink water after exercising.",
+    "pt-BR": "Eles bebem água após o exercício.",
+  },
+  {
+    "en-US": "She opens the door.",
+    "pt-BR": "Ela abre a porta.",
+  },
+  {
+    "en-US": "You walk on the beach on weekends.",
+    "pt-BR": "Você caminha na praia aos fins de semana.",
+  },
+  {
+    "en-US": "He reads books every month.",
+    "pt-BR": "Ele lê livros todos os meses.",
+  },
+  {
+    "en-US": "We listen to loud music.",
+    "pt-BR": "Nós ouvimos música alta.",
+  },
+  {
+    "en-US": "I work a lot during the summer.",
+    "pt-BR": "Eu trabalho muito durante o verão.",
+  },
+  {
+    "en-US": "You all go to the cinema frequently.",
+    "pt-BR": "Vocês vão ao cinema com frequência.",
+  },
+  {
+    "en-US": "She drives the car every day.",
+    "pt-BR": "Ela dirige o carro todos os dias.",
+  },
+  {
+    "en-US": "I cook dinner tonight.",
+    "pt-BR": "Eu cozinho o jantar hoje à noite.",
+  },
+  {
+    "en-US": "They clean the house on the weekend.",
+    "pt-BR": "Eles limpam a casa no fim de semana.",
+  },
+  {
+    "en-US": "We run in the park every day.",
+    "pt-BR": "Nós corremos no parque todos os dias.",
+  },
+  {
+    "en-US": "She talks with her friend about the project.",
+    "pt-BR": "Ela fala com a amiga sobre o projeto.",
+  },
+  {
+    "en-US": "You listen to music before sleeping.",
+    "pt-BR": "Você ouve a música antes de dormir.",
+  },
+  {
+    "en-US": "I visit the city with my friends.",
+    "pt-BR": "Eu visito a cidade com meus amigos.",
+  },
+  {
+    "en-US": "They stay at home during the holiday.",
+    "pt-BR": "Eles ficam em casa durante o feriado.",
+  },
+  {
+    "en-US": "We write a letter to our parents.",
+    "pt-BR": "Nós escrevemos uma carta para nossos pais.",
+  },
+  {
+    "en-US": "She closes the door before leaving.",
+    "pt-BR": "Ela fecha a porta antes de sair.",
+  },
+  {
+    "en-US": "You swim in the pool on weekends.",
+    "pt-BR": "Você nada na piscina nos fins de semana.",
+  },
 ];
