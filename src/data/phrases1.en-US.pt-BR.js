@@ -4309,4 +4309,29 @@ export const phrases = [
     "en-US": "You swim in the pool on weekends.",
     "pt-BR": "Você nada na piscina nos fins de semana.",
   },
+  {
+    "en-US": "I don't see anything",
+    "pt-BR": "Eu não vejo nada.",
+  },
+
+  {
+    "en-US": "I tell the truth.",
+    "pt-BR": "Eu digo a verdade.",
+  },
+  {
+    "en-US": "They try the new restaurant.",
+    "pt-BR": "Eles experimentam o novo restaurante.",
+  },
+  {
+    "en-US": "We organize a party tomorrow.",
+    "pt-BR": "Nós organizamos uma festa amanhã.",
+  },
+  {
+    "en-US": "She puts the book on the table.",
+    "pt-BR": "Ela coloca o livro na mesa.",
+  },
+  {
+    "en-US": "You wake up early during the week.",
+    "pt-BR": "Você acorda cedo durante a semana.",
+  },
 ];
