@@ -4334,4 +4334,44 @@ export const phrases = [
     "en-US": "You wake up early during the week.",
     "pt-BR": "Você acorda cedo durante a semana.",
   },
+  {
+    "en-US": "I watch the movie before sleeping.",
+    "pt-BR": "Eu assisto o filme antes de dormir.",
+  },
+  {
+    "en-US": "They play soccer on Saturdays.",
+    "pt-BR": "Eles jogam futebol aos sábados.",
+  },
+  {
+    "en-US": "We have breakfast together.",
+    "pt-BR": "Nós tomamos o café da manhã juntos.",
+  },
+  {
+    "en-US": "She calls all her friends.",
+    "pt-BR": "Ela chama todos os seus amigos.",
+  },
+  {
+    "en-US": "You run very fast!",
+    "pt-BR": "Você corre muito rápido!",
+  },
+  {
+    "en-US": "I walked on the beach yesterday.",
+    "pt-BR": "Eu caminhei na praia ontem.",
+  },
+  {
+    "en-US": "They ate dinner at their house.",
+    "pt-BR": "Eles comeram o jantar na casa deles.",
+  },
+  {
+    "en-US": "We watched the movie last week.",
+    "pt-BR": "Nós assistimos o filme na semana passada.",
+  },
+  {
+    "en-US": "She received the birthday present.",
+    "pt-BR": "Ela recebeu o presente de aniversário.",
+  },
+  {
+    "en-US": "You placed the book on the shelf.",
+    "pt-BR": "Você colocou o livro na estante.",
+  },
 ];
