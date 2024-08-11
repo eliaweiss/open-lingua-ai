@@ -293,6 +293,10 @@ export const AppProvider = ({ children }) => {
       getLanguagesFromFileName(phraseTranslation);
     setSourceLanguage(sourceLanguage);
     setTargetLanguage(targetLanguage);
+    loadPhrasesTranslationFromStorage(phraseTranslation, [
+      sourceLanguage,
+      targetLanguage,
+    ]);
   }, [phraseTranslation]);
 
   ////////////////////////////////////////////////////////////////////////
