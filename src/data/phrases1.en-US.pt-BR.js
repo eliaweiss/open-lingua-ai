@@ -4217,4 +4217,12 @@ export const phrases = [
     "en-US": "We will sit down after the meeting.",
     "pt-BR": "Nós vamos nos sentar depois da reunião.",
   },
+  {
+    "en-US": "You should study more.",
+    "pt-BR": "Você deve estudar mais.",
+  },
+  {
+    "en-US": "You must arrive on time.",
+    "pt-BR": "Você deve chegar na hora.",
+  },
 ];
