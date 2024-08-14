@@ -4414,4 +4414,24 @@ export const phrases = [
     "en-US": "You sent the letter to the recipient.",
     "pt-BR": "Você enviou a carta ao destinatário.",
   },
+  {
+    "en-US": "I packed the bags before traveling.",
+    "pt-BR": "Eu fiz as malas antes de viajar."
+  },
+  {
+    "en-US": "They parked the car in the garage.",
+    "pt-BR": "Eles estacionaram o carro na garagem."
+  },
+  {
+    "en-US": "We delivered the report to the boss.",
+    "pt-BR": "Nós entregamos o relatório para o chefe."
+  },
+  {
+    "en-US": "She bought the clothes in the store.",
+    "pt-BR": "Ela comprou a roupa na loja."
+  },
+  {
+    "en-US": "You talked about the topic yesterday.",
+    "pt-BR": "Você falou sobre o assunto ontem."
+  }
 ];
