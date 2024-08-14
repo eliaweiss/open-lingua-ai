@@ -4374,4 +4374,44 @@ export const phrases = [
     "en-US": "You placed the book on the shelf.",
     "pt-BR": "Você colocou o livro na estante.",
   },
+  {
+    "en-US": "I closed the window before leaving.",
+    "pt-BR": "Eu fechei a janela antes de sair.",
+  },
+  {
+    "en-US": "They left for work in the morning.",
+    "pt-BR": "Eles partiram para o trabalho de manhã.",
+  },
+  {
+    "en-US": "We wrote a letter to the boss.",
+    "pt-BR": "Nós escrevemos uma carta para o chefe.",
+  },
+  {
+    "en-US": "She cleaned the house by herself.",
+    "pt-BR": "Ela limpou a casa sozinha.",
+  },
+  {
+    "en-US": "You chatted with your friends on the weekend.",
+    "pt-BR": "Você conversou com seus amigos no fim de semana.",
+  },
+  {
+    "en-US": "I arrived early for work yesterday.",
+    "pt-BR": "Eu cheguei cedo para o trabalho ontem.",
+  },
+  {
+    "en-US": "They finished the project on time.",
+    "pt-BR": "Eles terminaram o projeto a tempo.",
+  },
+  {
+    "en-US": "She heard the music on the radio.",
+    "pt-BR": "Ela ouviu a música no rádio.",
+  },
+  {
+    "en-US": "We bought the birthday present together.",
+    "pt-BR": "Nós compramos o presente de aniversário juntos.",
+  },
+  {
+    "en-US": "You sent the letter to the recipient.",
+    "pt-BR": "Você enviou a carta ao destinatário.",
+  },
 ];
