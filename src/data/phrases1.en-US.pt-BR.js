@@ -5148,4 +5148,28 @@ export const phrases = [
     "en-US": "They will be at the concert.",
     "pt-BR": "Elas estarão no concerto.",
   },
+  {
+    "en-US":
+      "I will practice tennis every day and improve my technique gradually.",
+    "pt-BR":
+      "Eu praticarei tênis todos os dias e melhorarei minha técnica gradualmente.",
+  },
+  {
+    "en-US": "I live in Paris and work as a model.",
+    "pt-BR": "Eu estou vivendo em Paris e estou trabalhando como modelo.",
+  },
+  {
+    "en-US": "I studied for the exam and felt very nervous before starting.",
+    "pt-BR": "Eu estudei para o exame e senti muito nervoso antes de começar.",
+  },
+  {
+    "en-US":
+      "I will visit many countries and learn several languages during my life.",
+    "pt-BR":
+      "Eu visitarei muitos países e aprenderei várias línguas durante a minha vida.",
+  },
+  {
+    "en-US": "I am working in the office and taking a coffee now.",
+    "pt-BR": "Eu estou trabalhando no escritório e tomo um café agora.",
+  },
 ];
