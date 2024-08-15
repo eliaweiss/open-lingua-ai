@@ -5172,4 +5172,24 @@ export const phrases = [
     "en-US": "I am working in the office and taking a coffee now.",
     "pt-BR": "Eu estou trabalhando no escritório e tomo um café agora.",
   },
+  {
+    "en-US": "When you arrive home, we will have dinner.",
+    "pt-BR": "Quando você chegar em casa, nós jantaremos."
+  },
+  {
+    "en-US": "As soon as they finish the work, they will go to the cinema.",
+    "pt-BR": "Assim que eles terminarem o trabalho, eles sairão para o cinema."
+  },
+  {
+    "en-US": "If I do the report today, will you review it tomorrow?",
+    "pt-BR": "Se eu fizer o relatório hoje, você revisará amanhã?"
+  },
+  {
+    "en-US": "After we complete the course, we will celebrate.",
+    "pt-BR": "Depois que nós completarmos o curso, nós celebraremos."
+  },
+  {
+    "en-US": "When she is ready, we will start the meeting.",
+    "pt-BR": "Quando ela estiver pronta, nós começaremos a reunião."
+  }
 ];
