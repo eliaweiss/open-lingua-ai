@@ -4788,4 +4788,144 @@ export const phrases = [
     "en-US": "I work in the office and take a coffee now.",
     "pt-BR": "Eu trabalho no escritório e tomo um café agora.",
   },
+  {
+    "en-US": "I am a student.",
+    "pt-BR": "Eu sou estudante.",
+  },
+  {
+    "en-US": "You are a teacher.",
+    "pt-BR": "Tu és professor.",
+  },
+  {
+    "en-US": "He is a doctor.",
+    "pt-BR": "Ele é médico.",
+  },
+  {
+    "en-US": "She is a doctor.",
+    "pt-BR": "Ela é médica.",
+  },
+  {
+    "en-US": "We are friends.",
+    "pt-BR": "Nós somos amigos.",
+  },
+  {
+    "en-US": "You (plural) are responsible for the project.",
+    "pt-BR": "Vós sois responsáveis pelo projeto.",
+  },
+  {
+    "en-US": "They are engineers.",
+    "pt-BR": "Eles são engenheiros.",
+  },
+  {
+    "en-US": "They are engineers.",
+    "pt-BR": "Elas são engenheiras.",
+  },
+  {
+    "en-US": "I was a good student.",
+    "pt-BR": "Eu fui um bom estudante.",
+  },
+  {
+    "en-US": "You were the best player.",
+    "pt-BR": "Tu foste o melhor jogador.",
+  },
+  {
+    "en-US": "He was the leader of the team.",
+    "pt-BR": "Ele foi o líder da equipe.",
+  },
+  {
+    "en-US": "She was the leader of the team.",
+    "pt-BR": "Ela foi a líder da equipe.",
+  },
+  {
+    "en-US": "We were successful in the project.",
+    "pt-BR": "Nós fomos bem-sucedidos no projeto.",
+  },
+  {
+    "en-US": "You (plural) were very kind.",
+    "pt-BR": "Vós fostes muito gentis.",
+  },
+  {
+    "en-US": "They were the winners.",
+    "pt-BR": "Eles foram os vencedores.",
+  },
+  {
+    "en-US": "They were the winners.",
+    "pt-BR": "Elas foram as vencedoras.",
+  },
+  {
+    "en-US": "I used to be very shy.",
+    "pt-BR": "Eu era muito tímido.",
+  },
+  {
+    "en-US": "I used to be very shy.",
+    "pt-BR": "Eu era muito tímida.",
+  },
+  {
+    "en-US": "You used to be the fastest runner.",
+    "pt-BR": "Tu eras o corredor mais rápido.",
+  },
+  {
+    "en-US": "You used to be the fastest runner.",
+    "pt-BR": "Tu eras a corredora mais rápida.",
+  },
+  {
+    "en-US": "He used to be very responsible.",
+    "pt-BR": "Ele era muito responsável.",
+  },
+  {
+    "en-US": "She used to be very responsible.",
+    "pt-BR": "Ela era muito responsável.",
+  },
+  {
+    "en-US": "We used to be close friends.",
+    "pt-BR": "Nós éramos amigos próximos.",
+  },
+  {
+    "en-US": "You (plural) used to be the best team.",
+    "pt-BR": "Vós éreis a melhor equipe.",
+  },
+  {
+    "en-US": "They used to be the leaders.",
+    "pt-BR": "Eles eram os líderes.",
+  },
+  {
+    "en-US": "They used to be the leaders.",
+    "pt-BR": "Elas eram as líderes.",
+  },
+  {
+    "en-US": "I will be a good professional.",
+    "pt-BR": "Eu serei um bom profissional.",
+  },
+  {
+    "en-US": "You will be the next champion.",
+    "pt-BR": "Tu serás o próximo campeão.",
+  },
+  {
+    "en-US": "You will be the next champion.",
+    "pt-BR": "Tu serás a próxima campeã.",
+  },
+  {
+    "en-US": "He will be a great leader.",
+    "pt-BR": "Ele será um grande líder.",
+  },
+  {
+    "en-US": "She will be a great leader.",
+    "pt-BR": "Ela será uma grande líder.",
+  },
+  {
+    "en-US": "We will be successful.",
+    "pt-BR": "Nós seremos bem-sucedidos.",
+  },
+  {
+    "en-US": "You (plural) will be famous one day.",
+    "pt-BR": "Vós sereis famosos um dia.",
+  },
+  {
+    "en-US": "They will be the stars of the show.",
+    "pt-BR": "Eles serão as estrelas do show.",
+  },
+  {
+    "en-US": "They will be the stars of the show.",
+    "pt-BR": "Elas serão as estrelas do show.",
+  },
 ];
