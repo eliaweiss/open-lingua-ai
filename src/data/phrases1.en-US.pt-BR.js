@@ -4901,10 +4901,6 @@ export const phrases = [
     "pt-BR": "Tu serás o próximo campeão.",
   },
   {
-    "en-US": "You will be the next champion.",
-    "pt-BR": "Tu serás a próxima campeã.",
-  },
-  {
     "en-US": "He will be a great leader.",
     "pt-BR": "Ele será um grande líder.",
   },
@@ -4930,130 +4926,226 @@ export const phrases = [
   },
   {
     "en-US": "I go to the gym every day.",
-    "pt-BR": "Eu vou à academia todos os dias."
+    "pt-BR": "Eu vou à academia todos os dias.",
   },
   {
     "en-US": "You go to school early.",
-    "pt-BR": "Tu vais à escola cedo."
+    "pt-BR": "Tu vais à escola cedo.",
   },
   {
     "en-US": "He goes to work by bus.",
-    "pt-BR": "Ele vai ao trabalho de ônibus."
+    "pt-BR": "Ele vai ao trabalho de ônibus.",
   },
   {
     "en-US": "She goes to work by bus.",
-    "pt-BR": "Ela vai ao trabalho de ônibus."
+    "pt-BR": "Ela vai ao trabalho de ônibus.",
   },
   {
     "en-US": "We go to the park on weekends.",
-    "pt-BR": "Nós vamos ao parque nos fins de semana."
+    "pt-BR": "Nós vamos ao parque nos fins de semana.",
   },
   {
     "en-US": "You (plural) go to the concert together.",
-    "pt-BR": "Vós ides ao concerto juntos."
+    "pt-BR": "Vós ides ao concerto juntos.",
   },
   {
     "en-US": "They go to the cinema on Fridays.",
-    "pt-BR": "Eles vão ao cinema às sextas-feiras."
+    "pt-BR": "Eles vão ao cinema às sextas-feiras.",
   },
   {
     "en-US": "They go to the cinema on Fridays.",
-    "pt-BR": "Elas vão ao cinema às sextas-feiras."
+    "pt-BR": "Elas vão ao cinema às sextas-feiras.",
   },
   {
     "en-US": "I went to the beach last weekend.",
-    "pt-BR": "Eu fui à praia no fim de semana passado."
+    "pt-BR": "Eu fui à praia no fim de semana passado.",
   },
   {
     "en-US": "You went to the party last night.",
-    "pt-BR": "Tu foste à festa ontem à noite."
+    "pt-BR": "Tu foste à festa ontem à noite.",
   },
   {
     "en-US": "He went to the doctor yesterday.",
-    "pt-BR": "Ele foi ao médico ontem."
+    "pt-BR": "Ele foi ao médico ontem.",
   },
   {
     "en-US": "She went to the doctor yesterday.",
-    "pt-BR": "Ela foi à médica ontem."
+    "pt-BR": "Ela foi à médica ontem.",
   },
   {
     "en-US": "We went to the museum last month.",
-    "pt-BR": "Nós fomos ao museu no mês passado."
+    "pt-BR": "Nós fomos ao museu no mês passado.",
   },
   {
     "en-US": "You (plural) went to the mountains last year.",
-    "pt-BR": "Vós fostes às montanhas no ano passado."
+    "pt-BR": "Vós fostes às montanhas no ano passado.",
   },
   {
     "en-US": "They went to the theater last week.",
-    "pt-BR": "Eles foram ao teatro na semana passada."
+    "pt-BR": "Eles foram ao teatro na semana passada.",
   },
   {
     "en-US": "They went to the theater last week.",
-    "pt-BR": "Elas foram ao teatro na semana passada."
+    "pt-BR": "Elas foram ao teatro na semana passada.",
   },
   {
     "en-US": "I used to go to the library often.",
-    "pt-BR": "Eu ia à biblioteca frequentemente."
+    "pt-BR": "Eu ia à biblioteca frequentemente.",
   },
   {
     "en-US": "You used to go to the market every morning.",
-    "pt-BR": "Tu ias ao mercado todas as manhãs."
+    "pt-BR": "Tu ias ao mercado todas as manhãs.",
   },
   {
     "en-US": "He used to go to the beach every summer.",
-    "pt-BR": "Ele ia à praia todos os verões."
+    "pt-BR": "Ele ia à praia todos os verões.",
   },
   {
     "en-US": "She used to go to the beach every summer.",
-    "pt-BR": "Ela ia à praia todos os verões."
+    "pt-BR": "Ela ia à praia todos os verões.",
   },
   {
     "en-US": "We used to go hiking every weekend.",
-    "pt-BR": "Nós íamos fazer trilhas todos os fins de semana."
+    "pt-BR": "Nós íamos fazer trilhas todos os fins de semana.",
   },
   {
     "en-US": "You (plural) used to go to the countryside during holidays.",
-    "pt-BR": "Vós íeis ao campo durante as férias."
+    "pt-BR": "Vós íeis ao campo durante as férias.",
   },
   {
     "en-US": "They used to go to the same restaurant.",
-    "pt-BR": "Eles iam ao mesmo restaurante."
+    "pt-BR": "Eles iam ao mesmo restaurante.",
   },
   {
     "en-US": "They used to go to the same restaurant.",
-    "pt-BR": "Elas iam ao mesmo restaurante."
+    "pt-BR": "Elas iam ao mesmo restaurante.",
   },
   {
     "en-US": "I will go to the store tomorrow.",
-    "pt-BR": "Eu irei à loja amanhã."
+    "pt-BR": "Eu irei à loja amanhã.",
   },
   {
     "en-US": "You will go to the concert next week.",
-    "pt-BR": "Tu irás ao concerto na próxima semana."
+    "pt-BR": "Tu irás ao concerto na próxima semana.",
   },
   {
     "en-US": "He will go to the meeting later.",
-    "pt-BR": "Ele irá à reunião mais tarde."
+    "pt-BR": "Ele irá à reunião mais tarde.",
   },
   {
     "en-US": "She will go to the meeting later.",
-    "pt-BR": "Ela irá à reunião mais tarde."
+    "pt-BR": "Ela irá à reunião mais tarde.",
   },
   {
     "en-US": "We will go on vacation next month.",
-    "pt-BR": "Nós iremos de férias no próximo mês."
+    "pt-BR": "Nós iremos de férias no próximo mês.",
   },
   {
     "en-US": "You (plural) will go to the party tomorrow night.",
-    "pt-BR": "Vós ireis à festa amanhã à noite."
+    "pt-BR": "Vós ireis à festa amanhã à noite.",
   },
   {
     "en-US": "They will go to the beach next weekend.",
-    "pt-BR": "Eles irão à praia no próximo fim de semana."
+    "pt-BR": "Eles irão à praia no próximo fim de semana.",
   },
   {
     "en-US": "They will go to the beach next weekend.",
-    "pt-BR": "Elas irão à praia no próximo fim de semana."
-  }
+    "pt-BR": "Elas irão à praia no próximo fim de semana.",
+  },
+  {
+    "en-US": "I am happy today.",
+    "pt-BR": "Eu estou feliz hoje.",
+  },
+  {
+    "en-US": "You are tired after work.",
+    "pt-BR": "Tu estás cansado depois do trabalho.",
+  },
+  {
+    "en-US": "He is at home now.",
+    "pt-BR": "Ele está em casa agora.",
+  },
+  {
+    "en-US": "She is ready for the meeting.",
+    "pt-BR": "Ela está pronta para a reunião.",
+  },
+  {
+    "en-US": "We are busy with the project.",
+    "pt-BR": "Nós estamos ocupados com o projeto.",
+  },
+  {
+    "en-US": "You (plural) are at the office.",
+    "pt-BR": "Vós estais no escritório.",
+  },
+  {
+    "en-US": "They are excited about the trip.",
+    "pt-BR": "Eles estão animados com a viagem.",
+  },
+  {
+    "en-US": "They are nervous about the exam.",
+    "pt-BR": "Elas estão nervosas com o exame.",
+  },
+  {
+    "en-US": "I was tired yesterday.",
+    "pt-BR": "Eu estava cansado ontem.",
+  },
+  {
+    "en-US": "You were at the park in the morning.",
+    "pt-BR": "Tu estavas no parque de manhã.",
+  },
+  {
+    "en-US": "He was at the party last night.",
+    "pt-BR": "Ele estava na festa ontem à noite.",
+  },
+  {
+    "en-US": "She was happy with the results.",
+    "pt-BR": "Ela estava feliz com os resultados.",
+  },
+  {
+    "en-US": "We were at the beach last weekend.",
+    "pt-BR": "Nós estávamos na praia no fim de semana passado.",
+  },
+  {
+    "en-US": "You (plural) were tired after the trip.",
+    "pt-BR": "Vós estáveis cansados depois da viagem.",
+  },
+  {
+    "en-US": "They were at the restaurant.",
+    "pt-BR": "Eles estavam no restaurante.",
+  },
+  {
+    "en-US": "They were late for the meeting.",
+    "pt-BR": "Elas estavam atrasadas para a reunião.",
+  },
+  {
+    "en-US": "I will be at the office tomorrow.",
+    "pt-BR": "Eu estarei no escritório amanhã.",
+  },
+  {
+    "en-US": "You will be ready for the exam.",
+    "pt-BR": "Tu estarás pronto para o exame.",
+  },
+  {
+    "en-US": "He will be at the gym in the morning.",
+    "pt-BR": "Ele estará na academia de manhã.",
+  },
+  {
+    "en-US": "She will be traveling next week.",
+    "pt-BR": "Ela estará viajando na próxima semana.",
+  },
+  {
+    "en-US": "We will be available later.",
+    "pt-BR": "Nós estaremos disponíveis mais tarde.",
+  },
+  {
+    "en-US": "You (plural) will be at the meeting tomorrow.",
+    "pt-BR": "Vós estareis na reunião amanhã.",
+  },
+  {
+    "en-US": "They will be studying for the test.",
+    "pt-BR": "Eles estarão estudando para o teste.",
+  },
+  {
+    "en-US": "They will be at the concert.",
+    "pt-BR": "Elas estarão no concerto.",
+  },
 ];
