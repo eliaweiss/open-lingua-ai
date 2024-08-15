@@ -4750,4 +4750,42 @@ export const phrases = [
     "en-US": "Will you be watching the movie tomorrow?",
     "pt-BR": "Você estará assistindo ao filme amanhã?",
   },
+  {
+    "en-US": "When I was a child, I liked to play hide-and-seek.",
+    "pt-BR": "Quando eu era criança, eu gostava de brincar de esconde-esconde.",
+  },
+  {
+    "en-US": "I could go to the party, but I would prefer to stay home.",
+    "pt-BR": "Eu poderia ir à festa, mas preferiria ficar em casa.",
+  },
+  {
+    "en-US": "Tomorrow, we will travel to the beach and swim in the sea.",
+    "pt-BR": "Amanhã, nós viajaremos para a praia e nadaremos no mar.",
+  },
+  {
+    "en-US":
+      "I was traveling abroad and learning to speak English when I was a child.",
+    "pt-BR":
+      "Eu estava viajando para o exterior e estava aprendendo a falar inglês quando eu era criança.",
+  },
+  {
+    "en-US": "I will finish the project and receive an award next year.",
+    "pt-BR": "Eu terminarei o projeto e receberei um prêmio no ano que vem.",
+  },
+  {
+    "en-US":
+      "I studied for the exam and started to feel more confident yesterday.",
+    "pt-BR":
+      "Eu estudei para o exame e comecei a me sentir mais confiante ontem.",
+  },
+  {
+    "en-US":
+      "I was studying for the exam and started to feel more confident yesterday.",
+    "pt-BR":
+      "Eu estava estudando para o exame e comecei a me sentir mais confiante ontem.",
+  },
+  {
+    "en-US": "I work in the office and take a coffee now.",
+    "pt-BR": "Eu trabalho no escritório e tomo um café agora.",
+  },
 ];
