@@ -5174,22 +5174,54 @@ export const phrases = [
   },
   {
     "en-US": "When you arrive home, we will have dinner.",
-    "pt-BR": "Quando você chegar em casa, nós jantaremos."
+    "pt-BR": "Quando você chegar em casa, nós jantaremos.",
   },
   {
     "en-US": "As soon as they finish the work, they will go to the cinema.",
-    "pt-BR": "Assim que eles terminarem o trabalho, eles sairão para o cinema."
+    "pt-BR": "Assim que eles terminarem o trabalho, eles sairão para o cinema.",
   },
   {
     "en-US": "If I do the report today, will you review it tomorrow?",
-    "pt-BR": "Se eu fizer o relatório hoje, você revisará amanhã?"
+    "pt-BR": "Se eu fizer o relatório hoje, você revisará amanhã?",
   },
   {
     "en-US": "After we complete the course, we will celebrate.",
-    "pt-BR": "Depois que nós completarmos o curso, nós celebraremos."
+    "pt-BR": "Depois que nós completarmos o curso, nós celebraremos.",
   },
   {
     "en-US": "When she is ready, we will start the meeting.",
-    "pt-BR": "Quando ela estiver pronta, nós começaremos a reunião."
-  }
+    "pt-BR": "Quando ela estiver pronta, nós começaremos a reunião.",
+  },
+  {
+    "en-US": "I was tired, but I went to the party anyway.",
+    "pt-BR": "Eu estive cansado, mas eu fui à festa de qualquer maneira."
+    },
+    {
+    "en-US": "She talks on the phone while cooking dinner.",
+    "pt-BR": "Ela fala ao telefone enquanto cozinha o jantar."
+    },
+    {
+    "en-US": "We will finish the work before the client arrives.",
+    "pt-BR": "Nós terminaremos o trabalho antes que chegar o cliente."
+    },
+    {
+    "en-US": "They are studying for the exam and learning a lot.",
+    "pt-BR": "Eles estão estudando para o exame e estão aprendendo muito."
+    },
+    {
+    "en-US": "I wake up early and leave to run every day.",
+    "pt-BR": "Eu acordo cedo e saio para correr todos os dias."
+    },
+    {
+    "en-US": "Will you visit the museum when you travel to Rio de Janeiro?",
+    "pt-BR": "Você visitará o museu quando viajar para o Rio de Janeiro?"
+    },
+    {
+    "en-US": "We watched that movie and liked it a lot.",
+    "pt-BR": "A gente assistimos aquele filme e gostamos muito."
+    },
+    {
+    "en-US": "The dog was barking while we were playing in the park.",
+    "pt-BR": "O cachorro estava latindo enquanto a gente estava brincando no parque."
+    }
 ];
