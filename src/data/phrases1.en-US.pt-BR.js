@@ -4574,4 +4574,124 @@ export const phrases = [
     "en-US": "The children are in the park now.",
     "pt-BR": "As crianças estão no parque agora.",
   },
+  {
+    "en-US": "I am very busy today.",
+    "pt-BR": "Eu estou muito ocupado hoje.",
+  },
+  {
+    "en-US": "They are from São Paulo.",
+    "pt-BR": "Eles são de São Paulo.",
+  },
+  {
+    "en-US": "The food is delicious.",
+    "pt-BR": "A comida é deliciosa.",
+  },
+  {
+    "en-US": "We are in the library now.",
+    "pt-BR": "Nós estamos na biblioteca agora.",
+  },
+  {
+    "en-US": "You are my best friend.",
+    "pt-BR": "Você é meu melhor amigo.",
+  },
+  {
+    "en-US": "I was very happy on my birthday.",
+    "pt-BR": "Eu estava muito feliz no meu aniversário.",
+  },
+  {
+    "en-US": "They were in Brazil during the holidays.",
+    "pt-BR": "Eles estiveram no Brasil durante as férias.",
+  },
+  {
+    "en-US": "The event was a success.",
+    "pt-BR": "O evento foi um sucesso.",
+  },
+  {
+    "en-US": "We were friends since childhood.",
+    "pt-BR": "Nós éramos amigos desde a infância.",
+  },
+  {
+    "en-US": "You were tired after the race.",
+    "pt-BR": "Você estava cansado depois da corrida.",
+  },
+  {
+    "en-US": "She was very worried about the exam.",
+    "pt-BR": "Ela estava muito preocupada com o exame.",
+  },
+  {
+    "en-US": "We were at home all day.",
+    "pt-BR": "Nós estivemos em casa o dia todo.",
+  },
+  {
+    "en-US": "They were excellent teachers.",
+    "pt-BR": "Eles eram professores excelentes.",
+  },
+  {
+    "en-US": "The meeting was important for everyone.",
+    "pt-BR": "A reunião foi importante para todos.",
+  },
+  {
+    "en-US": "You were the best student in the class.",
+    "pt-BR": "Você era o melhor aluno da turma.",
+  },
+  {
+    "en-US": "I was at the beach during the vacation.",
+    "pt-BR": "Eu estava na praia durante as férias.",
+  },
+  {
+    "en-US": "They were very excited about the trip.",
+    "pt-BR": "Eles estavam muito animados com a viagem.",
+  },
+  {
+    "en-US": "The movie was very interesting.",
+    "pt-BR": "O filme foi muito interessante.",
+  },
+  {
+    "en-US": "We were responsible for the project.",
+    "pt-BR": "Nós éramos os responsáveis pelo projeto.",
+  },
+  {
+    "en-US": "Were you at the meeting yesterday?",
+    "pt-BR": "Você esteve na reunião ontem?",
+  },
+  {
+    "en-US": "I will be very busy tomorrow.",
+    "pt-BR": "Eu estarei muito ocupado amanhã.",
+  },
+  {
+    "en-US": "They will be happy with the result.",
+    "pt-BR": "Eles estarão felizes com o resultado.",
+  },
+  {
+    "en-US": "The presentation will be in the main auditorium.",
+    "pt-BR": "A apresentação estará no auditório principal.",
+  },
+  {
+    "en-US": "We will be ready for the challenge.",
+    "pt-BR": "Nós estaremos prontos para o desafio.",
+  },
+  {
+    "en-US": "You will be a great professional.",
+    "pt-BR": "Você será um ótimo profissional.",
+  },
+  {
+    "en-US": "They will be at the meeting next week.",
+    "pt-BR": "Eles estarão na reunião na próxima semana.",
+  },
+  {
+    "en-US": "We will be very busy with the project.",
+    "pt-BR": "Nós estaremos muito ocupados com o projeto.",
+  },
+  {
+    "en-US": "The party will be on Saturday night.",
+    "pt-BR": "A festa será no sábado à noite.",
+  },
+  {
+    "en-US": "You will always be welcome here.",
+    "pt-BR": "Você será sempre bem-vindo aqui.",
+  },
+  {
+    "en-US": "I will be more careful next time.",
+    "pt-BR": "Eu serei mais cuidadoso da próxima vez.",
+  },
 ];
