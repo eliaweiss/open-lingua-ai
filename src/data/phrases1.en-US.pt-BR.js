@@ -4694,4 +4694,60 @@ export const phrases = [
     "en-US": "I will be more careful next time.",
     "pt-BR": "Eu serei mais cuidadoso da próxima vez.",
   },
+  {
+    "en-US": "I am working on a new project now.",
+    "pt-BR": "Eu estou trabalhando em um novo projeto agora.",
+  },
+  {
+    "en-US": "They are talking about the event.",
+    "pt-BR": "Eles estão falando sobre o evento.",
+  },
+  {
+    "en-US": "We are studying for the exam.",
+    "pt-BR": "Nós estamos estudando para a prova.",
+  },
+  {
+    "en-US": "She is singing a beautiful song.",
+    "pt-BR": "Ela está cantando uma música bonita.",
+  },
+  {
+    "en-US": "Are you watching a movie now?",
+    "pt-BR": "Você está assistindo a um filme agora?",
+  },
+  {
+    "en-US": "I was working on an important project yesterday.",
+    "pt-BR": "Eu estava trabalhando em um projeto importante ontem.",
+  },
+  {
+    "en-US": "They were talking about the plan.",
+    "pt-BR": "Eles estavam conversando sobre o plano.",
+  },
+  {
+    "en-US": "She was cooking when I arrived.",
+    "pt-BR": "Ela estava cozinhando quando eu cheguei.",
+  },
+  {
+    "en-US": "Were you watching TV at night?",
+    "pt-BR": "Você estava assistindo à TV à noite?",
+  },
+  {
+    "en-US": "I will be working on a new project tomorrow.",
+    "pt-BR": "Eu estarei trabalhando em um novo projeto amanhã.",
+  },
+  {
+    "en-US": "They will be traveling abroad next week.",
+    "pt-BR": "Eles estarão viajando para o exterior na próxima semana.",
+  },
+  {
+    "en-US": "We will be studying together for the exam.",
+    "pt-BR": "Nós estaremos estudando juntos para o exame.",
+  },
+  {
+    "en-US": "She will be preparing dinner when you arrive.",
+    "pt-BR": "Ela estará preparando o jantar quando você chegar.",
+  },
+  {
+    "en-US": "Will you be watching the movie tomorrow?",
+    "pt-BR": "Você estará assistindo ao filme amanhã?",
+  },
 ];
