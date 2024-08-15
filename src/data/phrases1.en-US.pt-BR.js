@@ -4928,4 +4928,132 @@ export const phrases = [
     "en-US": "They will be the stars of the show.",
     "pt-BR": "Elas serão as estrelas do show.",
   },
+  {
+    "en-US": "I go to the gym every day.",
+    "pt-BR": "Eu vou à academia todos os dias."
+  },
+  {
+    "en-US": "You go to school early.",
+    "pt-BR": "Tu vais à escola cedo."
+  },
+  {
+    "en-US": "He goes to work by bus.",
+    "pt-BR": "Ele vai ao trabalho de ônibus."
+  },
+  {
+    "en-US": "She goes to work by bus.",
+    "pt-BR": "Ela vai ao trabalho de ônibus."
+  },
+  {
+    "en-US": "We go to the park on weekends.",
+    "pt-BR": "Nós vamos ao parque nos fins de semana."
+  },
+  {
+    "en-US": "You (plural) go to the concert together.",
+    "pt-BR": "Vós ides ao concerto juntos."
+  },
+  {
+    "en-US": "They go to the cinema on Fridays.",
+    "pt-BR": "Eles vão ao cinema às sextas-feiras."
+  },
+  {
+    "en-US": "They go to the cinema on Fridays.",
+    "pt-BR": "Elas vão ao cinema às sextas-feiras."
+  },
+  {
+    "en-US": "I went to the beach last weekend.",
+    "pt-BR": "Eu fui à praia no fim de semana passado."
+  },
+  {
+    "en-US": "You went to the party last night.",
+    "pt-BR": "Tu foste à festa ontem à noite."
+  },
+  {
+    "en-US": "He went to the doctor yesterday.",
+    "pt-BR": "Ele foi ao médico ontem."
+  },
+  {
+    "en-US": "She went to the doctor yesterday.",
+    "pt-BR": "Ela foi à médica ontem."
+  },
+  {
+    "en-US": "We went to the museum last month.",
+    "pt-BR": "Nós fomos ao museu no mês passado."
+  },
+  {
+    "en-US": "You (plural) went to the mountains last year.",
+    "pt-BR": "Vós fostes às montanhas no ano passado."
+  },
+  {
+    "en-US": "They went to the theater last week.",
+    "pt-BR": "Eles foram ao teatro na semana passada."
+  },
+  {
+    "en-US": "They went to the theater last week.",
+    "pt-BR": "Elas foram ao teatro na semana passada."
+  },
+  {
+    "en-US": "I used to go to the library often.",
+    "pt-BR": "Eu ia à biblioteca frequentemente."
+  },
+  {
+    "en-US": "You used to go to the market every morning.",
+    "pt-BR": "Tu ias ao mercado todas as manhãs."
+  },
+  {
+    "en-US": "He used to go to the beach every summer.",
+    "pt-BR": "Ele ia à praia todos os verões."
+  },
+  {
+    "en-US": "She used to go to the beach every summer.",
+    "pt-BR": "Ela ia à praia todos os verões."
+  },
+  {
+    "en-US": "We used to go hiking every weekend.",
+    "pt-BR": "Nós íamos fazer trilhas todos os fins de semana."
+  },
+  {
+    "en-US": "You (plural) used to go to the countryside during holidays.",
+    "pt-BR": "Vós íeis ao campo durante as férias."
+  },
+  {
+    "en-US": "They used to go to the same restaurant.",
+    "pt-BR": "Eles iam ao mesmo restaurante."
+  },
+  {
+    "en-US": "They used to go to the same restaurant.",
+    "pt-BR": "Elas iam ao mesmo restaurante."
+  },
+  {
+    "en-US": "I will go to the store tomorrow.",
+    "pt-BR": "Eu irei à loja amanhã."
+  },
+  {
+    "en-US": "You will go to the concert next week.",
+    "pt-BR": "Tu irás ao concerto na próxima semana."
+  },
+  {
+    "en-US": "He will go to the meeting later.",
+    "pt-BR": "Ele irá à reunião mais tarde."
+  },
+  {
+    "en-US": "She will go to the meeting later.",
+    "pt-BR": "Ela irá à reunião mais tarde."
+  },
+  {
+    "en-US": "We will go on vacation next month.",
+    "pt-BR": "Nós iremos de férias no próximo mês."
+  },
+  {
+    "en-US": "You (plural) will go to the party tomorrow night.",
+    "pt-BR": "Vós ireis à festa amanhã à noite."
+  },
+  {
+    "en-US": "They will go to the beach next weekend.",
+    "pt-BR": "Eles irão à praia no próximo fim de semana."
+  },
+  {
+    "en-US": "They will go to the beach next weekend.",
+    "pt-BR": "Elas irão à praia no próximo fim de semana."
+  }
 ];
