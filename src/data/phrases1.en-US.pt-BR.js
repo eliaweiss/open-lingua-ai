@@ -4416,22 +4416,162 @@ export const phrases = [
   },
   {
     "en-US": "I packed the bags before traveling.",
-    "pt-BR": "Eu fiz as malas antes de viajar."
+    "pt-BR": "Eu fiz as malas antes de viajar.",
   },
   {
     "en-US": "They parked the car in the garage.",
-    "pt-BR": "Eles estacionaram o carro na garagem."
+    "pt-BR": "Eles estacionaram o carro na garagem.",
   },
   {
     "en-US": "We delivered the report to the boss.",
-    "pt-BR": "Nós entregamos o relatório para o chefe."
+    "pt-BR": "Nós entregamos o relatório para o chefe.",
   },
   {
     "en-US": "She bought the clothes in the store.",
-    "pt-BR": "Ela comprou a roupa na loja."
+    "pt-BR": "Ela comprou a roupa na loja.",
   },
   {
     "en-US": "You talked about the topic yesterday.",
-    "pt-BR": "Você falou sobre o assunto ontem."
-  }
+    "pt-BR": "Você falou sobre o assunto ontem.",
+  },
+  {
+    "en-US": "I read an interesting book last week.",
+    "pt-BR": "Eu li um livro interessante na semana passada.",
+  },
+  {
+    "en-US": "They played on the beach all day.",
+    "pt-BR": "Eles brincaram na praia o dia todo.",
+  },
+  {
+    "en-US": "We prepared the dinner together.",
+    "pt-BR": "Nós preparamos o jantar juntos.",
+  },
+  {
+    "en-US": "She turned off the lights before sleeping.",
+    "pt-BR": "Ela apagou as luzes antes de dormir.",
+  },
+  {
+    "en-US": "You scheduled the meeting with your colleagues.",
+    "pt-BR": "Você marcou a reunião com os colegas.",
+  },
+  {
+    "en-US": "I woke up very early yesterday.",
+    "pt-BR": "Eu acordei muito cedo ontem.",
+  },
+  {
+    "en-US": "They left the documents on the table.",
+    "pt-BR": "Eles deixaram os documentos na mesa.",
+  },
+  {
+    "en-US": "We played the game until late.",
+    "pt-BR": "Nós jogamos o jogo até tarde.",
+  },
+  {
+    "en-US": "She took a beautiful picture.",
+    "pt-BR": "Ela tirou uma foto linda.",
+  },
+  {
+    "en-US": "You finished the work quickly.",
+    "pt-BR": "Você terminou o trabalho rapidamente.",
+  },
+  {
+    "en-US": "I will dance at the party tomorrow.",
+    "pt-BR": "Eu dançarei na festa amanhã.",
+  },
+  {
+    "en-US": "They will watch the new movie at the cinema.",
+    "pt-BR": "Eles assistirão o novo filme no cinema.",
+  },
+  {
+    "en-US": "We will prepare a special lunch on Sunday.",
+    "pt-BR": "Nós prepararemos um almoço especial no domingo.",
+  },
+  {
+    "en-US": "She will read a new book next week.",
+    "pt-BR": "Ela lerá um novo livro semana que vem.",
+  },
+  {
+    "en-US": "You will leave for work earlier.",
+    "pt-BR": "Você sairá para o trabalho mais cedo.",
+  },
+  {
+    "en-US": "I will buy a new car next year.",
+    "pt-BR": "Eu comprarei um carro novo no próximo ano.",
+  },
+  {
+    "en-US": "They will go to the park later.",
+    "pt-BR": "Eles irão ao parque mais tarde.",
+  },
+  {
+    "en-US": "We will invite our friends for dinner.",
+    "pt-BR": "Nós convidaremos nossos amigos para jantar.",
+  },
+  {
+    "en-US": "She will water the plants tomorrow.",
+    "pt-BR": "Ela regará as plantas amanhã.",
+  },
+  {
+    "en-US": "You will plan a trip next month.",
+    "pt-BR": "Você planejará uma viagem no mês que vem.",
+  },
+  {
+    "en-US": "I will travel with my parents on the weekend.",
+    "pt-BR": "Eu viajarei com meus pais no fim de semana.",
+  },
+  {
+    "en-US": "They will start a new course at the university.",
+    "pt-BR": "Eles começarão um novo curso na universidade.",
+  },
+  {
+    "en-US": "We will pack the bags on Friday.",
+    "pt-BR": "Nós faremos as malas na sexta-feira.",
+  },
+  {
+    "en-US": "She will take the children to school.",
+    "pt-BR": "Ela levará as crianças para a escola.",
+  },
+  {
+    "en-US": "You will accept the job offer.",
+    "pt-BR": "Você aceitará a proposta de trabalho.",
+  },
+  {
+    "en-US": "I am very happy today.",
+    "pt-BR": "Eu estou muito feliz hoje.",
+  },
+  {
+    "en-US": "We are Portuguese students.",
+    "pt-BR": "Nós somos estudantes de português.",
+  },
+  {
+    "en-US": "She is my friend.",
+    "pt-BR": "Ela é minha amiga.",
+  },
+  {
+    "en-US": "Are you tired after work?",
+    "pt-BR": "Você está cansado depois do trabalho?",
+  },
+  {
+    "en-US": "They are in the park now.",
+    "pt-BR": "Eles estão no parque agora.",
+  },
+  {
+    "en-US": "We are ready for the meeting.",
+    "pt-BR": "Nós estamos prontos para a reunião.",
+  },
+  {
+    "en-US": "They are very intelligent.",
+    "pt-BR": "Eles são muito inteligentes.",
+  },
+  {
+    "en-US": "The party is at João's house.",
+    "pt-BR": "A festa é na casa do João.",
+  },
+  {
+    "en-US": "Are you a doctor?",
+    "pt-BR": "Você é médico?",
+  },
+  {
+    "en-US": "The children are in the park now.",
+    "pt-BR": "As crianças estão no parque agora.",
+  },
 ];
