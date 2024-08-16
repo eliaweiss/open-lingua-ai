@@ -5255,4 +5255,36 @@ export const phrases = [
     "en-US": "We used to go to the beach every summer",
     "pt-BR": "Nós íamos à praia todos os verões.",
   },
+  {
+    "en-US": "I was a student when I lived in Brazil",
+    "pt-BR": "Eu era estudante quando morava no Brasil",
+  },
+  {
+    "en-US": "I used to be a student who read a lot",
+    "pt-BR": "Eu era um estudante que costumava ler muito",
+  },
+  {
+    "en-US": "That was the place where we used to meet",
+    "pt-BR": "Aquele foi o lugar onde costumávamos nos encontrar",
+  },
+  {
+    "en-US": "He was very happy with the news yesterday.",
+    "pt-BR": "Ele estava muito feliz com as notícias ontem.",
+  },
+  {
+    "en-US": "We were the ones responsible for the event last week.",
+    "pt-BR": "Nós éramos os responsáveis pelo evento na semana passada.",
+  },
+  {
+    "en-US": "They were at home during the storm.",
+    "pt-BR": "Eles estavam em casa durante o temporal.",
+  },
+  {
+    "en-US": "The party was amazing! Everyone had a great time.",
+    "pt-BR": "A festa foi incrível! Todos se divertiram muito.",
+  },
+  {
+    "en-US": "She was the best student in the class last year.",
+    "pt-BR": "Ela foi a melhor aluna da turma no ano passado.",
+  },
 ];
