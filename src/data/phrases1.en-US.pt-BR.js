@@ -5194,34 +5194,65 @@ export const phrases = [
   },
   {
     "en-US": "I was tired, but I went to the party anyway.",
-    "pt-BR": "Eu estive cansado, mas eu fui à festa de qualquer maneira."
-    },
-    {
+    "pt-BR": "Eu estive cansado, mas eu fui à festa de qualquer maneira.",
+  },
+  {
     "en-US": "She talks on the phone while cooking dinner.",
-    "pt-BR": "Ela fala ao telefone enquanto cozinha o jantar."
-    },
-    {
+    "pt-BR": "Ela fala ao telefone enquanto cozinha o jantar.",
+  },
+  {
     "en-US": "We will finish the work before the client arrives.",
-    "pt-BR": "Nós terminaremos o trabalho antes que chegar o cliente."
-    },
-    {
+    "pt-BR": "Nós terminaremos o trabalho antes que chegar o cliente.",
+  },
+  {
     "en-US": "They are studying for the exam and learning a lot.",
-    "pt-BR": "Eles estão estudando para o exame e estão aprendendo muito."
-    },
-    {
+    "pt-BR": "Eles estão estudando para o exame e estão aprendendo muito.",
+  },
+  {
     "en-US": "I wake up early and leave to run every day.",
-    "pt-BR": "Eu acordo cedo e saio para correr todos os dias."
-    },
-    {
+    "pt-BR": "Eu acordo cedo e saio para correr todos os dias.",
+  },
+  {
     "en-US": "Will you visit the museum when you travel to Rio de Janeiro?",
-    "pt-BR": "Você visitará o museu quando viajar para o Rio de Janeiro?"
-    },
-    {
+    "pt-BR": "Você visitará o museu quando viajar para o Rio de Janeiro?",
+  },
+  {
     "en-US": "We watched that movie and liked it a lot.",
-    "pt-BR": "A gente assistimos aquele filme e gostamos muito."
-    },
-    {
+    "pt-BR": "A gente assistimos aquele filme e gostamos muito.",
+  },
+  {
     "en-US": "The dog was barking while we were playing in the park.",
-    "pt-BR": "O cachorro estava latindo enquanto a gente estava brincando no parque."
-    }
+    "pt-BR":
+      "O cachorro estava latindo enquanto a gente estava brincando no parque.",
+  },
+  {
+    "en-US": "If they bring the documents, we will sign the contract.",
+    "pt-BR": "Se eles trazerem os documentos, nós assinaremos o contrato.",
+  },
+  {
+    "en-US":
+      "When you return from the trip, we will discuss the project details.",
+    "pt-BR":
+      "Quando você voltar de viagem, nós discutiremos os detalhes do projeto.",
+  },
+  {
+    "en-US": "As soon as I get the information, I will send it by email.",
+    "pt-BR": "Assim que eu conseguir a informação, eu enviarei por e-mail.",
+  },
+  {
+    "en-US": "After they decide the date, we will book the hotel",
+    "pt-BR": "Depois que eles decidirem a data, nós reservaremos o hotel",
+  },
+  {
+    "en-US": "If we find a solution, we will present it at the meeting",
+    "pt-BR": "Se nós encontrarmos uma solução, nós apresentaremos na reunião",
+  },
+  {
+    "en-US": "I used to play soccer every weekend",
+    "pt-BR": "Eu costumava jogar futebol todo fim de semana",
+  },
+  {
+    "en-US": "We used to go to the beach every summer",
+    "pt-BR": "Nós íamos à praia todos os verões.",
+  },
 ];
