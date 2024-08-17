@@ -5311,4 +5311,32 @@ export const phrases = [
     "en-US": "Did you used to travel to the beach every summer?",
     "pt-BR": "Você viajava para a praia todo verão?",
   },
+  {
+    "en-US":
+      "She watched a movie last night, while her brother was reading a book.",
+    "pt-BR":
+      "Ela assistiu a um filme na noite passada, enquanto seu irmão lia um livro.",
+  },
+  {
+    "en-US": "When I was a child, I used to play in the street every day.",
+    "pt-BR": "Quando eu era criança, eu brincava na rua todos os dias.",
+  },
+  {
+    "en-US":
+      "They arrived early at the party, but in the past, they always used to arrive late.",
+    "pt-BR":
+      "Eles chegaram cedo na festa, mas antigamente eles sempre chegavam atrasados.",
+  },
+  {
+    "en-US":
+      "We traveled to Brazil last year, but when we were children, we always used to go to the farm.",
+    "pt-BR":
+      "Nós viajamos para o Brasil no ano passado, mas quando éramos crianças, nós sempre íamos para a fazenda.",
+  },
+  {
+    "en-US":
+      "He worked late yesterday, but normally he leaves work at 6 o'clock.",
+    "pt-BR":
+      "Ontem, ele trabalhou até tarde, mas normalmente ele saía do trabalho às 6 horas.",
+  },
 ];
