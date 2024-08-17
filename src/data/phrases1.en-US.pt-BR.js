@@ -5339,4 +5339,29 @@ export const phrases = [
     "pt-BR":
       "Ontem, ele trabalhou até tarde, mas normalmente ele saía do trabalho às 6 horas.",
   },
+  {
+    "en-US": "She was studying for the exam when I arrived last night.",
+    "pt-BR":
+      "Ela estava estudando para o exame quando eu cheguei ontem à noite.",
+  },
+  {
+    "en-US":
+      "We used to go to the park every Sunday, and while we walked, we talked about the week.",
+    "pt-BR":
+      "Nós íamos ao parque todos os domingos, e enquanto nós andávamos, nós conversávamos sobre a semana.",
+  },
+  {
+    "en-US": "They were in the meeting when the director entered the room.",
+    "pt-BR": "Eles estavam na reunião quando o diretor entrou na sala.",
+  },
+  {
+    "en-US":
+      "I was working on the project, but I always took a break for coffee.",
+    "pt-BR":
+      "Eu trabalhava no projeto, mas sempre fazia uma pausa para o café.",
+  },
+  {
+    "en-US": "When you called, I was cooking dinner.",
+    "pt-BR": "Quando você ligou, eu cozinhava o jantar.",
+  },
 ];
