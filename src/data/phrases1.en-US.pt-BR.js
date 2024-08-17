@@ -5287,4 +5287,28 @@ export const phrases = [
     "en-US": "She was the best student in the class last year.",
     "pt-BR": "Ela foi a melhor aluna da turma no ano passado.",
   },
+  {
+    "en-US": "She was the best student in the class last year.",
+    "pt-BR": "Eu era um estudante que estudava muito quando eu era mais novo",
+  },
+  {
+    "en-US": "I used to live in a small town when I was a child.",
+    "pt-BR": "Eu morava em uma cidade pequena quando era criança.",
+  },
+  {
+    "en-US": "We used to play in the park every day after school.",
+    "pt-BR": "Nós brincávamos no parque todos os dias depois da escola.",
+  },
+  {
+    "en-US": "They used to eat together every Sunday.",
+    "pt-BR": "Eles comiam juntos todos os domingos.",
+  },
+  {
+    "en-US": "She used to read many books when she was younger.",
+    "pt-BR": "Ela lia muitos livros quando era mais jovem.",
+  },
+  {
+    "en-US": "Did you used to travel to the beach every summer?",
+    "pt-BR": "Você viajava para a praia todo verão?",
+  },
 ];
