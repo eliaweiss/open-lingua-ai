@@ -5073,7 +5073,7 @@ export const phrases = [
     "pt-BR": "Nós estamos ocupados com o projeto.",
   },
   {
-    "en-US": "You (plural) are at the office.",
+    "en-US": "You are at the office. (plural)",
     "pt-BR": "Vós estais no escritório.",
   },
   {
@@ -5105,7 +5105,7 @@ export const phrases = [
     "pt-BR": "Nós estávamos na praia no fim de semana passado.",
   },
   {
-    "en-US": "You (plural) were tired after the trip.",
+    "en-US": "You were tired after the trip. (plural)",
     "pt-BR": "Vós estáveis cansados depois da viagem.",
   },
   {
@@ -5137,7 +5137,7 @@ export const phrases = [
     "pt-BR": "Nós estaremos disponíveis mais tarde.",
   },
   {
-    "en-US": "You (plural) will be at the meeting tomorrow.",
+    "en-US": "You will be at the meeting tomorrow. (plural)",
     "pt-BR": "Vós estareis na reunião amanhã.",
   },
   {
