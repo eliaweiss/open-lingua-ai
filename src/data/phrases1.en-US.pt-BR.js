@@ -5474,4 +5474,36 @@ export const phrases = [
     "en-US": "You speak English very well.",
     "pt-BR": "Tu falas muito bem inglês.",
   },
+  {
+    "en-US": "When I was a child, my family was very close.",
+    "pt-BR": "Quando eu era criança, minha família era muito unida",
+  },
+  {
+    "en-US": "they will be the leaders of the project",
+    "pt-BR": "eles serão os líderes do projeto",
+  },
+  {
+    "en-US": "We were always neighbors.",
+    "pt-BR": "nós éramos sempre vizinhos",
+  },
+  {
+    "en-US": "I am at the office working",
+    "pt-BR": "eu estou no escritório trabalhando",
+  },
+  {
+    "en-US": "Five years ago, we were in São Paulo",
+    "pt-BR": "Há cinco anos, nós estávamos em São Paulo",
+  },
+  {
+    "en-US": "Five years ago, we lived in São Paulo",
+    "pt-BR": "Há cinco anos, nós vivíamos em São Paulo",
+  },
+  {
+    "en-US": "If you are tired, you can rest",
+    "pt-BR": "Se você estiver cansado, pode descansar",
+  },
+  {
+    "en-US": "When we were young, they were always happy",
+    "pt-BR": "Quando éramos jovens, eles estavam sempre felizes",
+  },
 ];
