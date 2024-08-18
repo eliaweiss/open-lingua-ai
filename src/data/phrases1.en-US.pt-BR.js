@@ -5288,7 +5288,7 @@ export const phrases = [
     "pt-BR": "Ela foi a melhor aluna da turma no ano passado.",
   },
   {
-    "en-US": "She was the best student in the class last year.",
+    "en-US": "I was a student who studied hard when I was younger",
     "pt-BR": "Eu era um estudante que estudava muito quando eu era mais novo",
   },
   {
