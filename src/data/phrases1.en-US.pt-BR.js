@@ -5417,4 +5417,41 @@ export const phrases = [
     "en-US": "If you talk to Maria, tell her to call me.",
     "pt-BR": "Se você falar com a Maria, diga-lhe para me ligar.",
   },
+  {
+    "en-US": "We visit our friends when they are at home",
+    "pt-BR": "Nós visitamos nossos amigos quando eles estão em casa.",
+  },
+  {
+    "en-US": "If they are at home, we will visit them",
+    "pt-BR": "Se eles estiverem em casa, nós os visitaremos.",
+  },
+  {
+    "en-US": "I hope that they are ready for the meeting",
+    "pt-BR": "Espero que eles estejam prontos para a reunião",
+  },
+  {
+    "en-US": "Although they are busy, they can still help us.",
+    "pt-BR": "Embora eles estejam ocupados, ainda podem nos ajudar",
+  },
+  {
+    "en-US": "If the documents are correct, we can proceed with the project.",
+    "pt-BR":
+      "Se os documentos estiverem corretos, poderemos prosseguir com o projeto",
+  },
+  {
+    "en-US": "If I see a movie, I will watch it with you.",
+    "pt-BR": "Se eu vir um filme, eu vou assistir com você",
+  },
+  {
+    "en-US": "If I have money, I will buy a gift",
+    "pt-BR": "Se eu tiver dinheiro, eu comprarei um presente.",
+  },
+  {
+    "en-US": "When we travel, we will visit new places.",
+    "pt-BR": "Quando nós viajarmos, nós visitaremos novos lugares.",
+  },
+  {
+    "en-US": "If you find my book, let me know",
+    "pt-BR": "Se você encontrar meu livro, me avise.",
+  },
 ];
