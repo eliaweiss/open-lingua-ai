@@ -5364,4 +5364,29 @@ export const phrases = [
     "en-US": "When you called, I was cooking dinner.",
     "pt-BR": "Quando você ligou, eu cozinhava o jantar.",
   },
+  {
+    "en-US": "If I have time, I will study more.",
+    "pt-BR": "Se eu tiver tempo, eu estudarei mais",
+  },
+  {
+    "en-US": "I hope that she can come to the meeting tomorrow.",
+    "pt-BR": "Espero que ela possa vir à reunião amanhã.",
+  },
+  {
+    "en-US": "When we arrive, we will start the party.",
+    "pt-BR": "Quando nós chegarmos, começaremos a festa.",
+  },
+  {
+    "en-US": "If you go to the market, buy bread and milk.",
+    "pt-BR": "Se vocês forem ao mercado, comprem pão e leite.",
+  },
+  {
+    "en-US":
+      "Although they don't like sushi, they go to the Japanese restaurant.",
+    "pt-BR": "Embora eles não gostem de sushi, vão ao restaurante japonês.",
+  },
+  {
+    "en-US": "He went to the movies, although it was raining",
+    "pt-BR": "Ele foi ao cinema, embora estivesse chovendo",
+  },
 ];
