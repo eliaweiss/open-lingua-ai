@@ -5454,4 +5454,24 @@ export const phrases = [
     "en-US": "If you find my book, let me know",
     "pt-BR": "Se você encontrar meu livro, me avise.",
   },
+  {
+    "en-US": "Although she doesn’t like coffee, she will drink a little",
+    "pt-BR": "Embora ela não goste de café, ela tomará um pouco.",
+  },
+  {
+    "en-US": "When we eat pizza, we always ask for extra cheese.",
+    "pt-BR": "Quando nós comemos pizza, sempre pedimos queijo extra.",
+  },
+  {
+    "en-US": "If we eat pizza, we will always ask for extra cheese",
+    "pt-BR": "Se nós comermos pizza, sempre pediremos queijo extra.",
+  },
+  {
+    "en-US": "If I leave early, I will arrive before everyone.",
+    "pt-BR": "Se eu partir cedo, chegarei antes de todos.",
+  },
+  {
+    "en-US": "You speak English very well.",
+    "pt-BR": "Tu falas muito bem inglês.",
+  },
 ];
