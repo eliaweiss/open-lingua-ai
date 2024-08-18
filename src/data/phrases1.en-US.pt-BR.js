@@ -5389,4 +5389,32 @@ export const phrases = [
     "en-US": "He went to the movies, although it was raining",
     "pt-BR": "Ele foi ao cinema, embora estivesse chovendo",
   },
+  {
+    "en-US": "If you know the answer, let me know immediately.",
+    "pt-BR": "Se você souber a resposta, me avise imediatamente.",
+  },
+  {
+    "en-US": "It is possible that we need more information.",
+    "pt-BR": "É possível que nós precisemos de mais informações.",
+  },
+  {
+    "en-US": "If you find the document, please let me know. (plural)",
+    "pt-BR": "Se vós encontrardes o documento, por favor, me avisai.",
+  },
+  {
+    "en-US": "I hope he arrives in time for the meeting.",
+    "pt-BR": "Tomara que ele chegue a tempo para o encontro.",
+  },
+  {
+    "en-US": "He had taken the book before leaving",
+    "pt-BR": "Ele tomara o livro antes de sair",
+  },
+  {
+    "en-US": "I will go to the supermarket if I have time",
+    "pt-BR": "Eu vou ao supermercado se eu tiver tempo.",
+  },
+  {
+    "en-US": "If you talk to Maria, tell her to call me.",
+    "pt-BR": "Se você falar com a Maria, diga-lhe para me ligar.",
+  },
 ];
