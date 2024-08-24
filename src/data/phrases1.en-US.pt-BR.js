@@ -5631,4 +5631,97 @@ export const phrases = [
     "en-US": "Did you use to take the subway to work every day?",
     "pt-BR": "Você pegava o metrô para o trabalho todos os dias?",
   },
+  {
+    "en-US": "Tomorrow, I will make a decision about the project.",
+    "pt-BR": "Amanhã, eu tomarei uma decisão sobre o projeto.",
+  },
+  {
+    "en-US": "While they were returning home, they were discussing the movie.",
+    "pt-BR": "Enquanto eles voltavam para casa, estavam discutindo o filme.",
+  },
+  {
+    "en-US": "He is taking the dog for a walk now.",
+    "pt-BR": "Ele está levando o cachorro para passear agora.",
+  },
+  {
+    "en-US": "We gave the news to the team yesterday afternoon.",
+    "pt-BR": "Nós demos a notícia para a equipe ontem à tarde.",
+  },
+  {
+    "en-US": "She will bring the documents when necessary.",
+    "pt-BR": "Ela trará os documentos quando for necessário.",
+  },
+  {
+    "en-US": "I left the keys on the table before leaving the house.",
+    "pt-BR": "Eu deixei as chaves na mesa antes de sair de casa.",
+  },
+  {
+    "en-US": "They will take the bus to the city tomorrow morning.",
+    "pt-BR": "Eles pegarão o ônibus para a cidade amanhã de manhã.",
+  },
+  {
+    "en-US": "Tomorrow, we will return home earlier.",
+    "pt-BR": "Amanhã, nós voltaremos para casa mais cedo.",
+  },
+  {
+    "en-US":
+      "While he was taking the medicine, he was reading the instructions.",
+    "pt-BR": "Enquanto ele estava tomando o remédio, lia as instruções.",
+  },
+  {
+    "en-US": "They take their children to the park every Saturday.",
+    "pt-BR": "Eles levam os filhos ao parque todos os sábados.",
+  },
+  {
+    "en-US": "Today, I am giving a lecture at the university.",
+    "pt-BR": "Hoje, eu estou dando uma palestra na universidade.",
+  },
+  {
+    "en-US": "She brought the food for dinner when she got home.",
+    "pt-BR": "Ela trouxe a comida para o jantar quando chegou em casa.",
+  },
+  {
+    "en-US": "They are leaving the door open while they are leaving.",
+    "pt-BR": "Eles estão deixando a porta aberta enquanto estão saindo.",
+  },
+  {
+    "en-US": "We will pick up the luggage at the airport tomorrow night.",
+    "pt-BR": "Nós pegaremos as malas no aeroporto amanhã à noite.",
+  },
+  {
+    "en-US": "I drink coffee every morning.",
+    "pt-BR": "Eu tomo café todas as manhãs.",
+  },
+  {
+    "en-US": "They came back home earlier yesterday.",
+    "pt-BR": "Eles voltaram para casa mais cedo ontem.",
+  },
+  {
+    "en-US": "She takes the kids to school every day.",
+    "pt-BR": "Ela leva os filhos à escola todos os dias.",
+  },
+  {
+    "en-US": "We gave the gift to the birthday person.",
+    "pt-BR": "Nós demos o presente ao aniversariante.",
+  },
+  {
+    "en-US": "Do you bring the groceries to the kitchen now?",
+    "pt-BR": "Você traz as compras para a cozinha agora?",
+  },
+  {
+    "en-US": "They left the keys on the table before leaving.",
+    "pt-BR": "Eles deixaram as chaves na mesa antes de sair.",
+  },
+  {
+    "en-US": "Yesterday, I took the wrong bus.",
+    "pt-BR": "Ontem, eu peguei o ônibus errado.",
+  },
+  {
+    "en-US": "They put the suitcases in the car before leaving.",
+    "pt-BR": "Eles botaram as malas no carro antes de partir.",
+  },
+  {
+    "en-US": "While I am playing the piano, my brother was singing.",
+    "pt-BR": "Enquanto eu estou tocando piano, meu irmão cantava.",
+  },
 ];
