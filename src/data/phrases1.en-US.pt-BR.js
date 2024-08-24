@@ -5536,4 +5536,63 @@ export const phrases = [
     "en-US": "We used to take the bus to school every morning.",
     "pt-BR": "Nós pegávamos o ônibus para a escola todas as manhãs.",
   },
+  {
+    "en-US": "They made an important decision last night.",
+    "pt-BR": "Eles tomaram uma decisão importante ontem à noite.",
+  },
+  {
+    "en-US": "When you returned from the trip, we were already here.",
+    "pt-BR": "Quando você voltou da viagem, nós já estávamos aqui.",
+  },
+  {
+    "en-US":
+      "She took the umbrella because it looked like it was going to rain.",
+    "pt-BR": "Ela levou o guarda-chuva porque parecia que ia chover.",
+  },
+  {
+    "en-US": "We gave a special gift to the teacher in the last class.",
+    "pt-BR": "Nós demos um presente especial para o professor na última aula.",
+  },
+  {
+    "en-US": "They brought the suitcases when the taxi arrived.",
+    "pt-BR": "Eles trouxeram as malas quando o táxi chegou.",
+  },
+  {
+    "en-US": "I left a note on the table before leaving.",
+    "pt-BR": "Eu deixei um bilhete na mesa antes de sair.",
+  },
+  {
+    "en-US": "He grabbed the last apple from the basket yesterday.",
+    "pt-BR": "Ele pegou a última maçã da cesta ontem.",
+  },
+  {
+    "en-US": "I always used to have coffee with my friends on Sunday mornings.",
+    "pt-BR": "Eu sempre tomava café com meus amigos nas manhãs de domingo.",
+  },
+  {
+    "en-US": "Yesterday, she returned home earlier than usual.",
+    "pt-BR": "Ontem, ela voltou para casa mais cedo do que o habitual.",
+  },
+  {
+    "en-US": "While they were carrying the boxes, it started to rain.",
+    "pt-BR": "Enquanto eles levavam as caixas, começou a chover.",
+  },
+  {
+    "en-US":
+      "At that time, we used to pay attention to every detail of the project.",
+    "pt-BR": "Naquela época, nós dávamos atenção a cada detalhe do projeto.",
+  },
+  {
+    "en-US": "They used to bring snacks every day when we were kids.",
+    "pt-BR": "Eles traziam o lanche todos os dias quando éramos crianças.",
+  },
+  {
+    "en-US":
+      "She used to leave the window open during the night, and it was cold.",
+    "pt-BR": "Ela deixava a janela aberta durante a noite, e fez frio.",
+  },
+  {
+    "en-US": "He took the wrong bus that morning.",
+    "pt-BR": "Ele pegou o ônibus errado naquela manhã.",
+  },
 ];
