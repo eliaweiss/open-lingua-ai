@@ -5506,4 +5506,34 @@ export const phrases = [
     "en-US": "When we were young, they were always happy",
     "pt-BR": "Quando éramos jovens, eles estavam sempre felizes",
   },
+  {
+    "en-US": "I used to drink coffee every day when I was a student.",
+    "pt-BR": "Eu tomava um café todos os dias quando era estudante.",
+  },
+  {
+    "en-US": "When I was a child, my mother always came back early from work.",
+    "pt-BR":
+      "Quando eu era criança, minha mãe sempre voltava cedo do trabalho.",
+  },
+  {
+    "en-US": "They used to take the dog to the park every Sunday.",
+    "pt-BR": "Eles levavam o cachorro ao parque todos os domingos.",
+  },
+  {
+    "en-US":
+      "At that time, my grandfather used to tell good stories before bed.",
+    "pt-BR": "Naquela época, meu avô dava boas histórias antes de dormir.",
+  },
+  {
+    "en-US": "You used to bring a gift to the friend's birthday.",
+    "pt-BR": "Você trazia um presente para o aniversário do amigo.",
+  },
+  {
+    "en-US": "She used to leave the car in the garage during the week.",
+    "pt-BR": "Ela deixava o carro na garagem durante a semana.",
+  },
+  {
+    "en-US": "We used to take the bus to school every morning.",
+    "pt-BR": "Nós pegávamos o ônibus para a escola todas as manhãs.",
+  },
 ];
