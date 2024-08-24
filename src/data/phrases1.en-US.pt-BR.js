@@ -5595,4 +5595,40 @@ export const phrases = [
     "en-US": "He took the wrong bus that morning.",
     "pt-BR": "Ele pegou o ônibus errado naquela manhã.",
   },
+  {
+    "en-US": "I always have a coffee before starting work.",
+    "pt-BR": "Eu sempre tomo um café antes de começar a trabalhar.",
+  },
+  {
+    "en-US": "Yesterday, they returned late from the party.",
+    "pt-BR": "Ontem, eles voltaram tarde da festa.",
+  },
+  {
+    "en-US": "We bring the documents to the office every day.",
+    "pt-BR": "Nós levamos os documentos para o escritório todos os dias.",
+  },
+  {
+    "en-US": "We used to bring the documents to the office every day.",
+    "pt-BR": "Nós levávamos os documentos para o escritório todos os dias.",
+  },
+  {
+    "en-US": "She used to teach English classes every week.",
+    "pt-BR": "Ela dava aulas de inglês toda semana.",
+  },
+  {
+    "en-US": "This morning, I brought the report to the meeting.",
+    "pt-BR": "Hoje de manhã, eu trouxe o relatório para a reunião.",
+  },
+  {
+    "en-US": "They left the key at the reception last night.",
+    "pt-BR": "Eles deixaram a chave na recepção ontem à noite.",
+  },
+  {
+    "en-US": "Do you take the subway to work every day?",
+    "pt-BR": "Você pega o metrô para o trabalho todos os dias?",
+  },
+  {
+    "en-US": "Did you use to take the subway to work every day?",
+    "pt-BR": "Você pegava o metrô para o trabalho todos os dias?",
+  },
 ];
