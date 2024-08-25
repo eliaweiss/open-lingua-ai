@@ -5724,4 +5724,47 @@ export const phrases = [
     "en-US": "While I am playing the piano, my brother was singing.",
     "pt-BR": "Enquanto eu estou tocando piano, meu irmão cantava.",
   },
+  {
+    "en-US": "I will take pictures during the trip to keep the memories.",
+    "pt-BR": "Eu vou tirar fotos durante a viagem para guardar as lembranças.",
+  },
+  {
+    "en-US": "I need to get my passport before traveling abroad.",
+    "pt-BR": "Preciso tirar o passaporte antes de viajar para o exterior.",
+  },
+  {
+    "en-US": "She always gets good grades in school.",
+    "pt-BR": "Ela sempre tira boas notas na escola.",
+  },
+  {
+    "en-US": "Shall we take a nap before dinner?",
+    "pt-BR": "Vamos tirar uma soneca antes do jantar?",
+  },
+  {
+    "en-US": "He took off his coat because he was hot.",
+    "pt-BR": "Ele tirou o casaco porque estava com calor.",
+  },
+  {
+    "en-US": "Can you take out the trash before you leave, please?",
+    "pt-BR": "Você pode tirar o lixo antes de sair, por favor?",
+  },
+  {
+    "en-US": "The team managed to draw in the end of the game.",
+    "pt-BR": "O time conseguiu tirar um empate no final do jogo.",
+  },
+  {
+    "en-US": "He needed to take the car out of the garage to fix it.",
+    "pt-BR": "Ele precisou tirar o carro da garagem para consertar.",
+  },
+  {
+    "en-US": "I will take a day off to rest and recharge my energy.",
+    "pt-BR":
+      "Vou tirar um dia de folga para descansar e recarregar as energias.",
+  },
+  {
+    "en-US":
+      "Before starting to paint, it is necessary to remove the old paint from the wall.",
+    "pt-BR":
+      "Antes de começar a pintar, é preciso tirar a tinta velha da parede.",
+  },
 ];
