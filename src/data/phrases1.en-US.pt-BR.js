@@ -5767,4 +5767,45 @@ export const phrases = [
     "pt-BR":
       "Antes de começar a pintar, é preciso tirar a tinta velha da parede.",
   },
+  {
+    "en-US": "I drink coffee every day before leaving the house.",
+    "pt-BR": "Eu tomo café todos os dias antes de sair de casa.",
+  },
+  {
+    "en-US": "She took the bus at 7 AM yesterday.",
+    "pt-BR": "Ela pegou o ônibus às 7 da manhã ontem.",
+  },
+  {
+    "en-US": "We had caution when crossing the street.",
+    "pt-BR": "Nós tivemos cuidado ao atravessar a rua.",
+  },
+  {
+    "en-US": "Tomorrow, he will take the package to you.",
+    "pt-BR": "Amanhã, ele levará o pacote para você.",
+  },
+  {
+    "en-US": "They are doing the homework now.",
+    "pt-BR": "Eles estão fazendo a lição de casa agora.",
+  },
+  {
+    "en-US": "When I was a child, I always drank orange juice at breakfast.",
+    "pt-BR":
+      "Quando criança, eu sempre tomava suco de laranja no café da manhã.",
+  },
+  {
+    "en-US": "Have you already had the new phone?",
+    "pt-BR": "Você já teve o novo telefone?",
+  },
+  {
+    "en-US": "She will take the luggage for the trip next week.",
+    "pt-BR": "Ela pegará as malas para a viagem na semana que vem.",
+  },
+  {
+    "en-US": "We have dinner while watching TV.",
+    "pt-BR": "Nós tomamos o jantar enquanto assistimos TV.",
+  },
+  {
+    "en-US": "I have time to finish the report.",
+    "pt-BR": "Eu tenho tempo para terminar o relatório.",
+  },
 ];
