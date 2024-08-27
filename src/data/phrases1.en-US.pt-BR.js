@@ -5808,4 +5808,44 @@ export const phrases = [
     "en-US": "I have time to finish the report.",
     "pt-BR": "Eu tenho tempo para terminar o relatório.",
   },
+  {
+    "en-US": "When I was in the park, I saw someone I knew.",
+    "pt-BR": "Quando eu estava no parque, vi uma pessoa conhecida.",
+  },
+  {
+    "en-US": "They did the task before leaving the house.",
+    "pt-BR": "Eles fizeram a tarefa antes de sair de casa.",
+  },
+  {
+    "en-US": "Tomorrow, we will take (something) to the beach very early.",
+    "pt-BR": "Amanhã, nós levaremos para a praia bem cedo.",
+  },
+  {
+    "en-US": "I always take a book with me when I travel.",
+    "pt-BR": "Eu sempre levo um livro comigo quando viajo.",
+  },
+  {
+    "en-US": "They are watching the soccer game on TV now.",
+    "pt-BR": "Eles assistem o jogo de futebol na TV agora.",
+  },
+  {
+    "en-US": "Yesterday, I took the wrong bus and got lost.",
+    "pt-BR": "Ontem, eu peguei o ônibus errado e me perdi.",
+  },
+  {
+    "en-US": "While he was drinking coffee, I was preparing breakfast.",
+    "pt-BR": "Enquanto ele tomava café, eu preparava o café da manhã.",
+  },
+  {
+    "en-US": "They took the gift to the birthday party.",
+    "pt-BR": "Eles levaram o presente para a festa de aniversário.",
+  },
+  {
+    "en-US": "I used to stay at home until late because I was tired.",
+    "pt-BR": "Eu ficava em casa até tarde porque estava cansado.",
+  },
+  {
+    "en-US": "Tomorrow, we will have more time to study.",
+    "pt-BR": "Amanhã, nós teremos mais tempo para estudar.",
+  },
 ];
