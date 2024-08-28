@@ -5856,4 +5856,12 @@ export const phrases = [
     "en-US": "high degree",
     "pt-BR": "puxado o grau",
   },
+  {
+    "en-US": "from now on",
+    "pt-BR": "partir de agora",
+  },
+  {
+    "en-US": "gave me the foot",
+    "pt-BR": "deu um pe",
+  },
 ];
