@@ -5848,4 +5848,8 @@ export const phrases = [
     "en-US": "Tomorrow, we will have more time to study.",
     "pt-BR": "Amanhã, nós teremos mais tempo para estudar.",
   },
+  {
+    "en-US": "The level of weirdness in your wedding is intense, isn't it?",
+    "pt-BR": "Tá puxado o grau de esquisitice desse teu casamento, ein?",
+  },
 ];
