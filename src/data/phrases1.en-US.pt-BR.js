@@ -5852,4 +5852,8 @@ export const phrases = [
     "en-US": "The level of weirdness in your wedding is intense, isn't it?",
     "pt-BR": "Tá puxado o grau de esquisitice desse teu casamento, ein?",
   },
+  {
+    "en-US": "high degree",
+    "pt-BR": "puxado o grau",
+  },
 ];
