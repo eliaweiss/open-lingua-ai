@@ -5864,4 +5864,19 @@ export const phrases = [
     "en-US": "gave me the foot",
     "pt-BR": "deu um pe",
   },
+  {
+    "en-US":
+      "If I had been more patient, I would have handled the situation better.",
+    "pt-BR": "Se eu fosse mais paciente, teria lidado melhor com a situação.",
+  },
+  {
+    "en-US": "When they are older, they will understand what happened",
+    "pt-BR": "Quando eles forem mais velhos, entenderão o que aconteceu",
+  },
+  {
+    "en-US":
+      "If you are available tomorrow, we could meet to discuss the project",
+    "pt-BR":
+      "Se você estiver disponível amanhã, poderíamos nos encontrar para discutir o projeto",
+  },
 ];
