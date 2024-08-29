@@ -5921,4 +5921,168 @@ export const phrases = [
     "en-US": "She always drinks coffee before starting work.",
     "pt-BR": "Ela sempre toma café antes de começar a trabalhar.",
   },
+  {
+    "en-US": "from now on",
+    "pt-BR": "de agora em diante.",
+  },
+  {
+    "en-US": "It's raining cats and dogs.",
+    "pt-BR": "Está chovendo canivetes.",
+  },
+  {
+    "en-US": "I’m starving.",
+    "pt-BR": "Estou morrendo de fome.",
+  },
+  {
+    "en-US": "He is a pain in the neck.",
+    "pt-BR": "Ele é um saco.",
+  },
+  {
+    "en-US": "She’s very busy.",
+    "pt-BR": "Ela está com a cabeça cheia.",
+  },
+  {
+    "en-US": "Don’t beat around the bush.",
+    "pt-BR": "Não fique enrolando.",
+  },
+  {
+    "en-US": "He’s broke.",
+    "pt-BR": "Ele está quebrado.",
+  },
+  {
+    "en-US": "She’s a perfectionist.",
+    "pt-BR": "Ela é uma meticulosa.",
+  },
+  {
+    "en-US": "I’m in a hurry.",
+    "pt-BR": "Estou com pressa.",
+  },
+  {
+    "en-US": "They hit it off.",
+    "pt-BR": "Eles se deram bem.",
+  },
+  {
+    "en-US": "He’s in hot water.",
+    "pt-BR": "Ele está encrencado.",
+  },
+  {
+    "en-US": "I’m all ears.",
+    "pt-BR": "Estou atento.",
+  },
+  {
+    "en-US": "It’s a piece of cake.",
+    "pt-BR": "É fácil demais.",
+  },
+  {
+    "en-US": "She’s in a good mood.",
+    "pt-BR": "Ela está de bom humor.",
+  },
+  {
+    "en-US": "Let’s call it a day.",
+    "pt-BR": "Vamos parar por aqui.",
+  },
+  {
+    "en-US": "He’s a good-for-nothing.",
+    "pt-BR": "Ele é um vagabundo.",
+  },
+  {
+    "en-US": "I’m on the fence.",
+    "pt-BR": "Estou em cima do muro.",
+  },
+  {
+    "en-US": "She’s over the moon.",
+    "pt-BR": "Ela está nas nuvens.",
+  },
+  {
+    "en-US": "He’s feeling under the weather.",
+    "pt-BR": "Ele está se sentindo mal.",
+  },
+  {
+    "en-US": "That’s the last straw.",
+    "pt-BR": "Essa foi a gota d'água.",
+  },
+  {
+    "en-US": "He’s in the same boat.",
+    "pt-BR": "Ele está no mesmo barco.",
+  },
+  {
+    "en-US": "I’m going to hit the hay.",
+    "pt-BR": "Vou cair na cama.",
+  },
+  {
+    "en-US": "It’s not my cup of tea.",
+    "pt-BR": "Não é a minha praia.",
+  },
+  {
+    "en-US": "She’s a bookworm.",
+    "pt-BR": "Ela é uma rato de biblioteca.",
+  },
+  {
+    "en-US": "He’s a night owl.",
+    "pt-BR": "Ele é um coruja.",
+  },
+  {
+    "en-US": "That’s a real bummer.",
+    "pt-BR": "Isso é um péssimo negócio.",
+  },
+  {
+    "en-US": "She’s up in arms.",
+    "pt-BR": "Ela está furiosa.",
+  },
+  {
+    "en-US": "He’s got a sweet tooth.",
+    "pt-BR": "Ele tem um dente doce.",
+  },
+  {
+    "en-US": "I’m on cloud nine.",
+    "pt-BR": "Estou nas nuvens.",
+  },
+  {
+    "en-US": "It’s a win-win situation.",
+    "pt-BR": "É uma situação vantajosa para ambos.",
+  },
+  {
+    "en-US": "He’s a Jack of all trades.",
+    "pt-BR": "Ele é um homem de muitos talentos.",
+  },
+  {
+    "en-US": "He’s got a short fuse.",
+    "pt-BR": "Ele tem pavio curto."
+  },
+  {
+    "en-US": "She’s always in the spotlight.",
+    "pt-BR": "Ela está sempre no centro das atenções."
+  },
+  {
+    "en-US": "That’s the icing on the cake.",
+    "pt-BR": "Isso é a cereja no bolo."
+  },
+  {
+    "en-US": "He’s on thin ice.",
+    "pt-BR": "Ele está andando em campo minado."
+  },
+  {
+    "en-US": "She’s been burning the midnight oil.",
+    "pt-BR": "Ela tem trabalhado até tarde."
+  },
+  {
+    "en-US": "He’s a fast learner.",
+    "pt-BR": "Ele aprende rápido."
+  },
+  {
+    "en-US": "It’s like looking for a needle in a haystack.",
+    "pt-BR": "É como procurar agulha em palheiro."
+  },
+  {
+    "en-US": "I’m feeling under the weather.",
+    "pt-BR": "Estou me sentindo mal."
+  },
+  {
+    "en-US": "He’s got cold feet.",
+    "pt-BR": "Ele está com medo de se comprometer."
+  },
+  {
+    "en-US": "She’s walking on air.",
+    "pt-BR": "Ela está nas nuvens."
+  }
 ];
