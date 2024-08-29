@@ -5879,4 +5879,46 @@ export const phrases = [
     "pt-BR":
       "Se você estiver disponível amanhã, poderíamos nos encontrar para discutir o projeto",
   },
+  {
+    "en-US":
+      "He took the car to the garage because it was making a strange noise.",
+    "pt-BR":
+      "Ele levou o carro para a oficina porque estava fazendo um barulho estranho.",
+  },
+  {
+    "en-US": "We made an important decision during yesterday's meeting.",
+    "pt-BR": "Nós tomamos uma decisão importante durante a reunião de ontem.",
+  },
+  {
+    "en-US": "She caught a cold after going out in the rain without a coat.",
+    "pt-BR": "Ela pegou um resfriado depois de sair na chuva sem casaco.",
+  },
+  {
+    "en-US": "We took an important decision during the meeting yesterday.",
+    "pt-BR": "Nós tomamos uma decisão importante durante a reunião de ontem.",
+  },
+  {
+    "en-US": "We always have a meeting on the first Monday of the month.",
+    "pt-BR": "Nós sempre temos uma reunião na primeira segunda-feira do mês.",
+  },
+  {
+    "en-US": "They need to pick up the keys at the reception before going up.",
+    "pt-BR": "Eles precisam pegar as chaves na recepção antes de subir.",
+  },
+  {
+    "en-US": "She made the decision to change jobs last week.",
+    "pt-BR": "Ela tomou a decisão de mudar de emprego na semana passada.",
+  },
+  {
+    "en-US": "We take our children to the park every Sunday.",
+    "pt-BR": "Nós levamos nossos filhos ao parque todos os domingos.",
+  },
+  {
+    "en-US": "They took the wrong bus and arrived late.",
+    "pt-BR": "Eles pegaram o ônibus errado e chegaram atrasados.",
+  },
+  {
+    "en-US": "She always drinks coffee before starting work.",
+    "pt-BR": "Ela sempre toma café antes de começar a trabalhar.",
+  },
 ];
