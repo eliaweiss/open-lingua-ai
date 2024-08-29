@@ -6047,42 +6047,96 @@ export const phrases = [
   },
   {
     "en-US": "He’s got a short fuse.",
-    "pt-BR": "Ele tem pavio curto."
+    "pt-BR": "Ele tem pavio curto.",
   },
   {
     "en-US": "She’s always in the spotlight.",
-    "pt-BR": "Ela está sempre no centro das atenções."
+    "pt-BR": "Ela está sempre no centro das atenções.",
   },
   {
     "en-US": "That’s the icing on the cake.",
-    "pt-BR": "Isso é a cereja no bolo."
+    "pt-BR": "Isso é a cereja no bolo.",
   },
   {
     "en-US": "He’s on thin ice.",
-    "pt-BR": "Ele está andando em campo minado."
+    "pt-BR": "Ele está andando em campo minado.",
   },
   {
     "en-US": "She’s been burning the midnight oil.",
-    "pt-BR": "Ela tem trabalhado até tarde."
+    "pt-BR": "Ela tem trabalhado até tarde.",
   },
   {
     "en-US": "He’s a fast learner.",
-    "pt-BR": "Ele aprende rápido."
+    "pt-BR": "Ele aprende rápido.",
   },
   {
     "en-US": "It’s like looking for a needle in a haystack.",
-    "pt-BR": "É como procurar agulha em palheiro."
+    "pt-BR": "É como procurar agulha em palheiro.",
   },
   {
     "en-US": "I’m feeling under the weather.",
-    "pt-BR": "Estou me sentindo mal."
+    "pt-BR": "Estou me sentindo mal.",
   },
   {
     "en-US": "He’s got cold feet.",
-    "pt-BR": "Ele está com medo de se comprometer."
+    "pt-BR": "Ele está com medo de se comprometer.",
   },
   {
     "en-US": "She’s walking on air.",
-    "pt-BR": "Ela está nas nuvens."
-  }
+    "pt-BR": "Ela está nas nuvens.",
+  },
+  {
+    "en-US": "What do they do to stay in shape?",
+    "pt-BR": "O que eles fazem para manter a forma física?",
+  },
+  {
+    "en-US": "She needs help from her friends.",
+    "pt-BR": "Ela precisa de ajuda dos amigos.",
+  },
+  {
+    "en-US": "What is his hobby during free time?",
+    "pt-BR": "Qual é o hobby dele durante o tempo livre?",
+  },
+  {
+    "en-US": "What is her goal with the new course she started?",
+    "pt-BR": "Qual é o objetivo dela com o novo curso que começou?",
+  },
+  {
+    "en-US": "Her goal includes becoming a boss and manager.",
+    "pt-BR": "O objetivo dela inclui se tornar chefe e gerente.",
+  },
+  {
+    "en-US": "What does he do to relax after a tiring day?",
+    "pt-BR": "O que ele faz para se relaxar depois de um dia cansativo?",
+  },
+  {
+    "en-US": "How does she usually spend her weekends?",
+    "pt-BR": "Como ela costuma passar os fins de semana?",
+  },
+  {
+    "en-US": "What do they do to stay in shape?",
+    "pt-BR": "O que eles fazem para manter a forma física?",
+  },
+  {
+    "en-US": "What does she need to finish the project on time?",
+    "pt-BR": "O que ela precisa para terminar o projeto a tempo?",
+  },
+  {
+    "en-US": "What is his hobby during free time?",
+    "pt-BR": "Qual é o hobby dele durante o tempo livre?",
+  },
+  {
+    "en-US":
+      "Her hobbies include playing the guitar and practicing yoga, among many others.",
+    "pt-BR":
+      "Os hobbies dela incluem tocar violão e praticar yoga, além de muitas outras coisas.",
+  },
+  {
+    "en-US": "What is her goal with the new course she started?",
+    "pt-BR": "Qual é o objetivo dela com o novo curso que começou?",
+  },
+  {
+    "en-US": "Her goal includes becoming a boss and manager.",
+    "pt-BR": "O objetivo dela inclui se tornar chefe e gerente.",
+  },
 ];
