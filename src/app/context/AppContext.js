@@ -3,18 +3,10 @@ import useAppStore from "../store/appStore";
 import { initializeState } from "../utils/initializeState";
 import {
   getLanguagesFromFileName,
-  getLanguageName,
 } from "../utils/languageUtils";
-import { myLocalStorage, storage } from "../utils/storageUtils";
-import { todayStartTime, isSameDay } from "../utils/dateUtils";
-import { getUniquePhrases, setPhrasesTargetSrc } from "../utils/phraseUtils";
-import { randomPermutation } from "../helpers";
-import { BEGINNER_READ_SETTINGS } from "../playSentences/components/PlaySentenceSettings";
-import loadPhraseFromDataFolder from "./loadPhraseFromDataFolder";
-import { deepCopy } from "../utils/deepCopy";
 
-// Add this line to define STORAGE_VERSION
-const STORAGE_VERSION = "1.0"; // You can adjust this version as needed
+import { randomPermutation } from "../helpers";
+
 
 const AppContext = createContext();
 
@@ -31,7 +23,6 @@ export const AppProvider = ({ children }) => {
     locale,
     setLocale,
     appInitFlag,
-    setAppInitFlag,
     phraseRange,
     setPhraseRange,
     isMenuOpen,
@@ -47,23 +38,18 @@ export const AppProvider = ({ children }) => {
     phraseTranslation,
     setPhraseTranslation,
     availablePhraseTranslation,
-    setAvailablePhraseTranslation,
     sourceLanguage,
     setSourceLanguage,
     targetLanguage,
     setTargetLanguage,
     sourceLanguageRate,
-    setSourceLanguageRate,
     targetLanguageRate,
-    setTargetLanguageRate,
     isSrcRtl,
     setIsSrcRtl,
     isTargetRtl,
     setIsTargetRtl,
     dailyCount,
-    setDailyCount,
     currentPhraseIndex,
-    setCurrentPhraseIndex,
     currentPhrase,
     setCurrentPhrase,
     toggleTheme,
