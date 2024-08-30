@@ -1,14 +1,13 @@
 import { Bars3Icon } from "@heroicons/react/24/outline"; // Correct import syntax for v2
-import { useAppContext } from "../context/AppContext";
 import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 import { useTranslation } from "../i18n/useTranslation";
+import useAppStore from "../store/appStore";
 
 export function AppHeader({}) {
   const t = useTranslation(); // Use the translation hook
 
-  const { theme, isMenuOpen, setIsMenuOpen, dailyCount, toggleTheme } =
-    useAppContext();
+  const { isMenuOpen, setIsMenuOpen, dailyCount, toggleTheme } = useAppStore();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

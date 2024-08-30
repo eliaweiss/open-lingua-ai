@@ -118,10 +118,10 @@ const useAppStore = create((set, get) => ({
       phrases,
       setCurrentPhraseIndex,
       setCurrentPhrase,
+      dailyCount,
       setDailyCount,
       setPhrases,
       getPhrasesInRange,
-
     } = get();
     let nextIndex = currentPhraseIndex + 1;
     if (nextIndex >= phrases.length) {
@@ -135,7 +135,7 @@ const useAppStore = create((set, get) => ({
     }
 
     setCurrentPhraseIndex(nextIndex);
-    setDailyCount((count) => count + 1);
+    setDailyCount(dailyCount + 1);
     return nextIndex;
   },
 
