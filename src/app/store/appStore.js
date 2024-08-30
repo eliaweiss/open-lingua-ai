@@ -34,7 +34,7 @@ const useAppStore = create((set, get) => ({
   phrases: [],
   setPhrases: (phrases) => {
     const uniquePhrases = getUniquePhrases(phrases);
-    console.log("setPhrases", uniquePhrases.length);
+    // console.log("setPhrases", uniquePhrases.length);
     set({ phrases: uniquePhrases });
   },
 
@@ -121,6 +121,7 @@ const useAppStore = create((set, get) => ({
       setDailyCount,
       setPhrases,
       getPhrasesInRange,
+
     } = get();
     let nextIndex = currentPhraseIndex + 1;
     if (nextIndex >= phrases.length) {

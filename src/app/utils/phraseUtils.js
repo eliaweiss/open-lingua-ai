@@ -1,8 +1,18 @@
+import useAppStore from "../store/appStore";
+
 export const getUniquePhrases = (phrases) => {
-  return phrases.filter(
+  const { maxNumberOfWordsInPhrase } = useAppStore.getState();
+  let newPhrases = phrases;
+  if (maxNumberOfWordsInPhrase) {
+    newPhrases = newPhrases.filter(
+      (phrase) => phrase.target.split(" ").length <= maxNumberOfWordsInPhrase
+    );
+  }
+  newPhrases = newPhrases.filter(
     (phrase, index, self) =>
       index === self.findIndex((t) => t.target === phrase.target)
   );
+  return newPhrases;
 };
 
 export const setPhrasesTargetSrc = (
