@@ -17,43 +17,22 @@ const RTL_LANG = [LANGUAGE.IL_HE];
 
 export const AppProvider = ({ children }) => {
   const {
-    locale,
-    setLocale,
     appInitFlag,
     phraseRange,
-    setPhraseRange,
-    isMenuOpen,
-    setIsMenuOpen,
-    theme,
     setTheme,
     allPhrases,
-    setAllPhrases,
     phrases,
     setPhrases,
-    readSettingsArray,
-    setReadSettingsArray,
     phraseTranslation,
-    setPhraseTranslation,
-    availablePhraseTranslation,
     sourceLanguage,
     setSourceLanguage,
     targetLanguage,
     setTargetLanguage,
-    sourceLanguageRate,
-    targetLanguageRate,
-    isSrcRtl,
     setIsSrcRtl,
-    isTargetRtl,
     setIsTargetRtl,
-    dailyCount,
     currentPhraseIndex,
-    currentPhrase,
     setCurrentPhrase,
-    toggleTheme,
-    handleReverseLang,
-    increasePhraseIndex,
     getPhrasesInRange,
-    getLanguageName,
     currentPhraseIndexRef,
     updateCurrentPhraseIndexRef,
   } = useAppStore();
@@ -134,44 +113,7 @@ export const AppProvider = ({ children }) => {
   }, [phrases]);
 
   return (
-    <AppContext.Provider
-      value={{
-        sourceLanguage,
-        targetLanguage,
-        sourceLanguageRate,
-        targetLanguageRate,
-        isSrcRtl,
-        isTargetRtl,
-        phrases,
-        isMenuOpen,
-        setIsMenuOpen,
-        theme,
-        toggleTheme,
-        dailyCount,
-        phraseRange,
-        setPhraseRange,
-        getPhrasesInRange,
-        increasePhraseIndex,
-        currentPhraseIndex,
-        currentPhrase,
-        allPhrases,
-        readSettingsArray,
-        setReadSettingsArray,
-        getLanguageName,
-        locale,
-        setLocale,
-        availablePhraseTranslation,
-        phraseTranslation,
-        setPhraseTranslation,
-        setTargetLanguage,
-        setSourceLanguage,
-        handleReverseLang,
-        setAllPhrases,
-        currentPhraseIndexRef,
-      }}
-    >
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={useAppStore()}>{children}</AppContext.Provider>
   );
 };
 
