@@ -39,6 +39,7 @@ export const AppProvider = ({ children }) => {
     locale,
     handleReverseLang,
     maxNumberOfWordsInPhrase,
+    dailyCount,
   } = useAppStore();
 
   const initFlagRef = useRef(false);
@@ -156,6 +157,11 @@ export const AppProvider = ({ children }) => {
     if (!appInitFlag) return;
     storage.set("phraseRange", phraseRange);
   }, [phraseRange]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("dailyCount", dailyCount);
+  }, [dailyCount]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
