@@ -95,16 +95,22 @@ const useAppStore = create((set, get) => ({
       setCurrentPhrase,
       setDailyCount,
       setPhrases,
+      getPhrasesInRange,
     } = get();
     let nextIndex = currentPhraseIndex + 1;
     if (nextIndex >= phrases.length) {
       nextIndex = 0;
-      setPhrases(randomPermutation(phrases)); // Now this should work
+      setPhrases(randomPermutation(getPhrasesInRange())); // Use getPhrasesInRange here
     }
     setCurrentPhraseIndex(nextIndex);
     setCurrentPhrase(phrases[nextIndex]);
     setDailyCount((count) => count + 1);
     return nextIndex;
+  },
+
+  getPhrasesInRange: () => {
+    const { allPhrases, phraseRange } = get();
+    return allPhrases.slice(phraseRange[0], phraseRange[1] + 1);
   },
 
   // ... other functions that directly manipulate state

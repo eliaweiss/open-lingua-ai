@@ -68,6 +68,7 @@ export const AppProvider = ({ children }) => {
     toggleTheme,
     handleReverseLang,
     increasePhraseIndex,
+    getPhrasesInRange,
   } = useAppStore();
 
   const currentPhraseIndexRef = useRef(currentPhraseIndex);
@@ -233,9 +234,8 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     if (!appInitFlag) return;
-    // debugger;
     setPhrases(randomPermutation(getPhrasesInRange()));
-  }, [allPhrases, phraseRange, appInitFlag]);
+  }, [allPhrases, phraseRange, appInitFlag, getPhrasesInRange]);
 
   useEffect(() => {
     currentPhraseIndexRef.current = currentPhraseIndex;
@@ -245,9 +245,6 @@ export const AppProvider = ({ children }) => {
     if (!phrases || !phrases.length) return;
     setCurrentPhrase(phrases[currentPhraseIndex]);
   }, [phrases]);
-
-  const getPhrasesInRange = () =>
-    allPhrases.slice(phraseRange[0], phraseRange[1] + 1);
 
   return (
     <AppContext.Provider
