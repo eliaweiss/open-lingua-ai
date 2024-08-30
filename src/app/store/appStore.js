@@ -41,9 +41,14 @@ const useAppStore = create((set, get) => ({
   readSettingsArray: deepCopy(BEGINNER_READ_SETTINGS),
   setReadSettingsArray: (settings) => set({ readSettingsArray: settings }),
 
+  resetPhraseRangeFlag: false,
+  setResetPhraseRangeFlag: (flag) => set({ resetPhraseRangeFlag: flag }),
+
   phraseTranslation: undefined,
-  setPhraseTranslation: (translation) =>
-    set({ phraseTranslation: translation }),
+  setPhraseTranslation: (translation, resetPhraseRangeFlag = false) => {
+    set({ phraseTranslation: translation });
+    set({ resetPhraseRangeFlag: resetPhraseRangeFlag });
+  },
 
   availablePhraseTranslation: [],
   setAvailablePhraseTranslation: (translations) =>

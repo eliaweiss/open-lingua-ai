@@ -105,7 +105,7 @@ export function SettingsUi() {
             label: phraseTranslation,
           }))}
           value={phraseTranslation}
-          onChange={(value) => setPhraseTranslation(value)}
+          onChange={(value) => setPhraseTranslation(value, true)}
         />
         <div className="">
           <div className="flex space-x-2 w-[50%] text-sm">

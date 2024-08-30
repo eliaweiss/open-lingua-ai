@@ -12,6 +12,9 @@ export const loadPhrasesTranslationFromStorage = async (
     sourceLanguage,
     setAllPhrases,
     setPhraseTranslation,
+    resetPhraseRangeFlag,
+    setResetPhraseRangeFlag,
+    setPhraseRange,
   } = useAppStore.getState();
 
   const languages =
@@ -24,5 +27,10 @@ export const loadPhrasesTranslationFromStorage = async (
     sourceLanguage
   );
   setPhraseTranslation(phraseTranslation);
-  return setAllPhrases(storedAllPhrases);
+  const phrases = setAllPhrases(storedAllPhrases);
+  if (resetPhraseRangeFlag) {
+    setPhraseRange([0, phrases.length]);
+    setResetPhraseRangeFlag(false);
+  }
+  return phrases;
 };
