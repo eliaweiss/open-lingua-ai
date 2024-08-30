@@ -415,7 +415,7 @@ export const phrases = [
   {
     "pt-BR": "Sim, aceitamos cartões de crédito e débito.",
     "en-US": "Yes, we accept credit and debit cards.",
-  },  
+  },
   ///
   {
     "pt-BR": "um dois três quatro cinco seis sete oito nove dez",
@@ -2776,66 +2776,7 @@ export const phrases = [
     "pt-BR": "O gato estava dormindo no sofá.",
     "en-US": "The cat was sleeping on the couch.",
   },
-  // {
-  //   "pt-BR":
-  //     "Em 1500, o navegador português Pedro Álvares Cabral chegou ao que hoje conhecemos como o Brasil, marcando o início da colonização portuguesa.",
-  //   "en-US":
-  //     "In 1500, the Portuguese navigator Pedro Álvares Cabral arrived at what we now know as Brazil, marking the beginning of Portuguese colonization.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A cidade de Salvador foi fundada em 1549 e tornou-se a primeira capital do Brasil, servindo como o centro administrativo da colônia por muitos anos.",
-  //   "en-US":
-  //     "The city of Salvador was founded in 1549 and became the first capital of Brazil, serving as the administrative center of the colony for many years.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Durante o século XVII, a descoberta de ouro em Minas Gerais atraiu, muitos colonos e levou ao desenvolvimento econômico significativo da região.",
-  //   "en-US":
-  //     "During the 17th century, the discovery of gold in Minas Gerais attracted many settlers and led to significant economic development in the region.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Em 1822, Dom Pedro I proclamou a independência do Brasil em relação a Portugal, tornando-se o primeiro imperador do país.",
-  //   "en-US":
-  //     "In 1822, Dom Pedro I proclaimed Brazil's independence from Portugal, becoming the country's first emperor.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A abolição da escravatura no Brasil foi oficialmente decretada pela Lei Áurea em 1888, assinada pela Princesa Isabel, encerrando séculos de exploração escravista.",
-  //   "en-US":
-  //     "The abolition of slavery in Brazil was officially decreed by the Golden Law in 1888, signed by Princess Isabel, ending centuries of enslavement.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O Brasil se tornou uma república em 1889, quando um golpe militar destituiu o imperador Dom Pedro II e estabeleceu um governo provisório.",
-  //   "en-US":
-  //     "Brazil became a republic in 1889 when a military coup deposed Emperor Dom Pedro II and established a provisional government.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Durante a década de 1930, Getúlio Vargas assumiu a presidência e instituiu o Estado Novo, um regime autoritário que durou até 1945.",
-  //   "en-US":
-  //     "During the 1930s, Getúlio Vargas took the presidency and instituted the Estado Novo, an authoritarian regime that lasted until 1945.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Em 1964, um golpe militar levou à instalação de um regime ditatorial que governou o Brasil até 1985, período marcado por repressão política e censura.",
-  //   "en-US":
-  //     "In 1964, a military coup led to the installation of a dictatorial regime that governed Brazil until 1985, a period marked by political repression and censorship.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A Constituição de 1988, conhecida como a Constituição Cidadã, marcou o retorno à democracia e estabeleceu uma série de direitos civis e sociais para os brasileiros.",
-  //   "en-US":
-  //     "The 1988 Constitution, known as the Citizen Constitution, marked the return to democracy and established a series of civil and social rights for Brazilians.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Em 2016, a presidente Dilma Rousseff foi afastada do cargo após um processo de impeachment, resultando em uma mudança significativa no cenário político do país.",
-  //   "en-US":
-  //     "In 2016, President Dilma Rousseff was removed from office after an impeachment process, resulting in a significant change in the country's political landscape.",
-  // },
+
   {
     "pt-BR":
       "No verão passado, nós passamos uma semana inteira na praia de Copacabana, aproveitando o sol e o mar.",
@@ -3387,811 +3328,874 @@ export const phrases = [
     "en-US":
       "I am considering moving to a different city to expand my professional opportunities.",
   },
-  ///
-  // {
-  //   "pt-BR":
-  //     "A globalização tem impactos profundos na economia e na cultura local.",
-  //   "en-US":
-  //     "Globalization has profound impacts on the economy and local culture.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O avanço tecnológico está transformando rapidamente a forma como trabalhamos e nos comunicamos.",
-  //   "en-US":
-  //     "Technological advancements are rapidly transforming the way we work and communicate.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "É crucial entender as nuances culturais ao negociar com parceiros internacionais.",
-  //   "en-US":
-  //     "It's crucial to understand cultural nuances when negotiating with international partners.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "As mudanças climáticas estão exigindo uma abordagem mais sustentável para o desenvolvimento urbano.",
-  //   "en-US":
-  //     "Climate change is demanding a more sustainable approach to urban development.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A pesquisa científica sobre energias renováveis está avançando a passos largos.",
-  //   "en-US":
-  //     "Scientific research on renewable energy is advancing by leaps and bounds.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O impacto da inteligência artificial no mercado de trabalho é um tema amplamente debatido.",
-  //   "en-US":
-  //     "The impact of artificial intelligence on the job market is a widely debated topic.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "As políticas públicas devem refletir as necessidades e prioridades da população.",
-  //   "en-US":
-  //     "Public policies should reflect the needs and priorities of the population.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A literatura contemporânea frequentemente explora questões sociais complexas e controversas.",
-  //   "en-US":
-  //     "Contemporary literature often explores complex and controversial social issues.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O desenvolvimento sustentável é essencial para garantir um futuro melhor para as próximas gerações.",
-  //   "en-US":
-  //     "Sustainable development is essential to ensure a better future for the coming generations.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A ética nos negócios é fundamental para construir uma reputação sólida e confiável.",
-  //   "en-US":
-  //     "Business ethics are fundamental for building a solid and trustworthy reputation.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O ensino superior deve preparar os alunos para enfrentar os desafios de um mercado globalizado.",
-  //   "en-US":
-  //     "Higher education should prepare students to face the challenges of a globalized market.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A integração de tecnologias emergentes pode revolucionar o setor da saúde.",
-  //   "en-US":
-  //     "The integration of emerging technologies could revolutionize the healthcare sector.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A diversidade no local de trabalho pode promover um ambiente mais criativo e inovador.",
-  //   "en-US":
-  //     "Diversity in the workplace can foster a more creative and innovative environment.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A preservação de culturas indígenas é uma questão importante para a identidade global.",
-  //   "en-US":
-  //     "The preservation of indigenous cultures is an important issue for global identity.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "As redes sociais desempenham um papel significativo na formação de opiniões públicas.",
-  //   "en-US":
-  //     "Social networks play a significant role in shaping public opinions.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O conceito de justiça social envolve a equidade no acesso a recursos e oportunidades.",
-  //   "en-US":
-  //     "The concept of social justice involves equity in access to resources and opportunities.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A análise de dados é uma ferramenta poderosa para tomar decisões informadas em diversos setores.",
-  //   "en-US":
-  //     "Data analysis is a powerful tool for making informed decisions across various sectors.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A filosofia da ciência examina os fundamentos e as implicações das descobertas científicas.",
-  //   "en-US":
-  //     "The philosophy of science examines the foundations and implications of scientific discoveries.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O desenvolvimento de políticas públicas eficazes requer uma compreensão profunda das questões sociais.",
-  //   "en-US":
-  //     "Developing effective public policies requires a deep understanding of social issues.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A gestão de projetos envolve a coordenação de recursos para alcançar objetivos específicos.",
-  //   "en-US":
-  //     "Project management involves coordinating resources to achieve specific objectives.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O impacto das mudanças tecnológicas nas relações interpessoais é um campo de estudo emergente.",
-  //   "en-US":
-  //     "The impact of technological changes on interpersonal relationships is an emerging field of study.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A inovação tecnológica está constantemente redefinindo as fronteiras do que é possível.",
-  //   "en-US":
-  //     "Technological innovation is constantly redefining the boundaries of what is possible.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A crise econômica global exige uma colaboração internacional para encontrar soluções eficazes.",
-  //   "en-US":
-  //     "The global economic crisis requires international collaboration to find effective solutions.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O conceito de cidadania digital envolve a responsabilidade de usar a tecnologia de forma ética.",
-  //   "en-US":
-  //     "The concept of digital citizenship involves the responsibility to use technology ethically.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A educação bilíngue pode oferecer vantagens cognitivas e culturais significativas.",
-  //   "en-US":
-  //     "Bilingual education can offer significant cognitive and cultural advantages.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A governança corporativa eficaz é crucial para a transparência e a responsabilidade empresarial.",
-  //   "en-US":
-  //     "Effective corporate governance is crucial for transparency and business accountability.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Os desafios da globalização incluem a desigualdade econômica e a perda de identidades culturais.",
-  //   "en-US":
-  //     "The challenges of globalization include economic inequality and the loss of cultural identities.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O papel da mídia na formação da opinião pública pode ser tanto positivo quanto negativo.",
-  //   "en-US":
-  //     "The role of the media in shaping public opinion can be both positive and negative.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O planejamento urbano deve considerar o impacto ambiental e a qualidade de vida dos residentes.",
-  //   "en-US":
-  //     "Urban planning should consider environmental impact and the quality of life for residents.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A análise crítica de textos é uma habilidade essencial para compreender argumentos complexos.",
-  //   "en-US":
-  //     "Critical text analysis is an essential skill for understanding complex arguments.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A sustentabilidade empresarial envolve práticas que minimizam o impacto ambiental e social.",
-  //   "en-US":
-  //     "Corporate sustainability involves practices that minimize environmental and social impact.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O avanço das redes neurais artificiais está revolucionando a inteligência artificial.",
-  //   "en-US":
-  //     "The advancement of artificial neural networks is revolutionizing artificial intelligence.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A gestão de riscos é uma parte fundamental do planejamento estratégico em empresas.",
-  //   "en-US":
-  //     "Risk management is a fundamental part of strategic planning in businesses.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O impacto das mudanças climáticas é visível em eventos meteorológicos extremos ao redor do mundo.",
-  //   "en-US":
-  //     "The impact of climate change is visible in extreme weather events around the world.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A teoria da evolução fornece uma explicação científica para a diversidade da vida na Terra.",
-  //   "en-US":
-  //     "The theory of evolution provides a scientific explanation for the diversity of life on Earth.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A ética no campo da inteligência artificial é um tópico de crescente importância e debate.",
-  //   "en-US":
-  //     "Ethics in the field of artificial intelligence is an increasingly important and debated topic.",
-  // },
+  ///////
+  // long phrases
+  {
+    "pt-BR":
+      "Em 1500, o navegador português Pedro Álvares Cabral chegou ao que hoje conhecemos como o Brasil, marcando o início da colonização portuguesa.",
+    "en-US":
+      "In 1500, the Portuguese navigator Pedro Álvares Cabral arrived at what we now know as Brazil, marking the beginning of Portuguese colonization.",
+  },
+  {
+    "pt-BR":
+      "A cidade de Salvador foi fundada em 1549 e tornou-se a primeira capital do Brasil, servindo como o centro administrativo da colônia por muitos anos.",
+    "en-US":
+      "The city of Salvador was founded in 1549 and became the first capital of Brazil, serving as the administrative center of the colony for many years.",
+  },
+  {
+    "pt-BR":
+      "Durante o século XVII, a descoberta de ouro em Minas Gerais atraiu, muitos colonos e levou ao desenvolvimento econômico significativo da região.",
+    "en-US":
+      "During the 17th century, the discovery of gold in Minas Gerais attracted many settlers and led to significant economic development in the region.",
+  },
+  {
+    "pt-BR":
+      "Em 1822, Dom Pedro I proclamou a independência do Brasil em relação a Portugal, tornando-se o primeiro imperador do país.",
+    "en-US":
+      "In 1822, Dom Pedro I proclaimed Brazil's independence from Portugal, becoming the country's first emperor.",
+  },
+  {
+    "pt-BR":
+      "A abolição da escravatura no Brasil foi oficialmente decretada pela Lei Áurea em 1888, assinada pela Princesa Isabel, encerrando séculos de exploração escravista.",
+    "en-US":
+      "The abolition of slavery in Brazil was officially decreed by the Golden Law in 1888, signed by Princess Isabel, ending centuries of enslavement.",
+  },
+  {
+    "pt-BR":
+      "O Brasil se tornou uma república em 1889, quando um golpe militar destituiu o imperador Dom Pedro II e estabeleceu um governo provisório.",
+    "en-US":
+      "Brazil became a republic in 1889 when a military coup deposed Emperor Dom Pedro II and established a provisional government.",
+  },
+  {
+    "pt-BR":
+      "Durante a década de 1930, Getúlio Vargas assumiu a presidência e instituiu o Estado Novo, um regime autoritário que durou até 1945.",
+    "en-US":
+      "During the 1930s, Getúlio Vargas took the presidency and instituted the Estado Novo, an authoritarian regime that lasted until 1945.",
+  },
+  {
+    "pt-BR":
+      "Em 1964, um golpe militar levou à instalação de um regime ditatorial que governou o Brasil até 1985, período marcado por repressão política e censura.",
+    "en-US":
+      "In 1964, a military coup led to the installation of a dictatorial regime that governed Brazil until 1985, a period marked by political repression and censorship.",
+  },
+  {
+    "pt-BR":
+      "A Constituição de 1988, conhecida como a Constituição Cidadã, marcou o retorno à democracia e estabeleceu uma série de direitos civis e sociais para os brasileiros.",
+    "en-US":
+      "The 1988 Constitution, known as the Citizen Constitution, marked the return to democracy and established a series of civil and social rights for Brazilians.",
+  },
+  {
+    "pt-BR":
+      "Em 2016, a presidente Dilma Rousseff foi afastada do cargo após um processo de impeachment, resultando em uma mudança significativa no cenário político do país.",
+    "en-US":
+      "In 2016, President Dilma Rousseff was removed from office after an impeachment process, resulting in a significant change in the country's political landscape.",
+  },
+  {
+    "pt-BR":
+      "A globalização tem impactos profundos na economia e na cultura local.",
+    "en-US":
+      "Globalization has profound impacts on the economy and local culture.",
+  },
+  {
+    "pt-BR":
+      "O avanço tecnológico está transformando rapidamente a forma como trabalhamos e nos comunicamos.",
+    "en-US":
+      "Technological advancements are rapidly transforming the way we work and communicate.",
+  },
+  {
+    "pt-BR":
+      "É crucial entender as nuances culturais ao negociar com parceiros internacionais.",
+    "en-US":
+      "It's crucial to understand cultural nuances when negotiating with international partners.",
+  },
+  {
+    "pt-BR":
+      "As mudanças climáticas estão exigindo uma abordagem mais sustentável para o desenvolvimento urbano.",
+    "en-US":
+      "Climate change is demanding a more sustainable approach to urban development.",
+  },
+  {
+    "pt-BR":
+      "A pesquisa científica sobre energias renováveis está avançando a passos largos.",
+    "en-US":
+      "Scientific research on renewable energy is advancing by leaps and bounds.",
+  },
+  {
+    "pt-BR":
+      "O impacto da inteligência artificial no mercado de trabalho é um tema amplamente debatido.",
+    "en-US":
+      "The impact of artificial intelligence on the job market is a widely debated topic.",
+  },
+  {
+    "pt-BR":
+      "As políticas públicas devem refletir as necessidades e prioridades da população.",
+    "en-US":
+      "Public policies should reflect the needs and priorities of the population.",
+  },
+  {
+    "pt-BR":
+      "A literatura contemporânea frequentemente explora questões sociais complexas e controversas.",
+    "en-US":
+      "Contemporary literature often explores complex and controversial social issues.",
+  },
+  {
+    "pt-BR":
+      "O desenvolvimento sustentável é essencial para garantir um futuro melhor para as próximas gerações.",
+    "en-US":
+      "Sustainable development is essential to ensure a better future for the coming generations.",
+  },
+  {
+    "pt-BR":
+      "A ética nos negócios é fundamental para construir uma reputação sólida e confiável.",
+    "en-US":
+      "Business ethics are fundamental for building a solid and trustworthy reputation.",
+  },
+  {
+    "pt-BR":
+      "O ensino superior deve preparar os alunos para enfrentar os desafios de um mercado globalizado.",
+    "en-US":
+      "Higher education should prepare students to face the challenges of a globalized market.",
+  },
+  {
+    "pt-BR":
+      "A integração de tecnologias emergentes pode revolucionar o setor da saúde.",
+    "en-US":
+      "The integration of emerging technologies could revolutionize the healthcare sector.",
+  },
+  {
+    "pt-BR":
+      "A diversidade no local de trabalho pode promover um ambiente mais criativo e inovador.",
+    "en-US":
+      "Diversity in the workplace can foster a more creative and innovative environment.",
+  },
+  {
+    "pt-BR":
+      "A preservação de culturas indígenas é uma questão importante para a identidade global.",
+    "en-US":
+      "The preservation of indigenous cultures is an important issue for global identity.",
+  },
+  {
+    "pt-BR":
+      "As redes sociais desempenham um papel significativo na formação de opiniões públicas.",
+    "en-US":
+      "Social networks play a significant role in shaping public opinions.",
+  },
+  {
+    "pt-BR":
+      "O conceito de justiça social envolve a equidade no acesso a recursos e oportunidades.",
+    "en-US":
+      "The concept of social justice involves equity in access to resources and opportunities.",
+  },
+  {
+    "pt-BR":
+      "A análise de dados é uma ferramenta poderosa para tomar decisões informadas em diversos setores.",
+    "en-US":
+      "Data analysis is a powerful tool for making informed decisions across various sectors.",
+  },
+  {
+    "pt-BR":
+      "A filosofia da ciência examina os fundamentos e as implicações das descobertas científicas.",
+    "en-US":
+      "The philosophy of science examines the foundations and implications of scientific discoveries.",
+  },
+  {
+    "pt-BR":
+      "O desenvolvimento de políticas públicas eficazes requer uma compreensão profunda das questões sociais.",
+    "en-US":
+      "Developing effective public policies requires a deep understanding of social issues.",
+  },
+  {
+    "pt-BR":
+      "A gestão de projetos envolve a coordenação de recursos para alcançar objetivos específicos.",
+    "en-US":
+      "Project management involves coordinating resources to achieve specific objectives.",
+  },
+  {
+    "pt-BR":
+      "O impacto das mudanças tecnológicas nas relações interpessoais é um campo de estudo emergente.",
+    "en-US":
+      "The impact of technological changes on interpersonal relationships is an emerging field of study.",
+  },
+  {
+    "pt-BR":
+      "A inovação tecnológica está constantemente redefinindo as fronteiras do que é possível.",
+    "en-US":
+      "Technological innovation is constantly redefining the boundaries of what is possible.",
+  },
+  {
+    "pt-BR":
+      "A crise econômica global exige uma colaboração internacional para encontrar soluções eficazes.",
+    "en-US":
+      "The global economic crisis requires international collaboration to find effective solutions.",
+  },
+  {
+    "pt-BR":
+      "O conceito de cidadania digital envolve a responsabilidade de usar a tecnologia de forma ética.",
+    "en-US":
+      "The concept of digital citizenship involves the responsibility to use technology ethically.",
+  },
+  {
+    "pt-BR":
+      "A educação bilíngue pode oferecer vantagens cognitivas e culturais significativas.",
+    "en-US":
+      "Bilingual education can offer significant cognitive and cultural advantages.",
+  },
+  {
+    "pt-BR":
+      "A governança corporativa eficaz é crucial para a transparência e a responsabilidade empresarial.",
+    "en-US":
+      "Effective corporate governance is crucial for transparency and business accountability.",
+  },
+  {
+    "pt-BR":
+      "Os desafios da globalização incluem a desigualdade econômica e a perda de identidades culturais.",
+    "en-US":
+      "The challenges of globalization include economic inequality and the loss of cultural identities.",
+  },
+  {
+    "pt-BR":
+      "O papel da mídia na formação da opinião pública pode ser tanto positivo quanto negativo.",
+    "en-US":
+      "The role of the media in shaping public opinion can be both positive and negative.",
+  },
+  {
+    "pt-BR":
+      "O planejamento urbano deve considerar o impacto ambiental e a qualidade de vida dos residentes.",
+    "en-US":
+      "Urban planning should consider environmental impact and the quality of life for residents.",
+  },
+  {
+    "pt-BR":
+      "A análise crítica de textos é uma habilidade essencial para compreender argumentos complexos.",
+    "en-US":
+      "Critical text analysis is an essential skill for understanding complex arguments.",
+  },
+  {
+    "pt-BR":
+      "A sustentabilidade empresarial envolve práticas que minimizam o impacto ambiental e social.",
+    "en-US":
+      "Corporate sustainability involves practices that minimize environmental and social impact.",
+  },
+  {
+    "pt-BR":
+      "O avanço das redes neurais artificiais está revolucionando a inteligência artificial.",
+    "en-US":
+      "The advancement of artificial neural networks is revolutionizing artificial intelligence.",
+  },
+  {
+    "pt-BR":
+      "A gestão de riscos é uma parte fundamental do planejamento estratégico em empresas.",
+    "en-US":
+      "Risk management is a fundamental part of strategic planning in businesses.",
+  },
+  {
+    "pt-BR":
+      "O impacto das mudanças climáticas é visível em eventos meteorológicos extremos ao redor do mundo.",
+    "en-US":
+      "The impact of climate change is visible in extreme weather events around the world.",
+  },
+  {
+    "pt-BR":
+      "A teoria da evolução fornece uma explicação científica para a diversidade da vida na Terra.",
+    "en-US":
+      "The theory of evolution provides a scientific explanation for the diversity of life on Earth.",
+  },
+  {
+    "pt-BR":
+      "A ética no campo da inteligência artificial é um tópico de crescente importância e debate.",
+    "en-US":
+      "Ethics in the field of artificial intelligence is an increasingly important and debated topic.",
+  },
 
-  // {
-  //   "pt-BR":
-  //     "A interconexão das economias globais pode levar a uma rápida disseminação de crises financeiras.",
-  //   "en-US":
-  //     "The interconnection of global economies can lead to the rapid spread of financial crises.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A pesquisa em neurociência está revelando novos insights sobre o funcionamento do cérebro humano.",
-  //   "en-US":
-  //     "Research in neuroscience is revealing new insights into how the human brain functions.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A sustentabilidade ambiental exige uma abordagem integrada envolvendo governo, indústria e sociedade.",
-  //   "en-US":
-  //     "Environmental sustainability requires an integrated approach involving government, industry, and society.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A adaptação ao mudança climática requer inovação em tecnologias de mitigação e adaptação.",
-  //   "en-US":
-  //     "Adapting to climate change requires innovation in mitigation and adaptation technologies.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O conceito de responsabilidade social corporativa envolve práticas empresariais que beneficiam a sociedade e o meio ambiente.",
-  //   "en-US":
-  //     "Corporate social responsibility involves business practices that benefit society and the environment.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O papel das organizações não-governamentais é crucial na promoção de mudanças sociais e políticas.",
-  //   "en-US":
-  //     "The role of non-governmental organizations is crucial in promoting social and political change.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A inovação disruptiva pode transformar indústrias inteiras e criar novos mercados.",
-  //   "en-US":
-  //     "Disruptive innovation can transform entire industries and create new markets.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A ética da pesquisa científica exige transparência e integridade na condução dos experimentos.",
-  //   "en-US":
-  //     "Scientific research ethics demand transparency and integrity in conducting experiments.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O conceito de capital humano é fundamental para entender o desenvolvimento econômico e social.",
-  //   "en-US":
-  //     "The concept of human capital is fundamental to understanding economic and social development.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A análise de risco é uma ferramenta essencial para prever e mitigar possíveis problemas em projetos complexos.",
-  //   "en-US":
-  //     "Risk analysis is an essential tool for predicting and mitigating potential issues in complex projects.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A interdependência dos sistemas ecológicos destaca a importância de proteger a biodiversidade.",
-  //   "en-US":
-  //     "The interdependence of ecological systems highlights the importance of protecting biodiversity.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A globalização cultural está influenciando profundamente as tradições e costumes locais.",
-  //   "en-US":
-  //     "Cultural globalization is profoundly influencing local traditions and customs.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O avanço das tecnologias de comunicação está mudando a forma como interagimos e compartilhamos informações.",
-  //   "en-US":
-  //     "Advancements in communication technologies are changing the way we interact and share information.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A teoria dos jogos oferece uma perspectiva única sobre como as pessoas tomam decisões em situações de conflito.",
-  //   "en-US":
-  //     "Game theory offers a unique perspective on how people make decisions in conflict situations.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A análise de dados big data pode revelar padrões ocultos e tendências importantes para a tomada de decisões estratégicas.",
-  //   "en-US":
-  //     "Big data analysis can reveal hidden patterns and important trends for strategic decision-making.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A filosofia política examina os fundamentos teóricos e práticos das estruturas de poder e governo.",
-  //   "en-US":
-  //     "Political philosophy examines the theoretical and practical foundations of power structures and government.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A responsabilidade ambiental das empresas é um aspecto crescente da governança corporativa moderna.",
-  //   "en-US":
-  //     "Environmental responsibility of companies is an increasing aspect of modern corporate governance.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O impacto da digitalização no setor financeiro está criando novas oportunidades e desafios.",
-  //   "en-US":
-  //     "The impact of digitization on the financial sector is creating new opportunities and challenges.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A teoria econômica clássica é frequentemente desafiada por novas abordagens e modelos teóricos.",
-  //   "en-US":
-  //     "Classical economic theory is often challenged by new approaches and theoretical models.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A relação entre políticas públicas e desenvolvimento social é complexa e multifacetada.",
-  //   "en-US":
-  //     "The relationship between public policies and social development is complex and multifaceted.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A preservação histórica é vital para manter a identidade cultural e a herança de uma sociedade.",
-  //   "en-US":
-  //     "Historical preservation is vital for maintaining a society's cultural identity and heritage.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A educação inclusiva busca criar ambientes de aprendizado que atendam às necessidades de todos os alunos.",
-  //   "en-US":
-  //     "Inclusive education aims to create learning environments that meet the needs of all students.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O impacto das políticas econômicas globais pode variar significativamente entre diferentes regiões e países.",
-  //   "en-US":
-  //     "The impact of global economic policies can vary significantly between different regions and countries.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O conceito de justiça econômica envolve a distribuição equitativa de recursos e oportunidades.",
-  //   "en-US":
-  //     "The concept of economic justice involves the equitable distribution of resources and opportunities.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A adaptação às novas tecnologias exige uma atualização constante das habilidades e conhecimentos.",
-  //   "en-US":
-  //     "Adapting to new technologies requires constant updating of skills and knowledge.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A análise de políticas públicas é essencial para avaliar a eficácia das intervenções governamentais.",
-  //   "en-US":
-  //     "Policy analysis is essential for evaluating the effectiveness of government interventions.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O impacto da inteligência emocional nas interações sociais e profissionais é um campo de estudo crescente.",
-  //   "en-US":
-  //     "The impact of emotional intelligence on social and professional interactions is an growing field of study.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A complexidade dos sistemas políticos modernos exige uma abordagem multidisciplinar para compreensão e análise.",
-  //   "en-US":
-  //     "The complexity of modern political systems requires a multidisciplinary approach for understanding and analysis.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O desenvolvimento de habilidades de liderança é crucial para o sucesso em cargos executivos.",
-  //   "en-US":
-  //     "Developing leadership skills is crucial for success in executive positions.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O conceito de capital social é importante para entender as dinâmicas de redes sociais e comunidades.",
-  //   "en-US":
-  //     "The concept of social capital is important for understanding the dynamics of social networks and communities.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A inovação em saúde pública pode levar a melhorias significativas na qualidade de vida das populações.",
-  //   "en-US":
-  //     "Innovation in public health can lead to significant improvements in the quality of life for populations.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A análise crítica dos meios de comunicação ajuda a compreender a influência que exercem sobre a opinião pública.",
-  //   "en-US":
-  //     "Critical analysis of media helps to understand the influence they exert on public opinion.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A eficiência energética é um componente-chave na redução das emissões de gases de efeito estufa.",
-  //   "en-US":
-  //     "Energy efficiency is a key component in reducing greenhouse gas emissions.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O impacto das políticas de imigração pode ser visto tanto em nível econômico quanto social.",
-  //   "en-US":
-  //     "The impact of immigration policies can be seen both economically and socially.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O conceito de direitos humanos é fundamental para a promoção da dignidade e igualdade em todo o mundo.",
-  //   "en-US":
-  //     "The concept of human rights is fundamental for promoting dignity and equality worldwide.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A digitalização dos serviços públicos tem o potencial de melhorar a acessibilidade e a eficiência.",
-  //   "en-US":
-  //     "Digitization of public services has the potential to improve accessibility and efficiency.",
-  // },
+  {
+    "pt-BR":
+      "A interconexão das economias globais pode levar a uma rápida disseminação de crises financeiras.",
+    "en-US":
+      "The interconnection of global economies can lead to the rapid spread of financial crises.",
+  },
+  {
+    "pt-BR":
+      "A pesquisa em neurociência está revelando novos insights sobre o funcionamento do cérebro humano.",
+    "en-US":
+      "Research in neuroscience is revealing new insights into how the human brain functions.",
+  },
+  {
+    "pt-BR":
+      "A sustentabilidade ambiental exige uma abordagem integrada envolvendo governo, indústria e sociedade.",
+    "en-US":
+      "Environmental sustainability requires an integrated approach involving government, industry, and society.",
+  },
+  {
+    "pt-BR":
+      "A adaptação ao mudança climática requer inovação em tecnologias de mitigação e adaptação.",
+    "en-US":
+      "Adapting to climate change requires innovation in mitigation and adaptation technologies.",
+  },
+  {
+    "pt-BR":
+      "O conceito de responsabilidade social corporativa envolve práticas empresariais que beneficiam a sociedade e o meio ambiente.",
+    "en-US":
+      "Corporate social responsibility involves business practices that benefit society and the environment.",
+  },
+  {
+    "pt-BR":
+      "O papel das organizações não-governamentais é crucial na promoção de mudanças sociais e políticas.",
+    "en-US":
+      "The role of non-governmental organizations is crucial in promoting social and political change.",
+  },
+  {
+    "pt-BR":
+      "A inovação disruptiva pode transformar indústrias inteiras e criar novos mercados.",
+    "en-US":
+      "Disruptive innovation can transform entire industries and create new markets.",
+  },
+  {
+    "pt-BR":
+      "A ética da pesquisa científica exige transparência e integridade na condução dos experimentos.",
+    "en-US":
+      "Scientific research ethics demand transparency and integrity in conducting experiments.",
+  },
+  {
+    "pt-BR":
+      "O conceito de capital humano é fundamental para entender o desenvolvimento econômico e social.",
+    "en-US":
+      "The concept of human capital is fundamental to understanding economic and social development.",
+  },
+  {
+    "pt-BR":
+      "A análise de risco é uma ferramenta essencial para prever e mitigar possíveis problemas em projetos complexos.",
+    "en-US":
+      "Risk analysis is an essential tool for predicting and mitigating potential issues in complex projects.",
+  },
+  {
+    "pt-BR":
+      "A interdependência dos sistemas ecológicos destaca a importância de proteger a biodiversidade.",
+    "en-US":
+      "The interdependence of ecological systems highlights the importance of protecting biodiversity.",
+  },
+  {
+    "pt-BR":
+      "A globalização cultural está influenciando profundamente as tradições e costumes locais.",
+    "en-US":
+      "Cultural globalization is profoundly influencing local traditions and customs.",
+  },
+  {
+    "pt-BR":
+      "O avanço das tecnologias de comunicação está mudando a forma como interagimos e compartilhamos informações.",
+    "en-US":
+      "Advancements in communication technologies are changing the way we interact and share information.",
+  },
+  {
+    "pt-BR":
+      "A teoria dos jogos oferece uma perspectiva única sobre como as pessoas tomam decisões em situações de conflito.",
+    "en-US":
+      "Game theory offers a unique perspective on how people make decisions in conflict situations.",
+  },
+  {
+    "pt-BR":
+      "A análise de dados big data pode revelar padrões ocultos e tendências importantes para a tomada de decisões estratégicas.",
+    "en-US":
+      "Big data analysis can reveal hidden patterns and important trends for strategic decision-making.",
+  },
+  {
+    "pt-BR":
+      "A filosofia política examina os fundamentos teóricos e práticos das estruturas de poder e governo.",
+    "en-US":
+      "Political philosophy examines the theoretical and practical foundations of power structures and government.",
+  },
+  {
+    "pt-BR":
+      "A responsabilidade ambiental das empresas é um aspecto crescente da governança corporativa moderna.",
+    "en-US":
+      "Environmental responsibility of companies is an increasing aspect of modern corporate governance.",
+  },
+  {
+    "pt-BR":
+      "O impacto da digitalização no setor financeiro está criando novas oportunidades e desafios.",
+    "en-US":
+      "The impact of digitization on the financial sector is creating new opportunities and challenges.",
+  },
+  {
+    "pt-BR":
+      "A teoria econômica clássica é frequentemente desafiada por novas abordagens e modelos teóricos.",
+    "en-US":
+      "Classical economic theory is often challenged by new approaches and theoretical models.",
+  },
+  {
+    "pt-BR":
+      "A relação entre políticas públicas e desenvolvimento social é complexa e multifacetada.",
+    "en-US":
+      "The relationship between public policies and social development is complex and multifaceted.",
+  },
+  {
+    "pt-BR":
+      "A preservação histórica é vital para manter a identidade cultural e a herança de uma sociedade.",
+    "en-US":
+      "Historical preservation is vital for maintaining a society's cultural identity and heritage.",
+  },
+  {
+    "pt-BR":
+      "A educação inclusiva busca criar ambientes de aprendizado que atendam às necessidades de todos os alunos.",
+    "en-US":
+      "Inclusive education aims to create learning environments that meet the needs of all students.",
+  },
+  {
+    "pt-BR":
+      "O impacto das políticas econômicas globais pode variar significativamente entre diferentes regiões e países.",
+    "en-US":
+      "The impact of global economic policies can vary significantly between different regions and countries.",
+  },
+  {
+    "pt-BR":
+      "O conceito de justiça econômica envolve a distribuição equitativa de recursos e oportunidades.",
+    "en-US":
+      "The concept of economic justice involves the equitable distribution of resources and opportunities.",
+  },
+  {
+    "pt-BR":
+      "A adaptação às novas tecnologias exige uma atualização constante das habilidades e conhecimentos.",
+    "en-US":
+      "Adapting to new technologies requires constant updating of skills and knowledge.",
+  },
+  {
+    "pt-BR":
+      "A análise de políticas públicas é essencial para avaliar a eficácia das intervenções governamentais.",
+    "en-US":
+      "Policy analysis is essential for evaluating the effectiveness of government interventions.",
+  },
+  {
+    "pt-BR":
+      "O impacto da inteligência emocional nas interações sociais e profissionais é um campo de estudo crescente.",
+    "en-US":
+      "The impact of emotional intelligence on social and professional interactions is an growing field of study.",
+  },
+  {
+    "pt-BR":
+      "A complexidade dos sistemas políticos modernos exige uma abordagem multidisciplinar para compreensão e análise.",
+    "en-US":
+      "The complexity of modern political systems requires a multidisciplinary approach for understanding and analysis.",
+  },
+  {
+    "pt-BR":
+      "O desenvolvimento de habilidades de liderança é crucial para o sucesso em cargos executivos.",
+    "en-US":
+      "Developing leadership skills is crucial for success in executive positions.",
+  },
+  {
+    "pt-BR":
+      "O conceito de capital social é importante para entender as dinâmicas de redes sociais e comunidades.",
+    "en-US":
+      "The concept of social capital is important for understanding the dynamics of social networks and communities.",
+  },
+  {
+    "pt-BR":
+      "A inovação em saúde pública pode levar a melhorias significativas na qualidade de vida das populações.",
+    "en-US":
+      "Innovation in public health can lead to significant improvements in the quality of life for populations.",
+  },
+  {
+    "pt-BR":
+      "A análise crítica dos meios de comunicação ajuda a compreender a influência que exercem sobre a opinião pública.",
+    "en-US":
+      "Critical analysis of media helps to understand the influence they exert on public opinion.",
+  },
+  {
+    "pt-BR":
+      "A eficiência energética é um componente-chave na redução das emissões de gases de efeito estufa.",
+    "en-US":
+      "Energy efficiency is a key component in reducing greenhouse gas emissions.",
+  },
+  {
+    "pt-BR":
+      "O impacto das políticas de imigração pode ser visto tanto em nível econômico quanto social.",
+    "en-US":
+      "The impact of immigration policies can be seen both economically and socially.",
+  },
+  {
+    "pt-BR":
+      "O conceito de direitos humanos é fundamental para a promoção da dignidade e igualdade em todo o mundo.",
+    "en-US":
+      "The concept of human rights is fundamental for promoting dignity and equality worldwide.",
+  },
+  {
+    "pt-BR":
+      "A digitalização dos serviços públicos tem o potencial de melhorar a acessibilidade e a eficiência.",
+    "en-US":
+      "Digitization of public services has the potential to improve accessibility and efficiency.",
+  },
 
-  // {
-  //   "pt-BR": "Como a globalização afeta as economias emergentes?",
-  //   "en-US": "How does globalization affect emerging economies?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Quais são os principais desafios na implementação de políticas de sustentabilidade ambiental?",
-  //   "en-US":
-  //     "What are the main challenges in implementing environmental sustainability policies?",
-  // },
-  // {
-  //   "pt-BR": "Como as novas tecnologias estão moldando o futuro do trabalho?",
-  //   "en-US": "How are new technologies shaping the future of work?",
-  // },
-  // {
-  //   "pt-BR": "Qual é o papel das ONGs na promoção dos direitos humanos?",
-  //   "en-US": "What is the role of NGOs in promoting human rights?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como a teoria da evolução pode ser aplicada para entender a diversidade das espécies?",
-  //   "en-US":
-  //     "How can the theory of evolution be applied to understand species diversity?",
-  // },
-  // {
-  //   "pt-BR": "Quais são os impactos das mudanças climáticas na agricultura?",
-  //   "en-US": "What are the impacts of climate change on agriculture?",
-  // },
-  // {
-  //   "pt-BR": "Como a ética empresarial influencia a reputação de uma empresa?",
-  //   "en-US": "How does business ethics influence a company's reputation?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Qual é a importância da educação bilíngue no desenvolvimento cognitivo?",
-  //   "en-US":
-  //     "What is the importance of bilingual education in cognitive development?",
-  // },
-  // {
-  //   "pt-BR": "Como a digitalização está transformando o setor financeiro?",
-  //   "en-US": "How is digitization transforming the financial sector?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Qual é o papel da filosofia política na formação de políticas públicas?",
-  //   "en-US":
-  //     "What is the role of political philosophy in shaping public policies?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como a inteligência emocional pode impactar a liderança em uma organização?",
-  //   "en-US":
-  //     "How can emotional intelligence impact leadership in an organization?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Quais são os benefícios e desafios da integração de tecnologias emergentes na saúde?",
-  //   "en-US":
-  //     "What are the benefits and challenges of integrating emerging technologies in healthcare?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como a análise crítica pode ajudar a entender os argumentos em textos acadêmicos?",
-  //   "en-US":
-  //     "How can critical analysis help in understanding arguments in academic texts?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Qual é a relação entre políticas econômicas globais e desigualdade regional?",
-  //   "en-US":
-  //     "What is the relationship between global economic policies and regional inequality?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como o conceito de capital social afeta as dinâmicas comunitárias?",
-  //   "en-US":
-  //     "How does the concept of social capital affect community dynamics?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Qual é o impacto da inovação disruptiva em mercados tradicionais?",
-  //   "en-US":
-  //     "What is the impact of disruptive innovation on traditional markets?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como a filosofia da ciência contribui para a compreensão dos métodos científicos?",
-  //   "en-US":
-  //     "How does the philosophy of science contribute to understanding scientific methods?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Qual é a importância da governança corporativa na transparência empresarial?",
-  //   "en-US":
-  //     "What is the importance of corporate governance in business transparency?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como a sustentabilidade empresarial pode ser integrada em estratégias de longo prazo?",
-  //   "en-US":
-  //     "How can corporate sustainability be integrated into long-term strategies?",
-  // },
-  // {
-  //   "pt-BR": "Qual é o papel das redes sociais na formação de opinião pública?",
-  //   "en-US": "What is the role of social networks in shaping public opinion?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como o conceito de justiça econômica pode ser aplicado para melhorar a equidade social?",
-  //   "en-US":
-  //     "How can the concept of economic justice be applied to improve social equity?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Quais são as implicações da digitalização para a privacidade dos dados pessoais?",
-  //   "en-US":
-  //     "What are the implications of digitization for personal data privacy?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como a diversidade no local de trabalho pode influenciar a criatividade e inovação?",
-  //   "en-US": "How can workplace diversity influence creativity and innovation?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Qual é o impacto das políticas de imigração na economia e sociedade?",
-  //   "en-US":
-  //     "What is the impact of immigration policies on the economy and society?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como a preservação histórica contribui para a identidade cultural de uma sociedade?",
-  //   "en-US":
-  //     "How does historical preservation contribute to a society's cultural identity?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Qual é a relação entre a inovação tecnológica e a mudança no comportamento do consumidor?",
-  //   "en-US":
-  //     "What is the relationship between technological innovation and changes in consumer behavior?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como a teoria dos jogos pode ser aplicada para resolver conflitos em negociações?",
-  //   "en-US":
-  //     "How can game theory be applied to resolve conflicts in negotiations?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Qual é a importância da análise de dados na tomada de decisões estratégicas?",
-  //   "en-US":
-  //     "What is the importance of data analysis in strategic decision-making?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como a responsabilidade ambiental das empresas pode influenciar a percepção pública?",
-  //   "en-US":
-  //     "How can corporate environmental responsibility influence public perception?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Qual é o papel da educação inclusiva no desenvolvimento acadêmico de todos os alunos?",
-  //   "en-US":
-  //     "What is the role of inclusive education in the academic development of all students?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Como a integração de tecnologias emergentes pode impactar o setor de saúde pública?",
-  //   "en-US":
-  //     "How can the integration of emerging technologies impact the public health sector?",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Qual é o impacto da complexidade dos sistemas políticos na formulação de políticas públicas?",
-  //   "en-US":
-  //     "What is the impact of the complexity of political systems on public policy formulation?",
-  // },
+  {
+    "pt-BR": "Como a globalização afeta as economias emergentes?",
+    "en-US": "How does globalization affect emerging economies?",
+  },
+  {
+    "pt-BR":
+      "Quais são os principais desafios na implementação de políticas de sustentabilidade ambiental?",
+    "en-US":
+      "What are the main challenges in implementing environmental sustainability policies?",
+  },
+  {
+    "pt-BR": "Como as novas tecnologias estão moldando o futuro do trabalho?",
+    "en-US": "How are new technologies shaping the future of work?",
+  },
+  {
+    "pt-BR": "Qual é o papel das ONGs na promoção dos direitos humanos?",
+    "en-US": "What is the role of NGOs in promoting human rights?",
+  },
+  {
+    "pt-BR":
+      "Como a teoria da evolução pode ser aplicada para entender a diversidade das espécies?",
+    "en-US":
+      "How can the theory of evolution be applied to understand species diversity?",
+  },
+  {
+    "pt-BR": "Quais são os impactos das mudanças climáticas na agricultura?",
+    "en-US": "What are the impacts of climate change on agriculture?",
+  },
+  {
+    "pt-BR": "Como a ética empresarial influencia a reputação de uma empresa?",
+    "en-US": "How does business ethics influence a company's reputation?",
+  },
+  {
+    "pt-BR":
+      "Qual é a importância da educação bilíngue no desenvolvimento cognitivo?",
+    "en-US":
+      "What is the importance of bilingual education in cognitive development?",
+  },
+  {
+    "pt-BR": "Como a digitalização está transformando o setor financeiro?",
+    "en-US": "How is digitization transforming the financial sector?",
+  },
+  {
+    "pt-BR":
+      "Qual é o papel da filosofia política na formação de políticas públicas?",
+    "en-US":
+      "What is the role of political philosophy in shaping public policies?",
+  },
+  {
+    "pt-BR":
+      "Como a inteligência emocional pode impactar a liderança em uma organização?",
+    "en-US":
+      "How can emotional intelligence impact leadership in an organization?",
+  },
+  {
+    "pt-BR":
+      "Quais são os benefícios e desafios da integração de tecnologias emergentes na saúde?",
+    "en-US":
+      "What are the benefits and challenges of integrating emerging technologies in healthcare?",
+  },
+  {
+    "pt-BR":
+      "Como a análise crítica pode ajudar a entender os argumentos em textos acadêmicos?",
+    "en-US":
+      "How can critical analysis help in understanding arguments in academic texts?",
+  },
+  {
+    "pt-BR":
+      "Qual é a relação entre políticas econômicas globais e desigualdade regional?",
+    "en-US":
+      "What is the relationship between global economic policies and regional inequality?",
+  },
+  {
+    "pt-BR":
+      "Como o conceito de capital social afeta as dinâmicas comunitárias?",
+    "en-US":
+      "How does the concept of social capital affect community dynamics?",
+  },
+  {
+    "pt-BR":
+      "Qual é o impacto da inovação disruptiva em mercados tradicionais?",
+    "en-US":
+      "What is the impact of disruptive innovation on traditional markets?",
+  },
+  {
+    "pt-BR":
+      "Como a filosofia da ciência contribui para a compreensão dos métodos científicos?",
+    "en-US":
+      "How does the philosophy of science contribute to understanding scientific methods?",
+  },
+  {
+    "pt-BR":
+      "Qual é a importância da governança corporativa na transparência empresarial?",
+    "en-US":
+      "What is the importance of corporate governance in business transparency?",
+  },
+  {
+    "pt-BR":
+      "Como a sustentabilidade empresarial pode ser integrada em estratégias de longo prazo?",
+    "en-US":
+      "How can corporate sustainability be integrated into long-term strategies?",
+  },
+  {
+    "pt-BR": "Qual é o papel das redes sociais na formação de opinião pública?",
+    "en-US": "What is the role of social networks in shaping public opinion?",
+  },
+  {
+    "pt-BR":
+      "Como o conceito de justiça econômica pode ser aplicado para melhorar a equidade social?",
+    "en-US":
+      "How can the concept of economic justice be applied to improve social equity?",
+  },
+  {
+    "pt-BR":
+      "Quais são as implicações da digitalização para a privacidade dos dados pessoais?",
+    "en-US":
+      "What are the implications of digitization for personal data privacy?",
+  },
+  {
+    "pt-BR":
+      "Como a diversidade no local de trabalho pode influenciar a criatividade e inovação?",
+    "en-US": "How can workplace diversity influence creativity and innovation?",
+  },
+  {
+    "pt-BR":
+      "Qual é o impacto das políticas de imigração na economia e sociedade?",
+    "en-US":
+      "What is the impact of immigration policies on the economy and society?",
+  },
+  {
+    "pt-BR":
+      "Como a preservação histórica contribui para a identidade cultural de uma sociedade?",
+    "en-US":
+      "How does historical preservation contribute to a society's cultural identity?",
+  },
+  {
+    "pt-BR":
+      "Qual é a relação entre a inovação tecnológica e a mudança no comportamento do consumidor?",
+    "en-US":
+      "What is the relationship between technological innovation and changes in consumer behavior?",
+  },
+  {
+    "pt-BR":
+      "Como a teoria dos jogos pode ser aplicada para resolver conflitos em negociações?",
+    "en-US":
+      "How can game theory be applied to resolve conflicts in negotiations?",
+  },
+  {
+    "pt-BR":
+      "Qual é a importância da análise de dados na tomada de decisões estratégicas?",
+    "en-US":
+      "What is the importance of data analysis in strategic decision-making?",
+  },
+  {
+    "pt-BR":
+      "Como a responsabilidade ambiental das empresas pode influenciar a percepção pública?",
+    "en-US":
+      "How can corporate environmental responsibility influence public perception?",
+  },
+  {
+    "pt-BR":
+      "Qual é o papel da educação inclusiva no desenvolvimento acadêmico de todos os alunos?",
+    "en-US":
+      "What is the role of inclusive education in the academic development of all students?",
+  },
+  {
+    "pt-BR":
+      "Como a integração de tecnologias emergentes pode impactar o setor de saúde pública?",
+    "en-US":
+      "How can the integration of emerging technologies impact the public health sector?",
+  },
+  {
+    "pt-BR":
+      "Qual é o impacto da complexidade dos sistemas políticos na formulação de políticas públicas?",
+    "en-US":
+      "What is the impact of the complexity of political systems on public policy formulation?",
+  },
 
-  // {
-  //   "pt-BR":
-  //     "A globalização pode beneficiar as economias emergentes ao expandir mercados e aumentar investimentos, mas também pode expô-las a volatilidades econômicas e desigualdades.",
-  //   "en-US":
-  //     "Globalization can benefit emerging economies by expanding markets and increasing investments, but it can also expose them to economic volatility and inequalities.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Os principais desafios incluem a coordenação entre diferentes setores, a resistência de partes interessadas e a necessidade de recursos financeiros e tecnológicos.",
-  //   "en-US":
-  //     "Main challenges include coordination among different sectors, stakeholder resistance, and the need for financial and technological resources.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Novas tecnologias estão automatizando tarefas, permitindo trabalho remoto e criando novas oportunidades e desafios no mercado de trabalho.",
-  //   "en-US":
-  //     "New technologies are automating tasks, enabling remote work, and creating new opportunities and challenges in the job market.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "As ONGs promovem os direitos humanos por meio de advocacy, campanhas de conscientização e fornecimento de assistência a grupos vulneráveis.",
-  //   "en-US":
-  //     "NGOs promote human rights through advocacy, awareness campaigns, and providing assistance to vulnerable groups.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A teoria da evolução ajuda a explicar como as espécies se diversificam ao longo do tempo devido à adaptação às mudanças ambientais.",
-  //   "en-US":
-  //     "The theory of evolution helps explain how species diversify over time due to adaptation to environmental changes.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "As mudanças climáticas podem reduzir a produtividade agrícola, alterar padrões de precipitação e aumentar a frequência de eventos extremos.",
-  //   "en-US":
-  //     "Climate change can reduce agricultural productivity, alter precipitation patterns, and increase the frequency of extreme events.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A ética empresarial promove a confiança dos consumidores e investidores, melhorando a imagem e a sustentabilidade da empresa a longo prazo.",
-  //   "en-US":
-  //     "Business ethics promotes consumer and investor trust, enhancing the company's image and long-term sustainability.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A educação bilíngue pode melhorar habilidades cognitivas, aumentar oportunidades profissionais e facilitar o acesso a diferentes culturas.",
-  //   "en-US":
-  //     "Bilingual education can enhance cognitive skills, increase professional opportunities, and facilitate access to different cultures.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A digitalização está mudando a forma como os serviços financeiros são oferecidos, com o crescimento de fintechs e soluções digitais.",
-  //   "en-US":
-  //     "Digitization is changing how financial services are provided, with the rise of fintechs and digital solutions.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A filosofia política oferece fundamentos teóricos para a criação de políticas públicas e ajuda a avaliar a eficácia das práticas governamentais.",
-  //   "en-US":
-  //     "Political philosophy provides theoretical foundations for creating public policies and helps evaluate the effectiveness of governmental practices.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A inteligência emocional pode melhorar a capacidade de um líder de entender e gerenciar suas próprias emoções e as dos outros.",
-  //   "en-US":
-  //     "Emotional intelligence can enhance a leader's ability to understand and manage their own emotions and those of others.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Os benefícios incluem a melhoria da eficiência e da qualidade dos cuidados, enquanto os desafios envolvem custos e a necessidade de treinamento.",
-  //   "en-US":
-  //     "Benefits include improved efficiency and care quality, while challenges involve costs and the need for training.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A análise crítica permite identificar falácias, compreender melhor os argumentos e avaliar a validade das evidências apresentadas.",
-  //   "en-US":
-  //     "Critical analysis helps identify fallacies, better understand arguments, and assess the validity of presented evidence.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Políticas econômicas globais podem exacerbar desigualdades regionais ao beneficiar desproporcionalmente economias mais desenvolvidas.",
-  //   "en-US":
-  //     "Global economic policies can exacerbate regional inequalities by disproportionately benefiting more developed economies.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O capital social pode fortalecer laços comunitários, promover a cooperação e facilitar o acesso a recursos e oportunidades.",
-  //   "en-US":
-  //     "Social capital can strengthen community ties, promote cooperation, and facilitate access to resources and opportunities.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A inovação disruptiva pode forçar empresas a adaptarem seus modelos de negócios ou enfrentar o risco de obsolescência.",
-  //   "en-US":
-  //     "Disruptive innovation can force companies to adapt their business models or face the risk of obsolescence.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A filosofia da ciência ajuda a esclarecer os métodos e fundamentos da pesquisa científica, promovendo uma melhor compreensão dos processos científicos.",
-  //   "en-US":
-  //     "The philosophy of science helps clarify the methods and foundations of scientific research, promoting a better understanding of scientific processes.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A governança corporativa é crucial para garantir que uma empresa opere de maneira transparente, ética e responsável.",
-  //   "en-US":
-  //     "Corporate governance is crucial for ensuring that a company operates transparently, ethically, and responsibly.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A sustentabilidade empresarial pode ser integrada através de práticas de responsabilidade social, eficiência de recursos e estratégias de longo prazo.",
-  //   "en-US":
-  //     "Corporate sustainability can be integrated through social responsibility practices, resource efficiency, and long-term strategies.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Redes sociais influenciam a opinião pública ao amplificar informações e facilitar a interação entre grupos de interesse.",
-  //   "en-US":
-  //     "Social networks influence public opinion by amplifying information and facilitating interaction between interest groups.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "O conceito de justiça econômica pode ser aplicado através de políticas que promovem a equidade na distribuição de recursos e oportunidades.",
-  //   "en-US":
-  //     "The concept of economic justice can be applied through policies that promote equity in the distribution of resources and opportunities.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A digitalização pode comprometer a privacidade dos dados ao expor informações pessoais a riscos de segurança e uso indevido.",
-  //   "en-US":
-  //     "Digitization can compromise data privacy by exposing personal information to security risks and misuse.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A diversidade no local de trabalho pode fomentar novas perspectivas, promover a inovação e melhorar a colaboração entre equipes.",
-  //   "en-US":
-  //     "Workplace diversity can foster new perspectives, promote innovation, and enhance team collaboration.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Políticas de imigração podem influenciar a economia ao afetar a força de trabalho, o consumo e as relações internacionais.",
-  //   "en-US":
-  //     "Immigration policies can influence the economy by affecting the workforce, consumption, and international relations.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "Preservar a história ajuda a manter a identidade cultural e fornece uma conexão com o passado para as futuras gerações.",
-  //   "en-US":
-  //     "Historical preservation helps maintain cultural identity and provides a connection to the past for future generations.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A inovação tecnológica pode mudar o comportamento do consumidor ao introduzir novos produtos e alterar as expectativas do mercado.",
-  //   "en-US":
-  //     "Technological innovation can change consumer behavior by introducing new products and altering market expectations.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A teoria dos jogos pode ajudar a resolver conflitos ao modelar diferentes estratégias e prever possíveis resultados em negociações.",
-  //   "en-US":
-  //     "Game theory can help resolve conflicts by modeling different strategies and predicting possible outcomes in negotiations.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A análise de dados é crucial para identificar tendências, fazer previsões e tomar decisões informadas em ambientes empresariais.",
-  //   "en-US":
-  //     "Data analysis is crucial for identifying trends, making forecasts, and making informed decisions in business environments.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A responsabilidade ambiental pode influenciar a percepção pública ao demonstrar o compromisso de uma empresa com práticas sustentáveis.",
-  //   "en-US":
-  //     "Environmental responsibility can influence public perception by demonstrating a company's commitment to sustainable practices.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A educação inclusiva busca atender às necessidades de todos os alunos, promovendo um ambiente de aprendizado equitativo e acessível.",
-  //   "en-US":
-  //     "Inclusive education aims to meet the needs of all students, promoting an equitable and accessible learning environment.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A integração de tecnologias emergentes pode melhorar a eficiência dos serviços de saúde pública, mas também pode enfrentar desafios de implementação.",
-  //   "en-US":
-  //     "Integrating emerging technologies can improve the efficiency of public health services but may also face implementation challenges.",
-  // },
-  // {
-  //   "pt-BR":
-  //     "A complexidade dos sistemas políticos pode dificultar a formulação de políticas públicas ao envolver múltiplas partes interessadas e interesses conflitantes.",
-  //   "en-US":
-  //     "The complexity of political systems can hinder public policy formulation by involving multiple stakeholders and conflicting interests.",
-  // },
+  {
+    "pt-BR":
+      "A globalização pode beneficiar as economias emergentes ao expandir mercados e aumentar investimentos, mas também pode expô-las a volatilidades econômicas e desigualdades.",
+    "en-US":
+      "Globalization can benefit emerging economies by expanding markets and increasing investments, but it can also expose them to economic volatility and inequalities.",
+  },
+  {
+    "pt-BR":
+      "Os principais desafios incluem a coordenação entre diferentes setores, a resistência de partes interessadas e a necessidade de recursos financeiros e tecnológicos.",
+    "en-US":
+      "Main challenges include coordination among different sectors, stakeholder resistance, and the need for financial and technological resources.",
+  },
+  {
+    "pt-BR":
+      "Novas tecnologias estão automatizando tarefas, permitindo trabalho remoto e criando novas oportunidades e desafios no mercado de trabalho.",
+    "en-US":
+      "New technologies are automating tasks, enabling remote work, and creating new opportunities and challenges in the job market.",
+  },
+  {
+    "pt-BR":
+      "As ONGs promovem os direitos humanos por meio de advocacy, campanhas de conscientização e fornecimento de assistência a grupos vulneráveis.",
+    "en-US":
+      "NGOs promote human rights through advocacy, awareness campaigns, and providing assistance to vulnerable groups.",
+  },
+  {
+    "pt-BR":
+      "A teoria da evolução ajuda a explicar como as espécies se diversificam ao longo do tempo devido à adaptação às mudanças ambientais.",
+    "en-US":
+      "The theory of evolution helps explain how species diversify over time due to adaptation to environmental changes.",
+  },
+  {
+    "pt-BR":
+      "As mudanças climáticas podem reduzir a produtividade agrícola, alterar padrões de precipitação e aumentar a frequência de eventos extremos.",
+    "en-US":
+      "Climate change can reduce agricultural productivity, alter precipitation patterns, and increase the frequency of extreme events.",
+  },
+  {
+    "pt-BR":
+      "A ética empresarial promove a confiança dos consumidores e investidores, melhorando a imagem e a sustentabilidade da empresa a longo prazo.",
+    "en-US":
+      "Business ethics promotes consumer and investor trust, enhancing the company's image and long-term sustainability.",
+  },
+  {
+    "pt-BR":
+      "A educação bilíngue pode melhorar habilidades cognitivas, aumentar oportunidades profissionais e facilitar o acesso a diferentes culturas.",
+    "en-US":
+      "Bilingual education can enhance cognitive skills, increase professional opportunities, and facilitate access to different cultures.",
+  },
+  {
+    "pt-BR":
+      "A digitalização está mudando a forma como os serviços financeiros são oferecidos, com o crescimento de fintechs e soluções digitais.",
+    "en-US":
+      "Digitization is changing how financial services are provided, with the rise of fintechs and digital solutions.",
+  },
+  {
+    "pt-BR":
+      "A filosofia política oferece fundamentos teóricos para a criação de políticas públicas e ajuda a avaliar a eficácia das práticas governamentais.",
+    "en-US":
+      "Political philosophy provides theoretical foundations for creating public policies and helps evaluate the effectiveness of governmental practices.",
+  },
+  {
+    "pt-BR":
+      "A inteligência emocional pode melhorar a capacidade de um líder de entender e gerenciar suas próprias emoções e as dos outros.",
+    "en-US":
+      "Emotional intelligence can enhance a leader's ability to understand and manage their own emotions and those of others.",
+  },
+  {
+    "pt-BR":
+      "Os benefícios incluem a melhoria da eficiência e da qualidade dos cuidados, enquanto os desafios envolvem custos e a necessidade de treinamento.",
+    "en-US":
+      "Benefits include improved efficiency and care quality, while challenges involve costs and the need for training.",
+  },
+  {
+    "pt-BR":
+      "A análise crítica permite identificar falácias, compreender melhor os argumentos e avaliar a validade das evidências apresentadas.",
+    "en-US":
+      "Critical analysis helps identify fallacies, better understand arguments, and assess the validity of presented evidence.",
+  },
+  {
+    "pt-BR":
+      "Políticas econômicas globais podem exacerbar desigualdades regionais ao beneficiar desproporcionalmente economias mais desenvolvidas.",
+    "en-US":
+      "Global economic policies can exacerbate regional inequalities by disproportionately benefiting more developed economies.",
+  },
+  {
+    "pt-BR":
+      "O capital social pode fortalecer laços comunitários, promover a cooperação e facilitar o acesso a recursos e oportunidades.",
+    "en-US":
+      "Social capital can strengthen community ties, promote cooperation, and facilitate access to resources and opportunities.",
+  },
+  {
+    "pt-BR":
+      "A inovação disruptiva pode forçar empresas a adaptarem seus modelos de negócios ou enfrentar o risco de obsolescência.",
+    "en-US":
+      "Disruptive innovation can force companies to adapt their business models or face the risk of obsolescence.",
+  },
+  {
+    "pt-BR":
+      "A filosofia da ciência ajuda a esclarecer os métodos e fundamentos da pesquisa científica, promovendo uma melhor compreensão dos processos científicos.",
+    "en-US":
+      "The philosophy of science helps clarify the methods and foundations of scientific research, promoting a better understanding of scientific processes.",
+  },
+  {
+    "pt-BR":
+      "A governança corporativa é crucial para garantir que uma empresa opere de maneira transparente, ética e responsável.",
+    "en-US":
+      "Corporate governance is crucial for ensuring that a company operates transparently, ethically, and responsibly.",
+  },
+  {
+    "pt-BR":
+      "A sustentabilidade empresarial pode ser integrada através de práticas de responsabilidade social, eficiência de recursos e estratégias de longo prazo.",
+    "en-US":
+      "Corporate sustainability can be integrated through social responsibility practices, resource efficiency, and long-term strategies.",
+  },
+  {
+    "pt-BR":
+      "Redes sociais influenciam a opinião pública ao amplificar informações e facilitar a interação entre grupos de interesse.",
+    "en-US":
+      "Social networks influence public opinion by amplifying information and facilitating interaction between interest groups.",
+  },
+  {
+    "pt-BR":
+      "O conceito de justiça econômica pode ser aplicado através de políticas que promovem a equidade na distribuição de recursos e oportunidades.",
+    "en-US":
+      "The concept of economic justice can be applied through policies that promote equity in the distribution of resources and opportunities.",
+  },
+  {
+    "pt-BR":
+      "A digitalização pode comprometer a privacidade dos dados ao expor informações pessoais a riscos de segurança e uso indevido.",
+    "en-US":
+      "Digitization can compromise data privacy by exposing personal information to security risks and misuse.",
+  },
+  {
+    "pt-BR":
+      "A diversidade no local de trabalho pode fomentar novas perspectivas, promover a inovação e melhorar a colaboração entre equipes.",
+    "en-US":
+      "Workplace diversity can foster new perspectives, promote innovation, and enhance team collaboration.",
+  },
+  {
+    "pt-BR":
+      "Políticas de imigração podem influenciar a economia ao afetar a força de trabalho, o consumo e as relações internacionais.",
+    "en-US":
+      "Immigration policies can influence the economy by affecting the workforce, consumption, and international relations.",
+  },
+  {
+    "pt-BR":
+      "Preservar a história ajuda a manter a identidade cultural e fornece uma conexão com o passado para as futuras gerações.",
+    "en-US":
+      "Historical preservation helps maintain cultural identity and provides a connection to the past for future generations.",
+  },
+  {
+    "pt-BR":
+      "A inovação tecnológica pode mudar o comportamento do consumidor ao introduzir novos produtos e alterar as expectativas do mercado.",
+    "en-US":
+      "Technological innovation can change consumer behavior by introducing new products and altering market expectations.",
+  },
+  {
+    "pt-BR":
+      "A teoria dos jogos pode ajudar a resolver conflitos ao modelar diferentes estratégias e prever possíveis resultados em negociações.",
+    "en-US":
+      "Game theory can help resolve conflicts by modeling different strategies and predicting possible outcomes in negotiations.",
+  },
+  {
+    "pt-BR":
+      "A análise de dados é crucial para identificar tendências, fazer previsões e tomar decisões informadas em ambientes empresariais.",
+    "en-US":
+      "Data analysis is crucial for identifying trends, making forecasts, and making informed decisions in business environments.",
+  },
+  {
+    "pt-BR":
+      "A responsabilidade ambiental pode influenciar a percepção pública ao demonstrar o compromisso de uma empresa com práticas sustentáveis.",
+    "en-US":
+      "Environmental responsibility can influence public perception by demonstrating a company's commitment to sustainable practices.",
+  },
+  {
+    "pt-BR":
+      "A educação inclusiva busca atender às necessidades de todos os alunos, promovendo um ambiente de aprendizado equitativo e acessível.",
+    "en-US":
+      "Inclusive education aims to meet the needs of all students, promoting an equitable and accessible learning environment.",
+  },
+  {
+    "pt-BR":
+      "A integração de tecnologias emergentes pode melhorar a eficiência dos serviços de saúde pública, mas também pode enfrentar desafios de implementação.",
+    "en-US":
+      "Integrating emerging technologies can improve the efficiency of public health services but may also face implementation challenges.",
+  },
+  {
+    "pt-BR":
+      "A complexidade dos sistemas políticos pode dificultar a formulação de políticas públicas ao envolver múltiplas partes interessadas e interesses conflitantes.",
+    "en-US":
+      "The complexity of political systems can hinder public policy formulation by involving multiple stakeholders and conflicting interests.",
+  },
+  // long phrases
+  //////////////////////
   {
     "en-US": "He didn't see me.",
     "pt-BR": "Ele não me olhou.",

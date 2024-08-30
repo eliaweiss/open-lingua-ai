@@ -88,7 +88,13 @@ export const AppProvider = ({ children }) => {
       sourceLanguage,
       targetLanguage,
     ]);
-  }, [targetLanguage, sourceLanguage, appInitFlag, phraseTranslation]);
+  }, [
+    targetLanguage,
+    sourceLanguage,
+    appInitFlag,
+    phraseTranslation,
+    maxNumberOfWordsInPhrase,
+  ]);
 
   useEffect(() => {
     if (!appInitFlag) return;
