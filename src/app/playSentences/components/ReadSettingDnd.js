@@ -64,7 +64,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
         </div>
         <div className="flex-1">
           <div className="text-xs">{t("speed")}</div>
-          <div className="font-bold">
+          <div className="font-bold text-black">
             <Input
               value={rSetting.rate}
               onChange={(e) => changeValue("rate", e.target.value)}
@@ -75,7 +75,7 @@ const DraggableItemContent = ({ rSetting, index }) => {
         </div>
         <div className="flex-1">
           <div className="text-xs">{t("wait_after")}</div>
-          <div className="font-bold">
+          <div className="font-bold text-black">
             <Input
               value={rSetting.waitAfter}
               onChange={(e) => changeValue("waitAfter", e.target.value)}
