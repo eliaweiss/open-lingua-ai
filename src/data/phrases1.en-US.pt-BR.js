@@ -239,6 +239,184 @@ export const phrases = [
     "pt-BR": "Sim, aceitamos cartões de crédito e débito.",
     "en-US": "Yes, we accept credit and debit cards.",
   },
+  { "pt-BR": "Olá, como você está?", "en-US": "Hi, how are you?" },
+  {
+    "pt-BR": "Bom dia, prazer em conhecê-lo.",
+    "en-US": "Good morning, nice to meet you.",
+  },
+  { "pt-BR": "Obrigado por sua ajuda.", "en-US": "Thank you for your help." },
+  { "pt-BR": "Até logo!", "en-US": "See you later!" },
+  { "pt-BR": "Eu gostaria de um café.", "en-US": "I would like a coffee." },
+  { "pt-BR": "Eu moro no Brasil.", "en-US": "I live in Brazil." },
+  {
+    "pt-BR": "Gosto de estudar línguas.",
+    "en-US": "I like to study languages.",
+  },
+  { "pt-BR": "Eu estou com fome.", "en-US": "I am hungry." },
+  { "pt-BR": "Hoje é um dia bonito.", "en-US": "Today is a beautiful day." },
+  { "pt-BR": "Qual é o seu nome?", "en-US": "What is your name?" },
+  { "pt-BR": "Qual é a sua idade?", "en-US": "How old are you?" },
+  { "pt-BR": "Qual é a sua profissão?", "en-US": "What is your profession?" },
+  { "pt-BR": "Qual é o seu endereço?", "en-US": "What is your address?" },
+  {
+    "pt-BR": "Qual é o seu número de telefone?",
+    "en-US": "What is your phone number?",
+  },
+  {
+    "pt-BR": "Qual é a sua nacionalidade?",
+    "en-US": "What is your nationality?",
+  },
+  {
+    "pt-BR": "Qual é o seu time de futebol favorito?",
+    "en-US": "What is your favorite soccer team?",
+  },
+  { "pt-BR": "Qual é a data de hoje?", "en-US": "What is today's date?" },
+  {
+    "pt-BR": "Qual é o seu filme favorito?",
+    "en-US": "What is your favorite movie?",
+  },
+  {
+    "pt-BR": "Qual é a sua comida favorita?",
+    "en-US": "What is your favorite food?",
+  },
+  { "pt-BR": "Onde você mora?", "en-US": "Where do you live?" },
+  { "pt-BR": "Onde você trabalha?", "en-US": "Where do you work?" },
+  { "pt-BR": "Onde está o banheiro?", "en-US": "Where is the bathroom?" },
+  {
+    "pt-BR": "Onde fica a estação de trem?",
+    "en-US": "Where is the train station?",
+  },
+  { "pt-BR": "Onde você nasceu?", "en-US": "Where were you born?" },
+  { "pt-BR": "Onde está o restaurante?", "en-US": "Where is the restaurant?" },
+  {
+    "pt-BR": "Onde está o supermercado mais próximo?",
+    "en-US": "Where is the nearest supermarket?",
+  },
+  { "pt-BR": "Onde você estudou?", "en-US": "Where did you study?" },
+  {
+    "pt-BR": "Onde está o ponto de ônibus?",
+    "en-US": "Where is the bus stop?",
+  },
+  { "pt-BR": "Onde você estava ontem?", "en-US": "Where were you yesterday?" },
+  { "pt-BR": "Meu nome é João.", "en-US": "My name is João." },
+  { "pt-BR": "Eu tenho 25 anos.", "en-US": "I am 25 years old." },
+  { "pt-BR": "Eu sou engenheiro.", "en-US": "I am an engineer." },
+  {
+    "pt-BR": "Meu endereço é Rua das Flores, 123.",
+    "en-US": "My address is 123 Flowers Street.",
+  },
+  {
+    "pt-BR": "Meu número de telefone é, (11) 98765-4321.",
+    "en-US": "My phone number is (11) 98765-4321.",
+  },
+  {
+    "pt-BR": "Meu time de futebol favorito é o Flamengo.",
+    "en-US": "My favorite soccer team is Flamengo.",
+  },
+  {
+    "pt-BR": "Hoje é 11 de junho de 2024.",
+    "en-US": "Today is June 11, 2024.",
+  },
+  {
+    "pt-BR": 'Meu filme favorito é "O Poderoso Chefão".',
+    "en-US": 'My favorite movie is "The Godfather".',
+  },
+  {
+    "pt-BR": "Minha comida favorita é pizza.",
+    "en-US": "My favorite food is pizza.",
+  },
+  { "pt-BR": "Eu moro em São Paulo.", "en-US": "I live in São Paulo." },
+  { "pt-BR": "Eu trabalho em um escritório.", "en-US": "I work in an office." },
+  { "pt-BR": "O banheiro está ali.", "en-US": "The bathroom is over there." },
+  {
+    "pt-BR": "A estação de trem fica na próxima rua.",
+    "en-US": "The train station is on the next street.",
+  },
+  {
+    "pt-BR": "Eu nasci em Rio de Janeiro.",
+    "en-US": "I was born in Rio de Janeiro.",
+  },
+  {
+    "pt-BR": "O restaurante está na esquina.",
+    "en-US": "The restaurant is on the corner.",
+  },
+  {
+    "pt-BR": "O supermercado mais próximo está a duas quadras daqui.",
+    "en-US": "The nearest supermarket is two blocks away.",
+  },
+  {
+    "pt-BR": "Eu estudei na Universidade de São Paulo.",
+    "en-US": "I studied at the University of São Paulo.",
+  },
+  {
+    "pt-BR": "O ponto de ônibus está naquela direção.",
+    "en-US": "The bus stop is in that direction.",
+  },
+  { "pt-BR": "Eu estava em casa ontem.", "en-US": "I was at home yesterday." },
+  { "pt-BR": "Quanto custa isso?", "en-US": "How much does this cost?" },
+  { "pt-BR": "Eu não entendo.", "en-US": "I don't understand." },
+  { "pt-BR": "Você fala inglês?", "en-US": "Do you speak English?" },
+  { "pt-BR": "Eu preciso de um médico.", "en-US": "I need a doctor." },
+  { "pt-BR": "Onde fica o hotel?", "en-US": "Where is the hotel?" },
+  { "pt-BR": "Pode repetir, por favor?", "en-US": "Can you repeat, please?" },
+  { "pt-BR": "A escola fica perto daqui", "en-US": "The school is near here" },
+  {
+    "pt-BR": "Ele vai ficar em casa hoje",
+    "en-US": "He will stay at home today",
+  },
+  {
+    "pt-BR": "Fique aqui enquanto eu saio",
+    "en-US": "Stay here while I go out",
+  },
+  {
+    "pt-BR": "Ele ficou triste com a notícia",
+    "en-US": "He became sad with the news",
+  },
+  { "pt-BR": "O tempo ficou quente", "en-US": "The weather became hot" },
+  {
+    "pt-BR": "Eu gostaria de uma mesa para duas pessoas.",
+    "en-US": "I would like a table for two, please.",
+  },
+  {
+    "pt-BR": "Qual é o horário de funcionamento?",
+    "en-US": "What are the opening hours?",
+  },
+  { "pt-BR": "Posso pagar com cartão?", "en-US": "Can I pay with a card?" },
+  {
+    "pt-BR": "Claro, estou aqui para ajudar.",
+    "en-US": "Of course, I'm here to help.",
+  },
+  { "pt-BR": "Isso custa R$ 20.", "en-US": "That costs $20." },
+  {
+    "pt-BR": "Você pode explicar de forma diferente?",
+    "en-US": "Can you explain it differently?",
+  },
+  {
+    "pt-BR": "Sim, eu falo inglês fluentemente.",
+    "en-US": "Yes, I speak English fluently.",
+  },
+  {
+    "pt-BR": "Vou chamar um médico imediatamente.",
+    "en-US": "I will call a doctor immediately.",
+  },
+  {
+    "pt-BR": "O hotel fica na rua principal.",
+    "en-US": "The hotel is on the main street.",
+  },
+  { "pt-BR": "Claro, eu posso repetir.", "en-US": "Sure, I can repeat." },
+  {
+    "pt-BR": "Certamente, vou providenciar uma mesa para duas pessoas.",
+    "en-US": "Certainly, I will arrange a table for two.",
+  },
+  {
+    "pt-BR": "Estamos abertos das 9h às 18h, de segunda a sexta-feira.",
+    "en-US": "We are open from 9am to 6pm, Monday to Friday.",
+  },
+  {
+    "pt-BR": "Sim, aceitamos cartões de crédito e débito.",
+    "en-US": "Yes, we accept credit and debit cards.",
+  },  
+  ///
   {
     "pt-BR": "um dois três quatro cinco seis sete oito nove dez",
     "en-US": "count 1 to 10",
