@@ -46,6 +46,8 @@ export function SettingsUi() {
     const value = Number(event.target.value);
     if (!isNaN(value) && value > 0) {
       setMaxNumberOfWordsInPhrase(value);
+    } else {
+      setMaxNumberOfWordsInPhrase(null);
     }
   };
 
@@ -144,7 +146,7 @@ export function SettingsUi() {
         <h2 className="text-xl mb-2">{t("max_words_in_phrase")}</h2>
         <Input
           type="number"
-          min="1"
+          min="0"
           value={maxNumberOfWordsInPhrase}
           onChange={handleMaxWordsChange}
         />
