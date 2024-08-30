@@ -82,9 +82,15 @@ const useAppStore = create((set, get) => ({
 
   // Add other state variables and their setters here...
 
-  // Some functions that directly manipulate the state can stay in the store
-  toggleTheme: () =>
-    set((state) => ({ theme: state.theme === "light" ? "dark" : "light" })),
+  //   // Some functions that directly manipulate the state can stay in the store
+  toggleTheme: () => {
+    const { theme } = get();
+    const newTheme = theme === "light" ? "dark" : "light";
+    set({ theme: newTheme });
+    document.documentElement.classList.remove(theme);
+    document.documentElement.classList.add(newTheme);
+    localStorage.setItem("theme", newTheme);
+  },
 
   handleReverseLang: () =>
     set((state) => ({
@@ -107,7 +113,7 @@ const useAppStore = create((set, get) => ({
       nextIndex = 0;
       const newPhrases = randomPermutation(getPhrasesInRange());
       setPhrases(newPhrases); // Use getPhrasesInRange here
-    //   debugger;
+      //   debugger;
       setCurrentPhrase(newPhrases[nextIndex]);
     } else {
       setCurrentPhrase(phrases[nextIndex]);
