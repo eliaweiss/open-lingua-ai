@@ -34,6 +34,9 @@ export function SettingsUi() {
       const val = Math.min(allPhrases.length, value);
       newRange[1] = Number(val);
     }
+    if (isNaN(newRange[0]) || isNaN(newRange[1])) {
+      return;
+    }
     setPhraseRange(newRange);
   };
 
