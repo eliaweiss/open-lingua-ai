@@ -28,7 +28,18 @@ export const AppProvider = ({ children }) => {
   const [phraseRange, setPhraseRange] = useState([0, 0]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState("light");
-  const [allPhrases, setAllPhrases] = useState([]);
+  const [allPhrases, _setAllPhrases] = useState([]);
+  const setAllPhrases = (newPhrases) => {
+    // remove duplicates
+    console.log("newPhrases", newPhrases.length);
+    const uniquePhrases = newPhrases.filter(
+      (phrase, index, self) =>
+        index === self.findIndex((t) => t.target === phrase.target)
+    );
+    console.log("uniquePhrases", uniquePhrases.length);
+
+    _setAllPhrases(uniquePhrases);
+  };
   const [phrases, setPhrases] = useState([]);
   const [readSettingsArray, setReadSettingsArray] = useState(
     deepCopy(BEGINNER_READ_SETTINGS)
@@ -117,7 +128,6 @@ export const AppProvider = ({ children }) => {
         1,
         phrases.length,
       ]);
-      setPhraseRange(storedPhraseRange);
 
       /// init all phrase
       let storedAllPhrases = myLocalStorage.get("allPhrases", null);
