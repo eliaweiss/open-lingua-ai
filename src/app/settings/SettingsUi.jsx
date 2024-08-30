@@ -93,7 +93,7 @@ export function SettingsUi() {
           className="mt-2 px-3 py-1 bg-card text-card-foreground rounded hover:bg-pHov"
           onClick={() => setPhraseRange([0, allPhrases.length])}
         >
-          {t("Reset phrase range")}
+          {t("reset_phrase_range")}
         </button>
       </div>
 
