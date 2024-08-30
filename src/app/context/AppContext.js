@@ -37,6 +37,7 @@ export const AppProvider = ({ children }) => {
     availablePhraseTranslation,
     readSettingsArray,
     locale,
+    handleReverseLang,
   } = useAppStore();
 
   const initFlagRef = useRef(false);
