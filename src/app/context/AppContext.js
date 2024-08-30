@@ -32,7 +32,6 @@ export const AppProvider = ({ children }) => {
   const setAllPhrases = (newPhrases) => {
     const uniquePhrases = getUniquePhrases(newPhrases);
     setPhraseRange([0, uniquePhrases.length]);
-    console.log("uniquePhrases", uniquePhrases.length);
     _setAllPhrases(uniquePhrases);
   };
   const [phrases, setPhrases] = useState([]);
