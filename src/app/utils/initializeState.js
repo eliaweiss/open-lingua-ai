@@ -20,8 +20,7 @@ export const initializeState = async (useAppStore) => {
     setDailyCount,
     setLocale,
     setAppInitFlag,
-    targetLanguage,
-    sourceLanguage,
+    setPhraseRange,
   } = useAppStore.getState();
 
   const storageVersion = myLocalStorage.get("STORAGE_VERSION");
@@ -54,7 +53,9 @@ export const initializeState = async (useAppStore) => {
 
   let storedAllPhrases = myLocalStorage.get("allPhrases", null);
   if (!storedAllPhrases) {
-    await loadPhrasesTranslationFromStorage(storedAvailablePhraseTranslation[0]);
+    storedAllPhrases = await loadPhrasesTranslationFromStorage(
+      storedAvailablePhraseTranslation[0]
+    );
   } else {
     setPhraseTranslation(
       await storage.get(
@@ -81,6 +82,13 @@ export const initializeState = async (useAppStore) => {
     storage.set("dailyCount", 0);
     storage.set("currentDaytimeStamp", todayTimestamp);
   }
+
+  // Initialize phraseRange from storage or set default
+  const storedPhraseRange = await storage.get("phraseRange", [
+    0,
+    storedAllPhrases.length,
+  ]); // Default to [0, 100] if not found
+  setPhraseRange(storedPhraseRange);
 
   setAppInitFlag(true);
 };

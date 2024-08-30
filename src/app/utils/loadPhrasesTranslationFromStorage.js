@@ -1,17 +1,21 @@
-import { storage } from './storageUtils';
-import { getLanguagesFromFileName } from './languageUtils';
-import { setPhrasesTargetSrc } from './phraseUtils';
-import useAppStore from '../store/appStore';
+import { storage } from "./storageUtils";
+import { getLanguagesFromFileName } from "./languageUtils";
+import { setPhrasesTargetSrc } from "./phraseUtils";
+import useAppStore from "../store/appStore";
 
-export const loadPhrasesTranslationFromStorage = async (phraseTranslation, inputLangList) => {
+export const loadPhrasesTranslationFromStorage = async (
+  phraseTranslation,
+  inputLangList
+) => {
   const {
     targetLanguage,
     sourceLanguage,
     setAllPhrases,
-    setPhraseTranslation
+    setPhraseTranslation,
   } = useAppStore.getState();
 
-  const languages = inputLangList ?? getLanguagesFromFileName(phraseTranslation);
+  const languages =
+    inputLangList ?? getLanguagesFromFileName(phraseTranslation);
   const phraseFromStorage = await storage.get(phraseTranslation);
   const storedAllPhrases = setPhrasesTargetSrc(
     phraseFromStorage,
@@ -19,6 +23,6 @@ export const loadPhrasesTranslationFromStorage = async (phraseTranslation, input
     targetLanguage,
     sourceLanguage
   );
-  setAllPhrases(storedAllPhrases);
   setPhraseTranslation(phraseTranslation);
+  return setAllPhrases(storedAllPhrases);
 };

@@ -26,8 +26,9 @@ const useAppStore = create((set, get) => ({
     // console.log("uniquePhrases", uniquePhrases.length);
     set({
       allPhrases: uniquePhrases,
-      phraseRange: [0, uniquePhrases.length],
+      //   phraseRange: [0, uniquePhrases.length],
     });
+    return uniquePhrases;
   },
 
   phrases: [],

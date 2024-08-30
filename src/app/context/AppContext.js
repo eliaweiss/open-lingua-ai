@@ -150,7 +150,6 @@ export const AppProvider = ({ children }) => {
     storage.set("phraseRange", phraseRange);
   }, [phraseRange]);
 
-
   useEffect(() => {
     if (typeof window === "undefined") return;
     const storedTheme = localStorage.getItem("theme");
