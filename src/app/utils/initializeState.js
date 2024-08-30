@@ -1,6 +1,6 @@
 import { myLocalStorage, storage } from "./storageUtils";
 import { todayStartTime, isSameDay } from "./dateUtils";
-import { setPhrasesTargetSrc } from "./phraseUtils";
+import { loadPhrasesTranslationFromStorage } from "./loadPhrasesTranslationFromStorage";
 import loadPhraseFromDataFolder from "../context/loadPhraseFromDataFolder";
 import { deepCopy } from "./deepCopy";
 import { BEGINNER_READ_SETTINGS } from "../playSentences/components/PlaySentenceSettings";
@@ -54,23 +54,6 @@ export const initializeState = async (useAppStore) => {
 
   let storedAllPhrases = myLocalStorage.get("allPhrases", null);
   if (!storedAllPhrases) {
-    const loadPhrasesTranslationFromStorage = async (
-      phraseTranslation,
-      inputLangList
-    ) => {
-      const languages =
-        inputLangList ?? getLanguagesFromFileName(phraseTranslation);
-      const phraseFromStorage = await storage.get(phraseTranslation);
-      const storedAllPhrases = setPhrasesTargetSrc(
-        phraseFromStorage,
-        languages,
-        targetLanguage,
-        sourceLanguage
-      );
-      setAllPhrases(storedAllPhrases);
-      setPhraseTranslation(phraseTranslation);
-    };
-
     await loadPhrasesTranslationFromStorage(storedAvailablePhraseTranslation[0]);
   } else {
     setPhraseTranslation(

@@ -2,8 +2,8 @@ import { createContext, useState, useContext, useEffect, useRef } from "react";
 import useAppStore from "../store/appStore";
 import { initializeState } from "../utils/initializeState";
 import { getLanguagesFromFileName } from "../utils/languageUtils";
-
 import { randomPermutation } from "../helpers";
+import { loadPhrasesTranslationFromStorage } from "../utils/loadPhrasesTranslationFromStorage";
 
 const AppContext = createContext();
 
@@ -35,6 +35,8 @@ export const AppProvider = ({ children }) => {
     getPhrasesInRange,
     currentPhraseIndexRef,
     updateCurrentPhraseIndexRef,
+    setAllPhrases,
+    setPhraseTranslation,
   } = useAppStore();
 
   const initFlagRef = useRef(false);
@@ -80,23 +82,16 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     if (!appInitFlag) return;
-    loadPhrasesTranslationFromStorage(phraseTranslation, [
-      sourceLanguage,
-      targetLanguage,
-    ]);
-  }, [targetLanguage, sourceLanguage]);
+    loadPhrasesTranslationFromStorage(phraseTranslation, [sourceLanguage, targetLanguage]);
+  }, [targetLanguage, sourceLanguage, appInitFlag, phraseTranslation]);
 
   useEffect(() => {
     if (!appInitFlag) return;
-    const [sourceLanguage, targetLanguage] =
-      getLanguagesFromFileName(phraseTranslation);
-    setSourceLanguage(sourceLanguage);
-    setTargetLanguage(targetLanguage);
-    loadPhrasesTranslationFromStorage(phraseTranslation, [
-      sourceLanguage,
-      targetLanguage,
-    ]);
-  }, [phraseTranslation]);
+    const [newSourceLanguage, newTargetLanguage] = getLanguagesFromFileName(phraseTranslation);
+    useAppStore.getState().setSourceLanguage(newSourceLanguage);
+    useAppStore.getState().setTargetLanguage(newTargetLanguage);
+    loadPhrasesTranslationFromStorage(phraseTranslation, [newSourceLanguage, newTargetLanguage]);
+  }, [phraseTranslation, appInitFlag]);
 
   useEffect(() => {
     if (!appInitFlag) return;
