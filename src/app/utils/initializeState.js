@@ -21,6 +21,7 @@ export const initializeState = async (useAppStore) => {
     setLocale,
     setAppInitFlag,
     setPhraseRange,
+    setMaxNumberOfWordsInPhrase,
   } = useAppStore.getState();
 
   const storageVersion = myLocalStorage.get("STORAGE_VERSION");
@@ -89,6 +90,10 @@ export const initializeState = async (useAppStore) => {
     storedAllPhrases.length,
   ]);
   setPhraseRange(storedPhraseRange);
+
+  // Initialize maxNumberOfWordsInPhrase from storage or set default
+  const storedMaxWords = await storage.get("maxNumberOfWordsInPhrase", null);
+  setMaxNumberOfWordsInPhrase(storedMaxWords <= 0 ? null : storedMaxWords);
 
   setAppInitFlag(true);
 };

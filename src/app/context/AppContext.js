@@ -38,6 +38,7 @@ export const AppProvider = ({ children }) => {
     readSettingsArray,
     locale,
     handleReverseLang,
+    maxNumberOfWordsInPhrase,
   } = useAppStore();
 
   const initFlagRef = useRef(false);
@@ -160,6 +161,11 @@ export const AppProvider = ({ children }) => {
     }
     setTheme(storedTheme);
   }, []);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("maxNumberOfWordsInPhrase", maxNumberOfWordsInPhrase);
+  }, [maxNumberOfWordsInPhrase]);
 
   return (
     <AppContext.Provider value={useAppStore()}>{children}</AppContext.Provider>

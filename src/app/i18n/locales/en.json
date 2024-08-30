@@ -37,5 +37,7 @@
   "send_me_feedback": "send me feedback",
   "current_support_exercises": "We currently support only two exercises that are easy to understand. Therefore, the explanation provided is brief. However, I plan to elaborate on the text and the exercises in the future.",
   "note_app_data_storage": "Note: The app does not store any information remotely. All data is stored locally, and there is no backup available.",
-  "reset_phrase_range": "Reset to Full Range"
+  "reset_phrase_range": "Reset to Full Range",
+  "max_words_in_phrase": "Maximum Words in Phrase",
+  "max_words_description": "Set the maximum number of words allowed in a phrase. Phrases exceeding this limit will be filtered out."
 }

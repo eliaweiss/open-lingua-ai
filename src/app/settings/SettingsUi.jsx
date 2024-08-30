@@ -22,6 +22,8 @@ export function SettingsUi() {
     targetLanguage,
     sourceLanguage,
     handleReverseLang,
+    maxNumberOfWordsInPhrase,
+    setMaxNumberOfWordsInPhrase,
   } = useAppContext();
   const t = useTranslation();
 
@@ -38,6 +40,13 @@ export function SettingsUi() {
       return;
     }
     setPhraseRange(newRange);
+  };
+
+  const handleMaxWordsChange = (event) => {
+    const value = Number(event.target.value);
+    if (!isNaN(value) && value > 0) {
+      setMaxNumberOfWordsInPhrase(value);
+    }
   };
 
   return (
@@ -129,6 +138,17 @@ export function SettingsUi() {
             <div className="">Reverse languages</div>
           </div>
         </div>
+      </div>
+
+      <div className="mb-6">
+        <h2 className="text-xl mb-2">{t("max_words_in_phrase")}</h2>
+        <Input
+          type="number"
+          min="1"
+          value={maxNumberOfWordsInPhrase}
+          onChange={handleMaxWordsChange}
+        />
+        <div className="text-sm">{t("max_words_description")}</div>
       </div>
     </div>
   );

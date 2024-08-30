@@ -86,6 +86,14 @@ const useAppStore = create((set, get) => ({
   currentPhrase: null,
   setCurrentPhrase: (phrase) => set({ currentPhrase: phrase }),
 
+  maxNumberOfWordsInPhrase: null,
+  setMaxNumberOfWordsInPhrase: (max) => {
+    if (max < 1) {
+      max = null;
+    }
+    set({ maxNumberOfWordsInPhrase: max });
+  },
+
   // Add other state variables and their setters here...
 
   //   // Some functions that directly manipulate the state can stay in the store
