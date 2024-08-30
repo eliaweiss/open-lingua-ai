@@ -89,6 +89,12 @@ export function SettingsUi() {
           <div className="text-red-500">{t("start_must_be_less_than_end")}</div>
         )}
         <div className="text-sm">{t("phrase_range_description")}</div>
+        <button
+          className="mt-2 px-3 py-1 bg-card text-card-foreground rounded hover:bg-pHov"
+          onClick={() => setPhraseRange([0, allPhrases.length])}
+        >
+          {t("Reset phrase range")}
+        </button>
       </div>
 
       <div className="mb-6">
