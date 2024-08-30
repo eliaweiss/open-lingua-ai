@@ -4,6 +4,7 @@ import { initializeState } from "../utils/initializeState";
 import { getLanguagesFromFileName } from "../utils/languageUtils";
 import { randomPermutation } from "../helpers";
 import { loadPhrasesTranslationFromStorage } from "../utils/loadPhrasesTranslationFromStorage";
+import { storage } from "../utils/storageUtils";
 
 const AppContext = createContext();
 
@@ -25,9 +26,7 @@ export const AppProvider = ({ children }) => {
     setPhrases,
     phraseTranslation,
     sourceLanguage,
-    setSourceLanguage,
     targetLanguage,
-    setTargetLanguage,
     setIsSrcRtl,
     setIsTargetRtl,
     currentPhraseIndex,
@@ -35,8 +34,9 @@ export const AppProvider = ({ children }) => {
     getPhrasesInRange,
     currentPhraseIndexRef,
     updateCurrentPhraseIndexRef,
-    setAllPhrases,
-    setPhraseTranslation,
+    availablePhraseTranslation,
+    readSettingsArray,
+    locale,
   } = useAppStore();
 
   const initFlagRef = useRef(false);
@@ -82,15 +82,22 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     if (!appInitFlag) return;
-    loadPhrasesTranslationFromStorage(phraseTranslation, [sourceLanguage, targetLanguage]);
+    loadPhrasesTranslationFromStorage(phraseTranslation, [
+      sourceLanguage,
+      targetLanguage,
+    ]);
   }, [targetLanguage, sourceLanguage, appInitFlag, phraseTranslation]);
 
   useEffect(() => {
     if (!appInitFlag) return;
-    const [newSourceLanguage, newTargetLanguage] = getLanguagesFromFileName(phraseTranslation);
+    const [newSourceLanguage, newTargetLanguage] =
+      getLanguagesFromFileName(phraseTranslation);
     useAppStore.getState().setSourceLanguage(newSourceLanguage);
     useAppStore.getState().setTargetLanguage(newTargetLanguage);
-    loadPhrasesTranslationFromStorage(phraseTranslation, [newSourceLanguage, newTargetLanguage]);
+    loadPhrasesTranslationFromStorage(phraseTranslation, [
+      newSourceLanguage,
+      newTargetLanguage,
+    ]);
   }, [phraseTranslation, appInitFlag]);
 
   useEffect(() => {
@@ -106,6 +113,41 @@ export const AppProvider = ({ children }) => {
     if (!phrases || !phrases.length) return;
     setCurrentPhrase(phrases[currentPhraseIndex]);
   }, [phrases]);
+
+  ////////////////////////////////////////////////////////////////////////
+  // save to storage
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("phraseTranslation", phraseTranslation);
+  }, [phraseTranslation]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("availablePhraseTranslation", availablePhraseTranslation);
+  }, [availablePhraseTranslation]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("allPhrases", allPhrases);
+  }, [allPhrases]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("locale", locale);
+    if (locale === targetLanguage.substring(0, 2)) {
+      handleReverseLang();
+    }
+  }, [locale]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("readSettingsArray", readSettingsArray);
+  }, [readSettingsArray]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("phraseRange", phraseRange);
+  }, [phraseRange]);
 
   return (
     <AppContext.Provider value={useAppStore()}>{children}</AppContext.Provider>
