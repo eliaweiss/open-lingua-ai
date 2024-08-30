@@ -3,9 +3,4 @@ export function getLanguagesFromFileName(filename) {
   return filename.match(regex);
 }
 
-export function getLanguageName(type, sourceLanguage, targetLanguage) {
-  if (type === "target") return targetLanguage;
-  if (type === "src") return sourceLanguage;
-}
-
-// ... other language-related functions
+// Remove the getLanguageName function from here if it's not used elsewhere

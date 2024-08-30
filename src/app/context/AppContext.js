@@ -69,6 +69,7 @@ export const AppProvider = ({ children }) => {
     handleReverseLang,
     increasePhraseIndex,
     getPhrasesInRange,
+    getLanguageName,
   } = useAppStore();
 
   const currentPhraseIndexRef = useRef(currentPhraseIndex);
@@ -270,8 +271,7 @@ export const AppProvider = ({ children }) => {
         allPhrases,
         readSettingsArray,
         setReadSettingsArray,
-        getLanguageName: (type) =>
-          getLanguageName(type, sourceLanguage, targetLanguage),
+        getLanguageName,
         locale,
         setLocale,
         availablePhraseTranslation,

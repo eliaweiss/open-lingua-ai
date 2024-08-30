@@ -114,6 +114,11 @@ const useAppStore = create((set, get) => ({
   },
 
   // ... other functions that directly manipulate state
+  getLanguageName: (type) => {
+    const { sourceLanguage, targetLanguage } = get();
+    if (type === "target") return targetLanguage;
+    if (type === "src") return sourceLanguage;
+  },
 }));
 
 export default useAppStore;
