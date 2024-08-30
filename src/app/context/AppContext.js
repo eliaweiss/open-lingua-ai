@@ -1,12 +1,9 @@
 import { createContext, useState, useContext, useEffect, useRef } from "react";
 import useAppStore from "../store/appStore";
 import { initializeState } from "../utils/initializeState";
-import {
-  getLanguagesFromFileName,
-} from "../utils/languageUtils";
+import { getLanguagesFromFileName } from "../utils/languageUtils";
 
 import { randomPermutation } from "../helpers";
-
 
 const AppContext = createContext();
 
@@ -57,16 +54,21 @@ export const AppProvider = ({ children }) => {
     increasePhraseIndex,
     getPhrasesInRange,
     getLanguageName,
+    currentPhraseIndexRef,
+    updateCurrentPhraseIndexRef,
   } = useAppStore();
 
-  const currentPhraseIndexRef = useRef(currentPhraseIndex);
-
   const initFlagRef = useRef(false);
+
   useEffect(() => {
     if (initFlagRef.current) return;
     initFlagRef.current = true;
     initializeState(useAppStore);
   }, []);
+
+  useEffect(() => {
+    updateCurrentPhraseIndexRef();
+  }, [currentPhraseIndex, updateCurrentPhraseIndexRef]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;

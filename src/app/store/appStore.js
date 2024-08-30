@@ -72,6 +72,11 @@ const useAppStore = create((set, get) => ({
   currentPhraseIndex: 0,
   setCurrentPhraseIndex: (index) => set({ currentPhraseIndex: index }),
 
+  currentPhraseIndexRef: { current: 0 },
+  updateCurrentPhraseIndexRef: () => {
+    get().currentPhraseIndexRef.current = get().currentPhraseIndex;
+  },
+
   currentPhrase: null,
   setCurrentPhrase: (phrase) => set({ currentPhrase: phrase }),
 
