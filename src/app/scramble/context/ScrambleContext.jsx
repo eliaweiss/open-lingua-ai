@@ -36,8 +36,8 @@ export const ScrambleProvider = ({ children }) => {
     useState(false);
   // buffer the words, useRef is needed in case a word was clicked while we were reading
   // in such case we continue reading until the word buffer is empty (see readClickBuffer)
-  const [wordClickBuffer, setWordClickBuffer] = useState([]);
-  const wordClickBufferRef = useRef(wordClickBuffer);
+  // const [wordClickBuffer, setWordClickBuffer] = useState([]);
+  const wordClickBufferRef = useRef([]);
 
   const [userBufferArray, setUserBufferArray] = useState([]);
   // after wordClickBuffer we check if the user buffer is complete,
@@ -92,24 +92,20 @@ export const ScrambleProvider = ({ children }) => {
   }
 
   const addToWordClickBuffer = (word) => {
-    const newBuff = [...wordClickBuffer, word];
-    setWordClickBuffer(newBuff);
+    wordClickBufferRef.current = [...wordClickBufferRef.current, word];
   };
 
   useEffect(() => {
     userBufferArrayRef.current = userBufferArray;
   }, [userBufferArray]);
 
-  // NOTE: I deliberately separated the 2 useEffect to emphasize that they are not dependent
-  useEffect(() => {
-    wordClickBufferRef.current = wordClickBuffer;
-  }, [wordClickBuffer]);
-
-  const readClickBuffer = async () => {
+  ////////////////////////////////////////////////////////////////
+  const readClickBuffer = async (force = false) => {
     if (
-      isReading_wordClick ||
-      isReading_partOfSentence ||
-      wordClickBufferRef.current.length == 0
+      !force &&
+      (isReading_wordClick ||
+        isReading_partOfSentence ||
+        wordClickBufferRef.current.length == 0)
     )
       return;
     setIsReading_wordClick(true);
@@ -117,7 +113,7 @@ export const ScrambleProvider = ({ children }) => {
       while (wordClickBufferRef.current.length > 0) {
         let buffer = getWordClickBuffer(wordClickBufferRef.current); // NOTE: useRef is essential here
         // console.log("buffer", buffer);
-        setWordClickBuffer([]);
+        wordClickBufferRef.current = [];
         await readAloud_target(buffer, 1.25);
       }
     } finally {
@@ -128,7 +124,7 @@ export const ScrambleProvider = ({ children }) => {
 
   useEffect(() => {
     readClickBuffer();
-  }, [wordClickBuffer]);
+  }, [wordClickBufferRef.current]);
 
   ////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////
@@ -183,7 +179,7 @@ export const ScrambleProvider = ({ children }) => {
 
   const resetUserBuffer = () => {
     setUserBufferArray([]);
-    setWordClickBuffer([]);
+    wordClickBufferRef.current = [];
   };
 
   ////////////////////////////////////////////////////////////////
@@ -258,7 +254,7 @@ export const ScrambleProvider = ({ children }) => {
       setIsReading_partOfSentence(false);
       setIsReading_wordClick(false);
       setTimeout(() => {
-        readClickBuffer();
+        readClickBuffer(true);
       }, 100);
     }
   }
