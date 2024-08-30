@@ -59,7 +59,7 @@ export const ScrambleExercise = () => {
       <div className="mt-4 flex flex-col items-center text-xl">
         <TooltipWrapper text="played-sentences/total-sentences">
           <div className="text-sm">
-            {currentPhraseIndex}/{phrases.length}
+            {currentPhraseIndex}/{phrases?.length || 0}
           </div>
         </TooltipWrapper>
       </div>

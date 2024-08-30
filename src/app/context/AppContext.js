@@ -1,8 +1,19 @@
 import { createContext, useState, useContext, useEffect, useRef } from "react";
+import useAppStore from "../store/appStore";
+import {
+  getLanguagesFromFileName,
+  getLanguageName,
+} from "../utils/languageUtils";
+import { myLocalStorage, storage } from "../utils/storageUtils";
+import { todayStartTime, isSameDay } from "../utils/dateUtils";
+import { getUniquePhrases, setPhrasesTargetSrc } from "../utils/phraseUtils";
 import { randomPermutation } from "../helpers";
-
 import { BEGINNER_READ_SETTINGS } from "../playSentences/components/PlaySentenceSettings";
 import loadPhraseFromDataFolder from "./loadPhraseFromDataFolder";
+import { deepCopy } from "../utils/deepCopy";
+
+// Add this line to define STORAGE_VERSION
+const STORAGE_VERSION = "1.0"; // You can adjust this version as needed
 
 const AppContext = createContext();
 
@@ -14,70 +25,70 @@ const LANGUAGE = {
 
 const RTL_LANG = [LANGUAGE.IL_HE];
 
-export function deepCopy(obj) {
-  return JSON.parse(JSON.stringify(obj));
-}
-
-const todayStartTime = () => new Date().setHours(0, 0, 0, 0); // Midnight of the current day
-
-const STORAGE_VERSION = "0.1";
 export const AppProvider = ({ children }) => {
-  const [locale, setLocale] = useState("en"); // Default to browser locale
+  const {
+    locale,
+    setLocale,
+    appInitFlag,
+    setAppInitFlag,
+    phraseRange,
+    setPhraseRange,
+    isMenuOpen,
+    setIsMenuOpen,
+    theme,
+    setTheme,
+    allPhrases,
+    setAllPhrases,
+    phrases,
+    setPhrases,
+    readSettingsArray,
+    setReadSettingsArray,
+    phraseTranslation,
+    setPhraseTranslation,
+    availablePhraseTranslation,
+    setAvailablePhraseTranslation,
+    sourceLanguage,
+    setSourceLanguage,
+    targetLanguage,
+    setTargetLanguage,
+    sourceLanguageRate,
+    setSourceLanguageRate,
+    targetLanguageRate,
+    setTargetLanguageRate,
+    isSrcRtl,
+    setIsSrcRtl,
+    isTargetRtl,
+    setIsTargetRtl,
+    dailyCount,
+    setDailyCount,
+    currentPhraseIndex,
+    setCurrentPhraseIndex,
+    currentPhrase,
+    setCurrentPhrase,
+    toggleTheme,
+    handleReverseLang,
+    increasePhraseIndex,
+  } = useAppStore();
 
-  const [appInitFlag, setAppInitFlag] = useState(false);
-  const [phraseRange, setPhraseRange] = useState([0, 0]);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState("light");
-  const [allPhrases, _setAllPhrases] = useState([]);
-  const setAllPhrases = (newPhrases) => {
-    const uniquePhrases = getUniquePhrases(newPhrases);
-    setPhraseRange([0, uniquePhrases.length]);
-    _setAllPhrases(uniquePhrases);
-  };
-  const [phrases, setPhrases] = useState([]);
-  const [readSettingsArray, setReadSettingsArray] = useState(
-    deepCopy(BEGINNER_READ_SETTINGS)
-  );
-
-  const [phraseTranslation, setPhraseTranslation] = useState();
-  const [availablePhraseTranslation, setAvailablePhraseTranslation] = useState(
-    []
-  );
-
-  const [sourceLanguage, setSourceLanguage] = useState(LANGUAGE.EN_US);
-  const [targetLanguage, setTargetLanguage] = useState(LANGUAGE.PT_BR);
-  const [sourceLanguageRate, setSourceLanguageRate] = useState(1);
-  const [targetLanguageRate, setTargetLanguageRate] = useState(1);
-  const [isSrcRtl, setIsSrcRtl] = useState(false);
-  const [isTargetRtl, setIsTargetRtl] = useState(false);
-  const [dailyCount, setDailyCount] = useState(0);
-
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   const currentPhraseIndexRef = useRef(currentPhraseIndex);
-  const [currentPhrase, setCurrentPhrase] = useState(null);
 
-  ////////////////////////////////////////////////////////////////
-  function getLanguagesFromFileName(filename) {
-    // Regular expression to match language codes in the format "xx-XX"
-    const regex = /\b[a-z]{2}-[A-Z]{2}\b/g;
-    const languages = filename.match(regex);
-    return languages;
-  }
-  ////////////////////////////////////////////////////////////////
   const loadPhrasesTranslationFromStorage = async (
     phraseTranslation,
     inputLangList
   ) => {
     const languages =
-      inputLangList ?? getLanguagesFromFileName(phraseTranslation); //Object.keys(phraseFromStorage[0]);
+      inputLangList ?? getLanguagesFromFileName(phraseTranslation);
     const phraseFromStorage = await storage.get(phraseTranslation);
-    const storedAllPhrases = setPhrasesTargetSrc(phraseFromStorage, languages);
+    const storedAllPhrases = setPhrasesTargetSrc(
+      phraseFromStorage,
+      languages,
+      targetLanguage,
+      sourceLanguage
+    );
     setAllPhrases(storedAllPhrases);
     setPhraseTranslation(phraseTranslation);
   };
 
-  ////////////////////////////////////////////////////////////////
-  // init app
   const initFlagRef = useRef(false);
   useEffect(() => {
     if (initFlagRef.current) return;
@@ -171,44 +182,6 @@ export const AppProvider = ({ children }) => {
     initializeState();
   }, []);
 
-  // Function to check if the stored timestamp is for today
-  const isSameDay = (timestamp1, timestamp2) => {
-    const date1 = new Date(timestamp1);
-    const date2 = new Date(timestamp2);
-    return date1.toDateString() === date2.toDateString();
-  };
-
-  const incrDailyCount = () => {
-    const newCount = dailyCount + 1;
-    setDailyCount(newCount);
-    storage.set("dailyCount", newCount);
-  };
-
-  const setPhrasesTargetSrc = (newPhrases, languages) => {
-    const [newSourceLanguage, newTargetLanguage] = languages ?? [
-      targetLanguage,
-      sourceLanguage,
-    ];
-    setTargetLanguage(newTargetLanguage);
-    setSourceLanguage(newSourceLanguage);
-    const phrases = newPhrases.map((phrase) => {
-      return {
-        target: phrase[newTargetLanguage],
-        src: phrase[newSourceLanguage],
-      };
-    });
-    return phrases;
-  };
-
-  const toggleTheme = () => {
-    if (typeof window === "undefined") return;
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    document.documentElement.classList.remove(theme);
-    document.documentElement.classList.add(newTheme);
-    localStorage.setItem("theme", newTheme);
-  };
-
   useEffect(() => {
     if (typeof window === "undefined") return;
     const storedTheme = localStorage.getItem("theme");
@@ -219,47 +192,6 @@ export const AppProvider = ({ children }) => {
     }
     setTheme(storedTheme);
   }, []);
-
-  function handleReverseLang() {
-    setTargetLanguage(sourceLanguage);
-    setSourceLanguage(targetLanguage);
-  }
-
-  ////////////////////////////////////////////////////////////////////////
-  // save to storage
-  useEffect(() => {
-    if (!appInitFlag) return;
-    storage.set("phraseTranslation", phraseTranslation);
-  }, [phraseTranslation]);
-
-  useEffect(() => {
-    if (!appInitFlag) return;
-    storage.set("availablePhraseTranslation", availablePhraseTranslation);
-  }, [availablePhraseTranslation]);
-
-  useEffect(() => {
-    if (!appInitFlag) return;
-    storage.set("allPhrases", allPhrases);
-  }, [allPhrases]);
-
-  useEffect(() => {
-    if (!appInitFlag) return;
-    storage.set("locale", locale);
-    if (locale === targetLanguage.substring(0, 2)) {
-      handleReverseLang();
-    }
-  }, [locale]);
-
-  useEffect(() => {
-    if (!appInitFlag) return;
-    storage.set("readSettingsArray", readSettingsArray);
-  }, [readSettingsArray]);
-
-  useEffect(() => {
-    if (!appInitFlag) return;
-    storage.set("phraseRange", phraseRange);
-  }, [phraseRange]);
-  ////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     if (!appInitFlag) return;
@@ -279,8 +211,6 @@ export const AppProvider = ({ children }) => {
     }
   }, [targetLanguage]);
 
-  ////////////////////////////////////////////////////////////////////////
-
   useEffect(() => {
     if (!appInitFlag) return;
     loadPhrasesTranslationFromStorage(phraseTranslation, [
@@ -289,7 +219,6 @@ export const AppProvider = ({ children }) => {
     ]);
   }, [targetLanguage, sourceLanguage]);
 
-  ////////////////////////////////////////////////////////////////////////
   useEffect(() => {
     if (!appInitFlag) return;
     const [sourceLanguage, targetLanguage] =
@@ -302,48 +231,24 @@ export const AppProvider = ({ children }) => {
     ]);
   }, [phraseTranslation]);
 
-  ////////////////////////////////////////////////////////////////////////
-
   useEffect(() => {
     if (!appInitFlag) return;
+    // debugger;
     setPhrases(randomPermutation(getPhrasesInRange()));
-  }, [allPhrases, phraseRange]);
-
-  ////////////////////////////////////////////////////////////////////////
-
-  const getPhrasesInRange = () => {
-    return allPhrases.slice(phraseRange[0], phraseRange[1] + 1);
-  };
-  ////////////////////////////////////////////////////////////////////////
+  }, [allPhrases, phraseRange, appInitFlag]);
 
   useEffect(() => {
     currentPhraseIndexRef.current = currentPhraseIndex;
   }, [currentPhraseIndex]);
-  ////////////////////////////////////////////////////////////////////////
 
   useEffect(() => {
     if (!phrases || !phrases.length) return;
     setCurrentPhrase(phrases[currentPhraseIndex]);
   }, [phrases]);
 
-  ////////////////////////////////////////////////////////////////////////
+  const getPhrasesInRange = () =>
+    allPhrases.slice(phraseRange[0], phraseRange[1] + 1);
 
-  function increasePhraseIndex() {
-    let nextIndex = currentPhraseIndex + 1;
-    if (nextIndex >= phrases.length) {
-      nextIndex = 0;
-      setPhrases(randomPermutation(phrases));
-    }
-    setCurrentPhraseIndex(nextIndex);
-    setCurrentPhrase(phrases[nextIndex]);
-    incrDailyCount();
-    return nextIndex;
-  }
-
-  const getLanguageName = (type) => {
-    if (type === "target") return targetLanguage;
-    if (type === "src") return sourceLanguage;
-  };
   return (
     <AppContext.Provider
       value={{
@@ -363,23 +268,23 @@ export const AppProvider = ({ children }) => {
         setPhraseRange,
         getPhrasesInRange,
         increasePhraseIndex,
-        currentPhraseIndexRef,
         currentPhraseIndex,
         currentPhrase,
         allPhrases,
         readSettingsArray,
         setReadSettingsArray,
-        getLanguageName,
+        getLanguageName: (type) =>
+          getLanguageName(type, sourceLanguage, targetLanguage),
         locale,
         setLocale,
         availablePhraseTranslation,
         phraseTranslation,
         setPhraseTranslation,
-        targetLanguage,
         setTargetLanguage,
-        sourceLanguage,
         setSourceLanguage,
         handleReverseLang,
+        setAllPhrases,
+        currentPhraseIndexRef,
       }}
     >
       {children}
@@ -388,48 +293,3 @@ export const AppProvider = ({ children }) => {
 };
 
 export const useAppContext = () => useContext(AppContext);
-
-// Utility functions for local storage operations
-const myLocalStorage = {
-  get: (key, defaultValue = []) => {
-    if (typeof window === "undefined") return defaultValue;
-    const storedValue = localStorage.getItem(key);
-    if (!storedValue) {
-      return defaultValue;
-    }
-    try {
-      return storedValue ? JSON.parse(storedValue) : defaultValue;
-    } catch {
-      return storedValue;
-    }
-  },
-  set: (key, value) => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem(key, JSON.stringify(value));
-    }
-  },
-  remove: (key) => {
-    if (typeof window !== "undefined") {
-      localStorage.removeItem(key);
-    }
-  },
-};
-// Utility functions for local storage operations
-const storage = {
-  get: async (key, defaultValue = []) => {
-    return await myLocalStorage.get(key, defaultValue);
-  },
-  set: async (key, value) => {
-    myLocalStorage.set(key, value);
-  },
-  remove: async (key) => {
-    myLocalStorage.remove(key);
-  },
-};
-
-const getUniquePhrases = (phrases) => {
-  return phrases.filter(
-    (phrase, index, self) =>
-      index === self.findIndex((t) => t.target === phrase.target)
-  );
-};
