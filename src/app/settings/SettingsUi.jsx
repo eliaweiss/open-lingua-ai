@@ -27,16 +27,14 @@ export function SettingsUi() {
 
   const handleRangeChange = (event) => {
     const { name, value } = event.target;
-    setPhraseRange((prevRange) => {
-      const newRange = [...prevRange];
-      if (name === "start") {
-        newRange[0] = Number(value);
-      } else {
-        const val = Math.min(allPhrases.length, value);
-        newRange[1] = Number(val);
-      }
-      return newRange;
-    });
+    const newRange = [...phraseRange];
+    if (name === "start") {
+      newRange[0] = Number(value);
+    } else {
+      const val = Math.min(allPhrases.length, value);
+      newRange[1] = Number(val);
+    }
+    setPhraseRange(newRange);
   };
 
   return (
