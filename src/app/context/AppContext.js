@@ -30,14 +30,9 @@ export const AppProvider = ({ children }) => {
   const [theme, setTheme] = useState("light");
   const [allPhrases, _setAllPhrases] = useState([]);
   const setAllPhrases = (newPhrases) => {
-    // remove duplicates
-    console.log("newPhrases", newPhrases.length);
-    const uniquePhrases = newPhrases.filter(
-      (phrase, index, self) =>
-        index === self.findIndex((t) => t.target === phrase.target)
-    );
+    const uniquePhrases = getUniquePhrases(newPhrases);
+    setPhraseRange([0, uniquePhrases.length]);
     console.log("uniquePhrases", uniquePhrases.length);
-
     _setAllPhrases(uniquePhrases);
   };
   const [phrases, setPhrases] = useState([]);
@@ -78,7 +73,6 @@ export const AppProvider = ({ children }) => {
       inputLangList ?? getLanguagesFromFileName(phraseTranslation); //Object.keys(phraseFromStorage[0]);
     const phraseFromStorage = await storage.get(phraseTranslation);
     const storedAllPhrases = setPhrasesTargetSrc(phraseFromStorage, languages);
-    setPhraseRange([0, storedAllPhrases.length]);
     setAllPhrases(storedAllPhrases);
     setPhraseTranslation(phraseTranslation);
   };
@@ -432,4 +426,11 @@ const storage = {
   remove: async (key) => {
     myLocalStorage.remove(key);
   },
+};
+
+const getUniquePhrases = (phrases) => {
+  return phrases.filter(
+    (phrase, index, self) =>
+      index === self.findIndex((t) => t.target === phrase.target)
+  );
 };
