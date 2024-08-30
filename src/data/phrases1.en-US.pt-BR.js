@@ -6139,4 +6139,44 @@ export const phrases = [
     "en-US": "Her goal includes becoming a boss and manager.",
     "pt-BR": "O objetivo dela inclui se tornar chefe e gerente.",
   },
+  {
+    "en-US": "She jumped on him in the dark.",
+    "pt-BR": "Ela pulou nele no escuro."
+  },
+  {
+    "en-US": "They didn't organize anything. It was all impulsive.",
+    "pt-BR": "Eles não organizaram nada. Foi tudo impulsivo."
+  },
+  {
+    "en-US": "He bought many beautiful and lovely flowers.",
+    "pt-BR": "Ele comprou muitas flores bonitas e lindas."
+  },
+  {
+    "en-US": "They always wanted to study a new language, but they only decided yesterday.",
+    "pt-BR": "Eles sempre quiseram estudar uma nova língua, mas decidiram só ontem."
+  },
+  {
+    "en-US": "She felt very nervous during the project. However, she felt very good after finishing the project.",
+    "pt-BR": "Ela foi muito nervosa durante o projeto. Aliás, ela se sentiu muito bem após concluir o projeto."
+  },
+  {
+    "en-US": "He went to the restaurant with his family.",
+    "pt-BR": "Ele foi ao restaurante com sua família."
+  },
+  {
+    "en-US": "She liked the new restaurant so much because it is wonderful.",
+    "pt-BR": "Ela gostou tanto do novo restaurante porque é maravilhoso."
+  },
+  {
+    "en-US": "He didn't learn programming. He learned to play the guitar.",
+    "pt-BR": "Ele não aprendeu programação. Ele aprendeu a tocar violão."
+  },
+  {
+    "en-US": "They decided last week.",
+    "pt-BR": "Elas decidiram na semana passada."
+  },
+  {
+    "en-US": "He wants to earn more money.",
+    "pt-BR": "Ele quer ganhar mais dinheiro."
+  }
 ];
