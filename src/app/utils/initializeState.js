@@ -87,7 +87,7 @@ export const initializeState = async (useAppStore) => {
   const storedPhraseRange = await storage.get("phraseRange", [
     0,
     storedAllPhrases.length,
-  ]); // Default to [0, 100] if not found
+  ]);
   setPhraseRange(storedPhraseRange);
 
   setAppInitFlag(true);
