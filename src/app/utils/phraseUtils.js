@@ -5,7 +5,12 @@ export const getUniquePhrases = (phrases) => {
   );
 };
 
-export const setPhrasesTargetSrc = (newPhrases, languages, targetLanguage, sourceLanguage) => {
+export const setPhrasesTargetSrc = (
+  newPhrases,
+  languages,
+  targetLanguage,
+  sourceLanguage
+) => {
   const [newSourceLanguage, newTargetLanguage] = languages ?? [
     targetLanguage,
     sourceLanguage,
@@ -15,5 +20,3 @@ export const setPhrasesTargetSrc = (newPhrases, languages, targetLanguage, sourc
     src: phrase[newSourceLanguage],
   }));
 };
-
-// ... other phrase-related functions

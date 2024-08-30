@@ -105,10 +105,15 @@ const useAppStore = create((set, get) => ({
     let nextIndex = currentPhraseIndex + 1;
     if (nextIndex >= phrases.length) {
       nextIndex = 0;
-      setPhrases(randomPermutation(getPhrasesInRange())); // Use getPhrasesInRange here
+      const newPhrases = randomPermutation(getPhrasesInRange());
+      setPhrases(newPhrases); // Use getPhrasesInRange here
+    //   debugger;
+      setCurrentPhrase(newPhrases[nextIndex]);
+    } else {
+      setCurrentPhrase(phrases[nextIndex]);
     }
+
     setCurrentPhraseIndex(nextIndex);
-    setCurrentPhrase(phrases[nextIndex]);
     setDailyCount((count) => count + 1);
     return nextIndex;
   },
