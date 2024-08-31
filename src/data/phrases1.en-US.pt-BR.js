@@ -6803,4 +6803,8 @@ export const phrases = [
     "en-US": "Do you think I was going to take it secretly?",
     "pt-BR": "Cê acha que eu ia pegar escondida?",
   },
+  {
+    "en-US": "I was going to show him, but he was busy with paperwork.",
+    "pt-BR": "Eu ia mostrar, mas ele estava ocupado com a papelada",
+  },
 ];
