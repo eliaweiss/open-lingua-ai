@@ -6372,48 +6372,125 @@ export const phrases = [
       "pois a ação de 'dever' estava em andamento, mas não foi realizada.",
   },
   {
-    "en-US": "You are absolutely right! Depending on the context, both conjugations are possible.",
+    "en-US":
+      "You are absolutely right! Depending on the context, both conjugations are possible.",
     "pt-BR":
       "Você está absolutamente certo! Dependendo do contexto, ambas as conjugações são possíveis",
   },
   {
     "en-US": "I try to learn to swim every day.",
-    "pt-BR": "Eu tento aprender a nadar todos os dias."
+    "pt-BR": "Eu tento aprender a nadar todos os dias.",
   },
   {
     "en-US": "Yesterday, he exchanged the car tires.",
-    "pt-BR": "Ontem, ele trocou os pneus do carro."
+    "pt-BR": "Ontem, ele trocou os pneus do carro.",
   },
   {
     "en-US": "We must study more for the test next week.",
-    "pt-BR": "Nós devemos estudar mais para a prova na próxima semana."
+    "pt-BR": "Nós devemos estudar mais para a prova na próxima semana.",
   },
   {
     "en-US": "She gave a gift to her friend on his birthday.",
-    "pt-BR": "Ela deu um presente ao amigo no aniversário dele."
+    "pt-BR": "Ela deu um presente ao amigo no aniversário dele.",
   },
   {
-    "en-US": "While they were bringing the groceries, we were cleaning the kitchen.",
-    "pt-BR": "Enquanto eles traziam as compras, nós arrumávamos a cozinha."
+    "en-US":
+      "While they were bringing the groceries, we were cleaning the kitchen.",
+    "pt-BR": "Enquanto eles traziam as compras, nós arrumávamos a cozinha.",
   },
   {
     "en-US": "Tomorrow, I will try to wake up earlier.",
-    "pt-BR": "Amanhã, eu tentarei acordar mais cedo."
+    "pt-BR": "Amanhã, eu tentarei acordar mais cedo.",
   },
   {
     "en-US": "Last year, we always exchanged ideas about the projects.",
-    "pt-BR": "No ano passado, nós sempre trocávamos ideias sobre os projetos."
+    "pt-BR": "No ano passado, nós sempre trocávamos ideias sobre os projetos.",
   },
   {
-    "en-US": "They were supposed to help their parents with the chores, but they preferred to go out.",
-    "pt-BR": "Eles deviam ajudar os pais com as tarefas de casa, mas preferiram sair."
+    "en-US":
+      "They were supposed to help their parents with the chores, but they preferred to go out.",
+    "pt-BR":
+      "Eles deviam ajudar os pais com as tarefas de casa, mas preferiram sair.",
   },
   {
     "en-US": "I gave a detailed explanation during the meeting.",
-    "pt-BR": "Eu dei uma explicação detalhada durante a reunião."
+    "pt-BR": "Eu dei uma explicação detalhada durante a reunião.",
   },
   {
     "en-US": "He will bring the dessert for tonight's dinner.",
-    "pt-BR": "Ele trará a sobremesa para o jantar de hoje."
-  }
+    "pt-BR": "Ele trará a sobremesa para o jantar de hoje.",
+  },
+  {
+    "en-US": "While they are trying to find the way, I consulted the map.",
+    "pt-BR":
+      "Enquanto eles estão tentando encontrar o caminho, eu consultei o mapa.",
+  },
+  {
+    "en-US": "She changed the light bulbs while I am preparing dinner.",
+    "pt-BR": "Ela trocou as lâmpadas enquanto eu estou preparando o jantar.",
+  },
+  {
+    "en-US": "You correctly used the gerund for both continuous actions.",
+    "pt-BR":
+      "Você utilizou corretamente o gerúndio para ambas as ações contínuas",
+  },
+  {
+    "en-US": "we will go to the park after they have finished work",
+    "pt-BR":
+      "nós iremos ao parque depois que eles tiverem terminado o trabalho",
+  },
+  {
+    "en-US": "which reflects future actions that will occur simultaneously",
+    "pt-BR": "o que reflete ações futuras que ocorrerão simultaneamente",
+  },
+  {
+    "en-US": "The correct sentence would be",
+    "pt-BR": "A frase correta seria",
+  },
+  {
+    "en-US": "He brought the documents while we are waiting in the room.",
+    "pt-BR": "Ele trouxe os documentos enquanto nós estamos esperando na sala.",
+  },
+  {
+    "en-US": "I am studying for the test while my brother is watching TV.",
+    "pt-BR":
+      "Eu estou estudando para a prova enquanto meu irmão está assistindo TV.",
+  },
+  {
+    "en-US": "Tomorrow, we will go to the park while they finish the work.",
+    "pt-BR": "Amanhã, nós iremos ao parque enquanto eles terminam o trabalho.",
+  },
+  {
+    "en-US": "While she is reading the book, he is writing a report.",
+    "pt-BR":
+      "Enquanto ela está lendo o livro, ele está escrevendo um relatório.",
+  },
+  {
+    "en-US": "They will play soccer while we prepare lunch.",
+    "pt-BR": "Eles jogarão futebol enquanto nós prepararemos o almoço.",
+  },
+  {
+    "en-US": "I am riding a bike while he is talking on the phone.",
+    "pt-BR":
+      "Eu estou andando de bicicleta enquanto ele está conversando ao telefone.",
+  },
+  {
+    "en-US": "You sent the email while we are discussing the project.",
+    "pt-BR": "Você enviou o e-mail enquanto nós estamos discutindo o projeto.",
+  },
+  {
+    "en-US": "She will organize the party while he will decorate the hall.",
+    "pt-BR": "Ela organizará a festa enquanto ele decorará o salão.",
+  },
+  {
+    "en-US":
+      "We traveled to the countryside while they are solving problems in the city.",
+    "pt-BR":
+      "Nós viajamos para o interior enquanto eles estão resolvendo os problemas na cidade.",
+  },
+  {
+    "en-US": "While I am cooking, they are setting the table for dinner.",
+    "pt-BR":
+      "Enquanto eu estou cozinhando, eles estão arrumando a mesa para o jantar.",
+  },
 ];
