@@ -6693,4 +6693,48 @@ export const phrases = [
     "en-US": "Since everyone agrees, we can proceed with the plan.",
     "pt-BR": "Já que todos concordam, podemos seguir com o plano.",
   },
+  {
+    "en-US": "He will arrive soon.",
+    "pt-BR": "Ele chegará logo",
+  },
+  {
+    "en-US": "Therefore, we must act quickly.",
+    "pt-BR": "Logo, devemos agir rapidamente.",
+  },
+  {
+    "en-US": "Well, if he didn't come, he must have had a good reason.",
+    "pt-BR": "Ora, se ele não veio, deve ter tido um bom motivo",
+  },
+  {
+    "en-US": "After all, he was right.",
+    "pt-BR": "Afinal, ele tinha razão.",
+  },
+  {
+    "en-US": "After all, everyone agreed with the decision.",
+    "pt-BR": "Afinal, todos concordaram com a decisão",
+  },
+  {
+    "en-US": "He left because he was in a hurry.",
+    "pt-BR": "Ele saiu, pois estava com pressa.",
+  },
+  {
+    "en-US": "He did the same work as yesterday",
+    "pt-BR": "Ele fez o mesmo trabalho de ontem.",
+  },
+  {
+    "en-US": "Even if it rains, we will go to the park",
+    "pt-BR": "Mesmo que chova, iremos ao parque.",
+  },
+  {
+    "en-US": "Take an umbrella, in case it rains",
+    "pt-BR": "Leve um guarda-chuva, caso chova.",
+  },
+  {
+    "en-US": "In case you need help, let me know",
+    "pt-BR": "Caso você precise de ajuda, me avise.",
+  },
+  {
+    "en-US": "Since everyone agrees, let's continue",
+    "pt-BR": "Já que todos concordam, vamos continuar",
+  },
 ];
