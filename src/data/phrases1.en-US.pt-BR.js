@@ -6751,4 +6751,8 @@ export const phrases = [
     "en-US": "I must be wrong",
     "pt-BR": "Devo estar enganada",
   },
+  {
+    "en-US": "I don't care about the face",
+    "pt-BR": "Não tô nem aí pro rosto",
+  },
 ];
