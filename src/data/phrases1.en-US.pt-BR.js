@@ -6768,7 +6768,11 @@ export const phrases = [
     "pt-BR": "Eu não quero estragar sua vida",
   },
   {
-    "en-US": "I'm not going to get involved.e",
+    "en-US": "I'm not going to get involved",
     "pt-BR": "Eu não vou me meter.",
+  },
+  {
+    "en-US": "I came to see if our lunch would happen.",
+    "pt-BR": "Vim ver se rola aquele nosso almoço.",
   },
 ];
