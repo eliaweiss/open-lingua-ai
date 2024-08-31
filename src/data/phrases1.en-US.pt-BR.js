@@ -6827,4 +6827,8 @@ export const phrases = [
     "en-US": "It's for me! Let me answer it",
     "pt-BR": "É pra mim! Deixa que eu atendo",
   },
+  {
+    "en-US": "I almost died of longing",
+    "pt-BR": "Quase morri de saudade",
+  },
 ];
