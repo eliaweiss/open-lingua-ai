@@ -6755,4 +6755,20 @@ export const phrases = [
     "en-US": "I don't care about the face",
     "pt-BR": "Não tô nem aí pro rosto",
   },
+  {
+    "en-US": "Are you going to give the blessing?",
+    "pt-BR": "Vai dar a benção?",
+  },
+  {
+    "en-US": "You think so, but no.",
+    "pt-BR": "Cê acha que sim, mas não",
+  },
+  {
+    "en-US": "I don't want to ruin your life",
+    "pt-BR": "Eu não quero estragar sua vida",
+  },
+  {
+    "en-US": "I'm not going to get involved.e",
+    "pt-BR": "Eu não vou me meter.",
+  },
 ];
