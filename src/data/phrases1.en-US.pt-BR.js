@@ -6737,4 +6737,10 @@ export const phrases = [
     "en-US": "Since everyone agrees, let's continue",
     "pt-BR": "Já que todos concordam, vamos continuar",
   },
+  {
+    "en-US":
+      "You complain, you threaten, but it's all just lip service. You want me here.",
+    "pt-BR":
+      "Você reclama, ameaça, mas é tudo da boca pra fora. Cê me quer aqui",
+  },
 ];
