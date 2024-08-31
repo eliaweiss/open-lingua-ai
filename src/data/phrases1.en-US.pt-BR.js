@@ -6811,4 +6811,8 @@ export const phrases = [
     "en-US": "I'll keep it in the key drawer.",
     "pt-BR": "Eu vou guardar na gaveta de chave.",
   },
+  {
+    "en-US": "I'll keep the key in my underwear drawer.",
+    "pt-BR": "Eu vou guardar a chave na gaveta das calcinhas.",
+  },
 ];
