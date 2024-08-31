@@ -6739,12 +6739,16 @@ export const phrases = [
   },
   {
     "en-US":
-    "You complain, you threaten, but it's all just lip service. You want me here.",
+      "You complain, you threaten, but it's all just lip service. You want me here.",
     "pt-BR":
-    "Você reclama, ameaça, mas é tudo da boca pra fora. Cê me quer aqui",
+      "Você reclama, ameaça, mas é tudo da boca pra fora. Cê me quer aqui",
   },
   {
     "en-US": "If he came to the party, it would be a lot of fun",
     "pt-BR": "Se ele viesse à festa, seria muito divertido",
+  },
+  {
+    "en-US": "I must be wrong",
+    "pt-BR": "Devo estar enganada",
   },
 ];
