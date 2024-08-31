@@ -6791,4 +6791,8 @@ export const phrases = [
     "en-US": "I am lucky in life",
     "pt-BR": "Eu dou sorte na vida",
   },
+  {
+    "en-US": "I prefer to fix it my way",
+    "pt-BR": "Eu prefiro arrumar do meu jeito",
+  },
 ];
