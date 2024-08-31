@@ -6371,4 +6371,49 @@ export const phrases = [
     "pt-BR":
       "pois a ação de 'dever' estava em andamento, mas não foi realizada.",
   },
+  {
+    "en-US": "You are absolutely right! Depending on the context, both conjugations are possible.",
+    "pt-BR":
+      "Você está absolutamente certo! Dependendo do contexto, ambas as conjugações são possíveis",
+  },
+  {
+    "en-US": "I try to learn to swim every day.",
+    "pt-BR": "Eu tento aprender a nadar todos os dias."
+  },
+  {
+    "en-US": "Yesterday, he exchanged the car tires.",
+    "pt-BR": "Ontem, ele trocou os pneus do carro."
+  },
+  {
+    "en-US": "We must study more for the test next week.",
+    "pt-BR": "Nós devemos estudar mais para a prova na próxima semana."
+  },
+  {
+    "en-US": "She gave a gift to her friend on his birthday.",
+    "pt-BR": "Ela deu um presente ao amigo no aniversário dele."
+  },
+  {
+    "en-US": "While they were bringing the groceries, we were cleaning the kitchen.",
+    "pt-BR": "Enquanto eles traziam as compras, nós arrumávamos a cozinha."
+  },
+  {
+    "en-US": "Tomorrow, I will try to wake up earlier.",
+    "pt-BR": "Amanhã, eu tentarei acordar mais cedo."
+  },
+  {
+    "en-US": "Last year, we always exchanged ideas about the projects.",
+    "pt-BR": "No ano passado, nós sempre trocávamos ideias sobre os projetos."
+  },
+  {
+    "en-US": "They were supposed to help their parents with the chores, but they preferred to go out.",
+    "pt-BR": "Eles deviam ajudar os pais com as tarefas de casa, mas preferiram sair."
+  },
+  {
+    "en-US": "I gave a detailed explanation during the meeting.",
+    "pt-BR": "Eu dei uma explicação detalhada durante a reunião."
+  },
+  {
+    "en-US": "He will bring the dessert for tonight's dinner.",
+    "pt-BR": "Ele trará a sobremesa para o jantar de hoje."
+  }
 ];
