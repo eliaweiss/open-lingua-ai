@@ -6815,4 +6815,8 @@ export const phrases = [
     "en-US": "I'll keep the key in my underwear drawer.",
     "pt-BR": "Eu vou guardar a chave na gaveta das calcinhas.",
   },
+  {
+    "en-US": "will fall backwards",
+    "pt-BR": "vai cair pra trás",
+  },
 ];
