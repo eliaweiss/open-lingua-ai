@@ -6823,4 +6823,8 @@ export const phrases = [
     "en-US": "Business hasn't stopped, and I need to stay on top of everything",
     "pt-BR": "Os negócios não pararam, e eu preciso estar a par de tudo",
   },
+  {
+    "en-US": "It's for me! Let me answer it",
+    "pt-BR": "É pra mim! Deixa que eu atendo",
+  },
 ];
