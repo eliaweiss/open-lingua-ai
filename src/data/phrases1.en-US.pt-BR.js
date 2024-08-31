@@ -6835,4 +6835,8 @@ export const phrases = [
     "en-US": "I insist",
     "pt-BR": "Faço questão",
   },
+  {
+    "en-US": "What the hell is this?",
+    "pt-BR": "Que porcaria é essa?",
+  },
 ];
