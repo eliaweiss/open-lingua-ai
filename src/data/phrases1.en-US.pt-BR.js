@@ -6795,4 +6795,8 @@ export const phrases = [
     "en-US": "I prefer to fix it my way",
     "pt-BR": "Eu prefiro arrumar do meu jeito",
   },
+  {
+    "en-US": "and you want to knock down this wall, you can knock it down",
+    "pt-BR": "e quiser derrubar essa parede, pode derrubar",
+  },
 ];
