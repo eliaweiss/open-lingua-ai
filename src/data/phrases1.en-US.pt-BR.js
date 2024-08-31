@@ -6493,4 +6493,70 @@ export const phrases = [
     "pt-BR":
       "Enquanto eu estou cozinhando, eles estão arrumando a mesa para o jantar.",
   },
+
+  {
+    "en-US": "Even though he is being honest, some people still doubt him.",
+    "pt-BR":
+      "Mesmo estando ele sendo honesto, algumas pessoas ainda duvidam dele.",
+  },
+  {
+    "en-US": "She managed to complete the project while being very busy.",
+    "pt-BR": "Ela conseguiu completar o projeto mesmo estando muito ocupada.",
+  },
+  {
+    "en-US": "Being aware of the risks, they decided to proceed with the plan.",
+    "pt-BR": "Estando cientes dos riscos, eles decidiram seguir com o plano.",
+  },
+  {
+    "en-US": "They continued working, despite being tired.",
+    "pt-BR": "Eles continuaram trabalhando, mesmo estando cansados.",
+  },
+  {
+    "en-US": "Even though she is feeling ill, she came to work.",
+    "pt-BR": "Mesmo estando se sentindo mal, ela veio trabalhar.",
+  },
+  {
+    "en-US": "While being away from home, he missed his family a lot.",
+    "pt-BR": "Estando longe de casa, ele sentiu muita falta da família.",
+  },
+  {
+    "en-US": "Despite being young, she has a lot of experience in this field.",
+    "pt-BR": "Estando jovem, ela tem muita experiência nesta área.",
+  },
+  {
+    "en-US": "Being the eldest, he felt responsible for his siblings.",
+    "pt-BR":
+      "Estando como o mais velho, ele se sentia responsável pelos irmãos.",
+  },
+  {
+    "en-US": "They kept calm, even being under pressure.",
+    "pt-BR": "Eles mantiveram a calma, mesmo estando sob pressão.",
+  },
+  {
+    "en-US": "She continued her studies, despite being tired.",
+    "pt-BR": "Ela continuou seus estudos, mesmo estando cansada.",
+  },
+  {
+    "en-US": "The team succeeded, despite being inexperienced.",
+    "pt-BR": "A equipe teve sucesso, mesmo estando inexperiente.",
+  },
+  {
+    "en-US": "Even being in a hurry, he didn't forget anything.",
+    "pt-BR": "Mesmo estando com pressa, ele não esqueceu nada.",
+  },
+  {
+    "en-US": "Being aware of the consequences, they made a careful decision.",
+    "pt-BR":
+      "Estando cientes das consequências, eles tomaram uma decisão cuidadosa.",
+  },
+  {
+    "en-US": "She enjoyed the trip, despite being away from her comfort zone.",
+    "pt-BR":
+      "Ela aproveitou a viagem, mesmo estando fora da sua zona de conforto.",
+  },
+  {
+    "en-US": "Being in a foreign country, he had to adapt quickly.",
+    "pt-BR":
+      "Estando em um país estrangeiro, ele precisou se adaptar rapidamente.",
+  },
 ];
