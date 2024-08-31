@@ -6819,4 +6819,8 @@ export const phrases = [
     "en-US": "will fall backwards",
     "pt-BR": "vai cair pra trás",
   },
+  {
+    "en-US": "Business hasn't stopped, and I need to stay on top of everything",
+    "pt-BR": "Os negócios não pararam, e eu preciso estar a par de tudo",
+  },
 ];
