@@ -6807,4 +6807,8 @@ export const phrases = [
     "en-US": "I was going to show him, but he was busy with paperwork.",
     "pt-BR": "Eu ia mostrar, mas ele estava ocupado com a papelada",
   },
+  {
+    "en-US": "I'll keep it in the key drawer.",
+    "pt-BR": "Eu vou guardar na gaveta de chave.",
+  },
 ];
