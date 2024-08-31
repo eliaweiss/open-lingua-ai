@@ -6831,4 +6831,8 @@ export const phrases = [
     "en-US": "I almost died of longing",
     "pt-BR": "Quase morri de saudade",
   },
+  {
+    "en-US": "I insist",
+    "pt-BR": "Faço questão",
+  },
 ];
