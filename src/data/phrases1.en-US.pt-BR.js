@@ -6775,4 +6775,16 @@ export const phrases = [
     "en-US": "I came to see if our lunch would happen.",
     "pt-BR": "Vim ver se rola aquele nosso almoço.",
   },
+  {
+    "en-US": "You are right",
+    "pt-BR": "Cê tem razão.",
+  },
+  {
+    "en-US": "you just arrived",
+    "pt-BR": "cê acabou de chegar",
+  },
+  {
+    "en-US": "Don't stick your nose where it doesn't belong",
+    "pt-BR": "Não mete o nariz onde não é chamado",
+  },
 ];
