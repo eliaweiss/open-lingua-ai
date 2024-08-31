@@ -6366,4 +6366,9 @@ export const phrases = [
     "en-US": "He wants to earn more money.",
     "pt-BR": "Ele quer ganhar mais dinheiro.",
   },
+  {
+    "en-US": "because the 'duty' action was in progress but was not performed",
+    "pt-BR":
+      "pois a ação de 'dever' estava em andamento, mas não foi realizada.",
+  },
 ];
