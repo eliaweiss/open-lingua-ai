@@ -6787,4 +6787,8 @@ export const phrases = [
     "en-US": "Don't stick your nose where it doesn't belong",
     "pt-BR": "Não mete o nariz onde não é chamado",
   },
+  {
+    "en-US": "I am lucky in life",
+    "pt-BR": "Eu dou sorte na vida",
+  },
 ];
