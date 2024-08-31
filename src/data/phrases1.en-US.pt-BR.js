@@ -6559,4 +6559,138 @@ export const phrases = [
     "pt-BR":
       "Estando em um país estrangeiro, ele precisou se adaptar rapidamente.",
   },
+  {
+    "en-US": "Since everyone agrees, we can start the meeting.",
+    "pt-BR": "Estando todos de acordo, podemos começar a reunião",
+  },
+  {
+    "en-US": "Being more prepared, he had a better chance of success",
+    "pt-BR": "Estando ele mais preparado, tinha mais chances de sucesso",
+  },
+  {
+    "en-US": "Despite the rain, they decided to go hiking.",
+    "pt-BR": "Apesar da chuva, eles decidiram fazer uma caminhada.",
+  },
+  {
+    "en-US": "Despite his efforts, the project was not completed on time.",
+    "pt-BR": "Apesar dos seus esforços, o projeto não foi concluído a tempo.",
+  },
+  {
+    "en-US": "Since you are here, let's start the meeting.",
+    "pt-BR": "Já que você está aqui, vamos começar a reunião.",
+  },
+  {
+    "en-US": "Since it’s a holiday, the store is closed.",
+    "pt-BR": "Já que é feriado, a loja está fechada.",
+  },
+  {
+    "en-US": "Once you’ve finished the task, you can leave.",
+    "pt-BR": "Uma vez que você terminar a tarefa, pode sair.",
+  },
+  {
+    "en-US": "Once we solve this issue, we can move forward.",
+    "pt-BR": "Uma vez que resolvermos esse problema, podemos seguir em frente.",
+  },
+  {
+    "en-US": "Being a doctor, she knows how to handle emergencies.",
+    "pt-BR": "Sendo médica, ela sabe como lidar com emergências.",
+  },
+  {
+    "en-US": "Being the leader, he took responsibility for the team’s failure.",
+    "pt-BR":
+      "Sendo o líder, ele assumiu a responsabilidade pelo fracasso da equipe.",
+  },
+  {
+    "en-US": "Despite being tired, he finished the marathon.",
+    "pt-BR": "Apesar de estar cansado, ele terminou a maratona.",
+  },
+  {
+    "en-US": "Since the weather is nice, we should go to the beach.",
+    "pt-BR": "Já que o tempo está bom, deveríamos ir à praia.",
+  },
+  {
+    "en-US": "Despite the noise, I managed to concentrate on my work.",
+    "pt-BR": "Apesar do barulho, consegui me concentrar no meu trabalho.",
+  },
+  {
+    "en-US": "Despite the late hour, they continued the meeting.",
+    "pt-BR": "Apesar do horário avançado, eles continuaram a reunião.",
+  },
+  {
+    "en-US": "Since it’s your birthday, let’s celebrate!",
+    "pt-BR": "Já que é seu aniversário, vamos comemorar!",
+  },
+  {
+    "en-US": "Since we’re already here, we might as well visit the museum.",
+    "pt-BR": "Já que estamos aqui, podemos visitar o museu.",
+  },
+  {
+    "en-US":
+      "Once you understand the concept, the problem becomes easy to solve.",
+    "pt-BR":
+      "Uma vez que você entende o conceito, o problema se torna fácil de resolver.",
+  },
+  {
+    "en-US": "Once the payment is confirmed, the order will be shipped.",
+    "pt-BR": "Uma vez que o pagamento é confirmado, o pedido será enviado.",
+  },
+  {
+    "en-US": "Being a parent is challenging, but also rewarding.",
+    "pt-BR": "Sendo pai é desafiador, mas também gratificante.",
+  },
+  {
+    "en-US": "Being aware of the risks, they proceeded with caution.",
+    "pt-BR": "Sendo cientes dos riscos, eles prosseguiram com cautela.",
+  },
+  {
+    "en-US": "Despite the challenges, she remained optimistic.",
+    "pt-BR": "Apesar dos desafios, ela permaneceu otimista.",
+  },
+  {
+    "en-US": "Since the project is urgent, we need to work overtime.",
+    "pt-BR": "Já que o projeto é urgente, precisamos trabalhar horas extras.",
+  },
+  {
+    "en-US": "Despite his lack of experience, he did an excellent job.",
+    "pt-BR": "Apesar da falta de experiência, ele fez um excelente trabalho.",
+  },
+  {
+    "en-US": "Despite the cold weather, they went for a walk.",
+    "pt-BR": "Apesar do frio, eles foram caminhar.",
+  },
+  {
+    "en-US": "Since we have extra time, let’s review the material.",
+    "pt-BR": "Já que temos tempo extra, vamos revisar o material.",
+  },
+  {
+    "en-US": "Since the meeting was postponed, we can reschedule our plans.",
+    "pt-BR": "Já que a reunião foi adiada, podemos reagendar nossos planos.",
+  },
+  {
+    "en-US": "Once the decision is made, we can start the project.",
+    "pt-BR": "Uma vez que a decisão for tomada, podemos iniciar o projeto.",
+  },
+  {
+    "en-US": "Once we gather all the data, we can analyze the results.",
+    "pt-BR":
+      "Uma vez que reunirmos todos os dados, podemos analisar os resultados.",
+  },
+  {
+    "en-US":
+      "Being a fast learner, she quickly adapted to the new environment.",
+    "pt-BR":
+      "Sendo uma aprendiz rápida, ela se adaptou rapidamente ao novo ambiente.",
+  },
+  {
+    "en-US": "Being the only candidate, he was selected for the position.",
+    "pt-BR": "Sendo o único candidato, ele foi selecionado para a posição.",
+  },
+  {
+    "en-US": "Despite the difficulties, they never gave up.",
+    "pt-BR": "Apesar das dificuldades, eles nunca desistiram.",
+  },
+  {
+    "en-US": "Since everyone agrees, we can proceed with the plan.",
+    "pt-BR": "Já que todos concordam, podemos seguir com o plano.",
+  },
 ];
