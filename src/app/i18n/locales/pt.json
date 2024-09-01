@@ -39,5 +39,10 @@
     "available_phrase_translation": "Tradução de frase disponível",
     "reset_phrase_range": "Redefinir para Intervalo Completo",
     "max_words_in_phrase": "Número Máximo de Palavras na Frase",
-    "max_words_description": "Defina o número máximo de palavras permitidas em uma frase. Frases que excedam esse limite serão filtradas."
+    "max_words_description": "Defina o número máximo de palavras permitidas em uma frase. Frases que excedam esse limite serão filtradas.",
+    "llm_settings": "Configurações do LLM",
+    "llm_api_key": "Chave da API do LLM",
+    "llm_model": "Modelo do LLM",
+    "google_translator_settings": "Configurações do Tradutor Google",
+    "google_translator_api_key": "Chave da API do Tradutor Google"
 }

@@ -40,6 +40,9 @@ export const AppProvider = ({ children }) => {
     handleReverseLang,
     maxNumberOfWordsInPhrase,
     dailyCount,
+    llmApiKey,
+    llmModel,
+    googleTranslatorApiKey,
   } = useAppStore();
 
   const initFlagRef = useRef(false);
@@ -180,6 +183,22 @@ export const AppProvider = ({ children }) => {
     storage.set("maxNumberOfWordsInPhrase", maxNumberOfWordsInPhrase);
   }, [maxNumberOfWordsInPhrase]);
 
+  useEffect(() => {
+    if (!appInitFlag) return;
+
+    storage.set("llmApiKey", llmApiKey);
+  }, [llmApiKey]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("llmModel", llmModel);
+  }, [llmModel]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("googleTranslatorApiKey", googleTranslatorApiKey);
+  }, [googleTranslatorApiKey]);
+
   async function handleTest() {
     const response = await fetch("/api/tst", {
       method: "POST",
@@ -190,6 +209,24 @@ export const AppProvider = ({ children }) => {
     const data = await response.json();
     console.log(data);
   }
+
+  async function handleQueryLLM() {
+    const response = await fetch("/api/query-llm", {
+      method: "POST",
+      body: JSON.stringify({
+        message: "Hello World " + Date.now(),
+        apiKey: llmApiKey,
+        model: llmModel,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+  }
+  // useEffect(() => {
+  //   if (!appInitFlag) return;
+  //   handleQueryLLM();
+  // }, [appInitFlag]);
+
   return (
     <AppContext.Provider value={useAppStore()}>{children}</AppContext.Provider>
   );

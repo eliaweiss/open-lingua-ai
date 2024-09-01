@@ -24,6 +24,12 @@ export function SettingsUi() {
     handleReverseLang,
     maxNumberOfWordsInPhrase,
     setMaxNumberOfWordsInPhrase,
+    llmApiKey,
+    setLlmApiKey,
+    llmModel,
+    setLlmModel,
+    googleTranslatorApiKey,
+    setGoogleTranslatorApiKey,
   } = useAppContext();
   const t = useTranslation();
 
@@ -152,6 +158,60 @@ export function SettingsUi() {
         />
         <div className="text-sm">{t("max_words_description")}</div>
       </div>
+
+      <div className="mb-6">
+        <h2 className="text-xl mb-2">{t("llm_settings")}</h2>
+        <div className="space-y-2">
+          <div>
+            <label htmlFor="llmApiKey" className="block text-sm font-medium">
+              {t("llm_api_key")}:
+            </label>
+            <Input
+              // type="password"
+              id="llmApiKey"
+              value={llmApiKey}
+              onChange={(e) => setLlmApiKey(e.target.value)}
+              className="mt-1"
+            />
+          </div>
+          <div>
+            <label htmlFor="llmModel" className="block text-sm font-medium">
+              {t("llm_model")}:
+            </label>
+            <SelectComponent
+              id="llmModel"
+              options={[
+                { value: "gpt-3.5-turbo", label: "GPT-3.5 Turbo" },
+                { value: "gpt-4", label: "GPT-4" },
+              ]}
+              value={llmModel}
+              onChange={(value) => setLlmModel(value)}
+              className="mt-1"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-6">
+        <h2 className="text-xl mb-2">{t("google_translator_settings")}</h2>
+        <div>
+          <label
+            htmlFor="googleTranslatorApiKey"
+            className="block text-sm font-medium"
+          >
+            {t("google_translator_api_key")}:
+          </label>
+          <Input
+            type="password"
+            id="googleTranslatorApiKey"
+            value={googleTranslatorApiKey}
+            onChange={(e) => setGoogleTranslatorApiKey(e.target.value)}
+            className="mt-1"
+          />
+        </div>
+      </div>
+
+      {/* ... rest of the existing UI elements ... */}
     </div>
   );
 }

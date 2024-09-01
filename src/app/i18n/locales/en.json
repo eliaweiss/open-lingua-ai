@@ -39,5 +39,10 @@
   "note_app_data_storage": "Note: The app does not store any information remotely. All data is stored locally, and there is no backup available.",
   "reset_phrase_range": "Reset to Full Range",
   "max_words_in_phrase": "Maximum Words in Phrase",
-  "max_words_description": "Set the maximum number of words allowed in a phrase. Phrases exceeding this limit will be filtered out."
+  "max_words_description": "Set the maximum number of words allowed in a phrase. Phrases exceeding this limit will be filtered out.",
+  "llm_settings": "LLM Settings",
+  "llm_api_key": "LLM API Key",
+  "llm_model": "LLM Model",
+  "google_translator_settings": "Google Translator Settings",
+  "google_translator_api_key": "Google Translator API Key"
 }

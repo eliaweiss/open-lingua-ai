@@ -22,6 +22,9 @@ export const initializeState = async (useAppStore) => {
     setAppInitFlag,
     setPhraseRange,
     setMaxNumberOfWordsInPhrase,
+    setLlmApiKey,
+    setLlmModel,
+    setGoogleTranslatorApiKey,
   } = useAppStore.getState();
 
   const storageVersion = myLocalStorage.get("STORAGE_VERSION");
@@ -94,6 +97,13 @@ export const initializeState = async (useAppStore) => {
   // Initialize maxNumberOfWordsInPhrase from storage or set default
   const storedMaxWords = await storage.get("maxNumberOfWordsInPhrase", null);
   setMaxNumberOfWordsInPhrase(storedMaxWords <= 0 ? null : storedMaxWords);
+
+
+  // Initialize new parameters from storage or set default
+  const storeLlmApiKey = await storage.get("llmApiKey", "");
+  setLlmApiKey(storeLlmApiKey);
+  setLlmModel(await storage.get("llmModel", "gpt-3.5-turbo"));
+  setGoogleTranslatorApiKey(await storage.get("googleTranslatorApiKey", ""));
 
   setAppInitFlag(true);
 };

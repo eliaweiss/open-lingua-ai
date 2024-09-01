@@ -5,6 +5,16 @@ import { getUniquePhrases } from "../utils/phraseUtils";
 import { randomPermutation } from "../helpers"; // Add this import
 
 const useAppStore = create((set, get) => ({
+  // llm settings
+  llmApiKey: "",
+  setLlmApiKey: (key) => set({ llmApiKey: key }),
+
+  llmModel: "gpt-3.5-turbo",
+  setLlmModel: (model) => set({ llmModel: model }),
+
+  googleTranslatorApiKey: "",
+  setGoogleTranslatorApiKey: (key) => set({ googleTranslatorApiKey: key }),
+
   locale: "en",
   setLocale: (locale) => set({ locale }),
 
