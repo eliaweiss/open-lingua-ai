@@ -1,27 +1,58 @@
 import { errorResponse, successResponse } from "@/app/utils/apiResponses";
 import { OpenAIWhisperAudio } from "@langchain/community/document_loaders/fs/openai_whisper_audio";
 
+import multer from "multer";
+import nextConnect from "next-connect";
+
+const upload = multer({
+  storage: multer.memoryStorage(),
+});
+
 export async function POST(request) {
-  try {
-    const { apiKey, audio } = await request.json();
+  const file = req.file;
 
-    // Save the binary audio data to a temporary file
-    const tempFilePath = "/tmp/temp_audio_file";
-    const fs = require('fs');
-    fs.writeFileSync(tempFilePath, Buffer.from(audio, 'binary'));
-
-    // Initialize the OpenAI Whisper Audio loader with the temporary file path
-    const loader = new OpenAIWhisperAudio(tempFilePath, { apiKey });
-
-    // Load the transcription
-    const docs = await loader.load();
-
-    // Clean up the temporary file
-    fs.unlinkSync(tempFilePath);
-
-    return successResponse(docs, 200);
-  } catch (error) {
-    console.log(error);
-    return errorResponse(error.message, 500);
+  if (file) {
+    // Process the file (e.g., save it, send it to a service, etc.)
+    console.log("File received:", file);
+    return successResponse(file, 200);
+  } else {
+    return errorResponse("No file received", 400);
   }
+  // return new Promise(async (resolve, reject) => {
+  //   const buffer = await request.arrayBuffer();
+  //   console.log("buffer", buffer.length);
+  //   const formData = formidable({ multiples: true });
+
+  //   formData.parse(buffer, async (err, fields, files) => {
+  //     if (err) {
+  //       console.error("Form parsing error:", err);
+  //       resolve(errorResponse("Form parsing failed", 400));
+  //       return;
+  //     }
+
+  //     try {
+  //       const { apiKey } = fields;
+  //       const audioFile = files.audio.filepath;
+
+  //       if (!apiKey || !audioFile) {
+  //         resolve(errorResponse("API key or audio file is missing", 400));
+  //         return;
+  //       }
+
+  //       // Initialize the OpenAI Whisper Audio loader with the file path
+  //       const loader = new OpenAIWhisperAudio(audioFile, { apiKey });
+
+  //       // Load the transcription
+  //       const docs = await loader.load();
+
+  //       // Clean up the temporary file
+  //       await fs.unlink(audioFile);
+
+  //       resolve(successResponse(docs, 200));
+  //     } catch (error) {
+  //       console.error("Processing error:", error);
+  //       resolve(errorResponse("Processing failed", 500));
+  //     }
+  //   });
+  // });
 }

@@ -18,9 +18,10 @@ export async function transcribeAudio(audioBlob) {
   const { llmApiKey } = useAppStore.getState();
   const formData = new FormData();
   formData.append("apiKey", llmApiKey);
-  formData.append("audio", audioBlob, "audio-file-name.wav");
+  formData.append("file", audioBlob, "audio-file-name.wav");
 
-  const response = await fetch("/api/transcribe-audio", {
+  //   const response = await fetch("/api/transcribe-audio", {
+  const response = await fetch("/api/upload", {
     method: "POST",
     body: formData,
   });
