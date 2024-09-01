@@ -7,15 +7,15 @@ import { ChatAnthropic } from "@langchain/anthropic";
 
 export async function POST(request) {
   try {
-    const { message, model, apiKey } = await request.json();
-    
+    const { messages, model, apiKey } = await request.json();
+
     if (!apiKey) {
       return errorResponse("API key is required");
     }
     if (!model) {
       return errorResponse("Model is required");
     }
-    if (!message) {
+    if (!messages) {
       return errorResponse("Message is required");
     }
 
@@ -25,10 +25,14 @@ export async function POST(request) {
     switch (model) {
       case "gpt-3.5-turbo":
       case "gpt-4":
+      case "gpt-4o-mini":
+      case "gpt-4o":
         llm = new ChatOpenAI({ openAIApiKey: apiKey, modelName: model });
         break;
 
-      case "claude-2":
+      case "claude-3-5-opus":
+      case "claude-3-5-sonnet":
+      case "claude-3-5-haiku":
         llm = new ChatAnthropic({ anthropicApiKey: apiKey, modelName: model });
         break;
 
@@ -38,10 +42,11 @@ export async function POST(request) {
     }
 
     // Call the LLM with the input message
-    const response = await llm.call([{ role: "user", content: message }]);
+    const response = await llm.invoke(messages);
 
     return successResponse({ response: response.content });
   } catch (error) {
+    console.log(error);
     return errorResponse(error.message, 500);
   }
 }

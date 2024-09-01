@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { BEGINNER_READ_SETTINGS } from "../playSentences/components/PlaySentenceSettings";
+import { BEGINNER_READ_SETTINGS } from "../exercises/playSentences/components/PlaySentenceSettings";
 import { deepCopy } from "../utils/deepCopy";
 import { getUniquePhrases } from "../utils/phraseUtils";
 import { randomPermutation } from "../helpers"; // Add this import
@@ -9,7 +9,7 @@ const useAppStore = create((set, get) => ({
   llmApiKey: "",
   setLlmApiKey: (key) => set({ llmApiKey: key }),
 
-  llmModel: "gpt-3.5-turbo",
+  llmModel: "gpt-4o-mini",
   setLlmModel: (model) => set({ llmModel: model }),
 
   googleTranslatorApiKey: "",
@@ -159,6 +159,21 @@ const useAppStore = create((set, get) => ({
     const { sourceLanguage, targetLanguage } = get();
     if (type === "target") return targetLanguage;
     if (type === "src") return sourceLanguage;
+  },
+
+  isLoadingCounter: 1,
+  isLoadingAppFlag: true,
+  _setIsLoadingAppFlag: (value) => set({ isLoadingAppFlag: value }),
+  setIsLoadingAppCounter: (value) => {
+    let delta = 1;
+    if (!value) {
+      delta = -1;
+    }
+    const newCounter = get().isLoadingCounter + delta;
+    set({
+      isLoadingCounter: newCounter,
+    });
+    // set({ isLoadingAppFlag: newCounter > 0 });
   },
 }));
 

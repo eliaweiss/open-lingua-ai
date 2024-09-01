@@ -3,7 +3,7 @@ import { todayStartTime, isSameDay } from "./dateUtils";
 import { loadPhrasesTranslationFromStorage } from "./loadPhrasesTranslationFromStorage";
 import loadPhraseFromDataFolder from "../context/loadPhraseFromDataFolder";
 import { deepCopy } from "./deepCopy";
-import { BEGINNER_READ_SETTINGS } from "../playSentences/components/PlaySentenceSettings";
+import { BEGINNER_READ_SETTINGS } from "../exercises/playSentences/components/PlaySentenceSettings";
 import { getLanguagesFromFileName } from "./languageUtils";
 
 const STORAGE_VERSION = "1.0"; // You can adjust this version as needed

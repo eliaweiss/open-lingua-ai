@@ -45,5 +45,14 @@
     "llm_model": "Modelo do LLM",
     "google_translator_settings": "Configurações do Tradutor Google",
     "google_translator_api_key": "Chave da API do Tradutor Google",
-    "translate_exercise": "Exercício de Tradução"
+    "translate_exercise": "Exercício de Tradução",
+    "translate_the_following": "Traduza a seguinte frase",
+    "from": "de",
+    "to": "para",
+    "your_translation": "Sua tradução",
+    "check_my_translation": "Verificar minha tradução",
+    "transcribe_audio": "Transcrição de Áudio",
+    "upload_audio_file": "Enviar Arquivo de Áudio",
+    "start_recording": "Iniciar Gravação",
+    "stop_recording": "Parar Gravação"
 }

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { PlaySentenceSettings } from "./components/PlaySentenceSettings";
-import ControlButton from "../components/ControlButton";
-import HorizontalRule from "../components/HorizontalRule";
-import TooltipWrapper from "../components/TooltipWrapper";
-import { useAppContext } from "../context/AppContext";
+import ControlButton from "../../components/ControlButton";
+import HorizontalRule from "../../components/HorizontalRule";
+import TooltipWrapper from "../../components/TooltipWrapper";
+import { useAppContext } from "../../context/AppContext";
 import { usePlaySentenceContext } from "./context/PlaySentenceContext";
 import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; // or '@heroicons/react/24/outline'
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
@@ -35,11 +35,17 @@ export const PlaySentencesExercise = () => {
 
         {/* Exercise Panel */}
         <div className="flex flex-col space-y-4 mt-4 text-3xl">
-          <div className={`${isTargetRtl ? "text-right text-rtl" : "text-left"} ttt`}>
+          <div
+            className={`${
+              isTargetRtl ? "text-right text-rtl" : "text-left"
+            } ttt`}
+          >
             {currentPhrase?.target}
           </div>
           <div
-            className={`text-sText ${isSrcRtl ? "text-right text-rtl" : "text-left"}`}
+            className={`text-sText ${
+              isSrcRtl ? "text-right text-rtl" : "text-left"
+            }`}
           >
             {currentPhrase?.src}
           </div>

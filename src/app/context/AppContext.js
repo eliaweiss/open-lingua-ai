@@ -5,6 +5,7 @@ import { getLanguagesFromFileName } from "../utils/languageUtils";
 import { randomPermutation } from "../helpers";
 import { loadPhrasesTranslationFromStorage } from "../utils/loadPhrasesTranslationFromStorage";
 import { storage } from "../utils/storageUtils";
+import { fetchWrapper } from "../utils/fetchWrapper";
 
 const AppContext = createContext();
 
@@ -43,6 +44,9 @@ export const AppProvider = ({ children }) => {
     llmApiKey,
     llmModel,
     googleTranslatorApiKey,
+    setIsLoadingAppCounter,
+    isLoadingCounter,
+    _setIsLoadingAppFlag,
   } = useAppStore();
 
   const initFlagRef = useRef(false);
@@ -51,7 +55,7 @@ export const AppProvider = ({ children }) => {
     if (initFlagRef.current) return;
     initFlagRef.current = true;
     initializeState(useAppStore);
-    handleTest();
+    // handleTest();
   }, []);
 
   useEffect(() => {
@@ -199,33 +203,25 @@ export const AppProvider = ({ children }) => {
     storage.set("googleTranslatorApiKey", googleTranslatorApiKey);
   }, [googleTranslatorApiKey]);
 
-  async function handleTest() {
-    const response = await fetch("/api/tst", {
-      method: "POST",
-      body: JSON.stringify({
-        message: "Hello World " + Date.now(),
-      }),
-    });
-    const data = await response.json();
-    console.log(data);
-  }
+  // async function handleTest() {
+  //   const data = await fetchWrapper("/api/tst", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       message: "Hello World " + Date.now(),
+  //     }),
+  //   });
+  //   console.log(data);
+  // }
 
-  async function handleQueryLLM() {
-    const response = await fetch("/api/query-llm", {
-      method: "POST",
-      body: JSON.stringify({
-        message: "Hello World " + Date.now(),
-        apiKey: llmApiKey,
-        model: llmModel,
-      }),
-    });
-    const data = await response.json();
-    console.log(data);
-  }
-  // useEffect(() => {
-  //   if (!appInitFlag) return;
-  //   handleQueryLLM();
-  // }, [appInitFlag]);
+  useEffect(() => {
+    if (!appInitFlag) return;
+    // handleQueryLLM();
+    setIsLoadingAppCounter(false);
+  }, [appInitFlag]);
+
+  useEffect(() => {
+    _setIsLoadingAppFlag(isLoadingCounter > 0);
+  }, [isLoadingCounter]);
 
   return (
     <AppContext.Provider value={useAppStore()}>{children}</AppContext.Provider>
