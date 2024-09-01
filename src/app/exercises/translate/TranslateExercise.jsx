@@ -11,6 +11,7 @@ import {
   ForwardIcon,
   MicrophoneIcon,
   PlayIcon,
+  QuestionMarkCircleIcon,
   StopIcon,
 } from "@heroicons/react/24/outline";
 import TooltipWrapper from "@/app/components/TooltipWrapper";
@@ -35,7 +36,8 @@ const TranslateExercise = () => {
     setTranslateDirection,
     skip,
     isOriginalTextRtl,
-
+    showHint,
+    setShowHint,
     translateToLanguage,
     suggestedTranslatedText,
     showSuggestedTranslatedText,
@@ -259,13 +261,27 @@ const TranslateExercise = () => {
       )}
 
       {/* Button Panel */}
-      <div className="flex flex-col space-y-4 mt-4">
+      <div className="flex  space-x-4 mt-4">
+        <div className="flex space-x-4 mt-4 border rounded-lg p-4 border-pBorder">
+          <ControlButton
+            toolTip="Give hint (long click)"
+            onMouseDown={() => setShowHint(true)}
+            onMouseUp={() => setShowHint(false)}
+          >
+            <QuestionMarkCircleIcon className="w-6 h-6 " />
+          </ControlButton>
+        </div>
         <div className="flex space-x-4 mt-4 border rounded-lg p-4 border-pBorder">
           <ControlButton toolTip={t("next")} onClick={skip}>
             <ForwardIcon className="w-6 h-6" />
           </ControlButton>
         </div>
       </div>
+      {showHint && (
+        <div className="text-sText text-2xl text-left">
+          {suggestedTranslatedText}
+        </div>
+      )}
 
       {/* Statistic Panel */}
       <div className="mt-4 flex flex-col items-center text-xl">
