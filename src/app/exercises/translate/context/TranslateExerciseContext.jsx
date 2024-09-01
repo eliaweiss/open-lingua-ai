@@ -12,8 +12,14 @@ export const useTranslateExercise = () => useContext(TranslateExerciseContext);
 
 export const TranslateExerciseProvider = ({ children }) => {
   const { cancelSpeech } = useSpeechSynthesis();
-  const { appInitFlag, currentPhrase, isSrcRtl, isTargetRtl, getLanguageName } =
-    useAppStore();
+  const {
+    appInitFlag,
+    currentPhrase,
+    isSrcRtl,
+    isTargetRtl,
+    targetLanguage,
+    sourceLanguage,
+  } = useAppStore();
   const {
     setOriginalText,
     translateDirection,
@@ -33,14 +39,14 @@ export const TranslateExerciseProvider = ({ children }) => {
       setOriginalText(currentPhrase.target);
       setSuggestedTranslatedText(currentPhrase.src);
       setIsOriginalTextRtl(isTargetRtl);
-      setOriginLanguage(getLanguageName("target"));
-      setTranslateToLanguage(getLanguageName("src"));
+      setOriginLanguage(targetLanguage);
+      setTranslateToLanguage(sourceLanguage);
     } else {
       setOriginalText(currentPhrase.src);
       setSuggestedTranslatedText(currentPhrase.target);
       setIsOriginalTextRtl(isSrcRtl);
-      setOriginLanguage(getLanguageName("src"));
-      setTranslateToLanguage(getLanguageName("target"));
+      setOriginLanguage(sourceLanguage);
+      setTranslateToLanguage(targetLanguage);
     }
     resetExercise();
   }, [currentPhrase, translateDirection]);

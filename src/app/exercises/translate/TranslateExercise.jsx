@@ -24,8 +24,7 @@ const TranslateExercise = () => {
   const t = useTranslation(); // Use the translation hook
   const correctText = useMemo(() => t("correct") || "Correct", [t]);
 
-  const { currentPhraseIndex, phrases, targetLanguage, sourceLanguage } =
-    useAppStore();
+  const { currentPhraseIndex, phrases, getLanguageName } = useAppStore();
   const {
     originalText,
     llmResponse,
@@ -36,7 +35,7 @@ const TranslateExercise = () => {
     setTranslateDirection,
     skip,
     isOriginalTextRtl,
-    originLanguage,
+
     translateToLanguage,
     suggestedTranslatedText,
     showSuggestedTranslatedText,
@@ -136,11 +135,11 @@ const TranslateExercise = () => {
   const options = [
     {
       value: TranslateDirection.TARGET_TO_SOURCE,
-      label: `${targetLanguage} → ${sourceLanguage}`,
+      label: `${getLanguageName("target")} → ${getLanguageName("src")}`,
     },
     {
       value: TranslateDirection.SOURCE_TO_TARGET,
-      label: `${sourceLanguage} → ${targetLanguage}`,
+      label: `${getLanguageName("src")} → ${getLanguageName("target")}`,
     },
   ];
 
