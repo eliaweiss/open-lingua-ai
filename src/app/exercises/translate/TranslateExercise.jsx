@@ -92,14 +92,18 @@ const TranslateExercise = () => {
         />
       </div>
 
-      <div className="flex justify-center items-center">
-        <ControlButton
-          toolTip={t("check_my_translation")}
-          onClick={handleCheckUserTranslate}
-          className="mt-2 px-3 py-1 bg-card text-card-foreground rounded hover:bg-pHov"
+      <div className="flex flex-col space-y-4 mt-4 ">
+        <div
+          className={`flex space-x-4  border  rounded-lg p-1 border-pBorder`}
         >
-          {t("check_my_translation")}
-        </ControlButton>
+          <ControlButton
+            toolTip={t("check_my_translation")}
+            onClick={handleCheckUserTranslate}
+            className="p-4  bg-card text-card-foreground rounded hover:bg-pHov text-lg font-bold"
+          >
+            {t("check_my_translation")}
+          </ControlButton>
+        </div>
       </div>
       <HorizontalRule />
 
