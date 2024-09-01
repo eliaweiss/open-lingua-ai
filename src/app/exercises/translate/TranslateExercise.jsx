@@ -91,12 +91,13 @@ const TranslateExercise = () => {
       </div>
 
       <div className="flex justify-center items-center">
-        <button
+        <ControlButton
+          toolTip={t("check_my_translation")}
           onClick={handleTranslate}
           className="mt-2 px-3 py-1 bg-card text-card-foreground rounded hover:bg-pHov"
         >
           {t("check_my_translation")}
-        </button>
+        </ControlButton>
       </div>
       <HorizontalRule />
 
@@ -105,7 +106,7 @@ const TranslateExercise = () => {
         <div
           className={`flex space-x-4 mt-4 border  rounded-lg p-4 border-pBorder`}
         >
-          <ControlButton toolTip="Skip" onClick={skip}>
+          <ControlButton toolTip={t("skip_tooltip")} onClick={skip}>
             <ForwardIcon className="w-6 h-6 " />
           </ControlButton>
         </div>

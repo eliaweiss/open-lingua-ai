@@ -49,7 +49,7 @@ export const ScrambleExercise = () => {
               <PlayIcon className="w-6 h-6  " />
             )}
           </ControlButton>
-          <ControlButton toolTip="Skip" onClick={skip}>
+          <ControlButton toolTip={t("skip_tooltip")} onClick={skip}>
             <ForwardIcon className="w-6 h-6 " />
           </ControlButton>
         </div>
