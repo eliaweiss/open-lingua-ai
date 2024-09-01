@@ -9,6 +9,17 @@ import { useAppContext } from "../context/AppContext";
 import { availableLocales } from "../i18n";
 import { useTranslation } from "@/app/i18n/useTranslation";
 
+export const MODEL_OPTIONS = [
+  // { "value": "gpt-3.5-turbo", "label": "GPT-3.5 Turbo" },
+  // { "value": "gpt-4", "label": "GPT-4" },
+  // { "value": "gpt-4-turbo", "label": "GPT-4 Turbo" },
+  { value: "gpt-4o", label: "GPT-4o" },
+  { value: "gpt-4o-mini", label: "GPT-4o Mini" },
+  { value: "claude-3.5-opus", label: "Claude 3.5 Opus" },
+  { value: "claude-3.5-sonnet", label: "Claude 3.5 Sonnet" },
+  { value: "claude-3.5-haiku", label: "Claude 3.5 Haiku" },
+];
+
 export function SettingsUi() {
   const {
     phraseRange,
@@ -180,13 +191,7 @@ export function SettingsUi() {
             </label>
             <SelectComponent
               id="llmModel"
-              options={[
-                // { "value": "gpt-3.5-turbo", "label": "GPT-3.5 Turbo" },
-                // { "value": "gpt-4", "label": "GPT-4" },
-                // { "value": "gpt-4-turbo", "label": "GPT-4 Turbo" },
-                { "value": "gpt-4o", "label": "GPT-4o" },
-                { "value": "gpt-4o-mini", "label": "GPT-4o Mini" }
-              ]}
+              options={MODEL_OPTIONS}
               value={llmModel}
               onChange={(value) => setLlmModel(value)}
               className="mt-1"

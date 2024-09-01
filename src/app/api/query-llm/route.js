@@ -25,10 +25,14 @@ export async function POST(request) {
     switch (model) {
       case "gpt-3.5-turbo":
       case "gpt-4":
+      case "gpt-4o-mini":
+      case "gpt-4o":
         llm = new ChatOpenAI({ openAIApiKey: apiKey, modelName: model });
         break;
 
-      case "claude-2":
+      case "claude-3-5-opus":
+      case "claude-3-5-sonnet":
+      case "claude-3-5-haiku":
         llm = new ChatAnthropic({ anthropicApiKey: apiKey, modelName: model });
         break;
 
