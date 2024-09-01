@@ -37,7 +37,7 @@ export const TranslateExerciseProvider = ({ children }) => {
     } else {
       setOriginalText(currentPhrase.source);
     }
-  }, [currentPhraseIndex]);
+  }, [currentPhrase, currentPhraseIndex]);
 
   return (
     <TranslateExerciseContext.Provider value={{}}>
