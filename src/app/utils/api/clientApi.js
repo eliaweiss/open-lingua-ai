@@ -20,8 +20,8 @@ export async function transcribeAudio(audioBlob) {
   formData.append("apiKey", llmApiKey);
   formData.append("file", audioBlob, "audio-file-name.wav");
 
-  //   const response = await fetch("/api/transcribe-audio", {
-  const response = await fetch("/api/upload", {
+  //   const response = await fetch("/api/upload", {
+  const response = await fetch("/api/transcribe-audio", {
     method: "POST",
     body: formData,
   });
