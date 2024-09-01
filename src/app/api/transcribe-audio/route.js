@@ -1,7 +1,7 @@
 import { errorResponse, successResponse } from "@/app/utils/apiResponses";
 import { OpenAIWhisperAudio } from "@langchain/community/document_loaders/fs/openai_whisper_audio";
 import path from "path";
-import { writeFile, mkdir } from "fs/promises";
+import { writeFile, mkdir, unlink } from "fs/promises";
 
 export async function POST(req) {
   try {
@@ -13,20 +13,22 @@ export async function POST(req) {
     }
 
     const buffer = Buffer.from(await file.arrayBuffer());
-    const uploadDir = path.join(process.cwd(), "uploads");
+    const uploadDir = path.join(process.cwd(), "/tmp");
     const filePath = path.join(uploadDir, file.name);
 
     await mkdir(uploadDir, { recursive: true });
     await writeFile(filePath, buffer);
 
     // Initialize the OpenAI Whisper Audio loader with the temporary file path
-    const loader = new OpenAIWhisperAudio(filePath, { apiKey });
+    const loader = new OpenAIWhisperAudio(filePath, {
+      clientOptions: { apiKey },
+    });
 
     // Load the transcription
     const docs = await loader.load();
 
     // Clean up the temporary file
-    fs.unlinkSync(tempFilePath);
+    await unlink(filePath);
 
     return successResponse(docs, 200);
   } catch (error) {
