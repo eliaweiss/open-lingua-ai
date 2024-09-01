@@ -3,8 +3,6 @@
 import React, {
   createContext,
   useContext,
-  useEffect,
-  useRef,
   useState,
 } from "react";
 import { useAppContext } from "./AppContext";
