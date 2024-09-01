@@ -1,30 +1,25 @@
 import { errorResponse, successResponse } from "@/app/utils/apiResponses";
-import { OpenAIWhisperAudioLoader } from "@langchain/community/document_loaders/fs/openai_whisper_audio";
+import { OpenAIWhisperAudio } from "@langchain/community/document_loaders/fs/openai_whisper_audio";
 
 export async function POST(request) {
   try {
-    const { audioFilePath, apiKey } = await request.json();
+    const { apiKey, audio } = await request.json();
 
-    if (!apiKey) {
-      return errorResponse("API key is required");
-    }
-    if (!audioFilePath) {
-      return errorResponse("Audio file path is required");
-    }
+    // Save the binary audio data to a temporary file
+    const tempFilePath = "/tmp/temp_audio_file";
+    const fs = require('fs');
+    fs.writeFileSync(tempFilePath, Buffer.from(audio, 'binary'));
 
-    // Initialize the Whisper loader with the provided API key
-    const whisperLoader = new OpenAIWhisperAudioLoader({
-      openAIApiKey: apiKey,
-    });
+    // Initialize the OpenAI Whisper Audio loader with the temporary file path
+    const loader = new OpenAIWhisperAudio(tempFilePath, { apiKey });
 
-    // Load the document (transcribe the audio)
-    const documents = await whisperLoader.load(audioFilePath);
+    // Load the transcription
+    const docs = await loader.load();
 
-    // Assuming documents is an array, and we take the content from the first document
-    const transcription =
-      documents[0]?.pageContent || "No transcription available";
+    // Clean up the temporary file
+    fs.unlinkSync(tempFilePath);
 
-    return successResponse({ transcription });
+    return successResponse(docs, 200);
   } catch (error) {
     console.log(error);
     return errorResponse(error.message, 500);
