@@ -34,6 +34,13 @@ const useTranslateExerciseStore = create((set, get) => ({
     cancelSpeech();
     increasePhraseIndex();
   },
+
+  resetExercise: () => {
+    set({
+      yourTranslatedText: "",
+      llmResponse: "",
+    });
+  },
 }));
 
 export default useTranslateExerciseStore;

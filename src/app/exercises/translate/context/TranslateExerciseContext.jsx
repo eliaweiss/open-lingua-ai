@@ -23,18 +23,13 @@ export const TranslateExerciseProvider = ({ children }) => {
     getLanguageName,
   } = useAppStore();
   const {
-    originalText,
     setOriginalText,
-    translatedText,
-    setTranslatedText,
     translateDirection,
     setIsOriginalTextRtl,
     setTargetLanguage,
     setSourceLanguage,
-    suggestedTranslatedText,
     setSuggestedTranslatedText,
-    setLlmResponse,
-    setYourTranslatedText,
+    resetExercise,
   } = useTranslateExerciseStore();
 
   useEffect(() => {
@@ -55,8 +50,7 @@ export const TranslateExerciseProvider = ({ children }) => {
       setTargetLanguage(getLanguageName("src"));
       setSourceLanguage(getLanguageName("target"));
     }
-    setLlmResponse("");
-    setYourTranslatedText("");
+    resetExercise();
   }, [currentPhrase, translateDirection]);
 
   return (
