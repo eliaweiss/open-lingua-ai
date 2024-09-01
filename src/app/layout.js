@@ -8,6 +8,7 @@ import { NavMenu } from "./components/NavMenu";
 import { AppHeader } from "./components/AppHeader";
 // src/app.js
 import { I18nProvider } from "./i18n";
+import { LoadingOverlay } from "./components/loader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,7 @@ export default function RootLayout({ children }) {
   );
 }
 const AppWrapper = ({ children }) => {
-  const { theme, isMenuOpen, setIsMenuOpen } = useAppContext();
+  const { isMenuOpen, setIsMenuOpen, isLoadingAppFlag } = useAppContext();
 
   return (
     <div
@@ -48,6 +49,7 @@ const AppWrapper = ({ children }) => {
         >
           {children}
         </div>
+        {isLoadingAppFlag && <LoadingOverlay />}
       </main>
     </div>
   );
