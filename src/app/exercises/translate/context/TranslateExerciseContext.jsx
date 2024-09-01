@@ -18,8 +18,8 @@ export const TranslateExerciseProvider = ({ children }) => {
     setOriginalText,
     translateDirection,
     setIsOriginalTextRtl,
-    setTargetLanguage,
-    setSourceLanguage,
+    setOriginLanguage,
+    setTranslateToLanguage,
     setSuggestedTranslatedText,
     resetExercise,
   } = useTranslateExerciseStore();
@@ -33,14 +33,14 @@ export const TranslateExerciseProvider = ({ children }) => {
       setOriginalText(currentPhrase.target);
       setSuggestedTranslatedText(currentPhrase.src);
       setIsOriginalTextRtl(isTargetRtl);
-      setTargetLanguage(getLanguageName("target"));
-      setSourceLanguage(getLanguageName("src"));
+      setOriginLanguage(getLanguageName("target"));
+      setTranslateToLanguage(getLanguageName("src"));
     } else {
       setOriginalText(currentPhrase.src);
       setSuggestedTranslatedText(currentPhrase.target);
       setIsOriginalTextRtl(isSrcRtl);
-      setTargetLanguage(getLanguageName("src"));
-      setSourceLanguage(getLanguageName("target"));
+      setOriginLanguage(getLanguageName("src"));
+      setTranslateToLanguage(getLanguageName("target"));
     }
     resetExercise();
   }, [currentPhrase, translateDirection]);

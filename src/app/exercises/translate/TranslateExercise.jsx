@@ -18,7 +18,7 @@ import { useTranslation } from "@/app/i18n/useTranslation";
 import { checkUserTranslate } from "./checkUserTranslate";
 import { transcribeAudio } from "@/app/utils/api/clientApi";
 import { readAloud } from "@/app/utils/speechUtils";
-import { cleanPunctuation, removeDotAtEnd } from "@/app/helpers";
+import { removeDotAtEnd } from "@/app/helpers";
 
 const TranslateExercise = () => {
   const t = useTranslation(); // Use the translation hook
@@ -36,7 +36,8 @@ const TranslateExercise = () => {
     setTranslateDirection,
     skip,
     isOriginalTextRtl,
-
+    originLanguage,
+    translateToLanguage,
     suggestedTranslatedText,
     showSuggestedTranslatedText,
     setShowSuggestedTranslatedText,
@@ -49,7 +50,7 @@ const TranslateExercise = () => {
   const audioChunks = useRef([]);
 
   async function playSuggestedTranslation() {
-    await readAloud(suggestedTranslatedText, sourceLanguage, 1);
+    await readAloud(suggestedTranslatedText, translateToLanguage, 1);
   }
 
   function cleanSentence(currentSentence) {
