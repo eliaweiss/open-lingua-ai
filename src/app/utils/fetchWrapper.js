@@ -6,7 +6,9 @@ export const fetchWrapper = async (url, options = {}, showLoader = true) => {
   try {
     if (showLoader) setIsLoadingAppCounter(true);
     const response = await fetch(url, options);
-    return response;
+    const { success, data, error } = await response.json();
+    if (success) return data;
+    else throw new Error(error);
   } finally {
     if (showLoader) setIsLoadingAppCounter(false);
   }

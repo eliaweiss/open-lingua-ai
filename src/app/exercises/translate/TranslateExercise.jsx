@@ -10,6 +10,7 @@ import ControlButton from "@/app/components/ControlButton";
 import { ForwardIcon } from "@heroicons/react/24/outline";
 import TooltipWrapper from "@/app/components/TooltipWrapper";
 import { useTranslation } from "@/app/i18n/useTranslation";
+import { checkUserTranslate } from "./checkUserTranslate";
 
 const TranslateExercise = () => {
   const t = useTranslation(); // Use the translation hook
@@ -28,10 +29,11 @@ const TranslateExercise = () => {
     sourceLanguage,
   } = useTranslateExerciseStore();
 
-  const handleTranslate = () => {
+  const handleCheckUserTranslate = () => {
     // Implement translation logic here
     // This could involve calling an API or using a library
     console.log("Translate button clicked");
+    checkUserTranslate();
   };
   const options = [
     {
@@ -93,7 +95,7 @@ const TranslateExercise = () => {
       <div className="flex justify-center items-center">
         <ControlButton
           toolTip={t("check_my_translation")}
-          onClick={handleTranslate}
+          onClick={handleCheckUserTranslate}
           className="mt-2 px-3 py-1 bg-card text-card-foreground rounded hover:bg-pHov"
         >
           {t("check_my_translation")}

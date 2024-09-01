@@ -7,7 +7,7 @@ import { NextResponse } from "next/server";
  * @param {object} additionalData - Any additional data to include in the response
  * @returns {NextResponse} A NextResponse object with the error details
  */
-export function errorResponse(message, status = 400, additionalData = {}) {
+export function errorResponse(message, status = 200, additionalData = {}) {
   return NextResponse.json(
     {
       success: false,

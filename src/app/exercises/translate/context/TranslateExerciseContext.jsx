@@ -31,6 +31,8 @@ export const TranslateExerciseProvider = ({ children }) => {
     setIsOriginalTextRtl,
     setTargetLanguage,
     setSourceLanguage,
+    suggestedTranslatedText,
+    setSuggestedTranslatedText,
   } = useTranslateExerciseStore();
 
   useEffect(() => {
@@ -40,11 +42,13 @@ export const TranslateExerciseProvider = ({ children }) => {
     }
     if (translateDirection === TranslateDirection.TARGET_TO_SOURCE) {
       setOriginalText(currentPhrase.target);
+      setSuggestedTranslatedText(currentPhrase.src);
       setIsOriginalTextRtl(isTargetRtl);
       setTargetLanguage(getLanguageName("target"));
       setSourceLanguage(getLanguageName("src"));
     } else {
       setOriginalText(currentPhrase.src);
+      setSuggestedTranslatedText(currentPhrase.target);
       setIsOriginalTextRtl(isSrcRtl);
       setTargetLanguage(getLanguageName("src"));
       setSourceLanguage(getLanguageName("target"));

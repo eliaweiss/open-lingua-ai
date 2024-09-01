@@ -7,15 +7,15 @@ import { ChatAnthropic } from "@langchain/anthropic";
 
 export async function POST(request) {
   try {
-    const { message, model, apiKey } = await request.json();
-    
+    const { messages, model, apiKey } = await request.json();
+
     if (!apiKey) {
       return errorResponse("API key is required");
     }
     if (!model) {
       return errorResponse("Model is required");
     }
-    if (!message) {
+    if (!messages) {
       return errorResponse("Message is required");
     }
 
@@ -38,7 +38,7 @@ export async function POST(request) {
     }
 
     // Call the LLM with the input message
-    const response = await llm.call([{ role: "user", content: message }]);
+    const response = await llm.generate(messages);
 
     return successResponse({ response: response.content });
   } catch (error) {

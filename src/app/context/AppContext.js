@@ -204,28 +204,16 @@ export const AppProvider = ({ children }) => {
   }, [googleTranslatorApiKey]);
 
   async function handleTest() {
-    const response = await fetchWrapper("/api/tst", {
+    const data = await fetchWrapper("/api/tst", {
       method: "POST",
       body: JSON.stringify({
         message: "Hello World " + Date.now(),
       }),
     });
-    const data = await response.json();
     console.log(data);
   }
 
-  async function handleQueryLLM() {
-    const response = await fetch("/api/query-llm", {
-      method: "POST",
-      body: JSON.stringify({
-        message: "Hello World " + Date.now(),
-        apiKey: llmApiKey,
-        model: llmModel,
-      }),
-    });
-    const data = await response.json();
-    console.log(data);
-  }
+
   useEffect(() => {
     if (!appInitFlag) return;
     // handleQueryLLM();

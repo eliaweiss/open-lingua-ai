@@ -10,8 +10,8 @@ export const TranslateDirection = {
 const useTranslateExerciseStore = create((set, get) => ({
   originalText: "",
   setOriginalText: (text) => set({ originalText: text }),
-  translatedText: "",
-  setTranslatedText: (text) => set({ translatedText: text }),
+  suggestedTranslatedText: "",
+  setSuggestedTranslatedText: (text) => set({ suggestedTranslatedText: text }),
   hintClickCounter: 0,
   setHintClickCounter: (counter) => set({ hintClickCounter: counter }),
   translateDirection: TranslateDirection.TARGET_TO_SOURCE,
