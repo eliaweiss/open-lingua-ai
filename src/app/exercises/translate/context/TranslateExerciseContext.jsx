@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useEffect } from "react";
-import useTranslateExerciseStore from "../store/TranslateExerciseStore";
+import useTranslateExerciseStore, {
+  TranslateDirection,
+} from "../store/TranslateExerciseStore";
 import { useSpeechSynthesis } from "@/app/context/SpeechSynthesisContext";
 import useAppStore from "@/app/store/appStore";
 

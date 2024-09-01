@@ -29,19 +29,11 @@ const TranslateExercise = () => {
   const options = [
     {
       value: TranslateDirection.TARGET_TO_SOURCE,
-      label: (
-        <div>
-          {getLanguageName("target")} → {getLanguageName("src")}
-        </div>
-      ),
+      label: `${getLanguageName("target")} → ${getLanguageName("src")}`,
     },
     {
       value: TranslateDirection.SOURCE_TO_TARGET,
-      label: (
-        <div>
-          {getLanguageName("src")} → {getLanguageName("target")}
-        </div>
-      ),
+      label: `${getLanguageName("src")} → ${getLanguageName("target")}`,
     },
   ];
   return (
