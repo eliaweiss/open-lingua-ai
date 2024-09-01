@@ -38,7 +38,7 @@ export async function POST(request) {
     }
 
     // Call the LLM with the input message
-    const response = await llm.call(messages);
+    const response = await llm.invoke(messages);
 
     return successResponse({ response: response.content });
   } catch (error) {
