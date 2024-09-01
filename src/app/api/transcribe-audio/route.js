@@ -1,5 +1,5 @@
 import { errorResponse, successResponse } from "@/app/utils/apiResponses";
-import { OpenAIWhisperAudioLoader } from "langchain/document_loaders/fs/openai_whisper_audio";
+import { OpenAIWhisperAudioLoader } from "@langchain/community/document_loaders/fs/openai_whisper_audio";
 
 export async function POST(request) {
   try {
