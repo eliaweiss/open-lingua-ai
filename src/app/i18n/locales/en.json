@@ -50,5 +50,9 @@
   "from": "from",
   "to": "to",
   "your_translation": "Your translation",
-  "check_my_translation": "Check my translation"
+  "check_my_translation": "Check my translation",
+  "transcribe_audio": "Transcribe Audio",
+  "upload_audio_file": "Upload Audio File",
+  "start_recording": "Start Recording",
+  "stop_recording": "Stop Recording"
 }

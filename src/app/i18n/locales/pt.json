@@ -50,5 +50,9 @@
     "from": "de",
     "to": "para",
     "your_translation": "Sua tradução",
-    "check_my_translation": "Verificar minha tradução"
+    "check_my_translation": "Verificar minha tradução",
+    "transcribe_audio": "Transcrição de Áudio",
+    "upload_audio_file": "Enviar Arquivo de Áudio",
+    "start_recording": "Iniciar Gravação",
+    "stop_recording": "Parar Gravação"
 }
