@@ -10,6 +10,7 @@ function blobToFile(theBlob, fileName) {
 export async function POST(req) {
   try {
     const formData = await req.formData();
+    const prompt = formData.get("prompt");
     const apiKey = formData.get("apiKey");
     const file = formData.get("file");
     if (!file) {
@@ -32,6 +33,7 @@ export async function POST(req) {
     const transcription = await openai.audio.transcriptions.create({
       file: fileToUpload, // Pass the File object here
       model: "whisper-1",
+      prompt: prompt,
     });
 
     // console.log("after");

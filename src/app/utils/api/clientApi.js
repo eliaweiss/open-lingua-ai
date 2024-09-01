@@ -14,9 +14,10 @@ export async function queryLLMApi({ messages }) {
   return data;
 }
 
-export async function transcribeAudio(audioBlob) {
+export async function transcribeAudio(audioBlob, prompt) {
   const { llmApiKey } = useAppStore.getState();
   const formData = new FormData();
+  formData.append("prompt", prompt);
   formData.append("apiKey", llmApiKey);
   formData.append("file", audioBlob, "audio-file-name.wav");
 

@@ -116,12 +116,18 @@ const TranslateExercise = () => {
     mediaRecorder.onstop = async () => {
       const audioBlob = new Blob(audioChunks.current, { type: "audio/wav" });
       audioChunks.current = [];
-      const transcription = await transcribeAudio(audioBlob);
-      setYourTranslatedText(transcription?.text);
 
       // Stop all media tracks to release the microphone
       const tracks = mediaRecorder.stream.getTracks();
       tracks.forEach((track) => track.stop());
+
+      const transcription = await transcribeAudio(
+        audioBlob,
+        suggestedTranslatedText
+      );
+      if (transcription?.text) {
+        setYourTranslatedText(transcription?.text);
+      }
     };
     setIsRecording(false);
   };
