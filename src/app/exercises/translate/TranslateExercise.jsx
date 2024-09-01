@@ -16,7 +16,7 @@ import { transcribeAudio } from "@/app/utils/api/clientApi";
 const TranslateExercise = () => {
   const t = useTranslation(); // Use the translation hook
 
-  const { getLanguageName, currentPhraseIndex, phrases } = useAppStore();
+  const { currentPhraseIndex, phrases } = useAppStore();
   const {
     originalText,
     llmResponse,
@@ -162,7 +162,7 @@ const TranslateExercise = () => {
       {/* Button Panel */}
       <div className="flex flex-col space-y-4 mt-4">
         <div className="flex space-x-4 mt-4 border rounded-lg p-4 border-pBorder">
-          <ControlButton toolTip={t("skip_tooltip")} onClick={skip}>
+          <ControlButton toolTip={t("next")} onClick={skip}>
             <ForwardIcon className="w-6 h-6" />
           </ControlButton>
         </div>

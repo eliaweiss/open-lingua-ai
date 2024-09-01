@@ -54,5 +54,6 @@
     "transcribe_audio": "Transcrição de Áudio",
     "upload_audio_file": "Enviar Arquivo de Áudio",
     "start_recording": "Iniciar Gravação",
-    "stop_recording": "Parar Gravação"
+    "stop_recording": "Parar Gravação",
+    "next": "Próximo"
 }
