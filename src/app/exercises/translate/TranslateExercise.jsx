@@ -81,6 +81,7 @@ const TranslateExercise = () => {
     }
     if (cleanSentence(llmResponse) === cleanSentence(correctText)) {
       setIsTranslationCorrect(true);
+      setShowSuggestedTranslatedText(true);
     }
   }, [llmResponse]);
 
@@ -231,9 +232,9 @@ const TranslateExercise = () => {
 
       {showSuggestedTranslatedText && (
         <div className="flex flex-col space-y-4 mt-4">
-          <div className="text-sText text text-left">
+          {/* <div className="text-sText text text-left">
             {t("suggested_translation")}
-          </div>
+          </div> */}
           <div className="flex space-x-4 items-center">
             <div className="text-sText text-2xl text-left">
               {suggestedTranslatedText}
