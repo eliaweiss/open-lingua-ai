@@ -28,6 +28,9 @@ Original text: ${originalText}
 Suggested teacher translation: ${suggestedTranslatedText}
 Please check if the user translation is correct.
 If not, please correct the translation and provide explanation.
+If the translation is correct, please say "Correct".
+Please don't mention the teacher suggested translation - it is only for reference.
+Don't mention the term 'user' - refer to the user as 'you'.
 `;
   return userMsg;
 }
