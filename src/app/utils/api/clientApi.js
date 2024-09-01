@@ -21,11 +21,14 @@ export async function transcribeAudio(audioBlob) {
   formData.append("file", audioBlob, "audio-file-name.wav");
 
   //   const response = await fetch("/api/upload", {
-  const response = await fetch("/api/transcribe-audio", {
+  const data = await fetchWrapper("/api/transcribe-audio", {
     method: "POST",
     body: formData,
   });
+//   console.log("data", data);
+  if (data.length > 0) {
+    return data[0].pageContent;
+  }
 
-  const data = await response.json();
-  return data.transcription;
+  return data;
 }
