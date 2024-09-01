@@ -11,6 +11,22 @@ export async function queryLLMApi({ messages }) {
       model: llmModel,
     }),
   });
-  //   console.log(data);
   return data;
 }
+
+export async function queryTranscribe(audioBlob) {
+  const { llmApiKey } = useAppStore.getState();
+  const formData = new FormData();
+  formData.append('apiKey', llmApiKey);
+  formData.append('audio', audioBlob, 'audio-file-name.wav');
+
+  const response = await fetch('/app/api/transcribe-audio/route', {
+    method: 'POST',
+    body: formData,
+  });
+
+  const data = await response.json();
+  return data.transcription;
+}
+
+
