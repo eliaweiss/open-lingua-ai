@@ -85,6 +85,9 @@ const TranslateExercise = () => {
   }, [llmResponse]);
 
   const handleCheckUserTranslate = async () => {
+    if (!yourTranslatedText) {
+      return;
+    }
     setShowSuggestedTranslatedText(true);
     if (isSameSentence(yourTranslatedText, suggestedTranslatedText)) {
       setLlmResponse(correctText);
