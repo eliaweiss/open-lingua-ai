@@ -65,8 +65,8 @@ const TranslateExercise = () => {
       const audioBlob = new Blob(audioChunks.current, { type: "audio/wav" });
       audioChunks.current = [];
       const transcription = await transcribeAudio(audioBlob);
-    //   console.log("transcription", transcription);
-      setYourTranslatedText(transcription);
+      //   console.log("transcription", transcription);
+      setYourTranslatedText(transcription?.text);
     };
     setIsRecording(false);
   };

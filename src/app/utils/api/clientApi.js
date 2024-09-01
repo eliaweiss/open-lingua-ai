@@ -25,10 +25,7 @@ export async function transcribeAudio(audioBlob) {
     method: "POST",
     body: formData,
   });
-//   console.log("data", data);
-  if (data.length > 0) {
-    return data[0].pageContent;
-  }
+  console.log("data", data);
 
   return data;
 }

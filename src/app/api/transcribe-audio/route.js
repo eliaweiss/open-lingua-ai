@@ -1,7 +1,11 @@
+import OpenAI from "openai";
 import { errorResponse, successResponse } from "@/app/utils/apiResponses";
-import { OpenAIWhisperAudio } from "@langchain/community/document_loaders/fs/openai_whisper_audio";
-import path from "path";
-import { writeFile, mkdir, unlink } from "fs/promises";
+
+function blobToFile(theBlob, fileName) {
+  const fd = new FormData();
+  fd.set("a", theBlob, "filename");
+  return fd.get("a");
+}
 
 export async function POST(req) {
   try {
@@ -13,24 +17,25 @@ export async function POST(req) {
     }
 
     const buffer = Buffer.from(await file.arrayBuffer());
-    const uploadDir = path.join(process.cwd(), "/tmp");
-    const filePath = path.join(uploadDir, file.name);
 
-    await mkdir(uploadDir, { recursive: true });
-    await writeFile(filePath, buffer);
+    // Create a Blob from the buffer
+    const blob = new Blob([buffer], { type: "audio/mpeg" });
 
-    // Initialize the OpenAI Whisper Audio loader with the temporary file path
-    const loader = new OpenAIWhisperAudio(filePath, {
-      clientOptions: { apiKey },
+    // Convert Blob to File
+    const fileToUpload = blobToFile(blob, "audio.mp3");
+
+    console.log(fileToUpload);
+
+    const openai = new OpenAI({ apiKey });
+    // console.log("before");
+
+    const transcription = await openai.audio.transcriptions.create({
+      file: fileToUpload, // Pass the File object here
+      model: "whisper-1",
     });
 
-    // Load the transcription
-    const docs = await loader.load();
-
-    // Clean up the temporary file
-    await unlink(filePath);
-
-    return successResponse(docs, 200);
+    // console.log("after");
+    return successResponse({ text: transcription?.text }, 200);
   } catch (error) {
     console.log(error);
     return errorResponse(error.message, 500);
