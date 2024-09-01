@@ -160,6 +160,19 @@ const useAppStore = create((set, get) => ({
     if (type === "target") return targetLanguage;
     if (type === "src") return sourceLanguage;
   },
+
+  isLoadingCounter: 1,
+  isLoadingAppFlag: true,
+  _setIsLoadingAppFlag: (value) => set({ isLoadingAppFlag: value }),
+  setIsLoadingAppCounter: (value) => {
+    let delta = 1;
+    if (!value) {
+      delta = -1;
+    }
+    set((state) => ({
+      isLoadingCounter: state.isLoadingCounter + delta,
+    }));
+  },
 }));
 
 export default useAppStore;

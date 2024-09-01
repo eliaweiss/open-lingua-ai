@@ -5,6 +5,7 @@ import { getLanguagesFromFileName } from "../utils/languageUtils";
 import { randomPermutation } from "../helpers";
 import { loadPhrasesTranslationFromStorage } from "../utils/loadPhrasesTranslationFromStorage";
 import { storage } from "../utils/storageUtils";
+import { fetchWrapper } from "../utils/fetchWrapper";
 
 const AppContext = createContext();
 
@@ -200,7 +201,7 @@ export const AppProvider = ({ children }) => {
   }, [googleTranslatorApiKey]);
 
   async function handleTest() {
-    const response = await fetch("/api/tst", {
+    const response = await fetchWrapper("/api/tst", {
       method: "POST",
       body: JSON.stringify({
         message: "Hello World " + Date.now(),
