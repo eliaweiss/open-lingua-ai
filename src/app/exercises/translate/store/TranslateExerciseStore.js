@@ -24,6 +24,8 @@ const useTranslateExerciseStore = create((set, get) => ({
   setSourceLanguage: (language) => set({ sourceLanguage: language }),
   yourTranslatedText: "",
   setYourTranslatedText: (text) => set({ yourTranslatedText: text }),
+  llmResponse: "",
+  setLlmResponse: (response) => set({ llmResponse: response }),
 
   ////////////////////////////////////////////////////////////////
   // manage the exercise play/pause/skip functionality

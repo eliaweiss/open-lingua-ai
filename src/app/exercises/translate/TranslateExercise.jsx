@@ -18,7 +18,8 @@ const TranslateExercise = () => {
   const { getLanguageName, currentPhraseIndex, phrases } = useAppStore();
   const {
     originalText,
-    translatedText,
+    llmResponse,
+    setLlmResponse,
     yourTranslatedText,
     setYourTranslatedText,
     translateDirection,
@@ -29,11 +30,13 @@ const TranslateExercise = () => {
     sourceLanguage,
   } = useTranslateExerciseStore();
 
-  const handleCheckUserTranslate = () => {
+  const handleCheckUserTranslate = async () => {
     // Implement translation logic here
     // This could involve calling an API or using a library
     console.log("Translate button clicked");
-    checkUserTranslate();
+    const { response } = await checkUserTranslate();
+    console.log("response", response);
+    setLlmResponse(response);
   };
   const options = [
     {
@@ -105,7 +108,12 @@ const TranslateExercise = () => {
           </ControlButton>
         </div>
       </div>
-      <HorizontalRule />
+      {llmResponse && (
+        <>
+          <HorizontalRule />
+          <div className="text-sText text-lg text-left">{llmResponse}</div>
+        </>
+      )}
 
       {/* Button Panel */}
       <div className="flex flex-col space-y-4 mt-4 ">
