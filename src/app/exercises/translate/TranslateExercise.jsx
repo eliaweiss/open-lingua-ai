@@ -7,7 +7,12 @@ import useTranslateExerciseStore, {
 } from "./store/TranslateExerciseStore";
 import HorizontalRule from "@/app/components/HorizontalRule";
 import ControlButton from "@/app/components/ControlButton";
-import { ForwardIcon, PlayIcon } from "@heroicons/react/24/outline";
+import {
+  ForwardIcon,
+  MicrophoneIcon,
+  PlayIcon,
+  StopIcon,
+} from "@heroicons/react/24/outline";
 import TooltipWrapper from "@/app/components/TooltipWrapper";
 import { useTranslation } from "@/app/i18n/useTranslation";
 import { checkUserTranslate } from "./checkUserTranslate";
@@ -125,15 +130,36 @@ const TranslateExercise = () => {
 
       <div className="mb-4 w-full">
         <label className="block mb-2">{t("your_translation")}</label>
-        <textarea
-          value={yourTranslatedText}
-          className="w-full p-2 border rounded text-black"
-          rows="4"
-          placeholder={t("your_translation")}
-          onChange={(e) => {
-            setYourTranslatedText(e.target.value);
-          }}
-        />
+        <div className="flex space-x-2">
+          <textarea
+            value={yourTranslatedText}
+            className="w-full p-2 border rounded text-black"
+            rows="4"
+            placeholder={t("your_translation")}
+            onChange={(e) => {
+              setYourTranslatedText(e.target.value);
+            }}
+          />
+          <div className="flex flex-col space-y-4 mt-4">
+            <div className="flex space-x-4 border rounded-lg p-1 border-pBorder">
+              <ControlButton
+                toolTip={
+                  isRecording ? t("stop_recording") : t("start_recording")
+                }
+                onClick={
+                  isRecording ? handleStopRecording : handleStartRecording
+                }
+                className="p-4 bg-card text-card-foreground rounded hover:bg-pHov text-lg font-bold"
+              >
+                {isRecording ? (
+                  <StopIcon className="w-6 h-6" />
+                ) : (
+                  <MicrophoneIcon className="w-6 h-6" />
+                )}
+              </ControlButton>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="flex flex-col space-y-4 mt-4">
@@ -148,17 +174,6 @@ const TranslateExercise = () => {
         </div>
       </div>
 
-      <div className="flex flex-col space-y-4 mt-4">
-        <div className="flex space-x-4 border rounded-lg p-1 border-pBorder">
-          <ControlButton
-            toolTip={isRecording ? t("stop_recording") : t("start_recording")}
-            onClick={isRecording ? handleStopRecording : handleStartRecording}
-            className="p-4 bg-card text-card-foreground rounded hover:bg-pHov text-lg font-bold"
-          >
-            {isRecording ? t("stop_recording") : t("start_recording")}
-          </ControlButton>
-        </div>
-      </div>
       {showSuggestedTranslatedText && (
         <div className="flex flex-col space-y-4 mt-4">
           <div className="text-sText text text-left">
@@ -183,7 +198,7 @@ const TranslateExercise = () => {
       {llmResponse && (
         <>
           <HorizontalRule />
-          <div className="text-sText text-lg text-left">{llmResponse}</div>
+          <div className="text-sText text-lg text-left mx-2">{llmResponse}</div>
         </>
       )}
 
