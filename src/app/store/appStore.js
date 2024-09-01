@@ -9,7 +9,7 @@ const useAppStore = create((set, get) => ({
   llmApiKey: "",
   setLlmApiKey: (key) => set({ llmApiKey: key }),
 
-  llmModel: "gpt-3.5-turbo",
+  llmModel: "gpt-4o-mini",
   setLlmModel: (model) => set({ llmModel: model }),
 
   googleTranslatorApiKey: "",

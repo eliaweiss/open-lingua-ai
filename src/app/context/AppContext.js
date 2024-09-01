@@ -55,7 +55,7 @@ export const AppProvider = ({ children }) => {
     if (initFlagRef.current) return;
     initFlagRef.current = true;
     initializeState(useAppStore);
-    handleTest();
+    // handleTest();
   }, []);
 
   useEffect(() => {
@@ -203,16 +203,15 @@ export const AppProvider = ({ children }) => {
     storage.set("googleTranslatorApiKey", googleTranslatorApiKey);
   }, [googleTranslatorApiKey]);
 
-  async function handleTest() {
-    const data = await fetchWrapper("/api/tst", {
-      method: "POST",
-      body: JSON.stringify({
-        message: "Hello World " + Date.now(),
-      }),
-    });
-    console.log(data);
-  }
-
+  // async function handleTest() {
+  //   const data = await fetchWrapper("/api/tst", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       message: "Hello World " + Date.now(),
+  //     }),
+  //   });
+  //   console.log(data);
+  // }
 
   useEffect(() => {
     if (!appInitFlag) return;
