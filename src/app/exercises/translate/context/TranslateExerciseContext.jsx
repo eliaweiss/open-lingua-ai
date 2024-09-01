@@ -33,6 +33,8 @@ export const TranslateExerciseProvider = ({ children }) => {
     setSourceLanguage,
     suggestedTranslatedText,
     setSuggestedTranslatedText,
+    setLlmResponse,
+    setYourTranslatedText,
   } = useTranslateExerciseStore();
 
   useEffect(() => {
@@ -53,6 +55,8 @@ export const TranslateExerciseProvider = ({ children }) => {
       setTargetLanguage(getLanguageName("src"));
       setSourceLanguage(getLanguageName("target"));
     }
+    setLlmResponse("");
+    setYourTranslatedText("");
   }, [currentPhrase, translateDirection]);
 
   return (
