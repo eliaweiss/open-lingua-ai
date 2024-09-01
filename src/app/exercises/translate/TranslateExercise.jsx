@@ -18,8 +18,8 @@ const TranslateExercise = () => {
   const {
     originalText,
     translatedText,
-
-    setTargetLanguage,
+    yourTranslatedText,
+    setYourTranslatedText,
     translateDirection,
     setTranslateDirection,
     skip,
@@ -44,7 +44,7 @@ const TranslateExercise = () => {
     },
   ];
   return (
-    <div className="flex flex-col justify-center items-center text-center w-full">
+    <div className="flex flex-col justify-center items-center text-center w-full space-y-4">
       <div className="text-left">
         <div className="text-sText text-sm">{t("exercise_title")}:</div>
         <div className="font-bold text-xl text-sText">
@@ -83,26 +83,17 @@ const TranslateExercise = () => {
         Translate
       </button>
 
-      <div className="mb-4 mt-4">
-        <label className="block mb-2">Target Language:</label>
-        <select
-          value={targetLanguage}
-          onChange={(e) => setTargetLanguage(e.target.value)}
-          className="w-full p-2 border rounded"
-        >
-          <option value="es">Spanish</option>
-          <option value="en">English</option>
-          {/* Add more language options as needed */}
-        </select>
-      </div>
-
-      <div className="mb-4">
-        <label className="block mb-2">Translated Text:</label>
+      <div className="mb-4 w-full">
+        <label className="block mb-2">{t("your_translation")}</label>
         <textarea
-          value={translatedText}
-          readOnly
-          className="w-full p-2 border rounded bg-gray-100"
+          value={yourTranslatedText}
+          className="w-full p-2 border rounded text-black"
           rows="4"
+          placeholder={t("your_translation")}
+          onChange={(e) => {
+            // console.log(e);
+            setYourTranslatedText(e.target.value);
+          }}
         />
       </div>
       <HorizontalRule />
