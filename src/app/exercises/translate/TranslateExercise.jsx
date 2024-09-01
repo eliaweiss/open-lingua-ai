@@ -76,13 +76,6 @@ const TranslateExercise = () => {
         </div>
       </div>
 
-      <button
-        onClick={handleTranslate}
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-      >
-        Translate
-      </button>
-
       <div className="mb-4 w-full">
         <label className="block mb-2">{t("your_translation")}</label>
         <textarea
@@ -95,6 +88,15 @@ const TranslateExercise = () => {
             setYourTranslatedText(e.target.value);
           }}
         />
+      </div>
+
+      <div className="flex justify-center items-center">
+        <button
+          onClick={handleTranslate}
+          className="mt-2 px-3 py-1 bg-card text-card-foreground rounded hover:bg-pHov"
+        >
+          {t("check_my_translation")}
+        </button>
       </div>
       <HorizontalRule />
 
