@@ -78,8 +78,11 @@ const TranslateExercise = () => {
       const audioBlob = new Blob(audioChunks.current, { type: "audio/wav" });
       audioChunks.current = [];
       const transcription = await transcribeAudio(audioBlob);
-      //   console.log("transcription", transcription);
       setYourTranslatedText(transcription?.text);
+
+      // Stop all media tracks to release the microphone
+      const tracks = mediaRecorder.stream.getTracks();
+      tracks.forEach((track) => track.stop());
     };
     setIsRecording(false);
   };
@@ -105,9 +108,9 @@ const TranslateExercise = () => {
       </div>
       <HorizontalRule />
 
-      <div className="mb-4 flex items-center justify-center space-x-2">
-        <div className="block mb-2">{t("translate_the_following")}</div>
-        <div>
+      <div className=" flex items-center justify-left ">
+        <div className="text-left ">{t("translate_the_following")}</div>
+        <div className="w-1/2">
           <SelectComponent
             value={translateDirection}
             onChange={(value) => setTranslateDirection(value)}
