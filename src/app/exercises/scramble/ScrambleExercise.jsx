@@ -1,11 +1,11 @@
-import HorizontalRule from "../components/HorizontalRule";
-import TooltipWrapper from "../components/TooltipWrapper";
-import ControlButton from "../components/ControlButton";
-import { useAppContext } from "../context/AppContext";
+import HorizontalRule from "../../components/HorizontalRule";
+import TooltipWrapper from "../../components/TooltipWrapper";
+import ControlButton from "../../components/ControlButton";
+import { useAppContext } from "../../context/AppContext";
 import { useScrambleContext } from "./context/ScrambleContext";
 import { PlayIcon, PauseIcon, ForwardIcon } from "@heroicons/react/24/solid"; // or '@heroicons/react/24/outline'
 import { ScramblePhrase } from "./component/ScramblePhrase";
-import { useTranslation } from "../i18n/useTranslation";
+import { useTranslation } from "../../i18n/useTranslation";
 
 export const ScrambleExercise = () => {
   const t = useTranslation(); // Use the translation hook

@@ -20,10 +20,12 @@ export function NavMenu({}) {
         </button>
         <div className="p-4 mt-10" onClick={() => setIsMenuOpen(false)}>
           <div>{t("exercise_title")}:</div>
-          <MenuItem href="/playSentences">
+          <MenuItem href="/exercises/playSentences">
             {t("play_sentence_exercise")}
           </MenuItem>
-          <MenuItem href="/scramble">{t("scramble_exercise")}</MenuItem>
+          <MenuItem href="/exercises/scramble">
+            {t("scramble_exercise")}
+          </MenuItem>
           <MenuItem href="/exercises/translate">
             {t("translate_exercise")}
           </MenuItem>

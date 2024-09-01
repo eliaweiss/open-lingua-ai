@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { TouchBackend } from "react-dnd-touch-backend";
-import { useAppContext } from "../../context/AppContext";
-import { Input } from "../../components/Input";
-import SelectComponent from "../../components/SelectComponent";
-import CheckboxComponent from "../../components/CheckboxComponent";
+import { useAppContext } from "../../../context/AppContext";
+import { Input } from "../../../components/Input";
+import SelectComponent from "../../../components/SelectComponent";
+import CheckboxComponent from "../../../components/CheckboxComponent";
 import { PlusCircleIcon, TrashIcon } from "@heroicons/react/24/solid";
 import { useTranslation } from "@/app/i18n/useTranslation";
 

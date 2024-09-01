@@ -1,6 +1,6 @@
 import { createContext, useState, useContext, useEffect, useRef } from "react";
-import { useAppContext } from "../../context/AppContext";
-import { useSpeechSynthesis } from "../../context/SpeechSynthesisContext";
+import { useAppContext } from "../../../context/AppContext";
+import { useSpeechSynthesis } from "../../../context/SpeechSynthesisContext";
 
 const PlaySentenceContext = createContext();
 

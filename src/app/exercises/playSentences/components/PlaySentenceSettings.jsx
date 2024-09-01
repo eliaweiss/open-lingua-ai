@@ -1,5 +1,5 @@
 import { useTranslation } from "@/app/i18n/useTranslation";
-import { useAppContext } from "../../context/AppContext";
+import { useAppContext } from "../../../context/AppContext";
 
 import ReadSettingDnd from "./ReadSettingDnd";
 import { deepCopy } from "@/app/utils/deepCopy";

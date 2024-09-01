@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { BEGINNER_READ_SETTINGS } from "../playSentences/components/PlaySentenceSettings";
+import { BEGINNER_READ_SETTINGS } from "../exercises/playSentences/components/PlaySentenceSettings";
 import { deepCopy } from "../utils/deepCopy";
 import { getUniquePhrases } from "../utils/phraseUtils";
 import { randomPermutation } from "../helpers"; // Add this import

@@ -1,8 +1,8 @@
 import { ChevronDoubleRightIcon, PauseIcon } from "@heroicons/react/24/solid";
-import ControlButton from "../../components/ControlButton";
+import ControlButton from "../../../components/ControlButton";
 import { useScrambleContext } from "../context/ScrambleContext";
 import { useEffect, useState } from "react";
-import { useAppContext } from "../../context/AppContext";
+import { useAppContext } from "../../../context/AppContext";
 import { UserBufferDisplay } from "./UserBufferDisplay";
 import {
   BackspaceIcon,

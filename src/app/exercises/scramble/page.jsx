@@ -2,7 +2,7 @@
 
 import { ScrambleProvider } from "./context/ScrambleContext";
 import { ScrambleExercise } from "./ScrambleExercise";
-import { SpeechSynthesisProvider } from "../context/SpeechSynthesisContext";
+import { SpeechSynthesisProvider } from "../../context/SpeechSynthesisContext";
 
 const Page = () => {
   return (
