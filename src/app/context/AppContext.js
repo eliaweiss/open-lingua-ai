@@ -222,10 +222,10 @@ export const AppProvider = ({ children }) => {
     const data = await response.json();
     console.log(data);
   }
-  useEffect(() => {
-    if (!appInitFlag) return;
-    handleQueryLLM();
-  }, [appInitFlag]);
+  // useEffect(() => {
+  //   if (!appInitFlag) return;
+  //   handleQueryLLM();
+  // }, [appInitFlag]);
 
   return (
     <AppContext.Provider value={useAppStore()}>{children}</AppContext.Provider>
