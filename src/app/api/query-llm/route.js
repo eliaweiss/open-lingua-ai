@@ -38,10 +38,11 @@ export async function POST(request) {
     }
 
     // Call the LLM with the input message
-    const response = await llm.generate(messages);
+    const response = await llm.call(messages);
 
     return successResponse({ response: response.content });
   } catch (error) {
+    console.log(error);
     return errorResponse(error.message, 500);
   }
 }
