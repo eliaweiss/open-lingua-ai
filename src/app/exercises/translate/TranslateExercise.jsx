@@ -60,7 +60,8 @@ const TranslateExercise = () => {
       .replaceAll(". ", " ")
       .replaceAll("?", "")
       .replaceAll(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
-      .toLowerCase();
+      .toLowerCase()
+      .trim();
     console.log("cleanSentence", res);
     return res;
   }
