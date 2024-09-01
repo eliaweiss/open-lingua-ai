@@ -173,7 +173,7 @@ const useAppStore = create((set, get) => ({
     set({
       isLoadingCounter: newCounter,
     });
-    set({ isLoadingAppFlag: newCounter > 0 });
+    // set({ isLoadingAppFlag: newCounter > 0 });
   },
 }));
 

@@ -45,6 +45,8 @@ export const AppProvider = ({ children }) => {
     llmModel,
     googleTranslatorApiKey,
     setIsLoadingAppCounter,
+    isLoadingCounter,
+    _setIsLoadingAppFlag,
   } = useAppStore();
 
   const initFlagRef = useRef(false);
@@ -229,6 +231,10 @@ export const AppProvider = ({ children }) => {
     // handleQueryLLM();
     setIsLoadingAppCounter(false);
   }, [appInitFlag]);
+
+  useEffect(() => {
+    _setIsLoadingAppFlag(isLoadingCounter > 0);
+  }, [isLoadingCounter]);
 
   return (
     <AppContext.Provider value={useAppStore()}>{children}</AppContext.Provider>
