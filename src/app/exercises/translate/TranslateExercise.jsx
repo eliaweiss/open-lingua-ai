@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslateExercise } from "./context/TranslateExerciseContext";
+
 import SelectComponent from "@/app/components/SelectComponent";
 import useAppStore from "@/app/store/appStore";
 import useTranslateExerciseStore, {
@@ -60,12 +60,7 @@ const TranslateExercise = () => {
 
       <div className="mb-4">
         <label className="block mb-2">Original Text:</label>
-        <textarea
-          value={originalText}
-          onChange={(e) => setOriginalText(e.target.value)}
-          className="w-full p-2 border rounded"
-          rows="4"
-        />
+        {originalText}
       </div>
 
       <button
