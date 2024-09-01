@@ -267,6 +267,8 @@ const TranslateExercise = () => {
             toolTip="Give hint (long click)"
             onMouseDown={() => setShowHint(true)}
             onMouseUp={() => setShowHint(false)}
+            onTouchStart={() => setShowHint(true)}
+            onTouchEnd={() => setShowHint(false)}
           >
             <QuestionMarkCircleIcon className="w-6 h-6 " />
           </ControlButton>
