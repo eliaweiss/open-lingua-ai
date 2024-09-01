@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 
 import SelectComponent from "@/app/components/SelectComponent";
 import useAppStore from "@/app/store/appStore";
@@ -22,9 +22,10 @@ import { cleanPunctuation, removeDotAtEnd } from "@/app/helpers";
 
 const TranslateExercise = () => {
   const t = useTranslation(); // Use the translation hook
-  const [correctText, setCorrectText] = useState(t("correct") || "Correct");
+  const correctText = useMemo(() => t("correct") || "Correct", [t]);
 
-  const { currentPhraseIndex, phrases } = useAppStore();
+  const { currentPhraseIndex, phrases, targetLanguage, sourceLanguage } =
+    useAppStore();
   const {
     originalText,
     llmResponse,
@@ -35,8 +36,7 @@ const TranslateExercise = () => {
     setTranslateDirection,
     skip,
     isOriginalTextRtl,
-    targetLanguage,
-    sourceLanguage,
+
     suggestedTranslatedText,
     showSuggestedTranslatedText,
     setShowSuggestedTranslatedText,
