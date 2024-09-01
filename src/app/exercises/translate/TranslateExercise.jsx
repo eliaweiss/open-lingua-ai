@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import SelectComponent from "@/app/components/SelectComponent";
 import useAppStore from "@/app/store/appStore";
@@ -18,9 +18,11 @@ import { useTranslation } from "@/app/i18n/useTranslation";
 import { checkUserTranslate } from "./checkUserTranslate";
 import { transcribeAudio } from "@/app/utils/api/clientApi";
 import { readAloud } from "@/app/utils/speechUtils";
+import { cleanPunctuation, removeDotAtEnd } from "@/app/helpers";
 
 const TranslateExercise = () => {
   const t = useTranslation(); // Use the translation hook
+  const [correctText, setCorrectText] = useState(t("correct") || "Correct");
 
   const { currentPhraseIndex, phrases } = useAppStore();
   const {
@@ -38,6 +40,8 @@ const TranslateExercise = () => {
     suggestedTranslatedText,
     showSuggestedTranslatedText,
     setShowSuggestedTranslatedText,
+    isTranslationCorrect,
+    setIsTranslationCorrect,
   } = useTranslateExerciseStore();
 
   const [isRecording, setIsRecording] = useState(false);
@@ -48,11 +52,46 @@ const TranslateExercise = () => {
     await readAloud(suggestedTranslatedText, sourceLanguage, 1);
   }
 
+  function cleanSentence(currentSentence) {
+    const res = removeDotAtEnd(currentSentence)
+      .replaceAll(", ", " ")
+      .replaceAll(". ", " ")
+      .replaceAll("?", "")
+      .replaceAll(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+      .toLowerCase();
+    console.log("cleanSentence", res);
+    return res;
+  }
+
+  function isSameSentence(sentence1, sentence2) {
+    return cleanSentence(sentence1) === cleanSentence(sentence2);
+  }
+  useEffect(() => {
+    if (isSameSentence(yourTranslatedText, suggestedTranslatedText)) {
+      setLlmResponse(correctText);
+    }
+  }, [yourTranslatedText, suggestedTranslatedText]);
+
+  useEffect(() => {
+    if (
+      cleanSentence(llmResponse) === cleanSentence(correctText) &&
+      cleanSentence(llmResponse) !== "correct"
+    ) {
+      setLlmResponse(correctText);
+    }
+    if (cleanSentence(llmResponse) === cleanSentence(correctText)) {
+      setIsTranslationCorrect(true);
+    }
+  }, [llmResponse]);
+
   const handleCheckUserTranslate = async () => {
     setShowSuggestedTranslatedText(true);
-    const { response } = await checkUserTranslate();
-    console.log("response", response);
-    setLlmResponse(response);
+    if (isSameSentence(yourTranslatedText, suggestedTranslatedText)) {
+      setLlmResponse(correctText);
+    } else {
+      const { response } = await checkUserTranslate();
+      setLlmResponse(response);
+    }
   };
 
   const handleStartRecording = () => {
@@ -143,39 +182,43 @@ const TranslateExercise = () => {
               setYourTranslatedText(e.target.value);
             }}
           />
-          <div className="flex flex-col space-y-4 mt-4">
-            <div className="flex space-x-4 border rounded-lg p-1 border-pBorder">
-              <ControlButton
-                toolTip={
-                  isRecording ? t("stop_recording") : t("start_recording")
-                }
-                onClick={
-                  isRecording ? handleStopRecording : handleStartRecording
-                }
-                className="p-4 bg-card text-card-foreground rounded hover:bg-pHov text-lg font-bold"
-              >
-                {isRecording ? (
-                  <StopIcon className="w-6 h-6" />
-                ) : (
-                  <MicrophoneIcon className="w-6 h-6" />
-                )}
-              </ControlButton>
+          {!isTranslationCorrect && (
+            <div className="flex flex-col space-y-4 mt-4">
+              <div className="flex space-x-4 border rounded-lg p-1 border-pBorder">
+                <ControlButton
+                  toolTip={
+                    isRecording ? t("stop_recording") : t("start_recording")
+                  }
+                  onClick={
+                    isRecording ? handleStopRecording : handleStartRecording
+                  }
+                  className="p-4 bg-card text-card-foreground rounded hover:bg-pHov text-lg font-bold"
+                >
+                  {isRecording ? (
+                    <StopIcon className="w-6 h-6" />
+                  ) : (
+                    <MicrophoneIcon className="w-6 h-6" />
+                  )}
+                </ControlButton>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
 
-      <div className="flex flex-col space-y-4 mt-4">
-        <div className="flex space-x-4 border rounded-lg p-1 border-pBorder">
-          <ControlButton
-            toolTip={t("check_my_translation")}
-            onClick={handleCheckUserTranslate}
-            className="p-4 bg-card text-card-foreground rounded hover:bg-pHov text-lg font-bold"
-          >
-            {t("check_my_translation")}
-          </ControlButton>
+      {!isTranslationCorrect && (
+        <div className="flex flex-col space-y-4 mt-4">
+          <div className="flex space-x-4 border rounded-lg p-1 border-pBorder">
+            <ControlButton
+              toolTip={t("check_my_translation")}
+              onClick={handleCheckUserTranslate}
+              className="p-4 bg-card text-card-foreground rounded hover:bg-pHov text-lg font-bold"
+            >
+              {t("check_my_translation")}
+            </ControlButton>
+          </div>
         </div>
-      </div>
+      )}
 
       {showSuggestedTranslatedText && (
         <div className="flex flex-col space-y-4 mt-4">

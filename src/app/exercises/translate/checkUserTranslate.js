@@ -3,8 +3,6 @@ import useTranslateExerciseStore from "./store/TranslateExerciseStore";
 import { queryLLMApi } from "@/app/utils/api/clientApi";
 
 export async function checkUserTranslate() {
-  //   const { currentPhraseIndex, phrases } = useAppStore.getState();
-
   const response = await queryLLMApi({
     messages: [
       {

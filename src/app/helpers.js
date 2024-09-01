@@ -35,3 +35,5 @@ export function splitToWords(currentSentence) {
   let words = currentSentenceTmp.toLocaleLowerCase().split(" "); // Split into words
   return words;
 }
+
+
