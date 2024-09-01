@@ -98,9 +98,9 @@ export const initializeState = async (useAppStore) => {
   const storedMaxWords = await storage.get("maxNumberOfWordsInPhrase", null);
   setMaxNumberOfWordsInPhrase(storedMaxWords <= 0 ? null : storedMaxWords);
 
-
   // Initialize new parameters from storage or set default
   const storeLlmApiKey = await storage.get("llmApiKey", "");
+  console.log("storeLlmApiKey", storeLlmApiKey);
   setLlmApiKey(storeLlmApiKey);
   setLlmModel(await storage.get("llmModel", "gpt-3.5-turbo"));
   setGoogleTranslatorApiKey(await storage.get("googleTranslatorApiKey", ""));

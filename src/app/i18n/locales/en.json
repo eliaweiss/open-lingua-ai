@@ -44,5 +44,6 @@
   "llm_api_key": "LLM API Key",
   "llm_model": "LLM Model",
   "google_translator_settings": "Google Translator Settings",
-  "google_translator_api_key": "Google Translator API Key"
+  "google_translator_api_key": "Google Translator API Key",
+  "translate_exercise": "Translate Exercise"
 }
