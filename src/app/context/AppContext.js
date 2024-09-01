@@ -48,6 +48,7 @@ export const AppProvider = ({ children }) => {
     if (initFlagRef.current) return;
     initFlagRef.current = true;
     initializeState(useAppStore);
+    handleTest();
   }, []);
 
   useEffect(() => {
@@ -179,6 +180,16 @@ export const AppProvider = ({ children }) => {
     storage.set("maxNumberOfWordsInPhrase", maxNumberOfWordsInPhrase);
   }, [maxNumberOfWordsInPhrase]);
 
+  async function handleTest() {
+    const response = await fetch("/api/tst", {
+      method: "POST",
+      body: JSON.stringify({
+        message: "Hello World " + Date.now(),
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+  }
   return (
     <AppContext.Provider value={useAppStore()}>{children}</AppContext.Provider>
   );
