@@ -45,5 +45,8 @@
     "llm_model": "Modelo do LLM",
     "google_translator_settings": "Configurações do Tradutor Google",
     "google_translator_api_key": "Chave da API do Tradutor Google",
-    "translate_exercise": "Exercício de Tradução"
+    "translate_exercise": "Exercício de Tradução",
+    "translate_the_following": "Traduza a seguinte frase",
+    "from": "de",
+    "to": "para"
 }

@@ -18,6 +18,9 @@ export const TranslateExerciseProvider = ({ children }) => {
     increasePhraseIndex,
     currentPhraseIndex,
     currentPhrase,
+    isSrcRtl,
+    isTargetRtl,
+    getLanguageName,
   } = useAppStore();
   const {
     originalText,
@@ -25,6 +28,9 @@ export const TranslateExerciseProvider = ({ children }) => {
     translatedText,
     setTranslatedText,
     translateDirection,
+    setIsOriginalTextRtl,
+    setTargetLanguage,
+    setSourceLanguage,
   } = useTranslateExerciseStore();
 
   useEffect(() => {
@@ -34,10 +40,16 @@ export const TranslateExerciseProvider = ({ children }) => {
     }
     if (translateDirection === TranslateDirection.TARGET_TO_SOURCE) {
       setOriginalText(currentPhrase.target);
+      setIsOriginalTextRtl(isTargetRtl);
+      setTargetLanguage(getLanguageName("target"));
+      setSourceLanguage(getLanguageName("src"));
     } else {
-      setOriginalText(currentPhrase.source);
+      setOriginalText(currentPhrase.src);
+      setIsOriginalTextRtl(isSrcRtl);
+      setTargetLanguage(getLanguageName("src"));
+      setSourceLanguage(getLanguageName("target"));
     }
-  }, [currentPhrase]);
+  }, [currentPhrase, translateDirection]);
 
   return (
     <TranslateExerciseContext.Provider value={{}}>

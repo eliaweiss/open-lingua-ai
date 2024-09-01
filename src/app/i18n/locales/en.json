@@ -45,5 +45,8 @@
   "llm_model": "LLM Model",
   "google_translator_settings": "Google Translator Settings",
   "google_translator_api_key": "Google Translator API Key",
-  "translate_exercise": "Translate Exercise"
+  "translate_exercise": "Translate Exercise",
+  "translate_the_following": "Translate the following sentence",
+  "from": "from",
+  "to": "to"
 }

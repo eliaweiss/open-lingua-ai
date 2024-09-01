@@ -16,6 +16,12 @@ const useTranslateExerciseStore = create((set, get) => ({
   setHintClickCounter: (counter) => set({ hintClickCounter: counter }),
   translateDirection: TranslateDirection.TARGET_TO_SOURCE,
   setTranslateDirection: (direction) => set({ translateDirection: direction }),
+  isOriginalTextRtl: false,
+  setIsOriginalTextRtl: (isRtl) => set({ isOriginalTextRtl: isRtl }),
+  targetLanguage: "",
+  setTargetLanguage: (language) => set({ targetLanguage: language }),
+  sourceLanguage: "",
+  setSourceLanguage: (language) => set({ sourceLanguage: language }),
 
   ////////////////////////////////////////////////////////////////
   // manage the exercise play/pause/skip functionality

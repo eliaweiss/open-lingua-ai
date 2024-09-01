@@ -17,16 +17,15 @@ const TranslateExercise = () => {
   const { getLanguageName, currentPhraseIndex, phrases } = useAppStore();
   const {
     originalText,
-    setOriginalText,
     translatedText,
-    setTranslatedText,
-    sourceLanguage,
-    setSourceLanguage,
-    targetLanguage,
+
     setTargetLanguage,
     translateDirection,
     setTranslateDirection,
     skip,
+    isOriginalTextRtl,
+    targetLanguage,
+    sourceLanguage,
   } = useTranslateExerciseStore();
 
   const handleTranslate = () => {
@@ -37,11 +36,11 @@ const TranslateExercise = () => {
   const options = [
     {
       value: TranslateDirection.TARGET_TO_SOURCE,
-      label: `${getLanguageName("target")} → ${getLanguageName("src")}`,
+      label: `${targetLanguage} → ${sourceLanguage}`,
     },
     {
       value: TranslateDirection.SOURCE_TO_TARGET,
-      label: `${getLanguageName("src")} → ${getLanguageName("target")}`,
+      label: `${sourceLanguage} → ${targetLanguage}`,
     },
   ];
   return (
@@ -54,19 +53,27 @@ const TranslateExercise = () => {
       </div>
       <HorizontalRule />
 
-      <div className="mb-4">
-        <label className="block mb-2">Source Language:</label>
-        <SelectComponent
-          value={translateDirection}
-          onChange={(value) => setTranslateDirection(value)}
-          className="w-full p-2 border rounded"
-          options={options}
-        />
+      <div className="mb-4 flex items-center justify-center space-x-2">
+        <div className="block mb-2">{t("translate_the_following")}</div>
+        <div>
+          <SelectComponent
+            value={translateDirection}
+            onChange={(value) => setTranslateDirection(value)}
+            className="w-full p-2 border rounded"
+            options={options}
+          />
+        </div>
       </div>
 
-      <div className="mb-4">
-        <label className="block mb-2">Original Text:</label>
-        {originalText}
+      {/* Exercise Panel */}
+      <div className="flex flex-col space-y-4 mt-4 text-3xl">
+        <div
+          className={`text-sText ${
+            isOriginalTextRtl ? "text-right text-rtl" : "text-left"
+          }`}
+        >
+          {originalText}
+        </div>
       </div>
 
       <button
