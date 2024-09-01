@@ -4,24 +4,16 @@ import useTranslateExerciseStore, {
 } from "../store/TranslateExerciseStore";
 import { useSpeechSynthesis } from "@/app/context/SpeechSynthesisContext";
 import useAppStore from "@/app/store/appStore";
+import { storage } from "@/app/utils/storageUtils";
 
 const TranslateExerciseContext = createContext();
 
 export const useTranslateExercise = () => useContext(TranslateExerciseContext);
 
 export const TranslateExerciseProvider = ({ children }) => {
-  const { readAloud_target, cancelSpeech, splitIntoSubSentences } =
-    useSpeechSynthesis();
-  const {
-    sourceLanguage,
-    targetLanguage,
-    increasePhraseIndex,
-    currentPhraseIndex,
-    currentPhrase,
-    isSrcRtl,
-    isTargetRtl,
-    getLanguageName,
-  } = useAppStore();
+  const { cancelSpeech } = useSpeechSynthesis();
+  const { appInitFlag, currentPhrase, isSrcRtl, isTargetRtl, getLanguageName } =
+    useAppStore();
   const {
     setOriginalText,
     translateDirection,
@@ -52,6 +44,11 @@ export const TranslateExerciseProvider = ({ children }) => {
     }
     resetExercise();
   }, [currentPhrase, translateDirection]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("translateDirection", translateDirection);
+  }, [translateDirection]);
 
   return (
     <TranslateExerciseContext.Provider value={{}}>

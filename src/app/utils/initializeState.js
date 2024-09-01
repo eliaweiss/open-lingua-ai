@@ -5,6 +5,9 @@ import loadPhraseFromDataFolder from "../context/loadPhraseFromDataFolder";
 import { deepCopy } from "./deepCopy";
 import { BEGINNER_READ_SETTINGS } from "../exercises/playSentences/components/PlaySentenceSettings";
 import { getLanguagesFromFileName } from "./languageUtils";
+import useTranslateExerciseStore, {
+  TranslateDirection,
+} from "../exercises/translate/store/TranslateExerciseStore";
 
 const STORAGE_VERSION = "1.0"; // You can adjust this version as needed
 
@@ -26,6 +29,7 @@ export const initializeState = async (useAppStore) => {
     setLlmModel,
     setGoogleTranslatorApiKey,
   } = useAppStore.getState();
+  const { setTranslateDirection } = useTranslateExerciseStore.getState();
 
   const storageVersion = myLocalStorage.get("STORAGE_VERSION");
   if (storageVersion !== STORAGE_VERSION) {
@@ -104,6 +108,12 @@ export const initializeState = async (useAppStore) => {
   setLlmApiKey(storeLlmApiKey);
   setLlmModel(await storage.get("llmModel", "gpt-3.5-turbo"));
   setGoogleTranslatorApiKey(await storage.get("googleTranslatorApiKey", ""));
+
+  const storedTranslateDirection = await storage.get(
+    "translateDirection",
+    TranslateDirection.TARGET_TO_SOURCE
+  );
+  setTranslateDirection(storedTranslateDirection);
 
   setAppInitFlag(true);
 };
