@@ -17,30 +17,28 @@ export const TranslateExerciseProvider = ({ children }) => {
     currentPhraseIndex,
     currentPhrase,
   } = useAppStore();
-  const { originalText, setOriginalText, translatedText, setTranslatedText } =
-    useTranslateExerciseStore();
+  const {
+    originalText,
+    setOriginalText,
+    translatedText,
+    setTranslatedText,
+    translateDirection,
+  } = useTranslateExerciseStore();
 
   useEffect(() => {
     if (!currentPhrase) {
       cancelSpeech();
       return;
     }
-    playSentence();
+    if (translateDirection === TranslateDirection.TARGET_TO_SOURCE) {
+      setOriginalText(currentPhrase.target);
+    } else {
+      setOriginalText(currentPhrase.source);
+    }
   }, [currentPhraseIndex]);
 
-  const skip = () => {};
-
   return (
-    <TranslateExerciseContext.Provider
-      value={{
-        originalText,
-        setOriginalText,
-        translatedText,
-        setTranslatedText,
-        sourceLanguage,
-        targetLanguage,
-      }}
-    >
+    <TranslateExerciseContext.Provider value={{}}>
       {children}
     </TranslateExerciseContext.Provider>
   );

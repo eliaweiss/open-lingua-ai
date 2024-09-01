@@ -1,16 +1,29 @@
-import create from "zustand";
+import useAppStore from "@/app/store/appStore";
+import { cancelSpeech } from "@/app/utils/speechUtils";
+import { create } from "zustand";
 
-const useTranslateExerciseStore = create((set) => ({
+export const TranslateDirection = {
+  TARGET_TO_SOURCE: "target_to_source",
+  SOURCE_TO_TARGET: "source_to_target",
+};
+
+const useTranslateExerciseStore = create((set, get) => ({
   originalText: "",
   setOriginalText: (text) => set({ originalText: text }),
   translatedText: "",
   setTranslatedText: (text) => set({ translatedText: text }),
   hintClickCounter: 0,
   setHintClickCounter: (counter) => set({ hintClickCounter: counter }),
-  //   skip: () => {
-  //     cancelSpeech();
-  //     increasePhraseIndex();
-  //   },
+  translateDirection: TranslateDirection.TARGET_TO_SOURCE,
+  setTranslateDirection: (direction) => set({ translateDirection: direction }),
+
+  ////////////////////////////////////////////////////////////////
+  // manage the exercise play/pause/skip functionality
+  skip: () => {
+    const { increasePhraseIndex } = useAppStore.getState();
+    cancelSpeech();
+    increasePhraseIndex();
+  },
 }));
 
 export default useTranslateExerciseStore;

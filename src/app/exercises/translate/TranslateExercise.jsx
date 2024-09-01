@@ -1,7 +1,13 @@
-import React from 'react';
-import { useTranslateExercise } from './context/TranslateExerciseContext';
+import React from "react";
+import { useTranslateExercise } from "./context/TranslateExerciseContext";
+import SelectComponent from "@/app/components/SelectComponent";
+import useAppStore from "@/app/store/appStore";
+import useTranslateExerciseStore, {
+  TranslateDirection,
+} from "./store/TranslateExerciseStore";
 
 const TranslateExercise = () => {
+  const { getLanguageName } = useAppStore();
   const {
     originalText,
     setOriginalText,
@@ -11,29 +17,45 @@ const TranslateExercise = () => {
     setSourceLanguage,
     targetLanguage,
     setTargetLanguage,
-  } = useTranslateExercise();
+    translateDirection,
+    setTranslateDirection,
+  } = useTranslateExerciseStore();
 
   const handleTranslate = () => {
     // Implement translation logic here
     // This could involve calling an API or using a library
-    console.log('Translate button clicked');
+    console.log("Translate button clicked");
   };
-
+  const options = [
+    {
+      value: TranslateDirection.TARGET_TO_SOURCE,
+      label: (
+        <div>
+          {getLanguageName("target")} → {getLanguageName("src")}
+        </div>
+      ),
+    },
+    {
+      value: TranslateDirection.SOURCE_TO_TARGET,
+      label: (
+        <div>
+          {getLanguageName("src")} → {getLanguageName("target")}
+        </div>
+      ),
+    },
+  ];
   return (
     <div className="max-w-2xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Translation Exercise</h1>
-      
+
       <div className="mb-4">
         <label className="block mb-2">Source Language:</label>
-        <select 
-          value={sourceLanguage} 
-          onChange={(e) => setSourceLanguage(e.target.value)}
+        <SelectComponent
+          value={translateDirection}
+          onChange={(value) => setTranslateDirection(value)}
           className="w-full p-2 border rounded"
-        >
-          <option value="en">English</option>
-          <option value="es">Spanish</option>
-          {/* Add more language options as needed */}
-        </select>
+          options={options}
+        />
       </div>
 
       <div className="mb-4">
@@ -46,7 +68,7 @@ const TranslateExercise = () => {
         />
       </div>
 
-      <button 
+      <button
         onClick={handleTranslate}
         className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
       >
@@ -55,8 +77,8 @@ const TranslateExercise = () => {
 
       <div className="mb-4 mt-4">
         <label className="block mb-2">Target Language:</label>
-        <select 
-          value={targetLanguage} 
+        <select
+          value={targetLanguage}
           onChange={(e) => setTargetLanguage(e.target.value)}
           className="w-full p-2 border rounded"
         >
