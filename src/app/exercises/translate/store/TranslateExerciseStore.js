@@ -26,6 +26,9 @@ const useTranslateExerciseStore = create((set, get) => ({
   setYourTranslatedText: (text) => set({ yourTranslatedText: text }),
   llmResponse: "",
   setLlmResponse: (response) => set({ llmResponse: response }),
+  showSuggestedTranslatedText: true,
+  setShowSuggestedTranslatedText: (show) =>
+    set({ showSuggestedTranslatedText: true }),
 
   ////////////////////////////////////////////////////////////////
   // manage the exercise play/pause/skip functionality
@@ -39,6 +42,7 @@ const useTranslateExerciseStore = create((set, get) => ({
     set({
       yourTranslatedText: "",
       llmResponse: "",
+      showSuggestedTranslatedText: true,
     });
   },
 }));

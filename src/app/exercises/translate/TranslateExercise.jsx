@@ -7,11 +7,12 @@ import useTranslateExerciseStore, {
 } from "./store/TranslateExerciseStore";
 import HorizontalRule from "@/app/components/HorizontalRule";
 import ControlButton from "@/app/components/ControlButton";
-import { ForwardIcon } from "@heroicons/react/24/outline";
+import { ForwardIcon, PlayIcon } from "@heroicons/react/24/outline";
 import TooltipWrapper from "@/app/components/TooltipWrapper";
 import { useTranslation } from "@/app/i18n/useTranslation";
 import { checkUserTranslate } from "./checkUserTranslate";
 import { transcribeAudio } from "@/app/utils/api/clientApi";
+import { readAloud } from "@/app/utils/speechUtils";
 
 const TranslateExercise = () => {
   const t = useTranslation(); // Use the translation hook
@@ -29,14 +30,21 @@ const TranslateExercise = () => {
     isOriginalTextRtl,
     targetLanguage,
     sourceLanguage,
+    suggestedTranslatedText,
+    showSuggestedTranslatedText,
+    setShowSuggestedTranslatedText,
   } = useTranslateExerciseStore();
 
   const [isRecording, setIsRecording] = useState(false);
   const [mediaRecorder, setMediaRecorder] = useState(null);
   const audioChunks = useRef([]);
 
+  async function playSuggestedTranslation() {
+    await readAloud(suggestedTranslatedText, sourceLanguage, 1);
+  }
+
   const handleCheckUserTranslate = async () => {
-    console.log("Translate button clicked");
+    setShowSuggestedTranslatedText(true);
     const { response } = await checkUserTranslate();
     console.log("response", response);
     setLlmResponse(response);
@@ -151,6 +159,26 @@ const TranslateExercise = () => {
           </ControlButton>
         </div>
       </div>
+      {showSuggestedTranslatedText && (
+        <div className="flex flex-col space-y-4 mt-4">
+          <div className="text-sText text text-left">
+            {t("suggested_translation")}
+          </div>
+          <div className="flex space-x-4 items-center">
+            <div className="text-sText text-2xl text-left">
+              {suggestedTranslatedText}
+            </div>
+            <div className=" border rounded-lg border-pBorder">
+              <ControlButton
+                toolTip={t("play")}
+                onClick={playSuggestedTranslation}
+              >
+                <PlayIcon className="w-6 h-6" />
+              </ControlButton>
+            </div>
+          </div>
+        </div>
+      )}
 
       {llmResponse && (
         <>

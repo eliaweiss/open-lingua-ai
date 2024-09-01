@@ -55,5 +55,7 @@
   "upload_audio_file": "Upload Audio File",
   "start_recording": "Start Recording",
   "stop_recording": "Stop Recording",
-  "next": "Next"
+  "next": "Next",
+  "suggested_translation": "Suggested Translation",
+  "play": "Play"
 }
