@@ -14,19 +14,17 @@ export async function queryLLMApi({ messages }) {
   return data;
 }
 
-export async function queryTranscribe(audioBlob) {
+export async function transcribeAudio(audioBlob) {
   const { llmApiKey } = useAppStore.getState();
   const formData = new FormData();
-  formData.append('apiKey', llmApiKey);
-  formData.append('audio', audioBlob, 'audio-file-name.wav');
+  formData.append("apiKey", llmApiKey);
+  formData.append("audio", audioBlob, "audio-file-name.wav");
 
-  const response = await fetch('/app/api/transcribe-audio/route', {
-    method: 'POST',
+  const response = await fetch("/api/transcribe-audio", {
+    method: "POST",
     body: formData,
   });
 
   const data = await response.json();
   return data.transcription;
 }
-
-

@@ -11,7 +11,7 @@ import { ForwardIcon } from "@heroicons/react/24/outline";
 import TooltipWrapper from "@/app/components/TooltipWrapper";
 import { useTranslation } from "@/app/i18n/useTranslation";
 import { checkUserTranslate } from "./checkUserTranslate";
-import { queryTranscribe } from "@/app/utils/api/clientApi";
+import { transcribeAudio } from "@/app/utils/api/clientApi";
 
 const TranslateExercise = () => {
   const t = useTranslation(); // Use the translation hook
@@ -43,17 +43,18 @@ const TranslateExercise = () => {
   };
 
   const handleStartRecording = () => {
-    navigator.mediaDevices.getUserMedia({ audio: true })
-      .then(stream => {
+    navigator.mediaDevices
+      .getUserMedia({ audio: true })
+      .then((stream) => {
         const recorder = new MediaRecorder(stream);
         setMediaRecorder(recorder);
-        recorder.ondataavailable = event => {
+        recorder.ondataavailable = (event) => {
           audioChunks.current.push(event.data);
         };
         recorder.start();
         setIsRecording(true);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error accessing microphone:", error);
       });
   };
@@ -61,9 +62,9 @@ const TranslateExercise = () => {
   const handleStopRecording = async () => {
     mediaRecorder.stop();
     mediaRecorder.onstop = async () => {
-      const audioBlob = new Blob(audioChunks.current, { type: 'audio/wav' });
+      const audioBlob = new Blob(audioChunks.current, { type: "audio/wav" });
       audioChunks.current = [];
-      const transcription = await queryTranscribe(audioBlob);
+      const transcription = await transcribeAudio(audioBlob);
       setYourTranslatedText(transcription);
     };
     setIsRecording(false);
