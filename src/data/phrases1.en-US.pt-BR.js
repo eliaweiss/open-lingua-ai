@@ -6871,4 +6871,44 @@ export const phrases = [
     "en-US": "I bought the book and read it.",
     "pt-BR": "Eu comprei o livro e o li.",
   },
+  {
+    "en-US": "She will arrive soon.",
+    "pt-BR": "Ela chegará logo.",
+  },
+  {
+    "en-US": "I need to finish this quickly.",
+    "pt-BR": "Eu preciso terminar isso logo.",
+  },
+  {
+    "en-US": "He called me right after the meeting.",
+    "pt-BR": "Ele me ligou logo após a reunião.",
+  },
+  {
+    "en-US": "It's getting late, so I should go.",
+    "pt-BR": "Está ficando tarde, logo devo ir.",
+  },
+  {
+    "en-US": "The train will depart soon.",
+    "pt-BR": "O trem partirá logo.",
+  },
+  {
+    "en-US": "She realized her mistake immediately.",
+    "pt-BR": "Ela percebeu seu erro logo.",
+  },
+  {
+    "en-US": "The sun will rise soon.",
+    "pt-BR": "O sol nascerá logo.",
+  },
+  {
+    "en-US": "It's raining heavily, so the streets are flooded.",
+    "pt-BR": "Está chovendo forte, logo as ruas estão alagadas.",
+  },
+  {
+    "en-US": "Finish this quickly, we are running out of time.",
+    "pt-BR": "Termine isso logo, estamos sem tempo.",
+  },
+  {
+    "en-US": "She smiled immediately after hearing the good news.",
+    "pt-BR": "Ela sorriu logo após ouvir as boas notícias.",
+  },
 ];
