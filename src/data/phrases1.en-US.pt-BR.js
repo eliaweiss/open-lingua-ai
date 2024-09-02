@@ -6839,4 +6839,36 @@ export const phrases = [
     "en-US": "What the hell is this?",
     "pt-BR": "Que porcaria é essa?",
   },
+  {
+    "en-US": "I saw Pedro at the party and greeted him.",
+    "pt-BR": "Eu vi o Pedro na festa e o cumprimentei.",
+  },
+  {
+    "en-US": "Maria met João and invited him to dinner.",
+    "pt-BR": "Maria encontrou o João e o convidou para jantar.",
+  },
+  {
+    "en-US": "They saw Lucas and called him to play.",
+    "pt-BR": "Eles viram o Lucas e o chamaram para jogar.",
+  },
+  {
+    "en-US": "I lost my phone, but later I found it.",
+    "pt-BR": "Eu perdi o meu celular, mas depois o encontrei.",
+  },
+  {
+    "en-US": "The dog took the toy and hid it.",
+    "pt-BR": "O cachorro pegou o brinquedo e o escondeu.",
+  },
+  {
+    "en-US": "I bought the car and took it to the shop.",
+    "pt-BR": "Comprei o carro e o levei para a oficina.",
+  },
+  {
+    "en-US": "I saw João and greeted him.",
+    "pt-BR": "Eu vi o João e o cumprimentei.",
+  },
+  {
+    "en-US": "I bought the book and read it.",
+    "pt-BR": "Eu comprei o livro e o li.",
+  },
 ];
