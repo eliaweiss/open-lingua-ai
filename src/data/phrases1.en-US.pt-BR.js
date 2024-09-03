@@ -6911,4 +6911,44 @@ export const phrases = [
     "en-US": "She smiled immediately after hearing the good news.",
     "pt-BR": "Ela sorriu logo após ouvir as boas notícias.",
   },
+  {
+    "en-US": "The bus took too long to arrive.",
+    "pt-BR": "O ônibus demorou muito para chegar.",
+  },
+  {
+    "en-US": "There is no need to delay the meeting.",
+    "pt-BR": "Não há necessidade de demorar a reunião.",
+  },
+  {
+    "en-US": "Why are you taking so long to decide?",
+    "pt-BR": "Por que você está demorando tanto para decidir?",
+  },
+  {
+    "en-US": "The process will take a while, so please be patient.",
+    "pt-BR": "O processo vai demorar, então por favor seja paciente.",
+  },
+  {
+    "en-US": "She apologized for the delay.",
+    "pt-BR": "Ela pediu desculpas pela demora.",
+  },
+  {
+    "en-US": "The delivery might take a few days.",
+    "pt-BR": "A entrega pode demorar alguns dias.",
+  },
+  {
+    "en-US": "I don't want to take too long to complete this task.",
+    "pt-BR": "Eu não quero demorar muito para completar essa tarefa.",
+  },
+  {
+    "en-US": "He always takes his time to respond to emails.",
+    "pt-BR": "Ele sempre demora para responder aos e-mails.",
+  },
+  {
+    "en-US": "The repair took longer than expected.",
+    "pt-BR": "O conserto demorou mais do que o esperado.",
+  },
+  {
+    "en-US": "If you delay too much, you might miss the opportunity.",
+    "pt-BR": "Se você demorar muito, pode perder a oportunidade.",
+  },
 ];
