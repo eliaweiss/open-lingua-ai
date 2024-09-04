@@ -150,6 +150,15 @@ const TranslateExercise = () => {
     },
   ];
 
+  const handleShowHint = (show) => {
+    if (show) {
+      setShowHint(true);
+      setTimeout(() => setShowHint(false), 2000);
+    } else {
+      setShowHint(false);
+    }
+  };
+
   return (
     <div className="flex flex-col justify-center items-center text-center w-full space-y-4">
       <div className="text-left">
@@ -182,6 +191,11 @@ const TranslateExercise = () => {
           {originalText}
         </div>
       </div>
+      {showHint && (
+        <div className="text-sText text-2xl text-left fixed top-10 bg-pBg p-2 border border-pBorder rounded-sm ">
+          {suggestedTranslatedText}
+        </div>
+      )}
 
       <div className="mb-4 w-full">
         <label className="block mb-2">{t("your_translation")}</label>
@@ -266,10 +280,10 @@ const TranslateExercise = () => {
         <div className="flex space-x-4 mt-4 border rounded-lg p-4 border-pBorder">
           <ControlButton
             toolTip="Give hint (long click)"
-            onMouseDown={() => setShowHint(true)}
-            onMouseUp={() => setShowHint(false)}
-            onTouchStart={() => setShowHint(true)}
-            onTouchEnd={() => setShowHint(false)}
+            onMouseDown={() => handleShowHint(true)}
+            onMouseUp={() => handleShowHint(false)}
+            onTouchStart={() => handleShowHint(true)}
+            onTouchEnd={() => handleShowHint(false)}
           >
             <QuestionMarkCircleIcon className="w-6 h-6 " />
           </ControlButton>
@@ -280,11 +294,6 @@ const TranslateExercise = () => {
           </ControlButton>
         </div>
       </div>
-      {showHint && (
-        <div className="text-sText text-2xl text-left">
-          {suggestedTranslatedText}
-        </div>
-      )}
 
       {/* Statistic Panel */}
       <div className="mt-4 flex flex-col items-center text-xl">
