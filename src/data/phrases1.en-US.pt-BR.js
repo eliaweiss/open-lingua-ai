@@ -6951,4 +6951,60 @@ export const phrases = [
     "en-US": "If you delay too much, you might miss the opportunity.",
     "pt-BR": "Se você demorar muito, pode perder a oportunidade.",
   },
+  {
+    "en-US": "He will put the phone in his pocket.",
+    "pt-BR": "Ele vai meter o celular no bolso.",
+  },
+  {
+    "en-US": "Don't put your hand in the fire!",
+    "pt-BR": "Não meta a mão no fogo!",
+  },
+  {
+    "en-US": "She put the key in the lock.",
+    "pt-BR": "Ela meteu a chave na fechadura.",
+  },
+  {
+    "en-US": "I will put the documents in the drawer.",
+    "pt-BR": "Vou meter os documentos na gaveta.",
+  },
+  {
+    "en-US": "He put his wallet in the backpack.",
+    "pt-BR": "Ele meteu a carteira na mochila.",
+  },
+  {
+    "en-US": "She put her hand in the water to test the temperature.",
+    "pt-BR": "Ela meteu a mão na água para testar a temperatura.",
+  },
+  {
+    "en-US": "They put the letter in the mailbox.",
+    "pt-BR": "Eles meteram a carta na caixa de correio.",
+  },
+  {
+    "en-US": "He quickly put the shoes on his feet.",
+    "pt-BR": "Ele meteu os sapatos nos pés rapidamente.",
+  },
+  {
+    "en-US": "The boy put the toy under the bed.",
+    "pt-BR": "O menino meteu o brinquedo debaixo da cama.",
+  },
+  {
+    "en-US": "She put the key in her purse.",
+    "pt-BR": "Ela meteu a chave na bolsa.",
+  },
+  {
+    "en-US": "He put the pen in his pocket.",
+    "pt-BR": "Ele meteu a caneta no bolso.",
+  },
+  {
+    "en-US": "I put the towel in the drawer.",
+    "pt-BR": "Eu meti a toalha na gaveta.",
+  },
+  {
+    "en-US": "She put the cat inside the box.",
+    "pt-BR": "Ela meteu o gato dentro da caixa.",
+  },
+  {
+    "en-US": "He put his hand in his coat pocket.",
+    "pt-BR": "Ele meteu a mão no bolso do casaco.",
+  },
 ];
