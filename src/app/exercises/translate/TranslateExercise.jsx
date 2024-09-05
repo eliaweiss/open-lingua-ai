@@ -153,7 +153,7 @@ const TranslateExercise = () => {
   const handleShowHint = (show) => {
     if (show) {
       setShowHint(true);
-      setTimeout(() => setShowHint(false), 2000);
+      setTimeout(() => setShowHint(false), 8000);
     } else {
       setShowHint(false);
     }
