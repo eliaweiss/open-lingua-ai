@@ -32,6 +32,7 @@ I would like to practice the following exercise in ${targetLanguage}
 Exercise Instructions:
 You will give me a set of 10 sentences with blanks. 
 My task is to fill in the blanks with the correct conjugation of the verb. 
+If the sentence has more than one verb, only blank the first verb.
 The sentences will require me to choose between a mix of the following tenses:
 
 Present
