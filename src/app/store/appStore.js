@@ -161,7 +161,7 @@ const useAppStore = create((set, get) => ({
     if (type === "src") return sourceLanguage;
   },
 
-  isLoadingCounter: 1,
+  isLoadingCounter: 0,
   isLoadingAppFlag: true,
   _setIsLoadingAppFlag: (value) => set({ isLoadingAppFlag: value }),
   setIsLoadingAppCounter: (value) => {
