@@ -9,8 +9,8 @@ export function compareWords(word1, word2, normalize = true) {
   }
 
   // Normalize both words
-  const normalizedWord1 = wordFn(word1);
-  const normalizedWord2 = wordFn(word2);
+  const normalizedWord1 = wordFn(word1).toLowerCase();
+  const normalizedWord2 = wordFn(word2).toLowerCase();
 
   // Compare the normalized words
   return normalizedWord1 === normalizedWord2;
