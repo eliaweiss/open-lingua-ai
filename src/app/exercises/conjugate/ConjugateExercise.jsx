@@ -23,20 +23,7 @@ export const ConjugateExercise = () => {
     console.log("Submitted:", { verb, tense, answer });
   };
 
-  async function createConjugation() {
-    const exerciseData = await createConjugationApi();
-    setExerciseData(exerciseData);
-    setExerciseIndex(0);
-  }
 
-  const apiSubmitted = useRef(false);
-  useEffect(() => {
-    if (!appInitFlag) return;
-    if (!apiSubmitted.current) {
-      createConjugation();
-      apiSubmitted.current = true;
-    }
-  }, [appInitFlag]);
 
   return (
     <div>

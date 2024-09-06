@@ -5,7 +5,7 @@ import { getLanguagesFromFileName } from "../utils/languageUtils";
 import { randomPermutation } from "../helpers";
 import { loadPhrasesTranslationFromStorage } from "../utils/loadPhrasesTranslationFromStorage";
 import { storage } from "../utils/storageUtils";
-import { fetchWrapper } from "../utils/fetchWrapper";
+
 
 const AppContext = createContext();
 

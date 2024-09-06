@@ -1,26 +1,61 @@
-import React, { createContext, useState, useContext } from "react";
-
+import React, { createContext, useState, useContext, useEffect } from "react";
+import useConjugateExerciseStore from "../store/ConjugateExerciseStore";
+import useAppStore from "@/app/store/appStore";
+import { createConjugationApi } from "../createConjugationApi";
+import { storage } from "@/app/utils/storageUtils";
 const ConjugateContext = createContext();
 
 export const useConjugateExercise = () => useContext(ConjugateContext);
 
 export const ConjugateProvider = ({ children }) => {
-  const [verb, setVerb] = useState("");
-  const [tense, setTense] = useState("");
-  const [answer, setAnswer] = useState("");
+  const { appInitFlag } = useAppStore();
+  const { exerciseData, setExerciseData, exerciseIndex, setExerciseIndex } =
+    useConjugateExerciseStore();
 
-  const value = {
-    verb,
-    setVerb,
-    tense,
-    setTense,
-    answer,
-    setAnswer,
-  };
+  useEffect(() => {
+    if (!appInitFlag) return;
+    async function initExercise() {
+      const storedExerciseData = await storage.get("exerciseData");
+      if (storedExerciseData) {
+        setExerciseData(storedExerciseData);
+      }
+      const storedExerciseIndex = await storage.get("exerciseIndex");
+      if (storedExerciseIndex) {
+        setExerciseIndex(storedExerciseIndex);
+      }
+    }
+    initExercise();
+  }, [appInitFlag]);
+
+  async function createConjugation() {
+    const exerciseData = await createConjugationApi();
+    setExerciseData(exerciseData);
+    setExerciseIndex(0);
+  }
+
+  // const apiSubmitted = useRef(false);
+  useEffect(() => {
+    if (!appInitFlag) return;
+    // apiSubmitted.current = true;
+    // if (!apiSubmitted.current) {
+    debugger;
+    if (exerciseData.length <= exerciseIndex) {
+      createConjugation();
+    }
+    // }
+  }, [exerciseIndex]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("exerciseData", exerciseData);
+  }, [exerciseData]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("exerciseIndex", exerciseIndex);
+  }, [exerciseIndex]);
 
   return (
-    <ConjugateContext.Provider value={value}>
-      {children}
-    </ConjugateContext.Provider>
+    <ConjugateContext.Provider value={{}}>{children}</ConjugateContext.Provider>
   );
 };
