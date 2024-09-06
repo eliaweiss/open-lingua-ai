@@ -150,7 +150,9 @@ export const ConjugateExercise = () => {
                   </ControlButton>
                 </div>
               </div>
-              <div>{currentExercise.translation}</div>
+              <div className="text-sText text-xl">
+                {currentExercise.translation}
+              </div>
 
               <div className="flex justify-center">
                 <div className="mt-4 border rounded-lg p-4 border-pBorder">
