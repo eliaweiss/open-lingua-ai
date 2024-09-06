@@ -3,6 +3,7 @@ import useConjugateExerciseStore from "../store/ConjugateExerciseStore";
 import useAppStore from "@/app/store/appStore";
 import { createConjugationApi } from "../createConjugationApi";
 import { storage } from "@/app/utils/storageUtils";
+import { createConjugation } from "../store/createConjugation";
 const ConjugateContext = createContext();
 
 export const useConjugateExercise = () => useContext(ConjugateContext);
@@ -39,12 +40,6 @@ export const ConjugateProvider = ({ children }) => {
     }
     initExercise();
   }, [appInitFlag]);
-
-  async function createConjugation() {
-    const exerciseData = await createConjugationApi();
-    setExerciseData(exerciseData);
-    setExerciseIndex(0);
-  }
 
   // const apiSubmitted = useRef(false);
   useEffect(() => {

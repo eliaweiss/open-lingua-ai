@@ -1,4 +1,5 @@
 import { queryLLMApi } from "@/app/utils/api/clientApi";
+import useConjugateExerciseStore from "./store/ConjugateExerciseStore";
 
 export async function createConjugationApi() {
   const { response } = await queryLLMApi({
@@ -24,7 +25,7 @@ function createMessage() {
 I would like to practice the following exercise in portuguese
 
 Exercise Instructions:
-You will give me a set of 2 sentences with blanks. 
+You will give me a set of 10 sentences with blanks. 
 My task is to fill in the blanks with the correct conjugation of the verb. 
 The sentences will require me to choose between a mix of the following tenses:
 
