@@ -1,6 +1,7 @@
 import React from "react";
 import { useConjugate } from "./context/ConjugateContext";
 import { useTranslation } from "@/app/i18n/useTranslation";
+import HorizontalRule from "@/app/components/HorizontalRule";
 
 export const ConjugateExercise = () => {
   const t = useTranslation(); // Add this line
@@ -14,41 +15,15 @@ export const ConjugateExercise = () => {
 
   return (
     <div>
-      <h1>{t("conjugate_exercise")}</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="verb">{t("verb")}:</label>
-          <input
-            type="text"
-            id="verb"
-            value={verb}
-            onChange={(e) => setVerb(e.target.value)}
-          />
+      <div className="flex flex-col justify-center items-center text-center w-full">
+        <div className="text-left">
+          <div className="text-sText text-sm">{t("exercise_title")}:</div>
+          <div className="font-bold text-xl text-sText">
+            {t("conjugate_a_verb")}
+          </div>
         </div>
-        <div>
-          <label htmlFor="tense">{t("tense")}:</label>
-          <select
-            id="tense"
-            value={tense}
-            onChange={(e) => setTense(e.target.value)}
-          >
-            <option value="">{t("select_tense")}</option>
-            <option value="present">{t("present")}</option>
-            <option value="past">{t("past")}</option>
-            <option value="future">{t("future")}</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="answer">{t("your_answer")}:</label>
-          <input
-            type="text"
-            id="answer"
-            value={answer}
-            onChange={(e) => setAnswer(e.target.value)}
-          />
-        </div>
-        <button type="submit">{t("check")}</button>
-      </form>
+      </div>
+      <HorizontalRule />
     </div>
   );
 };
