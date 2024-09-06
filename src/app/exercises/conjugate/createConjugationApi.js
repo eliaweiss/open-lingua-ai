@@ -1,12 +1,16 @@
 import { queryLLMApi } from "@/app/utils/api/clientApi";
 import useConjugateExerciseStore from "./store/ConjugateExerciseStore";
+import useAppStore from "@/app/store/appStore";
 
 export async function createConjugationApi() {
+  const prompt = createMessage();
+  // console.log("prompt", prompt);
+  // debugger;
   const { response } = await queryLLMApi({
     messages: [
       {
         role: "user",
-        content: createMessage(),
+        content: prompt,
       },
     ],
   });
@@ -20,9 +24,10 @@ export async function createConjugationApi() {
 }
 
 function createMessage() {
+  const { targetLanguage, sourceLanguage } = useAppStore.getState();
   const { verbList } = useConjugateExerciseStore.getState();
   const userMsg = `
-I would like to practice the following exercise in portuguese
+I would like to practice the following exercise in ${targetLanguage}
 
 Exercise Instructions:
 You will give me a set of 10 sentences with blanks. 
@@ -48,6 +53,7 @@ Please return the exercise in json format as
 "tense": <tense>,
 "solution": <the solution to the exercise - if the solution is Gerund than include estar conjugation as well>,
 "completeSentence": <the complete sentence with the correct conjugation"
+"translation": <the translation of the sentence to ${sourceLanguage}>
 }
 ...
 ]
