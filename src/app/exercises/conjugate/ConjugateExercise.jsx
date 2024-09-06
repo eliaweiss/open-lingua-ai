@@ -54,7 +54,7 @@ export const ConjugateExercise = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col space-y-4">
       <div className="flex flex-col justify-center items-center text-center w-full">
         <div className="text-left">
           <div className="text-sText text-sm">{t("exercise_title")}:</div>
@@ -65,7 +65,7 @@ export const ConjugateExercise = () => {
       </div>
       <HorizontalRule />
       {currentExercise && (
-        <div>
+        <div className="flex flex-col space-y-4">
           {/* Exercise Panel */}
           <div className="flex flex-col space-y-4 mt-4 text-2xl">
             <div
@@ -76,24 +76,25 @@ export const ConjugateExercise = () => {
               {currentExercise.exercise}
             </div>
           </div>
-          <Input
-            value={answer}
-            onChange={(e) => setAnswer(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                handleSubmit(e);
-              }
-            }}
-            placeholder="Enter your answer"
-          />
+          <div className="flex space-x-2 items-center">
+            <Input
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSubmit(e);
+                }
+              }}
+              placeholder="Enter your answer"
+            />
+            <div className="">({currentExercise.verb})</div>
+          </div>
           {/* {showHint && (
             <div className="text-sText text-2xl text-left fixed top-10 bg-pBg p-2 border border-pBorder rounded-sm ">
               {suggestedTranslatedText}
             </div>
           )} */}
-          <div className="">
-            {t("verb")}: {currentExercise.verb}
-          </div>
+
           <div className="">
             {t("tense")}:{" "}
             {showTense ? (
