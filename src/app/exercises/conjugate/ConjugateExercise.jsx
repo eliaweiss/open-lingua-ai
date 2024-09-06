@@ -11,10 +11,12 @@ import {
   CheckBadgeIcon,
   ForwardIcon,
   NoSymbolIcon,
+  PlayIcon,
 } from "@heroicons/react/24/solid";
+import { readAloud } from "@/app/utils/speechUtils";
 
 export const ConjugateExercise = () => {
-  const { appInitFlag, isTargetRtl } = useAppStore();
+  const { appInitFlag, isTargetRtl, targetLanguage } = useAppStore();
   const t = useTranslation(); // Add this line
   const {
     exerciseData,
@@ -26,6 +28,8 @@ export const ConjugateExercise = () => {
     showCorrectAnswer,
     setShowCorrectAnswer,
     resetExercise,
+    showTense,
+    setShowTense,
   } = useConjugateExerciseStore();
 
   const currentExercise = useMemo(() => {
@@ -43,6 +47,10 @@ export const ConjugateExercise = () => {
   const moveToNextExercise = () => {
     resetExercise();
     setExerciseIndex(exerciseIndex + 1);
+  };
+
+  const playCompleteSentence = async () => {
+    await readAloud(currentExercise.completeSentence, targetLanguage, 1);
   };
 
   return (
@@ -83,8 +91,23 @@ export const ConjugateExercise = () => {
               {suggestedTranslatedText}
             </div>
           )} */}
-          <div className="">Verb: {currentExercise.verb}</div>
-          <div className="">Tense: {currentExercise.tense}</div>
+          <div className="">
+            {t("verb")}: {currentExercise.verb}
+          </div>
+          <div className="">
+            {t("tense")}:{" "}
+            {showTense ? (
+              `${currentExercise.tense}`
+            ) : (
+              <ControlButton
+                toolTip={t("show_tense")}
+                onClick={() => setShowTense(true)}
+                className="bg-sBg border-pBorder"
+              >
+                {t("show_tense")}
+              </ControlButton>
+            )}
+          </div>
           {showCorrectAnswer && (
             <div className="flex flex-col">
               <div className="flex space-x-2 items-center">
@@ -104,12 +127,22 @@ export const ConjugateExercise = () => {
                   )}
                 </div>
               </div>
-              <div
-                className={`text-sText text-2xl ${
-                  isTargetRtl ? "text-right text-rtl" : "text-left"
-                }`}
-              >
-                {currentExercise.completeSentence}
+              <div className="flex">
+                <div
+                  className={`text-sText text-2xl ${
+                    isTargetRtl ? "text-right text-rtl" : "text-left"
+                  }`}
+                >
+                  {currentExercise.completeSentence}
+                </div>
+                <div className=" border rounded-lg border-pBorder">
+                  <ControlButton
+                    toolTip={t("play")}
+                    onClick={playCompleteSentence}
+                  >
+                    <PlayIcon className="w-6 h-6" />
+                  </ControlButton>
+                </div>
               </div>
 
               <div className="flex justify-center">

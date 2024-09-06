@@ -11,6 +11,9 @@ const useConjugateExerciseStore = create((set, get) => ({
   showCorrectAnswer: false,
   setShowCorrectAnswer: (show) => set({ showCorrectAnswer: show }),
 
+  showTense: false,
+  setShowTense: (show) => set({ showTense: show }),
+
   getCurrentExercise: () => {
     const { exerciseData, exerciseIndex } = get();
     return exerciseData[exerciseIndex];
@@ -20,6 +23,7 @@ const useConjugateExerciseStore = create((set, get) => ({
     set({
       answer: "",
       showCorrectAnswer: false,
+      showTense: false,
     }),
 }));
 
