@@ -1,11 +1,12 @@
 import React from "react";
-import { useConjugate } from "./context/ConjugateContext";
+import { useConjugateExercise } from "./context/ConjugateContext";
 import { useTranslation } from "@/app/i18n/useTranslation";
 import HorizontalRule from "@/app/components/HorizontalRule";
 
 export const ConjugateExercise = () => {
   const t = useTranslation(); // Add this line
-  const { verb, setVerb, tense, setTense, answer, setAnswer } = useConjugate();
+  const { verb, setVerb, tense, setTense, answer, setAnswer } =
+    useConjugateExercise();
 
   const handleSubmit = (e) => {
     e.preventDefault();
