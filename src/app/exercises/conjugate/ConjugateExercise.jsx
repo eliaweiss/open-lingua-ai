@@ -6,6 +6,12 @@ import { createConjugationApi } from "./createConjugationApi";
 import useConjugateExerciseStore from "./store/ConjugateExerciseStore";
 import useAppStore from "@/app/store/appStore";
 import { Input } from "@/app/components/Input";
+import ControlButton from "@/app/components/ControlButton";
+import {
+  CheckBadgeIcon,
+  ForwardIcon,
+  NoSymbolIcon,
+} from "@heroicons/react/24/solid";
 
 export const ConjugateExercise = () => {
   const { appInitFlag, isTargetRtl } = useAppStore();
@@ -19,6 +25,7 @@ export const ConjugateExercise = () => {
     setAnswer,
     showCorrectAnswer,
     setShowCorrectAnswer,
+    resetExercise,
   } = useConjugateExerciseStore();
 
   const currentExercise = useMemo(() => {
@@ -31,6 +38,11 @@ export const ConjugateExercise = () => {
     // e.preventDefault();
     // Add logic to check the answer
     // console.log("Submitted:", { verb, tense, answer });
+  };
+
+  const moveToNextExercise = () => {
+    resetExercise();
+    setExerciseIndex(exerciseIndex + 1);
   };
 
   return (
@@ -74,8 +86,42 @@ export const ConjugateExercise = () => {
           <div className="">Verb: {currentExercise.verb}</div>
           <div className="">Tense: {currentExercise.tense}</div>
           {showCorrectAnswer && (
-            <div className="">
-              Correct Answer: {currentExercise.completeSentence}
+            <div className="flex flex-col">
+              <div className="flex space-x-2 items-center">
+                <div className="text-sText ">Correct Answer:</div>
+                <div
+                  className={`text-sText text-3xl font-bold ${
+                    isTargetRtl ? "text-right text-rtl" : "text-left"
+                  }`}
+                >
+                  {currentExercise.solution}
+                </div>
+                <div>
+                  {currentExercise.solution === answer ? (
+                    <CheckBadgeIcon className="w-6 h-6 text-green-400" />
+                  ) : (
+                    <NoSymbolIcon className="w-6 h-6 text-red-400" />
+                  )}
+                </div>
+              </div>
+              <div
+                className={`text-sText text-2xl ${
+                  isTargetRtl ? "text-right text-rtl" : "text-left"
+                }`}
+              >
+                {currentExercise.completeSentence}
+              </div>
+
+              <div className="flex justify-center">
+                <div className="mt-4 border rounded-lg p-4 border-pBorder">
+                  <ControlButton
+                    toolTip={t("next")}
+                    onClick={moveToNextExercise}
+                  >
+                    <ForwardIcon className="w-6 h-6" />
+                  </ControlButton>
+                </div>
+              </div>
             </div>
           )}
         </div>
