@@ -162,7 +162,7 @@ const useAppStore = create((set, get) => ({
   },
 
   isLoadingCounter: 0,
-  isLoadingAppFlag: true,
+  isLoadingAppFlag: false,
   _setIsLoadingAppFlag: (value) => set({ isLoadingAppFlag: value }),
   setIsLoadingAppCounter: (value) => {
     let delta = 1;
@@ -170,8 +170,9 @@ const useAppStore = create((set, get) => ({
       delta = -1;
     }
     const newCounter = get().isLoadingCounter + delta;
+    // debugger;
     set({
-      isLoadingCounter: newCounter,
+      isLoadingCounter: newCounter > 0 ? newCounter : 0,
     });
     // set({ isLoadingAppFlag: newCounter > 0 });
   },

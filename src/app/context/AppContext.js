@@ -216,7 +216,7 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     if (!appInitFlag) return;
     // handleQueryLLM();
-    setIsLoadingAppCounter(false);
+    // setIsLoadingAppCounter(false);
   }, [appInitFlag]);
 
   useEffect(() => {

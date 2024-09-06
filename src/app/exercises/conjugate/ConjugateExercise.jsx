@@ -1,18 +1,42 @@
-import React from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { useConjugateExercise } from "./context/ConjugateContext";
 import { useTranslation } from "@/app/i18n/useTranslation";
 import HorizontalRule from "@/app/components/HorizontalRule";
+import { createConjugationApi } from "./createConjugationApi";
+import useConjugateExerciseStore from "./store/ConjugateExerciseStore";
+import useAppStore from "@/app/store/appStore";
 
 export const ConjugateExercise = () => {
+  const { appInitFlag } = useAppStore();
   const t = useTranslation(); // Add this line
-  const { verb, setVerb, tense, setTense, answer, setAnswer } =
-    useConjugateExercise();
+  const { exerciseData, setExerciseData, exerciseIndex, setExerciseIndex } =
+    useConjugateExerciseStore();
+
+  const currentExercise = useMemo(() => {
+    if (!exerciseData) return null;
+    return exerciseData[exerciseIndex];
+  }, [exerciseData, exerciseIndex]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add logic to check the answer
     console.log("Submitted:", { verb, tense, answer });
   };
+
+  async function createConjugation() {
+    const exerciseData = await createConjugationApi();
+    setExerciseData(exerciseData);
+    setExerciseIndex(0);
+  }
+
+  const apiSubmitted = useRef(false);
+  useEffect(() => {
+    if (!appInitFlag) return;
+    if (!apiSubmitted.current) {
+      createConjugation();
+      apiSubmitted.current = true;
+    }
+  }, [appInitFlag]);
 
   return (
     <div>
@@ -25,6 +49,13 @@ export const ConjugateExercise = () => {
         </div>
       </div>
       <HorizontalRule />
+      {currentExercise && (
+        <div>
+          <div>{currentExercise.verb}</div>
+          <div>{currentExercise.tense}</div>
+          <div>{currentExercise.answer}</div>
+        </div>
+      )}
     </div>
   );
 };
