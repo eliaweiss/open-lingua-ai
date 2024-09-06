@@ -29,6 +29,9 @@ export function NavMenu({}) {
           <MenuItem href="/exercises/translate">
             {t("translate_exercise")}
           </MenuItem>
+          <MenuItem href="/exercises/conjugate">
+            {t("conjugate_exercise")}
+          </MenuItem>
           <div>{t("general_title")}:</div>
           <MenuItem href="/settings">
             <div className="flex space-x-2">

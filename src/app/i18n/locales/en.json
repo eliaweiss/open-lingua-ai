@@ -58,5 +58,11 @@
   "next": "Next",
   "suggested_translation": "Suggested Translation",
   "play": "Play",
-  "correct": "Correct"
+  "correct": "Correct",
+  "check": "Check",
+  "verb": "Verb",
+  "tense": "Tense",
+  "your_answer": "Your answer",
+  "select_tense": "Select tense",
+  "conjugate_exercise": "Conjugate Exercise"
 }
