@@ -10,6 +10,11 @@ const useConjugateExerciseStore = create((set, get) => ({
   setAnswer: (answer) => set({ answer: answer }),
   showCorrectAnswer: false,
   setShowCorrectAnswer: (show) => set({ showCorrectAnswer: show }),
+  checkAnswerResponse: "",
+  setCheckAnswerResponse: (response) => set({ checkAnswerResponse: response }),
+
+  currentExercise: null,
+  setCurrentExercise: (exercise) => set({ currentExercise: exercise }),
 
   showTense: false,
   setShowTense: (show) => set({ showTense: show }),
@@ -23,6 +28,7 @@ const useConjugateExerciseStore = create((set, get) => ({
 
   resetExercise: () =>
     set({
+      checkAnswerResponse: "",
       answer: "",
       showCorrectAnswer: false,
       showTense: false,

@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useConjugateExercise } from "./context/ConjugateContext";
 import { useTranslation } from "@/app/i18n/useTranslation";
 import HorizontalRule from "@/app/components/HorizontalRule";
-import { createConjugationApi } from "./createConjugationApi";
+
 import useConjugateExerciseStore from "./store/ConjugateExerciseStore";
 import useAppStore from "@/app/store/appStore";
 import { Input } from "@/app/components/Input";
@@ -17,14 +17,14 @@ import {
 import { readAloud } from "@/app/utils/speechUtils";
 import { compareWords } from "@/app/utils/compareWords";
 import ConjugateExerciseSettings from "./ConjugateExerciseSettings";
+import { checkMyAnswer } from "./store/checkMyAnswer";
 
 export const ConjugateExercise = () => {
   const [showSettings, setShowSettings] = useState(false);
-  const { appInitFlag, isTargetRtl, targetLanguage } = useAppStore();
+  const { isTargetRtl, targetLanguage } = useAppStore();
   const t = useTranslation(); // Add this line
   const {
     exerciseData,
-    setExerciseData,
     exerciseIndex,
     setExerciseIndex,
     answer,
@@ -34,12 +34,9 @@ export const ConjugateExercise = () => {
     resetExercise,
     showTense,
     setShowTense,
+    checkAnswerResponse,
+    currentExercise,
   } = useConjugateExerciseStore();
-
-  const currentExercise = useMemo(() => {
-    if (!exerciseData) return null;
-    return exerciseData[exerciseIndex];
-  }, [exerciseData, exerciseIndex]);
 
   const handleSubmit = () => {
     setShowCorrectAnswer(true);
@@ -118,7 +115,7 @@ export const ConjugateExercise = () => {
             )}
           </div>
           {showCorrectAnswer && (
-            <div className="flex flex-col">
+            <div className="flex flex-col space-y-2">
               <div className="flex space-x-2 items-center">
                 <div className="text-sText ">Correct Answer:</div>
                 <div
@@ -156,8 +153,21 @@ export const ConjugateExercise = () => {
               <div className="text-sText text-xl">
                 {currentExercise.translation}
               </div>
-              <div className="text-sText text">
+              <div className="text-sText text-lg">
                 {currentExercise.explanation}
+              </div>
+              <div className="text-sText text-lg">
+                {!checkAnswerResponse ? (
+                  <ControlButton
+                    className="bg-sBg text-sText"
+                    toolTip={t("check_my_answer")}
+                    onClick={checkMyAnswer}
+                  >
+                    {t("check_my_answer")}
+                  </ControlButton>
+                ) : (
+                  <div>{checkAnswerResponse}</div>
+                )}
               </div>
 
               <div className="flex justify-center">

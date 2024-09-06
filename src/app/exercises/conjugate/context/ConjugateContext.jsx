@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import useConjugateExerciseStore from "../store/ConjugateExerciseStore";
 import useAppStore from "@/app/store/appStore";
-import { createConjugationApi } from "../createConjugationApi";
+import { createConjugationApi } from "../store/createConjugationApi";
 import { storage } from "@/app/utils/storageUtils";
 import { createConjugation } from "../store/createConjugation";
 const ConjugateContext = createContext();
@@ -17,7 +17,12 @@ export const ConjugateProvider = ({ children }) => {
     setExerciseIndex,
     verbList,
     setVerbList,
+    setCurrentExercise,
   } = useConjugateExerciseStore();
+
+  useEffect(() => {
+    setCurrentExercise(exerciseData[exerciseIndex]);
+  }, [exerciseData, exerciseIndex]);
 
   useEffect(() => {
     if (!appInitFlag) return;

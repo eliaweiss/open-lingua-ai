@@ -1,4 +1,4 @@
-import { createConjugationApi } from "../createConjugationApi";
+import { createConjugationApi } from "./createConjugationApi";
 import useConjugateExerciseStore from "./ConjugateExerciseStore";
 
 export async function createConjugation() {
