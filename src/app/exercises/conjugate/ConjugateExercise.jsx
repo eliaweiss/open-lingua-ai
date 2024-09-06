@@ -14,6 +14,7 @@ import {
   PlayIcon,
 } from "@heroicons/react/24/solid";
 import { readAloud } from "@/app/utils/speechUtils";
+import { compareWords } from "@/app/utils/compareWords";
 
 export const ConjugateExercise = () => {
   const { appInitFlag, isTargetRtl, targetLanguage } = useAppStore();
@@ -121,7 +122,7 @@ export const ConjugateExercise = () => {
                   {currentExercise.solution}
                 </div>
                 <div>
-                  {currentExercise.solution === answer ? (
+                  {compareWords(currentExercise.solution, answer) ? (
                     <CheckBadgeIcon className="w-6 h-6 text-green-400" />
                   ) : (
                     <NoSymbolIcon className="w-6 h-6 text-red-400" />
