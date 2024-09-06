@@ -44,6 +44,9 @@ export const ConjugateExercise = () => {
   const handleSubmit = () => {
     setShowCorrectAnswer(true);
     setShowTense(true);
+    // un focus the input - to close the keyboard on mobile
+    document.activeElement.blur();
+    // inputRef.current.blur();
     // e.preventDefault();
     // Add logic to check the answer
     // console.log("Submitted:", { verb, tense, answer });
