@@ -7007,4 +7007,64 @@ export const phrases = [
     "en-US": "He put his hand in his coat pocket.",
     "pt-BR": "Ele meteu a mão no bolso do casaco.",
   },
+  {
+    "en-US": "He has a calm way of speaking.",
+    "pt-BR": "Ele tem um jeito calmo de falar.",
+  },
+  {
+    "en-US": "She has a knack for cooking.",
+    "pt-BR": "Ela tem jeito para cozinhar.",
+  },
+  {
+    "en-US": "You have to find a way (or fix) for this.",
+    "pt-BR": "Tem que dar um jeito nisso.",
+  },
+  {
+    "en-US": "The house looks messy.",
+    "pt-BR": "A casa está com um jeito bagunçado.",
+  },
+  {
+    "en-US": "We will find a way to solve the problem.",
+    "pt-BR": "Vamos dar um jeito de resolver o problema.",
+  },
+  {
+    "en-US": "He always finds a way to solve problems.",
+    "pt-BR": "Ele sempre dá um jeito de resolver os problemas.",
+  },
+  {
+    "en-US": "She has a special way with children.",
+    "pt-BR": "Ela tem um jeito especial com as crianças.",
+  },
+  {
+    "en-US": "There's no way to fix this now.",
+    "pt-BR": "Não tem jeito de consertar isso agora.",
+  },
+  {
+    "en-US": "I like the way you handled that situation.",
+    "pt-BR": "Eu gostei do jeito que você lidou com a situação.",
+  },
+  {
+    "en-US": "Is there any way we can finish this today?",
+    "pt-BR": "Tem jeito de terminarmos isso hoje?",
+  },
+  {
+    "en-US": "The car has a strange way of starting.",
+    "pt-BR": "O carro tem um jeito estranho de ligar.",
+  },
+  {
+    "en-US": "He has a lazy way of walking.",
+    "pt-BR": "Ele tem um jeito preguiçoso de andar.",
+  },
+  {
+    "en-US": "She always finds a way to help others.",
+    "pt-BR": "Ela sempre dá um jeito de ajudar os outros.",
+  },
+  {
+    "en-US": "You’ll find a way to make it work.",
+    "pt-BR": "Você vai dar um jeito de fazer funcionar.",
+  },
+  {
+    "en-US": "I like the way you smile.",
+    "pt-BR": "Eu gosto do jeito que você sorri.",
+  },
 ];
