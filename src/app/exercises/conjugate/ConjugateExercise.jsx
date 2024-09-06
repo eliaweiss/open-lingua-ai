@@ -137,7 +137,7 @@ export const ConjugateExercise = () => {
                 >
                   {currentExercise.completeSentence}
                 </div>
-                <div className=" border rounded-lg border-pBorder">
+                <div className="w-10 h-10 border rounded-lg border-pBorder">
                   <ControlButton
                     toolTip={t("play")}
                     onClick={playCompleteSentence}
