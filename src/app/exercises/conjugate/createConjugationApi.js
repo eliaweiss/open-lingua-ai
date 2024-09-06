@@ -19,6 +19,7 @@ export async function createConjugationApi() {
 }
 
 function createMessage() {
+  const { verbList } = useConjugateExerciseStore.getState();
   const userMsg = `
 I would like to practice the following exercise in portuguese
 
@@ -34,11 +35,7 @@ Future
 Gerund 
 
 with the following verbs:
-Tomar
-Levar
-Ter (have)
-Pegar
-encher
+${verbList}
 
 Please return the exercise in json format as 
 [
@@ -48,7 +45,7 @@ Please return the exercise in json format as
 "verb": <verb to be conjugated>,
 "pronoun": <pronoun>,
 "tense": <tense>,
-"solution": <the solution to the exercise>,
+"solution": <the solution to the exercise - if the solution is Gerund than include estar conjugation as well>,
 "completeSentence": <the complete sentence with the correct conjugation"
 }
 ...

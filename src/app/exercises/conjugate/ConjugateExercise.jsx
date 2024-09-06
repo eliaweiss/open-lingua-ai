@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useConjugateExercise } from "./context/ConjugateContext";
 import { useTranslation } from "@/app/i18n/useTranslation";
 import HorizontalRule from "@/app/components/HorizontalRule";
@@ -9,14 +9,17 @@ import { Input } from "@/app/components/Input";
 import ControlButton from "@/app/components/ControlButton";
 import {
   CheckBadgeIcon,
+  Cog6ToothIcon,
   ForwardIcon,
   NoSymbolIcon,
   PlayIcon,
 } from "@heroicons/react/24/solid";
 import { readAloud } from "@/app/utils/speechUtils";
 import { compareWords } from "@/app/utils/compareWords";
+import ConjugateExerciseSettings from "./ConjugateExerciseSettings";
 
 export const ConjugateExercise = () => {
+  const [showSettings, setShowSettings] = useState(false);
   const { appInitFlag, isTargetRtl, targetLanguage } = useAppStore();
   const t = useTranslation(); // Add this line
   const {
@@ -40,6 +43,7 @@ export const ConjugateExercise = () => {
 
   const handleSubmit = () => {
     setShowCorrectAnswer(true);
+    setShowTense(true);
     // e.preventDefault();
     // Add logic to check the answer
     // console.log("Submitted:", { verb, tense, answer });
@@ -161,6 +165,23 @@ export const ConjugateExercise = () => {
           )}
         </div>
       )}
+      <div className="mb-2">
+        <div
+          className="flex space-x-2 cursor-pointer"
+          onClick={() => setShowSettings(!showSettings)}
+        >
+          <Cog6ToothIcon className="w-5" />
+          <div>{t("settings_title")}</div>
+        </div>
+      </div>
+
+      <div
+        className={`transition-opacity duration-1000 ${
+          showSettings ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {showSettings && <ConjugateExerciseSettings />}
+      </div>
     </div>
   );
 };

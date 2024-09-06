@@ -20,6 +20,7 @@ import { checkUserTranslate } from "./checkUserTranslate";
 import { transcribeAudio } from "@/app/utils/api/clientApi";
 import { readAloud } from "@/app/utils/speechUtils";
 import { removeDotAtEnd } from "@/app/helpers";
+import Textarea from "@/app/components/Textarea";
 
 const TranslateExercise = () => {
   const t = useTranslation(); // Use the translation hook
@@ -200,14 +201,10 @@ const TranslateExercise = () => {
       <div className="mb-4 w-full">
         <label className="block mb-2">{t("your_translation")}</label>
         <div className="flex space-x-2">
-          <textarea
+          <Textarea
             value={yourTranslatedText}
-            className="w-full p-2 border rounded text-black"
-            rows="4"
+            onChange={(e) => setYourTranslatedText(e.target.value)}
             placeholder={t("your_translation")}
-            onChange={(e) => {
-              setYourTranslatedText(e.target.value);
-            }}
           />
           {!isTranslationCorrect && (
             <div className="flex flex-col space-y-4 mt-4">
