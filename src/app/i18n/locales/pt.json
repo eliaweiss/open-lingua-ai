@@ -69,5 +69,7 @@
     "show_tense": "Mostrar tempo",
     "set_verb_list": "Definir lista de verbos",
     "create_conjugation": "Criar conjugação",
-    "check_my_answer": "Verificar minha resposta"
+    "check_my_answer": "Verificar minha resposta",
+    "translation": "Tradução",
+    "show_translation": "Mostrar tradução"
 }

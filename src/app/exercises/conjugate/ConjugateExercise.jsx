@@ -36,11 +36,14 @@ export const ConjugateExercise = () => {
     setShowTense,
     checkAnswerResponse,
     currentExercise,
+    showTranslation,
+    setShowTranslation,
   } = useConjugateExerciseStore();
 
   const handleSubmit = () => {
     setShowCorrectAnswer(true);
     setShowTense(true);
+    setShowTranslation(true);
     // un focus the input - to close the keyboard on mobile
     document.activeElement.blur();
     // inputRef.current.blur();
@@ -94,11 +97,6 @@ export const ConjugateExercise = () => {
             />
             <div className="">({currentExercise.verb})</div>
           </div>
-          {/* {showHint && (
-            <div className="text-sText text-2xl text-left fixed top-10 bg-pBg p-2 border border-pBorder rounded-sm ">
-              {suggestedTranslatedText}
-            </div>
-          )} */}
 
           <div className="">
             {t("tense")}:{" "}
@@ -111,6 +109,19 @@ export const ConjugateExercise = () => {
                 className="bg-sBg border-pBorder"
               >
                 {t("show_tense")}
+              </ControlButton>
+            )}
+          </div>
+          <div className="">
+            {showTranslation ? (
+              `${currentExercise.translation}`
+            ) : (
+              <ControlButton
+                toolTip={t("show_translation")}
+                onClick={() => setShowTranslation(true)}
+                className="bg-sBg border-pBorder"
+              >
+                {t("show_translation")}
               </ControlButton>
             )}
           </div>
@@ -150,9 +161,7 @@ export const ConjugateExercise = () => {
                   </ControlButton>
                 </div>
               </div>
-              <div className="text-sText text-xl">
-                {currentExercise.translation}
-              </div>
+
               <div className="text-sText text-lg">
                 {currentExercise.explanation}
               </div>

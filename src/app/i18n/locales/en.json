@@ -69,5 +69,7 @@
   "show_tense": "Show tense",
   "set_verb_list": "Set verb list",
   "create_conjugation": "Create conjugation",
-  "check_my_answer": "Check my answer"
+  "check_my_answer": "Check my answer",
+  "translation": "Translation",
+  "show_translation": "Show translation"
 }
