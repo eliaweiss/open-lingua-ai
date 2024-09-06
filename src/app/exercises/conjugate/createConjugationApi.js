@@ -51,7 +51,7 @@ Please return the exercise in json format as
 "verb": <verb to be conjugated>,
 "pronoun": <pronoun>,
 "tense": <tense>,
-"solution": <the solution to the exercise - if the solution is Gerund than include estar conjugation as well>,
+"solution": <the solution to the exercise - should include all missing words that are needed to complete the sentence>,
 "completeSentence": <the complete sentence with the correct conjugation"
 "translation": <the translation of the sentence to ${sourceLanguage}>
 }
