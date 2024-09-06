@@ -38,7 +38,6 @@ export const ConjugateProvider = ({ children }) => {
     if (!appInitFlag) return;
     // apiSubmitted.current = true;
     // if (!apiSubmitted.current) {
-    debugger;
     if (exerciseData.length <= exerciseIndex) {
       createConjugation();
     }
