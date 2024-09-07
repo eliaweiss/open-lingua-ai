@@ -1,17 +1,29 @@
 import useAppStore from "@/app/store/appStore";
 import { fetchWrapper } from "../fetchWrapper";
 
+let isQueryLLMApiRunning = false;
+
 export async function queryLLMApi({ messages }) {
-  const { llmApiKey, llmModel } = useAppStore.getState();
-  const data = await fetchWrapper("/api/query-llm", {
-    method: "POST",
-    body: JSON.stringify({
-      messages: messages,
-      apiKey: llmApiKey,
-      model: llmModel,
-    }),
-  });
-  return data;
+  if (isQueryLLMApiRunning) {
+    console.warn("queryLLMApi is already running");
+    return;
+  }
+
+  isQueryLLMApiRunning = true;
+  try {
+    const { llmApiKey, llmModel } = useAppStore.getState();
+    const data = await fetchWrapper("/api/query-llm", {
+      method: "POST",
+      body: JSON.stringify({
+        messages: messages,
+        apiKey: llmApiKey,
+        model: llmModel,
+      }),
+    });
+    return data;
+  } finally {
+    isQueryLLMApiRunning = false;
+  }
 }
 
 export async function transcribeAudio(audioBlob, prompt) {

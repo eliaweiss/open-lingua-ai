@@ -2,6 +2,9 @@ import { create } from "zustand";
 
 const useConjugateExerciseStore = create((set, get) => ({
   // State
+  exerciseCounter: 0,
+  setExerciseCounter: (counter) => set({ exerciseCounter: counter }),
+
   exerciseData: [],
   setExerciseData: (data) => set({ exerciseData: data }),
   exerciseIndex: 0,
@@ -40,6 +43,7 @@ const useConjugateExerciseStore = create((set, get) => ({
       showCorrectAnswer: false,
       showTense: false,
     }),
+  resetExerciseCounter: () => set({ exerciseCounter: 0 }),
 }));
 
 export default useConjugateExerciseStore;

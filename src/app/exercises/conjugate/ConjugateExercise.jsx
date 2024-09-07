@@ -54,6 +54,7 @@ export const ConjugateExercise = () => {
   };
 
   const moveToNextExercise = () => {
+    setExerciseCounter(exerciseCounter + 1);
     resetExercise();
     setExerciseIndex(exerciseIndex + 1);
   };

@@ -71,5 +71,6 @@
     "create_conjugation": "Criar conjugação",
     "check_my_answer": "Verificar minha resposta",
     "translation": "Tradução",
-    "show_translation": "Mostrar tradução"
+    "show_translation": "Mostrar tradução",
+    "reset_exercise_counter": "Reiniciar contador de exercícios"
 }

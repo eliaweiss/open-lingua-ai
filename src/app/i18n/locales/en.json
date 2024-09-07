@@ -71,5 +71,6 @@
   "create_conjugation": "Create conjugation",
   "check_my_answer": "Check my answer",
   "translation": "Translation",
-  "show_translation": "Show translation"
+  "show_translation": "Show translation",
+  "reset_exercise_counter": "Reset exercise counter"
 }

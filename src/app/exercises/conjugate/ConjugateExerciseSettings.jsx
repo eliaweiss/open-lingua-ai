@@ -7,11 +7,12 @@ import { createConjugation } from "./store/createConjugation";
 
 const ConjugateExerciseSettings = () => {
   const t = useTranslation();
-  const { verbList, setVerbList } = useConjugateExerciseStore();
+  const { verbList, setVerbList, resetExerciseCounter } =
+    useConjugateExerciseStore();
 
   return (
     <div className="p-4 border rounded-lg border-pBorder">
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 space-y-2">
         <Textarea
           value={verbList}
           onChange={(e) => setVerbList(e.target.value)}
@@ -24,6 +25,13 @@ const ConjugateExerciseSettings = () => {
           toolTip={t("create_conjugation")}
         >
           {t("create_conjugation")}
+        </ControlButton>
+        <ControlButton
+          onClick={resetExerciseCounter}
+          className="bg-sBg"
+          toolTip={t("reset_exercise_counter")}
+        >
+          {t("reset_exercise_counter")}
         </ControlButton>
       </div>
     </div>
