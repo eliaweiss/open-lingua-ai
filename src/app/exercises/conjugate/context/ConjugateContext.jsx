@@ -26,7 +26,7 @@ export const ConjugateProvider = ({ children }) => {
 
   useEffect(() => {
     setCurrentExercise(exerciseData[exerciseIndex]);
-    if (exerciseData && exerciseData.length > 0) {
+    if (exerciseData && exerciseData[exerciseIndex]) {
       const htmlTxt = marked(exerciseData[exerciseIndex].explanation);
       // console.log(htmlTxt);
       setExplanation(htmlTxt);
