@@ -70,9 +70,8 @@ export const TranslateExerciseProvider = ({ children }) => {
   }, [translateDirection]);
 
   useEffect(() => {
-    if (exerciseCounter > 0) {
-      storage.set("translateExerciseCounter", exerciseCounter);
-    }
+    if (!appInitFlag) return;
+    storage.set("translateExerciseCounter", exerciseCounter);
   }, [exerciseCounter]);
 
   return (

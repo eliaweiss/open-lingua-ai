@@ -22,10 +22,14 @@ import { readAloud } from "@/app/utils/speechUtils";
 import { removeDotAtEnd } from "@/app/helpers";
 import Textarea from "@/app/components/Textarea";
 import { compareText } from "@/app/utils/compareWords";
+import { Cog6ToothIcon } from "@heroicons/react/24/outline"; // Add this import
+import TranslateExerciseSettings from "./TranslateExerciseSettings"; // Add this import
 
 const TranslateExercise = () => {
   const t = useTranslation(); // Use the translation hook
   const correctText = useMemo(() => t("correct") || "Correct", [t]);
+
+  const [showSettings, setShowSettings] = useState(false);
 
   const { currentPhraseIndex, phrases, getLanguageName } = useAppStore();
   const {
@@ -166,154 +170,174 @@ const TranslateExercise = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center text-center w-full space-y-4">
-      <div className="text-left">
-        <div className="text-sText text-sm">{t("exercise_title")}:</div>
-        <div className="font-bold text-xl text-sText">
-          {t("translate_exercise")}
-        </div>
-      </div>
-      <HorizontalRule />
-
-      <div className=" flex items-center justify-left ">
-        <div className="text-left ">{t("translate_the_following")}</div>
-        <div className="w-1/2">
-          <SelectComponent
-            value={translateDirection}
-            onChange={(value) => setTranslateDirection(value)}
-            className="w-full p-2 border rounded"
-            options={options}
-          />
-        </div>
-      </div>
-
-      {/* Exercise Panel */}
-      <div className="flex flex-col space-y-4 mt-4 text-3xl">
-        <div
-          className={`text-sText ${
-            isOriginalTextRtl ? "text-right text-rtl" : "text-left"
-          }`}
-        >
-          {originalText}
-        </div>
-      </div>
-      {showHint && (
-        <div className="text-sText text-2xl text-left fixed top-10 bg-pBg p-2 border border-pBorder rounded-sm ">
-          {suggestedTranslatedText}
-        </div>
-      )}
-
-      <div className="mb-4 w-full">
-        <label className="block mb-2">{t("your_translation")}</label>
-        <div className="flex space-x-2">
-          <Textarea
-            value={yourTranslatedText}
-            onChange={(e) => setYourTranslatedText(e.target.value)}
-            placeholder={t("your_translation")}
-          />
-          {!isTranslationCorrect && (
-            <div className="flex flex-col space-y-4 mt-4">
-              <div className="flex space-x-4 border rounded-lg p-1 border-pBorder">
-                <ControlButton
-                  toolTip={
-                    isRecording ? t("stop_recording") : t("start_recording")
-                  }
-                  onClick={
-                    isRecording ? handleStopRecording : handleStartRecording
-                  }
-                  className="p-4 bg-card text-card-foreground rounded hover:bg-pHov text-lg font-bold"
-                >
-                  {isRecording ? (
-                    <StopIcon className="w-6 h-6" />
-                  ) : (
-                    <MicrophoneIcon className="w-6 h-6" />
-                  )}
-                </ControlButton>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {!isTranslationCorrect && (
-        <div className="flex flex-col space-y-4 mt-4">
-          <div className="flex space-x-4 border rounded-lg p-1 border-pBorder">
-            <ControlButton
-              toolTip={t("check_my_translation")}
-              onClick={handleCheckUserTranslate}
-              className="p-4 bg-card text-card-foreground rounded hover:bg-pHov text-lg font-bold"
-            >
-              {t("check_my_translation")}
-            </ControlButton>
+    <div className="">
+      <div className="flex flex-col justify-center items-center text-center w-full space-y-4">
+        <div className="text-left">
+          <div className="text-sText text-sm">{t("exercise_title")}:</div>
+          <div className="font-bold text-xl text-sText">
+            {t("translate_exercise")}
           </div>
         </div>
-      )}
+        <HorizontalRule />
 
-      {showSuggestedTranslatedText && (
-        <div className="flex flex-col space-y-4 mt-4">
-          {/* <div className="text-sText text text-left">
-            {t("suggested_translation")}
-          </div> */}
-          <div className="flex space-x-4 items-center">
-            <div className="text-sText text-2xl text-left">
-              {suggestedTranslatedText}
-            </div>
-            <div className=" border rounded-lg border-pBorder">
+        <div className=" flex items-center justify-left ">
+          <div className="text-left ">{t("translate_the_following")}</div>
+          <div className="w-1/2">
+            <SelectComponent
+              value={translateDirection}
+              onChange={(value) => setTranslateDirection(value)}
+              className="w-full p-2 border rounded"
+              options={options}
+            />
+          </div>
+        </div>
+
+        {/* Exercise Panel */}
+        <div className="flex flex-col space-y-4 mt-4 text-3xl">
+          <div
+            className={`text-sText ${
+              isOriginalTextRtl ? "text-right text-rtl" : "text-left"
+            }`}
+          >
+            {originalText}
+          </div>
+        </div>
+        {showHint && (
+          <div className="text-sText text-2xl text-left fixed top-10 bg-pBg p-2 border border-pBorder rounded-sm ">
+            {suggestedTranslatedText}
+          </div>
+        )}
+
+        <div className="mb-4 w-full">
+          <label className="block mb-2">{t("your_translation")}</label>
+          <div className="flex space-x-2">
+            <Textarea
+              value={yourTranslatedText}
+              onChange={(e) => setYourTranslatedText(e.target.value)}
+              placeholder={t("your_translation")}
+            />
+            {!isTranslationCorrect && (
+              <div className="flex flex-col space-y-4 mt-4">
+                <div className="flex space-x-4 border rounded-lg p-1 border-pBorder">
+                  <ControlButton
+                    toolTip={
+                      isRecording ? t("stop_recording") : t("start_recording")
+                    }
+                    onClick={
+                      isRecording ? handleStopRecording : handleStartRecording
+                    }
+                    className="p-4 bg-card text-card-foreground rounded hover:bg-pHov text-lg font-bold"
+                  >
+                    {isRecording ? (
+                      <StopIcon className="w-6 h-6" />
+                    ) : (
+                      <MicrophoneIcon className="w-6 h-6" />
+                    )}
+                  </ControlButton>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {!isTranslationCorrect && (
+          <div className="flex flex-col space-y-4 mt-4">
+            <div className="flex space-x-4 border rounded-lg p-1 border-pBorder">
               <ControlButton
-                toolTip={t("play")}
-                onClick={playSuggestedTranslation}
+                toolTip={t("check_my_translation")}
+                onClick={handleCheckUserTranslate}
+                className="p-4 bg-card text-card-foreground rounded hover:bg-pHov text-lg font-bold"
               >
-                <PlayIcon className="w-6 h-6" />
+                {t("check_my_translation")}
               </ControlButton>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
-      {llmResponse && (
-        <>
-          <HorizontalRule />
-          <div
-            className="text-sText text-lg text-left mx-2"
-            dangerouslySetInnerHTML={{
-              __html: llmResponse,
-            }}
-          />
-        </>
-      )}
-
-      {/* Button Panel */}
-      <div className="flex  space-x-4 mt-4">
-        <div className="flex space-x-4 mt-4 border rounded-lg p-4 border-pBorder">
-          <ControlButton
-            toolTip="Give hint (long click)"
-            onMouseDown={() => handleShowHint(true)}
-            onMouseUp={() => handleShowHint(false)}
-            onTouchStart={() => handleShowHint(true)}
-            onTouchEnd={() => handleShowHint(false)}
-          >
-            <QuestionMarkCircleIcon className="w-6 h-6 " />
-          </ControlButton>
-        </div>
-        <div className="flex space-x-4 mt-4 border rounded-lg p-4 border-pBorder">
-          <ControlButton toolTip={t("next")} onClick={skip}>
-            <ForwardIcon className="w-6 h-6" />
-          </ControlButton>
-        </div>
-      </div>
-
-      {/* Statistic Panel */}
-      <div className="mt-4 flex flex-col items-center text-xl">
-        <TooltipWrapper text="played-sentences/total-sentences">
-          <div className="text-sm">
-            {currentPhraseIndex}/{phrases?.length || 0}
+        {showSuggestedTranslatedText && (
+          <div className="flex flex-col space-y-4 mt-4">
+            {/* <div className="text-sText text text-left">
+            {t("suggested_translation")}
+          </div> */}
+            <div className="flex space-x-4 items-center">
+              <div className="text-sText text-2xl text-left">
+                {suggestedTranslatedText}
+              </div>
+              <div className=" border rounded-lg border-pBorder">
+                <ControlButton
+                  toolTip={t("play")}
+                  onClick={playSuggestedTranslation}
+                >
+                  <PlayIcon className="w-6 h-6" />
+                </ControlButton>
+              </div>
+            </div>
           </div>
-        </TooltipWrapper>
-      </div>
-      <div className="mt-4 flex flex-col items-center text-xl">
-        <div className="text-sm">
-          {t("exercise_counter")}: {exerciseCounter}
+        )}
+
+        {llmResponse && (
+          <>
+            <HorizontalRule />
+            <div
+              className="text-sText text-lg text-left mx-2"
+              dangerouslySetInnerHTML={{
+                __html: llmResponse,
+              }}
+            />
+          </>
+        )}
+
+        {/* Button Panel */}
+        <div className="flex  space-x-4 mt-4">
+          <div className="flex space-x-4 mt-4 border rounded-lg p-4 border-pBorder">
+            <ControlButton
+              toolTip="Give hint (long click)"
+              onMouseDown={() => handleShowHint(true)}
+              onMouseUp={() => handleShowHint(false)}
+              onTouchStart={() => handleShowHint(true)}
+              onTouchEnd={() => handleShowHint(false)}
+            >
+              <QuestionMarkCircleIcon className="w-6 h-6 " />
+            </ControlButton>
+          </div>
+          <div className="flex space-x-4 mt-4 border rounded-lg p-4 border-pBorder">
+            <ControlButton toolTip={t("next")} onClick={skip}>
+              <ForwardIcon className="w-6 h-6" />
+            </ControlButton>
+          </div>
         </div>
+
+        {/* Statistic Panel */}
+        <div className="mt-4 flex flex-col items-center text-xl">
+          <TooltipWrapper text="played-sentences/total-sentences">
+            <div className="text-sm">
+              {currentPhraseIndex}/{phrases?.length || 0}
+            </div>
+          </TooltipWrapper>
+        </div>
+        <div className="mt-4 flex flex-col items-center text-xl">
+          <div className="text-sm">
+            {t("exercise_counter")}: {exerciseCounter}
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-2">
+        <div
+          className="flex space-x-2 cursor-pointer"
+          onClick={() => setShowSettings(!showSettings)}
+        >
+          <Cog6ToothIcon className="w-5" />
+          <div>{t("settings_title")}</div>
+        </div>
+      </div>
+
+      <div
+        className={`transition-opacity duration-1000 ${
+          showSettings ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        {showSettings && <TranslateExerciseSettings />}
       </div>
     </div>
   );

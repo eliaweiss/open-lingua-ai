@@ -66,155 +66,157 @@ export const ConjugateExercise = () => {
   };
 
   return (
-    <div className="flex flex-col space-y-4">
-      <div className="flex flex-col justify-center items-center text-center w-full">
-        <div className="text-left">
-          <div className="text-sText text-sm">{t("exercise_title")}:</div>
-          <div className="font-bold text-xl text-sText">
-            {t("conjugate_a_verb")}
-          </div>
-        </div>
-      </div>
-      <HorizontalRule />
-      {currentExercise && (
-        <div className="flex flex-col space-y-4">
-          {/* Exercise Panel */}
-          <div className="flex flex-col space-y-4 mt-4 text-2xl">
-            <div
-              className={`text-sText ${
-                isTargetRtl ? "text-right text-rtl" : "text-left"
-              }`}
-            >
-              {currentExercise.exercise}
+    <div>
+      <div className="flex flex-col space-y-4">
+        <div className="flex flex-col justify-center items-center text-center w-full">
+          <div className="text-left">
+            <div className="text-sText text-sm">{t("exercise_title")}:</div>
+            <div className="font-bold text-xl text-sText">
+              {t("conjugate_a_verb")}
             </div>
           </div>
-          <div className="flex space-x-2 items-center">
-            <Input
-              value={answer}
-              onChange={(e) => setAnswer(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  handleSubmit(e);
-                }
-              }}
-              placeholder="Enter your answer"
-            />
-            <div className="">({currentExercise.verb})</div>
-          </div>
-
-          <div className="">
-            {t("tense")}:{" "}
-            {showTense ? (
-              `${currentExercise.tense}`
-            ) : (
-              <ControlButton
-                toolTip={t("show_tense")}
-                onClick={() => setShowTense(true)}
-                className="bg-sBg border-pBorder"
+        </div>
+        <HorizontalRule />
+        {currentExercise && (
+          <div className="flex flex-col space-y-4">
+            {/* Exercise Panel */}
+            <div className="flex flex-col space-y-4 mt-4 text-2xl">
+              <div
+                className={`text-sText ${
+                  isTargetRtl ? "text-right text-rtl" : "text-left"
+                }`}
               >
-                {t("show_tense")}
-              </ControlButton>
-            )}
-          </div>
-          <div className="">
-            {showTranslation ? (
-              `${currentExercise.translation}`
-            ) : (
-              <ControlButton
-                toolTip={t("show_translation")}
-                onClick={() => setShowTranslation(true)}
-                className="bg-sBg border-pBorder"
-              >
-                {t("show_translation")}
-              </ControlButton>
-            )}
-          </div>
-          {showCorrectAnswer && (
-            <div className="flex flex-col space-y-2">
-              <div className="flex space-x-2 items-center">
-                <div className="text-sText ">Correct Answer:</div>
-                <div
-                  className={`text-sText text-3xl font-bold ${
-                    isTargetRtl ? "text-right text-rtl" : "text-left"
-                  }`}
-                >
-                  {currentExercise.solution}
-                </div>
-                <div>
-                  {compareText(currentExercise.solution, answer) ? (
-                    <CheckBadgeIcon className="w-6 h-6 text-green-400" />
-                  ) : (
-                    <NoSymbolIcon className="w-6 h-6 text-red-400" />
-                  )}
-                </div>
+                {currentExercise.exercise}
               </div>
-              <div className="flex">
-                <div
-                  className={`text-sText text-2xl ${
-                    isTargetRtl ? "text-right text-rtl" : "text-left"
-                  }`}
-                >
-                  {currentExercise.completeSentence}
-                </div>
-                <div className="w-10 h-10 border rounded-lg border-pBorder">
-                  <ControlButton
-                    toolTip={t("play")}
-                    onClick={playCompleteSentence}
-                  >
-                    <PlayIcon className="w-6 h-6" />
-                  </ControlButton>
-                </div>
-              </div>
+            </div>
+            <div className="flex space-x-2 items-center">
+              <Input
+                value={answer}
+                onChange={(e) => setAnswer(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleSubmit(e);
+                  }
+                }}
+                placeholder="Enter your answer"
+              />
+              <div className="">({currentExercise.verb})</div>
+            </div>
 
-              <div className="text-sText text-lg">
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: explanation,
-                  }}
-                />
-              </div>
-              <div className="text-sText text-lg">
-                {!checkAnswerResponse ? (
-                  <ControlButton
-                    className="bg-sBg text-sText"
-                    toolTip={t("check_my_answer")}
-                    onClick={checkMyAnswer}
+            <div className="">
+              {t("tense")}:{" "}
+              {showTense ? (
+                `${currentExercise.tense}`
+              ) : (
+                <ControlButton
+                  toolTip={t("show_tense")}
+                  onClick={() => setShowTense(true)}
+                  className="bg-sBg border-pBorder"
+                >
+                  {t("show_tense")}
+                </ControlButton>
+              )}
+            </div>
+            <div className="">
+              {showTranslation ? (
+                `${currentExercise.translation}`
+              ) : (
+                <ControlButton
+                  toolTip={t("show_translation")}
+                  onClick={() => setShowTranslation(true)}
+                  className="bg-sBg border-pBorder"
+                >
+                  {t("show_translation")}
+                </ControlButton>
+              )}
+            </div>
+            {showCorrectAnswer && (
+              <div className="flex flex-col space-y-2">
+                <div className="flex space-x-2 items-center">
+                  <div className="text-sText ">Correct Answer:</div>
+                  <div
+                    className={`text-sText text-3xl font-bold ${
+                      isTargetRtl ? "text-right text-rtl" : "text-left"
+                    }`}
                   >
-                    {t("check_my_answer")}
-                  </ControlButton>
-                ) : (
+                    {currentExercise.solution}
+                  </div>
+                  <div>
+                    {compareText(currentExercise.solution, answer) ? (
+                      <CheckBadgeIcon className="w-6 h-6 text-green-400" />
+                    ) : (
+                      <NoSymbolIcon className="w-6 h-6 text-red-400" />
+                    )}
+                  </div>
+                </div>
+                <div className="flex">
+                  <div
+                    className={`text-sText text-2xl ${
+                      isTargetRtl ? "text-right text-rtl" : "text-left"
+                    }`}
+                  >
+                    {currentExercise.completeSentence}
+                  </div>
+                  <div className="w-10 h-10 border rounded-lg border-pBorder">
+                    <ControlButton
+                      toolTip={t("play")}
+                      onClick={playCompleteSentence}
+                    >
+                      <PlayIcon className="w-6 h-6" />
+                    </ControlButton>
+                  </div>
+                </div>
+
+                <div className="text-sText text-lg">
                   <div
                     dangerouslySetInnerHTML={{
-                      __html: checkAnswerResponse,
+                      __html: explanation,
                     }}
                   />
-                )}
-              </div>
+                </div>
+                <div className="text-sText text-lg">
+                  {!checkAnswerResponse ? (
+                    <ControlButton
+                      className="bg-sBg text-sText"
+                      toolTip={t("check_my_answer")}
+                      onClick={checkMyAnswer}
+                    >
+                      {t("check_my_answer")}
+                    </ControlButton>
+                  ) : (
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: checkAnswerResponse,
+                      }}
+                    />
+                  )}
+                </div>
 
-              <div className="flex justify-center">
-                <div className="mt-4 border rounded-lg p-4 border-pBorder">
-                  <ControlButton
-                    toolTip={t("next")}
-                    onClick={moveToNextExercise}
-                  >
-                    <ForwardIcon className="w-6 h-6" />
-                  </ControlButton>
+                <div className="flex justify-center">
+                  <div className="mt-4 border rounded-lg p-4 border-pBorder">
+                    <ControlButton
+                      toolTip={t("next")}
+                      onClick={moveToNextExercise}
+                    >
+                      <ForwardIcon className="w-6 h-6" />
+                    </ControlButton>
+                  </div>
                 </div>
               </div>
+            )}
+            <div className="text-sText text-lg">
+              {t("exercise_counter")}: {exerciseCounter}
             </div>
-          )}
-          <div className="text-sText text-lg">
-            {t("exercise_counter")}: {exerciseCounter}
           </div>
-        </div>
-      )}
-      <div className="mb-2">
-        <div
-          className="flex space-x-2 cursor-pointer"
-          onClick={() => setShowSettings(!showSettings)}
-        >
-          <Cog6ToothIcon className="w-5" />
-          <div>{t("settings_title")}</div>
+        )}
+        <div className="mb-2">
+          <div
+            className="flex space-x-2 cursor-pointer"
+            onClick={() => setShowSettings(!showSettings)}
+          >
+            <Cog6ToothIcon className="w-5" />
+            <div>{t("settings_title")}</div>
+          </div>
         </div>
       </div>
 
