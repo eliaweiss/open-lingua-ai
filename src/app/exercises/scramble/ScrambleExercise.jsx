@@ -11,8 +11,14 @@ export const ScrambleExercise = () => {
   const t = useTranslation(); // Use the translation hook
 
   const { isSrcRtl, phrases } = useAppContext();
-  const { currentPhraseIndex, playPause, skip, currentPhrase, isPlaying } =
-    useScrambleContext();
+  const {
+    currentPhraseIndex,
+    playPause,
+    skip,
+    currentPhrase,
+    isPlaying,
+    exerciseCounter,
+  } = useScrambleContext();
 
   return (
     <div className="flex flex-col justify-center items-center text-center w-full">
@@ -62,6 +68,11 @@ export const ScrambleExercise = () => {
             {currentPhraseIndex}/{phrases?.length || 0}
           </div>
         </TooltipWrapper>
+      </div>
+      <div className="mt-4 flex flex-col items-center text-xl">
+        <div className="text-sm">
+          {t("exercise_counter")}: {exerciseCounter}
+        </div>
       </div>
     </div>
   );

@@ -6,14 +6,19 @@ import {
   removeDuplicates,
   splitToWords,
 } from "../../../helpers";
+import { storage } from "@/app/utils/storageUtils";
 
 const ScrambleContext = createContext();
 
 ////////////////////////////////////////////////////////////////
 // provider
 export const ScrambleProvider = ({ children }) => {
-  const { increasePhraseIndex, currentPhraseIndex, currentPhrase } =
-    useAppContext();
+  const {
+    increasePhraseIndex,
+    currentPhraseIndex,
+    currentPhrase,
+    appInitFlag,
+  } = useAppContext();
   const { readAloud_target, cancelSpeech, splitIntoSubSentences } =
     useSpeechSynthesis();
 
@@ -47,6 +52,19 @@ export const ScrambleProvider = ({ children }) => {
   // handle double click
   const [hintClickCounter, setHintClickCounter] = useState(0);
 
+  const [exerciseCounter, setExerciseCounter] = useState(0);
+
+  useEffect(() => {
+    if (appInitFlag) {
+      function init() {
+        setExerciseCounter(
+          Number(storage.get("scrambleExerciseCounter"), 0) || 0
+        );
+      }
+      init();
+    }
+  }, [appInitFlag]);
+
   ////////////////////////////////////////////////////////////////
   // manage the exercise play/pause/skip functionality
   const playPause = () => {
@@ -74,6 +92,18 @@ export const ScrambleProvider = ({ children }) => {
     cancelSpeech();
     increasePhraseIndex();
   };
+
+  useEffect(() => {
+    if (appInitFlag) {
+      setExerciseCounter(exerciseCounter + 1);
+    }
+  }, [currentPhraseIndex]);
+
+  useEffect(() => {
+    if (exerciseCounter > 0) {
+      storage.set("scrambleExerciseCounter", exerciseCounter);
+    }
+  }, [exerciseCounter]);
 
   ////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////
@@ -286,6 +316,14 @@ export const ScrambleProvider = ({ children }) => {
     }
   }
 
+  ////////////////////////////////////////////////////////////////
+  // save exercise counter to storage
+  useEffect(() => {
+    if (appInitFlag) {
+      storage.set("scrambleExerciseCounter", exerciseCounter);
+    }
+  }, [exerciseCounter]);
+
   return (
     <ScrambleContext.Provider
       value={{
@@ -314,6 +352,7 @@ export const ScrambleProvider = ({ children }) => {
         isReading_partOfSentence,
         handleGiveHintBtn,
         hintClickCounter,
+        exerciseCounter,
       }}
     >
       {children}
