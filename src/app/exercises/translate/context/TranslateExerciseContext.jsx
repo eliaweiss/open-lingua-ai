@@ -28,7 +28,20 @@ export const TranslateExerciseProvider = ({ children }) => {
     setTranslateToLanguage,
     setSuggestedTranslatedText,
     resetExercise,
+    exerciseCounter,
+    setExerciseCounter,
   } = useTranslateExerciseStore();
+
+  useEffect(() => {
+    if (appInitFlag) {
+      async function init() {
+        setExerciseCounter(
+          Number(await storage.get("translateExerciseCounter")) || 0
+        );
+      }
+      init();
+    }
+  }, [appInitFlag]);
 
   useEffect(() => {
     if (!currentPhrase) {
@@ -55,6 +68,12 @@ export const TranslateExerciseProvider = ({ children }) => {
     if (!appInitFlag) return;
     storage.set("translateDirection", translateDirection);
   }, [translateDirection]);
+
+  useEffect(() => {
+    if (exerciseCounter > 0) {
+      storage.set("translateExerciseCounter", exerciseCounter);
+    }
+  }, [exerciseCounter]);
 
   return (
     <TranslateExerciseContext.Provider value={{}}>
