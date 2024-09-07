@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
-
+import { marked } from "marked";
 import SelectComponent from "@/app/components/SelectComponent";
 import useAppStore from "@/app/store/appStore";
 import useTranslateExerciseStore, {
@@ -98,7 +98,9 @@ const TranslateExercise = () => {
       setLlmResponse(correctText);
     } else {
       const { response } = await checkUserTranslate();
-      setLlmResponse(response);
+      const htmlTxt = marked(response);
+      // console.log("htmlTxt", htmlTxt);
+      setLlmResponse(htmlTxt);
     }
   };
 
@@ -268,7 +270,12 @@ const TranslateExercise = () => {
       {llmResponse && (
         <>
           <HorizontalRule />
-          <div className="text-sText text-lg text-left mx-2">{llmResponse}</div>
+          <div
+            className="text-sText text-lg text-left mx-2"
+            dangerouslySetInnerHTML={{
+              __html: llmResponse,
+            }}
+          />
         </>
       )}
 

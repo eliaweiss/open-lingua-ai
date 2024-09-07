@@ -26,7 +26,7 @@ export const ConjugateProvider = ({ children }) => {
     setCurrentExercise(exerciseData[exerciseIndex]);
     if (exerciseData && exerciseData.length > 0) {
       const htmlTxt = marked(exerciseData[exerciseIndex].explanation);
-      console.log(htmlTxt);
+      // console.log(htmlTxt);
       setExplanation(htmlTxt);
     }
   }, [exerciseData, exerciseIndex]);
