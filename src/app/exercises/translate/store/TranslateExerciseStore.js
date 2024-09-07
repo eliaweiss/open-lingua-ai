@@ -52,6 +52,7 @@ const useTranslateExerciseStore = create((set, get) => ({
       llmResponse: "",
       showSuggestedTranslatedText: false,
       isTranslationCorrect: false,
+      showHint: false,
     });
   },
 }));
