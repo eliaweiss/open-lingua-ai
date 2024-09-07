@@ -15,7 +15,7 @@ import {
   PlayIcon,
 } from "@heroicons/react/24/solid";
 import { readAloud } from "@/app/utils/speechUtils";
-import { compareWords } from "@/app/utils/compareWords";
+import { compareText } from "@/app/utils/compareWords";
 import ConjugateExerciseSettings from "./ConjugateExerciseSettings";
 import { checkMyAnswer } from "./store/checkMyAnswer";
 
@@ -141,7 +141,7 @@ export const ConjugateExercise = () => {
                   {currentExercise.solution}
                 </div>
                 <div>
-                  {compareWords(currentExercise.solution, answer) ? (
+                  {compareText(currentExercise.solution, answer) ? (
                     <CheckBadgeIcon className="w-6 h-6 text-green-400" />
                   ) : (
                     <NoSymbolIcon className="w-6 h-6 text-red-400" />
