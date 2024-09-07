@@ -15,7 +15,7 @@ import {
   PlayIcon,
 } from "@heroicons/react/24/solid";
 import { readAloud } from "@/app/utils/speechUtils";
-import { compareText } from "@/app/utils/compareWords";
+import { compareText } from "@/app/utils/compareText";
 import ConjugateExerciseSettings from "./ConjugateExerciseSettings";
 import { checkMyAnswer } from "./store/checkMyAnswer";
 
@@ -64,6 +64,19 @@ export const ConjugateExercise = () => {
   const playCompleteSentence = async () => {
     await readAloud(currentExercise.completeSentence, targetLanguage, 1);
   };
+
+  function isAnswerCorrect(currentExercise, answer) {
+    if (compareText(currentExercise.solution, answer)) {
+      return true;
+    } else {
+      const regex = /_+(?: \(\w+\))?/;
+      const updatedSentence = currentExercise.exercise.replace(regex, answer);
+      if (compareText(updatedSentence, currentExercise.completeSentence)) {
+        return true;
+      }
+      return false;
+    }
+  }
 
   return (
     <div>
@@ -142,7 +155,7 @@ export const ConjugateExercise = () => {
                     {currentExercise.solution}
                   </div>
                   <div>
-                    {compareText(currentExercise.solution, answer) ? (
+                    {isAnswerCorrect(currentExercise, answer) ? (
                       <CheckBadgeIcon className="w-6 h-6 text-green-400" />
                     ) : (
                       <NoSymbolIcon className="w-6 h-6 text-red-400" />

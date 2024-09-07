@@ -21,7 +21,7 @@ import { transcribeAudio } from "@/app/utils/api/clientApi";
 import { readAloud } from "@/app/utils/speechUtils";
 import { removeDotAtEnd } from "@/app/helpers";
 import Textarea from "@/app/components/Textarea";
-import { compareText } from "@/app/utils/compareWords";
+import { compareText } from "@/app/utils/compareText";
 import { Cog6ToothIcon } from "@heroicons/react/24/outline"; // Add this import
 import TranslateExerciseSettings from "./TranslateExerciseSettings"; // Add this import
 
