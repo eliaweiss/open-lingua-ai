@@ -21,6 +21,7 @@ import { transcribeAudio } from "@/app/utils/api/clientApi";
 import { readAloud } from "@/app/utils/speechUtils";
 import { removeDotAtEnd } from "@/app/helpers";
 import Textarea from "@/app/components/Textarea";
+import { compareText } from "@/app/utils/compareWords";
 
 const TranslateExercise = () => {
   const t = useTranslation(); // Use the translation hook
@@ -68,7 +69,7 @@ const TranslateExercise = () => {
   }
 
   function isSameSentence(sentence1, sentence2) {
-    return cleanSentence(sentence1) === cleanSentence(sentence2);
+    return compareText(cleanSentence(sentence1), cleanSentence(sentence2));
   }
   useEffect(() => {
     if (isSameSentence(yourTranslatedText, suggestedTranslatedText)) {
