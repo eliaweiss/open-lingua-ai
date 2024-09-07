@@ -46,6 +46,8 @@ const TranslateExercise = () => {
     setShowSuggestedTranslatedText,
     isTranslationCorrect,
     setIsTranslationCorrect,
+    exerciseCounter,
+    setExerciseCounter,
   } = useTranslateExerciseStore();
 
   const [isRecording, setIsRecording] = useState(false);
@@ -307,6 +309,11 @@ const TranslateExercise = () => {
             {currentPhraseIndex}/{phrases?.length || 0}
           </div>
         </TooltipWrapper>
+      </div>
+      <div className="mt-4 flex flex-col items-center text-xl">
+        <div className="text-sm">
+          {t("exercise_counter")}: {exerciseCounter}
+        </div>
       </div>
     </div>
   );

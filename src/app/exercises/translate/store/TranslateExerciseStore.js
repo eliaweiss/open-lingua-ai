@@ -8,6 +8,9 @@ export const TranslateDirection = {
 };
 
 const useTranslateExerciseStore = create((set, get) => ({
+  exerciseCounter: 0,
+  setExerciseCounter: (counter) => set({ exerciseCounter: counter }),
+
   originalText: "",
   setOriginalText: (text) => set({ originalText: text }),
   suggestedTranslatedText: "",
@@ -37,8 +40,10 @@ const useTranslateExerciseStore = create((set, get) => ({
   // manage the exercise play/pause/skip functionality
   skip: () => {
     const { increasePhraseIndex } = useAppStore.getState();
+    const { setExerciseCounter } = get();
     cancelSpeech();
     increasePhraseIndex();
+    setExerciseCounter(get().exerciseCounter + 1);
   },
 
   resetExercise: () => {
