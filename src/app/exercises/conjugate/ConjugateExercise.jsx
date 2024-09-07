@@ -38,6 +38,7 @@ export const ConjugateExercise = () => {
     currentExercise,
     showTranslation,
     setShowTranslation,
+    explanation,
   } = useConjugateExerciseStore();
 
   const handleSubmit = () => {
@@ -163,7 +164,11 @@ export const ConjugateExercise = () => {
               </div>
 
               <div className="text-sText text-lg">
-                {currentExercise.explanation}
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: explanation,
+                  }}
+                />
               </div>
               <div className="text-sText text-lg">
                 {!checkAnswerResponse ? (
@@ -175,7 +180,11 @@ export const ConjugateExercise = () => {
                     {t("check_my_answer")}
                   </ControlButton>
                 ) : (
-                  <div>{checkAnswerResponse}</div>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: checkAnswerResponse,
+                    }}
+                  />
                 )}
               </div>
 

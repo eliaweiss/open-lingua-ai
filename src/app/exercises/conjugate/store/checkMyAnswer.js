@@ -1,4 +1,5 @@
 import { queryLLMApi } from "@/app/utils/api/clientApi";
+import { marked } from "marked";
 import useConjugateExerciseStore from "./ConjugateExerciseStore";
 
 export async function checkMyAnswer() {
@@ -16,8 +17,8 @@ export async function checkMyAnswer() {
     ],
   });
   console.log("createConjugationApi response", response);
-
-  setCheckAnswerResponse(response);
+  const htmlTxt = marked(response);
+  setCheckAnswerResponse(htmlTxt);
   return response;
 }
 

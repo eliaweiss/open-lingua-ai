@@ -5,6 +5,7 @@ import { createConjugationApi } from "../store/createConjugationApi";
 import { storage } from "@/app/utils/storageUtils";
 import { createConjugation } from "../store/createConjugation";
 const ConjugateContext = createContext();
+import { marked } from "marked";
 
 export const useConjugateExercise = () => useContext(ConjugateContext);
 
@@ -18,10 +19,16 @@ export const ConjugateProvider = ({ children }) => {
     verbList,
     setVerbList,
     setCurrentExercise,
+    setExplanation,
   } = useConjugateExerciseStore();
 
   useEffect(() => {
     setCurrentExercise(exerciseData[exerciseIndex]);
+    if (exerciseData && exerciseData.length > 0) {
+      const htmlTxt = marked(exerciseData[exerciseIndex].explanation);
+      console.log(htmlTxt);
+      setExplanation(htmlTxt);
+    }
   }, [exerciseData, exerciseIndex]);
 
   useEffect(() => {

@@ -22,6 +22,9 @@ const useConjugateExerciseStore = create((set, get) => ({
   showTense: false,
   setShowTense: (show) => set({ showTense: show }),
 
+  explanation: "",
+  setExplanation: (explanation) => set({ explanation: explanation }),
+
   getCurrentExercise: () => {
     const { exerciseData, exerciseIndex } = get();
     return exerciseData[exerciseIndex];
