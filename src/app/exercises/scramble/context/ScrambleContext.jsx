@@ -353,6 +353,7 @@ export const ScrambleProvider = ({ children }) => {
         handleGiveHintBtn,
         hintClickCounter,
         exerciseCounter,
+        setExerciseCounter,
       }}
     >
       {children}
