@@ -24,10 +24,11 @@ export async function checkMyAnswer() {
 function createMessage() {
   const { answer, currentExercise } = useConjugateExerciseStore.getState();
   const userMsg = `
-  Please check my answer and give me feedback.
-  Exercise: ${currentExercise.exercise}
-  My answer: ${answer}
-  Correct answer: ${currentExercise.solution}   
+Please check my answer and give me feedback.
+Exercise: ${currentExercise.exercise}
+My answer: ${answer}
+Correct answer: ${currentExercise.solution}
+${currentExercise.completeSentence}   
   `;
   return userMsg;
 }
