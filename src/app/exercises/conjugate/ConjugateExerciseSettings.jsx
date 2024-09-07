@@ -7,7 +7,7 @@ import { createConjugation } from "./store/createConjugation";
 
 const ConjugateExerciseSettings = () => {
   const t = useTranslation();
-  const { verbList, setVerbList, resetExerciseCounter } =
+  const { verbList, setVerbList, setExerciseCounter } =
     useConjugateExerciseStore();
 
   return (
@@ -27,7 +27,7 @@ const ConjugateExerciseSettings = () => {
           {t("create_conjugation")}
         </ControlButton>
         <ControlButton
-          onClick={resetExerciseCounter}
+          onClick={() => setExerciseCounter(0)}
           className="bg-sBg"
           toolTip={t("reset_exercise_counter")}
         >

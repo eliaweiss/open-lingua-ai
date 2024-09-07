@@ -39,6 +39,8 @@ export const ConjugateExercise = () => {
     showTranslation,
     setShowTranslation,
     explanation,
+    exerciseCounter,
+    setExerciseCounter,
   } = useConjugateExerciseStore();
 
   const handleSubmit = () => {
@@ -201,6 +203,9 @@ export const ConjugateExercise = () => {
               </div>
             </div>
           )}
+          <div className="text-sText text-lg">
+            {t("exercise_counter")}: {exerciseCounter}
+          </div>
         </div>
       )}
       <div className="mb-2">

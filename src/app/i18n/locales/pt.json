@@ -72,5 +72,6 @@
     "check_my_answer": "Verificar minha resposta",
     "translation": "Tradução",
     "show_translation": "Mostrar tradução",
-    "reset_exercise_counter": "Reiniciar contador de exercícios"
+    "reset_exercise_counter": "Reiniciar contador de exercícios",
+    "exercise_counter": "Contador de exercícios"
 }
