@@ -20,6 +20,8 @@ export const ConjugateProvider = ({ children }) => {
     setVerbList,
     setCurrentExercise,
     setExplanation,
+    exerciseCounter,
+    setExerciseCounter,
   } = useConjugateExerciseStore();
 
   useEffect(() => {
@@ -46,6 +48,11 @@ export const ConjugateProvider = ({ children }) => {
         "verbList",
         `Tomar, Levar, Ter , Pegar, encher`
       );
+
+      const storedExerciseCounter = await storage.get("exerciseCounter", 0);
+      if (storedExerciseCounter) {
+        setExerciseCounter(Number(storedExerciseCounter));
+      }
       if (storedVerbList) {
         setVerbList(storedVerbList);
       }
@@ -80,6 +87,11 @@ export const ConjugateProvider = ({ children }) => {
     if (!appInitFlag) return;
     storage.set("verbList", verbList);
   }, [verbList]);
+
+  useEffect(() => {
+    if (!appInitFlag) return;
+    storage.set("exerciseCounter", exerciseCounter);
+  }, [exerciseCounter]);
 
   return (
     <ConjugateContext.Provider value={{}}>{children}</ConjugateContext.Provider>
