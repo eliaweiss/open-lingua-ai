@@ -56,10 +56,11 @@ export const ScrambleProvider = ({ children }) => {
 
   useEffect(() => {
     if (appInitFlag) {
-      function init() {
-        setExerciseCounter(
-          Number(storage.get("scrambleExerciseCounter"), 0) || 0
+      async function init() {
+        const scrambleExerciseCounter = await storage.get(
+          "scrambleExerciseCounter"
         );
+        setExerciseCounter(Number(scrambleExerciseCounter, 0) || 0);
       }
       init();
     }
@@ -98,12 +99,6 @@ export const ScrambleProvider = ({ children }) => {
       setExerciseCounter(exerciseCounter + 1);
     }
   }, [currentPhraseIndex]);
-
-  useEffect(() => {
-    if (exerciseCounter > 0) {
-      storage.set("scrambleExerciseCounter", exerciseCounter);
-    }
-  }, [exerciseCounter]);
 
   ////////////////////////////////////////////////////////////////
   ////////////////////////////////////////////////////////////////
