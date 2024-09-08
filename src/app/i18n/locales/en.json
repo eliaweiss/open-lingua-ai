@@ -83,5 +83,7 @@
   "present_subjunctive": "Present Subjunctive",
   "gerund": "Gerund",
   "conditional": "Conditional",
-  "select_tenses": "Select tenses"
+  "select_tenses": "Select tenses",
+  "fix_exercise": "Fix exercise",
+  "fix_exercise_msg": "Fix exercise (use it if the exercise is not correct)"
 }

@@ -32,7 +32,7 @@ const AppWrapper = ({ children }) => {
       className={`bg-globalBg  text-pText min-h-screen h-full overflow-hidden`}
     >
       <aside
-        className={`bg-menuBg z-50 md:w-64 fixed top-0 left-0 h-full transition-all duration-300 ${
+        className={`bg-menuBg z-10 md:w-64 fixed top-0 left-0 h-full transition-all duration-300 ${
           isMenuOpen ? "w-64" : "w-0"
         } `}
       >

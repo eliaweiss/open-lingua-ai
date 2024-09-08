@@ -83,5 +83,7 @@
     "present_subjunctive": "Subjuntivo Presente",
     "gerund": "Gerúndio",
     "conditional": "Condicional",
-    "select_tenses": "Selecionar tempos"
+    "select_tenses": "Selecionar tempos",
+    "fix_exercise": "Corrigir exercício",
+    "fix_exercise_msg": "Corrigir exercício (use se o exercício não está correto)"
 }

@@ -1,6 +1,7 @@
 import { queryLLMApi } from "@/app/utils/api/clientApi";
 import useConjugateExerciseStore from "./ConjugateExerciseStore";
 import useAppStore from "@/app/store/appStore";
+import { extractJsonFromResponse } from "@/app/utils/responseUtils";
 
 export async function createConjugationApi() {
   const prompt = createMessage();
@@ -14,11 +15,7 @@ export async function createConjugationApi() {
     ],
   });
   console.log("checkUserTranslate response", response);
-  const jsonString = response
-    .replace(/\`\`\`json/, "")
-    .replace(/\`\`\`/, "")
-    .trim();
-  const exerciseData = JSON.parse(jsonString);
+  const exerciseData = extractJsonFromResponse(response);
   return exerciseData;
 }
 

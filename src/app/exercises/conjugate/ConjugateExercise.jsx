@@ -18,6 +18,7 @@ import { readAloud } from "@/app/utils/speechUtils";
 import { compareText } from "@/app/utils/compareText";
 import ConjugateExerciseSettings from "./ConjugateExerciseSettings";
 import { checkMyAnswer } from "./store/checkMyAnswer";
+import { fixExerciseApi } from "./store/fixExerciseApi";
 
 export const ConjugateExercise = () => {
   const [showSettings, setShowSettings] = useState(true);
@@ -80,8 +81,8 @@ export const ConjugateExercise = () => {
 
   return (
     <div>
-      <div className="flex flex-col space-y-4">
-        <div className="flex flex-col justify-center items-center text-center w-full">
+      <div className="flex justify-center flex-col space-y-4">
+        <div className="flex  flex-col justify-center items-center text-center w-full">
           <div className="text-left">
             <div className="text-sText text-sm">{t("exercise_title")}:</div>
             <div className="font-bold text-xl text-sText">
@@ -146,6 +147,15 @@ export const ConjugateExercise = () => {
                   {t("show_translation")}
                 </ControlButton>
               )}
+            </div>
+            <div className="">
+              <ControlButton
+                className="bg-sBg border-pBorder"
+                toolTip={t("fix_exercise_msg")}
+                onClick={fixExerciseApi}
+              >
+                {t("fix_exercise")}
+              </ControlButton>
             </div>
             {showCorrectAnswer && (
               <div className="flex flex-col space-y-2">
