@@ -65,7 +65,7 @@ Please return the exercise in json format as
 "exercise": <sentence with blanks to be filled>,
 "verb": <verb to be conjugated>,
 "pronoun": <pronoun>,
-"tense": <tense - write the full tense name, including subjunctive if relevant>,
+"tense": <tense - write the full tense name in ${sourceLanguage}, including subjunctive if relevant>,
 "solution": <the solution to the exercise - should include all missing words that are needed to complete the sentence>,
 "completeSentence": <the complete sentence with the correct conjugation"
 "translation": <the translation of the sentence to ${sourceLanguage}>
