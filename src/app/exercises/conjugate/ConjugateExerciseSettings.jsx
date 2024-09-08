@@ -12,6 +12,13 @@ const ConjugateExerciseSettings = () => {
 
   return (
     <div className="p-4 border rounded-lg border-pBorder">
+      <ControlButton
+        onClick={() => setExerciseCounter(0)}
+        className="bg-sBg"
+        toolTip={t("reset_exercise_counter")}
+      >
+        {t("reset_exercise_counter")}
+      </ControlButton>
       <div className="flex flex-col gap-2 space-y-2">
         <Textarea
           value={verbList}
@@ -26,14 +33,8 @@ const ConjugateExerciseSettings = () => {
         >
           {t("create_conjugation")}
         </ControlButton>
-        <ControlButton
-          onClick={() => setExerciseCounter(0)}
-          className="bg-sBg"
-          toolTip={t("reset_exercise_counter")}
-        >
-          {t("reset_exercise_counter")}
-        </ControlButton>
       </div>
+      <div className="flex flex-col gap-2 space-y-2">...</div>
     </div>
   );
 };
