@@ -7083,4 +7083,8 @@ export const phrases = [
     "en-US": "I used to eat meatballs frequently when I was a child.",
     "pt-BR": "Eu comia almôndegas com frequência quando era criança",
   },
+  {
+    "en-US": "He will eat everything before the store closes.",
+    "pt-BR": "Ele comerá tudo antes que a loja feche",
+  },
 ];
