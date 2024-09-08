@@ -206,7 +206,7 @@ export const ConjugateExercise = () => {
                 </div>
 
                 <div className="flex justify-center">
-                  <div className="mt-4 border rounded-lg p-1 border-pBorder">
+                  <div className="mt-4 border rounded-lg border-pBorder">
                     <ControlButton
                       toolTip={t("next")}
                       onClick={moveToNextExercise}
