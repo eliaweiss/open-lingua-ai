@@ -74,6 +74,7 @@ export const ConjugateProvider = ({ children }) => {
 
   useEffect(() => {
     if (!appInitFlag) return;
+    // console.log("store exerciseData", exerciseData);
     if (exerciseData && exerciseData.length > 0) {
       storage.set("exerciseData", exerciseData);
     }

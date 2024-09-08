@@ -3,7 +3,8 @@ import { extractJsonFromResponse } from "@/app/utils/responseUtils";
 import { queryLLMApi } from "@/app/utils/api/clientApi";
 
 export async function fixExerciseApi() {
-  const { setCurrentExercise } = useConjugateExerciseStore.getState();
+  const { setCurrentExercise, exerciseData, setExerciseData } =
+    useConjugateExerciseStore.getState();
   const prompt = createMessage();
   console.log("prompt", prompt);
   const { response } = await queryLLMApi({
@@ -15,9 +16,14 @@ export async function fixExerciseApi() {
     ],
   });
   //   console.log("fixExerciseApi", response);
-  const exerciseData = extractJsonFromResponse(response);
-  console.log("fixExerciseApi", exerciseData);
-  setCurrentExercise(exerciseData);
+  const exercise = extractJsonFromResponse(response);
+  console.log("fixExerciseApi", exercise);
+  setCurrentExercise(exercise);
+  // find the exercise in the array and replace it
+  const index = exerciseData.findIndex((e) => e.id === exercise.id);
+  exerciseData[index] = exercise;
+  setExerciseData([...exerciseData]);
+
   return exerciseData;
 }
 

@@ -50,10 +50,6 @@ export const ConjugateExercise = () => {
     setShowTranslation(true);
     // un focus the input - to close the keyboard on mobile
     document.activeElement.blur();
-    // inputRef.current.blur();
-    // e.preventDefault();
-    // Add logic to check the answer
-    // console.log("Submitted:", { verb, tense, answer });
   };
 
   const moveToNextExercise = () => {
