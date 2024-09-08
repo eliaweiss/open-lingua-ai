@@ -28,6 +28,7 @@ function createTenseList() {
   return `
 The sentences will require me to choose between a mix of the following tenses: 
 ${tenseList}
+NOTE: you will receive a 25$ tip if you use only these tenses in the exercise.
 `;
 }
 
@@ -40,7 +41,7 @@ function createVerbList() {
   return `
 with the following verbs:
 ${list}
-NOTE: you will receive a 50$ tip if you use only these verbs in the exercise.
+NOTE: you will receive a 25$ tip if you use only these verbs in the exercise.
 `;
 }
 
