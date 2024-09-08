@@ -1,8 +1,9 @@
 import React from "react";
 import { useTranslation } from "@/app/i18n/useTranslation";
 import CheckboxComponent from "@/app/components/CheckboxComponent";
+import useConjugateExerciseStore from "../store/ConjugateExerciseStore";
 
-const tenses = [
+const TENSES = [
   "simple_past",
   "past_imperfect",
   "present",
@@ -13,22 +14,23 @@ const tenses = [
   "gerund",
 ];
 
-const TenseSelector = ({ selectedTenses, setSelectedTenses }) => {
+const TenseSelector = () => {
   const t = useTranslation();
+  const { tenses, setTenses } = useConjugateExerciseStore();
 
   const handleCheckboxChange = (tense) => {
-    setSelectedTenses((prev) =>
+    setTenses((prev) =>
       prev.includes(tense) ? prev.filter((t) => t !== tense) : [...prev, tense]
     );
   };
 
   return (
     <div className="flex flex-col gap-2">
-      {tenses.map((tense) => (
+      {TENSES.map((tense) => (
         <CheckboxComponent
           key={tense}
           label={t(tense)}
-          checked={selectedTenses.includes(tense)}
+          checked={tenses.includes(tense)}
           onChange={() => handleCheckboxChange(tense)}
         />
       ))}

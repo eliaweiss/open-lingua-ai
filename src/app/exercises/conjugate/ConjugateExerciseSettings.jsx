@@ -10,7 +10,6 @@ const ConjugateExerciseSettings = () => {
   const t = useTranslation();
   const { verbList, setVerbList, setExerciseCounter } =
     useConjugateExerciseStore();
-  const [selectedTenses, setSelectedTenses] = useState([]);
 
   return (
     <div className="p-4 border rounded-lg border-pBorder">
@@ -37,10 +36,7 @@ const ConjugateExerciseSettings = () => {
         </ControlButton>
       </div>
       <div className="flex flex-col gap-2 space-y-2">
-        <TenseSelector
-          selectedTenses={selectedTenses}
-          setSelectedTenses={setSelectedTenses}
-        />
+        <TenseSelector />
       </div>
     </div>
   );

@@ -16,6 +16,9 @@ const useConjugateExerciseStore = create((set, get) => ({
   checkAnswerResponse: "",
   setCheckAnswerResponse: (response) => set({ checkAnswerResponse: response }),
 
+  tenses: [],
+  setTenses: (tenses) => set({ tenses: tenses }),
+
   currentExercise: null,
   setCurrentExercise: (exercise) => set({ currentExercise: exercise }),
 

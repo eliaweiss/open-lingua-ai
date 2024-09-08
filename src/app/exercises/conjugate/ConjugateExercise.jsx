@@ -20,7 +20,7 @@ import ConjugateExerciseSettings from "./ConjugateExerciseSettings";
 import { checkMyAnswer } from "./store/checkMyAnswer";
 
 export const ConjugateExercise = () => {
-  const [showSettings, setShowSettings] = useState(false);
+  const [showSettings, setShowSettings] = useState(true);
   const { isTargetRtl, targetLanguage } = useAppStore();
   const t = useTranslation(); // Add this line
   const {
