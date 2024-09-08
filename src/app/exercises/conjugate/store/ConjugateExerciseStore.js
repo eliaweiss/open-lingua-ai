@@ -27,7 +27,6 @@ const useConjugateExerciseStore = create((set, get) => ({
 
   showTense: false,
   setShowTense: (show) => set({ showTense: show }),
-  
 
   explanation: "",
   setExplanation: (explanation) => set({ explanation: explanation }),
@@ -37,7 +36,7 @@ const useConjugateExerciseStore = create((set, get) => ({
     return exerciseData[exerciseIndex];
   },
   verbList: "",
-  setVerbList: (list) => set({ verbList: list }),
+  setVerbList: (list) => set({ verbList: list.trim() }),
 
   resetExercise: () =>
     set({

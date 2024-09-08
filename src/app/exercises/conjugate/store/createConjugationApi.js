@@ -4,8 +4,7 @@ import useAppStore from "@/app/store/appStore";
 
 export async function createConjugationApi() {
   const prompt = createMessage();
-  // console.log("prompt", prompt);
-  // debugger;
+  console.log("prompt", prompt);
   const { response } = await queryLLMApi({
     messages: [
       {
@@ -23,9 +22,31 @@ export async function createConjugationApi() {
   return exerciseData;
 }
 
+function createTenseList() {
+  const { tenses } = useConjugateExerciseStore.getState();
+  if (tenses.length === 0) {
+    return "";
+  }
+  const tenseList = tenses.map((tense) => tense.replace("_", " ")).join(", ");
+  return `
+The sentences will require me to choose between a mix of the following tenses: 
+${tenseList}
+`;
+}
+
+function createVerbList() {
+  const { verbList } = useConjugateExerciseStore.getState();
+  if (!verbList) {
+    return "";
+  }
+  return `
+with the following verbs:
+${verbList}
+`;
+}
+
 function createMessage() {
   const { targetLanguage, sourceLanguage } = useAppStore.getState();
-  const { verbList } = useConjugateExerciseStore.getState();
   const userMsg = `
 I would like to practice the following exercise in ${targetLanguage}
 
@@ -33,17 +54,8 @@ Exercise Instructions:
 You will give me a set of 10 sentences with blanks. 
 My task is to fill in the blanks with the correct conjugation of the verb. 
 If the sentence has more than one verb, only blank the first verb.
-The sentences will require me to choose between a mix of the following tenses:
-
-Present
-Past Perfect
-Past Imperfect 
-Future
-Gerund 
-
-
-with the following verbs:
-${verbList}
+${createTenseList()}
+${createVerbList()}
 
 Please return the exercise in json format as 
 [
@@ -61,7 +73,7 @@ Please return the exercise in json format as
 ...
 ]
 
-dont return anything but the json
+don't return anything but the json
 `;
   return userMsg;
 }

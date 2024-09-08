@@ -52,10 +52,7 @@ export const ConjugateProvider = ({ children }) => {
         setExerciseCounter(Number(storedExerciseCounter));
       }
 
-      const storedVerbList = await storage.get(
-        "verbList",
-        `Tomar, Levar, Ter , Pegar, encher`
-      );
+      const storedVerbList = await storage.get("verbList", "");
       setVerbList(storedVerbList);
 
       const storedTenses = await storage.get("tenses", []);
