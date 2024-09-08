@@ -7087,4 +7087,126 @@ export const phrases = [
     "en-US": "He will eat everything before the store closes.",
     "pt-BR": "Ele comerá tudo antes que a loja feche",
   },
+  {
+    "en-US": "There is a lot of traffic in the city today.",
+    "pt-BR": "Há muito trânsito na cidade hoje.",
+  },
+  {
+    "en-US": "There were few people at the event.",
+    "pt-BR": "Havia poucas pessoas no evento.",
+  },
+  {
+    "en-US": "There is an error in this document.",
+    "pt-BR": "Há um erro neste documento.",
+  },
+  {
+    "en-US": "There will be an important meeting tomorrow.",
+    "pt-BR": "Haverá uma reunião importante amanhã.",
+  },
+  {
+    "en-US": "There was an accident on the road.",
+    "pt-BR": "Houve um acidente na estrada.",
+  },
+  {
+    "en-US": "Many years ago, people traveled by boat.",
+    "pt-BR": "Há muitos anos, as pessoas viajavam de barco.",
+  },
+  {
+    "en-US": "There isn’t enough time to finish the work.",
+    "pt-BR": "Não há tempo suficiente para terminar o trabalho.",
+  },
+  {
+    "en-US": "There are those who say this is impossible.",
+    "pt-BR": "Há quem diga que isso é impossível.",
+  },
+  {
+    "en-US": "If there were more opportunities, many people would stay here.",
+    "pt-BR": "Se houvesse mais oportunidades, muitas pessoas ficariam aqui.",
+  },
+  {
+    "en-US": "There would be a solution if everyone collaborated.",
+    "pt-BR": "Haveria uma solução se todos colaborassem.",
+  },
+  {
+    "en-US": "There were many books on the table.",
+    "pt-BR": "Havia muitos livros na mesa.",
+  },
+  {
+    "en-US": "There was a time when I used to travel a lot.",
+    "pt-BR": "Houve uma época em que eu viajava muito.",
+  },
+  {
+    "en-US": "There will be no class tomorrow due to the holiday.",
+    "pt-BR": "Não haverá aula amanhã devido ao feriado.",
+  },
+  {
+    "en-US": "If there had been a warning, we would have prepared better.",
+    "pt-BR": "Se houvesse um aviso, teríamos nos preparado melhor.",
+  },
+  {
+    "en-US": "There will be more opportunities in the future.",
+    "pt-BR": "Haverá mais oportunidades no futuro.",
+  },
+  {
+    "en-US": "There was no need to explain everything again.",
+    "pt-BR": "Não havia necessidade de explicar tudo novamente.",
+  },
+  {
+    "en-US": "There is no one in the office at the moment.",
+    "pt-BR": "Não há ninguém no escritório no momento.",
+  },
+  {
+    "en-US": "If there were fewer distractions, I could focus better.",
+    "pt-BR": "Se houvesse menos distrações, eu poderia me concentrar melhor.",
+  },
+  {
+    "en-US": "There used to be a park here, but now it’s a shopping mall.",
+    "pt-BR": "Havia um parque aqui, mas agora é um shopping.",
+  },
+  {
+    "en-US": "There have been many challenges this year.",
+    "pt-BR": "Houve muitos desafios este ano.",
+  },
+  {
+    "en-US": "There will be a party next weekend.",
+    "pt-BR": "Haverá uma festa no próximo fim de semana.",
+  },
+  {
+    "en-US": "There has been a lot of rain lately.",
+    "pt-BR": "Houve muita chuva ultimamente.",
+  },
+  {
+    "en-US":
+      "There would be no reason to worry if you followed the instructions.",
+    "pt-BR":
+      "Não haveria razão para se preocupar se você seguisse as instruções.",
+  },
+  {
+    "en-US": "There were problems with the project from the start.",
+    "pt-BR": "Houve problemas com o projeto desde o início.",
+  },
+  {
+    "en-US": "There is still a chance to win.",
+    "pt-BR": "Ainda há uma chance de vencer.",
+  },
+  {
+    "en-US": "If there had been more time, we could have finished everything.",
+    "pt-BR": "Se houvesse mais tempo, poderíamos ter terminado tudo.",
+  },
+  {
+    "en-US": "There were several opportunities to improve.",
+    "pt-BR": "Havia várias oportunidades para melhorar.",
+  },
+  {
+    "en-US": "There would have been a solution if we had worked together.",
+    "pt-BR": "Haveria uma solução se tivéssemos trabalhado juntos.",
+  },
+  {
+    "en-US": "There will be more options available soon.",
+    "pt-BR": "Haverá mais opções disponíveis em breve.",
+  },
+  {
+    "en-US": "There was a misunderstanding between the teams.",
+    "pt-BR": "Houve um mal-entendido entre as equipes.",
+  },
 ];
