@@ -40,6 +40,7 @@ function createVerbList() {
   return `
 with the following verbs:
 ${list}
+NOTE: you will receive a 50$ tip if you use only these verbs in the exercise.
 `;
 }
 
@@ -51,9 +52,10 @@ I would like to practice the following exercise in ${targetLanguage}
 Exercise Instructions:
 You will give me a set of 10 sentences with blanks. 
 My task is to fill in the blanks with the correct conjugation of the verb. 
+${createVerbList()}
+
 If the sentence has more than one verb, only blank the first verb.
 ${createTenseList()}
-${createVerbList()}
 
 Please return the exercise in json format as 
 [
