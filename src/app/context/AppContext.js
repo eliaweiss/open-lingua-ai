@@ -5,7 +5,7 @@ import { getLanguagesFromFileName } from "../utils/languageUtils";
 import { randomPermutation } from "../helpers";
 import { loadPhrasesTranslationFromStorage } from "../utils/loadPhrasesTranslationFromStorage";
 import { storage } from "../utils/storageUtils";
-
+import { isSameDay, todayStartTime } from "../utils/dateUtils";
 
 const AppContext = createContext();
 
@@ -41,6 +41,7 @@ export const AppProvider = ({ children }) => {
     handleReverseLang,
     maxNumberOfWordsInPhrase,
     dailyCount,
+    setDailyCount,
     llmApiKey,
     llmModel,
     googleTranslatorApiKey,
@@ -168,7 +169,20 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     if (!appInitFlag) return;
-    storage.set("dailyCount", dailyCount);
+    async function inlineFn() {
+      const todayTimestamp = todayStartTime();
+      const storedCurrentDaytimeStamp = await storage.get(
+        "currentDaytimeStamp"
+      );
+      if (!isSameDay(todayTimestamp, storedCurrentDaytimeStamp)) {
+        setDailyCount(1);
+        storage.set("dailyCount", 1);
+        storage.set("currentDaytimeStamp", todayTimestamp);
+      } else {
+        storage.set("dailyCount", dailyCount);
+      }
+    }
+    inlineFn();
   }, [dailyCount]);
 
   useEffect(() => {

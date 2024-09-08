@@ -23,7 +23,8 @@ import { fixExerciseApi } from "./store/fixExerciseApi";
 export const ConjugateExercise = () => {
   const [showSettings, setShowSettings] = useState(true);
   const [fixClickCounter, setFixClickCounter] = useState(0);
-  const { isTargetRtl, targetLanguage } = useAppStore();
+  const { isTargetRtl, targetLanguage, dailyCount, setDailyCount } =
+    useAppStore();
   const t = useTranslation(); // Add this line
   const {
     exerciseData,
@@ -57,6 +58,7 @@ export const ConjugateExercise = () => {
     setExerciseCounter(exerciseCounter + 1);
     resetExercise();
     setExerciseIndex(exerciseIndex + 1);
+    setDailyCount(dailyCount + 1);
   };
 
   const playCompleteSentence = async () => {
