@@ -36,12 +36,13 @@ ${tenseList}
 
 function createVerbList() {
   const { verbList } = useConjugateExerciseStore.getState();
-  if (!verbList) {
+  const list = verbList.trim();
+  if (!list) {
     return "";
   }
   return `
 with the following verbs:
-${verbList}
+${list}
 `;
 }
 
