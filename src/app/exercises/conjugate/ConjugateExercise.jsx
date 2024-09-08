@@ -113,7 +113,11 @@ export const ConjugateExercise = () => {
                 }}
                 placeholder="Enter your answer"
               />
-              <div className="">({currentExercise.verb})</div>
+              <div className="">
+                {currentExercise.pronoun} {"<"}
+                {currentExercise.verb}
+                {">"}
+              </div>
             </div>
 
             <div className="">
