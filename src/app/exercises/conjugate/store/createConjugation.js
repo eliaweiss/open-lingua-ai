@@ -8,7 +8,7 @@ export async function createConjugation() {
     const exerciseData = await createConjugationApi();
     setExerciseData(exerciseData);
     setExerciseIndex(0);
-  } catch {
-    console.log("ignore");
+  } catch (error) {
+    console.error("Error in createConjugation:", error);
   }
 }
