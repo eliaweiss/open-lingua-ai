@@ -81,5 +81,6 @@
   "past_perfect": "Past Perfect",
   "future_subjunctive": "Future Subjunctive",
   "present_subjunctive": "Present Subjunctive",
-  "gerund": "Gerund"
+  "gerund": "Gerund",
+  "select_tenses": "Select tenses"
 }

@@ -19,21 +19,25 @@ const TenseSelector = () => {
   const { tenses, setTenses } = useConjugateExerciseStore();
 
   const handleCheckboxChange = (tense) => {
-    setTenses((prev) =>
-      prev.includes(tense) ? prev.filter((t) => t !== tense) : [...prev, tense]
-    );
+    const newTenses = tenses.includes(tense)
+      ? tenses.filter((t) => t !== tense)
+      : [...tenses, tense];
+    setTenses(newTenses);
   };
 
   return (
-    <div className="flex flex-col gap-2">
-      {TENSES.map((tense) => (
-        <CheckboxComponent
-          key={tense}
-          label={t(tense)}
-          checked={tenses.includes(tense)}
-          onChange={() => handleCheckboxChange(tense)}
-        />
-      ))}
+    <div className="flex flex-col gap-2 space-y-2">
+      <div className="text-xl font-bold text-sText">{t("select_tenses")}</div>
+      <div className="flex flex-wrap gap-2">
+        {TENSES.map((tense) => (
+          <CheckboxComponent
+            key={tense}
+            label={t(tense)}
+            checked={tenses.includes(tense)}
+            onChange={() => handleCheckboxChange(tense)}
+          />
+        ))}
+      </div>
     </div>
   );
 };

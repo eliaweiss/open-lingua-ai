@@ -27,6 +27,7 @@ const useConjugateExerciseStore = create((set, get) => ({
 
   showTense: false,
   setShowTense: (show) => set({ showTense: show }),
+  
 
   explanation: "",
   setExplanation: (explanation) => set({ explanation: explanation }),

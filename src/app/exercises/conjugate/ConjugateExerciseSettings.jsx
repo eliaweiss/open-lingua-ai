@@ -12,7 +12,7 @@ const ConjugateExerciseSettings = () => {
     useConjugateExerciseStore();
 
   return (
-    <div className="p-4 border rounded-lg border-pBorder">
+    <div className="p-4 border rounded-lg border-pBorder flex flex-col gap-2 space-y-2">
       <ControlButton
         onClick={() => setExerciseCounter(0)}
         className="bg-sBg"
@@ -21,12 +21,18 @@ const ConjugateExerciseSettings = () => {
         {t("reset_exercise_counter")}
       </ControlButton>
       <div className="flex flex-col gap-2 space-y-2">
+        <div className="text-xl font-bold text-sText">{t("set_verb_list")}</div>
         <Textarea
           value={verbList}
           onChange={(e) => setVerbList(e.target.value)}
           placeholder={t("set_verb_list")}
           className="w-full"
         />
+      </div>
+      <div className="flex flex-col gap-2 space-y-2">
+        <TenseSelector />
+      </div>
+      <div className="flex flex-col gap-2 space-y-2">
         <ControlButton
           onClick={createConjugation}
           className="bg-sBg"
@@ -34,9 +40,6 @@ const ConjugateExerciseSettings = () => {
         >
           {t("create_conjugation")}
         </ControlButton>
-      </div>
-      <div className="flex flex-col gap-2 space-y-2">
-        <TenseSelector />
       </div>
     </div>
   );

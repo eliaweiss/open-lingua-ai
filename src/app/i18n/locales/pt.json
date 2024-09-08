@@ -81,5 +81,6 @@
     "past_perfect": "Passado Perfeito",
     "future_subjunctive": "Subjuntivo Futuro",
     "present_subjunctive": "Subjuntivo Presente",
-    "gerund": "Gerúndio"
+    "gerund": "Gerúndio",
+    "select_tenses": "Selecionar tempos"
 }
