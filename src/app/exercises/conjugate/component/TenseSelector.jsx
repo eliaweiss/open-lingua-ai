@@ -9,8 +9,9 @@ const TENSES = [
   "present",
   "future",
   "past_perfect",
-  "future_subjunctive",
+  "past_subjunctive",
   "present_subjunctive",
+  "future_subjunctive",
   "gerund",
   "conditional",
 ];
