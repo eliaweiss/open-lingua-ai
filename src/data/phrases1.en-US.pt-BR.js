@@ -7071,4 +7071,8 @@ export const phrases = [
     "en-US": "He will leave early to avoid the traffic.",
     "pt-BR": "Ele partirá cedo para evitar o trânsito",
   },
+  {
+    "en-US": "We would talk more if we had time.",
+    "pt-BR": "Nós falávamos mais se tivéssemos tempo",
+  },
 ];
