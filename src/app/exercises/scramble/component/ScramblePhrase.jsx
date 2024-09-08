@@ -9,8 +9,10 @@ import {
   QuestionMarkCircleIcon,
 } from "@heroicons/react/24/outline";
 import classNames from "classnames";
+import { useTranslation } from "@/app/i18n/useTranslation";
 
 export const ScramblePhrase = () => {
+  const t = useTranslation();
   const { isTargetRtl } = useAppContext();
 
   const {
