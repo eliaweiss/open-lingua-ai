@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "@/app/i18n/useTranslation";
 import useConjugateExerciseStore from "./store/ConjugateExerciseStore";
 import Textarea from "@/app/components/Textarea";
 import ControlButton from "@/app/components/ControlButton";
 import { createConjugation } from "./store/createConjugation";
+import TenseSelector from "./component/TenseSelector";
 
 const ConjugateExerciseSettings = () => {
   const t = useTranslation();
   const { verbList, setVerbList, setExerciseCounter } =
     useConjugateExerciseStore();
+  const [selectedTenses, setSelectedTenses] = useState([]);
 
   return (
     <div className="p-4 border rounded-lg border-pBorder">
@@ -34,7 +36,12 @@ const ConjugateExerciseSettings = () => {
           {t("create_conjugation")}
         </ControlButton>
       </div>
-      <div className="flex flex-col gap-2 space-y-2">...</div>
+      <div className="flex flex-col gap-2 space-y-2">
+        <TenseSelector
+          selectedTenses={selectedTenses}
+          setSelectedTenses={setSelectedTenses}
+        />
+      </div>
     </div>
   );
 };

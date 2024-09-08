@@ -73,5 +73,13 @@
   "translation": "Translation",
   "show_translation": "Show translation",
   "reset_exercise_counter": "Reset exercise counter",
-  "exercise_counter": "Exercise counter"
+  "exercise_counter": "Exercise counter",
+  "simple_past": "Simple Past",
+  "past_imperfect": "Past Imperfect",
+  "present": "Present",
+  "future": "Future",
+  "past_perfect": "Past Perfect",
+  "future_subjunctive": "Future Subjunctive",
+  "present_subjunctive": "Present Subjunctive",
+  "gerund": "Gerund"
 }

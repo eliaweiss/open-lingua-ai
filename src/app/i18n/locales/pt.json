@@ -73,5 +73,13 @@
     "translation": "Tradução",
     "show_translation": "Mostrar tradução",
     "reset_exercise_counter": "Reiniciar contador de exercícios",
-    "exercise_counter": "Contador de exercícios"
+    "exercise_counter": "Contador de exercícios",
+    "simple_past": "Passado Simples",
+    "past_imperfect": "Passado Imperfeito",
+    "present": "Presente",
+    "future": "Futuro",
+    "past_perfect": "Passado Perfeito",
+    "future_subjunctive": "Subjuntivo Futuro",
+    "present_subjunctive": "Subjuntivo Presente",
+    "gerund": "Gerúndio"
 }
