@@ -7067,4 +7067,8 @@ export const phrases = [
     "en-US": "I like the way you smile.",
     "pt-BR": "Eu gosto do jeito que você sorri.",
   },
+  {
+    "en-US": "He will leave early to avoid the traffic.",
+    "pt-BR": "Ele partirá cedo para evitar o trânsito",
+  },
 ];
