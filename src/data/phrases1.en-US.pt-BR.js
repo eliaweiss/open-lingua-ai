@@ -7075,4 +7075,12 @@ export const phrases = [
     "en-US": "We would talk more if we had time.",
     "pt-BR": "Nós falávamos mais se tivéssemos tempo",
   },
+  {
+    "en-US": "You handed in the report before the deadline yesterday.",
+    "pt-BR": "Vocês entregaram o relatório antes do prazo ontem",
+  },
+  {
+    "en-US": "I used to eat meatballs frequently when I was a child.",
+    "pt-BR": "Eu comia almôndegas com frequência quando era criança",
+  },
 ];
