@@ -85,14 +85,14 @@ export const ScramblePhrase = () => {
             </ControlButton>
 
             <ControlButton
-              toolTip="Give hint (double click)"
+              toolTip={t("click_again_to_confirm")}
               onClick={handleGiveHintBtn}
               className="p-4 rounded-lg border border-pBorder"
             >
               {hintClickCounter == 0 ? (
                 <QuestionMarkCircleIcon className="w-6 h-6 " />
               ) : (
-                <div className="text-base h-6">click again</div>
+                <div className="text-base h-6">{t("click_again")}</div>
               )}
             </ControlButton>
           </div>

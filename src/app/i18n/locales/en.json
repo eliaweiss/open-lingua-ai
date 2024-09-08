@@ -84,6 +84,9 @@
   "gerund": "Gerund",
   "conditional": "Conditional",
   "select_tenses": "Select tenses",
-  "fix_exercise": "Fix exercise",
-  "fix_exercise_msg": "Fix exercise (use it if the exercise is not correct)"
+  "fix_exercise": "Fix exercise (double click)",
+  "fix_exercise_msg": "Fix exercise (use it if the exercise is not correct)",
+  "give_hint_msg": "Give hint (double click)",
+  "click_again_to_confirm": "Click again to confirm",
+  "click_again": "Click again (double click)"
 }

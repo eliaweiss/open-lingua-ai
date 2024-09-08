@@ -22,6 +22,7 @@ import { fixExerciseApi } from "./store/fixExerciseApi";
 
 export const ConjugateExercise = () => {
   const [showSettings, setShowSettings] = useState(true);
+  const [fixClickCounter, setFixClickCounter] = useState(0);
   const { isTargetRtl, targetLanguage } = useAppStore();
   const t = useTranslation(); // Add this line
   const {
@@ -75,6 +76,18 @@ export const ConjugateExercise = () => {
     }
   }
 
+  const handleFixExerciseClick = () => {
+    if (fixClickCounter === 0) {
+      setFixClickCounter(1);
+      setTimeout(() => {
+        setFixClickCounter(0);
+      }, 1000);
+    } else {
+      fixExerciseApi();
+      setFixClickCounter(0);
+    }
+  };
+
   return (
     <div>
       <div className="flex justify-center flex-col space-y-4">
@@ -89,6 +102,15 @@ export const ConjugateExercise = () => {
         <HorizontalRule />
         {currentExercise && (
           <div className="flex flex-col space-y-4">
+            <div className="">
+              <ControlButton
+                className="bg-sBg border-pBorder"
+                toolTip={t("fix_exercise_msg")}
+                onClick={handleFixExerciseClick}
+              >
+                {fixClickCounter === 0 ? t("fix_exercise") : t("click_again")}
+              </ControlButton>
+            </div>
             {/* Exercise Panel */}
             <div className="flex flex-col space-y-4 mt-4 text-2xl">
               <div
@@ -144,15 +166,7 @@ export const ConjugateExercise = () => {
                 </ControlButton>
               )}
             </div>
-            <div className="">
-              <ControlButton
-                className="bg-sBg border-pBorder"
-                toolTip={t("fix_exercise_msg")}
-                onClick={fixExerciseApi}
-              >
-                {t("fix_exercise")}
-              </ControlButton>
-            </div>
+
             {showCorrectAnswer && (
               <div className="flex flex-col space-y-2">
                 <div className="flex space-x-2 items-center">

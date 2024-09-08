@@ -84,6 +84,9 @@
     "gerund": "Gerúndio",
     "conditional": "Condicional",
     "select_tenses": "Selecionar tempos",
-    "fix_exercise": "Corrigir exercício",
-    "fix_exercise_msg": "Corrigir exercício (use se o exercício não está correto)"
+    "fix_exercise": "Corrigir exercício (dobro clique)",
+    "fix_exercise_msg": "Corrigir exercício (use se o exercício não está correto)",
+    "give_hint_msg": "Dar dica (dobro clique)",
+    "click_again_to_confirm": "Clique novamente para confirmar",
+    "click_again": "Clique novamente (dobro clique)"
 }
