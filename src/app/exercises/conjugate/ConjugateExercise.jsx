@@ -102,15 +102,6 @@ export const ConjugateExercise = () => {
         <HorizontalRule />
         {currentExercise && (
           <div className="flex flex-col space-y-4">
-            <div className="">
-              <ControlButton
-                className="bg-sBg border-pBorder"
-                toolTip={t("fix_exercise_msg")}
-                onClick={handleFixExerciseClick}
-              >
-                {fixClickCounter === 0 ? t("fix_exercise") : t("click_again")}
-              </ControlButton>
-            </div>
             {/* Exercise Panel */}
             <div className="flex flex-col space-y-4 mt-4 text-2xl">
               <div
@@ -262,7 +253,20 @@ export const ConjugateExercise = () => {
           showSettings ? "opacity-100" : "opacity-0"
         }`}
       >
-        {showSettings && <ConjugateExerciseSettings />}
+        {showSettings && (
+          <div className="flex flex-col space-y-2 max-w-[500px]">
+            <div>
+              <ControlButton
+                className="bg-sBg border-pBorder"
+                toolTip={t("fix_exercise_msg")}
+                onClick={handleFixExerciseClick}
+              >
+                {fixClickCounter === 0 ? t("fix_exercise") : t("click_again")}
+              </ControlButton>
+            </div>
+            <ConjugateExerciseSettings />
+          </div>
+        )}
       </div>
     </div>
   );

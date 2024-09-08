@@ -14,7 +14,7 @@ export async function createConjugationApi() {
       },
     ],
   });
-  console.log("checkUserTranslate response", response);
+  console.log("createConjugationApi response", response);
   const exerciseData = extractJsonFromResponse(response);
   return exerciseData;
 }
