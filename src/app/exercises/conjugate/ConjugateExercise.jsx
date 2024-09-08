@@ -221,12 +221,13 @@ export const ConjugateExercise = () => {
                 </div>
 
                 <div className="flex justify-center">
-                  <div className="mt-4 border rounded-lg border-pBorder">
+                  <div className="mt-4 border rounded-lg border-pBorder ">
                     <ControlButton
+                      className="p-4"
                       toolTip={t("next")}
                       onClick={moveToNextExercise}
                     >
-                      <ForwardIcon className="w-6 h-6" />
+                      <ForwardIcon className="w-6 h-6 " />
                     </ControlButton>
                   </div>
                 </div>
