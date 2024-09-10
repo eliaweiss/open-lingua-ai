@@ -41,7 +41,6 @@ const useTranslateExerciseStore = create((set, get) => ({
   skip: () => {
     const { increasePhraseIndex } = useAppStore.getState();
     const { setExerciseCounter } = get();
-    cancelSpeech();
     increasePhraseIndex();
     setExerciseCounter(get().exerciseCounter + 1);
   },

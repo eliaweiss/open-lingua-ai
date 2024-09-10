@@ -51,7 +51,7 @@ const TranslateExercise = () => {
     isTranslationCorrect,
     setIsTranslationCorrect,
     exerciseCounter,
-    setExerciseCounter,
+
   } = useTranslateExerciseStore();
 
   const [isRecording, setIsRecording] = useState(false);
