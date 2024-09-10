@@ -1,6 +1,9 @@
 import { create } from "zustand";
 
 const useConjugateExerciseStore = create((set, get) => ({
+  isConjugateExerciseStoreInit: false,
+  setIsConjugateExerciseStoreInit: (isInit) => set({ isInit: isInit }),
+
   // State
   exerciseCounter: 0,
   setExerciseCounter: (counter) => set({ exerciseCounter: counter }),

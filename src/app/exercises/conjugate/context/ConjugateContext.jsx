@@ -1,7 +1,6 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import useConjugateExerciseStore from "../store/ConjugateExerciseStore";
 import useAppStore from "@/app/store/appStore";
-import { createConjugationApi } from "../store/createConjugationApi";
 import { storage } from "@/app/utils/storageUtils";
 import { createConjugation } from "../store/createConjugation";
 const ConjugateContext = createContext();
@@ -24,6 +23,8 @@ export const ConjugateProvider = ({ children }) => {
     setExerciseCounter,
     tenses,
     setTenses,
+    isConjugateExerciseStoreInit,
+    setIsConjugateExerciseStoreInit,
   } = useConjugateExerciseStore();
 
   useEffect(() => {
@@ -57,13 +58,14 @@ export const ConjugateProvider = ({ children }) => {
 
       const storedTenses = await storage.get("tenses", []);
       setTenses(storedTenses);
+      setIsConjugateExerciseStoreInit(true);
     }
     initExercise();
   }, [appInitFlag]);
 
   // const apiSubmitted = useRef(false);
   useEffect(() => {
-    if (!appInitFlag) return;
+    if (!isConjugateExerciseStoreInit) return;
     // apiSubmitted.current = true;
     // if (!apiSubmitted.current) {
     if (exerciseData.length <= exerciseIndex) {
@@ -73,7 +75,7 @@ export const ConjugateProvider = ({ children }) => {
   }, [exerciseIndex]);
 
   useEffect(() => {
-    if (!appInitFlag) return;
+    if (!isConjugateExerciseStoreInit) return;
     // console.log("store exerciseData", exerciseData);
     if (exerciseData && exerciseData.length > 0) {
       storage.set("exerciseData", exerciseData);
@@ -81,22 +83,22 @@ export const ConjugateProvider = ({ children }) => {
   }, [exerciseData]);
 
   useEffect(() => {
-    if (!appInitFlag) return;
+    if (!isConjugateExerciseStoreInit) return;
     storage.set("exerciseIndex", exerciseIndex);
   }, [exerciseIndex]);
 
   useEffect(() => {
-    if (!appInitFlag) return;
+    if (!isConjugateExerciseStoreInit) return;
     storage.set("verbList", verbList);
   }, [verbList]);
 
   useEffect(() => {
-    if (!appInitFlag) return;
+    if (!isConjugateExerciseStoreInit) return;
     storage.set("exerciseCounter", exerciseCounter);
   }, [exerciseCounter]);
 
   useEffect(() => {
-    if (!appInitFlag) return;
+    if (!isConjugateExerciseStoreInit) return;
     storage.set("tenses", tenses);
   }, [tenses]);
 
