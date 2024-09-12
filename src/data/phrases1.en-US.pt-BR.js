@@ -7247,7 +7247,7 @@ export const phrases = [
   },
   {
     "en-US": "Still, he ended up getting elected",
-    "pt-BR": "Mesmo assim o cara acabou sendo eleito.",
+    "pt-BR": "Mesmo assim, o cara acabou sendo eleito.",
   },
   {
     "en-US": "I think you should still take an umbrella with you",
