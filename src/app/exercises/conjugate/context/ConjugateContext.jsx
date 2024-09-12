@@ -18,7 +18,7 @@ export const ConjugateProvider = ({ children }) => {
     verbList,
     setVerbList,
     setCurrentExercise,
-    setExplanation,
+    // setExplanation,
     exerciseCounter,
     setExerciseCounter,
     tenses,
@@ -29,11 +29,11 @@ export const ConjugateProvider = ({ children }) => {
 
   useEffect(() => {
     setCurrentExercise(exerciseData[exerciseIndex]);
-    if (exerciseData && exerciseData[exerciseIndex]) {
-      const htmlTxt = marked(exerciseData[exerciseIndex].explanation);
-      // console.log(htmlTxt);
-      setExplanation(htmlTxt);
-    }
+    // if (exerciseData && exerciseData[exerciseIndex]) {
+    //   const htmlTxt = marked(exerciseData[exerciseIndex].explanation);
+    //   // console.log(htmlTxt);
+    //   setExplanation(htmlTxt);
+    // }
   }, [exerciseData, exerciseIndex]);
 
   useEffect(() => {

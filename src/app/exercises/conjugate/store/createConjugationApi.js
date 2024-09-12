@@ -69,7 +69,6 @@ Please return the exercise in json format as
 "solution": <the solution to the exercise - should include all missing words that are needed to complete the sentence>,
 "completeSentence": <the complete sentence with the correct conjugation"
 "translation": <the translation of the sentence to ${sourceLanguage}>
-"explanation": <a short explanation in ${sourceLanguage} why the tense was chosen and the conjugation used>,
 }
 ...
 ]

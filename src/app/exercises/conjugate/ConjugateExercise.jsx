@@ -27,7 +27,7 @@ export const ConjugateExercise = () => {
     useAppStore();
   const t = useTranslation(); // Add this line
   const {
-    exerciseData,
+    // exerciseData,
     exerciseIndex,
     setExerciseIndex,
     answer,
@@ -41,7 +41,7 @@ export const ConjugateExercise = () => {
     currentExercise,
     showTranslation,
     setShowTranslation,
-    explanation,
+    // explanation,
     exerciseCounter,
     setExerciseCounter,
   } = useConjugateExerciseStore();
@@ -197,13 +197,13 @@ export const ConjugateExercise = () => {
                   </div>
                 </div>
 
-                <div className="text-sText text-lg">
+                {/* <div className="text-sText text-lg">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: explanation,
                     }}
                   />
-                </div>
+                </div> */}
                 <div className="text-sText text-lg">
                   {!checkAnswerResponse ? (
                     <ControlButton
