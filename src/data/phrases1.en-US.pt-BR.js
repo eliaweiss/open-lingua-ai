@@ -7279,7 +7279,7 @@ export const phrases = [
   },
   {
     "en-US": "Wow, that candidate only talked crap during the campaign",
-    "pt-BR": "Caramba esse candidato só falava merda na campanha",
+    "pt-BR": "Caramba, esse candidato só falava merda na campanha",
   },
   {
     "en-US": "So, I don’t even know where to start.",
