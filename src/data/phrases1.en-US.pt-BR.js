@@ -7016,7 +7016,7 @@ export const phrases = [
     "pt-BR": "Ela tem jeito para cozinhar.",
   },
   {
-    "en-US": "You have to find a way (or fix) for this.",
+    "en-US": "You have to find a way for this.",
     "pt-BR": "Tem que dar um jeito nisso.",
   },
   {
