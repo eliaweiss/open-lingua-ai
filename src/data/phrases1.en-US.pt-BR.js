@@ -7209,4 +7209,76 @@ export const phrases = [
     "en-US": "There was a misunderstanding between the teams.",
     "pt-BR": "Houve um mal-entendido entre as equipes.",
   },
+  {
+    "en-US": "I'm like this because of work.",
+    "pt-BR": "Estou assim por causa do trabalho.",
+  },
+  {
+    "en-US": "It's not exactly like that.",
+    "pt-BR": "Não é bem assim.",
+  },
+  {
+    "en-US": "It's exactly like that.",
+    "pt-BR": "É assim mesmo.",
+  },
+  {
+    "en-US": "I didn't know it was that good like that.",
+    "pt-BR": "Eu não sabia que era bom assim.",
+  },
+  {
+    "en-US": "Well, look, it's not exactly like that.",
+    "pt-BR": "Veja bem, não é bem assim.",
+  },
+  {
+    "en-US": "So he told me to do it like this and like that.",
+    "pt-BR": "Aí ele falou para eu fazer assim e assado.",
+  },
+  {
+    "en-US": "Dude, like, I'm not even sure what happened.",
+    "pt-BR": "Cara, tipo assim, nem sei o que aconteceu.",
+  },
+  {
+    "en-US": "He was kinda... like, I dunno, tall and had a beard I guess.",
+    "pt-BR": "Ele era meio que... assim, sei lá, alto e com barba eu acho.",
+  },
+  {
+    "en-US": "It's like a dog but with long legs.",
+    "pt-BR": "Bom é tipo um cachorro mas com perna comprida.",
+  },
+  {
+    "en-US": "Still, he ended up getting elected",
+    "pt-BR": "Mesmo assim o cara acabou sendo eleito.",
+  },
+  {
+    "en-US": "I think you should still take an umbrella with you",
+    "pt-BR": "Eu acho que mesmo assim você deveria levar um guarda-chuva.",
+  },
+  {
+    "en-US": "Let's start as soon as I arrive.",
+    "pt-BR": "Vamos começar assim que eu chegar.",
+  },
+  {
+    "en-US": "How come?",
+    "pt-BR": "Como assim?",
+  },
+  {
+    "en-US": "And so on.",
+    "pt-BR": "E assim por diante.",
+  },
+  {
+    "en-US": "And so be it.",
+    "pt-BR": "E assim seja.",
+  },
+  {
+    "en-US": "I'm like this because of work",
+    "pt-BR": "Estou assim por causa do trabalho.",
+  },
+  {
+    "en-US": "There were a lot of people there",
+    "pt-BR": "Tava assim de gente lá.",
+  },
+  {
+    "en-US": "Wow, that candidate only talked crap during the campaign",
+    "pt-BR": "Caramba esse candidato só falava merda na campanha",
+  },
 ];
