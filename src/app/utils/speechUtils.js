@@ -23,9 +23,13 @@ export async function readAloud(text, lang, rate) {
   setIsReading(true);
   try {
     if (!rate) rate = 1;
-    const groups = splitIntoSubSentences(text);
-    for (const sentence of groups) {
-      await readAloud_helper(sentence, lang, rate);
+    if (text.split(" ").length > 16) {
+      const groups = splitIntoSubSentences(text);
+      for (const sentence of groups) {
+        await readAloud_helper(sentence, lang, rate);
+      }
+    } else {
+      await readAloud_helper(text, lang, rate);
     }
   } finally {
     setIsReading(false);

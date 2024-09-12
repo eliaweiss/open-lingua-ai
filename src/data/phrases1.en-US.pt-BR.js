@@ -7287,7 +7287,7 @@ export const phrases = [
   },
   {
     "en-US": "But I think as soon as I start, maybe I’ll clear up some doubts.",
-    "pt-BR": "Mas acho que assim que eu começar talvez tire algumas dúvidas.",
+    "pt-BR": "Mas acho que assim que eu começar, talvez tire algumas dúvidas.",
   },
   {
     "en-US": "Not all of them, but that’s just how it is.",
