@@ -7281,4 +7281,24 @@ export const phrases = [
     "en-US": "Wow, that candidate only talked crap during the campaign",
     "pt-BR": "Caramba esse candidato só falava merda na campanha",
   },
+  {
+    "en-US": "So, I don’t even know where to start.",
+    "pt-BR": "Assim, nem sei por onde começar.",
+  },
+  {
+    "en-US": "But I think as soon as I start, maybe I’ll clear up some doubts.",
+    "pt-BR": "Mas acho que assim que eu começar talvez tire algumas dúvidas.",
+  },
+  {
+    "en-US": "Not all of them, but that’s just how it is.",
+    "pt-BR": "Nem todas, mas é assim mesmo.",
+  },
+  {
+    "en-US": "It might not be that good, but at least it’ll be fun.",
+    "pt-BR": "Pode não ser tão bom assim, mas pelo menos vai ser divertido.",
+  },
+  {
+    "en-US": "Still, I think it’ll be good.",
+    "pt-BR": "Mas mesmo assim, acho que vai ser bom.",
+  },
 ];
