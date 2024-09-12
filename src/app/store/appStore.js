@@ -22,7 +22,10 @@ const useAppStore = create((set, get) => ({
   setAppInitFlag: (flag) => set({ appInitFlag: flag }),
 
   phraseRange: [0, 0],
-  setPhraseRange: (range) => set({ phraseRange: range }),
+  setPhraseRange: (range) => {
+    set({ currentPhraseIndex: 0 });
+    set({ phraseRange: range });
+  },
 
   isMenuOpen: false,
   setIsMenuOpen: (isOpen) => set({ isMenuOpen: isOpen }),

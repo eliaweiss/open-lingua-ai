@@ -52,7 +52,10 @@ export const ScrambleProvider = ({ children }) => {
   // handle double click
   const [hintClickCounter, setHintClickCounter] = useState(0);
 
-  const [exerciseCounter, setExerciseCounter] = useState(0);
+  const [exerciseCounter, setExerciseCounter] = useState(null);
+
+  const [isScrambleExerciseStoreInit, setIsScrambleExerciseStoreInit] =
+    useState(false);
 
   useEffect(() => {
     if (appInitFlag) {
@@ -61,6 +64,7 @@ export const ScrambleProvider = ({ children }) => {
           "scrambleExerciseCounter"
         );
         setExerciseCounter(Number(scrambleExerciseCounter, 0) || 0);
+        setIsScrambleExerciseStoreInit(true);
       }
       init();
     }
@@ -314,7 +318,7 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
   // save exercise counter to storage
   useEffect(() => {
-    if (appInitFlag) {
+    if (isScrambleExerciseStoreInit) {
       storage.set("scrambleExerciseCounter", exerciseCounter);
     }
   }, [exerciseCounter]);
