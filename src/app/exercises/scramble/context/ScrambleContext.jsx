@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useEffect, useRef } from "react";
+import { createContext, useContext, useEffect, useRef } from "react";
 import { useAppContext } from "../../../context/AppContext";
 import { useSpeechSynthesis } from "../../../context/SpeechSynthesisContext";
 import {
@@ -7,6 +7,7 @@ import {
   splitToWords,
 } from "../../../helpers";
 import { storage } from "@/app/utils/storageUtils";
+import useScrambleStore from "../store/useScrambleStore";
 
 const ScrambleContext = createContext();
 
@@ -22,56 +23,41 @@ export const ScrambleProvider = ({ children }) => {
   const { readAloud_target, cancelSpeech, splitIntoSubSentences } =
     useSpeechSynthesis();
 
-  // words txt buffers original and scramble
-  const [wordsTxt, setWordsTxt] = useState([]);
-  const [scrambledWordsTxt, setScrambledWordsTxt] = useState([]);
+  // Zustand store hooks to access state
+  const {
+    wordsTxt,
+    setWordsTxt,
+    scrambledWordsTxt,
+    setScrambledWordsTxt,
+    showSuccessNotice,
+    setShowSuccessNotice,
+    showFailNotice,
+    setShowFailNotice,
+    isPlaying,
+    setIsPlaying,
+    isReading_playSentence,
+    setIsReading_playSentence,
+    isReading_wordClick,
+    setIsReading_wordClick,
+    isReading_partOfSentence,
+    setIsReading_partOfSentence,
+    setWordClickBufferRef,
+    userBufferArray,
+    setUserBufferArray,
+    userBufferArrayRef,
+    hintClickCounter,
+    setHintClickCounter,
+    exerciseCounter,
+    setExerciseCounter,
+    isScrambleExerciseStoreInit,
+    setIsScrambleExerciseStoreInit,
+  } = useScrambleStore();
 
-  // flags
-  const [showSuccessNotice, setShowSuccessNotice] = useState(false);
-  const [showFailNotice, setShowFailNotice] = useState(false);
-  // exercise play/pause
-  const [isPlaying, setIsPlaying] = useState(false);
-  // true if the current phrase is playing - use to show/hide words btns
-  const [isReading_playSentence, setIsReading_playSentence] = useState(false);
-
-  // isReading_wordClick and isReading_partOfSentence is used to synchronize reading words clicks
-  // if we are reading a word or part of a sentence, then we buffer the word clicks
-  const [isReading_wordClick, setIsReading_wordClick] = useState(false);
-  const [isReading_partOfSentence, setIsReading_partOfSentence] =
-    useState(false);
-  // buffer the words, useRef is needed in case a word was clicked while we were reading
-  // in such case we continue reading until the word buffer is empty (see readClickBuffer)
-  // const [wordClickBuffer, setWordClickBuffer] = useState([]);
+  // debugger;
   const wordClickBufferRef = useRef([]);
+  // setWordClickBufferRef(wordClickBufferRef);
 
-  const [userBufferArray, setUserBufferArray] = useState([]);
-  // after wordClickBuffer we check if the user buffer is complete,
-  // useRef is used to track changes to the user buffer while we are reading (see readClickBuffer)
-  const userBufferArrayRef = useRef(userBufferArray);
-
-  // handle double click
-  const [hintClickCounter, setHintClickCounter] = useState(0);
-
-  const [exerciseCounter, setExerciseCounter] = useState(null);
-
-  const [isScrambleExerciseStoreInit, setIsScrambleExerciseStoreInit] =
-    useState(false);
-
-  useEffect(() => {
-    if (appInitFlag) {
-      async function init() {
-        const scrambleExerciseCounter = await storage.get(
-          "scrambleExerciseCounter"
-        );
-        setExerciseCounter(Number(scrambleExerciseCounter, 0) || 0);
-        setIsScrambleExerciseStoreInit(true);
-      }
-      init();
-    }
-  }, [appInitFlag]);
-
-  ////////////////////////////////////////////////////////////////
-  // manage the exercise play/pause/skip functionality
+  // handle exercise play/pause/skip functionality
   const playPause = () => {
     setIsPlaying(!isPlaying);
   };
@@ -105,7 +91,6 @@ export const ScrambleProvider = ({ children }) => {
   }, [currentPhraseIndex]);
 
   ////////////////////////////////////////////////////////////////
-  ////////////////////////////////////////////////////////////////
   // word click related functions
   async function handleWordClickBtn({ word, newUserBufferArray }) {
     addToUserBuffer({ word, newUserBufferArray });
@@ -128,7 +113,6 @@ export const ScrambleProvider = ({ children }) => {
     userBufferArrayRef.current = userBufferArray;
   }, [userBufferArray]);
 
-  ////////////////////////////////////////////////////////////////
   const readClickBuffer = async (force = false) => {
     if (
       !force &&
@@ -141,7 +125,6 @@ export const ScrambleProvider = ({ children }) => {
     try {
       while (wordClickBufferRef.current.length > 0) {
         let buffer = getWordClickBuffer(wordClickBufferRef.current); // NOTE: useRef is essential here
-        // console.log("buffer", buffer);
         wordClickBufferRef.current = [];
         await readAloud_target(buffer, 1.25);
       }
@@ -155,13 +138,9 @@ export const ScrambleProvider = ({ children }) => {
     readClickBuffer();
   }, [wordClickBufferRef.current]);
 
-  ////////////////////////////////////////////////////////////////
-  ////////////////////////////////////////////////////////////////
-
   async function checkIfBufferIsComplete() {
     function checkIfBufferIsComplete_helper() {
       const wordsInBuffer = userBufferArrayRef.current;
-      // console.log(wordsInBuffer.length, words.length);
       if (wordsInBuffer.length !== wordsTxt.length) {
         return false;
       }
@@ -178,14 +157,13 @@ export const ScrambleProvider = ({ children }) => {
     const currentUserBuff = userBufferArrayRef.current;
     if (currentUserBuff.length === 0) return;
     if (currentUserBuff.length >= wordsTxt.length) {
-      // Check if user buffer matches the original sentence (excluding punctuation)
       if (checkIfBufferIsComplete_helper()) {
         setShowFailNotice(false);
         setShowSuccessNotice(true);
         setTimeout(() => {
           increasePhraseIndex();
           setShowSuccessNotice(false);
-        }, 1000); // show success notice for 1 second
+        }, 1000);
       } else {
         setShowFailNotice(true);
         await playSentence();
@@ -196,79 +174,36 @@ export const ScrambleProvider = ({ children }) => {
     }
   }
 
-  ////////////////////////////////////////////////////////////////
-  ////////////////////////////////////////////////////////////////
-  // manage user buffer
   const addToUserBuffer = ({ word, newUserBufferArray }) => {
     if (!newUserBufferArray) newUserBufferArray = userBufferArray;
     setUserBufferArray([...newUserBufferArray, word]);
   };
-
-  ////////////////////////////////////////////////////////////////
 
   const resetUserBuffer = () => {
     setUserBufferArray([]);
     wordClickBufferRef.current = [];
   };
 
-  ////////////////////////////////////////////////////////////////
-  function handleDeleteWordBtn() {
-    if (userBufferArray.length <= 0) return;
-    setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 1));
-  }
-
-  ////////////////////////////////////////////////////////////////
-
-  function getCurrentUserBufferArray() {
-    return userBufferArray;
-  }
-  function getCurrentUserBuffer() {
-    let buffer = "";
-    for (const { txt } of userBufferArray) {
-      buffer += " " + txt;
-    }
-    return buffer;
-  }
-
-  ////////////////////////////////////////////////////////////////
-  ////////////////////////////////////////////////////////////////
-  // scramble sentence
-
   const scrambleSentence = () => {
     if (!currentPhrase) return;
     setShowFailNotice(false);
-
-    // Get the current target sentence
-    const newWordsTxt = splitToWords(currentPhrase.target); // Split into words
+    const newWordsTxt = splitToWords(currentPhrase.target);
     setWordsTxt(newWordsTxt);
-
-    // Randomly scramble the words
     setScrambledWordsTxt(removeDuplicates(randomPermutation(newWordsTxt)));
-
-    // Clear user buffer and display area
     resetUserBuffer();
   };
 
-  ////////////////////////////////////////////////////////////////
-  // handle new phrase trigger
   useEffect(() => {
     scrambleSentence();
   }, [currentPhrase]);
 
-  ////////////////////////////////////////////////////////////////
-  ////////////////////////////////////////////////////////////////
-  // handle play/pause of part-of-sentence-btn
   async function handlePartOfSentenceBtn() {
-    ///////
-    // pause
     if (isReading_partOfSentence) {
       cancelSpeech();
       setIsReading_partOfSentence(false);
       return;
     }
 
-    ///////
-    // play
     setIsReading_partOfSentence(true);
     try {
       const text = currentPhrase.target.toLocaleLowerCase();
@@ -289,6 +224,18 @@ export const ScrambleProvider = ({ children }) => {
   }
 
   ////////////////////////////////////////////////////////////////
+
+  function getCurrentUserBufferArray() {
+    return userBufferArray;
+  }
+  function getCurrentUserBuffer() {
+    let buffer = "";
+    for (const { txt } of userBufferArray) {
+      buffer += " " + txt;
+    }
+    return buffer;
+  }
+
   function handleGiveHintBtn() {
     if (hintClickCounter == 0) {
       setHintClickCounter(1);
@@ -315,13 +262,30 @@ export const ScrambleProvider = ({ children }) => {
     }
   }
 
-  ////////////////////////////////////////////////////////////////
-  // save exercise counter to storage
+  useEffect(() => {
+    if (appInitFlag) {
+      async function init() {
+        const scrambleExerciseCounter = await storage.get(
+          "scrambleExerciseCounter"
+        );
+        setExerciseCounter(Number(scrambleExerciseCounter, 0) || 0);
+        setIsScrambleExerciseStoreInit(true);
+      }
+      init();
+    }
+  }, [appInitFlag]);
+
   useEffect(() => {
     if (isScrambleExerciseStoreInit) {
       storage.set("scrambleExerciseCounter", exerciseCounter);
     }
   }, [exerciseCounter]);
+
+  ////////////////////////////////////////////////////////////////
+  function handleDeleteWordBtn() {
+    if (userBufferArray.length <= 0) return;
+    setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 1));
+  }
 
   return (
     <ScrambleContext.Provider
