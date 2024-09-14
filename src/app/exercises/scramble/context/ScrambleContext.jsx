@@ -68,25 +68,10 @@ export const ScrambleProvider = ({ children }) => {
       setIsReading_playSentence(false);
     }
   };
-
-  useEffect(() => {
-    if (!currentPhrase || !isPlaying) {
-      cancelSpeech();
-      return;
-    }
-    playSentence();
-  }, [isPlaying, currentPhraseIndex]);
-
   const skip = () => {
     cancelSpeech();
     increasePhraseIndex();
   };
-
-  useEffect(() => {
-    if (appInitFlag) {
-      setExerciseCounter(exerciseCounter + 1);
-    }
-  }, [currentPhraseIndex]);
 
   ////////////////////////////////////////////////////////////////
   // word click related functions
@@ -106,10 +91,6 @@ export const ScrambleProvider = ({ children }) => {
   const addToWordClickBuffer = (word) => {
     wordClickBufferRef.current = [...wordClickBufferRef.current, word];
   };
-
-  useEffect(() => {
-    userBufferArrayRef.current = userBufferArray;
-  }, [userBufferArray]);
 
   const readClickBuffer = async (force = false) => {
     if (
@@ -131,10 +112,6 @@ export const ScrambleProvider = ({ children }) => {
     }
     checkIfBufferIsComplete();
   };
-
-  useEffect(() => {
-    readClickBuffer();
-  }, [wordClickBufferRef.current]);
 
   async function checkIfBufferIsComplete() {
     function checkIfBufferIsComplete_helper() {
@@ -190,10 +167,6 @@ export const ScrambleProvider = ({ children }) => {
     setScrambledWordsTxt(removeDuplicates(randomPermutation(newWordsTxt)));
     resetUserBuffer();
   };
-
-  useEffect(() => {
-    scrambleSentence();
-  }, [currentPhrase]);
 
   async function handlePartOfSentenceBtn() {
     if (isReading_partOfSentence) {
@@ -260,6 +233,38 @@ export const ScrambleProvider = ({ children }) => {
     }
   }
 
+  ////////////////////////////////////////////////////////////////
+  function handleDeleteWordBtn() {
+    if (userBufferArray.length <= 0) return;
+    setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 1));
+  }
+
+  useEffect(() => {
+    scrambleSentence();
+  }, [currentPhrase]);
+
+  useEffect(() => {
+    if (!currentPhrase || !isPlaying) {
+      cancelSpeech();
+      return;
+    }
+    playSentence();
+  }, [isPlaying, currentPhraseIndex]);
+
+  useEffect(() => {
+    if (appInitFlag) {
+      setExerciseCounter(exerciseCounter + 1);
+    }
+  }, [currentPhraseIndex]);
+
+  useEffect(() => {
+    userBufferArrayRef.current = userBufferArray;
+  }, [userBufferArray]);
+
+  useEffect(() => {
+    readClickBuffer();
+  }, [wordClickBufferRef.current]);
+
   useEffect(() => {
     if (appInitFlag) {
       async function init() {
@@ -278,12 +283,6 @@ export const ScrambleProvider = ({ children }) => {
       storage.set("scrambleExerciseCounter", exerciseCounter);
     }
   }, [exerciseCounter]);
-
-  ////////////////////////////////////////////////////////////////
-  function handleDeleteWordBtn() {
-    if (userBufferArray.length <= 0) return;
-    setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 1));
-  }
 
   return (
     <ScrambleContext.Provider
