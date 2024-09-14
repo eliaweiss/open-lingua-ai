@@ -80,7 +80,6 @@
     "future": "Futuro",
     "past_perfect": "Passado Perfeito",
     "past_subjunctive": "Subjuntivo Passado",
-
     "future_subjunctive": "Subjuntivo Futuro",
     "present_subjunctive": "Subjuntivo Presente",
     "gerund": "Gerúndio",
@@ -90,5 +89,6 @@
     "fix_exercise_msg": "Corrigir exercício (use se o exercício não está correto)",
     "give_hint_msg": "Dar dica (dobro clique)",
     "click_again_to_confirm": "Clique novamente para confirmar",
-    "click_again": "Clique novamente (dobro clique)"
+    "click_again": "Clique novamente (dobro clique)",
+    "click_to_show_translation": "Clique para mostrar a tradução"
 }

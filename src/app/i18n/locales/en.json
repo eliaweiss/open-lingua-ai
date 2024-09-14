@@ -89,5 +89,6 @@
   "fix_exercise_msg": "Fix exercise (use it if the exercise is not correct)",
   "give_hint_msg": "Give hint (double click)",
   "click_again_to_confirm": "Click again to confirm",
-  "click_again": "Click again (double click)"
+  "click_again": "Click again (double click)",
+  "click_to_show_translation": "Click to show translation"
 }

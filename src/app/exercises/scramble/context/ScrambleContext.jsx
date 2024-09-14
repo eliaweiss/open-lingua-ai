@@ -55,6 +55,7 @@ export const ScrambleProvider = ({ children }) => {
     setIsScrambleExerciseStoreInit,
     showTranslationSettings,
     setShowTranslationSettings,
+    setShowTranslation,
   } = useScrambleStore();
 
   const wordClickBufferRef = useRef([]);
@@ -166,6 +167,7 @@ export const ScrambleProvider = ({ children }) => {
     setWordsTxt(newWordsTxt);
     setScrambledWordsTxt(removeDuplicates(randomPermutation(newWordsTxt)));
     resetUserBuffer();
+    setShowTranslation(false);
   };
 
   async function playPartOfSentenceBtn() {

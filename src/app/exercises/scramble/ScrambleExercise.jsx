@@ -22,10 +22,25 @@ export const ScrambleExercise = () => {
     useAppContext();
 
   const { playPause, skip } = useScrambleFunctions();
-  const { isPlaying, exerciseCounter } = useScrambleStore();
+  const {
+    isPlaying,
+    exerciseCounter,
+    showTranslationSettings,
+    showTranslation,
+    setShowTranslation,
+  } = useScrambleStore();
 
   const [showSettings, setShowSettings] = useState(false); // Add this state
 
+  function ifShowTranslation() {
+    if (showTranslation) {
+      return true;
+    }
+    if (showTranslationSettings) {
+      return true;
+    }
+    return false;
+  }
   return (
     <div>
       <div className="flex flex-col justify-center items-center text-center w-full">
@@ -39,13 +54,25 @@ export const ScrambleExercise = () => {
 
         {/* Exercise Panel */}
         <div className="flex flex-col space-y-4 mt-4 text-3xl">
-          <div
-            className={`text-sText ${
-              isSrcRtl ? "text-right text-rtl" : "text-left"
-            }`}
-          >
-            {currentPhrase?.src}
-          </div>
+          {ifShowTranslation() ? (
+            <div
+              className={`text-sText ${
+                isSrcRtl ? "text-right text-rtl" : "text-left"
+              }`}
+            >
+              {currentPhrase?.src}
+            </div>
+          ) : (
+            <div>
+              <ControlButton
+                className="bg-sBg text-bText"
+                toolTip={t("click_to_show_translation")}
+                onClick={() => setShowTranslation(true)}
+              >
+                {t("click_to_show_translation")}
+              </ControlButton>
+            </div>
+          )}
           <ScramblePhrase />
         </div>
         <HorizontalRule />
