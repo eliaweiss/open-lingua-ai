@@ -8,6 +8,7 @@ import {
 } from "../../../helpers";
 import { storage } from "@/app/utils/storageUtils";
 import useScrambleStore from "../store/useScrambleStore";
+import { useScrambleFunctions } from "./scrambleFunctions";
 
 const ScrambleContext = createContext();
 
@@ -20,8 +21,20 @@ export const ScrambleProvider = ({ children }) => {
     currentPhrase,
     appInitFlag,
   } = useAppContext();
+
   const { readAloud_target, cancelSpeech, splitIntoSubSentences } =
     useSpeechSynthesis();
+
+  const {
+    playPause,
+    playSentence,
+    skip,
+    addToUserBuffer,
+    getCurrentUserBufferArray,
+    getCurrentUserBuffer,
+    handleDeleteWordBtn,
+    getWordClickBuffer,
+  } = useScrambleFunctions();
 
   // Zustand store hooks to access state
   const {
@@ -55,37 +68,39 @@ export const ScrambleProvider = ({ children }) => {
   const wordClickBufferRef = useRef([]);
   const userBufferArrayRef = useRef([]);
 
-  // handle exercise play/pause/skip functionality
-  const playPause = () => {
-    setIsPlaying(!isPlaying);
-  };
 
-  const playSentence = async () => {
-    setIsReading_playSentence(true);
-    try {
-      await readAloud_target(currentPhrase.target);
-    } finally {
-      setIsReading_playSentence(false);
+  function handleGiveHintBtn() {
+    if (hintClickCounter == 0) {
+      setHintClickCounter(1);
+      setTimeout(() => {
+        setHintClickCounter(0);
+      }, 1000);
+    } else {
+      const wordInBuffer = getCurrentUserBufferArray();
+      let newUserBufferArray = [];
+      let i = 0;
+      for (; i < wordInBuffer.length; i++) {
+        if (wordInBuffer[i].txt != wordsTxt[i]) {
+          break;
+        }
+        newUserBufferArray.push(wordInBuffer[i]);
+      }
+      if (i >= wordsTxt.length) {
+        return;
+      }
+      handleWordClickBtn({
+        word: { txt: wordsTxt[i], isHint: true },
+        newUserBufferArray,
+      });
     }
-  };
-  const skip = () => {
-    cancelSpeech();
-    increasePhraseIndex();
-  };
+  }
+
 
   ////////////////////////////////////////////////////////////////
   // word click related functions
   async function handleWordClickBtn({ word, newUserBufferArray }) {
     addToUserBuffer({ word, newUserBufferArray });
     addToWordClickBuffer(word.txt);
-  }
-
-  function getWordClickBuffer(wordClickBuffer) {
-    let buffer = "";
-    for (const word of wordClickBuffer) {
-      buffer += " " + word;
-    }
-    return buffer;
   }
 
   const addToWordClickBuffer = (word) => {
@@ -149,11 +164,6 @@ export const ScrambleProvider = ({ children }) => {
     }
   }
 
-  const addToUserBuffer = ({ word, newUserBufferArray }) => {
-    if (!newUserBufferArray) newUserBufferArray = userBufferArray;
-    setUserBufferArray([...newUserBufferArray, word]);
-  };
-
   const resetUserBuffer = () => {
     setUserBufferArray([]);
     wordClickBufferRef.current = [];
@@ -196,48 +206,8 @@ export const ScrambleProvider = ({ children }) => {
 
   ////////////////////////////////////////////////////////////////
 
-  function getCurrentUserBufferArray() {
-    return userBufferArray;
-  }
-  function getCurrentUserBuffer() {
-    let buffer = "";
-    for (const { txt } of userBufferArray) {
-      buffer += " " + txt;
-    }
-    return buffer;
-  }
 
-  function handleGiveHintBtn() {
-    if (hintClickCounter == 0) {
-      setHintClickCounter(1);
-      setTimeout(() => {
-        setHintClickCounter(0);
-      }, 1000);
-    } else {
-      const wordInBuffer = getCurrentUserBufferArray();
-      let newUserBufferArray = [];
-      let i = 0;
-      for (; i < wordInBuffer.length; i++) {
-        if (wordInBuffer[i].txt != wordsTxt[i]) {
-          break;
-        }
-        newUserBufferArray.push(wordInBuffer[i]);
-      }
-      if (i >= wordsTxt.length) {
-        return;
-      }
-      handleWordClickBtn({
-        word: { txt: wordsTxt[i], isHint: true },
-        newUserBufferArray,
-      });
-    }
-  }
 
-  ////////////////////////////////////////////////////////////////
-  function handleDeleteWordBtn() {
-    if (userBufferArray.length <= 0) return;
-    setUserBufferArray(userBufferArray.slice(0, userBufferArray.length - 1));
-  }
 
   useEffect(() => {
     scrambleSentence();
