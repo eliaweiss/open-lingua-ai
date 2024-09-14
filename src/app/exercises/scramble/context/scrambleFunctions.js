@@ -1,50 +1,18 @@
-import { useRef } from "react";
 import { useAppContext } from "../../../context/AppContext";
 import { useSpeechSynthesis } from "../../../context/SpeechSynthesisContext";
-import {
-  randomPermutation,
-  removeDuplicates,
-  splitToWords,
-} from "../../../helpers";
-import { storage } from "@/app/utils/storageUtils";
+
 import useScrambleStore from "../store/useScrambleStore";
 
 export function useScrambleFunctions() {
-  const {
-    increasePhraseIndex,
-    currentPhraseIndex,
-    currentPhrase,
-    appInitFlag,
-  } = useAppContext();
-  const { readAloud_target, cancelSpeech, splitIntoSubSentences } =
-    useSpeechSynthesis();
+  const { increasePhraseIndex, currentPhrase } = useAppContext();
+  const { readAloud_target, cancelSpeech } = useSpeechSynthesis();
 
   const {
-    wordsTxt,
-    setWordsTxt,
-    scrambledWordsTxt,
-    setScrambledWordsTxt,
-    showSuccessNotice,
-    setShowSuccessNotice,
-    showFailNotice,
-    setShowFailNotice,
     isPlaying,
     setIsPlaying,
-    isReading_playSentence,
     setIsReading_playSentence,
-    isReading_wordClick,
-    setIsReading_wordClick,
-    isReading_partOfSentence,
-    setIsReading_partOfSentence,
     userBufferArray,
     setUserBufferArray,
-
-    hintClickCounter,
-    setHintClickCounter,
-    exerciseCounter,
-    setExerciseCounter,
-    isScrambleExerciseStoreInit,
-    setIsScrambleExerciseStoreInit,
   } = useScrambleStore();
 
   const playPause = () => {

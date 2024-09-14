@@ -47,16 +47,13 @@ export const ScrambleProvider = ({ children }) => {
     showFailNotice,
     setShowFailNotice,
     isPlaying,
-    setIsPlaying,
     isReading_playSentence,
-    setIsReading_playSentence,
     isReading_wordClick,
     setIsReading_wordClick,
     isReading_partOfSentence,
     setIsReading_partOfSentence,
     userBufferArray,
     setUserBufferArray,
-
     hintClickCounter,
     setHintClickCounter,
     exerciseCounter,
@@ -67,7 +64,6 @@ export const ScrambleProvider = ({ children }) => {
 
   const wordClickBufferRef = useRef([]);
   const userBufferArrayRef = useRef([]);
-
 
   function handleGiveHintBtn() {
     if (hintClickCounter == 0) {
@@ -94,7 +90,6 @@ export const ScrambleProvider = ({ children }) => {
       });
     }
   }
-
 
   ////////////////////////////////////////////////////////////////
   // word click related functions
@@ -205,9 +200,6 @@ export const ScrambleProvider = ({ children }) => {
   }
 
   ////////////////////////////////////////////////////////////////
-
-
-
 
   useEffect(() => {
     scrambleSentence();
