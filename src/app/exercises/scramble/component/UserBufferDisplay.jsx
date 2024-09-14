@@ -1,11 +1,15 @@
 import { useAppContext } from "@/app/context/AppContext";
-import { useScrambleContext } from "../context/ScrambleContext";
+import { useScrambleFunctions } from "../context/scrambleFunctions";
 
 export function UserBufferDisplay() {
-  const { getCurrentUserBufferArray } = useScrambleContext();
+  const { getCurrentUserBufferArray } = useScrambleFunctions();
   const { isTargetRtl } = useAppContext();
   return (
-    <div className={`flex flex-wrap ${isTargetRtl ? "text-right text-rtl" : "text-left"}`}>
+    <div
+      className={`flex flex-wrap ${
+        isTargetRtl ? "text-right text-rtl" : "text-left"
+      }`}
+    >
       {getCurrentUserBufferArray().map((word, key) => (
         <span
           key={key}

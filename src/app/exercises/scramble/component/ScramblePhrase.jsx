@@ -10,6 +10,7 @@ import {
 } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { useTranslation } from "@/app/i18n/useTranslation";
+import { useScrambleFunctions } from "../context/scrambleFunctions";
 
 export const ScramblePhrase = () => {
   const t = useTranslation();
@@ -17,7 +18,6 @@ export const ScramblePhrase = () => {
 
   const {
     // handle btns
-    handleDeleteWordBtn,
     handleWordClickBtn,
     handleGiveHintBtn,
     handlePartOfSentenceBtn,
@@ -34,6 +34,8 @@ export const ScramblePhrase = () => {
     wordsTxt,
     hintClickCounter,
   } = useScrambleContext();
+  
+  const { handleDeleteWordBtn } = useScrambleFunctions();
 
   return (
     <div>

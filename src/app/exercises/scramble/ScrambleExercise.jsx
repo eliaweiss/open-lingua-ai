@@ -13,19 +13,16 @@ import {
 import { ScramblePhrase } from "./component/ScramblePhrase";
 import { useTranslation } from "../../i18n/useTranslation";
 import ScrambleExerciseSettings from "./ScrambleExerciseSettings"; // Add this import
+import { useScrambleFunctions } from "./context/scrambleFunctions";
 
 export const ScrambleExercise = () => {
   const t = useTranslation(); // Use the translation hook
 
   const { isSrcRtl, phrases } = useAppContext();
-  const {
-    currentPhraseIndex,
-    playPause,
-    skip,
-    currentPhrase,
-    isPlaying,
-    exerciseCounter,
-  } = useScrambleContext();
+  const { currentPhraseIndex, currentPhrase, isPlaying, exerciseCounter } =
+    useScrambleContext();
+
+  const { playPause, skip } = useScrambleFunctions();
 
   const [showSettings, setShowSettings] = useState(false); // Add this state
 

@@ -26,9 +26,7 @@ export const ScrambleProvider = ({ children }) => {
     useSpeechSynthesis();
 
   const {
-    playPause,
     playSentence,
-    skip,
     addToUserBuffer,
     getCurrentUserBufferArray,
     getCurrentUserBuffer,
@@ -249,27 +247,17 @@ export const ScrambleProvider = ({ children }) => {
   return (
     <ScrambleContext.Provider
       value={{
-        playPause,
-        skip,
         currentPhrase,
         currentPhraseIndex,
         isPlaying,
-        addToUserBuffer,
-        resetUserBuffer,
-        handleDeleteWordBtn,
         isReading_playSentence,
         increasePhraseIndex,
-        playSentence,
-        handleDeleteWordBtn,
-        getCurrentUserBuffer,
-        getCurrentUserBufferArray,
         userBufferArray,
         handleWordClickBtn,
         showFailNotice,
         showSuccessNotice,
         scrambledWordsTxt,
         wordsTxt,
-        scrambleSentence,
         handlePartOfSentenceBtn,
         isReading_partOfSentence,
         handleGiveHintBtn,
