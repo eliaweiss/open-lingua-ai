@@ -28,11 +28,15 @@ export const ScrambleExercise = () => {
     showTranslationSettings,
     showTranslation,
     setShowTranslation,
+    showSuccessNotice,
   } = useScrambleStore();
 
   const [showSettings, setShowSettings] = useState(false); // Add this state
 
   function ifShowTranslation() {
+    if (showSuccessNotice) {
+      return true;
+    }
     if (showTranslation) {
       return true;
     }

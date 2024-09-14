@@ -37,12 +37,6 @@ export const ScramblePhrase = () => {
     <div>
       {isPlaying && (
         <div className="flex flex-col">
-          {showSuccessNotice && (
-            <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white text-3xl text-[#1994ff] font-bold border-2 border-[#035797] px-2 py-5 rounded-lg">
-              Correct! <br /> Move to next sentence
-            </div>
-          )}
-
           <div className="flex flex-wrap ">
             {!isReading_playSentence &&
               scrambledWordsTxt.map((txt, index) => (
@@ -56,8 +50,13 @@ export const ScramblePhrase = () => {
               ))}
           </div>
           {showFailNotice && (
-            <div className=" text-[#ff5a19]  rounded-lg">
+            <div className=" text-[#ff5a19] ">
               {`Almost, Let's try again...`}
+            </div>
+          )}
+          {showSuccessNotice && (
+            <div className=" text-[#1994ff]">
+              Correct! <br /> Move to next sentence
             </div>
           )}
           <div className={`${isTargetRtl ? "text-right" : "text-left"}`}>
