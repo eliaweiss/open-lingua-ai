@@ -35,7 +35,6 @@ const useScrambleStore = create((set) => ({
   userBufferArray: [],
   setUserBufferArray: (userBufferArray) => set({ userBufferArray }),
 
-
   // handle double click
   hintClickCounter: 0,
   setHintClickCounter: (hintClickCounter) => set({ hintClickCounter }),
@@ -48,6 +47,13 @@ const useScrambleStore = create((set) => ({
   isScrambleExerciseStoreInit: false,
   setIsScrambleExerciseStoreInit: (isScrambleExerciseStoreInit) =>
     set({ isScrambleExerciseStoreInit }),
+
+  showTranslation: false,
+  setShowTranslation: (showTranslation) => set({ showTranslation }),
+
+  showTranslationSettings: false,
+  setShowTranslationSettings: (showTranslationSettings) =>
+    set({ showTranslationSettings }),
 }));
 
 export default useScrambleStore;
