@@ -7301,4 +7301,8 @@ export const phrases = [
     "en-US": "Still, I think it’ll be good.",
     "pt-BR": "Mas mesmo assim, acho que vai ser bom.",
   },
+  {
+    "en-US": "The message has been delivered",
+    "pt-BR": "Tá dado o recado",
+  },
 ];
