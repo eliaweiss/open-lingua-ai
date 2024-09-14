@@ -7305,4 +7305,44 @@ export const phrases = [
     "en-US": "The message has been delivered",
     "pt-BR": "Tá dado o recado",
   },
+  {
+    "en-US": "I will turn left at the next corner.",
+    "pt-BR": "Eu vou virar à esquerda na próxima esquina.",
+  },
+  {
+    "en-US": "She always turns the page too quickly.",
+    "pt-BR": "Ela sempre vira a página rápido demais.",
+  },
+  {
+    "en-US": "We turned right after the traffic light.",
+    "pt-BR": "Nós viramos à direita depois do semáforo.",
+  },
+  {
+    "en-US": "They were turning the tables when the phone rang.",
+    "pt-BR": "Eles estavam virando as mesas quando o telefone tocou.",
+  },
+  {
+    "en-US": "He will turn the chair around for you.",
+    "pt-BR": "Ele vai virar a cadeira para você.",
+  },
+  {
+    "en-US": "If you had turned sooner, you would have seen it.",
+    "pt-BR": "Se você tivesse virado mais cedo, teria visto.",
+  },
+  {
+    "en-US": "You turned too fast, and now you're lost.",
+    "pt-BR": "Você virou rápido demais, e agora está perdido.",
+  },
+  {
+    "en-US": "They would turn the wheel if it wasn't broken.",
+    "pt-BR": "Eles virariam a roda se ela não estivesse quebrada.",
+  },
+  {
+    "en-US": "We used to turn the key to lock the door.",
+    "pt-BR": "Nós costumávamos virar a chave para trancar a porta.",
+  },
+  {
+    "en-US": "Tomorrow, I will turn the page of this chapter in my life.",
+    "pt-BR": "Amanhã, eu virarei a página deste capítulo da minha vida.",
+  },
 ];
