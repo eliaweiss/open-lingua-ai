@@ -53,6 +53,8 @@ export const ScrambleProvider = ({ children }) => {
     setExerciseCounter,
     isScrambleExerciseStoreInit,
     setIsScrambleExerciseStoreInit,
+    showTranslationSettings,
+    setShowTranslationSettings,
   } = useScrambleStore();
 
   const wordClickBufferRef = useRef([]);
@@ -228,6 +230,12 @@ export const ScrambleProvider = ({ children }) => {
         );
         setExerciseCounter(Number(scrambleExerciseCounter, 0) || 0);
         setIsScrambleExerciseStoreInit(true);
+
+        const showTranslationSettings = await storage.get(
+          "showTranslationSettings_scramble",
+          true
+        );
+        setShowTranslationSettings(showTranslationSettings);
       }
       init();
     }
@@ -238,6 +246,12 @@ export const ScrambleProvider = ({ children }) => {
       storage.set("scrambleExerciseCounter", exerciseCounter);
     }
   }, [exerciseCounter]);
+
+  useEffect(() => {
+    if (isScrambleExerciseStoreInit) {
+      storage.set("showTranslationSettings_scramble", showTranslationSettings);
+    }
+  }, [showTranslationSettings]);
 
   return (
     <ScrambleContext.Provider
