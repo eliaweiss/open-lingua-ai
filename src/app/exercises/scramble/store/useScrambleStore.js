@@ -31,9 +31,6 @@ const useScrambleStore = create((set) => ({
   setIsReading_partOfSentence: (isReading_partOfSentence) =>
     set({ isReading_partOfSentence }),
 
-  // buffer the words
-  wordClickBufferRef: null,
-  setWordClickBufferRef: (wordClickBufferRef) => set({ wordClickBufferRef }),
 
   // user buffer
   userBufferArray: [],

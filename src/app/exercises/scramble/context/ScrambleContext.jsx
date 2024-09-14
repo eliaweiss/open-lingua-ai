@@ -41,7 +41,6 @@ export const ScrambleProvider = ({ children }) => {
     setIsReading_wordClick,
     isReading_partOfSentence,
     setIsReading_partOfSentence,
-    setWordClickBufferRef,
     userBufferArray,
     setUserBufferArray,
     userBufferArrayRef,
@@ -55,7 +54,6 @@ export const ScrambleProvider = ({ children }) => {
 
   // debugger;
   const wordClickBufferRef = useRef([]);
-  // setWordClickBufferRef(wordClickBufferRef);
 
   // handle exercise play/pause/skip functionality
   const playPause = () => {
