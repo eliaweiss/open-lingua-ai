@@ -31,11 +31,10 @@ const useScrambleStore = create((set) => ({
   setIsReading_partOfSentence: (isReading_partOfSentence) =>
     set({ isReading_partOfSentence }),
 
-
   // user buffer
   userBufferArray: [],
   setUserBufferArray: (userBufferArray) => set({ userBufferArray }),
-  userBufferArrayRef: [],
+
 
   // handle double click
   hintClickCounter: 0,

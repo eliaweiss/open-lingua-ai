@@ -43,7 +43,7 @@ export const ScrambleProvider = ({ children }) => {
     setIsReading_partOfSentence,
     userBufferArray,
     setUserBufferArray,
-    userBufferArrayRef,
+
     hintClickCounter,
     setHintClickCounter,
     exerciseCounter,
@@ -52,8 +52,8 @@ export const ScrambleProvider = ({ children }) => {
     setIsScrambleExerciseStoreInit,
   } = useScrambleStore();
 
-  // debugger;
   const wordClickBufferRef = useRef([]);
+  const userBufferArrayRef = useRef([]);
 
   // handle exercise play/pause/skip functionality
   const playPause = () => {
