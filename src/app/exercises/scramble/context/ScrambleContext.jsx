@@ -37,7 +37,6 @@ export const ScrambleProvider = ({ children }) => {
   const {
     wordsTxt,
     setWordsTxt,
-    scrambledWordsTxt,
     setScrambledWordsTxt,
     setShowSuccessNotice,
     setShowFailNotice,
@@ -243,10 +242,6 @@ export const ScrambleProvider = ({ children }) => {
   return (
     <ScrambleContext.Provider
       value={{
-        currentPhrase,
-        currentPhraseIndex,
-        increasePhraseIndex,
-
         handleWordClickBtn,
         playPartOfSentenceBtn,
         handleGiveHintBtn,
