@@ -1,6 +1,6 @@
 "use client";
 
-import MenuItem from "./components/MenuItem";
+import { ExerciseMenuItems } from "./components/ExerciseMenuItems";
 import { useTranslation } from "./i18n/useTranslation";
 
 export default function Home() {
@@ -9,13 +9,8 @@ export default function Home() {
     <div>
       <div className="flex flex-col justify-center lg:w-[60%] mx-auto">
         <div className="text-lg font-bold">{t("exercise_title")}:</div>
-        <MenuItem href="/exercises/playSentences">
-          {t("play_sentence_exercise")}
-        </MenuItem>
-        <MenuItem href="/exercises/scramble">{t("scramble_exercise")}</MenuItem>
-        <MenuItem href="/exercises/translate">
-          {t("translate_exercise")}
-        </MenuItem>
+        <ExerciseMenuItems />
+
         <div className="mt-10 font-semibold">
           {t("welcome_to")}{" "}
           <span className="font-bold text-lg">Open-Lingua-AI.org</span>
