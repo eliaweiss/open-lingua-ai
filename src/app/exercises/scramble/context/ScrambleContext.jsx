@@ -160,7 +160,7 @@ export const ScrambleProvider = ({ children }) => {
     wordClickBufferRef.current = [];
   };
 
-  const scrambleSentence = () => {
+  const doScrambleSentence = () => {
     if (!currentPhrase) return;
     setShowFailNotice(false);
     const newWordsTxt = splitToWords(currentPhrase.target);
@@ -199,7 +199,7 @@ export const ScrambleProvider = ({ children }) => {
   ////////////////////////////////////////////////////////////////
 
   useEffect(() => {
-    scrambleSentence();
+    doScrambleSentence();
   }, [currentPhrase]);
 
   useEffect(() => {
