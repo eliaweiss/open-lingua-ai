@@ -3,7 +3,6 @@ import HorizontalRule from "../../components/HorizontalRule";
 import TooltipWrapper from "../../components/TooltipWrapper";
 import ControlButton from "../../components/ControlButton";
 import { useAppContext } from "../../context/AppContext";
-import { useScrambleContext } from "./context/ScrambleContext";
 import {
   PlayIcon,
   PauseIcon,
@@ -19,8 +18,8 @@ import useScrambleStore from "./store/useScrambleStore";
 export const ScrambleExercise = () => {
   const t = useTranslation(); // Use the translation hook
 
-  const { isSrcRtl, phrases } = useAppContext();
-  const { currentPhraseIndex, currentPhrase } = useScrambleContext();
+  const { isSrcRtl, phrases, currentPhraseIndex, currentPhrase } =
+    useAppContext();
 
   const { playPause, skip } = useScrambleFunctions();
   const { isPlaying, exerciseCounter } = useScrambleStore();

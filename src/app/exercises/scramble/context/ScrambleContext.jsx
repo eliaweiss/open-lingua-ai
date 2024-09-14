@@ -167,7 +167,7 @@ export const ScrambleProvider = ({ children }) => {
     resetUserBuffer();
   };
 
-  async function handlePartOfSentenceBtn() {
+  async function playPartOfSentenceBtn() {
     if (isReading_partOfSentence) {
       cancelSpeech();
       setIsReading_partOfSentence(false);
@@ -248,7 +248,7 @@ export const ScrambleProvider = ({ children }) => {
         increasePhraseIndex,
 
         handleWordClickBtn,
-        handlePartOfSentenceBtn,
+        playPartOfSentenceBtn,
         handleGiveHintBtn,
       }}
     >

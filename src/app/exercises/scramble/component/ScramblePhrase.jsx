@@ -17,7 +17,7 @@ export const ScramblePhrase = () => {
   const t = useTranslation();
   const { isTargetRtl } = useAppContext();
 
-  const { handleWordClickBtn, handleGiveHintBtn, handlePartOfSentenceBtn } =
+  const { handleWordClickBtn, handleGiveHintBtn, playPartOfSentenceBtn } =
     useScrambleContext();
 
   const { handleDeleteWordBtn } = useScrambleFunctions();
@@ -67,7 +67,7 @@ export const ScramblePhrase = () => {
             <ControlButton
               id="part-of-sentence-btn"
               toolTip="Play Part of sentence"
-              onClick={handlePartOfSentenceBtn}
+              onClick={playPartOfSentenceBtn}
               className="p-4 rounded-lg border border-pBorder"
             >
               {!isReading_partOfSentence && (
