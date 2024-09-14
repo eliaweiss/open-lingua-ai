@@ -30,7 +30,6 @@ export const ScrambleProvider = ({ children }) => {
     addToUserBuffer,
     getCurrentUserBufferArray,
     getCurrentUserBuffer,
-    handleDeleteWordBtn,
     getWordClickBuffer,
   } = useScrambleFunctions();
 
