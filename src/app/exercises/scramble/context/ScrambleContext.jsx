@@ -39,12 +39,9 @@ export const ScrambleProvider = ({ children }) => {
     setWordsTxt,
     scrambledWordsTxt,
     setScrambledWordsTxt,
-    showSuccessNotice,
     setShowSuccessNotice,
-    showFailNotice,
     setShowFailNotice,
     isPlaying,
-    isReading_playSentence,
     isReading_wordClick,
     setIsReading_wordClick,
     isReading_partOfSentence,
@@ -248,21 +245,11 @@ export const ScrambleProvider = ({ children }) => {
       value={{
         currentPhrase,
         currentPhraseIndex,
-        isPlaying,
-        isReading_playSentence,
         increasePhraseIndex,
-        userBufferArray,
+
         handleWordClickBtn,
-        showFailNotice,
-        showSuccessNotice,
-        scrambledWordsTxt,
-        wordsTxt,
         handlePartOfSentenceBtn,
-        isReading_partOfSentence,
         handleGiveHintBtn,
-        hintClickCounter,
-        exerciseCounter,
-        setExerciseCounter,
       }}
     >
       {children}

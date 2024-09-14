@@ -1,11 +1,11 @@
 import React from "react";
-import { useScrambleContext } from "./context/ScrambleContext";
 import ControlButton from "../../components/ControlButton";
 import { useTranslation } from "../../i18n/useTranslation";
+import useScrambleStore from "./store/useScrambleStore";
 
 const ScrambleExerciseSettings = () => {
   const t = useTranslation();
-  const { setExerciseCounter } = useScrambleContext();
+  const { setExerciseCounter } = useScrambleStore();
 
   return (
     <div className="p-4 border rounded">

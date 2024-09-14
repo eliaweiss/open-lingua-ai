@@ -11,31 +11,27 @@ import {
 import classNames from "classnames";
 import { useTranslation } from "@/app/i18n/useTranslation";
 import { useScrambleFunctions } from "../context/scrambleFunctions";
+import useScrambleStore from "../store/useScrambleStore";
 
 export const ScramblePhrase = () => {
   const t = useTranslation();
   const { isTargetRtl } = useAppContext();
 
+  const { handleWordClickBtn, handleGiveHintBtn, handlePartOfSentenceBtn } =
+    useScrambleContext();
+
+  const { handleDeleteWordBtn } = useScrambleFunctions();
   const {
-    // handle btns
-    handleWordClickBtn,
-    handleGiveHintBtn,
-    handlePartOfSentenceBtn,
-    //
-    userBufferArray,
-    // flags
     showFailNotice,
     showSuccessNotice,
     isReading_partOfSentence,
-    isPlaying,
-    isReading_playSentence,
-    //
+    hintClickCounter,
     scrambledWordsTxt,
     wordsTxt,
-    hintClickCounter,
-  } = useScrambleContext();
-  
-  const { handleDeleteWordBtn } = useScrambleFunctions();
+    userBufferArray,
+    isReading_playSentence,
+    isPlaying,
+  } = useScrambleStore();
 
   return (
     <div>
