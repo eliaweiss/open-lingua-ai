@@ -8,6 +8,7 @@ const TENSES = [
   "past_imperfect",
   "present",
   "future",
+  "periphrastic_future",
   "past_perfect",
   "past_subjunctive",
   "present_subjunctive",

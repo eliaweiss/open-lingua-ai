@@ -30,6 +30,9 @@ Exercise: ${currentExercise.exercise}
 My answer: ${answer}
 Correct answer: ${currentExercise.solution}
 ${currentExercise.completeSentence}   
+
+NOTE: if both simple future and periphrastic future are correct, 
+and the my answer is either one of them, accept the answer as correct.
   `;
   return userMsg;
 }
