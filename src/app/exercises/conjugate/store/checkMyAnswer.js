@@ -25,14 +25,21 @@ export async function checkMyAnswer() {
 function createMessage() {
   const { answer, currentExercise } = useConjugateExerciseStore.getState();
   const userMsg = `
-Please check my answer and give me feedback.
+Please check my answer to the following exercise and give me feedback
+--------------------------------
 Exercise: ${currentExercise.exercise}
+Expected tense: ${currentExercise.tense}
+Expected pronoun: ${currentExercise.pronoun}
+Expected verb: ${currentExercise.verb}
+Teacher answer: ${currentExercise.solution}
+Complete sentence: ${currentExercise.completeSentence}   
+--------------------------------
 My answer: ${answer}
-Correct answer: ${currentExercise.solution}
-${currentExercise.completeSentence}   
 
-NOTE: if both simple future and periphrastic future are correct, 
-and the my answer is either one of them, accept the answer as correct.
+NOTE: 
+- If both simple future and periphrastic future are correct, 
+and my answer is either one of them, accept the answer as correct.
+- Teacher might be not precise/wrong. If you think that, you can also give a more precise answer.
   `;
   return userMsg;
 }
