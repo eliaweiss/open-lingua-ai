@@ -21,7 +21,7 @@ import { checkMyAnswer } from "./store/checkMyAnswer";
 import { fixExerciseApi } from "./store/fixExerciseApi";
 
 export const ConjugateExercise = () => {
-  const [showSettings, setShowSettings] = useState(true);
+  const [showSettings, setShowSettings] = useState(false);
   const [fixClickCounter, setFixClickCounter] = useState(0);
   const { isTargetRtl, targetLanguage, dailyCount, setDailyCount } =
     useAppStore();
@@ -41,9 +41,9 @@ export const ConjugateExercise = () => {
     currentExercise,
     showTranslation,
     setShowTranslation,
-    // explanation,
     exerciseCounter,
     setExerciseCounter,
+    autoReadAloud,
   } = useConjugateExerciseStore();
 
   const handleSubmit = () => {
@@ -55,6 +55,9 @@ export const ConjugateExercise = () => {
   };
 
   const moveToNextExercise = () => {
+    if (autoReadAloud) {
+      readAloud(currentExercise.completeSentence, targetLanguage, 1.1);
+    }
     setExerciseCounter(exerciseCounter + 1);
     resetExercise();
     setExerciseIndex(exerciseIndex + 1);
