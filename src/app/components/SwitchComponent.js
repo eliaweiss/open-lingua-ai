@@ -4,7 +4,6 @@ import { Switch, FormControlLabel } from "@mui/material";
 
 const SwitchComponent = ({ label, initialChecked, onChange }) => {
   // Manage the switch's state
-  console.log("initialChecked", initialChecked);
   const [checked, setChecked] = useState(initialChecked || false);
 
   // Handle changes when the switch is toggled
