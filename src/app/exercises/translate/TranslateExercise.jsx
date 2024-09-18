@@ -51,7 +51,7 @@ const TranslateExercise = () => {
     isTranslationCorrect,
     setIsTranslationCorrect,
     exerciseCounter,
-
+    autoReadAloud,
   } = useTranslateExerciseStore();
 
   const [isRecording, setIsRecording] = useState(false);
@@ -169,6 +169,12 @@ const TranslateExercise = () => {
     }
   };
 
+  function moveToNextExercise() {
+    if (autoReadAloud) {
+      playSuggestedTranslation();
+    }
+    skip();
+  }
   return (
     <div className="">
       <div className="flex flex-col justify-center items-center text-center w-full space-y-4">
@@ -301,7 +307,7 @@ const TranslateExercise = () => {
             </ControlButton>
           </div>
           <div className="flex space-x-4 mt-4 border rounded-lg p-4 border-pBorder">
-            <ControlButton toolTip={t("next")} onClick={skip}>
+            <ControlButton toolTip={t("next")} onClick={moveToNextExercise}>
               <ForwardIcon className="w-6 h-6" />
             </ControlButton>
           </div>
