@@ -30,6 +30,10 @@ export const TranslateExerciseProvider = ({ children }) => {
     resetExercise,
     exerciseCounter,
     setExerciseCounter,
+    autoReadAloud,
+    setAutoReadAloud,
+    initTranslateExercise,
+    setInitTranslateExercise,
   } = useTranslateExerciseStore();
 
   useEffect(() => {
@@ -38,6 +42,12 @@ export const TranslateExerciseProvider = ({ children }) => {
         setExerciseCounter(
           Number(await storage.get("translateExerciseCounter")) || 0
         );
+        const translateAutoReadAloud = await storage.get(
+          "translateAutoReadAloud",
+          true
+        );
+        setAutoReadAloud(translateAutoReadAloud);
+        setInitTranslateExercise(true);
       }
       init();
     }
@@ -65,14 +75,19 @@ export const TranslateExerciseProvider = ({ children }) => {
   }, [currentPhrase, translateDirection]);
 
   useEffect(() => {
-    if (!appInitFlag) return;
+    if (!initTranslateExercise) return;
     storage.set("translateDirection", translateDirection);
   }, [translateDirection]);
 
   useEffect(() => {
-    if (!appInitFlag) return;
+    if (!initTranslateExercise) return;
     storage.set("translateExerciseCounter", exerciseCounter);
   }, [exerciseCounter]);
+
+  useEffect(() => {
+    if (!initTranslateExercise) return;
+    storage.set("translateAutoReadAloud", autoReadAloud);
+  }, [autoReadAloud]);
 
   return (
     <TranslateExerciseContext.Provider value={{}}>

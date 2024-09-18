@@ -8,6 +8,9 @@ export const TranslateDirection = {
 };
 
 const useTranslateExerciseStore = create((set, get) => ({
+  initTranslateExercise: false,
+  setInitTranslateExercise: (init) => set({ initTranslateExercise: init }),
+
   exerciseCounter: 0,
   setExerciseCounter: (counter) => set({ exerciseCounter: counter }),
 
@@ -44,6 +47,9 @@ const useTranslateExerciseStore = create((set, get) => ({
     increasePhraseIndex();
     setExerciseCounter(get().exerciseCounter + 1);
   },
+
+  autoReadAloud: true,
+  setAutoReadAloud: (autoReadAloud) => set({ autoReadAloud: autoReadAloud }),
 
   resetExercise: () => {
     set({

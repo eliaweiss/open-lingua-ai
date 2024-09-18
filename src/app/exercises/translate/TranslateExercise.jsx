@@ -70,7 +70,7 @@ const TranslateExercise = () => {
       .replaceAll(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
       .toLowerCase()
       .trim();
-    console.log("cleanSentence", res);
+    // console.log("cleanSentence", res);
     return res;
   }
 
