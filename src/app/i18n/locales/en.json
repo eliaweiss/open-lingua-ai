@@ -91,5 +91,6 @@
   "give_hint_msg": "Give hint (double click)",
   "click_again_to_confirm": "Click again to confirm",
   "click_again": "Click again (double click)",
-  "click_to_show_translation": "Click to show translation"
+  "click_to_show_translation": "Click to show translation",
+  "auto_read_aloud": "Auto Read Aloud"
 }

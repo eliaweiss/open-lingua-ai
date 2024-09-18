@@ -5,14 +5,27 @@ import Textarea from "@/app/components/Textarea";
 import ControlButton from "@/app/components/ControlButton";
 import { createConjugation } from "./store/createConjugation";
 import TenseSelector from "./component/TenseSelector";
+import SwitchComponent from "@/app/components/SwitchComponent";
 
 const ConjugateExerciseSettings = () => {
   const t = useTranslation();
-  const { verbList, setVerbList, setExerciseCounter } =
-    useConjugateExerciseStore();
+  const {
+    verbList,
+    setVerbList,
+    setExerciseCounter,
+    autoReadAloud,
+    setAutoReadAloud,
+  } = useConjugateExerciseStore();
 
   return (
     <div className="p-4 border rounded-lg border-pBorder flex flex-col gap-2 space-y-2">
+      <div className="flex flex-col gap-2 space-y-2">
+        <SwitchComponent
+          label={t("auto_read_aloud")}
+          initialChecked={autoReadAloud}
+          onChange={(checked) => setAutoReadAloud(checked)}
+        />
+      </div>
       <ControlButton
         onClick={() => setExerciseCounter(0)}
         className="bg-sBg"

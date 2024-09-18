@@ -25,6 +25,8 @@ export const ConjugateProvider = ({ children }) => {
     setTenses,
     isConjugateExerciseStoreInit,
     setIsConjugateExerciseStoreInit,
+    autoReadAloud,
+    setAutoReadAloud,
   } = useConjugateExerciseStore();
 
   useEffect(() => {
@@ -59,6 +61,12 @@ export const ConjugateProvider = ({ children }) => {
       const storedTenses = await storage.get("tenses", []);
       setTenses(storedTenses);
       setIsConjugateExerciseStoreInit(true);
+
+      const storedAutoReadAloud = await storage.get(
+        "autoReadAloudConjugate",
+        true
+      );
+      setAutoReadAloud(storedAutoReadAloud);
     }
     initExercise();
   }, [appInitFlag]);
@@ -101,6 +109,11 @@ export const ConjugateProvider = ({ children }) => {
     if (!isConjugateExerciseStoreInit) return;
     storage.set("tenses", tenses);
   }, [tenses]);
+
+  useEffect(() => {
+    if (!isConjugateExerciseStoreInit) return;
+    storage.set("autoReadAloudConjugate", autoReadAloud);
+  }, [autoReadAloud]);
 
   // note we dont set value because we use zustand store
   return <ConjugateContext.Provider>{children}</ConjugateContext.Provider>;

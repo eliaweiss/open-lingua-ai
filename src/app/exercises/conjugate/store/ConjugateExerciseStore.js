@@ -42,6 +42,9 @@ const useConjugateExerciseStore = create((set, get) => ({
   verbList: "",
   setVerbList: (list) => set({ verbList: list }),
 
+  autoReadAloud: null,
+  setAutoReadAloud: (autoReadAloud) => set({ autoReadAloud: autoReadAloud }),
+
   resetExercise: () =>
     set({
       showTranslation: false,
