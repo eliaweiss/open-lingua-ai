@@ -15,6 +15,8 @@ const TENSES = [
   "future_subjunctive",
   "gerund",
   "conditional",
+  "affirmative_imperative",
+  "negative_imperative",
 ];
 
 const TenseSelector = () => {
