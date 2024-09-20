@@ -52,20 +52,20 @@ export const ConjugateExercise = () => {
     setShowTranslation(true);
     // un focus the input - to close the keyboard on mobile
     document.activeElement.blur();
+    if (autoReadAloud) {
+      playCompleteSentence(1.1);
+    }
   };
 
   const moveToNextExercise = () => {
-    if (autoReadAloud) {
-      readAloud(currentExercise.completeSentence, targetLanguage, 1.1);
-    }
     setExerciseCounter(exerciseCounter + 1);
     resetExercise();
     setExerciseIndex(exerciseIndex + 1);
     setDailyCount(dailyCount + 1);
   };
 
-  const playCompleteSentence = async () => {
-    await readAloud(currentExercise.completeSentence, targetLanguage, 1);
+  const playCompleteSentence = async (rate = 1) => {
+    await readAloud(currentExercise.completeSentence, targetLanguage, rate);
   };
 
   function isAnswerCorrect(currentExercise, answer) {
