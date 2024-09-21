@@ -92,5 +92,7 @@
     "click_again_to_confirm": "Clique novamente para confirmar",
     "click_again": "Clique novamente (dobro clique)",
     "click_to_show_translation": "Clique para mostrar a tradução",
-    "auto_read_aloud": "Ler automaticamente"
+    "auto_read_aloud": "Ler automaticamente",
+    "affirmative_imperative": "Imperativo Afirmativo",
+    "negative_imperative": "Imperativo Negativo"
 }

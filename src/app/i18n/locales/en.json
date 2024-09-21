@@ -92,5 +92,7 @@
   "click_again_to_confirm": "Click again to confirm",
   "click_again": "Click again (double click)",
   "click_to_show_translation": "Click to show translation",
-  "auto_read_aloud": "Auto Read Aloud"
+  "auto_read_aloud": "Auto Read Aloud",
+  "affirmative_imperative": "Affirmative Imperative",
+  "negative_imperative": "Negative Imperative"
 }
