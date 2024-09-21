@@ -193,7 +193,7 @@ export const ConjugateExercise = () => {
                   <div className="w-10 h-10 border rounded-lg border-pBorder m-2">
                     <ControlButton
                       toolTip={t("play")}
-                      onClick={playCompleteSentence}
+                      onClick={() => playCompleteSentence()}
                     >
                       <PlayIcon className="w-6 h-6" />
                     </ControlButton>
