@@ -48,10 +48,6 @@
         "he-IL": "הוא הניח את המפתח על השולחן, כרגיל."
     },
     {
-        "pt-BR": "Oi, John! Como vai?",
-        "he-IL": "שלום, גון! מה שלומך?"
-    },
-    {
         "pt-BR": "Agora eu estou no aeroporto.",
         "he-IL": "עכשיו אני בשדה התעופה."
     },
@@ -796,10 +792,6 @@
         "he-IL": "הוא תמיד בוכה כשהוא שיכור."
     },
     {
-        "pt-BR": "Não há de quê!",
-        "he-IL": "אין בעד מה."
-    },
-    {
         "pt-BR": "Hoje eu conheci a minha nova professora de filosofia.",
         "he-IL": "היום הכרתי את המורה החדשה שלי לפילוסופיה."
     },
@@ -1416,22 +1408,6 @@
         "he-IL": "רוב התלמידים הצביעו נגד הפרויקט שהוצע על ידי הנהלת בית הספר."
     },
     {
-        "pt-BR": "Tradutor, traidor.",
-        "he-IL": "המתרגמים - בוגדים."
-    },
-    {
-        "pt-BR": "Tradutor, traidor.",
-        "he-IL": "המתרגם - בוגד."
-    },
-    {
-        "pt-BR": "Tradutor é um traidor.",
-        "he-IL": "המתרגמים - בוגדים."
-    },
-    {
-        "pt-BR": "Tradutor é um traidor.",
-        "he-IL": "המתרגם - בוגד."
-    },
-    {
         "pt-BR": "A maioria do comitê votou contra o projeto.",
         "he-IL": "הרוב בועדה הצביע נגד הפרויקט."
     },
@@ -1828,14 +1804,6 @@
         "he-IL": "עייפתי מלהקשיב לתלונות שלך."
     },
     {
-        "pt-BR": "Numerologia é como esquizofrenia.",
-        "he-IL": "נומרולוגיה היא כמו סכיזופרניה."
-    },
-    {
-        "pt-BR": "A professora disse que não sabe a resposta para a pergunta que eu fiz.",
-        "he-IL": "המורה אמרה שהוא לא יודע את התשובה לשאלה שלי."
-    },
-    {
         "pt-BR": "A professora disse que não sabe a resposta para a pergunta que eu fiz.",
         "he-IL": "המורה אמרה שהיא לא יודעת את התשובה לשאלה שלי."
     },
@@ -1956,7 +1924,7 @@
         "he-IL": "היא רצתה לפגוש אותי."
     },
     {
-        "pt-BR": "Cadê meu relógio ?",
+        "pt-BR": "Cadê meu relógio?",
         "he-IL": "איפה השעון שלי?"
     },
     {
@@ -2100,10 +2068,6 @@
         "he-IL": "אינני סבור שיירד מחר גשם."
     },
     {
-        "pt-BR": "Sou de Malta.",
-        "he-IL": "אני ממלטה."
-    },
-    {
         "pt-BR": "Você não veio na escola ontem, veio?",
         "he-IL": "לא באת לבית הספר אתמול, נכון?"
     },
@@ -2200,24 +2164,8 @@
         "he-IL": "אני זקוקה לך לצדי."
     },
     {
-        "pt-BR": "Ele teve um infarto.",
-        "he-IL": "הוא קיבל אוטם."
-    },
-    {
-        "pt-BR": "Ele teve um infarto.",
-        "he-IL": "הוא קיבל התקף לב."
-    },
-    {
         "pt-BR": "Nós queremos falar com Tom.",
         "he-IL": "אנחנו רוצים לדבר עם טום."
-    },
-    {
-        "pt-BR": "Sou legal.",
-        "he-IL": "אני גזעי."
-    },
-    {
-        "pt-BR": "Sou legal.",
-        "he-IL": "אני גזעית."
     },
     {
         "pt-BR": "Não esqueça de falar com ele amanhã.",
