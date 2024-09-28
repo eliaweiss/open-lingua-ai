@@ -123,10 +123,7 @@
         "pt-BR": "O calor é uma forma de energia.",
         "he-IL": "חום הוא צורה של אנרגיה."
     },
-    {
-        "pt-BR": "Está morto?",
-        "he-IL": "הוא מת?"
-    },
+
     {
         "pt-BR": "Eu acho que sim.",
         "he-IL": "אני חושב שכן."
@@ -199,10 +196,7 @@
         "pt-BR": "O gato tem vinte dias.",
         "he-IL": "החתול בן עשרים יום."
     },
-    {
-        "pt-BR": "Todo mundo morre.",
-        "he-IL": "בסוף כולם מתים."
-    },
+
     {
         "pt-BR": "Corrija as palavras sublinhadas.",
         "he-IL": "תקן את המילים המסומנות בקו."
@@ -916,10 +910,6 @@
         "he-IL": "בדרך כלל, הגברים גבוהים יותר מהנשים."
     },
     {
-        "pt-BR": "Betty a matou.",
-        "he-IL": "בטי הרגה אותה."
-    },
-    {
         "pt-BR": "Onde posso conseguir ajuda?",
         "he-IL": "איפה אני יכול לקבל עזרה?"
     },
@@ -940,12 +930,8 @@
         "he-IL": "אתה עובד?"
     },
     {
-        "pt-BR": "Paolo foi encontrado morto.",
-        "he-IL": "פאולו נמצא מת."
-    },
-    {
-        "pt-BR": "Paolo foi encontrado morto.",
-        "he-IL": "מצאו את פאולו מת."
+        "pt-BR": "Paolo foi encontrado.",
+        "he-IL": "פאולו נמצא."
     },
     {
         "pt-BR": "Quero me casar com ela.",
@@ -2240,18 +2226,6 @@
         "he-IL": "אתה מרושע."
     },
     {
-        "pt-BR": "Estou aflito.",
-        "he-IL": "אני סובל מכאב."
-    },
-    {
-        "pt-BR": "Estou magoado.",
-        "he-IL": "אני סובל מכאב."
-    },
-    {
-        "pt-BR": "Estou ressentido.",
-        "he-IL": "אני סובל מכאב."
-    },
-    {
         "pt-BR": "Ele costuma fazer muitas perguntas.",
         "he-IL": "הוא רגיל לשאול הרבה שאלות."
     },
@@ -2639,10 +2613,7 @@
         "pt-BR": "Você deve ir.",
         "he-IL": "אתה חייב ללכת."
     },
-    {
-        "pt-BR": "Ele deve morrer.",
-        "he-IL": "הוא חייב למות."
-    },
+
     {
         "pt-BR": "Eu tenho que estudar?",
         "he-IL": "אני חייב ללמוד?"
@@ -3303,18 +3274,8 @@
         "pt-BR": "Eu estava apenas seguindo ordens.",
         "he-IL": "פשוט מילאתי פקודות."
     },
-    {
-        "pt-BR": "Tom não é judeu.",
-        "he-IL": "טום לא יהודי."
-    },
-    {
-        "pt-BR": "O Tom não é judeu.",
-        "he-IL": "טום לא יהודי."
-    },
-    {
-        "pt-BR": "A rainha deve morrer.",
-        "he-IL": "המלכה חייבת למות."
-    },
+
+
     {
         "pt-BR": "Sou um gênio muito estável.",
         "he-IL": "אני גאון יציב מאוד."
@@ -3350,10 +3311,6 @@
     {
         "pt-BR": "Este é do meu pai.",
         "he-IL": "זה של אבי."
-    },
-    {
-        "pt-BR": "Eu queria que Donald Trump estivesse morto em vez das oito pessoas mortas hoje em Pittsburgh.",
-        "he-IL": "הלוואי שדונלד טראמפ היה מת במקום לשמונה אנשים שנהרגו היום בפיטסבורג."
     },
     {
         "pt-BR": "Benjamin Netanyahu é um grande inimigo do povo judeu.",
@@ -3843,10 +3800,7 @@
         "pt-BR": "Ele pensou que seria interessante e divertido.",
         "he-IL": "הוא חשב שזה יהיה מעניין ומהנה."
     },
-    {
-        "pt-BR": "Epstein não se matou.",
-        "he-IL": "אפשטיין לא התאבד."
-    },
+
     {
         "pt-BR": "Nós queremos uma solução pacífica.",
         "he-IL": "אנחנו רוצים פתרון של שלום."
@@ -3902,10 +3856,6 @@
     {
         "pt-BR": "Como?",
         "he-IL": "איך?"
-    },
-    {
-        "pt-BR": "Eu!",
-        "he-IL": "אני!"
     },
     {
         "pt-BR": "A casa do Tom tem três quartos.",
@@ -6023,10 +5973,7 @@
         "pt-BR": "Eu não gosto de areia.",
         "he-IL": "אני לא אוהב חול."
     },
-    {
-        "pt-BR": "Ninguém morre.",
-        "he-IL": "אף אחד לא מת."
-    },
+
     {
         "pt-BR": "É um problema?",
         "he-IL": "זה בעיה?"

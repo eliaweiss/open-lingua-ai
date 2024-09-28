@@ -7305,4 +7305,12 @@ export const phrases = [
     "en-US": "The message has been delivered",
     "pt-BR": "Tá dado o recado",
   },
+  {
+    "en-US": "Where are you?",
+    "pt-BR": "Cadê você?",
+  },
+  {
+    "en-US": "Where are you?",
+    "pt-BR": "Cadê você?",
+  },
 ];
