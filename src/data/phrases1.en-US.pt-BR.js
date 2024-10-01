@@ -1144,7 +1144,7 @@ export const phrases = [
     "en-US": "What time does the movie start?",
   },
   {
-    "pt-BR": "Você podeme ajudar a carregar isso?",
+    "pt-BR": "Você pode me ajudar a carregar isso?",
     "en-US": "Can you help me carry this?",
   },
   {
