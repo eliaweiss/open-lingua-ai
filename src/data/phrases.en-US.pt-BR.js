@@ -1,4 +1,244 @@
 export const phrases = [
+  { "pt-BR": "Oi, como você tem passado?", "en-US": "Hi, how have you been?" },
+  {
+    "pt-BR": "Bom dia, é um prazer te conhecer.",
+    "en-US": "Good morning, it's a pleasure to meet you.",
+  },
+  {
+    "pt-BR": "Agradeço muito pela sua ajuda.",
+    "en-US": "I really appreciate your help.",
+  },
+  { "pt-BR": "Nos vemos mais tarde!", "en-US": "See you later!" },
+  {
+    "pt-BR": "Eu gostaria de um café preto.",
+    "en-US": "I would like a black coffee.",
+  },
+  {
+    "pt-BR": "Eu vivo no Brasil atualmente.",
+    "en-US": "I currently live in Brazil.",
+  },
+  {
+    "pt-BR": "Eu gosto de aprender novas línguas.",
+    "en-US": "I enjoy learning new languages.",
+  },
+  { "pt-BR": "Estou faminto.", "en-US": "I am starving." },
+  {
+    "pt-BR": "Hoje está um dia maravilhoso.",
+    "en-US": "Today is a wonderful day.",
+  },
+  {
+    "pt-BR": "Qual é o seu nome completo?",
+    "en-US": "What is your full name?",
+  },
+  {
+    "pt-BR": "Quantos anos você tem atualmente?",
+    "en-US": "How old are you currently?",
+  },
+  { "pt-BR": "Qual é o seu trabalho?", "en-US": "What is your job?" },
+  {
+    "pt-BR": "Você pode me dizer seu endereço?",
+    "en-US": "Can you tell me your address?",
+  },
+  {
+    "pt-BR": "Qual é o seu número de telefone celular?",
+    "en-US": "What is your cell phone number?",
+  },
+  { "pt-BR": "De onde você é?", "en-US": "Where are you from?" },
+  {
+    "pt-BR": "Qual é o time de futebol que você torce?",
+    "en-US": "Which soccer team do you cheer for?",
+  },
+  { "pt-BR": "Qual a data de hoje?", "en-US": "What's today's date?" },
+  {
+    "pt-BR": "Qual é o seu filme preferido?",
+    "en-US": "What is your preferred movie?",
+  },
+  {
+    "pt-BR": "Qual tipo de comida você mais gosta?",
+    "en-US": "What type of food do you like the most?",
+  },
+  { "pt-BR": "Onde você está morando?", "en-US": "Where are you living?" },
+  {
+    "pt-BR": "Qual é o nome do seu trabalho?",
+    "en-US": "What is the name of your workplace?",
+  },
+  { "pt-BR": "Onde está o toalete?", "en-US": "Where is the restroom?" },
+  {
+    "pt-BR": "Onde posso encontrar a estação de trem?",
+    "en-US": "Where can I find the train station?",
+  },
+  {
+    "pt-BR": "Onde você nasceu e cresceu?",
+    "en-US": "Where were you born and raised?",
+  },
+  {
+    "pt-BR": "Onde fica o restaurante que você recomenda?",
+    "en-US": "Where is the restaurant you recommend?",
+  },
+  {
+    "pt-BR": "Qual é o supermercado mais próximo daqui?",
+    "en-US": "What is the nearest supermarket from here?",
+  },
+  {
+    "pt-BR": "Onde você fez a faculdade?",
+    "en-US": "Where did you attend college?",
+  },
+  {
+    "pt-BR": "Qual é o ponto de ônibus mais acessível?",
+    "en-US": "What is the most accessible bus stop?",
+  },
+  {
+    "pt-BR": "Onde você estava ontem à tarde?",
+    "en-US": "Where were you yesterday afternoon?",
+  },
+  { "pt-BR": "Meu nome é Ana.", "en-US": "My name is Ana." },
+  { "pt-BR": "Tenho 28 anos de idade.", "en-US": "I am 28 years old." },
+  {
+    "pt-BR": "Minha profissão é designer gráfico.",
+    "en-US": "My profession is graphic designer.",
+  },
+  {
+    "pt-BR": "Meu endereço é Rua dos Limoeiros, 789.",
+    "en-US": "My address is 789 Lemon Trees Street.",
+  },
+  {
+    "pt-BR": "Meu telefone é (31) 98765-4321.",
+    "en-US": "My phone number is (31) 98765-4321.",
+  },
+  {
+    "pt-BR": "Meu time favorito é o Corinthians.",
+    "en-US": "My favorite team is Corinthians.",
+  },
+  {
+    "pt-BR": "Hoje é 15 de agosto de 2024.",
+    "en-US": "Today is August 15, 2024.",
+  },
+  {
+    "pt-BR": 'Meu filme preferido é "Pulp Fiction".',
+    "en-US": 'My favorite movie is "Pulp Fiction".',
+  },
+  {
+    "pt-BR": "Minha comida predileta é lasanha.",
+    "en-US": "My favorite food is lasagna.",
+  },
+  { "pt-BR": "Eu moro em Curitiba.", "en-US": "I live in Curitiba." },
+  { "pt-BR": "Trabalho em uma startup.", "en-US": "I work at a startup." },
+  {
+    "pt-BR": "O lavabo está logo ali.",
+    "en-US": "The restroom is right there.",
+  },
+  {
+    "pt-BR": "A estação de trem está a uma rua daqui.",
+    "en-US": "The train station is one street away from here.",
+  },
+  { "pt-BR": "Eu nasci em Recife.", "en-US": "I was born in Recife." },
+  {
+    "pt-BR": "O restaurante está no final da rua.",
+    "en-US": "The restaurant is at the end of the street.",
+  },
+  {
+    "pt-BR": "O supermercado mais próximo está a cinco minutos daqui.",
+    "en-US": "The nearest supermarket is a five-minute walk from here.",
+  },
+  {
+    "pt-BR": "Eu estudei na Universidade Federal de Minas Gerais.",
+    "en-US": "I studied at the Federal University of Minas Gerais.",
+  },
+  {
+    "pt-BR": "O ponto de ônibus está ao lado do café.",
+    "en-US": "The bus stop is next to the café.",
+  },
+  {
+    "pt-BR": "Eu estive no trabalho ontem.",
+    "en-US": "I was at work yesterday.",
+  },
+  { "pt-BR": "Qual o valor disso?", "en-US": "What is the value of this?" },
+  { "pt-BR": "Não consigo entender.", "en-US": "I can't understand." },
+  {
+    "pt-BR": "Você sabe falar inglês?",
+    "en-US": "Do you know how to speak English?",
+  },
+  {
+    "pt-BR": "Eu necessito de atendimento médico.",
+    "en-US": "I need medical attention.",
+  },
+  {
+    "pt-BR": "Onde está localizado o hotel?",
+    "en-US": "Where is the hotel located?",
+  },
+  {
+    "pt-BR": "Você pode repetir isso novamente?",
+    "en-US": "Can you repeat that again?",
+  },
+  {
+    "pt-BR": "A escola está a uma curta distância daqui",
+    "en-US": "The school is a short distance from here",
+  },
+  {
+    "pt-BR": "Ele vai ficar em casa o dia todo",
+    "en-US": "He will stay at home all day",
+  },
+  {
+    "pt-BR": "Permaneça aqui enquanto eu vou ao supermercado",
+    "en-US": "Stay here while I go to the supermarket",
+  },
+  {
+    "pt-BR": "Ele ficou abatido com a notícia",
+    "en-US": "He felt down about the news",
+  },
+  {
+    "pt-BR": "O clima ficou muito quente",
+    "en-US": "The weather became very hot",
+  },
+  {
+    "pt-BR": "Eu gostaria de reservar uma mesa para seis pessoas.",
+    "en-US": "I would like to reserve a table for six people.",
+  },
+  {
+    "pt-BR": "Qual é o horário de abertura e fechamento?",
+    "en-US": "What are the opening and closing hours?",
+  },
+  {
+    "pt-BR": "Eu posso usar meu cartão para pagar?",
+    "en-US": "Can I use my card to pay?",
+  },
+  {
+    "pt-BR": "Claro, estou disponível para ajudar.",
+    "en-US": "Sure, I am available to help.",
+  },
+  { "pt-BR": "O custo é de R$ 15.", "en-US": "The cost is $15." },
+  {
+    "pt-BR": "Você pode explicar de maneira mais clara?",
+    "en-US": "Can you explain in a clearer way?",
+  },
+  {
+    "pt-BR": "Sim, eu falo inglês com fluência.",
+    "en-US": "Yes, I speak English fluently.",
+  },
+  {
+    "pt-BR": "Vou procurar um médico imediatamente.",
+    "en-US": "I will look for a doctor immediately.",
+  },
+  {
+    "pt-BR": "O hotel está situado na rua principal.",
+    "en-US": "The hotel is situated on the main street.",
+  },
+  {
+    "pt-BR": "Com certeza, posso repetir isso para você.",
+    "en-US": "Certainly, I can repeat that for you.",
+  },
+  {
+    "pt-BR": "Com certeza, vou providenciar uma mesa para seis pessoas.",
+    "en-US": "Certainly, I will arrange a table for six people.",
+  },
+  {
+    "pt-BR": "Estamos abertos das 10h às 17h, de segunda a sábado.",
+    "en-US": "We are open from 10am to 5pm, Monday to Saturday.",
+  },
+  {
+    "pt-BR": "Sim, aceitamos cartões de crédito e débito.",
+    "en-US": "Yes, we accept credit and debit cards.",
+  },
   { "pt-BR": "Olá, como você está?", "en-US": "Hi, how are you?" },
   {
     "pt-BR": "Bom dia, prazer em conhecê-lo.",
@@ -176,6 +416,7 @@ export const phrases = [
     "pt-BR": "Sim, aceitamos cartões de crédito e débito.",
     "en-US": "Yes, we accept credit and debit cards.",
   },
+  ///
   {
     "pt-BR": "um dois três quatro cinco seis sete oito nove dez",
     "en-US": "count 1 to 10",
@@ -2535,66 +2776,7 @@ export const phrases = [
     "pt-BR": "O gato estava dormindo no sofá.",
     "en-US": "The cat was sleeping on the couch.",
   },
-  {
-    "pt-BR":
-      "Em 1500, o navegador português Pedro Álvares Cabral chegou ao que hoje conhecemos como o Brasil, marcando o início da colonização portuguesa.",
-    "en-US":
-      "In 1500, the Portuguese navigator Pedro Álvares Cabral arrived at what we now know as Brazil, marking the beginning of Portuguese colonization.",
-  },
-  {
-    "pt-BR":
-      "A cidade de Salvador foi fundada em 1549 e tornou-se a primeira capital do Brasil, servindo como o centro administrativo da colônia por muitos anos.",
-    "en-US":
-      "The city of Salvador was founded in 1549 and became the first capital of Brazil, serving as the administrative center of the colony for many years.",
-  },
-  {
-    "pt-BR":
-      "Durante o século XVII, a descoberta de ouro em Minas Gerais atraiu, muitos colonos e levou ao desenvolvimento econômico significativo da região.",
-    "en-US":
-      "During the 17th century, the discovery of gold in Minas Gerais attracted many settlers and led to significant economic development in the region.",
-  },
-  {
-    "pt-BR":
-      "Em 1822, Dom Pedro I proclamou a independência do Brasil em relação a Portugal, tornando-se o primeiro imperador do país.",
-    "en-US":
-      "In 1822, Dom Pedro I proclaimed Brazil's independence from Portugal, becoming the country's first emperor.",
-  },
-  {
-    "pt-BR":
-      "A abolição da escravatura no Brasil foi oficialmente decretada pela Lei Áurea em 1888, assinada pela Princesa Isabel, encerrando séculos de exploração escravista.",
-    "en-US":
-      "The abolition of slavery in Brazil was officially decreed by the Golden Law in 1888, signed by Princess Isabel, ending centuries of enslavement.",
-  },
-  {
-    "pt-BR":
-      "O Brasil se tornou uma república em 1889, quando um golpe militar destituiu o imperador Dom Pedro II e estabeleceu um governo provisório.",
-    "en-US":
-      "Brazil became a republic in 1889 when a military coup deposed Emperor Dom Pedro II and established a provisional government.",
-  },
-  {
-    "pt-BR":
-      "Durante a década de 1930, Getúlio Vargas assumiu a presidência e instituiu o Estado Novo, um regime autoritário que durou até 1945.",
-    "en-US":
-      "During the 1930s, Getúlio Vargas took the presidency and instituted the Estado Novo, an authoritarian regime that lasted until 1945.",
-  },
-  {
-    "pt-BR":
-      "Em 1964, um golpe militar levou à instalação de um regime ditatorial que governou o Brasil até 1985, período marcado por repressão política e censura.",
-    "en-US":
-      "In 1964, a military coup led to the installation of a dictatorial regime that governed Brazil until 1985, a period marked by political repression and censorship.",
-  },
-  {
-    "pt-BR":
-      "A Constituição de 1988, conhecida como a Constituição Cidadã, marcou o retorno à democracia e estabeleceu uma série de direitos civis e sociais para os brasileiros.",
-    "en-US":
-      "The 1988 Constitution, known as the Citizen Constitution, marked the return to democracy and established a series of civil and social rights for Brazilians.",
-  },
-  {
-    "pt-BR":
-      "Em 2016, a presidente Dilma Rousseff foi afastada do cargo após um processo de impeachment, resultando em uma mudança significativa no cenário político do país.",
-    "en-US":
-      "In 2016, President Dilma Rousseff was removed from office after an impeachment process, resulting in a significant change in the country's political landscape.",
-  },
+
   {
     "pt-BR":
       "No verão passado, nós passamos uma semana inteira na praia de Copacabana, aproveitando o sol e o mar.",
@@ -3139,4 +3321,3996 @@ export const phrases = [
   },
   { "pt-BR": "Eu vos disse a verdade.", "en-US": "I told you all the truth." },
   { "pt-BR": "Ele lhes ofereceu ajuda.", "en-US": "He offered help to them." },
+
+  {
+    "pt-BR":
+      "Eu estou considerando mudar para uma cidade diferente para expandir minhas oportunidades profissionais.",
+    "en-US":
+      "I am considering moving to a different city to expand my professional opportunities.",
+  },
+  ///////
+  // long phrases
+  {
+    "pt-BR":
+      "Em 1500, o navegador português Pedro Álvares Cabral chegou ao que hoje conhecemos como o Brasil, marcando o início da colonização portuguesa.",
+    "en-US":
+      "In 1500, the Portuguese navigator Pedro Álvares Cabral arrived at what we now know as Brazil, marking the beginning of Portuguese colonization.",
+  },
+  {
+    "pt-BR":
+      "A cidade de Salvador foi fundada em 1549 e tornou-se a primeira capital do Brasil, servindo como o centro administrativo da colônia por muitos anos.",
+    "en-US":
+      "The city of Salvador was founded in 1549 and became the first capital of Brazil, serving as the administrative center of the colony for many years.",
+  },
+  {
+    "pt-BR":
+      "Durante o século XVII, a descoberta de ouro em Minas Gerais atraiu, muitos colonos e levou ao desenvolvimento econômico significativo da região.",
+    "en-US":
+      "During the 17th century, the discovery of gold in Minas Gerais attracted many settlers and led to significant economic development in the region.",
+  },
+  {
+    "pt-BR":
+      "Em 1822, Dom Pedro I proclamou a independência do Brasil em relação a Portugal, tornando-se o primeiro imperador do país.",
+    "en-US":
+      "In 1822, Dom Pedro I proclaimed Brazil's independence from Portugal, becoming the country's first emperor.",
+  },
+  {
+    "pt-BR":
+      "A abolição da escravatura no Brasil foi oficialmente decretada pela Lei Áurea em 1888, assinada pela Princesa Isabel, encerrando séculos de exploração escravista.",
+    "en-US":
+      "The abolition of slavery in Brazil was officially decreed by the Golden Law in 1888, signed by Princess Isabel, ending centuries of enslavement.",
+  },
+  {
+    "pt-BR":
+      "O Brasil se tornou uma república em 1889, quando um golpe militar destituiu o imperador Dom Pedro II e estabeleceu um governo provisório.",
+    "en-US":
+      "Brazil became a republic in 1889 when a military coup deposed Emperor Dom Pedro II and established a provisional government.",
+  },
+  {
+    "pt-BR":
+      "Durante a década de 1930, Getúlio Vargas assumiu a presidência e instituiu o Estado Novo, um regime autoritário que durou até 1945.",
+    "en-US":
+      "During the 1930s, Getúlio Vargas took the presidency and instituted the Estado Novo, an authoritarian regime that lasted until 1945.",
+  },
+  {
+    "pt-BR":
+      "Em 1964, um golpe militar levou à instalação de um regime ditatorial que governou o Brasil até 1985, período marcado por repressão política e censura.",
+    "en-US":
+      "In 1964, a military coup led to the installation of a dictatorial regime that governed Brazil until 1985, a period marked by political repression and censorship.",
+  },
+  {
+    "pt-BR":
+      "A Constituição de 1988, conhecida como a Constituição Cidadã, marcou o retorno à democracia e estabeleceu uma série de direitos civis e sociais para os brasileiros.",
+    "en-US":
+      "The 1988 Constitution, known as the Citizen Constitution, marked the return to democracy and established a series of civil and social rights for Brazilians.",
+  },
+  {
+    "pt-BR":
+      "Em 2016, a presidente Dilma Rousseff foi afastada do cargo após um processo de impeachment, resultando em uma mudança significativa no cenário político do país.",
+    "en-US":
+      "In 2016, President Dilma Rousseff was removed from office after an impeachment process, resulting in a significant change in the country's political landscape.",
+  },
+  {
+    "pt-BR":
+      "A globalização tem impactos profundos na economia e na cultura local.",
+    "en-US":
+      "Globalization has profound impacts on the economy and local culture.",
+  },
+  {
+    "pt-BR":
+      "O avanço tecnológico está transformando rapidamente a forma como trabalhamos e nos comunicamos.",
+    "en-US":
+      "Technological advancements are rapidly transforming the way we work and communicate.",
+  },
+  {
+    "pt-BR":
+      "É crucial entender as nuances culturais ao negociar com parceiros internacionais.",
+    "en-US":
+      "It's crucial to understand cultural nuances when negotiating with international partners.",
+  },
+  {
+    "pt-BR":
+      "As mudanças climáticas estão exigindo uma abordagem mais sustentável para o desenvolvimento urbano.",
+    "en-US":
+      "Climate change is demanding a more sustainable approach to urban development.",
+  },
+  {
+    "pt-BR":
+      "A pesquisa científica sobre energias renováveis está avançando a passos largos.",
+    "en-US":
+      "Scientific research on renewable energy is advancing by leaps and bounds.",
+  },
+  {
+    "pt-BR":
+      "O impacto da inteligência artificial no mercado de trabalho é um tema amplamente debatido.",
+    "en-US":
+      "The impact of artificial intelligence on the job market is a widely debated topic.",
+  },
+  {
+    "pt-BR":
+      "As políticas públicas devem refletir as necessidades e prioridades da população.",
+    "en-US":
+      "Public policies should reflect the needs and priorities of the population.",
+  },
+  {
+    "pt-BR":
+      "A literatura contemporânea frequentemente explora questões sociais complexas e controversas.",
+    "en-US":
+      "Contemporary literature often explores complex and controversial social issues.",
+  },
+  {
+    "pt-BR":
+      "O desenvolvimento sustentável é essencial para garantir um futuro melhor para as próximas gerações.",
+    "en-US":
+      "Sustainable development is essential to ensure a better future for the coming generations.",
+  },
+  {
+    "pt-BR":
+      "A ética nos negócios é fundamental para construir uma reputação sólida e confiável.",
+    "en-US":
+      "Business ethics are fundamental for building a solid and trustworthy reputation.",
+  },
+  {
+    "pt-BR":
+      "O ensino superior deve preparar os alunos para enfrentar os desafios de um mercado globalizado.",
+    "en-US":
+      "Higher education should prepare students to face the challenges of a globalized market.",
+  },
+  {
+    "pt-BR":
+      "A integração de tecnologias emergentes pode revolucionar o setor da saúde.",
+    "en-US":
+      "The integration of emerging technologies could revolutionize the healthcare sector.",
+  },
+  {
+    "pt-BR":
+      "A diversidade no local de trabalho pode promover um ambiente mais criativo e inovador.",
+    "en-US":
+      "Diversity in the workplace can foster a more creative and innovative environment.",
+  },
+  {
+    "pt-BR":
+      "A preservação de culturas indígenas é uma questão importante para a identidade global.",
+    "en-US":
+      "The preservation of indigenous cultures is an important issue for global identity.",
+  },
+  {
+    "pt-BR":
+      "As redes sociais desempenham um papel significativo na formação de opiniões públicas.",
+    "en-US":
+      "Social networks play a significant role in shaping public opinions.",
+  },
+  {
+    "pt-BR":
+      "O conceito de justiça social envolve a equidade no acesso a recursos e oportunidades.",
+    "en-US":
+      "The concept of social justice involves equity in access to resources and opportunities.",
+  },
+  {
+    "pt-BR":
+      "A análise de dados é uma ferramenta poderosa para tomar decisões informadas em diversos setores.",
+    "en-US":
+      "Data analysis is a powerful tool for making informed decisions across various sectors.",
+  },
+  {
+    "pt-BR":
+      "A filosofia da ciência examina os fundamentos e as implicações das descobertas científicas.",
+    "en-US":
+      "The philosophy of science examines the foundations and implications of scientific discoveries.",
+  },
+  {
+    "pt-BR":
+      "O desenvolvimento de políticas públicas eficazes requer uma compreensão profunda das questões sociais.",
+    "en-US":
+      "Developing effective public policies requires a deep understanding of social issues.",
+  },
+  {
+    "pt-BR":
+      "A gestão de projetos envolve a coordenação de recursos para alcançar objetivos específicos.",
+    "en-US":
+      "Project management involves coordinating resources to achieve specific objectives.",
+  },
+  {
+    "pt-BR":
+      "O impacto das mudanças tecnológicas nas relações interpessoais é um campo de estudo emergente.",
+    "en-US":
+      "The impact of technological changes on interpersonal relationships is an emerging field of study.",
+  },
+  {
+    "pt-BR":
+      "A inovação tecnológica está constantemente redefinindo as fronteiras do que é possível.",
+    "en-US":
+      "Technological innovation is constantly redefining the boundaries of what is possible.",
+  },
+  {
+    "pt-BR":
+      "A crise econômica global exige uma colaboração internacional para encontrar soluções eficazes.",
+    "en-US":
+      "The global economic crisis requires international collaboration to find effective solutions.",
+  },
+  {
+    "pt-BR":
+      "O conceito de cidadania digital envolve a responsabilidade de usar a tecnologia de forma ética.",
+    "en-US":
+      "The concept of digital citizenship involves the responsibility to use technology ethically.",
+  },
+  {
+    "pt-BR":
+      "A educação bilíngue pode oferecer vantagens cognitivas e culturais significativas.",
+    "en-US":
+      "Bilingual education can offer significant cognitive and cultural advantages.",
+  },
+  {
+    "pt-BR":
+      "A governança corporativa eficaz é crucial para a transparência e a responsabilidade empresarial.",
+    "en-US":
+      "Effective corporate governance is crucial for transparency and business accountability.",
+  },
+  {
+    "pt-BR":
+      "Os desafios da globalização incluem a desigualdade econômica e a perda de identidades culturais.",
+    "en-US":
+      "The challenges of globalization include economic inequality and the loss of cultural identities.",
+  },
+  {
+    "pt-BR":
+      "O papel da mídia na formação da opinião pública pode ser tanto positivo quanto negativo.",
+    "en-US":
+      "The role of the media in shaping public opinion can be both positive and negative.",
+  },
+  {
+    "pt-BR":
+      "O planejamento urbano deve considerar o impacto ambiental e a qualidade de vida dos residentes.",
+    "en-US":
+      "Urban planning should consider environmental impact and the quality of life for residents.",
+  },
+  {
+    "pt-BR":
+      "A análise crítica de textos é uma habilidade essencial para compreender argumentos complexos.",
+    "en-US":
+      "Critical text analysis is an essential skill for understanding complex arguments.",
+  },
+  {
+    "pt-BR":
+      "A sustentabilidade empresarial envolve práticas que minimizam o impacto ambiental e social.",
+    "en-US":
+      "Corporate sustainability involves practices that minimize environmental and social impact.",
+  },
+  {
+    "pt-BR":
+      "O avanço das redes neurais artificiais está revolucionando a inteligência artificial.",
+    "en-US":
+      "The advancement of artificial neural networks is revolutionizing artificial intelligence.",
+  },
+  {
+    "pt-BR":
+      "A gestão de riscos é uma parte fundamental do planejamento estratégico em empresas.",
+    "en-US":
+      "Risk management is a fundamental part of strategic planning in businesses.",
+  },
+  {
+    "pt-BR":
+      "O impacto das mudanças climáticas é visível em eventos meteorológicos extremos ao redor do mundo.",
+    "en-US":
+      "The impact of climate change is visible in extreme weather events around the world.",
+  },
+  {
+    "pt-BR":
+      "A teoria da evolução fornece uma explicação científica para a diversidade da vida na Terra.",
+    "en-US":
+      "The theory of evolution provides a scientific explanation for the diversity of life on Earth.",
+  },
+  {
+    "pt-BR":
+      "A ética no campo da inteligência artificial é um tópico de crescente importância e debate.",
+    "en-US":
+      "Ethics in the field of artificial intelligence is an increasingly important and debated topic.",
+  },
+
+  {
+    "pt-BR":
+      "A interconexão das economias globais pode levar a uma rápida disseminação de crises financeiras.",
+    "en-US":
+      "The interconnection of global economies can lead to the rapid spread of financial crises.",
+  },
+  {
+    "pt-BR":
+      "A pesquisa em neurociência está revelando novos insights sobre o funcionamento do cérebro humano.",
+    "en-US":
+      "Research in neuroscience is revealing new insights into how the human brain functions.",
+  },
+  {
+    "pt-BR":
+      "A sustentabilidade ambiental exige uma abordagem integrada envolvendo governo, indústria e sociedade.",
+    "en-US":
+      "Environmental sustainability requires an integrated approach involving government, industry, and society.",
+  },
+  {
+    "pt-BR":
+      "A adaptação ao mudança climática requer inovação em tecnologias de mitigação e adaptação.",
+    "en-US":
+      "Adapting to climate change requires innovation in mitigation and adaptation technologies.",
+  },
+  {
+    "pt-BR":
+      "O conceito de responsabilidade social corporativa envolve práticas empresariais que beneficiam a sociedade e o meio ambiente.",
+    "en-US":
+      "Corporate social responsibility involves business practices that benefit society and the environment.",
+  },
+  {
+    "pt-BR":
+      "O papel das organizações não-governamentais é crucial na promoção de mudanças sociais e políticas.",
+    "en-US":
+      "The role of non-governmental organizations is crucial in promoting social and political change.",
+  },
+  {
+    "pt-BR":
+      "A inovação disruptiva pode transformar indústrias inteiras e criar novos mercados.",
+    "en-US":
+      "Disruptive innovation can transform entire industries and create new markets.",
+  },
+  {
+    "pt-BR":
+      "A ética da pesquisa científica exige transparência e integridade na condução dos experimentos.",
+    "en-US":
+      "Scientific research ethics demand transparency and integrity in conducting experiments.",
+  },
+  {
+    "pt-BR":
+      "O conceito de capital humano é fundamental para entender o desenvolvimento econômico e social.",
+    "en-US":
+      "The concept of human capital is fundamental to understanding economic and social development.",
+  },
+  {
+    "pt-BR":
+      "A análise de risco é uma ferramenta essencial para prever e mitigar possíveis problemas em projetos complexos.",
+    "en-US":
+      "Risk analysis is an essential tool for predicting and mitigating potential issues in complex projects.",
+  },
+  {
+    "pt-BR":
+      "A interdependência dos sistemas ecológicos destaca a importância de proteger a biodiversidade.",
+    "en-US":
+      "The interdependence of ecological systems highlights the importance of protecting biodiversity.",
+  },
+  {
+    "pt-BR":
+      "A globalização cultural está influenciando profundamente as tradições e costumes locais.",
+    "en-US":
+      "Cultural globalization is profoundly influencing local traditions and customs.",
+  },
+  {
+    "pt-BR":
+      "O avanço das tecnologias de comunicação está mudando a forma como interagimos e compartilhamos informações.",
+    "en-US":
+      "Advancements in communication technologies are changing the way we interact and share information.",
+  },
+  {
+    "pt-BR":
+      "A teoria dos jogos oferece uma perspectiva única sobre como as pessoas tomam decisões em situações de conflito.",
+    "en-US":
+      "Game theory offers a unique perspective on how people make decisions in conflict situations.",
+  },
+  {
+    "pt-BR":
+      "A análise de dados big data pode revelar padrões ocultos e tendências importantes para a tomada de decisões estratégicas.",
+    "en-US":
+      "Big data analysis can reveal hidden patterns and important trends for strategic decision-making.",
+  },
+  {
+    "pt-BR":
+      "A filosofia política examina os fundamentos teóricos e práticos das estruturas de poder e governo.",
+    "en-US":
+      "Political philosophy examines the theoretical and practical foundations of power structures and government.",
+  },
+  {
+    "pt-BR":
+      "A responsabilidade ambiental das empresas é um aspecto crescente da governança corporativa moderna.",
+    "en-US":
+      "Environmental responsibility of companies is an increasing aspect of modern corporate governance.",
+  },
+  {
+    "pt-BR":
+      "O impacto da digitalização no setor financeiro está criando novas oportunidades e desafios.",
+    "en-US":
+      "The impact of digitization on the financial sector is creating new opportunities and challenges.",
+  },
+  {
+    "pt-BR":
+      "A teoria econômica clássica é frequentemente desafiada por novas abordagens e modelos teóricos.",
+    "en-US":
+      "Classical economic theory is often challenged by new approaches and theoretical models.",
+  },
+  {
+    "pt-BR":
+      "A relação entre políticas públicas e desenvolvimento social é complexa e multifacetada.",
+    "en-US":
+      "The relationship between public policies and social development is complex and multifaceted.",
+  },
+  {
+    "pt-BR":
+      "A preservação histórica é vital para manter a identidade cultural e a herança de uma sociedade.",
+    "en-US":
+      "Historical preservation is vital for maintaining a society's cultural identity and heritage.",
+  },
+  {
+    "pt-BR":
+      "A educação inclusiva busca criar ambientes de aprendizado que atendam às necessidades de todos os alunos.",
+    "en-US":
+      "Inclusive education aims to create learning environments that meet the needs of all students.",
+  },
+  {
+    "pt-BR":
+      "O impacto das políticas econômicas globais pode variar significativamente entre diferentes regiões e países.",
+    "en-US":
+      "The impact of global economic policies can vary significantly between different regions and countries.",
+  },
+  {
+    "pt-BR":
+      "O conceito de justiça econômica envolve a distribuição equitativa de recursos e oportunidades.",
+    "en-US":
+      "The concept of economic justice involves the equitable distribution of resources and opportunities.",
+  },
+  {
+    "pt-BR":
+      "A adaptação às novas tecnologias exige uma atualização constante das habilidades e conhecimentos.",
+    "en-US":
+      "Adapting to new technologies requires constant updating of skills and knowledge.",
+  },
+  {
+    "pt-BR":
+      "A análise de políticas públicas é essencial para avaliar a eficácia das intervenções governamentais.",
+    "en-US":
+      "Policy analysis is essential for evaluating the effectiveness of government interventions.",
+  },
+  {
+    "pt-BR":
+      "O impacto da inteligência emocional nas interações sociais e profissionais é um campo de estudo crescente.",
+    "en-US":
+      "The impact of emotional intelligence on social and professional interactions is an growing field of study.",
+  },
+  {
+    "pt-BR":
+      "A complexidade dos sistemas políticos modernos exige uma abordagem multidisciplinar para compreensão e análise.",
+    "en-US":
+      "The complexity of modern political systems requires a multidisciplinary approach for understanding and analysis.",
+  },
+  {
+    "pt-BR":
+      "O desenvolvimento de habilidades de liderança é crucial para o sucesso em cargos executivos.",
+    "en-US":
+      "Developing leadership skills is crucial for success in executive positions.",
+  },
+  {
+    "pt-BR":
+      "O conceito de capital social é importante para entender as dinâmicas de redes sociais e comunidades.",
+    "en-US":
+      "The concept of social capital is important for understanding the dynamics of social networks and communities.",
+  },
+  {
+    "pt-BR":
+      "A inovação em saúde pública pode levar a melhorias significativas na qualidade de vida das populações.",
+    "en-US":
+      "Innovation in public health can lead to significant improvements in the quality of life for populations.",
+  },
+  {
+    "pt-BR":
+      "A análise crítica dos meios de comunicação ajuda a compreender a influência que exercem sobre a opinião pública.",
+    "en-US":
+      "Critical analysis of media helps to understand the influence they exert on public opinion.",
+  },
+  {
+    "pt-BR":
+      "A eficiência energética é um componente-chave na redução das emissões de gases de efeito estufa.",
+    "en-US":
+      "Energy efficiency is a key component in reducing greenhouse gas emissions.",
+  },
+  {
+    "pt-BR":
+      "O impacto das políticas de imigração pode ser visto tanto em nível econômico quanto social.",
+    "en-US":
+      "The impact of immigration policies can be seen both economically and socially.",
+  },
+  {
+    "pt-BR":
+      "O conceito de direitos humanos é fundamental para a promoção da dignidade e igualdade em todo o mundo.",
+    "en-US":
+      "The concept of human rights is fundamental for promoting dignity and equality worldwide.",
+  },
+  {
+    "pt-BR":
+      "A digitalização dos serviços públicos tem o potencial de melhorar a acessibilidade e a eficiência.",
+    "en-US":
+      "Digitization of public services has the potential to improve accessibility and efficiency.",
+  },
+
+  {
+    "pt-BR": "Como a globalização afeta as economias emergentes?",
+    "en-US": "How does globalization affect emerging economies?",
+  },
+  {
+    "pt-BR":
+      "Quais são os principais desafios na implementação de políticas de sustentabilidade ambiental?",
+    "en-US":
+      "What are the main challenges in implementing environmental sustainability policies?",
+  },
+  {
+    "pt-BR": "Como as novas tecnologias estão moldando o futuro do trabalho?",
+    "en-US": "How are new technologies shaping the future of work?",
+  },
+  {
+    "pt-BR": "Qual é o papel das ONGs na promoção dos direitos humanos?",
+    "en-US": "What is the role of NGOs in promoting human rights?",
+  },
+  {
+    "pt-BR":
+      "Como a teoria da evolução pode ser aplicada para entender a diversidade das espécies?",
+    "en-US":
+      "How can the theory of evolution be applied to understand species diversity?",
+  },
+  {
+    "pt-BR": "Quais são os impactos das mudanças climáticas na agricultura?",
+    "en-US": "What are the impacts of climate change on agriculture?",
+  },
+  {
+    "pt-BR": "Como a ética empresarial influencia a reputação de uma empresa?",
+    "en-US": "How does business ethics influence a company's reputation?",
+  },
+  {
+    "pt-BR":
+      "Qual é a importância da educação bilíngue no desenvolvimento cognitivo?",
+    "en-US":
+      "What is the importance of bilingual education in cognitive development?",
+  },
+  {
+    "pt-BR": "Como a digitalização está transformando o setor financeiro?",
+    "en-US": "How is digitization transforming the financial sector?",
+  },
+  {
+    "pt-BR":
+      "Qual é o papel da filosofia política na formação de políticas públicas?",
+    "en-US":
+      "What is the role of political philosophy in shaping public policies?",
+  },
+  {
+    "pt-BR":
+      "Como a inteligência emocional pode impactar a liderança em uma organização?",
+    "en-US":
+      "How can emotional intelligence impact leadership in an organization?",
+  },
+  {
+    "pt-BR":
+      "Quais são os benefícios e desafios da integração de tecnologias emergentes na saúde?",
+    "en-US":
+      "What are the benefits and challenges of integrating emerging technologies in healthcare?",
+  },
+  {
+    "pt-BR":
+      "Como a análise crítica pode ajudar a entender os argumentos em textos acadêmicos?",
+    "en-US":
+      "How can critical analysis help in understanding arguments in academic texts?",
+  },
+  {
+    "pt-BR":
+      "Qual é a relação entre políticas econômicas globais e desigualdade regional?",
+    "en-US":
+      "What is the relationship between global economic policies and regional inequality?",
+  },
+  {
+    "pt-BR":
+      "Como o conceito de capital social afeta as dinâmicas comunitárias?",
+    "en-US":
+      "How does the concept of social capital affect community dynamics?",
+  },
+  {
+    "pt-BR":
+      "Qual é o impacto da inovação disruptiva em mercados tradicionais?",
+    "en-US":
+      "What is the impact of disruptive innovation on traditional markets?",
+  },
+  {
+    "pt-BR":
+      "Como a filosofia da ciência contribui para a compreensão dos métodos científicos?",
+    "en-US":
+      "How does the philosophy of science contribute to understanding scientific methods?",
+  },
+  {
+    "pt-BR":
+      "Qual é a importância da governança corporativa na transparência empresarial?",
+    "en-US":
+      "What is the importance of corporate governance in business transparency?",
+  },
+  {
+    "pt-BR":
+      "Como a sustentabilidade empresarial pode ser integrada em estratégias de longo prazo?",
+    "en-US":
+      "How can corporate sustainability be integrated into long-term strategies?",
+  },
+  {
+    "pt-BR": "Qual é o papel das redes sociais na formação de opinião pública?",
+    "en-US": "What is the role of social networks in shaping public opinion?",
+  },
+  {
+    "pt-BR":
+      "Como o conceito de justiça econômica pode ser aplicado para melhorar a equidade social?",
+    "en-US":
+      "How can the concept of economic justice be applied to improve social equity?",
+  },
+  {
+    "pt-BR":
+      "Quais são as implicações da digitalização para a privacidade dos dados pessoais?",
+    "en-US":
+      "What are the implications of digitization for personal data privacy?",
+  },
+  {
+    "pt-BR":
+      "Como a diversidade no local de trabalho pode influenciar a criatividade e inovação?",
+    "en-US": "How can workplace diversity influence creativity and innovation?",
+  },
+  {
+    "pt-BR":
+      "Qual é o impacto das políticas de imigração na economia e sociedade?",
+    "en-US":
+      "What is the impact of immigration policies on the economy and society?",
+  },
+  {
+    "pt-BR":
+      "Como a preservação histórica contribui para a identidade cultural de uma sociedade?",
+    "en-US":
+      "How does historical preservation contribute to a society's cultural identity?",
+  },
+  {
+    "pt-BR":
+      "Qual é a relação entre a inovação tecnológica e a mudança no comportamento do consumidor?",
+    "en-US":
+      "What is the relationship between technological innovation and changes in consumer behavior?",
+  },
+  {
+    "pt-BR":
+      "Como a teoria dos jogos pode ser aplicada para resolver conflitos em negociações?",
+    "en-US":
+      "How can game theory be applied to resolve conflicts in negotiations?",
+  },
+  {
+    "pt-BR":
+      "Qual é a importância da análise de dados na tomada de decisões estratégicas?",
+    "en-US":
+      "What is the importance of data analysis in strategic decision-making?",
+  },
+  {
+    "pt-BR":
+      "Como a responsabilidade ambiental das empresas pode influenciar a percepção pública?",
+    "en-US":
+      "How can corporate environmental responsibility influence public perception?",
+  },
+  {
+    "pt-BR":
+      "Qual é o papel da educação inclusiva no desenvolvimento acadêmico de todos os alunos?",
+    "en-US":
+      "What is the role of inclusive education in the academic development of all students?",
+  },
+  {
+    "pt-BR":
+      "Como a integração de tecnologias emergentes pode impactar o setor de saúde pública?",
+    "en-US":
+      "How can the integration of emerging technologies impact the public health sector?",
+  },
+  {
+    "pt-BR":
+      "Qual é o impacto da complexidade dos sistemas políticos na formulação de políticas públicas?",
+    "en-US":
+      "What is the impact of the complexity of political systems on public policy formulation?",
+  },
+
+  {
+    "pt-BR":
+      "A globalização pode beneficiar as economias emergentes ao expandir mercados e aumentar investimentos, mas também pode expô-las a volatilidades econômicas e desigualdades.",
+    "en-US":
+      "Globalization can benefit emerging economies by expanding markets and increasing investments, but it can also expose them to economic volatility and inequalities.",
+  },
+  {
+    "pt-BR":
+      "Os principais desafios incluem a coordenação entre diferentes setores, a resistência de partes interessadas e a necessidade de recursos financeiros e tecnológicos.",
+    "en-US":
+      "Main challenges include coordination among different sectors, stakeholder resistance, and the need for financial and technological resources.",
+  },
+  {
+    "pt-BR":
+      "Novas tecnologias estão automatizando tarefas, permitindo trabalho remoto e criando novas oportunidades e desafios no mercado de trabalho.",
+    "en-US":
+      "New technologies are automating tasks, enabling remote work, and creating new opportunities and challenges in the job market.",
+  },
+  {
+    "pt-BR":
+      "As ONGs promovem os direitos humanos por meio de advocacy, campanhas de conscientização e fornecimento de assistência a grupos vulneráveis.",
+    "en-US":
+      "NGOs promote human rights through advocacy, awareness campaigns, and providing assistance to vulnerable groups.",
+  },
+  {
+    "pt-BR":
+      "A teoria da evolução ajuda a explicar como as espécies se diversificam ao longo do tempo devido à adaptação às mudanças ambientais.",
+    "en-US":
+      "The theory of evolution helps explain how species diversify over time due to adaptation to environmental changes.",
+  },
+  {
+    "pt-BR":
+      "As mudanças climáticas podem reduzir a produtividade agrícola, alterar padrões de precipitação e aumentar a frequência de eventos extremos.",
+    "en-US":
+      "Climate change can reduce agricultural productivity, alter precipitation patterns, and increase the frequency of extreme events.",
+  },
+  {
+    "pt-BR":
+      "A ética empresarial promove a confiança dos consumidores e investidores, melhorando a imagem e a sustentabilidade da empresa a longo prazo.",
+    "en-US":
+      "Business ethics promotes consumer and investor trust, enhancing the company's image and long-term sustainability.",
+  },
+  {
+    "pt-BR":
+      "A educação bilíngue pode melhorar habilidades cognitivas, aumentar oportunidades profissionais e facilitar o acesso a diferentes culturas.",
+    "en-US":
+      "Bilingual education can enhance cognitive skills, increase professional opportunities, and facilitate access to different cultures.",
+  },
+  {
+    "pt-BR":
+      "A digitalização está mudando a forma como os serviços financeiros são oferecidos, com o crescimento de fintechs e soluções digitais.",
+    "en-US":
+      "Digitization is changing how financial services are provided, with the rise of fintechs and digital solutions.",
+  },
+  {
+    "pt-BR":
+      "A filosofia política oferece fundamentos teóricos para a criação de políticas públicas e ajuda a avaliar a eficácia das práticas governamentais.",
+    "en-US":
+      "Political philosophy provides theoretical foundations for creating public policies and helps evaluate the effectiveness of governmental practices.",
+  },
+  {
+    "pt-BR":
+      "A inteligência emocional pode melhorar a capacidade de um líder de entender e gerenciar suas próprias emoções e as dos outros.",
+    "en-US":
+      "Emotional intelligence can enhance a leader's ability to understand and manage their own emotions and those of others.",
+  },
+  {
+    "pt-BR":
+      "Os benefícios incluem a melhoria da eficiência e da qualidade dos cuidados, enquanto os desafios envolvem custos e a necessidade de treinamento.",
+    "en-US":
+      "Benefits include improved efficiency and care quality, while challenges involve costs and the need for training.",
+  },
+  {
+    "pt-BR":
+      "A análise crítica permite identificar falácias, compreender melhor os argumentos e avaliar a validade das evidências apresentadas.",
+    "en-US":
+      "Critical analysis helps identify fallacies, better understand arguments, and assess the validity of presented evidence.",
+  },
+  {
+    "pt-BR":
+      "Políticas econômicas globais podem exacerbar desigualdades regionais ao beneficiar desproporcionalmente economias mais desenvolvidas.",
+    "en-US":
+      "Global economic policies can exacerbate regional inequalities by disproportionately benefiting more developed economies.",
+  },
+  {
+    "pt-BR":
+      "O capital social pode fortalecer laços comunitários, promover a cooperação e facilitar o acesso a recursos e oportunidades.",
+    "en-US":
+      "Social capital can strengthen community ties, promote cooperation, and facilitate access to resources and opportunities.",
+  },
+  {
+    "pt-BR":
+      "A inovação disruptiva pode forçar empresas a adaptarem seus modelos de negócios ou enfrentar o risco de obsolescência.",
+    "en-US":
+      "Disruptive innovation can force companies to adapt their business models or face the risk of obsolescence.",
+  },
+  {
+    "pt-BR":
+      "A filosofia da ciência ajuda a esclarecer os métodos e fundamentos da pesquisa científica, promovendo uma melhor compreensão dos processos científicos.",
+    "en-US":
+      "The philosophy of science helps clarify the methods and foundations of scientific research, promoting a better understanding of scientific processes.",
+  },
+  {
+    "pt-BR":
+      "A governança corporativa é crucial para garantir que uma empresa opere de maneira transparente, ética e responsável.",
+    "en-US":
+      "Corporate governance is crucial for ensuring that a company operates transparently, ethically, and responsibly.",
+  },
+  {
+    "pt-BR":
+      "A sustentabilidade empresarial pode ser integrada através de práticas de responsabilidade social, eficiência de recursos e estratégias de longo prazo.",
+    "en-US":
+      "Corporate sustainability can be integrated through social responsibility practices, resource efficiency, and long-term strategies.",
+  },
+  {
+    "pt-BR":
+      "Redes sociais influenciam a opinião pública ao amplificar informações e facilitar a interação entre grupos de interesse.",
+    "en-US":
+      "Social networks influence public opinion by amplifying information and facilitating interaction between interest groups.",
+  },
+  {
+    "pt-BR":
+      "O conceito de justiça econômica pode ser aplicado através de políticas que promovem a equidade na distribuição de recursos e oportunidades.",
+    "en-US":
+      "The concept of economic justice can be applied through policies that promote equity in the distribution of resources and opportunities.",
+  },
+  {
+    "pt-BR":
+      "A digitalização pode comprometer a privacidade dos dados ao expor informações pessoais a riscos de segurança e uso indevido.",
+    "en-US":
+      "Digitization can compromise data privacy by exposing personal information to security risks and misuse.",
+  },
+  {
+    "pt-BR":
+      "A diversidade no local de trabalho pode fomentar novas perspectivas, promover a inovação e melhorar a colaboração entre equipes.",
+    "en-US":
+      "Workplace diversity can foster new perspectives, promote innovation, and enhance team collaboration.",
+  },
+  {
+    "pt-BR":
+      "Políticas de imigração podem influenciar a economia ao afetar a força de trabalho, o consumo e as relações internacionais.",
+    "en-US":
+      "Immigration policies can influence the economy by affecting the workforce, consumption, and international relations.",
+  },
+  {
+    "pt-BR":
+      "Preservar a história ajuda a manter a identidade cultural e fornece uma conexão com o passado para as futuras gerações.",
+    "en-US":
+      "Historical preservation helps maintain cultural identity and provides a connection to the past for future generations.",
+  },
+  {
+    "pt-BR":
+      "A inovação tecnológica pode mudar o comportamento do consumidor ao introduzir novos produtos e alterar as expectativas do mercado.",
+    "en-US":
+      "Technological innovation can change consumer behavior by introducing new products and altering market expectations.",
+  },
+  {
+    "pt-BR":
+      "A teoria dos jogos pode ajudar a resolver conflitos ao modelar diferentes estratégias e prever possíveis resultados em negociações.",
+    "en-US":
+      "Game theory can help resolve conflicts by modeling different strategies and predicting possible outcomes in negotiations.",
+  },
+  {
+    "pt-BR":
+      "A análise de dados é crucial para identificar tendências, fazer previsões e tomar decisões informadas em ambientes empresariais.",
+    "en-US":
+      "Data analysis is crucial for identifying trends, making forecasts, and making informed decisions in business environments.",
+  },
+  {
+    "pt-BR":
+      "A responsabilidade ambiental pode influenciar a percepção pública ao demonstrar o compromisso de uma empresa com práticas sustentáveis.",
+    "en-US":
+      "Environmental responsibility can influence public perception by demonstrating a company's commitment to sustainable practices.",
+  },
+  {
+    "pt-BR":
+      "A educação inclusiva busca atender às necessidades de todos os alunos, promovendo um ambiente de aprendizado equitativo e acessível.",
+    "en-US":
+      "Inclusive education aims to meet the needs of all students, promoting an equitable and accessible learning environment.",
+  },
+  {
+    "pt-BR":
+      "A integração de tecnologias emergentes pode melhorar a eficiência dos serviços de saúde pública, mas também pode enfrentar desafios de implementação.",
+    "en-US":
+      "Integrating emerging technologies can improve the efficiency of public health services but may also face implementation challenges.",
+  },
+  {
+    "pt-BR":
+      "A complexidade dos sistemas políticos pode dificultar a formulação de políticas públicas ao envolver múltiplas partes interessadas e interesses conflitantes.",
+    "en-US":
+      "The complexity of political systems can hinder public policy formulation by involving multiple stakeholders and conflicting interests.",
+  },
+  // long phrases
+  //////////////////////
+  {
+    "en-US": "He didn't see me.",
+    "pt-BR": "Ele não me olhou.",
+  },
+  {
+    "en-US": "She helped herself.",
+    "pt-BR": "Ela se ajudou.",
+  },
+  {
+    "en-US": "Tell me the truth.",
+    "pt-BR": "Fale-me a verdade.",
+  },
+  {
+    "en-US": "He gave me a book.",
+    "pt-BR": "Ele me deu um livro.",
+  },
+  {
+    "en-US": "You always help yourself.",
+    "pt-BR": "Você sempre se ajuda.",
+  },
+  {
+    "en-US": "Don't forget to call me.",
+    "pt-BR": "Não se esqueça de me ligar.",
+  },
+  {
+    "en-US": "They saw themselves in the mirror.",
+    "pt-BR": "Eles se olharam no espelho.",
+  },
+  {
+    "en-US": "She forgot to tell me.",
+    "pt-BR": "Ela se esqueceu de me dizer.",
+  },
+  {
+    "en-US": "I can see myself in the picture.",
+    "pt-BR": "Eu posso me ver na imagem.",
+  },
+  {
+    "en-US": "They asked me to help.",
+    "pt-BR": "Eles me pediram para ajudar.",
+  },
+  {
+    "en-US": "You will hurt yourself if you're not careful.",
+    "pt-BR": "Você vai se machucar se não tomar cuidado.",
+  },
+  {
+    "en-US": "They always blame themselves.",
+    "pt-BR": "Eles sempre se culpam.",
+  },
+  {
+    "en-US": "She didn't tell me the truth.",
+    "pt-BR": "Ela não me disse a verdade.",
+  },
+  {
+    "en-US": "He found himself lost in the city.",
+    "pt-BR": "Ele se encontrou perdido na cidade.",
+  },
+  {
+    "en-US": "I told you not to worry.",
+    "pt-BR": "Eu te disse para não te preocupar.",
+  },
+  {
+    "en-US": "They promised me they would come.",
+    "pt-BR": "Eles me prometeram que viriam.",
+  },
+  {
+    "en-US": "He can't see himself in the mirror.",
+    "pt-BR": "Ele não consegue se ver no espelho.",
+  },
+  {
+    "en-US": "We helped each other.",
+    "pt-BR": "Nós nos ajudamos.",
+  },
+  {
+    "en-US": "She reminded herself to buy milk.",
+    "pt-BR": "Ela se lembrou de comprar leite.",
+  },
+  {
+    "en-US": "They asked themselves if it was the right decision.",
+    "pt-BR": "Eles se perguntaram se era a decisão certa.",
+  },
+  {
+    "en-US": "I asked you to meet me at the park.",
+    "pt-BR": "Eu te pedi para me encontrar no parque.",
+  },
+  {
+    "en-US": "She prepared herself for the interview.",
+    "pt-BR": "Ela se preparou para a entrevista.",
+  },
+  {
+    "en-US": "We found ourselves lost in the city.",
+    "pt-BR": "Nós nos encontramos perdidos na cidade.",
+  },
+  {
+    "en-US": "You can see yourself in the reflection.",
+    "pt-BR": "Você pode se ver no reflexo.",
+  },
+  {
+    "en-US": "We need to take care of ourselves.",
+    "pt-BR": "Nós precisamos nos cuidar.",
+  },
+  {
+    "en-US": "They congratulated themselves for the achievement.",
+    "pt-BR": "Eles se parabenizaram pela conquista.",
+  },
+  {
+    "en-US": "I reminded myself to buy groceries.",
+    "pt-BR": "Eu me lembrei de comprar mantimentos.",
+  },
+  {
+    "en-US": "You should introduce yourself to the new neighbors.",
+    "pt-BR": "Você deveria se apresentar aos novos vizinhos.",
+  },
+  {
+    "en-US": "We promised ourselves a vacation after the project.",
+    "pt-BR": "Nós nos prometemos umas férias depois do projeto.",
+  },
+  {
+    "en-US": "They asked me if I could help.",
+    "pt-BR": "Eles me perguntaram se eu podia ajudar.",
+  },
+  {
+    "en-US": "She cut herself while cooking.",
+    "pt-BR": "Ela se cortou enquanto cozinhava.",
+  },
+  {
+    "en-US": "We need to remind ourselves of the deadline.",
+    "pt-BR": "Nós precisamos nos lembrar do prazo final.",
+  },
+  {
+    "en-US": "You should take care of yourself.",
+    "pt-BR": "Você deve se cuidar.",
+  },
+  {
+    "en-US": "They taught themselves how to cook.",
+    "pt-BR": "Eles se ensinaram a cozinhar.",
+  },
+  {
+    "en-US": "I asked myself if I was ready.",
+    "pt-BR": "Eu me perguntei se estava pronto.",
+  },
+  {
+    "en-US": "She promised herself she would work harder.",
+    "pt-BR": "Ela se prometeu que iria trabalhar mais duro.",
+  },
+  {
+    "en-US": "We should remind ourselves of our goals.",
+    "pt-BR": "Nós devemos nos lembrar dos nossos objetivos.",
+  },
+  {
+    "en-US": "They apologized to each other after the argument.",
+    "pt-BR": "Eles se desculparam depois do argumento.",
+  },
+  {
+    "en-US": "I reminded myself to send the email.",
+    "pt-BR": "Eu me lembrei de enviar o e-mail.",
+  },
+  {
+    "en-US": "She taught herself how to play the piano.",
+    "pt-BR": "Ela se ensinou a tocar piano.",
+  },
+  {
+    "en-US": "We encouraged each other during the race.",
+    "pt-BR": "Nós nos encorajamos durante a corrida.",
+  },
+  {
+    "en-US": "I see myself in the mirror.",
+    "pt-BR": "Eu me vejo no espelho.",
+  },
+  {
+    "en-US": "He told you the truth.",
+    "pt-BR": "Ele te falou a verdade.",
+  },
+  {
+    "en-US": "She will call you tomorrow.",
+    "pt-BR": "Ela vai te chamar amanhã.",
+  },
+  {
+    "en-US": "Don’t sit down!",
+    "pt-BR": "Não se sente!",
+  },
+  {
+    "en-US": "I remember you.",
+    "pt-BR": "Eu me lembro de você.",
+  },
+  {
+    "en-US": "They will help me tomorrow.",
+    "pt-BR": "Eles vão me ajudar amanhã.",
+  },
+  {
+    "en-US": "Can you see yourself in the reflection?",
+    "pt-BR": "Você consegue se ver no reflexo?",
+  },
+  {
+    "en-US": "I didn't call you because I was busy.",
+    "pt-BR": "Eu não te liguei porque estava ocupado.",
+  },
+  {
+    "en-US": "She doesn’t remember him.",
+    "pt-BR": "Ela não se lembra dele.",
+  },
+  {
+    "en-US": "We will sit down after the meeting.",
+    "pt-BR": "Nós vamos nos sentar depois da reunião.",
+  },
+  {
+    "en-US": "You should study more.",
+    "pt-BR": "Você deve estudar mais.",
+  },
+  {
+    "en-US": "You must arrive on time.",
+    "pt-BR": "Você deve chegar na hora.",
+  },
+  {
+    "en-US": "Don't sit here",
+    "pt-BR": "Não se sentem aqui",
+  },
+  {
+    "en-US": "I study every day.",
+    "pt-BR": "Eu estudo todos os dias.",
+  },
+  {
+    "en-US": "We sleep early.",
+    "pt-BR": "Nós dormimos cedo.",
+  },
+  {
+    "en-US": "They drink water after exercising.",
+    "pt-BR": "Eles bebem água após o exercício.",
+  },
+  {
+    "en-US": "She opens the door.",
+    "pt-BR": "Ela abre a porta.",
+  },
+  {
+    "en-US": "You walk on the beach on weekends.",
+    "pt-BR": "Você caminha na praia aos fins de semana.",
+  },
+  {
+    "en-US": "He reads books every month.",
+    "pt-BR": "Ele lê livros todos os meses.",
+  },
+  {
+    "en-US": "We listen to loud music.",
+    "pt-BR": "Nós ouvimos música alta.",
+  },
+  {
+    "en-US": "I work a lot during the summer.",
+    "pt-BR": "Eu trabalho muito durante o verão.",
+  },
+  {
+    "en-US": "You all go to the cinema frequently.",
+    "pt-BR": "Vocês vão ao cinema com frequência.",
+  },
+  {
+    "en-US": "She drives the car every day.",
+    "pt-BR": "Ela dirige o carro todos os dias.",
+  },
+  {
+    "en-US": "I cook dinner tonight.",
+    "pt-BR": "Eu cozinho o jantar hoje à noite.",
+  },
+  {
+    "en-US": "They clean the house on the weekend.",
+    "pt-BR": "Eles limpam a casa no fim de semana.",
+  },
+  {
+    "en-US": "We run in the park every day.",
+    "pt-BR": "Nós corremos no parque todos os dias.",
+  },
+  {
+    "en-US": "She talks with her friend about the project.",
+    "pt-BR": "Ela fala com a amiga sobre o projeto.",
+  },
+  {
+    "en-US": "You listen to music before sleeping.",
+    "pt-BR": "Você ouve a música antes de dormir.",
+  },
+  {
+    "en-US": "I visit the city with my friends.",
+    "pt-BR": "Eu visito a cidade com meus amigos.",
+  },
+  {
+    "en-US": "They stay at home during the holiday.",
+    "pt-BR": "Eles ficam em casa durante o feriado.",
+  },
+  {
+    "en-US": "We write a letter to our parents.",
+    "pt-BR": "Nós escrevemos uma carta para nossos pais.",
+  },
+  {
+    "en-US": "She closes the door before leaving.",
+    "pt-BR": "Ela fecha a porta antes de sair.",
+  },
+  {
+    "en-US": "You swim in the pool on weekends.",
+    "pt-BR": "Você nada na piscina nos fins de semana.",
+  },
+  {
+    "en-US": "I don't see anything",
+    "pt-BR": "Eu não vejo nada.",
+  },
+
+  {
+    "en-US": "I tell the truth.",
+    "pt-BR": "Eu digo a verdade.",
+  },
+  {
+    "en-US": "They try the new restaurant.",
+    "pt-BR": "Eles experimentam o novo restaurante.",
+  },
+  {
+    "en-US": "We organize a party tomorrow.",
+    "pt-BR": "Nós organizamos uma festa amanhã.",
+  },
+  {
+    "en-US": "She puts the book on the table.",
+    "pt-BR": "Ela coloca o livro na mesa.",
+  },
+  {
+    "en-US": "You wake up early during the week.",
+    "pt-BR": "Você acorda cedo durante a semana.",
+  },
+  {
+    "en-US": "I watch the movie before sleeping.",
+    "pt-BR": "Eu assisto o filme antes de dormir.",
+  },
+  {
+    "en-US": "They play soccer on Saturdays.",
+    "pt-BR": "Eles jogam futebol aos sábados.",
+  },
+  {
+    "en-US": "We have breakfast together.",
+    "pt-BR": "Nós tomamos o café da manhã juntos.",
+  },
+  {
+    "en-US": "She calls all her friends.",
+    "pt-BR": "Ela chama todos os seus amigos.",
+  },
+  {
+    "en-US": "You run very fast!",
+    "pt-BR": "Você corre muito rápido!",
+  },
+  {
+    "en-US": "I walked on the beach yesterday.",
+    "pt-BR": "Eu caminhei na praia ontem.",
+  },
+  {
+    "en-US": "They ate dinner at their house.",
+    "pt-BR": "Eles comeram o jantar na casa deles.",
+  },
+  {
+    "en-US": "We watched the movie last week.",
+    "pt-BR": "Nós assistimos o filme na semana passada.",
+  },
+  {
+    "en-US": "She received the birthday present.",
+    "pt-BR": "Ela recebeu o presente de aniversário.",
+  },
+  {
+    "en-US": "You placed the book on the shelf.",
+    "pt-BR": "Você colocou o livro na estante.",
+  },
+  {
+    "en-US": "I closed the window before leaving.",
+    "pt-BR": "Eu fechei a janela antes de sair.",
+  },
+  {
+    "en-US": "They left for work in the morning.",
+    "pt-BR": "Eles partiram para o trabalho de manhã.",
+  },
+  {
+    "en-US": "We wrote a letter to the boss.",
+    "pt-BR": "Nós escrevemos uma carta para o chefe.",
+  },
+  {
+    "en-US": "She cleaned the house by herself.",
+    "pt-BR": "Ela limpou a casa sozinha.",
+  },
+  {
+    "en-US": "You chatted with your friends on the weekend.",
+    "pt-BR": "Você conversou com seus amigos no fim de semana.",
+  },
+  {
+    "en-US": "I arrived early for work yesterday.",
+    "pt-BR": "Eu cheguei cedo para o trabalho ontem.",
+  },
+  {
+    "en-US": "They finished the project on time.",
+    "pt-BR": "Eles terminaram o projeto a tempo.",
+  },
+  {
+    "en-US": "She heard the music on the radio.",
+    "pt-BR": "Ela ouviu a música no rádio.",
+  },
+  {
+    "en-US": "We bought the birthday present together.",
+    "pt-BR": "Nós compramos o presente de aniversário juntos.",
+  },
+  {
+    "en-US": "You sent the letter to the recipient.",
+    "pt-BR": "Você enviou a carta ao destinatário.",
+  },
+  {
+    "en-US": "I packed the bags before traveling.",
+    "pt-BR": "Eu fiz as malas antes de viajar.",
+  },
+  {
+    "en-US": "They parked the car in the garage.",
+    "pt-BR": "Eles estacionaram o carro na garagem.",
+  },
+  {
+    "en-US": "We delivered the report to the boss.",
+    "pt-BR": "Nós entregamos o relatório para o chefe.",
+  },
+  {
+    "en-US": "She bought the clothes in the store.",
+    "pt-BR": "Ela comprou a roupa na loja.",
+  },
+  {
+    "en-US": "You talked about the topic yesterday.",
+    "pt-BR": "Você falou sobre o assunto ontem.",
+  },
+  {
+    "en-US": "I read an interesting book last week.",
+    "pt-BR": "Eu li um livro interessante na semana passada.",
+  },
+  {
+    "en-US": "They played on the beach all day.",
+    "pt-BR": "Eles brincaram na praia o dia todo.",
+  },
+  {
+    "en-US": "We prepared the dinner together.",
+    "pt-BR": "Nós preparamos o jantar juntos.",
+  },
+  {
+    "en-US": "She turned off the lights before sleeping.",
+    "pt-BR": "Ela apagou as luzes antes de dormir.",
+  },
+  {
+    "en-US": "You scheduled the meeting with your colleagues.",
+    "pt-BR": "Você marcou a reunião com os colegas.",
+  },
+  {
+    "en-US": "I woke up very early yesterday.",
+    "pt-BR": "Eu acordei muito cedo ontem.",
+  },
+  {
+    "en-US": "They left the documents on the table.",
+    "pt-BR": "Eles deixaram os documentos na mesa.",
+  },
+  {
+    "en-US": "We played the game until late.",
+    "pt-BR": "Nós jogamos o jogo até tarde.",
+  },
+  {
+    "en-US": "She took a beautiful picture.",
+    "pt-BR": "Ela tirou uma foto linda.",
+  },
+  {
+    "en-US": "You finished the work quickly.",
+    "pt-BR": "Você terminou o trabalho rapidamente.",
+  },
+  {
+    "en-US": "I will dance at the party tomorrow.",
+    "pt-BR": "Eu dançarei na festa amanhã.",
+  },
+  {
+    "en-US": "They will watch the new movie at the cinema.",
+    "pt-BR": "Eles assistirão o novo filme no cinema.",
+  },
+  {
+    "en-US": "We will prepare a special lunch on Sunday.",
+    "pt-BR": "Nós prepararemos um almoço especial no domingo.",
+  },
+  {
+    "en-US": "She will read a new book next week.",
+    "pt-BR": "Ela lerá um novo livro semana que vem.",
+  },
+  {
+    "en-US": "You will leave for work earlier.",
+    "pt-BR": "Você sairá para o trabalho mais cedo.",
+  },
+  {
+    "en-US": "I will buy a new car next year.",
+    "pt-BR": "Eu comprarei um carro novo no próximo ano.",
+  },
+  {
+    "en-US": "They will go to the park later.",
+    "pt-BR": "Eles irão ao parque mais tarde.",
+  },
+  {
+    "en-US": "We will invite our friends for dinner.",
+    "pt-BR": "Nós convidaremos nossos amigos para jantar.",
+  },
+  {
+    "en-US": "She will water the plants tomorrow.",
+    "pt-BR": "Ela regará as plantas amanhã.",
+  },
+  {
+    "en-US": "You will plan a trip next month.",
+    "pt-BR": "Você planejará uma viagem no mês que vem.",
+  },
+  {
+    "en-US": "I will travel with my parents on the weekend.",
+    "pt-BR": "Eu viajarei com meus pais no fim de semana.",
+  },
+  {
+    "en-US": "They will start a new course at the university.",
+    "pt-BR": "Eles começarão um novo curso na universidade.",
+  },
+  {
+    "en-US": "We will pack the bags on Friday.",
+    "pt-BR": "Nós faremos as malas na sexta-feira.",
+  },
+  {
+    "en-US": "She will take the children to school.",
+    "pt-BR": "Ela levará as crianças para a escola.",
+  },
+  {
+    "en-US": "You will accept the job offer.",
+    "pt-BR": "Você aceitará a proposta de trabalho.",
+  },
+  {
+    "en-US": "I am very happy today.",
+    "pt-BR": "Eu estou muito feliz hoje.",
+  },
+  {
+    "en-US": "We are Portuguese students.",
+    "pt-BR": "Nós somos estudantes de português.",
+  },
+  {
+    "en-US": "She is my friend.",
+    "pt-BR": "Ela é minha amiga.",
+  },
+  {
+    "en-US": "Are you tired after work?",
+    "pt-BR": "Você está cansado depois do trabalho?",
+  },
+  {
+    "en-US": "They are in the park now.",
+    "pt-BR": "Eles estão no parque agora.",
+  },
+  {
+    "en-US": "We are ready for the meeting.",
+    "pt-BR": "Nós estamos prontos para a reunião.",
+  },
+  {
+    "en-US": "They are very intelligent.",
+    "pt-BR": "Eles são muito inteligentes.",
+  },
+  {
+    "en-US": "The party is at João's house.",
+    "pt-BR": "A festa é na casa do João.",
+  },
+  {
+    "en-US": "Are you a doctor?",
+    "pt-BR": "Você é médico?",
+  },
+  {
+    "en-US": "The children are in the park now.",
+    "pt-BR": "As crianças estão no parque agora.",
+  },
+  {
+    "en-US": "I am very busy today.",
+    "pt-BR": "Eu estou muito ocupado hoje.",
+  },
+  {
+    "en-US": "They are from São Paulo.",
+    "pt-BR": "Eles são de São Paulo.",
+  },
+  {
+    "en-US": "The food is delicious.",
+    "pt-BR": "A comida é deliciosa.",
+  },
+  {
+    "en-US": "We are in the library now.",
+    "pt-BR": "Nós estamos na biblioteca agora.",
+  },
+  {
+    "en-US": "You are my best friend.",
+    "pt-BR": "Você é meu melhor amigo.",
+  },
+  {
+    "en-US": "I was very happy on my birthday.",
+    "pt-BR": "Eu estava muito feliz no meu aniversário.",
+  },
+  {
+    "en-US": "They were in Brazil during the holidays.",
+    "pt-BR": "Eles estiveram no Brasil durante as férias.",
+  },
+  {
+    "en-US": "The event was a success.",
+    "pt-BR": "O evento foi um sucesso.",
+  },
+  {
+    "en-US": "We were friends since childhood.",
+    "pt-BR": "Nós éramos amigos desde a infância.",
+  },
+  {
+    "en-US": "You were tired after the race.",
+    "pt-BR": "Você estava cansado depois da corrida.",
+  },
+  {
+    "en-US": "She was very worried about the exam.",
+    "pt-BR": "Ela estava muito preocupada com o exame.",
+  },
+  {
+    "en-US": "We were at home all day.",
+    "pt-BR": "Nós estivemos em casa o dia todo.",
+  },
+  {
+    "en-US": "They were excellent teachers.",
+    "pt-BR": "Eles eram professores excelentes.",
+  },
+  {
+    "en-US": "The meeting was important for everyone.",
+    "pt-BR": "A reunião foi importante para todos.",
+  },
+  {
+    "en-US": "You were the best student in the class.",
+    "pt-BR": "Você era o melhor aluno da turma.",
+  },
+  {
+    "en-US": "I was at the beach during the vacation.",
+    "pt-BR": "Eu estava na praia durante as férias.",
+  },
+  {
+    "en-US": "They were very excited about the trip.",
+    "pt-BR": "Eles estavam muito animados com a viagem.",
+  },
+  {
+    "en-US": "The movie was very interesting.",
+    "pt-BR": "O filme foi muito interessante.",
+  },
+  {
+    "en-US": "We were responsible for the project.",
+    "pt-BR": "Nós éramos os responsáveis pelo projeto.",
+  },
+  {
+    "en-US": "Were you at the meeting yesterday?",
+    "pt-BR": "Você esteve na reunião ontem?",
+  },
+  {
+    "en-US": "I will be very busy tomorrow.",
+    "pt-BR": "Eu estarei muito ocupado amanhã.",
+  },
+  {
+    "en-US": "They will be happy with the result.",
+    "pt-BR": "Eles estarão felizes com o resultado.",
+  },
+  {
+    "en-US": "The presentation will be in the main auditorium.",
+    "pt-BR": "A apresentação estará no auditório principal.",
+  },
+  {
+    "en-US": "We will be ready for the challenge.",
+    "pt-BR": "Nós estaremos prontos para o desafio.",
+  },
+  {
+    "en-US": "You will be a great professional.",
+    "pt-BR": "Você será um ótimo profissional.",
+  },
+  {
+    "en-US": "They will be at the meeting next week.",
+    "pt-BR": "Eles estarão na reunião na próxima semana.",
+  },
+  {
+    "en-US": "We will be very busy with the project.",
+    "pt-BR": "Nós estaremos muito ocupados com o projeto.",
+  },
+  {
+    "en-US": "The party will be on Saturday night.",
+    "pt-BR": "A festa será no sábado à noite.",
+  },
+  {
+    "en-US": "You will always be welcome here.",
+    "pt-BR": "Você será sempre bem-vindo aqui.",
+  },
+  {
+    "en-US": "I will be more careful next time.",
+    "pt-BR": "Eu serei mais cuidadoso da próxima vez.",
+  },
+  {
+    "en-US": "I am working on a new project now.",
+    "pt-BR": "Eu estou trabalhando em um novo projeto agora.",
+  },
+  {
+    "en-US": "They are talking about the event.",
+    "pt-BR": "Eles estão falando sobre o evento.",
+  },
+  {
+    "en-US": "We are studying for the exam.",
+    "pt-BR": "Nós estamos estudando para a prova.",
+  },
+  {
+    "en-US": "She is singing a beautiful song.",
+    "pt-BR": "Ela está cantando uma música bonita.",
+  },
+  {
+    "en-US": "Are you watching a movie now?",
+    "pt-BR": "Você está assistindo a um filme agora?",
+  },
+  {
+    "en-US": "I was working on an important project yesterday.",
+    "pt-BR": "Eu estava trabalhando em um projeto importante ontem.",
+  },
+  {
+    "en-US": "They were talking about the plan.",
+    "pt-BR": "Eles estavam conversando sobre o plano.",
+  },
+  {
+    "en-US": "She was cooking when I arrived.",
+    "pt-BR": "Ela estava cozinhando quando eu cheguei.",
+  },
+  {
+    "en-US": "Were you watching TV at night?",
+    "pt-BR": "Você estava assistindo à TV à noite?",
+  },
+  {
+    "en-US": "I will be working on a new project tomorrow.",
+    "pt-BR": "Eu estarei trabalhando em um novo projeto amanhã.",
+  },
+  {
+    "en-US": "They will be traveling abroad next week.",
+    "pt-BR": "Eles estarão viajando para o exterior na próxima semana.",
+  },
+  {
+    "en-US": "We will be studying together for the exam.",
+    "pt-BR": "Nós estaremos estudando juntos para o exame.",
+  },
+  {
+    "en-US": "She will be preparing dinner when you arrive.",
+    "pt-BR": "Ela estará preparando o jantar quando você chegar.",
+  },
+  {
+    "en-US": "Will you be watching the movie tomorrow?",
+    "pt-BR": "Você estará assistindo ao filme amanhã?",
+  },
+  {
+    "en-US": "When I was a child, I liked to play hide-and-seek.",
+    "pt-BR": "Quando eu era criança, eu gostava de brincar de esconde-esconde.",
+  },
+  {
+    "en-US": "I could go to the party, but I would prefer to stay home.",
+    "pt-BR": "Eu poderia ir à festa, mas preferiria ficar em casa.",
+  },
+  {
+    "en-US": "Tomorrow, we will travel to the beach and swim in the sea.",
+    "pt-BR": "Amanhã, nós viajaremos para a praia e nadaremos no mar.",
+  },
+  {
+    "en-US":
+      "I was traveling abroad and learning to speak English when I was a child.",
+    "pt-BR":
+      "Eu estava viajando para o exterior e estava aprendendo a falar inglês quando eu era criança.",
+  },
+  {
+    "en-US": "I will finish the project and receive an award next year.",
+    "pt-BR": "Eu terminarei o projeto e receberei um prêmio no ano que vem.",
+  },
+  {
+    "en-US":
+      "I studied for the exam and started to feel more confident yesterday.",
+    "pt-BR":
+      "Eu estudei para o exame e comecei a me sentir mais confiante ontem.",
+  },
+  {
+    "en-US":
+      "I was studying for the exam and started to feel more confident yesterday.",
+    "pt-BR":
+      "Eu estava estudando para o exame e comecei a me sentir mais confiante ontem.",
+  },
+  {
+    "en-US": "I work in the office and take a coffee now.",
+    "pt-BR": "Eu trabalho no escritório e tomo um café agora.",
+  },
+  {
+    "en-US": "I am a student.",
+    "pt-BR": "Eu sou estudante.",
+  },
+  {
+    "en-US": "You are a teacher.",
+    "pt-BR": "Tu és professor.",
+  },
+  {
+    "en-US": "He is a doctor.",
+    "pt-BR": "Ele é médico.",
+  },
+  {
+    "en-US": "She is a doctor.",
+    "pt-BR": "Ela é médica.",
+  },
+  {
+    "en-US": "We are friends.",
+    "pt-BR": "Nós somos amigos.",
+  },
+  {
+    "en-US": "You (plural) are responsible for the project.",
+    "pt-BR": "Vós sois responsáveis pelo projeto.",
+  },
+  {
+    "en-US": "They are engineers.",
+    "pt-BR": "Eles são engenheiros.",
+  },
+  {
+    "en-US": "They are engineers.",
+    "pt-BR": "Elas são engenheiras.",
+  },
+  {
+    "en-US": "I was a good student.",
+    "pt-BR": "Eu fui um bom estudante.",
+  },
+  {
+    "en-US": "You were the best player.",
+    "pt-BR": "Tu foste o melhor jogador.",
+  },
+  {
+    "en-US": "He was the leader of the team.",
+    "pt-BR": "Ele foi o líder da equipe.",
+  },
+  {
+    "en-US": "She was the leader of the team.",
+    "pt-BR": "Ela foi a líder da equipe.",
+  },
+  {
+    "en-US": "We were successful in the project.",
+    "pt-BR": "Nós fomos bem-sucedidos no projeto.",
+  },
+  {
+    "en-US": "You (plural) were very kind.",
+    "pt-BR": "Vós fostes muito gentis.",
+  },
+  {
+    "en-US": "They were the winners.",
+    "pt-BR": "Eles foram os vencedores.",
+  },
+  {
+    "en-US": "They were the winners.",
+    "pt-BR": "Elas foram as vencedoras.",
+  },
+  {
+    "en-US": "I used to be very shy.",
+    "pt-BR": "Eu era muito tímido.",
+  },
+  {
+    "en-US": "I used to be very shy.",
+    "pt-BR": "Eu era muito tímida.",
+  },
+  {
+    "en-US": "You used to be the fastest runner.",
+    "pt-BR": "Tu eras o corredor mais rápido.",
+  },
+  {
+    "en-US": "You used to be the fastest runner.",
+    "pt-BR": "Tu eras a corredora mais rápida.",
+  },
+  {
+    "en-US": "He used to be very responsible.",
+    "pt-BR": "Ele era muito responsável.",
+  },
+  {
+    "en-US": "She used to be very responsible.",
+    "pt-BR": "Ela era muito responsável.",
+  },
+  {
+    "en-US": "We used to be close friends.",
+    "pt-BR": "Nós éramos amigos próximos.",
+  },
+  {
+    "en-US": "You (plural) used to be the best team.",
+    "pt-BR": "Vós éreis a melhor equipe.",
+  },
+  {
+    "en-US": "They used to be the leaders.",
+    "pt-BR": "Eles eram os líderes.",
+  },
+  {
+    "en-US": "They used to be the leaders.",
+    "pt-BR": "Elas eram as líderes.",
+  },
+  {
+    "en-US": "I will be a good professional.",
+    "pt-BR": "Eu serei um bom profissional.",
+  },
+  {
+    "en-US": "You will be the next champion.",
+    "pt-BR": "Tu serás o próximo campeão.",
+  },
+  {
+    "en-US": "He will be a great leader.",
+    "pt-BR": "Ele será um grande líder.",
+  },
+  {
+    "en-US": "She will be a great leader.",
+    "pt-BR": "Ela será uma grande líder.",
+  },
+  {
+    "en-US": "We will be successful.",
+    "pt-BR": "Nós seremos bem-sucedidos.",
+  },
+  {
+    "en-US": "You (plural) will be famous one day.",
+    "pt-BR": "Vós sereis famosos um dia.",
+  },
+  {
+    "en-US": "They will be the stars of the show.",
+    "pt-BR": "Eles serão as estrelas do show.",
+  },
+  {
+    "en-US": "They will be the stars of the show.",
+    "pt-BR": "Elas serão as estrelas do show.",
+  },
+  {
+    "en-US": "I go to the gym every day.",
+    "pt-BR": "Eu vou à academia todos os dias.",
+  },
+  {
+    "en-US": "You go to school early.",
+    "pt-BR": "Tu vais à escola cedo.",
+  },
+  {
+    "en-US": "He goes to work by bus.",
+    "pt-BR": "Ele vai ao trabalho de ônibus.",
+  },
+  {
+    "en-US": "She goes to work by bus.",
+    "pt-BR": "Ela vai ao trabalho de ônibus.",
+  },
+  {
+    "en-US": "We go to the park on weekends.",
+    "pt-BR": "Nós vamos ao parque nos fins de semana.",
+  },
+  {
+    "en-US": "You (plural) go to the concert together.",
+    "pt-BR": "Vós ides ao concerto juntos.",
+  },
+  {
+    "en-US": "They go to the cinema on Fridays.",
+    "pt-BR": "Eles vão ao cinema às sextas-feiras.",
+  },
+  {
+    "en-US": "They go to the cinema on Fridays.",
+    "pt-BR": "Elas vão ao cinema às sextas-feiras.",
+  },
+  {
+    "en-US": "I went to the beach last weekend.",
+    "pt-BR": "Eu fui à praia no fim de semana passado.",
+  },
+  {
+    "en-US": "You went to the party last night.",
+    "pt-BR": "Tu foste à festa ontem à noite.",
+  },
+  {
+    "en-US": "He went to the doctor yesterday.",
+    "pt-BR": "Ele foi ao médico ontem.",
+  },
+  {
+    "en-US": "She went to the doctor yesterday.",
+    "pt-BR": "Ela foi à médica ontem.",
+  },
+  {
+    "en-US": "We went to the museum last month.",
+    "pt-BR": "Nós fomos ao museu no mês passado.",
+  },
+  {
+    "en-US": "You (plural) went to the mountains last year.",
+    "pt-BR": "Vós fostes às montanhas no ano passado.",
+  },
+  {
+    "en-US": "They went to the theater last week.",
+    "pt-BR": "Eles foram ao teatro na semana passada.",
+  },
+  {
+    "en-US": "They went to the theater last week.",
+    "pt-BR": "Elas foram ao teatro na semana passada.",
+  },
+  {
+    "en-US": "I used to go to the library often.",
+    "pt-BR": "Eu ia à biblioteca frequentemente.",
+  },
+  {
+    "en-US": "You used to go to the market every morning.",
+    "pt-BR": "Tu ias ao mercado todas as manhãs.",
+  },
+  {
+    "en-US": "He used to go to the beach every summer.",
+    "pt-BR": "Ele ia à praia todos os verões.",
+  },
+  {
+    "en-US": "She used to go to the beach every summer.",
+    "pt-BR": "Ela ia à praia todos os verões.",
+  },
+  {
+    "en-US": "We used to go hiking every weekend.",
+    "pt-BR": "Nós íamos fazer trilhas todos os fins de semana.",
+  },
+  {
+    "en-US": "You (plural) used to go to the countryside during holidays.",
+    "pt-BR": "Vós íeis ao campo durante as férias.",
+  },
+  {
+    "en-US": "They used to go to the same restaurant.",
+    "pt-BR": "Eles iam ao mesmo restaurante.",
+  },
+  {
+    "en-US": "They used to go to the same restaurant.",
+    "pt-BR": "Elas iam ao mesmo restaurante.",
+  },
+  {
+    "en-US": "I will go to the store tomorrow.",
+    "pt-BR": "Eu irei à loja amanhã.",
+  },
+  {
+    "en-US": "You will go to the concert next week.",
+    "pt-BR": "Tu irás ao concerto na próxima semana.",
+  },
+  {
+    "en-US": "He will go to the meeting later.",
+    "pt-BR": "Ele irá à reunião mais tarde.",
+  },
+  {
+    "en-US": "She will go to the meeting later.",
+    "pt-BR": "Ela irá à reunião mais tarde.",
+  },
+  {
+    "en-US": "We will go on vacation next month.",
+    "pt-BR": "Nós iremos de férias no próximo mês.",
+  },
+  {
+    "en-US": "You (plural) will go to the party tomorrow night.",
+    "pt-BR": "Vós ireis à festa amanhã à noite.",
+  },
+  {
+    "en-US": "They will go to the beach next weekend.",
+    "pt-BR": "Eles irão à praia no próximo fim de semana.",
+  },
+  {
+    "en-US": "They will go to the beach next weekend.",
+    "pt-BR": "Elas irão à praia no próximo fim de semana.",
+  },
+  {
+    "en-US": "I am happy today.",
+    "pt-BR": "Eu estou feliz hoje.",
+  },
+  {
+    "en-US": "You are tired after work.",
+    "pt-BR": "Tu estás cansado depois do trabalho.",
+  },
+  {
+    "en-US": "He is at home now.",
+    "pt-BR": "Ele está em casa agora.",
+  },
+  {
+    "en-US": "She is ready for the meeting.",
+    "pt-BR": "Ela está pronta para a reunião.",
+  },
+  {
+    "en-US": "We are busy with the project.",
+    "pt-BR": "Nós estamos ocupados com o projeto.",
+  },
+  {
+    "en-US": "You are at the office. (plural)",
+    "pt-BR": "Vós estais no escritório.",
+  },
+  {
+    "en-US": "They are excited about the trip.",
+    "pt-BR": "Eles estão animados com a viagem.",
+  },
+  {
+    "en-US": "They are nervous about the exam.",
+    "pt-BR": "Elas estão nervosas com o exame.",
+  },
+  {
+    "en-US": "I was tired yesterday.",
+    "pt-BR": "Eu estava cansado ontem.",
+  },
+  {
+    "en-US": "You were at the park in the morning.",
+    "pt-BR": "Tu estavas no parque de manhã.",
+  },
+  {
+    "en-US": "He was at the party last night.",
+    "pt-BR": "Ele estava na festa ontem à noite.",
+  },
+  {
+    "en-US": "She was happy with the results.",
+    "pt-BR": "Ela estava feliz com os resultados.",
+  },
+  {
+    "en-US": "We were at the beach last weekend.",
+    "pt-BR": "Nós estávamos na praia no fim de semana passado.",
+  },
+  {
+    "en-US": "You were tired after the trip. (plural)",
+    "pt-BR": "Vós estáveis cansados depois da viagem.",
+  },
+  {
+    "en-US": "They were at the restaurant.",
+    "pt-BR": "Eles estavam no restaurante.",
+  },
+  {
+    "en-US": "They were late for the meeting.",
+    "pt-BR": "Elas estavam atrasadas para a reunião.",
+  },
+  {
+    "en-US": "I will be at the office tomorrow.",
+    "pt-BR": "Eu estarei no escritório amanhã.",
+  },
+  {
+    "en-US": "You will be ready for the exam.",
+    "pt-BR": "Tu estarás pronto para o exame.",
+  },
+  {
+    "en-US": "He will be at the gym in the morning.",
+    "pt-BR": "Ele estará na academia de manhã.",
+  },
+  {
+    "en-US": "She will be traveling next week.",
+    "pt-BR": "Ela estará viajando na próxima semana.",
+  },
+  {
+    "en-US": "We will be available later.",
+    "pt-BR": "Nós estaremos disponíveis mais tarde.",
+  },
+  {
+    "en-US": "You will be at the meeting tomorrow. (plural)",
+    "pt-BR": "Vós estareis na reunião amanhã.",
+  },
+  {
+    "en-US": "They will be studying for the test.",
+    "pt-BR": "Eles estarão estudando para o teste.",
+  },
+  {
+    "en-US": "They will be at the concert.",
+    "pt-BR": "Elas estarão no concerto.",
+  },
+  {
+    "en-US":
+      "I will practice tennis every day and improve my technique gradually.",
+    "pt-BR":
+      "Eu praticarei tênis todos os dias e melhorarei minha técnica gradualmente.",
+  },
+  {
+    "en-US": "I live in Paris and work as a model.",
+    "pt-BR": "Eu estou vivendo em Paris e estou trabalhando como modelo.",
+  },
+  {
+    "en-US": "I studied for the exam and felt very nervous before starting.",
+    "pt-BR": "Eu estudei para o exame e senti muito nervoso antes de começar.",
+  },
+  {
+    "en-US":
+      "I will visit many countries and learn several languages during my life.",
+    "pt-BR":
+      "Eu visitarei muitos países e aprenderei várias línguas durante a minha vida.",
+  },
+  {
+    "en-US": "I am working in the office and taking a coffee now.",
+    "pt-BR": "Eu estou trabalhando no escritório e tomo um café agora.",
+  },
+  {
+    "en-US": "When you arrive home, we will have dinner.",
+    "pt-BR": "Quando você chegar em casa, nós jantaremos.",
+  },
+  {
+    "en-US": "As soon as they finish the work, they will go to the cinema.",
+    "pt-BR": "Assim que eles terminarem o trabalho, eles sairão para o cinema.",
+  },
+  {
+    "en-US": "If I do the report today, will you review it tomorrow?",
+    "pt-BR": "Se eu fizer o relatório hoje, você revisará amanhã?",
+  },
+  {
+    "en-US": "After we complete the course, we will celebrate.",
+    "pt-BR": "Depois que nós completarmos o curso, nós celebraremos.",
+  },
+  {
+    "en-US": "When she is ready, we will start the meeting.",
+    "pt-BR": "Quando ela estiver pronta, nós começaremos a reunião.",
+  },
+  {
+    "en-US": "I was tired, but I went to the party anyway.",
+    "pt-BR": "Eu estive cansado, mas eu fui à festa de qualquer maneira.",
+  },
+  {
+    "en-US": "She talks on the phone while cooking dinner.",
+    "pt-BR": "Ela fala ao telefone enquanto cozinha o jantar.",
+  },
+  {
+    "en-US": "We will finish the work before the client arrives.",
+    "pt-BR": "Nós terminaremos o trabalho antes que chegar o cliente.",
+  },
+  {
+    "en-US": "They are studying for the exam and learning a lot.",
+    "pt-BR": "Eles estão estudando para o exame e estão aprendendo muito.",
+  },
+  {
+    "en-US": "I wake up early and leave to run every day.",
+    "pt-BR": "Eu acordo cedo e saio para correr todos os dias.",
+  },
+  {
+    "en-US": "Will you visit the museum when you travel to Rio de Janeiro?",
+    "pt-BR": "Você visitará o museu quando viajar para o Rio de Janeiro?",
+  },
+  {
+    "en-US": "We watched that movie and liked it a lot.",
+    "pt-BR": "A gente assistimos aquele filme e gostamos muito.",
+  },
+  {
+    "en-US": "The dog was barking while we were playing in the park.",
+    "pt-BR":
+      "O cachorro estava latindo enquanto a gente estava brincando no parque.",
+  },
+  {
+    "en-US": "If they bring the documents, we will sign the contract.",
+    "pt-BR": "Se eles trazerem os documentos, nós assinaremos o contrato.",
+  },
+  {
+    "en-US":
+      "When you return from the trip, we will discuss the project details.",
+    "pt-BR":
+      "Quando você voltar de viagem, nós discutiremos os detalhes do projeto.",
+  },
+  {
+    "en-US": "As soon as I get the information, I will send it by email.",
+    "pt-BR": "Assim que eu conseguir a informação, eu enviarei por e-mail.",
+  },
+  {
+    "en-US": "After they decide the date, we will book the hotel",
+    "pt-BR": "Depois que eles decidirem a data, nós reservaremos o hotel",
+  },
+  {
+    "en-US": "If we find a solution, we will present it at the meeting",
+    "pt-BR": "Se nós encontrarmos uma solução, nós apresentaremos na reunião",
+  },
+  {
+    "en-US": "I used to play soccer every weekend",
+    "pt-BR": "Eu costumava jogar futebol todo fim de semana",
+  },
+  {
+    "en-US": "We used to go to the beach every summer",
+    "pt-BR": "Nós íamos à praia todos os verões.",
+  },
+  {
+    "en-US": "I was a student when I lived in Brazil",
+    "pt-BR": "Eu era estudante quando morava no Brasil",
+  },
+  {
+    "en-US": "I used to be a student who read a lot",
+    "pt-BR": "Eu era um estudante que costumava ler muito",
+  },
+  {
+    "en-US": "That was the place where we used to meet",
+    "pt-BR": "Aquele foi o lugar onde costumávamos nos encontrar",
+  },
+  {
+    "en-US": "He was very happy with the news yesterday.",
+    "pt-BR": "Ele estava muito feliz com as notícias ontem.",
+  },
+  {
+    "en-US": "We were the ones responsible for the event last week.",
+    "pt-BR": "Nós éramos os responsáveis pelo evento na semana passada.",
+  },
+  {
+    "en-US": "They were at home during the storm.",
+    "pt-BR": "Eles estavam em casa durante o temporal.",
+  },
+  {
+    "en-US": "The party was amazing! Everyone had a great time.",
+    "pt-BR": "A festa foi incrível! Todos se divertiram muito.",
+  },
+  {
+    "en-US": "She was the best student in the class last year.",
+    "pt-BR": "Ela foi a melhor aluna da turma no ano passado.",
+  },
+  {
+    "en-US": "I was a student who studied hard when I was younger",
+    "pt-BR": "Eu era um estudante que estudava muito quando eu era mais novo",
+  },
+  {
+    "en-US": "I used to live in a small town when I was a child.",
+    "pt-BR": "Eu morava em uma cidade pequena quando era criança.",
+  },
+  {
+    "en-US": "We used to play in the park every day after school.",
+    "pt-BR": "Nós brincávamos no parque todos os dias depois da escola.",
+  },
+  {
+    "en-US": "They used to eat together every Sunday.",
+    "pt-BR": "Eles comiam juntos todos os domingos.",
+  },
+  {
+    "en-US": "She used to read many books when she was younger.",
+    "pt-BR": "Ela lia muitos livros quando era mais jovem.",
+  },
+  {
+    "en-US": "Did you used to travel to the beach every summer?",
+    "pt-BR": "Você viajava para a praia todo verão?",
+  },
+  {
+    "en-US":
+      "She watched a movie last night, while her brother was reading a book.",
+    "pt-BR":
+      "Ela assistiu a um filme na noite passada, enquanto seu irmão lia um livro.",
+  },
+  {
+    "en-US": "When I was a child, I used to play in the street every day.",
+    "pt-BR": "Quando eu era criança, eu brincava na rua todos os dias.",
+  },
+  {
+    "en-US":
+      "They arrived early at the party, but in the past, they always used to arrive late.",
+    "pt-BR":
+      "Eles chegaram cedo na festa, mas antigamente eles sempre chegavam atrasados.",
+  },
+  {
+    "en-US":
+      "We traveled to Brazil last year, but when we were children, we always used to go to the farm.",
+    "pt-BR":
+      "Nós viajamos para o Brasil no ano passado, mas quando éramos crianças, nós sempre íamos para a fazenda.",
+  },
+  {
+    "en-US":
+      "He worked late yesterday, but normally he leaves work at 6 o'clock.",
+    "pt-BR":
+      "Ontem, ele trabalhou até tarde, mas normalmente ele saía do trabalho às 6 horas.",
+  },
+  {
+    "en-US": "She was studying for the exam when I arrived last night.",
+    "pt-BR":
+      "Ela estava estudando para o exame quando eu cheguei ontem à noite.",
+  },
+  {
+    "en-US":
+      "We used to go to the park every Sunday, and while we walked, we talked about the week.",
+    "pt-BR":
+      "Nós íamos ao parque todos os domingos, e enquanto nós andávamos, nós conversávamos sobre a semana.",
+  },
+  {
+    "en-US": "They were in the meeting when the director entered the room.",
+    "pt-BR": "Eles estavam na reunião quando o diretor entrou na sala.",
+  },
+  {
+    "en-US":
+      "I was working on the project, but I always took a break for coffee.",
+    "pt-BR":
+      "Eu trabalhava no projeto, mas sempre fazia uma pausa para o café.",
+  },
+  {
+    "en-US": "When you called, I was cooking dinner.",
+    "pt-BR": "Quando você ligou, eu cozinhava o jantar.",
+  },
+  {
+    "en-US": "If I have time, I will study more.",
+    "pt-BR": "Se eu tiver tempo, eu estudarei mais",
+  },
+  {
+    "en-US": "I hope that she can come to the meeting tomorrow.",
+    "pt-BR": "Espero que ela possa vir à reunião amanhã.",
+  },
+  {
+    "en-US": "When we arrive, we will start the party.",
+    "pt-BR": "Quando nós chegarmos, começaremos a festa.",
+  },
+  {
+    "en-US": "If you go to the market, buy bread and milk.",
+    "pt-BR": "Se vocês forem ao mercado, comprem pão e leite.",
+  },
+  {
+    "en-US":
+      "Although they don't like sushi, they go to the Japanese restaurant.",
+    "pt-BR": "Embora eles não gostem de sushi, vão ao restaurante japonês.",
+  },
+  {
+    "en-US": "He went to the movies, although it was raining",
+    "pt-BR": "Ele foi ao cinema, embora estivesse chovendo",
+  },
+  {
+    "en-US": "If you know the answer, let me know immediately.",
+    "pt-BR": "Se você souber a resposta, me avise imediatamente.",
+  },
+  {
+    "en-US": "It is possible that we need more information.",
+    "pt-BR": "É possível que nós precisemos de mais informações.",
+  },
+  {
+    "en-US": "If you find the document, please let me know. (plural)",
+    "pt-BR": "Se vós encontrardes o documento, por favor, me avisai.",
+  },
+  {
+    "en-US": "I hope he arrives in time for the meeting.",
+    "pt-BR": "Tomara que ele chegue a tempo para o encontro.",
+  },
+  {
+    "en-US": "He had taken the book before leaving",
+    "pt-BR": "Ele tomara o livro antes de sair",
+  },
+  {
+    "en-US": "I will go to the supermarket if I have time",
+    "pt-BR": "Eu vou ao supermercado se eu tiver tempo.",
+  },
+  {
+    "en-US": "If you talk to Maria, tell her to call me.",
+    "pt-BR": "Se você falar com a Maria, diga-lhe para me ligar.",
+  },
+  {
+    "en-US": "We visit our friends when they are at home",
+    "pt-BR": "Nós visitamos nossos amigos quando eles estão em casa.",
+  },
+  {
+    "en-US": "If they are at home, we will visit them",
+    "pt-BR": "Se eles estiverem em casa, nós os visitaremos.",
+  },
+  {
+    "en-US": "I hope that they are ready for the meeting",
+    "pt-BR": "Espero que eles estejam prontos para a reunião",
+  },
+  {
+    "en-US": "Although they are busy, they can still help us.",
+    "pt-BR": "Embora eles estejam ocupados, ainda podem nos ajudar",
+  },
+  {
+    "en-US": "If the documents are correct, we can proceed with the project.",
+    "pt-BR":
+      "Se os documentos estiverem corretos, poderemos prosseguir com o projeto",
+  },
+  {
+    "en-US": "If I see a movie, I will watch it with you.",
+    "pt-BR": "Se eu vir um filme, eu vou assistir com você",
+  },
+  {
+    "en-US": "If I have money, I will buy a gift",
+    "pt-BR": "Se eu tiver dinheiro, eu comprarei um presente.",
+  },
+  {
+    "en-US": "When we travel, we will visit new places.",
+    "pt-BR": "Quando nós viajarmos, nós visitaremos novos lugares.",
+  },
+  {
+    "en-US": "If you find my book, let me know",
+    "pt-BR": "Se você encontrar meu livro, me avise.",
+  },
+  {
+    "en-US": "Although she doesn’t like coffee, she will drink a little",
+    "pt-BR": "Embora ela não goste de café, ela tomará um pouco.",
+  },
+  {
+    "en-US": "When we eat pizza, we always ask for extra cheese.",
+    "pt-BR": "Quando nós comemos pizza, sempre pedimos queijo extra.",
+  },
+  {
+    "en-US": "If we eat pizza, we will always ask for extra cheese",
+    "pt-BR": "Se nós comermos pizza, sempre pediremos queijo extra.",
+  },
+  {
+    "en-US": "If I leave early, I will arrive before everyone.",
+    "pt-BR": "Se eu partir cedo, chegarei antes de todos.",
+  },
+  {
+    "en-US": "You speak English very well.",
+    "pt-BR": "Tu falas muito bem inglês.",
+  },
+  {
+    "en-US": "When I was a child, my family was very close.",
+    "pt-BR": "Quando eu era criança, minha família era muito unida",
+  },
+  {
+    "en-US": "they will be the leaders of the project",
+    "pt-BR": "eles serão os líderes do projeto",
+  },
+  {
+    "en-US": "We were always neighbors.",
+    "pt-BR": "nós éramos sempre vizinhos",
+  },
+  {
+    "en-US": "I am at the office working",
+    "pt-BR": "eu estou no escritório trabalhando",
+  },
+  {
+    "en-US": "Five years ago, we were in São Paulo",
+    "pt-BR": "Há cinco anos, nós estávamos em São Paulo",
+  },
+  {
+    "en-US": "Five years ago, we lived in São Paulo",
+    "pt-BR": "Há cinco anos, nós vivíamos em São Paulo",
+  },
+  {
+    "en-US": "If you are tired, you can rest",
+    "pt-BR": "Se você estiver cansado, pode descansar",
+  },
+  {
+    "en-US": "When we were young, they were always happy",
+    "pt-BR": "Quando éramos jovens, eles estavam sempre felizes",
+  },
+  {
+    "en-US": "I used to drink coffee every day when I was a student.",
+    "pt-BR": "Eu tomava um café todos os dias quando era estudante.",
+  },
+  {
+    "en-US": "When I was a child, my mother always came back early from work.",
+    "pt-BR":
+      "Quando eu era criança, minha mãe sempre voltava cedo do trabalho.",
+  },
+  {
+    "en-US": "They used to take the dog to the park every Sunday.",
+    "pt-BR": "Eles levavam o cachorro ao parque todos os domingos.",
+  },
+  {
+    "en-US":
+      "At that time, my grandfather used to tell good stories before bed.",
+    "pt-BR": "Naquela época, meu avô dava boas histórias antes de dormir.",
+  },
+  {
+    "en-US": "You used to bring a gift to the friend's birthday.",
+    "pt-BR": "Você trazia um presente para o aniversário do amigo.",
+  },
+  {
+    "en-US": "She used to leave the car in the garage during the week.",
+    "pt-BR": "Ela deixava o carro na garagem durante a semana.",
+  },
+  {
+    "en-US": "We used to take the bus to school every morning.",
+    "pt-BR": "Nós pegávamos o ônibus para a escola todas as manhãs.",
+  },
+  {
+    "en-US": "They made an important decision last night.",
+    "pt-BR": "Eles tomaram uma decisão importante ontem à noite.",
+  },
+  {
+    "en-US": "When you returned from the trip, we were already here.",
+    "pt-BR": "Quando você voltou da viagem, nós já estávamos aqui.",
+  },
+  {
+    "en-US":
+      "She took the umbrella because it looked like it was going to rain.",
+    "pt-BR": "Ela levou o guarda-chuva porque parecia que ia chover.",
+  },
+  {
+    "en-US": "We gave a special gift to the teacher in the last class.",
+    "pt-BR": "Nós demos um presente especial para o professor na última aula.",
+  },
+  {
+    "en-US": "They brought the suitcases when the taxi arrived.",
+    "pt-BR": "Eles trouxeram as malas quando o táxi chegou.",
+  },
+  {
+    "en-US": "I left a note on the table before leaving.",
+    "pt-BR": "Eu deixei um bilhete na mesa antes de sair.",
+  },
+  {
+    "en-US": "He grabbed the last apple from the basket yesterday.",
+    "pt-BR": "Ele pegou a última maçã da cesta ontem.",
+  },
+  {
+    "en-US": "I always used to have coffee with my friends on Sunday mornings.",
+    "pt-BR": "Eu sempre tomava café com meus amigos nas manhãs de domingo.",
+  },
+  {
+    "en-US": "Yesterday, she returned home earlier than usual.",
+    "pt-BR": "Ontem, ela voltou para casa mais cedo do que o habitual.",
+  },
+  {
+    "en-US": "While they were carrying the boxes, it started to rain.",
+    "pt-BR": "Enquanto eles levavam as caixas, começou a chover.",
+  },
+  {
+    "en-US":
+      "At that time, we used to pay attention to every detail of the project.",
+    "pt-BR": "Naquela época, nós dávamos atenção a cada detalhe do projeto.",
+  },
+  {
+    "en-US": "They used to bring snacks every day when we were kids.",
+    "pt-BR": "Eles traziam o lanche todos os dias quando éramos crianças.",
+  },
+  {
+    "en-US":
+      "She used to leave the window open during the night, and it was cold.",
+    "pt-BR": "Ela deixava a janela aberta durante a noite, e fez frio.",
+  },
+  {
+    "en-US": "He took the wrong bus that morning.",
+    "pt-BR": "Ele pegou o ônibus errado naquela manhã.",
+  },
+  {
+    "en-US": "I always have a coffee before starting work.",
+    "pt-BR": "Eu sempre tomo um café antes de começar a trabalhar.",
+  },
+  {
+    "en-US": "Yesterday, they returned late from the party.",
+    "pt-BR": "Ontem, eles voltaram tarde da festa.",
+  },
+  {
+    "en-US": "We bring the documents to the office every day.",
+    "pt-BR": "Nós levamos os documentos para o escritório todos os dias.",
+  },
+  {
+    "en-US": "We used to bring the documents to the office every day.",
+    "pt-BR": "Nós levávamos os documentos para o escritório todos os dias.",
+  },
+  {
+    "en-US": "She used to teach English classes every week.",
+    "pt-BR": "Ela dava aulas de inglês toda semana.",
+  },
+  {
+    "en-US": "This morning, I brought the report to the meeting.",
+    "pt-BR": "Hoje de manhã, eu trouxe o relatório para a reunião.",
+  },
+  {
+    "en-US": "They left the key at the reception last night.",
+    "pt-BR": "Eles deixaram a chave na recepção ontem à noite.",
+  },
+  {
+    "en-US": "Do you take the subway to work every day?",
+    "pt-BR": "Você pega o metrô para o trabalho todos os dias?",
+  },
+  {
+    "en-US": "Did you use to take the subway to work every day?",
+    "pt-BR": "Você pegava o metrô para o trabalho todos os dias?",
+  },
+  {
+    "en-US": "Tomorrow, I will make a decision about the project.",
+    "pt-BR": "Amanhã, eu tomarei uma decisão sobre o projeto.",
+  },
+  {
+    "en-US": "While they were returning home, they were discussing the movie.",
+    "pt-BR": "Enquanto eles voltavam para casa, estavam discutindo o filme.",
+  },
+  {
+    "en-US": "He is taking the dog for a walk now.",
+    "pt-BR": "Ele está levando o cachorro para passear agora.",
+  },
+  {
+    "en-US": "We gave the news to the team yesterday afternoon.",
+    "pt-BR": "Nós demos a notícia para a equipe ontem à tarde.",
+  },
+  {
+    "en-US": "She will bring the documents when necessary.",
+    "pt-BR": "Ela trará os documentos quando for necessário.",
+  },
+  {
+    "en-US": "I left the keys on the table before leaving the house.",
+    "pt-BR": "Eu deixei as chaves na mesa antes de sair de casa.",
+  },
+  {
+    "en-US": "They will take the bus to the city tomorrow morning.",
+    "pt-BR": "Eles pegarão o ônibus para a cidade amanhã de manhã.",
+  },
+  {
+    "en-US": "Tomorrow, we will return home earlier.",
+    "pt-BR": "Amanhã, nós voltaremos para casa mais cedo.",
+  },
+  {
+    "en-US":
+      "While he was taking the medicine, he was reading the instructions.",
+    "pt-BR": "Enquanto ele estava tomando o remédio, lia as instruções.",
+  },
+  {
+    "en-US": "They take their children to the park every Saturday.",
+    "pt-BR": "Eles levam os filhos ao parque todos os sábados.",
+  },
+  {
+    "en-US": "Today, I am giving a lecture at the university.",
+    "pt-BR": "Hoje, eu estou dando uma palestra na universidade.",
+  },
+  {
+    "en-US": "She brought the food for dinner when she got home.",
+    "pt-BR": "Ela trouxe a comida para o jantar quando chegou em casa.",
+  },
+  {
+    "en-US": "They are leaving the door open while they are leaving.",
+    "pt-BR": "Eles estão deixando a porta aberta enquanto estão saindo.",
+  },
+  {
+    "en-US": "We will pick up the luggage at the airport tomorrow night.",
+    "pt-BR": "Nós pegaremos as malas no aeroporto amanhã à noite.",
+  },
+  {
+    "en-US": "I drink coffee every morning.",
+    "pt-BR": "Eu tomo café todas as manhãs.",
+  },
+  {
+    "en-US": "They came back home earlier yesterday.",
+    "pt-BR": "Eles voltaram para casa mais cedo ontem.",
+  },
+  {
+    "en-US": "She takes the kids to school every day.",
+    "pt-BR": "Ela leva os filhos à escola todos os dias.",
+  },
+  {
+    "en-US": "We gave the gift to the birthday person.",
+    "pt-BR": "Nós demos o presente ao aniversariante.",
+  },
+  {
+    "en-US": "Do you bring the groceries to the kitchen now?",
+    "pt-BR": "Você traz as compras para a cozinha agora?",
+  },
+  {
+    "en-US": "They left the keys on the table before leaving.",
+    "pt-BR": "Eles deixaram as chaves na mesa antes de sair.",
+  },
+  {
+    "en-US": "Yesterday, I took the wrong bus.",
+    "pt-BR": "Ontem, eu peguei o ônibus errado.",
+  },
+  {
+    "en-US": "They put the suitcases in the car before leaving.",
+    "pt-BR": "Eles botaram as malas no carro antes de partir.",
+  },
+  {
+    "en-US": "While I am playing the piano, my brother was singing.",
+    "pt-BR": "Enquanto eu estou tocando piano, meu irmão cantava.",
+  },
+  {
+    "en-US": "I will take pictures during the trip to keep the memories.",
+    "pt-BR": "Eu vou tirar fotos durante a viagem para guardar as lembranças.",
+  },
+  {
+    "en-US": "I need to get my passport before traveling abroad.",
+    "pt-BR": "Preciso tirar o passaporte antes de viajar para o exterior.",
+  },
+  {
+    "en-US": "She always gets good grades in school.",
+    "pt-BR": "Ela sempre tira boas notas na escola.",
+  },
+  {
+    "en-US": "Shall we take a nap before dinner?",
+    "pt-BR": "Vamos tirar uma soneca antes do jantar?",
+  },
+  {
+    "en-US": "He took off his coat because he was hot.",
+    "pt-BR": "Ele tirou o casaco porque estava com calor.",
+  },
+  {
+    "en-US": "Can you take out the trash before you leave, please?",
+    "pt-BR": "Você pode tirar o lixo antes de sair, por favor?",
+  },
+  {
+    "en-US": "The team managed to draw in the end of the game.",
+    "pt-BR": "O time conseguiu tirar um empate no final do jogo.",
+  },
+  {
+    "en-US": "He needed to take the car out of the garage to fix it.",
+    "pt-BR": "Ele precisou tirar o carro da garagem para consertar.",
+  },
+  {
+    "en-US": "I will take a day off to rest and recharge my energy.",
+    "pt-BR":
+      "Vou tirar um dia de folga para descansar e recarregar as energias.",
+  },
+  {
+    "en-US":
+      "Before starting to paint, it is necessary to remove the old paint from the wall.",
+    "pt-BR":
+      "Antes de começar a pintar, é preciso tirar a tinta velha da parede.",
+  },
+  {
+    "en-US": "I drink coffee every day before leaving the house.",
+    "pt-BR": "Eu tomo café todos os dias antes de sair de casa.",
+  },
+  {
+    "en-US": "She took the bus at 7 AM yesterday.",
+    "pt-BR": "Ela pegou o ônibus às 7 da manhã ontem.",
+  },
+  {
+    "en-US": "We had caution when crossing the street.",
+    "pt-BR": "Nós tivemos cuidado ao atravessar a rua.",
+  },
+  {
+    "en-US": "Tomorrow, he will take the package to you.",
+    "pt-BR": "Amanhã, ele levará o pacote para você.",
+  },
+  {
+    "en-US": "They are doing the homework now.",
+    "pt-BR": "Eles estão fazendo a lição de casa agora.",
+  },
+  {
+    "en-US": "When I was a child, I always drank orange juice at breakfast.",
+    "pt-BR":
+      "Quando criança, eu sempre tomava suco de laranja no café da manhã.",
+  },
+  {
+    "en-US": "Have you already had the new phone?",
+    "pt-BR": "Você já teve o novo telefone?",
+  },
+  {
+    "en-US": "She will take the luggage for the trip next week.",
+    "pt-BR": "Ela pegará as malas para a viagem na semana que vem.",
+  },
+  {
+    "en-US": "We have dinner while watching TV.",
+    "pt-BR": "Nós tomamos o jantar enquanto assistimos TV.",
+  },
+  {
+    "en-US": "I have time to finish the report.",
+    "pt-BR": "Eu tenho tempo para terminar o relatório.",
+  },
+  {
+    "en-US": "When I was in the park, I saw someone I knew.",
+    "pt-BR": "Quando eu estava no parque, vi uma pessoa conhecida.",
+  },
+  {
+    "en-US": "They did the task before leaving the house.",
+    "pt-BR": "Eles fizeram a tarefa antes de sair de casa.",
+  },
+  {
+    "en-US": "Tomorrow, we will take (something) to the beach very early.",
+    "pt-BR": "Amanhã, nós levaremos para a praia bem cedo.",
+  },
+  {
+    "en-US": "I always take a book with me when I travel.",
+    "pt-BR": "Eu sempre levo um livro comigo quando viajo.",
+  },
+  {
+    "en-US": "They are watching the soccer game on TV now.",
+    "pt-BR": "Eles assistem o jogo de futebol na TV agora.",
+  },
+  {
+    "en-US": "Yesterday, I took the wrong bus and got lost.",
+    "pt-BR": "Ontem, eu peguei o ônibus errado e me perdi.",
+  },
+  {
+    "en-US": "While he was drinking coffee, I was preparing breakfast.",
+    "pt-BR": "Enquanto ele tomava café, eu preparava o café da manhã.",
+  },
+  {
+    "en-US": "They took the gift to the birthday party.",
+    "pt-BR": "Eles levaram o presente para a festa de aniversário.",
+  },
+  {
+    "en-US": "I used to stay at home until late because I was tired.",
+    "pt-BR": "Eu ficava em casa até tarde porque estava cansado.",
+  },
+  {
+    "en-US": "Tomorrow, we will have more time to study.",
+    "pt-BR": "Amanhã, nós teremos mais tempo para estudar.",
+  },
+  {
+    "en-US": "The level of weirdness in your wedding is intense, isn't it?",
+    "pt-BR": "Tá puxado o grau de esquisitice desse teu casamento, ein?",
+  },
+  {
+    "en-US": "high degree",
+    "pt-BR": "puxado o grau",
+  },
+  {
+    "en-US": "from now on",
+    "pt-BR": "partir de agora",
+  },
+  {
+    "en-US": "gave me the foot",
+    "pt-BR": "deu um pe",
+  },
+  {
+    "en-US":
+      "If I had been more patient, I would have handled the situation better.",
+    "pt-BR": "Se eu fosse mais paciente, teria lidado melhor com a situação.",
+  },
+  {
+    "en-US": "When they are older, they will understand what happened",
+    "pt-BR": "Quando eles forem mais velhos, entenderão o que aconteceu",
+  },
+  {
+    "en-US":
+      "If you are available tomorrow, we could meet to discuss the project",
+    "pt-BR":
+      "Se você estiver disponível amanhã, poderíamos nos encontrar para discutir o projeto",
+  },
+  {
+    "en-US":
+      "He took the car to the garage because it was making a strange noise.",
+    "pt-BR":
+      "Ele levou o carro para a oficina porque estava fazendo um barulho estranho.",
+  },
+  {
+    "en-US": "We made an important decision during yesterday's meeting.",
+    "pt-BR": "Nós tomamos uma decisão importante durante a reunião de ontem.",
+  },
+  {
+    "en-US": "She caught a cold after going out in the rain without a coat.",
+    "pt-BR": "Ela pegou um resfriado depois de sair na chuva sem casaco.",
+  },
+  {
+    "en-US": "We took an important decision during the meeting yesterday.",
+    "pt-BR": "Nós tomamos uma decisão importante durante a reunião de ontem.",
+  },
+  {
+    "en-US": "We always have a meeting on the first Monday of the month.",
+    "pt-BR": "Nós sempre temos uma reunião na primeira segunda-feira do mês.",
+  },
+  {
+    "en-US": "They need to pick up the keys at the reception before going up.",
+    "pt-BR": "Eles precisam pegar as chaves na recepção antes de subir.",
+  },
+  {
+    "en-US": "She made the decision to change jobs last week.",
+    "pt-BR": "Ela tomou a decisão de mudar de emprego na semana passada.",
+  },
+  {
+    "en-US": "We take our children to the park every Sunday.",
+    "pt-BR": "Nós levamos nossos filhos ao parque todos os domingos.",
+  },
+  {
+    "en-US": "They took the wrong bus and arrived late.",
+    "pt-BR": "Eles pegaram o ônibus errado e chegaram atrasados.",
+  },
+  {
+    "en-US": "She always drinks coffee before starting work.",
+    "pt-BR": "Ela sempre toma café antes de começar a trabalhar.",
+  },
+  {
+    "en-US": "from now on",
+    "pt-BR": "de agora em diante.",
+  },
+  {
+    "en-US": "It's raining cats and dogs.",
+    "pt-BR": "Está chovendo canivetes.",
+  },
+  {
+    "en-US": "I’m starving.",
+    "pt-BR": "Estou morrendo de fome.",
+  },
+  {
+    "en-US": "He is a pain in the neck.",
+    "pt-BR": "Ele é um saco.",
+  },
+  {
+    "en-US": "She’s very busy.",
+    "pt-BR": "Ela está com a cabeça cheia.",
+  },
+  {
+    "en-US": "Don’t beat around the bush.",
+    "pt-BR": "Não fique enrolando.",
+  },
+  {
+    "en-US": "He’s broke.",
+    "pt-BR": "Ele está quebrado.",
+  },
+  {
+    "en-US": "She’s a perfectionist.",
+    "pt-BR": "Ela é uma meticulosa.",
+  },
+  {
+    "en-US": "I’m in a hurry.",
+    "pt-BR": "Estou com pressa.",
+  },
+  {
+    "en-US": "They hit it off.",
+    "pt-BR": "Eles se deram bem.",
+  },
+  {
+    "en-US": "He’s in hot water.",
+    "pt-BR": "Ele está encrencado.",
+  },
+  {
+    "en-US": "I’m all ears.",
+    "pt-BR": "Estou atento.",
+  },
+  {
+    "en-US": "It’s a piece of cake.",
+    "pt-BR": "É fácil demais.",
+  },
+  {
+    "en-US": "She’s in a good mood.",
+    "pt-BR": "Ela está de bom humor.",
+  },
+  {
+    "en-US": "Let’s call it a day.",
+    "pt-BR": "Vamos parar por aqui.",
+  },
+  {
+    "en-US": "He’s a good-for-nothing.",
+    "pt-BR": "Ele é um vagabundo.",
+  },
+  {
+    "en-US": "I’m on the fence.",
+    "pt-BR": "Estou em cima do muro.",
+  },
+  {
+    "en-US": "She’s over the moon.",
+    "pt-BR": "Ela está nas nuvens.",
+  },
+  {
+    "en-US": "He’s feeling under the weather.",
+    "pt-BR": "Ele está se sentindo mal.",
+  },
+  {
+    "en-US": "That’s the last straw.",
+    "pt-BR": "Essa foi a gota d'água.",
+  },
+  {
+    "en-US": "He’s in the same boat.",
+    "pt-BR": "Ele está no mesmo barco.",
+  },
+  {
+    "en-US": "I’m going to hit the hay.",
+    "pt-BR": "Vou cair na cama.",
+  },
+  {
+    "en-US": "It’s not my cup of tea.",
+    "pt-BR": "Não é a minha praia.",
+  },
+  {
+    "en-US": "She’s a bookworm.",
+    "pt-BR": "Ela é uma rato de biblioteca.",
+  },
+  {
+    "en-US": "He’s a night owl.",
+    "pt-BR": "Ele é um coruja.",
+  },
+  {
+    "en-US": "That’s a real bummer.",
+    "pt-BR": "Isso é um péssimo negócio.",
+  },
+  {
+    "en-US": "She’s up in arms.",
+    "pt-BR": "Ela está furiosa.",
+  },
+  {
+    "en-US": "He’s got a sweet tooth.",
+    "pt-BR": "Ele tem um dente doce.",
+  },
+  {
+    "en-US": "I’m on cloud nine.",
+    "pt-BR": "Estou nas nuvens.",
+  },
+  {
+    "en-US": "It’s a win-win situation.",
+    "pt-BR": "É uma situação vantajosa para ambos.",
+  },
+  {
+    "en-US": "He’s a Jack of all trades.",
+    "pt-BR": "Ele é um homem de muitos talentos.",
+  },
+  {
+    "en-US": "He’s got a short fuse.",
+    "pt-BR": "Ele tem pavio curto.",
+  },
+  {
+    "en-US": "She’s always in the spotlight.",
+    "pt-BR": "Ela está sempre no centro das atenções.",
+  },
+  {
+    "en-US": "That’s the icing on the cake.",
+    "pt-BR": "Isso é a cereja no bolo.",
+  },
+  {
+    "en-US": "He’s on thin ice.",
+    "pt-BR": "Ele está andando em campo minado.",
+  },
+  {
+    "en-US": "She’s been burning the midnight oil.",
+    "pt-BR": "Ela tem trabalhado até tarde.",
+  },
+  {
+    "en-US": "He’s a fast learner.",
+    "pt-BR": "Ele aprende rápido.",
+  },
+  {
+    "en-US": "It’s like looking for a needle in a haystack.",
+    "pt-BR": "É como procurar agulha em palheiro.",
+  },
+  {
+    "en-US": "I’m feeling under the weather.",
+    "pt-BR": "Estou me sentindo mal.",
+  },
+  {
+    "en-US": "He’s got cold feet.",
+    "pt-BR": "Ele está com medo de se comprometer.",
+  },
+  {
+    "en-US": "She’s walking on air.",
+    "pt-BR": "Ela está nas nuvens.",
+  },
+  {
+    "en-US": "What do they do to stay in shape?",
+    "pt-BR": "O que eles fazem para manter a forma física?",
+  },
+  {
+    "en-US": "She needs help from her friends.",
+    "pt-BR": "Ela precisa de ajuda dos amigos.",
+  },
+  {
+    "en-US": "What is his hobby during free time?",
+    "pt-BR": "Qual é o hobby dele durante o tempo livre?",
+  },
+  {
+    "en-US": "What is her goal with the new course she started?",
+    "pt-BR": "Qual é o objetivo dela com o novo curso que começou?",
+  },
+  {
+    "en-US": "Her goal includes becoming a boss and manager.",
+    "pt-BR": "O objetivo dela inclui se tornar chefe e gerente.",
+  },
+  {
+    "en-US": "What does he do to relax after a tiring day?",
+    "pt-BR": "O que ele faz para se relaxar depois de um dia cansativo?",
+  },
+  {
+    "en-US": "How does she usually spend her weekends?",
+    "pt-BR": "Como ela costuma passar os fins de semana?",
+  },
+  {
+    "en-US": "What do they do to stay in shape?",
+    "pt-BR": "O que eles fazem para manter a forma física?",
+  },
+  {
+    "en-US": "What does she need to finish the project on time?",
+    "pt-BR": "O que ela precisa para terminar o projeto a tempo?",
+  },
+  {
+    "en-US": "What is his hobby during free time?",
+    "pt-BR": "Qual é o hobby dele durante o tempo livre?",
+  },
+  {
+    "en-US":
+      "Her hobbies include playing the guitar and practicing yoga, among many others.",
+    "pt-BR":
+      "Os hobbies dela incluem tocar violão e praticar yoga, além de muitas outras coisas.",
+  },
+  {
+    "en-US": "What is her goal with the new course she started?",
+    "pt-BR": "Qual é o objetivo dela com o novo curso que começou?",
+  },
+  {
+    "en-US": "Her goal includes becoming a boss and manager.",
+    "pt-BR": "O objetivo dela inclui se tornar chefe e gerente.",
+  },
+  {
+    "en-US": "She jumped on him in the dark.",
+    "pt-BR": "Ela pulou nele no escuro.",
+  },
+  {
+    "en-US": "They didn't organize anything. It was all impulsive.",
+    "pt-BR": "Eles não organizaram nada. Foi tudo impulsivo.",
+  },
+  {
+    "en-US": "He bought many beautiful and lovely flowers.",
+    "pt-BR": "Ele comprou muitas flores bonitas e lindas.",
+  },
+  {
+    "en-US":
+      "They always wanted to study a new language, but they only decided yesterday.",
+    "pt-BR":
+      "Eles sempre quiseram estudar uma nova língua, mas decidiram só ontem.",
+  },
+  {
+    "en-US":
+      "She felt very nervous during the project. However, she felt very good after finishing the project.",
+    "pt-BR":
+      "Ela foi muito nervosa durante o projeto. Aliás, ela se sentiu muito bem após concluir o projeto.",
+  },
+  {
+    "en-US": "He went to the restaurant with his family.",
+    "pt-BR": "Ele foi ao restaurante com sua família.",
+  },
+  {
+    "en-US": "She liked the new restaurant so much because it is wonderful.",
+    "pt-BR": "Ela gostou tanto do novo restaurante porque é maravilhoso.",
+  },
+  {
+    "en-US": "He didn't learn programming. He learned to play the guitar.",
+    "pt-BR": "Ele não aprendeu programação. Ele aprendeu a tocar violão.",
+  },
+  {
+    "en-US": "They decided last week.",
+    "pt-BR": "Elas decidiram na semana passada.",
+  },
+  {
+    "en-US": "He wants to earn more money.",
+    "pt-BR": "Ele quer ganhar mais dinheiro.",
+  },
+  {
+    "en-US": "because the 'duty' action was in progress but was not performed",
+    "pt-BR":
+      "pois a ação de 'dever' estava em andamento, mas não foi realizada.",
+  },
+  {
+    "en-US":
+      "You are absolutely right! Depending on the context, both conjugations are possible.",
+    "pt-BR":
+      "Você está absolutamente certo! Dependendo do contexto, ambas as conjugações são possíveis",
+  },
+  {
+    "en-US": "I try to learn to swim every day.",
+    "pt-BR": "Eu tento aprender a nadar todos os dias.",
+  },
+  {
+    "en-US": "Yesterday, he exchanged the car tires.",
+    "pt-BR": "Ontem, ele trocou os pneus do carro.",
+  },
+  {
+    "en-US": "We must study more for the test next week.",
+    "pt-BR": "Nós devemos estudar mais para a prova na próxima semana.",
+  },
+  {
+    "en-US": "She gave a gift to her friend on his birthday.",
+    "pt-BR": "Ela deu um presente ao amigo no aniversário dele.",
+  },
+  {
+    "en-US":
+      "While they were bringing the groceries, we were cleaning the kitchen.",
+    "pt-BR": "Enquanto eles traziam as compras, nós arrumávamos a cozinha.",
+  },
+  {
+    "en-US": "Tomorrow, I will try to wake up earlier.",
+    "pt-BR": "Amanhã, eu tentarei acordar mais cedo.",
+  },
+  {
+    "en-US": "Last year, we always exchanged ideas about the projects.",
+    "pt-BR": "No ano passado, nós sempre trocávamos ideias sobre os projetos.",
+  },
+  {
+    "en-US":
+      "They were supposed to help their parents with the chores, but they preferred to go out.",
+    "pt-BR":
+      "Eles deviam ajudar os pais com as tarefas de casa, mas preferiram sair.",
+  },
+  {
+    "en-US": "I gave a detailed explanation during the meeting.",
+    "pt-BR": "Eu dei uma explicação detalhada durante a reunião.",
+  },
+  {
+    "en-US": "He will bring the dessert for tonight's dinner.",
+    "pt-BR": "Ele trará a sobremesa para o jantar de hoje.",
+  },
+  {
+    "en-US": "While they are trying to find the way, I consulted the map.",
+    "pt-BR":
+      "Enquanto eles estão tentando encontrar o caminho, eu consultei o mapa.",
+  },
+  {
+    "en-US": "She changed the light bulbs while I am preparing dinner.",
+    "pt-BR": "Ela trocou as lâmpadas enquanto eu estou preparando o jantar.",
+  },
+  {
+    "en-US": "You correctly used the gerund for both continuous actions.",
+    "pt-BR":
+      "Você utilizou corretamente o gerúndio para ambas as ações contínuas",
+  },
+  {
+    "en-US": "we will go to the park after they have finished work",
+    "pt-BR":
+      "nós iremos ao parque depois que eles tiverem terminado o trabalho",
+  },
+  {
+    "en-US": "which reflects future actions that will occur simultaneously",
+    "pt-BR": "o que reflete ações futuras que ocorrerão simultaneamente",
+  },
+  {
+    "en-US": "The correct sentence would be",
+    "pt-BR": "A frase correta seria",
+  },
+  {
+    "en-US": "He brought the documents while we are waiting in the room.",
+    "pt-BR": "Ele trouxe os documentos enquanto nós estamos esperando na sala.",
+  },
+  {
+    "en-US": "I am studying for the test while my brother is watching TV.",
+    "pt-BR":
+      "Eu estou estudando para a prova enquanto meu irmão está assistindo TV.",
+  },
+  {
+    "en-US": "Tomorrow, we will go to the park while they finish the work.",
+    "pt-BR": "Amanhã, nós iremos ao parque enquanto eles terminam o trabalho.",
+  },
+  {
+    "en-US": "While she is reading the book, he is writing a report.",
+    "pt-BR":
+      "Enquanto ela está lendo o livro, ele está escrevendo um relatório.",
+  },
+  {
+    "en-US": "They will play soccer while we prepare lunch.",
+    "pt-BR": "Eles jogarão futebol enquanto nós prepararemos o almoço.",
+  },
+  {
+    "en-US": "I am riding a bike while he is talking on the phone.",
+    "pt-BR":
+      "Eu estou andando de bicicleta enquanto ele está conversando ao telefone.",
+  },
+  {
+    "en-US": "You sent the email while we are discussing the project.",
+    "pt-BR": "Você enviou o e-mail enquanto nós estamos discutindo o projeto.",
+  },
+  {
+    "en-US": "She will organize the party while he will decorate the hall.",
+    "pt-BR": "Ela organizará a festa enquanto ele decorará o salão.",
+  },
+  {
+    "en-US":
+      "We traveled to the countryside while they are solving problems in the city.",
+    "pt-BR":
+      "Nós viajamos para o interior enquanto eles estão resolvendo os problemas na cidade.",
+  },
+  {
+    "en-US": "While I am cooking, they are setting the table for dinner.",
+    "pt-BR":
+      "Enquanto eu estou cozinhando, eles estão arrumando a mesa para o jantar.",
+  },
+
+  {
+    "en-US": "Even though he is being honest, some people still doubt him.",
+    "pt-BR":
+      "Mesmo estando ele sendo honesto, algumas pessoas ainda duvidam dele.",
+  },
+  {
+    "en-US": "She managed to complete the project while being very busy.",
+    "pt-BR": "Ela conseguiu completar o projeto mesmo estando muito ocupada.",
+  },
+  {
+    "en-US": "Being aware of the risks, they decided to proceed with the plan.",
+    "pt-BR": "Estando cientes dos riscos, eles decidiram seguir com o plano.",
+  },
+  {
+    "en-US": "They continued working, despite being tired.",
+    "pt-BR": "Eles continuaram trabalhando, mesmo estando cansados.",
+  },
+  {
+    "en-US": "Even though she is feeling ill, she came to work.",
+    "pt-BR": "Mesmo estando se sentindo mal, ela veio trabalhar.",
+  },
+  {
+    "en-US": "While being away from home, he missed his family a lot.",
+    "pt-BR": "Estando longe de casa, ele sentiu muita falta da família.",
+  },
+  {
+    "en-US": "Despite being young, she has a lot of experience in this field.",
+    "pt-BR": "Estando jovem, ela tem muita experiência nesta área.",
+  },
+  {
+    "en-US": "Being the eldest, he felt responsible for his siblings.",
+    "pt-BR":
+      "Estando como o mais velho, ele se sentia responsável pelos irmãos.",
+  },
+  {
+    "en-US": "They kept calm, even being under pressure.",
+    "pt-BR": "Eles mantiveram a calma, mesmo estando sob pressão.",
+  },
+  {
+    "en-US": "She continued her studies, despite being tired.",
+    "pt-BR": "Ela continuou seus estudos, mesmo estando cansada.",
+  },
+  {
+    "en-US": "The team succeeded, despite being inexperienced.",
+    "pt-BR": "A equipe teve sucesso, mesmo estando inexperiente.",
+  },
+  {
+    "en-US": "Even being in a hurry, he didn't forget anything.",
+    "pt-BR": "Mesmo estando com pressa, ele não esqueceu nada.",
+  },
+  {
+    "en-US": "Being aware of the consequences, they made a careful decision.",
+    "pt-BR":
+      "Estando cientes das consequências, eles tomaram uma decisão cuidadosa.",
+  },
+  {
+    "en-US": "She enjoyed the trip, despite being away from her comfort zone.",
+    "pt-BR":
+      "Ela aproveitou a viagem, mesmo estando fora da sua zona de conforto.",
+  },
+  {
+    "en-US": "Being in a foreign country, he had to adapt quickly.",
+    "pt-BR":
+      "Estando em um país estrangeiro, ele precisou se adaptar rapidamente.",
+  },
+  {
+    "en-US": "Since everyone agrees, we can start the meeting.",
+    "pt-BR": "Estando todos de acordo, podemos começar a reunião",
+  },
+  {
+    "en-US": "Being more prepared, he had a better chance of success",
+    "pt-BR": "Estando ele mais preparado, tinha mais chances de sucesso",
+  },
+  {
+    "en-US": "Despite the rain, they decided to go hiking.",
+    "pt-BR": "Apesar da chuva, eles decidiram fazer uma caminhada.",
+  },
+  {
+    "en-US": "Despite his efforts, the project was not completed on time.",
+    "pt-BR": "Apesar dos seus esforços, o projeto não foi concluído a tempo.",
+  },
+  {
+    "en-US": "Since you are here, let's start the meeting.",
+    "pt-BR": "Já que você está aqui, vamos começar a reunião.",
+  },
+  {
+    "en-US": "Since it’s a holiday, the store is closed.",
+    "pt-BR": "Já que é feriado, a loja está fechada.",
+  },
+  {
+    "en-US": "Once you’ve finished the task, you can leave.",
+    "pt-BR": "Uma vez que você terminar a tarefa, pode sair.",
+  },
+  {
+    "en-US": "Once we solve this issue, we can move forward.",
+    "pt-BR": "Uma vez que resolvermos esse problema, podemos seguir em frente.",
+  },
+  {
+    "en-US": "Being a doctor, she knows how to handle emergencies.",
+    "pt-BR": "Sendo médica, ela sabe como lidar com emergências.",
+  },
+  {
+    "en-US": "Being the leader, he took responsibility for the team’s failure.",
+    "pt-BR":
+      "Sendo o líder, ele assumiu a responsabilidade pelo fracasso da equipe.",
+  },
+  {
+    "en-US": "Despite being tired, he finished the marathon.",
+    "pt-BR": "Apesar de estar cansado, ele terminou a maratona.",
+  },
+  {
+    "en-US": "Since the weather is nice, we should go to the beach.",
+    "pt-BR": "Já que o tempo está bom, deveríamos ir à praia.",
+  },
+  {
+    "en-US": "Despite the noise, I managed to concentrate on my work.",
+    "pt-BR": "Apesar do barulho, consegui me concentrar no meu trabalho.",
+  },
+  {
+    "en-US": "Despite the late hour, they continued the meeting.",
+    "pt-BR": "Apesar do horário avançado, eles continuaram a reunião.",
+  },
+  {
+    "en-US": "Since it’s your birthday, let’s celebrate!",
+    "pt-BR": "Já que é seu aniversário, vamos comemorar!",
+  },
+  {
+    "en-US": "Since we’re already here, we might as well visit the museum.",
+    "pt-BR": "Já que estamos aqui, podemos visitar o museu.",
+  },
+  {
+    "en-US":
+      "Once you understand the concept, the problem becomes easy to solve.",
+    "pt-BR":
+      "Uma vez que você entende o conceito, o problema se torna fácil de resolver.",
+  },
+  {
+    "en-US": "Once the payment is confirmed, the order will be shipped.",
+    "pt-BR": "Uma vez que o pagamento é confirmado, o pedido será enviado.",
+  },
+  {
+    "en-US": "Being a parent is challenging, but also rewarding.",
+    "pt-BR": "Sendo pai é desafiador, mas também gratificante.",
+  },
+  {
+    "en-US": "Being aware of the risks, they proceeded with caution.",
+    "pt-BR": "Sendo cientes dos riscos, eles prosseguiram com cautela.",
+  },
+  {
+    "en-US": "Despite the challenges, she remained optimistic.",
+    "pt-BR": "Apesar dos desafios, ela permaneceu otimista.",
+  },
+  {
+    "en-US": "Since the project is urgent, we need to work overtime.",
+    "pt-BR": "Já que o projeto é urgente, precisamos trabalhar horas extras.",
+  },
+  {
+    "en-US": "Despite his lack of experience, he did an excellent job.",
+    "pt-BR": "Apesar da falta de experiência, ele fez um excelente trabalho.",
+  },
+  {
+    "en-US": "Despite the cold weather, they went for a walk.",
+    "pt-BR": "Apesar do frio, eles foram caminhar.",
+  },
+  {
+    "en-US": "Since we have extra time, let’s review the material.",
+    "pt-BR": "Já que temos tempo extra, vamos revisar o material.",
+  },
+  {
+    "en-US": "Since the meeting was postponed, we can reschedule our plans.",
+    "pt-BR": "Já que a reunião foi adiada, podemos reagendar nossos planos.",
+  },
+  {
+    "en-US": "Once the decision is made, we can start the project.",
+    "pt-BR": "Uma vez que a decisão for tomada, podemos iniciar o projeto.",
+  },
+  {
+    "en-US": "Once we gather all the data, we can analyze the results.",
+    "pt-BR":
+      "Uma vez que reunirmos todos os dados, podemos analisar os resultados.",
+  },
+  {
+    "en-US":
+      "Being a fast learner, she quickly adapted to the new environment.",
+    "pt-BR":
+      "Sendo uma aprendiz rápida, ela se adaptou rapidamente ao novo ambiente.",
+  },
+  {
+    "en-US": "Being the only candidate, he was selected for the position.",
+    "pt-BR": "Sendo o único candidato, ele foi selecionado para a posição.",
+  },
+  {
+    "en-US": "Despite the difficulties, they never gave up.",
+    "pt-BR": "Apesar das dificuldades, eles nunca desistiram.",
+  },
+  {
+    "en-US": "Since everyone agrees, we can proceed with the plan.",
+    "pt-BR": "Já que todos concordam, podemos seguir com o plano.",
+  },
+  {
+    "en-US": "He will arrive soon.",
+    "pt-BR": "Ele chegará logo",
+  },
+  {
+    "en-US": "Therefore, we must act quickly.",
+    "pt-BR": "Logo, devemos agir rapidamente.",
+  },
+  {
+    "en-US": "Well, if he didn't come, he must have had a good reason.",
+    "pt-BR": "Ora, se ele não veio, deve ter tido um bom motivo",
+  },
+  {
+    "en-US": "After all, he was right.",
+    "pt-BR": "Afinal, ele tinha razão.",
+  },
+  {
+    "en-US": "After all, everyone agreed with the decision.",
+    "pt-BR": "Afinal, todos concordaram com a decisão",
+  },
+  {
+    "en-US": "He left because he was in a hurry.",
+    "pt-BR": "Ele saiu, pois estava com pressa.",
+  },
+  {
+    "en-US": "He did the same work as yesterday",
+    "pt-BR": "Ele fez o mesmo trabalho de ontem.",
+  },
+  {
+    "en-US": "Even if it rains, we will go to the park",
+    "pt-BR": "Mesmo que chova, iremos ao parque.",
+  },
+  {
+    "en-US": "Take an umbrella, in case it rains",
+    "pt-BR": "Leve um guarda-chuva, caso chova.",
+  },
+  {
+    "en-US": "In case you need help, let me know",
+    "pt-BR": "Caso você precise de ajuda, me avise.",
+  },
+  {
+    "en-US": "Since everyone agrees, let's continue",
+    "pt-BR": "Já que todos concordam, vamos continuar",
+  },
+  {
+    "en-US":
+      "You complain, you threaten, but it's all just lip service. You want me here.",
+    "pt-BR":
+      "Você reclama, ameaça, mas é tudo da boca pra fora. Cê me quer aqui",
+  },
+  {
+    "en-US": "If he came to the party, it would be a lot of fun",
+    "pt-BR": "Se ele viesse à festa, seria muito divertido",
+  },
+  {
+    "en-US": "I must be wrong",
+    "pt-BR": "Devo estar enganada",
+  },
+  {
+    "en-US": "I don't care about the face",
+    "pt-BR": "Não tô nem aí pro rosto",
+  },
+  {
+    "en-US": "Are you going to give the blessing?",
+    "pt-BR": "Vai dar a benção?",
+  },
+  {
+    "en-US": "You think so, but no.",
+    "pt-BR": "Cê acha que sim, mas não",
+  },
+  {
+    "en-US": "I don't want to ruin your life",
+    "pt-BR": "Eu não quero estragar sua vida",
+  },
+  {
+    "en-US": "I'm not going to get involved",
+    "pt-BR": "Eu não vou me meter.",
+  },
+  {
+    "en-US": "I came to see if our lunch would happen.",
+    "pt-BR": "Vim ver se rola aquele nosso almoço.",
+  },
+  {
+    "en-US": "You are right",
+    "pt-BR": "Cê tem razão.",
+  },
+  {
+    "en-US": "you just arrived",
+    "pt-BR": "cê acabou de chegar",
+  },
+  {
+    "en-US": "Don't stick your nose where it doesn't belong",
+    "pt-BR": "Não mete o nariz onde não é chamado",
+  },
+  {
+    "en-US": "I am lucky in life",
+    "pt-BR": "Eu dou sorte na vida",
+  },
+  {
+    "en-US": "I prefer to fix it my way",
+    "pt-BR": "Eu prefiro arrumar do meu jeito",
+  },
+  {
+    "en-US": "If you want to knock down this wall, you can knock it down",
+    "pt-BR": "Se quiser derrubar essa parede, pode derrubar",
+  },
+  {
+    "en-US": "Do you think I was going to take it secretly?",
+    "pt-BR": "Cê acha que eu ia pegar escondida?",
+  },
+  {
+    "en-US": "I was going to show him, but he was busy with paperwork.",
+    "pt-BR": "Eu ia mostrar, mas ele estava ocupado com a papelada",
+  },
+  {
+    "en-US": "I'll keep it in the key drawer.",
+    "pt-BR": "Eu vou guardar na gaveta de chave.",
+  },
+  {
+    "en-US": "I'll keep the key in my underwear drawer.",
+    "pt-BR": "Eu vou guardar a chave na gaveta das calcinhas.",
+  },
+  {
+    "en-US": "will fall backwards",
+    "pt-BR": "vai cair pra trás",
+  },
+  {
+    "en-US": "Business hasn't stopped, and I need to stay on top of everything",
+    "pt-BR": "Os negócios não pararam, e eu preciso estar a par de tudo",
+  },
+  {
+    "en-US": "It's for me! Let me answer it",
+    "pt-BR": "É pra mim! Deixa que eu atendo",
+  },
+  {
+    "en-US": "I almost died of longing",
+    "pt-BR": "Quase morri de saudade",
+  },
+  {
+    "en-US": "I insist",
+    "pt-BR": "Faço questão",
+  },
+  {
+    "en-US": "What the hell is this?",
+    "pt-BR": "Que porcaria é essa?",
+  },
+  {
+    "en-US": "I saw Pedro at the party and greeted him.",
+    "pt-BR": "Eu vi o Pedro na festa e o cumprimentei.",
+  },
+  {
+    "en-US": "Maria met João and invited him to dinner.",
+    "pt-BR": "Maria encontrou o João e o convidou para jantar.",
+  },
+  {
+    "en-US": "They saw Lucas and called him to play.",
+    "pt-BR": "Eles viram o Lucas e o chamaram para jogar.",
+  },
+  {
+    "en-US": "I lost my phone, but later I found it.",
+    "pt-BR": "Eu perdi o meu celular, mas depois o encontrei.",
+  },
+  {
+    "en-US": "The dog took the toy and hid it.",
+    "pt-BR": "O cachorro pegou o brinquedo e o escondeu.",
+  },
+  {
+    "en-US": "I bought the car and took it to the shop.",
+    "pt-BR": "Comprei o carro e o levei para a oficina.",
+  },
+  {
+    "en-US": "I saw João and greeted him.",
+    "pt-BR": "Eu vi o João e o cumprimentei.",
+  },
+  {
+    "en-US": "I bought the book and read it.",
+    "pt-BR": "Eu comprei o livro e o li.",
+  },
+  {
+    "en-US": "She will arrive soon.",
+    "pt-BR": "Ela chegará logo.",
+  },
+  {
+    "en-US": "I need to finish this quickly.",
+    "pt-BR": "Eu preciso terminar isso logo.",
+  },
+  {
+    "en-US": "He called me right after the meeting.",
+    "pt-BR": "Ele me ligou logo após a reunião.",
+  },
+  {
+    "en-US": "It's getting late, so I should go.",
+    "pt-BR": "Está ficando tarde, logo devo ir.",
+  },
+  {
+    "en-US": "The train will depart soon.",
+    "pt-BR": "O trem partirá logo.",
+  },
+  {
+    "en-US": "She realized her mistake immediately.",
+    "pt-BR": "Ela percebeu seu erro logo.",
+  },
+  {
+    "en-US": "The sun will rise soon.",
+    "pt-BR": "O sol nascerá logo.",
+  },
+  {
+    "en-US": "It's raining heavily, so the streets are flooded.",
+    "pt-BR": "Está chovendo forte, logo as ruas estão alagadas.",
+  },
+  {
+    "en-US": "Finish this quickly, we are running out of time.",
+    "pt-BR": "Termine isso logo, estamos sem tempo.",
+  },
+  {
+    "en-US": "She smiled immediately after hearing the good news.",
+    "pt-BR": "Ela sorriu logo após ouvir as boas notícias.",
+  },
+  {
+    "en-US": "The bus took too long to arrive.",
+    "pt-BR": "O ônibus demorou muito para chegar.",
+  },
+  {
+    "en-US": "There is no need to delay the meeting.",
+    "pt-BR": "Não há necessidade de demorar a reunião.",
+  },
+  {
+    "en-US": "Why are you taking so long to decide?",
+    "pt-BR": "Por que você está demorando tanto para decidir?",
+  },
+  {
+    "en-US": "The process will take a while, so please be patient.",
+    "pt-BR": "O processo vai demorar, então por favor seja paciente.",
+  },
+  {
+    "en-US": "She apologized for the delay.",
+    "pt-BR": "Ela pediu desculpas pela demora.",
+  },
+  {
+    "en-US": "The delivery might take a few days.",
+    "pt-BR": "A entrega pode demorar alguns dias.",
+  },
+  {
+    "en-US": "I don't want to take too long to complete this task.",
+    "pt-BR": "Eu não quero demorar muito para completar essa tarefa.",
+  },
+  {
+    "en-US": "He always takes his time to respond to emails.",
+    "pt-BR": "Ele sempre demora para responder aos e-mails.",
+  },
+  {
+    "en-US": "The repair took longer than expected.",
+    "pt-BR": "O conserto demorou mais do que o esperado.",
+  },
+  {
+    "en-US": "If you delay too much, you might miss the opportunity.",
+    "pt-BR": "Se você demorar muito, pode perder a oportunidade.",
+  },
+  {
+    "en-US": "He will put the phone in his pocket.",
+    "pt-BR": "Ele vai meter o celular no bolso.",
+  },
+  {
+    "en-US": "Don't put your hand in the fire!",
+    "pt-BR": "Não meta a mão no fogo!",
+  },
+  {
+    "en-US": "She put the key in the lock.",
+    "pt-BR": "Ela meteu a chave na fechadura.",
+  },
+  {
+    "en-US": "I will put the documents in the drawer.",
+    "pt-BR": "Vou meter os documentos na gaveta.",
+  },
+  {
+    "en-US": "He put his wallet in the backpack.",
+    "pt-BR": "Ele meteu a carteira na mochila.",
+  },
+  {
+    "en-US": "She put her hand in the water to test the temperature.",
+    "pt-BR": "Ela meteu a mão na água para testar a temperatura.",
+  },
+  {
+    "en-US": "They put the letter in the mailbox.",
+    "pt-BR": "Eles meteram a carta na caixa de correio.",
+  },
+  {
+    "en-US": "He quickly put the shoes on his feet.",
+    "pt-BR": "Ele meteu os sapatos nos pés rapidamente.",
+  },
+  {
+    "en-US": "The boy put the toy under the bed.",
+    "pt-BR": "O menino meteu o brinquedo debaixo da cama.",
+  },
+  {
+    "en-US": "She put the key in her purse.",
+    "pt-BR": "Ela meteu a chave na bolsa.",
+  },
+  {
+    "en-US": "He put the pen in his pocket.",
+    "pt-BR": "Ele meteu a caneta no bolso.",
+  },
+  {
+    "en-US": "I put the towel in the drawer.",
+    "pt-BR": "Eu meti a toalha na gaveta.",
+  },
+  {
+    "en-US": "She put the cat inside the box.",
+    "pt-BR": "Ela meteu o gato dentro da caixa.",
+  },
+  {
+    "en-US": "He put his hand in his coat pocket.",
+    "pt-BR": "Ele meteu a mão no bolso do casaco.",
+  },
+  {
+    "en-US": "He has a calm way of speaking.",
+    "pt-BR": "Ele tem um jeito calmo de falar.",
+  },
+  {
+    "en-US": "She has a knack for cooking.",
+    "pt-BR": "Ela tem jeito para cozinhar.",
+  },
+  {
+    "en-US": "You have to find a way for this.",
+    "pt-BR": "Tem que dar um jeito nisso.",
+  },
+  {
+    "en-US": "The house looks messy.",
+    "pt-BR": "A casa está com um jeito bagunçado.",
+  },
+  {
+    "en-US": "We will find a way to solve the problem.",
+    "pt-BR": "Vamos dar um jeito de resolver o problema.",
+  },
+  {
+    "en-US": "He always finds a way to solve problems.",
+    "pt-BR": "Ele sempre dá um jeito de resolver os problemas.",
+  },
+  {
+    "en-US": "She has a special way with children.",
+    "pt-BR": "Ela tem um jeito especial com as crianças.",
+  },
+  {
+    "en-US": "There's no way to fix this now.",
+    "pt-BR": "Não tem jeito de consertar isso agora.",
+  },
+  {
+    "en-US": "I like the way you handled that situation.",
+    "pt-BR": "Eu gostei do jeito que você lidou com a situação.",
+  },
+  {
+    "en-US": "Is there any way we can finish this today?",
+    "pt-BR": "Tem jeito de terminarmos isso hoje?",
+  },
+  {
+    "en-US": "The car has a strange way of starting.",
+    "pt-BR": "O carro tem um jeito estranho de ligar.",
+  },
+  {
+    "en-US": "He has a lazy way of walking.",
+    "pt-BR": "Ele tem um jeito preguiçoso de andar.",
+  },
+  {
+    "en-US": "She always finds a way to help others.",
+    "pt-BR": "Ela sempre dá um jeito de ajudar os outros.",
+  },
+  {
+    "en-US": "You’ll find a way to make it work.",
+    "pt-BR": "Você vai dar um jeito de fazer funcionar.",
+  },
+  {
+    "en-US": "I like the way you smile.",
+    "pt-BR": "Eu gosto do jeito que você sorri.",
+  },
+  {
+    "en-US": "He will leave early to avoid the traffic.",
+    "pt-BR": "Ele partirá cedo para evitar o trânsito",
+  },
+  {
+    "en-US": "We would talk more if we had time.",
+    "pt-BR": "Nós falávamos mais se tivéssemos tempo",
+  },
+  {
+    "en-US": "You handed in the report before the deadline yesterday.",
+    "pt-BR": "Vocês entregaram o relatório antes do prazo ontem",
+  },
+  {
+    "en-US": "I used to eat meatballs frequently when I was a child.",
+    "pt-BR": "Eu comia almôndegas com frequência quando era criança",
+  },
+  {
+    "en-US": "He will eat everything before the store closes.",
+    "pt-BR": "Ele comerá tudo antes que a loja feche",
+  },
+  {
+    "en-US": "There is a lot of traffic in the city today.",
+    "pt-BR": "Há muito trânsito na cidade hoje.",
+  },
+  {
+    "en-US": "There were few people at the event.",
+    "pt-BR": "Havia poucas pessoas no evento.",
+  },
+  {
+    "en-US": "There is an error in this document.",
+    "pt-BR": "Há um erro neste documento.",
+  },
+  {
+    "en-US": "There will be an important meeting tomorrow.",
+    "pt-BR": "Haverá uma reunião importante amanhã.",
+  },
+  {
+    "en-US": "There was an accident on the road.",
+    "pt-BR": "Houve um acidente na estrada.",
+  },
+  {
+    "en-US": "Many years ago, people traveled by boat.",
+    "pt-BR": "Há muitos anos, as pessoas viajavam de barco.",
+  },
+  {
+    "en-US": "There isn’t enough time to finish the work.",
+    "pt-BR": "Não há tempo suficiente para terminar o trabalho.",
+  },
+  {
+    "en-US": "There are those who say this is impossible.",
+    "pt-BR": "Há quem diga que isso é impossível.",
+  },
+  {
+    "en-US": "If there were more opportunities, many people would stay here.",
+    "pt-BR": "Se houvesse mais oportunidades, muitas pessoas ficariam aqui.",
+  },
+  {
+    "en-US": "There would be a solution if everyone collaborated.",
+    "pt-BR": "Haveria uma solução se todos colaborassem.",
+  },
+  {
+    "en-US": "There were many books on the table.",
+    "pt-BR": "Havia muitos livros na mesa.",
+  },
+  {
+    "en-US": "There was a time when I used to travel a lot.",
+    "pt-BR": "Houve uma época em que eu viajava muito.",
+  },
+  {
+    "en-US": "There will be no class tomorrow due to the holiday.",
+    "pt-BR": "Não haverá aula amanhã devido ao feriado.",
+  },
+  {
+    "en-US": "If there had been a warning, we would have prepared better.",
+    "pt-BR": "Se houvesse um aviso, teríamos nos preparado melhor.",
+  },
+  {
+    "en-US": "There will be more opportunities in the future.",
+    "pt-BR": "Haverá mais oportunidades no futuro.",
+  },
+  {
+    "en-US": "There was no need to explain everything again.",
+    "pt-BR": "Não havia necessidade de explicar tudo novamente.",
+  },
+  {
+    "en-US": "There is no one in the office at the moment.",
+    "pt-BR": "Não há ninguém no escritório no momento.",
+  },
+  {
+    "en-US": "If there were fewer distractions, I could focus better.",
+    "pt-BR": "Se houvesse menos distrações, eu poderia me concentrar melhor.",
+  },
+  {
+    "en-US": "There used to be a park here, but now it’s a shopping mall.",
+    "pt-BR": "Havia um parque aqui, mas agora é um shopping.",
+  },
+  {
+    "en-US": "There have been many challenges this year.",
+    "pt-BR": "Houve muitos desafios este ano.",
+  },
+  {
+    "en-US": "There will be a party next weekend.",
+    "pt-BR": "Haverá uma festa no próximo fim de semana.",
+  },
+  {
+    "en-US": "There has been a lot of rain lately.",
+    "pt-BR": "Houve muita chuva ultimamente.",
+  },
+  {
+    "en-US":
+      "There would be no reason to worry if you followed the instructions.",
+    "pt-BR":
+      "Não haveria razão para se preocupar se você seguisse as instruções.",
+  },
+  {
+    "en-US": "There were problems with the project from the start.",
+    "pt-BR": "Houve problemas com o projeto desde o início.",
+  },
+  {
+    "en-US": "There is still a chance to win.",
+    "pt-BR": "Ainda há uma chance de vencer.",
+  },
+  {
+    "en-US": "If there had been more time, we could have finished everything.",
+    "pt-BR": "Se houvesse mais tempo, poderíamos ter terminado tudo.",
+  },
+  {
+    "en-US": "There were several opportunities to improve.",
+    "pt-BR": "Havia várias oportunidades para melhorar.",
+  },
+  {
+    "en-US": "There would have been a solution if we had worked together.",
+    "pt-BR": "Haveria uma solução se tivéssemos trabalhado juntos.",
+  },
+  {
+    "en-US": "There will be more options available soon.",
+    "pt-BR": "Haverá mais opções disponíveis em breve.",
+  },
+  {
+    "en-US": "There was a misunderstanding between the teams.",
+    "pt-BR": "Houve um mal-entendido entre as equipes.",
+  },
+  {
+    "en-US": "I'm like this because of work.",
+    "pt-BR": "Estou assim por causa do trabalho.",
+  },
+  {
+    "en-US": "It's not exactly like that.",
+    "pt-BR": "Não é bem assim.",
+  },
+  {
+    "en-US": "It's exactly like that.",
+    "pt-BR": "É assim mesmo.",
+  },
+  {
+    "en-US": "I didn't know it was that good like that.",
+    "pt-BR": "Eu não sabia que era bom assim.",
+  },
+  {
+    "en-US": "Well, look, it's not exactly like that.",
+    "pt-BR": "Veja bem, não é bem assim.",
+  },
+  {
+    "en-US": "So he told me to do it like this and like that.",
+    "pt-BR": "Aí ele falou para eu fazer assim e assado.",
+  },
+  {
+    "en-US": "Dude, like, I'm not even sure what happened.",
+    "pt-BR": "Cara, tipo assim, nem sei o que aconteceu.",
+  },
+  {
+    "en-US": "He was kinda... like, I dunno, tall and had a beard I guess.",
+    "pt-BR": "Ele era meio que... assim, sei lá, alto e com barba eu acho.",
+  },
+  {
+    "en-US": "It's like a dog but with long legs.",
+    "pt-BR": "Bom é tipo um cachorro mas com perna comprida.",
+  },
+  {
+    "en-US": "Still, he ended up getting elected",
+    "pt-BR": "Mesmo assim, o cara acabou sendo eleito.",
+  },
+  {
+    "en-US": "I think you should still take an umbrella with you",
+    "pt-BR": "Eu acho que mesmo assim você deveria levar um guarda-chuva.",
+  },
+  {
+    "en-US": "Let's start as soon as I arrive.",
+    "pt-BR": "Vamos começar assim que eu chegar.",
+  },
+  {
+    "en-US": "How come?",
+    "pt-BR": "Como assim?",
+  },
+  {
+    "en-US": "And so on.",
+    "pt-BR": "E assim por diante.",
+  },
+  {
+    "en-US": "And so be it.",
+    "pt-BR": "E assim seja.",
+  },
+  {
+    "en-US": "I'm like this because of work",
+    "pt-BR": "Estou assim por causa do trabalho.",
+  },
+  {
+    "en-US": "There were a lot of people there",
+    "pt-BR": "Tava assim de gente lá.",
+  },
+  {
+    "en-US": "Wow, that candidate only talked crap during the campaign",
+    "pt-BR": "Caramba, esse candidato só falava merda na campanha",
+  },
+  {
+    "en-US": "So, I don’t even know where to start.",
+    "pt-BR": "Assim, nem sei por onde começar.",
+  },
+  {
+    "en-US": "But I think as soon as I start, maybe I’ll clear up some doubts.",
+    "pt-BR": "Mas acho que assim que eu começar, talvez tire algumas dúvidas.",
+  },
+  {
+    "en-US": "Not all of them, but that’s just how it is.",
+    "pt-BR": "Nem todas, mas é assim mesmo.",
+  },
+  {
+    "en-US": "It might not be that good, but at least it’ll be fun.",
+    "pt-BR": "Pode não ser tão bom assim, mas pelo menos vai ser divertido.",
+  },
+  {
+    "en-US": "Still, I think it’ll be good.",
+    "pt-BR": "Mas mesmo assim, acho que vai ser bom.",
+  },
+  {
+    "en-US": "The message has been delivered",
+    "pt-BR": "Tá dado o recado",
+  },
+  {
+    "en-US": "Where are you?",
+    "pt-BR": "Cadê você?",
+  },
+  {
+    "en-US": "Where are you?",
+    "pt-BR": "Cadê você?",
+  },
 ];
