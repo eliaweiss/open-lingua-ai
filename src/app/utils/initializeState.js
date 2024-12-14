@@ -43,20 +43,30 @@ export const initializeState = async (useAppStore) => {
   setTargetLanguageRate(await storage.get("targetLanguageRate", 1));
 
   const translationFromFiles = (
-    await import("@/data/availablePhraseTranslation.json")
+    await import("@/data/availablePhraseTranslation.json?1")
   ).default;
   const storedAvailablePhraseTranslation = await storage.get(
     "availablePhraseTranslation",
     translationFromFiles
   );
-  const allTranslations = [
+  let allTranslations = [
     ...new Set([...storedAvailablePhraseTranslation, ...translationFromFiles]),
   ];
   setAvailablePhraseTranslation(allTranslations);
 
   for (const avt of allTranslations) {
-    const phrasesFromData = await loadPhraseFromDataFolder(avt);
-    storage.set(avt, phrasesFromData);
+    try {
+      const phrasesFromData = await loadPhraseFromDataFolder(avt);
+      storage.set(avt, phrasesFromData);
+    } catch (error) {
+      // remove the file from the availablePhraseTranslation store
+      const newAvailablePhraseTranslation =
+        storedAvailablePhraseTranslation.filter((item) => item !== avt);
+      setAvailablePhraseTranslation(newAvailablePhraseTranslation);
+      storage.set("availablePhraseTranslation", newAvailablePhraseTranslation);
+      // remove the file from allTranslations
+      allTranslations = allTranslations.filter((item) => item !== avt);
+    }
   }
 
   let storedAllPhrases = myLocalStorage.get("allPhrases", null);

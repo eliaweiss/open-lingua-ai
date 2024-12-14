@@ -16,7 +16,7 @@ def count_rows(tsv_file):
 # Function to convert TSV to JSON and flush after each line
 
 
-def tsv_to_json(tsv_file, json_file):
+def tsv_to_json(tsv_file, json_file, start=None, end=None):
     # Open the JSON file and write the opening bracket
     with open(json_file, 'w', encoding='utf-8') as outfile:
         outfile.write("[\n")
@@ -27,10 +27,14 @@ def tsv_to_json(tsv_file, json_file):
 
         first = True
         for index, row in enumerate(reader):
+            if index < start:
+                continue
+            if index > end:
+                break
             # Create a dictionary with the desired format for each row
             entry = {
-                "he-IL": row[1],
-                "ar-SA": row[3]
+                "pt-BR": row[1],
+                "en-US": row[3]
             }
 
             # Open the JSON file in append mode and write the dictionary
@@ -52,12 +56,12 @@ def tsv_to_json(tsv_file, json_file):
 
 
 # Replace 'input.tsv' with your actual input TSV file and 'output.json' with your desired output JSON file name
-tsv_file = '/Users/eliaweiss/Downloads/Sentence pairs in Hebrew-Arabic - 2024-09-22.tsv'
-json_file = '../public/data/tatoeba.he-IL.ar-SA.json'
+tsv_file = '/Users/eliaweiss/Downloads/Sentence pairs in Portuguese-English - 2024-12-14.tsv'
+json_file = '../public/data/tatoeba-2000.pt-BR.en-US.json'
 
 # count_rows(tsv_file)
 # Call the function to convert the TSV to JSON
-tsv_to_json(tsv_file, json_file)
+tsv_to_json(tsv_file, json_file, start=1001, end=2000)
 
 # print(
 #     f"TSV file '{tsv_file}' has been converted to JSON and saved as '{json_file}'.")
